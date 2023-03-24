@@ -146,8 +146,13 @@ async def get_lowest_listing_price(collection):
                             for play_id in play_ids[start:upper_bound]
                         ]
 
-                time.sleep(0.25)
+                time.sleep(0.3)
                 listing_prices = await listing_price.get_listing_prices(set_uuid, player_ids, team_ids)
+
+                if len(listing_prices) == 0:
+                    print("Empty response, retry after 0.3s")
+                    time.sleep(0.25)
+                    continue
 
                 for play_id in play_ids[start:upper_bound]:
                     play_id_int = int(play_id)
