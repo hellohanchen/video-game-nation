@@ -146,7 +146,7 @@ async def get_lowest_listing_price(collection):
                             for play_id in play_ids[start:upper_bound]
                         ]
 
-                time.sleep(0.25)
+                # time.sleep(0.25)
                 listing_prices = await listing_price.get_listing_prices(set_uuid, player_ids, team_ids)
 
                 for play_id in play_ids[start:upper_bound]:
