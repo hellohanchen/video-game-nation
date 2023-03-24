@@ -1,12 +1,10 @@
 # trade_bot.py
-import asyncio
 import os
 
 import discord
 from discord.ext import commands
 from dotenv import load_dotenv
 
-import dynamodb.repos
 from topshot.compare import compare_moments
 from topshot.ts_info import TOPSHOT_SET_INFO
 
