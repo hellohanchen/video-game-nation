@@ -1,3 +1,5 @@
+import time
+
 from gql import gql, Client
 from gql.transport.aiohttp import AIOHTTPTransport
 
@@ -18,7 +20,7 @@ async def get_listing_prices(set_id, player_ids, team_ids):
     # Create a GraphQL client using the defined transport
     client = Client(transport=transport, fetch_schema_from_transport=True)
 
-    print("Fetching listing prices for {}: {}...".format(set_id, ','.join(player_ids)))
+    print("{}: Set: {}, Plays: {}...".format(time.strftime("%H:%M:%S", time.localtime()), set_id, ','.join(player_ids)))
 
     query = gql("""
         query SearchMomentListingsDefault($byPlayers: [ID], $byTagNames: [String!], $byTeams: [ID], $byPrice: PriceRangeFilterInput, $orderBy: MomentListingSortType, $byGameDate: DateRangeFilterInput, $byCreatedAt: DateRangeFilterInput, $byListingType: [MomentListingType], $bySets: [ID], $bySeries: [ID], $bySetVisuals: [VisualIdType], $byPrimaryPlayerPosition: [PlayerPosition], $bySerialNumber: IntegerRangeFilterInput, $searchInput: BaseSearchInput!) {

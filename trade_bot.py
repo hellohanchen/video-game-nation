@@ -136,19 +136,22 @@ def get_formatted_message(user1, user2, collection1, collection2, series):
 @bot.event
 async def on_ready():
     for guild in bot.guilds:
-        if guild.name == GUILD:
-            break
-
-    print(
-        f'{bot.user} is connected to the following guild:\n'
-        f'{guild.name}(id: {guild.id})'
-    )
+        print(
+            f'{bot.user} is connected to the following guild:\n'
+            f'{guild.name}(id: {guild.id})'
+        )
 
 
 @bot.command(name='c', help='Compare the collection of 2 topshot users for given series \n'
                             '/c <username1> <username2> <seriesNumber[1|2|3|4]>')
+@commands.cooldown(1, 30, commands.BucketType.user)
 async def verify_user(context, user1, user2, series):
+    if not isinstance(context.channel, discord.channel.DMChannel):
+        return
+
     try:
+        await context.channel.send("LOADING... Takes about 60s...")
+
         c1, c2 = await compare_moments(user1, user2, int(series))
 
         messages = get_formatted_message(user1, user2, c1, c2, int(series))
@@ -156,12 +159,24 @@ async def verify_user(context, user1, user2, series):
         for message in messages:
             await context.channel.send(message)
 
-        await context.channel.send("COMPLETE!!!")
+        await context.channel.send("COMPLETE!!! For questions/comments please contact MingDynastyVase#5527")
 
-    except NameError:
-        await context.channel.send("User not found.")
+    except NameError as err:
+        print(err)
+        await context.channel.send("Not found. {}".format(err))
     except Exception as err:
+        print(err)
         await context.channel.send("Failed to fetch collection")
+
+
+@bot.event
+async def on_command_error(context, error):
+    if isinstance(error, commands.CommandOnCooldown):
+        await context.channel.send("COOLING DOWN... retry after 30s")
+    elif isinstance(error, commands.MissingRequiredArgument):
+        await context.channel.send("Please provider username1, username2 and **a series number (1/2/3/4)**")
+    else:
+        raise error  # Here we raise other errors to ensure they aren't ignored
 
 
 bot.run(TOKEN)
