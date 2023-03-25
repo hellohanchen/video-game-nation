@@ -53,7 +53,7 @@ def get_formatted_message(user1, user2, collection1, collection2, series):
         if TOPSHOT_SET_INFO[set_id]['flowSeriesNumber'] != series:
             continue
 
-        new_message += "***{} (Series {}):***\n".format(
+        new_message += "🏀 ***{} (Series {}):***\n".format(
             TOPSHOT_SET_INFO[set_id]['flowName'],
             TOPSHOT_SET_INFO[set_id]['flowSeriesNumber']
         )
@@ -67,7 +67,7 @@ def get_formatted_message(user1, user2, collection1, collection2, series):
             play_ids = get_sorted_play_ids(plays)
 
             for play_id in play_ids:
-                new_message += "**□** {} ${} x{}  ".format(
+                new_message += ":black_small_square: {} ${} x{} ".format(
                     plays[play_id]['FullName'],
                     plays[play_id]['LowAsk'],
                     plays[play_id]['Count'],
@@ -84,7 +84,7 @@ def get_formatted_message(user1, user2, collection1, collection2, series):
             play_ids = get_sorted_play_ids(plays)
 
             for play_id in play_ids:
-                new_message += "**□** {} ${} x{}  ".format(
+                new_message += ":black_small_square: {} ${} x{} ".format(
                     plays[play_id]['FullName'],
                     plays[play_id]['LowAsk'],
                     plays[play_id]['Count'],
@@ -105,7 +105,7 @@ def get_formatted_message(user1, user2, collection1, collection2, series):
         if TOPSHOT_SET_INFO[set_id]['flowSeriesNumber'] != series:
             continue
 
-        new_message += "***{} (Series {}):***\n".format(
+        new_message += "🏀 ***{} (Series {}):***\n".format(
             TOPSHOT_SET_INFO[set_id]['flowName'],
             TOPSHOT_SET_INFO[set_id]['flowSeriesNumber']
         )
@@ -118,7 +118,7 @@ def get_formatted_message(user1, user2, collection1, collection2, series):
         play_ids = get_sorted_play_ids(plays)
 
         for play_id in play_ids:
-            new_message += "**□** {} ${} x{}  ".format(
+            new_message += ":black_small_square: {} ${} x{} ".format(
                 plays[play_id]['FullName'],
                 plays[play_id]['LowAsk'],
                 plays[play_id]['Count'],
