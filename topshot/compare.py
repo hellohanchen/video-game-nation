@@ -1,4 +1,5 @@
 import asyncio
+import random
 import time
 
 from flow_py_sdk import flow_client, cadence, Script
@@ -163,7 +164,14 @@ async def get_lowest_listing_price(collection):
 
                 start = start + 12
 
-            play_ids = unresolved_play_ids
+            if len(unresolved_play_ids) == len(play_ids):
+                play_ids = []
+                for play_id in unresolved_play_ids:
+                    play_ids.append(play_id)
+                    play_ids.append(play_id)
+            else:
+                random.shuffle(unresolved_play_ids)
+                play_ids = unresolved_play_ids
 
 
 async def get_account_moments(topshot_username):
