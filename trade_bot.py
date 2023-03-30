@@ -9,6 +9,7 @@ from dotenv import load_dotenv
 
 from topshot.compare import compare_moments
 from topshot.ts_info import TOPSHOT_SET_INFO
+from utils import truncate_message
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN_TRADE')
@@ -21,14 +22,6 @@ intents.typing = False
 intents.presences = False
 
 bot = commands.Bot(command_prefix='/', intents=intents)
-
-
-def truncate_message(messages, msg, to_add, limit):
-    if len(msg) + len(to_add) >= limit:
-        messages.append(msg)
-        return to_add, ""
-    else:
-        return msg + to_add, ""
 
 
 def get_sorted_play_ids(set):

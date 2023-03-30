@@ -1,0 +1,65 @@
+{
+  "message": "TOPSHOT FLASH CHALLENGE 2023-03-29",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "KEEP IT ROLLING WITH FRED VANVLEET",
+      "buckets": [
+        {
+          "description": "last 3pt made",
+          "is_wildcard": false,
+          "type": "PBP",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "3PM",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "03/29/2023"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "title": "DOWNTOWN WEDNESDAY - PREDICTIVE",
+      "buckets": [
+        {
+          "description": "most 3pt made",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "3PM",
+              "order": "DESC"
+            },
+            {
+              "stats": "WIN",
+              "order": "DESC"
+            },
+            {
+              "stats": "FTM",
+              "order": "DESC"
+            },
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            },
+            {
+              "stats": "AST,REB",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "03/29/2023"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,22 +1,15 @@
 import json
+import os.path
+import pathlib
 
 from nba_api.live.nba.endpoints import scoreboard, boxscore
 
-GAME_SCHEDULE = json.load(open('game_dates.json', 'r'))
-GAME_TEAMS = json.load(open('game_teams.json', 'r'))
+GAME_SCHEDULE = json.load(open(os.path.join(pathlib.Path(__file__).parent.resolve(), 'game_dates.json'), 'r'))
+GAME_TEAMS = json.load(open(os.path.join(pathlib.Path(__file__).parent.resolve(), 'game_teams.json'), 'r'))
 
-# Today's Score Board
-scoreboard = scoreboard.ScoreBoard()
-games = boxscore.BoxScore(game_id="0022201097")
 
-# json
-print(games.get_json())
-g_json = games.get_json()
-
-s_json = scoreboard.get_json()
-
-# dictionary
-print(games.get_dict())
+def get_scoreboard():
+    return scoreboard.ScoreBoard().get_dict()['scoreboard']
 
 
 def get_games_on_date(date):
@@ -38,13 +31,17 @@ def get_players_for_games(games, teams):
     result = []
 
     for game_id in games:
-        game_stats = boxscore.BoxScore(game_id=game_id).get_dict()['game']
+        try:
+            game_stats = boxscore.BoxScore(game_id=game_id).get_dict()['game']
+        except Exception:
+            continue
+
         if game_stats['gameStatus'] == 1:
             continue
 
         if game_stats['homeTeam']['teamTricode'] in teams:
-            result.extend([player['name'] for player in game_stats['homeTeam']['players']])
+            result.extend([player['personId'] for player in game_stats['homeTeam']['players']])
         if game_stats['awayTeam']['teamTricode'] in teams:
-            result.extend([player['name'] for player in game_stats['awayTeam']['players']])
+            result.extend([player['personId'] for player in game_stats['awayTeam']['players']])
 
-    return list(dict.fromkeys(result))
+    return set(result)

@@ -16,7 +16,8 @@ STATS_MAP = {
     "FTA": "freeThrowsAttempted",
     "FTM": "freeThrowsMade",
     "FTP": "freeThrowsPercentage",
-    "PMP": "plusMinusPoints"
+    "PMP": "plusMinusPoints",
+    "WIN": "teamWin"
 }
 
 
@@ -29,7 +30,7 @@ class TierBreaker:
         result = 0
 
         for player_stats in team_player_stats:
-            result += self.load_play_stats(player_stats)
+            result += self.load_play_stats(player_stats['statistics'])
 
         return result
 
@@ -41,5 +42,21 @@ class TierBreaker:
 
         return result
 
+    def get_action(self, actions, players=None):
+        if self.order == "DESC":
+            r = range(len(actions) - 1, -1, -1)
+        else:
+            r = range(0, len(actions))
 
+        for i in r:
+            action = actions[i]
+
+            if players and action['personId'] not in players:
+                continue
+
+            if self.stats[0] == "3PM":
+                if action['actionType'] == '3pt' and action['shotResult'] == 'Made':
+                    return action
+
+        return None
 
