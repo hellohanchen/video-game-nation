@@ -51,7 +51,7 @@ def get_scoreboard_message():
 
     if len(scoreboard['games']) > 0:
         message += "-" * 40
-        message += "\n🏀 ***{}*** 🏀\n".format(START_MESSAGE)
+        message += "\n🏀 ***{}***\n".format(START_MESSAGE)
         message += "**Games on {}**\n\n".format(scoreboard['gameDate'])
 
         for game in scoreboard['games']:
@@ -73,6 +73,7 @@ async def on_ready():
     for guild in bot.guilds:
         for channel in guild.channels:
             if channel.name in CHANNEL_NAMEs:
+                await purge_channel(channel)
                 MESSAGE_CHANNELS.append(channel)
 
     get_current_challenge.start()
@@ -121,6 +122,17 @@ async def track_challenge(context):
 
     for message in messages:
         await context.channel.send(message)
+
+
+@bot.command(name="purge")
+async def purge(ctx):
+    await purge_channel(ctx.channel)
+    PREVIOUS_MESSAGE_IDS.clear()
+
+
+async def purge_channel(channel):
+    await channel.purge(limit=None)
+    await channel.send("Purge this channel to track new challenge.")
 
 
 bot.run(TOKEN)
