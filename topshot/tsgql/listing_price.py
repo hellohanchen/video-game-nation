@@ -3,6 +3,7 @@ import time
 from gql import gql, Client
 from gql.transport.aiohttp import AIOHTTPTransport
 
+
 def get_low_asks(result_dict):
     price_data = result_dict['searchMomentListings']['data']['searchSummary']['data']['data']
     res = {}
