@@ -1,41 +1,20 @@
 {
-  "message": "TOPSHOT FLASH CHALLENGE 2023-03-29",
+  "message": "TOPSHOT FLASH CHALLENGE WEEKEND 03/31-04/02",
   "challenges": [
     {
       "id": 1,
-      "title": "KEEP IT ROLLING WITH FRED VANVLEET",
+      "title": "THE IQ RAZZLE DAZZLE",
       "buckets": [
         {
-          "description": "last 3pt made",
-          "is_wildcard": false,
-          "type": "PBP",
-          "count": 1,
-          "is_team": false,
-          "tier_breakers": [
-            {
-              "stats": "3PM",
-              "order": "DESC"
-            }
-          ],
-          "dates": [
-            "03/29/2023"
-          ]
-        }
-      ]
-    },
-    {
-      "id": 1,
-      "title": "DOWNTOWN WEDNESDAY - PREDICTIVE",
-      "buckets": [
-        {
-          "description": "most 3pt made",
+          "description": "ADD 1 Rare, Legendary, or Top Shot Debut Moment of each player in the top 5 in Assists for the Eastern Conference in a single game this weekend.",
           "is_wildcard": false,
           "type": "LB",
-          "count": 1,
+          "count": 5,
           "is_team": false,
+          "team_filter": "EC",
           "tier_breakers": [
             {
-              "stats": "3PM",
+              "stats": "AST",
               "order": "DESC"
             },
             {
@@ -43,7 +22,34 @@
               "order": "DESC"
             },
             {
-              "stats": "FTM",
+              "stats": "PTS",
+              "order": "DESC"
+            },
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "03/31/2023",
+            "04/01/2023",
+            "04/02/2023"
+          ]
+        },
+        {
+          "description": "ADD 1 Rare, Legendary, or Top Shot Debut Moment of each player in the top 5 in Steals for the Western Conference in a single game this weekend.",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 5,
+          "is_team": false,
+          "team_filter": "WC",
+          "tier_breakers": [
+            {
+              "stats": "STL",
+              "order": "DESC"
+            },
+            {
+              "stats": "WIN",
               "order": "DESC"
             },
             {
@@ -51,12 +57,14 @@
               "order": "DESC"
             },
             {
-              "stats": "AST,REB",
+              "stats": "PMP",
               "order": "DESC"
             }
           ],
           "dates": [
-            "03/29/2023"
+            "03/31/2023",
+            "04/01/2023",
+            "04/02/2023"
           ]
         }
       ]

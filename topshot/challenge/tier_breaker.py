@@ -1,3 +1,5 @@
+from typing import Dict, List, Any, Optional, Set
+
 STATS_MAP = {
     "PTS": "points",
     "FGA": "fieldGoalsAttempted",
@@ -22,11 +24,23 @@ STATS_MAP = {
 
 
 class TierBreaker:
-    def __init__(self, stats, order="DESC"):
+    def __init__(self, stats: List[str], order: str = "DESC") -> None:
+        """
+        Initialize a TierBreaker object.
+
+        :param stats: list of statistics used to break tiers
+        :param order: order of tier breaking results, either "ASC" or "DESC"
+        """
         self.stats = stats
         self.order = order
 
-    def load_team_stats(self, team_player_stats):
+    def load_team_stats(self, team_player_stats: List[Dict]) -> int:
+        """
+        Load team statistics for tier breaking.
+
+        :param team_player_stats: list of player statistics for a team
+        :return: sum of the specified statistics for the team
+        """
         result = 0
 
         for player_stats in team_player_stats:
@@ -34,29 +48,39 @@ class TierBreaker:
 
         return result
 
-    def load_play_stats(self, player_stats):
+    def load_play_stats(self, player_stats: Dict) -> Any:
+        """
+        Load player statistics for tier breaking.
+
+        :param player_stats: dictionary of statistics for a player
+        :return: sum of the specified statistics for the player
+        """
         result = 0
 
         for stat in self.stats:
-            result += player_stats[STATS_MAP[stat]]
+            if stat == "WIN":
+                return 'W' if player_stats[STATS_MAP[stat]] == 1 else 'L'
+            else:
+                result += int(float(player_stats[STATS_MAP[stat]]))
 
         return result
 
-    def get_action(self, actions, players=None):
+    def get_action(self, actions: List[Dict], players: Optional[Set] = None) -> Optional[Dict]:
+        """
+        Get the action that breaks the tier.
+
+        :param actions: list of actions to be considered for tier breaking
+        :param players: set of player ids whose actions should be considered for tier breaking
+        :return: action that breaks the tier, or None if no such action exists
+        """
         if self.order == "DESC":
-            r = range(len(actions) - 1, -1, -1)
-        else:
-            r = range(0, len(actions))
+            actions = reversed(actions)
 
-        for i in r:
-            action = actions[i]
-
+        for action in actions:
             if players and action['personId'] not in players:
                 continue
 
-            if self.stats[0] == "3PM":
-                if action['actionType'] == '3pt' and action['shotResult'] == 'Made':
-                    return action
+            if self.stats[0] == "3PM" and action['actionType'] == '3pt' and action['shotResult'] == 'Made':
+                return action
 
         return None
-
