@@ -25,7 +25,8 @@ def get_game_info(game_boxscore: Dict[str, Union[str, Dict[str, Union[str, int]]
             - leadTeam (str): The team tricode of the team currently in the lead.
     """
     return {
-        'stats': game_boxscore['gameStatus'],
+        'status': game_boxscore['gameStatus'],
+        'statusText': game_boxscore['gameStatusText'],
         'quarter': game_boxscore['period'],
         'clock': game_boxscore['gameClock'],
         'awayTeam': game_boxscore['awayTeam']['teamTricode'],
@@ -81,14 +82,14 @@ class LeaderBoardTracker:
 
             if game_stats['homeTeam']['teamTricode'] in games_teams[game_id]:
                 stats = [tb.load_team_stats(game_stats['homeTeam']['players']) for tb in self.tier_breakers]
-                result[game_stats['homeTeam']['teamTricode']] = {
+                result[game_stats['homeTeam']['teamTricode'] + '/' + str(game_id)] = {
                     'game': game_info,
                     'stats': stats
                 }
 
             if game_stats['awayTeam']['teamTricode'] in games_teams[game_id]:
                 stats = [tb.load_team_stats(game_stats['awayTeam']['players']) for tb in self.tier_breakers]
-                result[game_stats['awayTeam']['teamTricode']] = {
+                result[game_stats['awayTeam']['teamTricode'] + '/' + str(game_id)] = {
                     'game': game_info,
                     'stats': stats
                 }
@@ -121,7 +122,7 @@ class LeaderBoardTracker:
                     statistics['teamWin'] = \
                         1 if int(game_stats['homeTeam']['score']) > int(game_stats['awayTeam']['score']) else 0
                     stats = [tb.load_play_stats(statistics) for tb in self.tier_breakers]
-                    scores[player_stats['name']] = {
+                    scores[player_stats['name'] + '/' + str(game_id)] = {
                         'game': game_info,
                         'stats': stats
                     }
@@ -132,7 +133,7 @@ class LeaderBoardTracker:
                     statistics['teamWin'] = \
                         1 if int(game_stats['awayTeam']['score']) > int(game_stats['homeTeam']['score']) else 0
                     stats = [tb.load_play_stats(statistics) for tb in self.tier_breakers]
-                    scores[player_stats['name']] = {
+                    scores[player_stats['name'] + '/' + str(game_id)] = {
                         'game': game_info,
                         'stats': stats
                     }

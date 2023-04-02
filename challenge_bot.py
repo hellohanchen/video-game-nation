@@ -127,12 +127,13 @@ async def track_challenge(context):
 @bot.command(name="purge")
 async def purge(ctx):
     await purge_channel(ctx.channel)
-    PREVIOUS_MESSAGE_IDS.clear()
 
 
 async def purge_channel(channel):
     await channel.purge(limit=None)
     await channel.send("Purge this channel to track new challenge.")
+    if channel.id in PREVIOUS_MESSAGE_IDS:
+        PREVIOUS_MESSAGE_IDS[channel.id] = []
 
 
 bot.run(TOKEN)
