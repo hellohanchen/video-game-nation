@@ -109,10 +109,10 @@ class Challenge:
                 message, new_message = truncate_message(messages, message, new_message, 1950)
                 continue
 
+            hit = min(bucket.tracker.count, len(ranking))
+            message, new_message = self.format_ranking(ranking[:hit], new_message, messages, message)
             message, new_message = self.format_ranking(
-                ranking[:min(bucket.tracker.count, len(ranking))], new_message, messages, message, True)
-            message, new_message = self.format_ranking(
-                ranking[min(bucket.tracker.count, len(ranking)):min(len(ranking), 20)], new_message, messages, message, False)
+                ranking[hit:min(len(ranking), 20)], new_message, messages, message, hit)
 
             new_message += "\n\n"
 
@@ -122,7 +122,7 @@ class Challenge:
 
     @staticmethod
     def format_ranking(
-            ranking: List[Dict[str, Any]], new_message: str, messages: List[str], message: str, bold: bool
+            ranking: List[Dict[str, Any]], new_message: str, messages: List[str], message: str, offset: int = 0
     ) -> Tuple[str, str]:
         """Format a list of scores into a string and truncate it if it exceeds the character limit.
 
@@ -131,28 +131,33 @@ class Challenge:
             new_message (str): the new message to append the formatted scores to
             messages (List[str]): a list of messages
             message (str): the current message being built
-            bold (int): the character limit
+            offset (int): the rank offset
 
         Returns:
             Tuple[str, str]: a tuple containing the updated message and new_message
         """
         for i, rank in enumerate(ranking):
-            if bold:
-                new_message += "**{}.** **{}** ".format(i+1, rank['name'])
+            if offset == 0:
+                new_message += "**{}.** **{}** ".format(i + 1, rank['name'].split('/')[0])
             else:
-                new_message += "{}. {} ".format(i + 1, rank['name'])
+                new_message += "{}. {} ".format(i + 1 + offset, rank['name'].split('/')[0])
 
             for stat in rank['score']['stats']:
                 new_message += "[{}] ".format(stat)
-            new_message += " {} {}-{} {} Q{} {}:{}\n".format(
+
+            new_message += " {} {}-{} {} ".format(
                 rank['score']['game']['awayTeam'],
                 rank['score']['game']['awayScore'],
                 rank['score']['game']['homeScore'],
                 rank['score']['game']['homeTeam'],
-                rank['score']['game']['quarter'],
-                int(rank['score']['game']['clock'][2:4]),
-                rank['score']['game']['clock'][5:-4]
             )
+
+            if rank['score']['game']['statusText'] == "Final":
+                new_message += "Final\n"
+            else:
+                new_message += "**{}**\n".format(
+                    rank['score']['game']['statusText'],
+                )
 
             message, new_message = truncate_message(messages, message, new_message, 1950)
 
