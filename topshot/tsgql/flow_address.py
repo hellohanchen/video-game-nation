@@ -31,7 +31,7 @@ async def get_flow_address(topshot_username):
     try:
         result = await client.execute_async(query, variable_values={"input": {"username": topshot_username}})
     except TransportQueryError:
-        raise NameError("Can't find user {}".format(topshot_username))
+        raise NameError("Can't find topshot user {}".format(topshot_username))
 
     return result['getUserProfileByUsername']['publicInfo']['flowAddress']
 
