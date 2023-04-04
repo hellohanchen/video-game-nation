@@ -1,20 +1,20 @@
 {
-  "message": "TOPSHOT FLASH CHALLENGE WEEKEND 03/31-04/02",
+  "message": "TOPSHOT FLASH CHALLENGE 04/04",
   "challenges": [
     {
       "id": 1,
-      "title": "THE IQ RAZZLE DAZZLE",
+      "title": "THE MARKELLE FULTZ PUTBACK POSTER CHALLENGE",
       "buckets": [
         {
-          "description": "ADD 1 Rare, Legendary, or Top Shot Debut Moment of each player in the top 5 in Assists for the Eastern Conference in a single game this weekend.",
+          "description": "ADD 1 Moment of the player with the most points scored for the Magic on Tuesday.",
           "is_wildcard": false,
           "type": "LB",
-          "count": 5,
+          "count": 1,
           "is_team": false,
-          "team_filter": "EC",
+          "team_filter": "ORL",
           "tier_breakers": [
             {
-              "stats": "AST",
+              "stats": "PTS",
               "order": "DESC"
             },
             {
@@ -22,7 +22,7 @@
               "order": "DESC"
             },
             {
-              "stats": "PTS",
+              "stats": "FTM",
               "order": "DESC"
             },
             {
@@ -30,22 +30,19 @@
               "order": "DESC"
             }
           ],
-          "dates": [
-            "03/31/2023",
-            "04/01/2023",
-            "04/02/2023"
+          "games": [
+            "0022201178"
           ]
         },
         {
-          "description": "ADD 1 Rare, Legendary, or Top Shot Debut Moment of each player in the top 5 in Steals for the Western Conference in a single game this weekend.",
+          "description": "ADD 1 Moment of each player in the top 5 in points scored on Tuesday.",
           "is_wildcard": false,
           "type": "LB",
           "count": 5,
           "is_team": false,
-          "team_filter": "WC",
           "tier_breakers": [
             {
-              "stats": "STL",
+              "stats": "PTS",
               "order": "DESC"
             },
             {
@@ -53,7 +50,7 @@
               "order": "DESC"
             },
             {
-              "stats": "PTS",
+              "stats": "FTM",
               "order": "DESC"
             },
             {
@@ -62,9 +59,7 @@
             }
           ],
           "dates": [
-            "03/31/2023",
-            "04/01/2023",
-            "04/02/2023"
+            "04/04/2023"
           ]
         }
       ]
