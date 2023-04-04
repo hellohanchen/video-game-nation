@@ -56,4 +56,10 @@ class TeamFilter:
         if self.tag == "WC":
             return teams.intersection(WEST)
 
+        if self.tag in EAST or self.tag in WEST:
+            if self.tag in teams:
+                return {self.tag}
+            else:
+                return set()
+
         return teams
