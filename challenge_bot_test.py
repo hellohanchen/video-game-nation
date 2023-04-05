@@ -7,7 +7,7 @@ import discord
 from discord.ext import commands, tasks
 from dotenv import load_dotenv
 
-from nba.stats import get_scoreboard
+from nba.games import get_scoreboard
 from topshot.challenge.challenge import Challenge
 
 from datetime import datetime

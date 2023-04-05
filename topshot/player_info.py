@@ -4,7 +4,7 @@ import pathlib
 
 
 def load_player_data():
-    with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "resource/detailed_players.json"), 'r') as player_file:
+    with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "result/detailed_players.json"), 'r') as player_file:
         return json.load(player_file)
 
 

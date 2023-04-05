@@ -1,6 +1,8 @@
 import json
+import os
+import pathlib
 
-with open('scheduleLeagueV2.json', 'r') as schedule_file:
+with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "resource/scheduleLeagueV2.json"), 'r') as schedule_file:
     schedule_json = json.load(schedule_file)
 
     result = {}
@@ -12,5 +14,5 @@ with open('scheduleLeagueV2.json', 'r') as schedule_file:
                 'awayTeam': game['awayTeam']['teamTricode']
             }
 
-    with open('game_teams.json', 'w') as output_file:
+    with open('results/game_teams.json', 'w') as output_file:
         json.dump(result, output_file, indent=2)

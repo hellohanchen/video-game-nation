@@ -250,7 +250,7 @@
     "MVP": false,
     "CY": false,
     "TEAM": false,
-    "CR": false,
+    "CR": true,
     "RM": false,
     "tier": "Legendary"
   },
@@ -301,7 +301,7 @@
     "MVP": false,
     "CY": false,
     "TEAM": false,
-    "CR": false,
+    "CR": true,
     "RM": false,
     "tier": "Legendary"
   },
@@ -38706,7 +38706,7 @@
     "TEAM": false,
     "CR": false,
     "RM": false,
-    "tier": "Unknown"
+    "tier": "Common"
   },
   {
     "flowID": 1238,
@@ -38740,7 +38740,7 @@
     "TEAM": false,
     "CR": false,
     "RM": false,
-    "tier": "Unknown"
+    "tier": "Common"
   },
   {
     "flowID": 1237,
@@ -38774,7 +38774,7 @@
     "TEAM": false,
     "CR": false,
     "RM": false,
-    "tier": "Unknown"
+    "tier": "Common"
   },
   {
     "flowID": 1236,
@@ -38825,7 +38825,7 @@
     "TEAM": false,
     "CR": false,
     "RM": false,
-    "tier": "Unknown"
+    "tier": "Common"
   },
   {
     "flowID": 1234,
@@ -38852,14 +38852,14 @@
     "playType": "Assist",
     "playDate": "2021-04-20",
     "TSD": false,
-    "RY": false,
+    "RY": true,
     "RP": false,
     "MVP": false,
     "CY": false,
     "TEAM": false,
     "CR": false,
-    "RM": false,
-    "tier": "Unknown"
+    "RM": true,
+    "tier": "Common"
   },
   {
     "flowID": 1233,
@@ -38893,7 +38893,7 @@
     "TEAM": false,
     "CR": false,
     "RM": false,
-    "tier": "Unknown"
+    "tier": "Common"
   },
   {
     "flowID": 1232,
@@ -38944,7 +38944,7 @@
     "TEAM": false,
     "CR": false,
     "RM": false,
-    "tier": "Unknown"
+    "tier": "Common"
   },
   {
     "flowID": 1230,
@@ -38970,7 +38970,7 @@
     "playerID": 201949,
     "playType": "Dunk",
     "playDate": "2021-05-05",
-    "TSD": false,
+    "TSD": true,
     "RY": false,
     "RP": false,
     "MVP": false,
@@ -38978,7 +38978,7 @@
     "TEAM": false,
     "CR": false,
     "RM": false,
-    "tier": "Unknown"
+    "tier": "Common"
   },
   {
     "flowID": 1229,
@@ -39012,7 +39012,7 @@
     "TEAM": false,
     "CR": false,
     "RM": false,
-    "tier": "Unknown"
+    "tier": "Common"
   },
   {
     "flowID": 1228,
@@ -39046,7 +39046,7 @@
     "TEAM": false,
     "CR": false,
     "RM": false,
-    "tier": "Unknown"
+    "tier": "Common"
   },
   {
     "flowID": 1227,
@@ -39072,7 +39072,7 @@
     "playerID": 1627774,
     "playType": "Dunk",
     "playDate": "2021-02-01",
-    "TSD": false,
+    "TSD": true,
     "RY": false,
     "RP": false,
     "MVP": false,
@@ -39080,7 +39080,7 @@
     "TEAM": false,
     "CR": false,
     "RM": false,
-    "tier": "Unknown"
+    "tier": "Common"
   },
   {
     "flowID": 1226,
@@ -39148,7 +39148,7 @@
     "TEAM": false,
     "CR": false,
     "RM": false,
-    "tier": "Unknown"
+    "tier": "Common"
   },
   {
     "flowID": 1223,
@@ -39182,7 +39182,7 @@
     "TEAM": false,
     "CR": false,
     "RM": false,
-    "tier": "Unknown"
+    "tier": "Common"
   },
   {
     "flowID": 1222,
@@ -39216,7 +39216,7 @@
     "TEAM": false,
     "CR": false,
     "RM": false,
-    "tier": "Unknown"
+    "tier": "Common"
   },
   {
     "flowID": 1221,
@@ -39267,7 +39267,7 @@
     "TEAM": false,
     "CR": false,
     "RM": false,
-    "tier": "Unknown"
+    "tier": "Common"
   },
   {
     "flowID": 1219,
@@ -39301,7 +39301,7 @@
     "TEAM": false,
     "CR": false,
     "RM": false,
-    "tier": "Unknown"
+    "tier": "Common"
   },
   {
     "flowID": 1218,
@@ -39327,7 +39327,7 @@
     "playerID": 1628425,
     "playType": "Dunk",
     "playDate": "2021-04-10",
-    "TSD": false,
+    "TSD": true,
     "RY": false,
     "RP": false,
     "MVP": false,
@@ -39335,7 +39335,7 @@
     "TEAM": false,
     "CR": false,
     "RM": false,
-    "tier": "Unknown"
+    "tier": "Common"
   },
   {
     "flowID": 1217,
@@ -39379,14 +39379,14 @@
     "playType": "Dunk",
     "playDate": "2021-03-25",
     "TSD": false,
-    "RY": false,
+    "RY": true,
     "RP": false,
     "MVP": false,
     "CY": false,
     "TEAM": false,
     "CR": false,
-    "RM": false,
-    "tier": "Unknown"
+    "RM": true,
+    "tier": "Common"
   },
   {
     "flowID": 1215,
@@ -39412,7 +39412,7 @@
     "playerID": 1629610,
     "playType": "Dunk",
     "playDate": "2021-05-09",
-    "TSD": false,
+    "TSD": true,
     "RY": false,
     "RP": false,
     "MVP": false,
@@ -39420,7 +39420,7 @@
     "TEAM": false,
     "CR": false,
     "RM": false,
-    "tier": "Unknown"
+    "tier": "Common"
   },
   {
     "flowID": 1213,
@@ -39447,14 +39447,14 @@
     "playType": "Assist",
     "playDate": "2021-04-16",
     "TSD": false,
-    "RY": false,
+    "RY": true,
     "RP": false,
     "MVP": false,
     "CY": false,
     "TEAM": false,
     "CR": false,
-    "RM": false,
-    "tier": "Unknown"
+    "RM": true,
+    "tier": "Common"
   },
   {
     "flowID": 1212,
@@ -39480,7 +39480,7 @@
     "playerID": 1628408,
     "playType": "Dunk",
     "playDate": "2021-04-08",
-    "TSD": false,
+    "TSD": true,
     "RY": false,
     "RP": false,
     "MVP": false,
@@ -39488,7 +39488,7 @@
     "TEAM": false,
     "CR": false,
     "RM": false,
-    "tier": "Unknown"
+    "tier": "Common"
   },
   {
     "flowID": 1211,
@@ -39531,7 +39531,7 @@
     "playerID": 1628392,
     "playType": "Dunk",
     "playDate": "2021-04-18",
-    "TSD": false,
+    "TSD": true,
     "RY": false,
     "RP": false,
     "MVP": false,
@@ -39539,7 +39539,7 @@
     "TEAM": false,
     "CR": false,
     "RM": false,
-    "tier": "Unknown"
+    "tier": "Common"
   },
   {
     "flowID": 1209,
@@ -39573,7 +39573,7 @@
     "TEAM": false,
     "CR": false,
     "RM": false,
-    "tier": "Unknown"
+    "tier": "Common"
   },
   {
     "flowID": 1208,
@@ -39599,7 +39599,7 @@
     "playerID": 1629750,
     "playType": "Dunk",
     "playDate": "2021-05-04",
-    "TSD": false,
+    "TSD": true,
     "RY": false,
     "RP": false,
     "MVP": false,
@@ -39607,7 +39607,7 @@
     "TEAM": false,
     "CR": false,
     "RM": false,
-    "tier": "Unknown"
+    "tier": "Common"
   },
   {
     "flowID": 1207,
@@ -39641,7 +39641,7 @@
     "TEAM": false,
     "CR": false,
     "RM": false,
-    "tier": "Unknown"
+    "tier": "Common"
   },
   {
     "flowID": 1206,
@@ -40032,7 +40032,7 @@
     "TEAM": false,
     "CR": false,
     "RM": false,
-    "tier": "Unknown"
+    "tier": "Common"
   },
   {
     "flowID": 1184,
@@ -40389,7 +40389,7 @@
     "TEAM": false,
     "CR": false,
     "RM": false,
-    "tier": "Unknown"
+    "tier": "Common"
   },
   {
     "flowID": 1164,
@@ -41239,7 +41239,7 @@
     "TEAM": false,
     "CR": false,
     "RM": false,
-    "tier": "Unknown"
+    "tier": "Rare"
   },
   {
     "flowID": 1115,
@@ -41324,7 +41324,7 @@
     "TEAM": false,
     "CR": false,
     "RM": false,
-    "tier": "Unknown"
+    "tier": "Rare"
   },
   {
     "flowID": 1111,
@@ -41390,9 +41390,9 @@
     "MVP": false,
     "CY": false,
     "TEAM": false,
-    "CR": false,
+    "CR": true,
     "RM": false,
-    "tier": "Unknown"
+    "tier": "Rare"
   },
   {
     "flowID": 1108,
@@ -41443,7 +41443,7 @@
     "TEAM": false,
     "CR": false,
     "RM": false,
-    "tier": "Unknown"
+    "tier": "Rare"
   },
   {
     "flowID": 1106,
@@ -41477,7 +41477,7 @@
     "TEAM": false,
     "CR": false,
     "RM": false,
-    "tier": "Unknown"
+    "tier": "Rare"
   },
   {
     "flowID": 1105,
@@ -41562,7 +41562,7 @@
     "TEAM": false,
     "CR": false,
     "RM": false,
-    "tier": "Unknown"
+    "tier": "Rare"
   },
   {
     "flowID": 1101,
@@ -41596,7 +41596,7 @@
     "TEAM": false,
     "CR": false,
     "RM": false,
-    "tier": "Unknown"
+    "tier": "Rare"
   },
   {
     "flowID": 1100,
@@ -41674,14 +41674,14 @@
     "playType": "Dunk",
     "playDate": "2021-01-08",
     "TSD": false,
-    "RY": false,
+    "RY": true,
     "RP": false,
     "MVP": false,
     "CY": false,
     "TEAM": false,
     "CR": false,
-    "RM": false,
-    "tier": "Unknown"
+    "RM": true,
+    "tier": "Rare"
   },
   {
     "flowID": 1096,
@@ -41783,7 +41783,7 @@
     "TEAM": false,
     "CR": false,
     "RM": false,
-    "tier": "Unknown"
+    "tier": "Rare"
   },
   {
     "flowID": 1091,
@@ -41936,7 +41936,7 @@
     "TEAM": false,
     "CR": false,
     "RM": false,
-    "tier": "Unknown"
+    "tier": "Rare"
   },
   {
     "flowID": 1083,
@@ -41963,14 +41963,14 @@
     "playType": "Dunk",
     "playDate": "2021-01-05",
     "TSD": false,
-    "RY": false,
+    "RY": true,
     "RP": false,
     "MVP": false,
     "CY": false,
     "TEAM": false,
     "CR": false,
-    "RM": false,
-    "tier": "Unknown"
+    "RM": true,
+    "tier": "Rare"
   },
   {
     "flowID": 1082,
@@ -42082,14 +42082,14 @@
     "playType": "Dunk",
     "playDate": "2021-01-12",
     "TSD": false,
-    "RY": false,
+    "RY": true,
     "RP": false,
     "MVP": false,
     "CY": false,
     "TEAM": false,
     "CR": false,
-    "RM": false,
-    "tier": "Unknown"
+    "RM": true,
+    "tier": "Rare"
   },
   {
     "flowID": 1076,
@@ -42121,9 +42121,9 @@
     "MVP": false,
     "CY": false,
     "TEAM": false,
-    "CR": false,
+    "CR": true,
     "RM": false,
-    "tier": "Unknown"
+    "tier": "Rare"
   },
   {
     "flowID": 1075,
@@ -42259,7 +42259,7 @@
     "TEAM": false,
     "CR": false,
     "RM": false,
-    "tier": "Unknown"
+    "tier": "Rare"
   },
   {
     "flowID": 1069,
@@ -42310,7 +42310,7 @@
     "TEAM": false,
     "CR": false,
     "RM": false,
-    "tier": "Unknown"
+    "tier": "Rare"
   },
   {
     "flowID": 1067,
@@ -43765,14 +43765,14 @@
     "playType": "Layup",
     "playDate": "2021-01-02",
     "TSD": false,
-    "RY": false,
+    "RY": true,
     "RP": false,
     "MVP": false,
     "CY": false,
     "TEAM": false,
     "CR": false,
-    "RM": false,
-    "tier": "Unknown"
+    "RM": true,
+    "tier": "Rare"
   },
   {
     "flowID": 982,
@@ -45761,7 +45761,7 @@
     "TEAM": false,
     "CR": false,
     "RM": false,
-    "tier": "Unknown"
+    "tier": "Common"
   },
   {
     "flowID": 867,
@@ -46390,7 +46390,7 @@
     "TEAM": false,
     "CR": false,
     "RM": false,
-    "tier": "Unknown"
+    "tier": "Rare"
   },
   {
     "flowID": 831,
@@ -48694,7 +48694,7 @@
     "playerID": 1629659,
     "playType": "Steal",
     "playDate": "2021-01-11",
-    "TSD": false,
+    "TSD": true,
     "RY": false,
     "RP": false,
     "MVP": false,
@@ -48702,7 +48702,7 @@
     "TEAM": false,
     "CR": false,
     "RM": false,
-    "tier": "Unknown"
+    "tier": "Common"
   },
   {
     "flowID": 696,
@@ -49493,7 +49493,7 @@
     "playerID": 1628374,
     "playType": "Dunk",
     "playDate": "2021-01-17",
-    "TSD": false,
+    "TSD": true,
     "RY": false,
     "RP": false,
     "MVP": false,
@@ -49501,7 +49501,7 @@
     "TEAM": false,
     "CR": false,
     "RM": false,
-    "tier": "Unknown"
+    "tier": "Common"
   },
   {
     "flowID": 650,
@@ -54916,15 +54916,15 @@
     "playerID": 1629680,
     "playType": "Block",
     "playDate": "2020-08-07",
-    "TSD": false,
-    "RY": false,
+    "TSD": true,
+    "RY": true,
     "RP": false,
     "MVP": false,
     "CY": false,
     "TEAM": false,
     "CR": false,
-    "RM": false,
-    "tier": "Unknown"
+    "RM": true,
+    "tier": "Common"
   },
   {
     "flowID": 331,

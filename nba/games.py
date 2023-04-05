@@ -4,8 +4,8 @@ import pathlib
 
 from nba_api.live.nba.endpoints import scoreboard, boxscore
 
-GAME_SCHEDULE = json.load(open(os.path.join(pathlib.Path(__file__).parent.resolve(), 'game_dates.json'), 'r'))
-GAME_TEAMS = json.load(open(os.path.join(pathlib.Path(__file__).parent.resolve(), 'game_teams.json'), 'r'))
+GAME_SCHEDULE = json.load(open(os.path.join(pathlib.Path(__file__).parent.resolve(), 'results/game_dates.json'), 'r'))
+GAME_TEAMS = json.load(open(os.path.join(pathlib.Path(__file__).parent.resolve(), 'results/game_teams.json'), 'r'))
 
 
 def get_scoreboard():

@@ -2,14 +2,8 @@ import asyncio
 import json
 import os
 import pathlib
-import random
-import time
 
-import unidecode
-from flow_py_sdk import flow_client, cadence, Script
-
-from topshot.ts_info import TOPSHOT_SET_INFO, get_player_flow_id_str, TOPSHOT_TEAM_INFO
-from topshot.tsgql import flow_address, listing_price
+from flow_py_sdk import flow_client, Script
 
 
 async def get_all_plays():
@@ -66,7 +60,7 @@ async def get_all_plays():
 
             player_plays[player_name][date][category] = play_item.key.value
 
-        with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "resource/cadence_plays.json"), 'w') as output_file:
+        with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "result/cadence_plays.json"), 'w') as output_file:
             json.dump(player_plays, output_file, indent=2)
 
         return player_plays

@@ -2,7 +2,7 @@ import json
 import os
 import pathlib
 
-from topshot.play_info import load_detailed_play_data_key_flowid, load_detailed_play_data_key_uid
+from topshot.load_plays import load_detailed_play_data_key_flowid, load_detailed_play_data_key_uid
 
 BADGES = {
     "topShotDebutBadge": "TSD",
@@ -62,6 +62,7 @@ def enrich_detailed_plays(detailed_plays):
     print("Not found play uids count: {}, list: {}".format(len(not_found_play_uids), ', '.join(not_found_play_uids)))
 
 
+load_detailed_play_data_key_flowid()
 detailed_plays = load_detailed_play_data_key_uid()
 enrich_detailed_plays(detailed_plays)
 

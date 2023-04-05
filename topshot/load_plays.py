@@ -4,7 +4,7 @@ import pathlib
 
 
 def load_detailed_play_data_key_flowid():
-    with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "resource/detailed_plays_fixed.json"), 'r') as play_file:
+    with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "result/detailed_plays_fixed.json"), 'r') as play_file:
         loaded = json.load(play_file)
 
         result = {}
@@ -20,17 +20,17 @@ def load_detailed_play_data_key_flowid():
                 result[flow_id]['uuid'] = play_uid
 
         not_found = []
-        for i in range(1, 3550):
+        for i in range(1, 3545):
             if i not in result:
                 not_found.append(str(i))
 
         print("Loaded moments count: {}".format(len(result)))
         print("Duplicated uuids count: {}, list: {}".format(len(dupe_play_uuids), ','.join(dupe_play_flow_ids)))
-        print("Not found flow ids: {}".format(','.join(not_found)))
+        print("Not found flow ids count: {} list: {}".format(len(not_found), ','.join(not_found)))
 
         return result
 
 
 def load_detailed_play_data_key_uid():
-    with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "resource/detailed_plays_fixed.json"), 'r') as play_file:
+    with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "result/detailed_plays_fixed.json"), 'r') as play_file:
         return json.load(play_file)

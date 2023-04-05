@@ -24,14 +24,14 @@ TIER_MAP = {
 
 async def load_player_data():
     result = {}
-    with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "resource/players.json"), 'r') as player_file:
+    with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "result/players.json"), 'r') as player_file:
         data = json.load(player_file)
         for player in data['players']:
             result[player['playerID']] = {
                 "displayName": player['label']
             }
 
-    with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "resource/players_2.json"), 'r') as player_file:
+    with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "result/players_2.json"), 'r') as player_file:
         data = json.load(player_file)
         for player in data['players']:
             if int(player['id']) not in result:
@@ -55,10 +55,10 @@ async def load_player_data():
                     for t in tiers:
                         result[player_id][SERIES_MAP[s_id] + TIER_MAP[t]] = True
             except:
-                with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "resource/detailed_players.json"),'w') as output:
+                with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "result/detailed_players.json"), 'w') as output:
                     json.dump(result, output, indent=2)
 
-    with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "resource/detailed_players.json"), 'w') as output:
+    with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "result/detailed_players.json"), 'w') as output:
         json.dump(result, output, indent=2)
 
 
