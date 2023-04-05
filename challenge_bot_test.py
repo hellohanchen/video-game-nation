@@ -94,7 +94,7 @@ async def get_current_challenge():
         if channel.id not in PREVIOUS_MESSAGE_IDS:
             PREVIOUS_MESSAGE_IDS[channel.id] = []
         try:
-            for i in range(0, len(PREVIOUS_MESSAGE_IDS[channel.id])):
+            for i in range(0, min(len(messages), len(PREVIOUS_MESSAGE_IDS[channel.id]))):
                 prev_message = await channel.fetch_message(PREVIOUS_MESSAGE_IDS[channel.id][i])
                 await prev_message.edit(content=messages[i])
 
