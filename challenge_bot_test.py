@@ -30,7 +30,7 @@ bot = commands.Bot(command_prefix='/', intents=intents)
 
 
 def load_challenges():
-    with open(os.path.join(pathlib.Path(__file__).parent.resolve(), 'topshot/challenge/resources/test.json'),
+    with open(os.path.join(pathlib.Path(__file__).parent.resolve(), 'topshot/challenge/resource/test.json'),
               'r') as json_file:
         j = json.load(json_file)
         return j['message'], [Challenge.build_from_dict(challenge) for challenge in j['challenges']]

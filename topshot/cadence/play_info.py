@@ -1,7 +1,11 @@
 import asyncio
+import json
+import os
+import pathlib
 import random
 import time
 
+import unidecode
 from flow_py_sdk import flow_client, cadence, Script
 
 from topshot.ts_info import TOPSHOT_SET_INFO, get_player_flow_id_str, TOPSHOT_TEAM_INFO
@@ -13,13 +17,19 @@ async def get_all_plays():
         code="""
                 import TopShot from 0x0b2a3299cc857e29
 
-                pub fun main(): {UInt32: String} {
+                pub fun main(): {UInt32:{String:String}} {
                     let plays = TopShot.getAllPlays()
 
-                    let res: {UInt32: String} = {}                        
+                    let res: {UInt32:{String:String}} = {}                        
 
                     for play in plays {
-                        res.insert(key: play.playID, play.identifier)
+                        res.insert(key: play.playID, {})
+                        
+                        let metadata = TopShot.getPlayMetaData(playID: play.playID)!
+                        
+                        res[play.playID]!.insert(key: "FullName", metadata["FullName"] ?? metadata["TeamAtMoment"]!)
+                        res[play.playID]!.insert(key: "DateOfMoment", metadata["DateOfMoment"] ?? "")
+                        res[play.playID]!.insert(key: "PlayCategory", metadata["PlayCategory"] ?? "")
                     }
 
                     return res
@@ -36,26 +46,33 @@ async def get_all_plays():
             # , block_id
             # , block_height
         )
-        sets = {}
 
-        for set_item in complex_script.value:
-            set_id = str(set_item.key)
-            sets[set_id] = {}
+        player_plays = {}
 
-            for play_item in set_item.value.value:
-                play_id = str(play_item.key)
-                sets[set_id][play_id] = {}
+        for play_item in complex_script.value:
+            for field in play_item.value.value:
+                if field.key.value == "FullName":
+                    player_name = field.value.value
+                if field.key.value == "DateOfMoment":
+                    date = field.value.value[:10]
+                if field.key.value == "PlayCategory":
+                    category = field.value.value
 
-                for play_info in play_item.value.value:
-                    sets[set_id][play_id][str(play_info.key)] = str(play_info.value)
+            if player_name not in player_plays:
+                player_plays[player_name] = {}
 
-    return sets
+            if date not in player_plays[player_name]:
+                player_plays[player_name][date] = {}
+
+            player_plays[player_name][date][category] = play_item.key.value
+
+        with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "resource/cadence_plays.json"), 'w') as output_file:
+            json.dump(player_plays, output_file, indent=2)
+
+        return player_plays
 
 
 if __name__ == '__main__':
     loop = asyncio.get_event_loop()
-    c1 = loop.run_until_complete(get_all_plays())
+    loop.run_until_complete(get_all_plays())
     loop.close()
-
-    print(c1)
-
