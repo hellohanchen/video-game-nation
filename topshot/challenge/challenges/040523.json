@@ -1,19 +1,19 @@
 {
-  "message": "FINAL REGULAR SEASON CHALLENGE",
+  "message": "TOPSHOT FLASH CHALLENGE 04/05",
   "challenges": [
     {
       "id": 1,
-      "title": "CJ MCCOLLUM’S RECORD BREAKING 3!",
+      "title": "INTERCEPTED! THE KELDON JOHNSON CHALLENGE",
       "buckets": [
         {
-          "description": "FRIDAY'S 3-POINT LEADER",
+          "description": "ADD 1 Series 4 Moment of every player in the top 3 in Points tonight.",
           "is_wildcard": false,
           "type": "LB",
-          "count": 1,
+          "count": 3,
           "is_team": false,
           "tier_breakers": [
             {
-              "stats": "3PT",
+              "stats": "PTS",
               "order": "DESC"
             },
             {
@@ -21,7 +21,7 @@
               "order": "DESC"
             },
             {
-              "stats": "PTS",
+              "stats": "FTM",
               "order": "DESC"
             },
             {
@@ -30,18 +30,18 @@
             }
           ],
           "dates": [
-            "04/07/2023"
+            "04/05/2023"
           ]
         },
         {
-          "description": "SATURDAY'S 3-POINT LEADER",
+          "description": "ADD 1 Series 4 Moment of every player in the top 3 in Assists tonight.",
           "is_wildcard": false,
           "type": "LB",
-          "count": 1,
+          "count": 3,
           "is_team": false,
           "tier_breakers": [
             {
-              "stats": "3PT",
+              "stats": "AST",
               "order": "DESC"
             },
             {
@@ -49,7 +49,7 @@
               "order": "DESC"
             },
             {
-              "stats": "PTS",
+              "stats": "FTM",
               "order": "DESC"
             },
             {
@@ -58,18 +58,18 @@
             }
           ],
           "dates": [
-            "04/08/2023"
+            "04/05/2023"
           ]
         },
         {
-          "description": "SUNDAY'S 3-POINT LEADER",
+          "description": "ADD 1 Series 4 Moment of every player in the top 3 in Rebounds tonight.",
           "is_wildcard": false,
           "type": "LB",
-          "count": 1,
+          "count": 3,
           "is_team": false,
           "tier_breakers": [
             {
-              "stats": "3PT",
+              "stats": "REB",
               "order": "DESC"
             },
             {
@@ -77,7 +77,7 @@
               "order": "DESC"
             },
             {
-              "stats": "PTS",
+              "stats": "FTM",
               "order": "DESC"
             },
             {
@@ -86,7 +86,7 @@
             }
           ],
           "dates": [
-            "04/09/2023"
+            "04/05/2023"
           ]
         }
       ]
