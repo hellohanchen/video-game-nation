@@ -7778,7 +7778,7 @@
     "S3Rookie": false,
     "S4": true,
     "S4C": true,
-    "S4F": false,
+    "S4F": true,
     "S4R": true,
     "S4L": false,
     "S4Rookie": false
@@ -13968,7 +13968,7 @@
     "S3Rookie": false,
     "S4": true,
     "S4C": true,
-    "S4F": false,
+    "S4F": true,
     "S4R": true,
     "S4L": false,
     "S4Rookie": false

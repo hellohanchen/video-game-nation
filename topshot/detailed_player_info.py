@@ -55,10 +55,10 @@ async def load_player_data():
                     for t in tiers:
                         result[player_id][SERIES_MAP[s_id] + TIER_MAP[t]] = True
             except:
-                with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "result/detailed_players.json"), 'w') as output:
+                with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "result/player_moment_info.json"), 'w') as output:
                     json.dump(result, output, indent=2)
 
-    with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "result/detailed_players.json"), 'w') as output:
+    with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "result/player_moment_info.json"), 'w') as output:
         json.dump(result, output, indent=2)
 
 

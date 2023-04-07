@@ -1,5 +1,6 @@
-from topshot.player_info import TS_PLAYER_INFO
 from typing import List, Set
+
+from topshot.ts_info import TS_PLAYER_MOMENT_INFO
 
 
 class TopshotFilter:
@@ -24,11 +25,11 @@ class TopshotFilter:
         """
         filtered = set()
         for player_id in player_ids:
-            if str(player_id) not in TS_PLAYER_INFO:
+            if player_id not in TS_PLAYER_MOMENT_INFO:
                 continue
 
             for tag in self.tags:
-                if not TS_PLAYER_INFO[str(player_id)][tag]:
+                if not TS_PLAYER_MOMENT_INFO[player_id][tag]:
                     continue
 
             filtered.add(player_id)

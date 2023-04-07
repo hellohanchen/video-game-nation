@@ -2,7 +2,7 @@ import asyncio
 import random
 import time
 
-from topshot.cadence.collection import get_collection_for_trade
+from topshot.cadence.account_collection import get_collection_for_trade
 from topshot.ts_info import TS_SET_INFO, get_player_flow_id_str, TS_TEAM_NAME_TO_ID
 from topshot.tsgql.flow_address import get_flow_address
 from topshot.tsgql.listing_price import get_listing_prices
