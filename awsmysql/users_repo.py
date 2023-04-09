@@ -1,5 +1,5 @@
 from awsmysql.mysql_connection_pool import CNX_POOL
-from topshot.tsgql.flow_address import get_flow_address
+from topshot.tsgql.get_address import get_flow_address
 
 
 async def add_user(discord_id, topshot_username):

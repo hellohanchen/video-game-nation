@@ -2,10 +2,10 @@ import asyncio
 import random
 import time
 
-from topshot.cadence.account_collection import get_collection_for_trade
+from topshot.cadence.flow_collections import get_collection_for_trade
 from topshot.ts_info import TS_SET_INFO, get_player_flow_id_str, TS_TEAM_NAME_TO_ID
-from topshot.tsgql.flow_address import get_flow_address
-from topshot.tsgql.listing_price import get_listing_prices
+from topshot.tsgql.get_address import get_flow_address
+from topshot.tsgql.get_price import get_listing_prices
 
 
 def remove_dupes(c1, c2, series):
@@ -120,7 +120,7 @@ async def compare_moments(ts_user1, ts_user2, series):
 
 if __name__ == '__main__':
     loop = asyncio.get_event_loop()
-    c1, c2 = loop.run_until_complete(compare_moments("MingDynastyVase", "ubabu"))
+    c1, c2 = loop.run_until_complete(compare_moments("MingDynastyVase", "ubabu", 4))
     loop.close()
 
     print(c1)

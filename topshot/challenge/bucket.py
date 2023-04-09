@@ -1,6 +1,6 @@
 from enum import Enum
 
-from nba import games
+from nba import game_stats
 from topshot.challenge.player_filter import TopshotFilter
 from topshot.challenge.team_filter import TeamFilter
 from topshot.challenge.tier_breaker import TierBreaker

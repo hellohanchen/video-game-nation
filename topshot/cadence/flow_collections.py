@@ -73,7 +73,7 @@ async def get_collection_for_trade(address):
     return sets
 
 
-async def get_moment_play_counts(address):
+async def get_account_plays(address):
     script = Script(
         code="""
                 import TopShot from 0x0b2a3299cc857e29
@@ -126,4 +126,4 @@ async def get_moment_play_counts(address):
 
 
 if __name__ == '__main__':
-    asyncio.run(get_moment_play_counts("0xad955e5d8047ef82"))
+    asyncio.run(get_account_plays("0xad955e5d8047ef82"))

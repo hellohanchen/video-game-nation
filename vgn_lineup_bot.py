@@ -5,7 +5,9 @@ import discord
 from discord.ext import commands
 from dotenv import load_dotenv
 
-from awsmysql.users import add_user, get_user
+from awsmysql.collections_repo import upsert_collection
+from awsmysql.users_repo import add_user, get_user
+from topshot.cadence.flow_collections import get_account_plays
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
@@ -49,13 +51,24 @@ async def find_user_id(context, username):
         await context.channel.send(member.id)
 
 
-@bot.command(name='update', help="Update user's topshot collections info")
-async def verify_user(context):
+@bot.command(name='collection', help="Update user's topshot collections info")
+async def update_user_collection(context):
     user = context.message.author
     vgn_user = await get_user(user.id)
 
     if vgn_user is None:
-        await context.channel.send("Couldn't find your account.")
+        await context.channel.send("Account not found, contact admin for registration.")
+
+    try:
+        plays = get_account_plays(vgn_user[2])
+    except:
+        await context.channel.send("Failed to fetch collection, try again or contact admin.")
+        return
+
+    try:
+        await upsert_collection(vgn_user[0], plays)
+    except:
+        await context.channel.send("Failed to update database, try again or contact admin.")
 
     await context.channel.send("Updated!")
 

@@ -5,7 +5,8 @@ import discord
 from discord.ext import commands
 from dotenv import load_dotenv
 
-from awsmysql.users import add_user
+from awsmysql.collections_repo import get_user
+from awsmysql.users_repo import add_user
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')

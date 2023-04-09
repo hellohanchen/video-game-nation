@@ -63,13 +63,34 @@ def get_player_flow_id_str(player_fullname):
 
 
 def load_player_moment_info():
+    result = {}
+
     with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "result/player_moment_info.json"), 'r') as player_file:
         loaded = json.load(player_file)
 
-        result = {}
-
         for player_id in loaded:
             result[int(player_id)] = loaded[player_id]
+
+    with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "resource/current_nba_players.json"), 'r') as player_file:
+        loaded = json.load(player_file)
+
+        for player_id in loaded:
+            result[int(player_id)]['isNBA'] = loaded[player_id]
+
+    return result
+
+
+def load_enriched_plays():
+    with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "result/otm_enriched_plays_fixed.json"), 'r') as plays_file:
+        loaded = json.load(plays_file)
+
+        result = {}
+
+        for play in loaded['plays']:
+            if play['flowID'] in result:
+                continue
+
+            result[play['flowID']] = play
 
         return result
 
@@ -77,7 +98,8 @@ def load_player_moment_info():
 TS_SET_INFO = {}
 TS_PLAYER_NAME_TO_ID = {}
 TS_TEAM_NAME_TO_ID = {}
-TS_PLAYER_MOMENT_INFO = load_player_moment_info()
+TS_PLAYER_ID_MOMENTS = load_player_moment_info()
+TS_ENRICHED_PLAYS = load_enriched_plays()
 
 load_set_data()
 load_player_data()

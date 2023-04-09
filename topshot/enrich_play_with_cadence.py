@@ -3,7 +3,7 @@ import json
 import os
 import pathlib
 
-from topshot.cadence.all_plays import get_all_plays
+from topshot.cadence.flow_plays import get_all_plays
 
 BADGES = {
     "Top Shot Debut": "TSD",
