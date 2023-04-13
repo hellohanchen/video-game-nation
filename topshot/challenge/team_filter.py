@@ -30,7 +30,7 @@ class TeamFilter:
         Returns:
             Set[str]: A set of team IDs that passed the filter.
         """
-        if self.tag == "WIN":
+        if self.tag == "WIN" or self.tag == "LOSE":
             try:
                 game_boxscore = boxscore.BoxScore(game_id=game_id).get_dict()['game']
             except:
@@ -44,16 +44,28 @@ class TeamFilter:
             )
             if lead_team == "TIE":
                 return teams
-            else:
+
+            if self.tag == 'WIN':
                 if lead_team in teams:
                     return {lead_team}
                 else:
                     return set()
+            else:
+                if lead_team in teams:
+                    return set(teams) - {lead_team}
+                else:
+                    return set(teams)
 
         if self.tag == "EC":
             return teams.intersection(EAST)
 
         if self.tag == "WC":
             return teams.intersection(WEST)
+
+        if self.tag in EAST or self.tag in WEST:
+            if self.tag in teams:
+                return {self.tag}
+            else:
+                return set()
 
         return teams

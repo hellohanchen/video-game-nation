@@ -1,0 +1,68 @@
+{
+  "message": "TOPSHOT FLASH CHALLENGE 04/04",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "THE MARKELLE FULTZ PUTBACK POSTER CHALLENGE",
+      "buckets": [
+        {
+          "description": "ADD 1 Moment of the player with the most points scored for the Magic on Tuesday.",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "team_filter": "ORL",
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            },
+            {
+              "stats": "WIN",
+              "order": "DESC"
+            },
+            {
+              "stats": "FTM",
+              "order": "DESC"
+            },
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            }
+          ],
+          "games": [
+            "0022201178"
+          ]
+        },
+        {
+          "description": "ADD 1 Moment of each player in the top 5 in points scored on Tuesday.",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 5,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            },
+            {
+              "stats": "WIN",
+              "order": "DESC"
+            },
+            {
+              "stats": "FTM",
+              "order": "DESC"
+            },
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "04/04/2023"
+          ]
+        }
+      ]
+    }
+  ]
+}

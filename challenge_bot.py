@@ -30,15 +30,17 @@ bot = commands.Bot(command_prefix='/', intents=intents)
 
 
 def load_challenges():
-    with open(os.path.join(pathlib.Path(__file__).parent.resolve(), 'topshot/challenge/resource/test.json'),
-              'r') as json_file:
+    with open(os.path.join(
+            pathlib.Path(__file__).parent.resolve(),
+            'topshot/challenge/challenges/current.json'
+    ), 'r') as json_file:
         j = json.load(json_file)
         return j['message'], [Challenge.build_from_dict(challenge) for challenge in j['challenges']]
 
 
 START_MESSAGE, CHALLENGES = load_challenges()
 
-CHANNEL_NAMEs = ["🤖-mdv-flash-challenge-bot"]
+CHANNEL_NAMEs = ["🤖-mdv-flash-challenge-bot", "⚡-fc-tracker"]
 MESSAGE_CHANNELS = []
 START = False
 PREVIOUS_MESSAGE_IDS = {}
@@ -94,7 +96,7 @@ async def get_current_challenge():
         if channel.id not in PREVIOUS_MESSAGE_IDS:
             PREVIOUS_MESSAGE_IDS[channel.id] = []
         try:
-            for i in range(0, len(PREVIOUS_MESSAGE_IDS[channel.id])):
+            for i in range(0, min(len(messages), len(PREVIOUS_MESSAGE_IDS[channel.id]))):
                 prev_message = await channel.fetch_message(PREVIOUS_MESSAGE_IDS[channel.id][i])
                 await prev_message.edit(content=messages[i])
 

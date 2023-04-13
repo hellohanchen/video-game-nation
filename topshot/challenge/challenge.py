@@ -114,7 +114,7 @@ class Challenge:
             message, new_message = self.format_ranking(
                 ranking[hit:min(len(ranking), 20)], new_message, messages, message, hit)
 
-            new_message += "\n\n"
+            new_message += "\n"
 
         if message != "":
             messages.append(message)

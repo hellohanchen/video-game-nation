@@ -1,0 +1,95 @@
+{
+  "message": "TOPSHOT FLASH CHALLENGE 04/05",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "INTERCEPTED! THE KELDON JOHNSON CHALLENGE",
+      "buckets": [
+        {
+          "description": "ADD 1 Series 4 Moment of every player in the top 3 in Points tonight.",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 3,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            },
+            {
+              "stats": "WIN",
+              "order": "DESC"
+            },
+            {
+              "stats": "FTM",
+              "order": "DESC"
+            },
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "04/05/2023"
+          ]
+        },
+        {
+          "description": "ADD 1 Series 4 Moment of every player in the top 3 in Assists tonight.",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 3,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "AST",
+              "order": "DESC"
+            },
+            {
+              "stats": "WIN",
+              "order": "DESC"
+            },
+            {
+              "stats": "FTM",
+              "order": "DESC"
+            },
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "04/05/2023"
+          ]
+        },
+        {
+          "description": "ADD 1 Series 4 Moment of every player in the top 3 in Rebounds tonight.",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 3,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "REB",
+              "order": "DESC"
+            },
+            {
+              "stats": "WIN",
+              "order": "DESC"
+            },
+            {
+              "stats": "FTM",
+              "order": "DESC"
+            },
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "04/05/2023"
+          ]
+        }
+      ]
+    }
+  ]
+}
