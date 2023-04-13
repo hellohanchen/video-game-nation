@@ -48,8 +48,7 @@ def get_scoreboard_message():
     scoreboard = get_scoreboard()
 
     if len(scoreboard['games']) > 0:
-        message = ""
-        message += "-" * 40
+        message = "-" * 40
         message += "\n🏀 ***{}***\n".format(START_MESSAGE)
         message += "**Games on {}**\n\n".format(scoreboard['gameDate'])
 
@@ -63,6 +62,7 @@ def get_scoreboard_message():
             )
 
         message += "\n\n"
+        return message
 
     return "***No games, enjoy your day***.\n\n"
 
