@@ -5599,11 +5599,11 @@
   },
   "04/14/2023": {
     "0052200201": {
-      "homeTeam": null,
-      "awayTeam": null
+      "homeTeam": "MIA",
+      "awayTeam": "CHI"
     },
     "0052200211": {
-      "homeTeam": null,
+      "homeTeam": "MIN",
       "awayTeam": null
     }
   }

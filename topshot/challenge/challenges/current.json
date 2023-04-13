@@ -64,6 +64,18 @@
           ]
         },
         {
+          "description": "BURN 1 Moment from each team who does not make the playoffs on Wednesday.",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 2,
+          "is_team": true,
+          "team_filter": "LOSE",
+          "tier_breakers": [],
+          "dates": [
+            "04/12/2023"
+          ]
+        },
+        {
           "description": "ADD 1 Moment of the player with the most Points + Assists + Rebounds for each winning team on Friday. (EC)",
           "is_wildcard": false,
           "type": "LB",
@@ -119,6 +131,18 @@
           ],
           "games": [
             "0052200211"
+          ]
+        },
+        {
+          "description": "BURN 1 Moment from each team who does not make the playoffs on Friday.",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 2,
+          "is_team": true,
+          "team_filter": "LOSE",
+          "tier_breakers": [],
+          "dates": [
+            "04/14/2023"
           ]
         }
       ]
