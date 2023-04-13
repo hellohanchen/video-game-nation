@@ -38,7 +38,7 @@ def load_challenges():
 
 START_MESSAGE, CHALLENGES = load_challenges()
 
-CHANNEL_NAMEs = ["🏀-ts-fc"]
+CHANNEL_NAMEs = ["⚡-fc-tracker"]
 MESSAGE_CHANNELS = []
 START = False
 PREVIOUS_MESSAGE_IDS = {}

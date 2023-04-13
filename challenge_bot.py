@@ -38,7 +38,7 @@ def load_challenges():
 
 START_MESSAGE, CHALLENGES = load_challenges()
 
-CHANNEL_NAMEs = ["🤖-mdv-flash-challenge-bot"]
+CHANNEL_NAMEs = ["🤖-mdv-flash-challenge-bot", "⚡-fc-tracker"]
 MESSAGE_CHANNELS = []
 START = False
 PREVIOUS_MESSAGE_IDS = {}
