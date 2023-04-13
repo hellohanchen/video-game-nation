@@ -1,27 +1,28 @@
 {
-  "message": "FINAL REGULAR SEASON CHALLENGE",
+  "message": "PLAY-IN WEEK MADNESS!",
   "challenges": [
     {
       "id": 1,
-      "title": "CJ MCCOLLUM’S RECORD BREAKING 3!",
+      "title": "FOLLOW THE ACTION AND EARN A PACK!",
       "buckets": [
         {
-          "description": "FRIDAY'S 3-POINT LEADER",
+          "description": "ADD 1 Moment of the player with the most Points scored for each winning team on Tuesday. (EC)",
           "is_wildcard": false,
           "type": "LB",
           "count": 1,
           "is_team": false,
+          "team_filter": "WIN",
           "tier_breakers": [
             {
-              "stats": "3PT",
-              "order": "DESC"
-            },
-            {
-              "stats": "WIN",
-              "order": "DESC"
-            },
-            {
               "stats": "PTS",
+              "order": "DESC"
+            },
+            {
+              "stats": "AST,REB",
+              "order": "DESC"
+            },
+            {
+              "stats": "FTM",
               "order": "DESC"
             },
             {
@@ -29,27 +30,28 @@
               "order": "DESC"
             }
           ],
-          "dates": [
-            "04/07/2023"
+          "games": [
+            "0052200101"
           ]
         },
         {
-          "description": "SATURDAY'S 3-POINT LEADER",
+          "description": "ADD 1 Moment of the player with the most Points scored for each winning team on Tuesday. (WC)",
           "is_wildcard": false,
           "type": "LB",
           "count": 1,
           "is_team": false,
+          "team_filter": "WIN",
           "tier_breakers": [
             {
-              "stats": "3PT",
-              "order": "DESC"
-            },
-            {
-              "stats": "WIN",
-              "order": "DESC"
-            },
-            {
               "stats": "PTS",
+              "order": "DESC"
+            },
+            {
+              "stats": "AST,REB",
+              "order": "DESC"
+            },
+            {
+              "stats": "FTM",
               "order": "DESC"
             },
             {
@@ -57,27 +59,28 @@
               "order": "DESC"
             }
           ],
-          "dates": [
-            "04/08/2023"
+          "games": [
+            "0052200121"
           ]
         },
         {
-          "description": "SUNDAY'S 3-POINT LEADER",
+          "description": "ADD 1 Moment of the player with the most Points + Assists + Rebounds for each winning team on Friday. (EC)",
           "is_wildcard": false,
           "type": "LB",
           "count": 1,
           "is_team": false,
+          "team_filter": "WIN",
           "tier_breakers": [
             {
-              "stats": "3PT",
+              "stats": "PTS,AST,REB",
               "order": "DESC"
             },
             {
-              "stats": "WIN",
+              "stats": "AST,REB",
               "order": "DESC"
             },
             {
-              "stats": "PTS",
+              "stats": "FTM",
               "order": "DESC"
             },
             {
@@ -85,11 +88,41 @@
               "order": "DESC"
             }
           ],
-          "dates": [
-            "04/09/2023"
+          "games": [
+            "0052200201"
+          ]
+        },
+        {
+          "description": "ADD 1 Moment of the player with the most Points + Assists + Rebounds for each winning team on Friday. (WC)",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "team_filter": "WIN",
+          "tier_breakers": [
+            {
+              "stats": "PTS,AST,REB",
+              "order": "DESC"
+            },
+            {
+              "stats": "AST,REB",
+              "order": "DESC"
+            },
+            {
+              "stats": "FTM",
+              "order": "DESC"
+            },
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            }
+          ],
+          "games": [
+            "0052200211"
           ]
         }
       ]
     }
   ]
 }
+
