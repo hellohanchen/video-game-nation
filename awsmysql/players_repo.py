@@ -1,13 +1,14 @@
-import asyncio
 import random
 import time
+
+import pandas as pd
 
 from awsmysql.mysql_connection_pool import CNX_POOL
 from nba.player_stats import get_player_avg_stats
 from topshot.ts_info import TS_PLAYER_ID_MOMENTS
 
 
-async def add_player(id):
+def add_player(id):
     """
     Adds a new player to the vgn.players MySQL table, given their ID.
 
@@ -105,7 +106,7 @@ async def add_player(id):
     print("Inserted new player id: {}, name: {}.".format(id, full_name))
 
 
-async def get_player(player_id):
+def get_player(player_id):
     """
     Fetches the player with the specified ID from the vgn.players MySQL table, and returns a tuple with their data.
 
@@ -135,7 +136,59 @@ async def get_player(player_id):
         return None
 
 
-async def upload_players(player_ids):
+def search_players_stats(name, order_by=None):
+    try:
+        db_conn = CNX_POOL.get_connection()
+        query = \
+            "SELECT * FROM vgn.players WHERE last_name='{}' OR first_name='{}'".format(name.lower(), name.lower())
+
+        if order_by is not None:
+            query += " ORDER BY {} ".format(', '.join([o[0] + " " + o[1] + " " for o in order_by]))
+
+        # Execute SQL query and store results in a pandas dataframe
+        df = pd.read_sql(query, db_conn)
+
+        # Convert dataframe to a dictionary with headers
+        players = df.to_dict('records')
+
+        db_conn.close()
+
+        return players
+    except Exception:
+        return None
+
+
+def get_players_stats(player_ids, order_by=None):
+    try:
+        db_conn = CNX_POOL.get_connection()
+        query = \
+            "SELECT *, points_recent as points, three_pointers_recent as threePointersMade, " \
+            "defensive_rebounds_recent as reboundsDefensive, offensive_rebounds_recent as reboundsOffensive, " \
+            "assists_recent as assists, steals_recent as steals, blocks_recent as blocks, " \
+            "field_goal_misses_recent as fieldGoalsMissed, free_throw_misses_recent as freeThrowsMissed, " \
+            "turnovers_recent as turnovers, fouls_recent as foulsPersonal, wins_recent as win, " \
+            "double_double_recent as doubleDouble, triple_double_recent as tripleDouble, " \
+            "quadruple_double_avg as quadrupleDouble, five_double_recent as fiveDouble" \
+            " from vgn.players WHERE id IN ({}) " \
+                .format(', '.join([str(player_id) for player_id in player_ids]))
+
+        if order_by is not None:
+            query += " ORDER BY {} ".format(', '.join([o[0] + " " + o[1] + " " for o in order_by]))
+
+        # Execute SQL query and store results in a pandas dataframe
+        df = pd.read_sql(query, db_conn)
+
+        # Convert dataframe to a dictionary with headers
+        players = df.to_dict('records')
+
+        db_conn.close()
+
+        return players
+    except Exception:
+        return None
+
+
+def upload_players(player_ids):
     """
     Uploads player data to the vgn.players MySQL table, given a list of player IDs.
 
@@ -168,12 +221,12 @@ async def upload_players(player_ids):
     for player in player_ids:
         player_id = int(player)
 
-        if await get_player(player_id) is None:
-            await add_player(player_id)
+        if get_player(player_id) is None:
+            add_player(player_id)
             time.sleep(10.0)
 
 
-async def check_current_nba_players():
+def check_current_nba_players():
     """
     Checks if the current NBA players in the TS_PLAYER_ID_MOMENTS global variable are in the vgn.players MySQL table.
 
@@ -193,7 +246,7 @@ async def check_current_nba_players():
     """
     for player_id in TS_PLAYER_ID_MOMENTS:
         if TS_PLAYER_ID_MOMENTS[player_id]['isNBA']:
-            if await get_player(player_id) is None:
+            if get_player(player_id) is None:
                 print("Player not found: {}".format(player_id))
 
 
@@ -205,5 +258,4 @@ if __name__ == '__main__':
         1626220, 1628380, 2216
     ]
 
-    # asyncio.run(upload_players(not_found_ids))
-    asyncio.run(check_current_nba_players())
+    get_players_stats(not_found_ids)

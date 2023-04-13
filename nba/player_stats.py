@@ -1,4 +1,9 @@
-from nba_api.stats.endpoints import CommonPlayerInfo, PlayerDashboardByYearOverYear
+import json
+import os
+import pathlib
+
+from nba_api.stats.endpoints import CommonPlayerInfo, PlayerDashboardByYearOverYear, LeagueDashPlayerBioStats
+from nba_api.stats.library.parameters import Season
 
 
 def get_player_avg_stats(player_id):
@@ -17,5 +22,23 @@ def get_player_avg_stats(player_id):
     return player_info, player_avg_stats
 
 
+def fresh_team_players():
+    season = Season.default
+    players = LeagueDashPlayerBioStats(season=season).get_data_frames()[0]
+
+    result = {}
+    for i in range(0, len(players)):
+        player = players.iloc[i]
+        team = player['TEAM_ABBREVIATION']
+
+        if team not in result:
+            result[team] = []
+
+        result[team].append(int(player['PLAYER_ID']))
+
+    with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "results/team_players.json"), 'w') as file:
+        json.dump(result, file, indent=2)
+
+
 if __name__ == '__main__':
-    get_player_avg_stats(1628932)
+    fresh_team_players()

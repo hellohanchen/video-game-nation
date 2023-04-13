@@ -1,4 +1,5 @@
 import asyncio
+import pandas as pd
 
 from awsmysql.mysql_connection_pool import CNX_POOL
 from topshot.cadence.flow_collections import get_account_plays
@@ -147,6 +148,37 @@ def build_vgn_collection(plays):
             pass
 
     return player_collections, not_found_plays
+
+
+def get_collections(user_ids):
+    if user_ids is None or len(user_ids) == 0:
+        return None
+
+    try:
+        db_conn = CNX_POOL.get_connection()
+        query = \
+            "SELECT * FROM vgn.collections WHERE user_id IN ({})"\
+            .format(', '.join([str(user_id) for user_id in user_ids]))
+
+        # Execute SQL query and store results in a pandas dataframe
+        df = pd.read_sql(query, db_conn)
+
+        # Convert dataframe to a dictionary with headers
+        loaded = df.to_dict('records')
+
+        db_conn.close()
+
+        collections = {}
+        for record in loaded:
+            user_id = record['user_id']
+            if user_id not in collections:
+                collections[user_id] = {}
+
+            collections[user_id][record['player_id']] = record
+
+        return collections
+    except Exception:
+        return None
 
 
 if __name__ == '__main__':

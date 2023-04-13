@@ -7,7 +7,7 @@ import discord
 from discord.ext import commands, tasks
 from dotenv import load_dotenv
 
-from nba.game_stats import get_scoreboard
+from nba.provider import NBAProvider
 from topshot.challenge.challenge import Challenge
 
 from datetime import datetime
@@ -47,7 +47,7 @@ PREVIOUS_MESSAGE_IDS = {}
 def get_scoreboard_message():
     message = ""
 
-    scoreboard = get_scoreboard()
+    scoreboard = NBAProvider.get_scoreboard()
 
     if len(scoreboard['games']) > 0:
         message += "-" * 40

@@ -1,28 +1,28 @@
 {
-  "message": "TOPSHOT FLASH CHALLENGE WEEKEND 03/31-04/02",
+  "message": "PLAY-IN WEEK MADNESS!",
   "challenges": [
     {
       "id": 1,
-      "title": "THE IQ RAZZLE DAZZLE",
+      "title": "FOLLOW THE ACTION AND EARN A PACK!",
       "buckets": [
         {
-          "description": "ADD 1 Rare, Legendary, or Top Shot Debut Moment of each player in the top 5 in Assists for the Eastern Conference in a single game this weekend.",
+          "description": "ADD 1 Moment of the player with the most Points scored for each winning team on Tuesday. (EC)",
           "is_wildcard": false,
           "type": "LB",
-          "count": 5,
+          "count": 1,
           "is_team": false,
-          "team_filter": "EC",
+          "team_filter": "WIN",
           "tier_breakers": [
             {
-              "stats": "AST",
-              "order": "DESC"
-            },
-            {
-              "stats": "WIN",
-              "order": "DESC"
-            },
-            {
               "stats": "PTS",
+              "order": "DESC"
+            },
+            {
+              "stats": "AST,REB",
+              "order": "DESC"
+            },
+            {
+              "stats": "FTM",
               "order": "DESC"
             },
             {
@@ -30,30 +30,28 @@
               "order": "DESC"
             }
           ],
-          "dates": [
-            "03/31/2023",
-            "04/01/2023",
-            "04/02/2023"
+          "games": [
+            "0052200101"
           ]
         },
         {
-          "description": "ADD 1 Rare, Legendary, or Top Shot Debut Moment of each player in the top 5 in Steals for the Western Conference in a single game this weekend.",
+          "description": "ADD 1 Moment of the player with the most Points scored for each winning team on Tuesday. (WC)",
           "is_wildcard": false,
           "type": "LB",
-          "count": 5,
+          "count": 1,
           "is_team": false,
-          "team_filter": "WC",
+          "team_filter": "WIN",
           "tier_breakers": [
             {
-              "stats": "STL",
-              "order": "DESC"
-            },
-            {
-              "stats": "WIN",
-              "order": "DESC"
-            },
-            {
               "stats": "PTS",
+              "order": "DESC"
+            },
+            {
+              "stats": "AST,REB",
+              "order": "DESC"
+            },
+            {
+              "stats": "FTM",
               "order": "DESC"
             },
             {
@@ -61,10 +59,66 @@
               "order": "DESC"
             }
           ],
-          "dates": [
-            "03/31/2023",
-            "04/01/2023",
-            "04/02/2023"
+          "games": [
+            "0052200121"
+          ]
+        },
+        {
+          "description": "ADD 1 Moment of the player with the most Points + Assists + Rebounds for each winning team on Friday. (EC)",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "team_filter": "WIN",
+          "tier_breakers": [
+            {
+              "stats": "PTS,AST,REB",
+              "order": "DESC"
+            },
+            {
+              "stats": "AST,REB",
+              "order": "DESC"
+            },
+            {
+              "stats": "FTM",
+              "order": "DESC"
+            },
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            }
+          ],
+          "games": [
+            "0052200201"
+          ]
+        },
+        {
+          "description": "ADD 1 Moment of the player with the most Points + Assists + Rebounds for each winning team on Friday. (WC)",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "team_filter": "WIN",
+          "tier_breakers": [
+            {
+              "stats": "PTS,AST,REB",
+              "order": "DESC"
+            },
+            {
+              "stats": "AST,REB",
+              "order": "DESC"
+            },
+            {
+              "stats": "FTM",
+              "order": "DESC"
+            },
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            }
+          ],
+          "games": [
+            "0052200211"
           ]
         }
       ]
