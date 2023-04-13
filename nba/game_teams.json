@@ -5237,11 +5237,11 @@
   },
   "0052200211": {
     "homeTeam": "MIN",
-    "awayTeam": null
+    "awayTeam": "OKC"
   },
   "0042200111": {
     "homeTeam": "BOS",
-    "awayTeam": null
+    "awayTeam": "ATL"
   },
   "0042200121": {
     "homeTeam": "PHI",
@@ -5265,7 +5265,7 @@
   },
   "0042200151": {
     "homeTeam": "MEM",
-    "awayTeam": null
+    "awayTeam": "LAL"
   },
   "0042200171": {
     "homeTeam": "PHX",
