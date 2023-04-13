@@ -1,5 +1,5 @@
 from awsmysql.collections_repo import get_collections
-from awsmysql.lineups_repo import get_lineups, upsert_lineup
+from awsmysql.lineups_repo import get_lineups, upsert_lineup, submit_lineup
 from awsmysql.players_repo import get_players_stats
 from nba.provider import NBA_PROVIDER
 from utils import compute_vgn_score, truncate_message, compute_vgn_scores
@@ -234,20 +234,22 @@ class Lineup:
         self.provider = provider
 
     def get_formatted(self):
-        message = "Your lineup for **{}**\n".format(self.game_date)
-        message += "**1. Captain** {}\n".format(self.get_formatted_player(1))
-        message += "**2.** Starter {}\n".format(self.get_formatted_player(2))
-        message += "**3.** Starter {}\n".format(self.get_formatted_player(3))
-        message += "**4.** Starter {}\n".format(self.get_formatted_player(4))
-        message += "**5.** Starter {}\n".format(self.get_formatted_player(5))
-        message += "**6.** *Bench* {}\n".format(self.get_formatted_player(6))
-        message += "**7.** *Bench* {}\n".format(self.get_formatted_player(7))
-        message += "**8.** *Bench* {}\n".format(self.get_formatted_player(8))
-        message += "Use **/player** command get all players\n"
-        message += "Use **/team <teamName>** command check players for team (e.g. DAL)\n"
-        message += "Use **/add** command to add player to position e.g. /add 12 1\n"
-        message += "Use **/swap** command to swap 2 positions e.g. /swap 1 2\n"
-        message += "Use **/submit** command to submit your lineup\n"
+        message = "Your lineup for **{}** is **{}submitted**.\n"\
+            .format(self.game_date, "" if self.submitted else "not ")
+        message += "**" + "1️⃣" + ". Captain** {}\n".format(self.get_formatted_player(1))
+        message += "**" + "2️⃣" + ".** Starter {}\n".format(self.get_formatted_player(2))
+        message += "**" + "3️⃣" + ".** Starter {}\n".format(self.get_formatted_player(3))
+        message += "**" + "4️⃣" + ".** Starter {}\n".format(self.get_formatted_player(4))
+        message += "**" + "5️⃣" + ".** Starter {}\n".format(self.get_formatted_player(5))
+        message += "**" + "6️⃣" + ".** *Bench*   {}\n".format(self.get_formatted_player(6))
+        message += "**" + "7️⃣" + ".** *Bench*   {}\n".format(self.get_formatted_player(7))
+        message += "**" + "8️⃣" + ".** *Bench*   {}\n".format(self.get_formatted_player(8))
+        message += "A. **/player** command get all players\n"
+        message += "B. **/team <teamName>** command check players for team\n"
+        message += "C. **/add <playerId> <pos>** command to add player to position\n"
+        message += "C. **/remove <pos>** command to remove player to position\n"
+        message += "D. **/swap <pos1> <pos2>** command to swap 2 positions\n"
+        message += "E. **/submit** command to submit your lineup\n"
         return message
 
     def get_formatted_player(self, position):
@@ -269,8 +271,12 @@ class Lineup:
         if player_idx < 1 or player_idx > len(self.provider.player_ids):
             return "Player index should be between [1, {}]".format(len(self.provider.player_ids))
 
-        if position < 1 or position > 8:
-            return "Position should be between [1, 8]"
+        player_id = self.provider.player_ids[player_idx - 1]
+        if player_id in self.player_ids:
+            return "Player **{}. {}** is already in the lineup.".format(
+                self.provider.players[player_id]['index'],
+                self.provider.players[player_id]['full_name'],
+            )
 
         message = ""
 
@@ -280,7 +286,7 @@ class Lineup:
                 self.provider.players[previous_player]['index'],
                 self.provider.players[previous_player]['full_name'],
             )
-        self.player_ids[position - 1] = self.provider.player_ids[player_idx - 1]
+        self.player_ids[position - 1] = player_id
 
         successful, _ = upsert_lineup(
             (self.user_id, self.game_date, self.player_ids[0], self.player_ids[1], self.player_ids[2],
@@ -292,11 +298,63 @@ class Lineup:
                 self.provider.players[self.player_ids[position - 1]]['full_name'],
                 position
             )
+
+            return message
         else:
             self.player_ids[position - 1] = previous_player
             return "Failed to update lineup, please retry."
 
-        return message
+    def remove_player(self, pos):
+        if self.player_ids[pos - 1] is None:
+            return "Nothing to remove."
+
+        previous_player = self.player_ids[pos - 1]
+        self.player_ids[pos - 1] = None
+
+        successful, _ = upsert_lineup(
+            (self.user_id, self.game_date, self.player_ids[0], self.player_ids[1], self.player_ids[2],
+             self.player_ids[3], self.player_ids[4], self.player_ids[5], self.player_ids[6], self.player_ids[7])
+        )
+
+        if successful:
+            return "Removed **{}. {}**. ".format(
+                self.provider.players[previous_player]['index'],
+                self.provider.players[previous_player]['full_name'],
+            )
+        else:
+            self.player_ids[pos - 1] = previous_player
+            return "Failed to update lineup, please retry."
+
+    def swap_players(self, pos1, pos2):
+        if self.player_ids[pos1 - 1] is None and self.player_ids[pos2 - 1] is None:
+            return "Swapped."
+
+        tmp = self.player_ids[pos1 - 1]
+        self.player_ids[pos1 - 1] = self.player_ids[pos2 - 1]
+        self.player_ids[pos2 - 1] = tmp
+
+        successful, _ = upsert_lineup(
+            (self.user_id, self.game_date, self.player_ids[0], self.player_ids[1], self.player_ids[2],
+             self.player_ids[3], self.player_ids[4], self.player_ids[5], self.player_ids[6], self.player_ids[7])
+        )
+
+        if successful:
+            return "Swapped."
+        else:
+            self.player_ids[pos2 - 1] = self.player_ids[pos1 - 1]
+            self.player_ids[pos1 - 1] = tmp
+            return "Failed to update lineup, please retry."
+
+    def submit(self):
+        if None in self.player_ids:
+            return "Still have unfilled positions {}".format([i+1 for i in range(0, 8) if self.player_ids[i] is None])
+
+        successful, _ = submit_lineup(self.user_id, self.game_date)
+        if successful:
+            self.submitted = True
+            return "Submitted."
+        else:
+            return "Failed to update lineup, please retry."
 
 
 LINEUP_PROVIDER = LineupProvider()

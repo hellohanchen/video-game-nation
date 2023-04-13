@@ -60,6 +60,21 @@ def upsert_lineup(lineup):
         return False, "DB error: {}".format(err)
 
 
+def submit_lineup(user_id, game_date):
+    try:
+        db_conn = CNX_POOL.get_connection()
+        cursor = db_conn.cursor()
+        query = "UPDATE vgn.lineups SET submitted = true " \
+                "WHERE user_id = {} AND game_date = '{}'".format(user_id, game_date)
+        cursor.execute(query)
+        db_conn.commit()
+        db_conn.close()
+
+        return True, "Updated"
+    except Exception as err:
+        return False, "DB error: {}".format(err)
+
+
 if __name__ == '__main__':
     # get_lineups("04/11/2023")
     get_lineup("100", "04/11/2023")
