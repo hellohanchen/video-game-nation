@@ -5576,5 +5576,35 @@
       "homeTeam": "POR",
       "awayTeam": "GSW"
     }
+  },
+  "04/11/2023": {
+    "0052200101": {
+      "homeTeam": "MIA",
+      "awayTeam": "ATL"
+    },
+    "0052200121": {
+      "homeTeam": "LAL",
+      "awayTeam": "MIN"
+    }
+  },
+  "04/12/2023": {
+    "0052200111": {
+      "homeTeam": "TOR",
+      "awayTeam": "CHI"
+    },
+    "0052200131": {
+      "homeTeam": "NOP",
+      "awayTeam": "OKC"
+    }
+  },
+  "04/14/2023": {
+    "0052200201": {
+      "homeTeam": "MIA",
+      "awayTeam": "CHI"
+    },
+    "0052200211": {
+      "homeTeam": "MIN",
+      "awayTeam": "OKC"
+    }
   }
 }

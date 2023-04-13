@@ -69,6 +69,7 @@ class LeaderBoardTracker:
         """
         result: Dict[str, Dict[str, Any]] = {}
 
+        final = True
         for game_id in games_teams:
             try:
                 game_stats = boxscore.BoxScore(game_id=game_id).get_dict()['game']
@@ -77,6 +78,8 @@ class LeaderBoardTracker:
 
             if game_stats['gameStatus'] == 1:
                 continue
+            if game_stats['gameStatus'] != 3:
+                final = False
 
             game_info = get_game_info(game_stats)
 
@@ -94,7 +97,7 @@ class LeaderBoardTracker:
                     'stats': stats
                 }
 
-        return self.get_ranking(result)
+        return self.get_ranking(result, final)
 
     def get_player_ranking(self, games_players: Dict[int, List[int]]) -> List[Dict[str, Any]]:
         """
@@ -105,6 +108,7 @@ class LeaderBoardTracker:
         """
         scores = {}
 
+        final = True
         for game_id in games_players:
             try:
                 game_stats = boxscore.BoxScore(game_id=game_id).get_dict()['game']
@@ -113,6 +117,8 @@ class LeaderBoardTracker:
 
             if game_stats['gameStatus'] == 1:
                 continue
+            if game_stats['gameStatus'] != 3:
+                final = False
 
             game_info = get_game_info(game_stats)
 
@@ -138,9 +144,9 @@ class LeaderBoardTracker:
                         'stats': stats
                     }
 
-        return self.get_ranking(scores)
+        return self.get_ranking(scores, final)
 
-    def get_ranking(self, scores: Dict[str, Dict[str, Union[str, List[float]]]]) \
+    def get_ranking(self, scores: Dict[str, Dict[str, Union[str, List[float]]]], final: bool) \
             -> List[Dict[str, Union[str, Dict[str, Union[str, List[float]]]]]]:
         """
         Given a dictionary of player/team scores, calculates the ranking based on the provided tier breakers.
@@ -170,7 +176,8 @@ class LeaderBoardTracker:
         # Append the top 2 * count (or at least 5) players/teams to the sorted_stats list, sorted by their total scores
         # across all tier breakers, as well as any players/teams with the same total score as the last player/team in
         # the sorted_stats list
-        while len(sorted_stats) < max(5, self.count * 2) and idx < len(scores):
+        out_count = max(5, self.count * 2) if not final else self.count
+        while len(sorted_stats) < out_count and idx < len(scores):
             sorted_stats.append({"name": keys[idx], "score": scores[keys[idx]]})
             idx += 1
             while idx < len(scores) and equals(scores[keys[idx - 1]]['stats'], scores[keys[idx]]['stats']):
