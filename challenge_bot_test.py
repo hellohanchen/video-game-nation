@@ -7,14 +7,12 @@ import discord
 from discord.ext import commands, tasks
 from dotenv import load_dotenv
 
+from constants import TZ_ET
 from nba.provider import NBAProvider
 from topshot.challenge.challenge import Challenge
 
 from datetime import datetime
-import pytz
 
-# Get the timezone object for New York
-tz_ET = pytz.timezone('America/New_York')
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN_CHALLENGE')
@@ -90,7 +88,7 @@ async def get_current_challenge():
         if len(challenge_messages) > 0:
             messages.extend(challenge_messages)
 
-    messages.append("ET: **{}** , UPDATE EVERY 2 MINS".format(datetime.now(tz_ET).strftime("%H:%M:%S")))
+    messages.append("ET: **{}** , UPDATE EVERY 2 MINS".format(datetime.now(TZ_ET).strftime("%H:%M:%S")))
 
     for channel in MESSAGE_CHANNELS:
         if channel.id not in PREVIOUS_MESSAGE_IDS:
@@ -120,7 +118,7 @@ async def track_challenge(context):
     for challenge in CHALLENGES:
         messages.extend(challenge.get_formatted_messages())
 
-    messages.append("ET: **{}** , UPDATE EVERY MIN".format(datetime.now(tz_ET).strftime("%H:%M:%S")))
+    messages.append("ET: **{}** , UPDATE EVERY MIN".format(datetime.now(TZ_ET).strftime("%H:%M:%S")))
 
     for message in messages:
         await context.channel.send(message)

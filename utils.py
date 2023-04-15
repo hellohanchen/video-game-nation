@@ -1,3 +1,5 @@
+from typing import Dict, Union
+
 from constants import EMPTY_PLAYER_COLLECTION
 
 
@@ -15,6 +17,42 @@ def get_lead_team(team1, team1_score, team2, team2_score):
     if team1_score > team2_score:
         return team1
     return team2
+
+
+def get_game_info(game_boxscore: Dict[str, Union[str, Dict[str, Union[str, int]]]]) -> Dict[str, Union[str, int]]:
+    """
+    Returns a dictionary with game information from the given game boxscore.
+
+    Args:
+        game_boxscore (dict): A dictionary containing game boxscore information.
+
+    Returns:
+        dict: A dictionary with the following keys:
+            - stats (str): The game status.
+            - quarter (int): The current quarter of the game.
+            - clock (str): The game clock.
+            - awayTeam (str): The team tricode of the away team.
+            - awayScore (int): The score of the away team.
+            - homeTeam (str): The team tricode of the home team.
+            - homeScore (int): The score of the home team.
+            - leadTeam (str): The team tricode of the team currently in the lead.
+    """
+    return {
+        'status': game_boxscore['gameStatus'],
+        'statusText': game_boxscore['gameStatusText'],
+        'quarter': game_boxscore['period'],
+        'clock': game_boxscore['gameClock'],
+        'awayTeam': game_boxscore['awayTeam']['teamTricode'],
+        'awayScore': game_boxscore['awayTeam']['score'],
+        'homeTeam': game_boxscore['homeTeam']['teamTricode'],
+        'homeScore': game_boxscore['homeTeam']['score'],
+        'leadTeam': get_lead_team(
+            game_boxscore['awayTeam']['teamTricode'],
+            game_boxscore['awayTeam']['score'],
+            game_boxscore['homeTeam']['teamTricode'],
+            game_boxscore['homeTeam']['score']
+        )
+    }
 
 
 STATS_SCORE = {
@@ -52,6 +90,9 @@ STATS_BONUS = {
 
 
 def compute_vgn_score(player, collection=None):
+    if player is None:
+        return 0.0
+
     if collection is None:
         collection = EMPTY_PLAYER_COLLECTION
 
@@ -75,6 +116,9 @@ def compute_vgn_score(player, collection=None):
 
 
 def compute_vgn_scores(player, collection=None):
+    if player is None:
+        return {}, 0.0, 0.0
+
     if collection is None:
         collection = EMPTY_PLAYER_COLLECTION
 

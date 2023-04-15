@@ -5,7 +5,6 @@ import discord
 from discord.ext import commands
 from dotenv import load_dotenv
 
-from awsmysql.collections_repo import get_user
 from awsmysql.users_repo import add_user
 
 load_dotenv()
@@ -58,7 +57,7 @@ async def verify_user(context, username, topshot_username):
     if member is None:
         await context.channel.send("Discord user {} not found.".format(username))
 
-    message = await add_user(member.id, topshot_username)
+    message = add_user(member.id, topshot_username)
 
     await context.channel.send(message)
 

@@ -149,21 +149,21 @@ class LineupProvider:
             "{:.2f} PTS {:.2f}v (+{:.2f}) " \
             "point-bonus {:.2f}v (+{:.2f})\n" \
             "{:.2f} 3PT {:.2f}v (+{:.2f})\n" \
-            "{:.2f} DREB {:.2f}v (+{:.2f})\n" \
-            "{:.2f} OREB {:.2f}v (+{:.2f})\n" \
+            "{:.2f} DRB {:.2f}v (+{:.2f})\n" \
+            "{:.2f} ORB {:.2f}v (+{:.2f})\n" \
             "{:.2f} AST {:.2f}v (+{:.2f})\n" \
             "{:.2f} STL {:.2f}v (+{:.2f})\n" \
             "{:.2f} BLK {:.2f}v (+{:.2f})\n" \
             "{:.2f} FGM {:.2f}v (+{:.2f})\n" \
             "{:.2f} FTM {:.2f}v (+{:.2f})\n" \
             "{:.2f} TOV {:.2f}v (+{:.2f})\n" \
-            "{:.2f} FP {:.2f}v (+{:.2f}) " \
+            "{:.2f} PFS {:.2f}v (+{:.2f}) " \
             "foul-out {:.2f}v\n" \
             "{:.2f} WIN {:.2f}v (+{:.2f})\n" \
-            "{:.2f} DD {:.2f}v\n" \
-            "{:.2f} TD {:.2f}v\n" \
-            "{:.2f} QD {:.2f}v\n" \
-            "{:.2f} FD {:.2f}v\n" \
+            "{:.2f} 2DD {:.2f}v\n" \
+            "{:.2f} 3TD {:.2f}v\n" \
+            "{:.2f} 4QD {:.2f}v\n" \
+            "{:.2f} 5FD {:.2f}v\n" \
             "**sum: {:.2f}v (+{:.2f})**\n\n" \
             "".format(
                 player['index'], player['full_name'], player['jersey_number'],
@@ -247,9 +247,9 @@ class Lineup:
         message += "A. **/player** command get all players\n"
         message += "B. **/team <teamName>** command check players for team\n"
         message += "C. **/add <playerId> <pos>** command to add player to position\n"
-        message += "C. **/remove <pos>** command to remove player to position\n"
-        message += "D. **/swap <pos1> <pos2>** command to swap 2 positions\n"
-        message += "E. **/submit** command to submit your lineup\n"
+        message += "D. **/remove <pos>** command to remove player to position\n"
+        message += "E. **/swap <pos1> <pos2>** command to swap 2 positions\n"
+        message += "F. **/submit** command to submit your lineup\n"
         return message
 
     def get_formatted_player(self, position):

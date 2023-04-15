@@ -1,3 +1,5 @@
+import pytz
+
 TEAM_TRICODES = {
     "ATLANTA": "ATL",
     "HAWKS": "ATL",
@@ -108,3 +110,6 @@ EMPTY_PLAYER_COLLECTION = {
     "reel": 0,
     "team": 0
 }
+
+# Get the timezone object for New York
+TZ_ET = pytz.timezone('America/New_York')
