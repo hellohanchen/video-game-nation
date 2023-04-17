@@ -223,17 +223,23 @@ class Lineup:
         self.user_id = db_lineup['user_id']
         self.game_date = db_lineup['game_date']
         self.player_ids = [
-            db_lineup['captain_1'] if not math.isnan(float(db_lineup['captain_1'])) else None,
-            db_lineup['starter_2'] if not math.isnan(float(db_lineup['starter_2'])) else None,
-            db_lineup['starter_3'] if not math.isnan(float(db_lineup['starter_3'])) else None,
-            db_lineup['starter_4'] if not math.isnan(float(db_lineup['starter_4'])) else None,
-            db_lineup['starter_5'] if not math.isnan(float(db_lineup['starter_5'])) else None,
-            db_lineup['bench_6'] if not math.isnan(float(db_lineup['bench_6'])) else None,
-            db_lineup['bench_7'] if not math.isnan(float(db_lineup['bench_7'])) else None,
-            db_lineup['bench_8'] if not math.isnan(float(db_lineup['bench_8'])) else None,
+            self.__cast_player_id(db_lineup['captain_1']),
+            self.__cast_player_id(db_lineup['starter_2']),
+            self.__cast_player_id(db_lineup['starter_3']),
+            self.__cast_player_id(db_lineup['starter_4']),
+            self.__cast_player_id(db_lineup['starter_5']),
+            self.__cast_player_id(db_lineup['bench_6']),
+            self.__cast_player_id(db_lineup['bench_7']),
+            self.__cast_player_id(db_lineup['bench_8']),
         ]
         self.submitted = db_lineup['submitted']
         self.provider = provider
+
+    @staticmethod
+    def __cast_player_id(db_player_id):
+        if db_player_id is not None and not math.isnan(float(db_player_id)):
+            return db_player_id
+        return None
 
     def formatted(self):
         message = "Your lineup for **{}** is {}.\n"\
