@@ -1,6 +1,6 @@
 import mysql.connector.pooling
 
-from awsmysql import DB_USERNAME, DB_PASSWORD, MYSQL_ENDPOINT_URL
+from repository import DB_USERNAME, DB_PASSWORD, MYSQL_ENDPOINT_URL
 
 config = {
     'user': DB_USERNAME,

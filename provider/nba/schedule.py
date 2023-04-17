@@ -37,10 +37,10 @@ def store_dates_games_teams(schedule_json):
                 'awayTeam': game['awayTeam']['teamTricode']
             }
 
-    with open(os.path.join(pathlib.Path(__file__).parent.resolve(), 'results/game_dates.json'), 'w') as output_file:
+    with open(os.path.join(pathlib.Path(__file__).parent.resolve(), 'data/game_dates.json'), 'w') as output_file:
         json.dump(games_dates, output_file, indent=2)
 
-    with open(os.path.join(pathlib.Path(__file__).parent.resolve(), 'results/game_teams.json'), 'w') as output_file:
+    with open(os.path.join(pathlib.Path(__file__).parent.resolve(), 'data/game_teams.json'), 'w') as output_file:
         json.dump(games_teams, output_file, indent=2)
 
 

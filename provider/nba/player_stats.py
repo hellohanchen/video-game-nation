@@ -36,7 +36,7 @@ def fresh_team_players():
 
         result[team].append(int(player['PLAYER_ID']))
 
-    with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "results/team_players.json"), 'w') as file:
+    with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "data/team_players.json"), 'w') as file:
         json.dump(result, file, indent=2)
 
 

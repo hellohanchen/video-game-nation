@@ -5,7 +5,7 @@ import pathlib
 import time
 
 from topshot.ts_info import TS_PLAYER_ID_MOMENTS
-from topshot.tsgql.get_stats import get_player_stats
+from topshot.graphql.get_stats import get_player_stats
 
 
 async def filter_current_nba_players():

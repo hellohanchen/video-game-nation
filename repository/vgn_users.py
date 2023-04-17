@@ -1,17 +1,9 @@
-import asyncio
-
 import pandas as pd
 
-from awsmysql.mysql_connection_pool import CNX_POOL
-from topshot.tsgql.get_address import get_flow_address
+from repository.config import CNX_POOL
 
 
-def add_user(discord_id, topshot_username):
-    try:
-        flow_address = asyncio.run(get_flow_address(topshot_username))
-    except NameError as err:
-        return str(err)
-
+def insert_user(discord_id, topshot_username, flow_address):
     try:
         db_conn = CNX_POOL.get_connection()
         cursor = db_conn.cursor()

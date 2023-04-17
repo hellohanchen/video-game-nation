@@ -3,7 +3,7 @@ import json
 import os.path
 import pathlib
 
-from topshot.tsgql.get_tier import get_listing_tiers
+from topshot.graphql.get_tier import get_listing_tiers
 
 SERIES_MAP = {
     1: "S1",

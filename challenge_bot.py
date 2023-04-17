@@ -2,16 +2,15 @@
 import json
 import os
 import pathlib
+from datetime import datetime
 
 import discord
 from discord.ext import commands, tasks
 from dotenv import load_dotenv
 
 from constants import TZ_ET
-from nba.provider import NBAProvider
 from topshot.challenge.challenge import Challenge
-
-from datetime import datetime
+from utils import get_scoreboard_message
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN_CHALLENGE')
@@ -31,8 +30,8 @@ def load_challenges():
             pathlib.Path(__file__).parent.resolve(),
             'topshot/challenge/challenges/current.json'
     ), 'r') as json_file:
-        j = json.load(json_file)
-        return j['message'], [Challenge.build_from_dict(challenge) for challenge in j['challenges']]
+        loaded = json.load(json_file)
+        return loaded['message'], [Challenge.build_from_dict(challenge) for challenge in loaded['challenges']]
 
 
 START_MESSAGE, CHALLENGES = load_challenges()
@@ -41,30 +40,6 @@ CHANNEL_NAMEs = ["🤖-mdv-flash-challenge-bot", "⚡-fc-tracker"]
 MESSAGE_CHANNELS = []
 START = False
 PREVIOUS_MESSAGE_IDS = {}
-
-
-def get_scoreboard_message():
-    message = ""
-
-    scoreboard = NBAProvider.get_scoreboard()
-
-    if len(scoreboard['games']) > 0:
-        message += "-" * 40
-        message += "\n🏀 ***{}***\n".format(START_MESSAGE)
-        message += "**Games on {}**\n\n".format(scoreboard['gameDate'])
-
-        for game in scoreboard['games']:
-            message += "**{}** {} : {} **{}** {}\n".format(
-                game['awayTeam']['teamTricode'],
-                game['awayTeam']['score'],
-                game['homeTeam']['score'],
-                game['homeTeam']['teamTricode'],
-                game['gameStatusText']
-            )
-
-        message += "\n\n"
-
-    return message
 
 
 @bot.event
@@ -80,7 +55,7 @@ async def on_ready():
 
 @tasks.loop(minutes=2)
 async def get_current_challenge():
-    messages = [get_scoreboard_message()]
+    messages = [get_scoreboard_message(START_MESSAGE)]
 
     for challenge in CHALLENGES:
         challenge_messages = challenge.get_formatted_messages()
@@ -112,7 +87,7 @@ async def get_current_challenge():
 @bot.command(name='track')
 @commands.cooldown(1, 30, commands.BucketType.user)
 async def track_challenge(context):
-    messages = [get_scoreboard_message()]
+    messages = [get_scoreboard_message(START_MESSAGE)]
 
     for challenge in CHALLENGES:
         messages.extend(challenge.get_formatted_messages())

@@ -2,12 +2,12 @@ import datetime
 
 from nba_api.live.nba.endpoints import boxscore
 
-from awsmysql.collections_repo import get_collections
-from awsmysql.lineups_repo import get_lineups
-from awsmysql.players_repo import get_empty_players_stats
-from awsmysql.users_repo import get_users
-from nba.provider import NBAProvider
-from topshot.fantasy.lineup import Lineup, LINEUP_PROVIDER
+from provider.nba.provider import NBAProvider
+from repository.vgn_collections import get_collections
+from repository.vgn_lineups import get_lineups
+from repository.vgn_players import get_empty_players_stats
+from repository.vgn_users import get_users
+from service.fantasy.lineup import Lineup, LINEUP_PROVIDER
 from utils import compute_vgn_score, truncate_message, compute_vgn_scores, get_game_info
 
 
@@ -27,7 +27,7 @@ class RankingProvider:
         self.update()
 
     def __load_lineups_and_collections(self):
-        loaded = get_lineups(self.current_game_date)
+        loaded = get_lineups(self.current_game_date, True)
         players = []
         for lineup in loaded:
             self.lineups[lineup['user_id']] = Lineup(lineup, self)
@@ -164,6 +164,15 @@ class RankingProvider:
 
     def formatted_player(self, user_id, idx):
         player_id = self.lineups[user_id].player_ids[idx]
+        if player_id is None:
+            if idx == 0:
+                message = "🏅 No player"
+            elif idx < 5:
+                message = "🏀 No player"
+            else:
+                message = "🎽 No player"
+            return message
+
         player = self.player_stats.get(player_id)
         collection = self.collections[user_id][player_id]
         _, total_score, total_bonus = compute_vgn_scores(player, collection)

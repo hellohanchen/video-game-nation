@@ -4,8 +4,8 @@ import time
 
 from topshot.cadence.flow_collections import get_collection_for_trade
 from topshot.ts_info import TS_SET_INFO, get_player_flow_id_str, TS_TEAM_NAME_TO_ID
-from topshot.tsgql.get_address import get_flow_address
-from topshot.tsgql.get_price import get_listing_prices
+from topshot.graphql.get_address import get_flow_address
+from topshot.graphql.get_price import get_listing_prices
 
 
 def remove_dupes(c1, c2, series):
@@ -106,6 +106,10 @@ async def get_lowest_listing_price(collection):
 
 async def get_account_collection(topshot_username):
     address = await get_flow_address(topshot_username)
+
+    if address is None:
+        raise NameError("Can't find topshot user {}".format(topshot_username))
+
     return await get_collection_for_trade(address)
 
 

@@ -5,7 +5,7 @@ import pathlib
 
 from nba_api.live.nba.endpoints import scoreboard, boxscore
 
-from nba.game_schedule import download_schedule
+from provider.nba.schedule import download_schedule
 
 
 class NBAProvider:
@@ -20,7 +20,7 @@ class NBAProvider:
         self.__load_team_players()
 
     def __load_schedule(self):
-        new_schedule = json.load(open(os.path.join(pathlib.Path(__file__).parent.resolve(), 'results/game_dates.json'), 'r'))
+        new_schedule = json.load(open(os.path.join(pathlib.Path(__file__).parent.resolve(), 'data/game_dates.json'), 'r'))
 
         for date in new_schedule:
             self.game_schedule[date] = new_schedule[date]
@@ -32,7 +32,7 @@ class NBAProvider:
 
     def __load_team_players(self):
         self.team_players = json.load(
-            open(os.path.join(pathlib.Path(__file__).parent.resolve(), 'results/team_players.json'), 'r'))
+            open(os.path.join(pathlib.Path(__file__).parent.resolve(), 'data/team_players.json'), 'r'))
 
     @staticmethod
     def get_scoreboard():

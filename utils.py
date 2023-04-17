@@ -1,6 +1,7 @@
 from typing import Dict, Union
 
 from constants import EMPTY_PLAYER_COLLECTION
+from provider.nba.provider import NBAProvider
 
 
 def truncate_message(msgs, msg, add, limit):
@@ -165,3 +166,28 @@ def compute_vgn_scores(player, collection=None):
         }
 
     return scores, total_score, total_bonus
+
+
+def get_scoreboard_message(title):
+    message = ""
+
+    scoreboard = NBAProvider.get_scoreboard()
+
+    if len(scoreboard['games']) > 0:
+        message += "-" * 40
+        message += "\n🏀 ***{}***\n".format(title)
+        message += "**Games on {}**\n\n".format(scoreboard['gameDate'])
+
+        for game in scoreboard['games']:
+            message += "**{}** {} : {} **{}** {}\n".format(
+                game['awayTeam']['teamTricode'],
+                game['awayTeam']['score'],
+                game['homeTeam']['score'],
+                game['homeTeam']['teamTricode'],
+                game['gameStatusText']
+            )
+
+        message += "\n\n"
+
+    return message
+

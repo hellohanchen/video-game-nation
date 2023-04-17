@@ -4,7 +4,7 @@ import boto3
 from boto3.dynamodb.conditions import Key
 from botocore.exceptions import ClientError
 
-from dynamodb.table import Table
+from deprecated.dynamodb.table import Table
 
 logger = logging.getLogger(__name__)
 

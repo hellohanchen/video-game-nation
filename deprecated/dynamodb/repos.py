@@ -1,6 +1,6 @@
 import boto3
 
-from dynamodb.users import Users
+from deprecated.dynamodb.users import Users
 
 
 def get_user_repo():

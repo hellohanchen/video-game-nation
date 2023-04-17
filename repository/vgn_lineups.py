@@ -1,6 +1,6 @@
 import pandas as pd
 
-from awsmysql.mysql_connection_pool import CNX_POOL
+from repository.config import CNX_POOL
 
 
 def get_lineup(user_id, game_date):
@@ -18,10 +18,12 @@ def get_lineup(user_id, game_date):
         return "DB error: {}".format(err)
 
 
-def get_lineups(game_date):
+def get_lineups(game_date, submitted=False):
     try:
         db_conn = CNX_POOL.get_connection()
-        query = "SELECT * FROM vgn.lineups WHERE game_date = '{}'".format(game_date)
+        query = "SELECT * FROM vgn.lineups WHERE game_date = '{}' ".format(game_date)
+        if submitted:
+            query += " AND submitted = true"
 
         # Execute SQL query and store results in a pandas dataframe
         df = pd.read_sql(query, db_conn)

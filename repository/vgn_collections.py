@@ -1,7 +1,7 @@
 import asyncio
 import pandas as pd
 
-from awsmysql.mysql_connection_pool import CNX_POOL
+from repository.config import CNX_POOL
 from topshot.cadence.flow_collections import get_account_plays
 from topshot.ts_info import TS_ENRICHED_PLAYS, TS_PLAYER_ID_MOMENTS
 
@@ -12,7 +12,7 @@ TYPES = {
 }
 
 
-async def upsert_collection(user_id, plays):
+def upsert_collection(user_id, plays):
     """
     Upserts the collection of plays for a given user into the vgn.collections table in the database.
 
@@ -30,15 +30,15 @@ async def upsert_collection(user_id, plays):
         None.
 
     Examples:
-        >>> result = await upsert_collection(1234, [5678, 9012, 3456])
+        >>> result = upsert_collection(1234, [5678, 9012, 3456])
         >>> print(result)
         "Updated successfully!"
 
-        >>> result = await upsert_collection(5678, [1234, 5678, 9012, 3456])
+        >>> result = upsert_collection(5678, [1234, 5678, 9012, 3456])
         >>> print(result)
         "Updated with not found play ids: 1234"
 
-        >>> result = await upsert_collection(9012, [])
+        >>> result = upsert_collection(9012, [])
         >>> print(result)
         "Updated successfully!"
     """
@@ -183,4 +183,4 @@ def get_collections(user_ids):
 
 if __name__ == '__main__':
     plays = asyncio.run(get_account_plays('ad955e5d8047ef82'))
-    print(asyncio.run(upsert_collection(723723650909601833, plays)))
+    print(upsert_collection(723723650909601833, plays))

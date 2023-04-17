@@ -3,8 +3,8 @@ import time
 
 import pandas as pd
 
-from awsmysql.mysql_connection_pool import CNX_POOL
-from nba.player_stats import get_player_avg_stats
+from provider.nba.player_stats import get_player_avg_stats
+from repository.config import CNX_POOL
 from topshot.ts_info import TS_PLAYER_ID_MOMENTS
 
 
@@ -22,7 +22,7 @@ def add_player(id):
         None.
 
     Examples:
-        >>> await add_player(201939)
+        >>> add_player(201939)
         Inserted new player id: 201939, name: curry, stephen.
 
     This function fetches the player's average stats using the `get_player_avg_stats` function, and inserts them
