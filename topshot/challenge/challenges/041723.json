@@ -1,9 +1,9 @@
 {
-  "message": "PREDICTIVE CHALLENGE",
+  "message": "PLAYOFF2023 Game 2s",
   "challenges": [
     {
       "id": 1,
-      "title": "BEAT THE GAME 1 HIGH SCORE!",
+      "title": "PREDICTIVE CHALLENGE: BEAT THE GAME 1 HIGH SCORE!",
       "buckets": [
         {
           "description": "Predict any player to beat the Game 1 points benchmark by scoring 39 or more in any Game 2 matchup and you’ll win a pack! \uD83E\uDD73",
@@ -19,6 +19,244 @@
           ],
           "dates": [
             "04/17/2023"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "CAPTURE THE MOMENTUM: GAME 2 PACK CHALLENGE!",
+      "buckets": [
+        {
+          "description": "ADD 1 Moment of the player with the most Points scored for each winning team in Monday through Wednesday’s Game 2s.",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "team_filter": "WIN",
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            },
+            {
+              "stats": "AST,REB",
+              "order": "DESC"
+            },
+            {
+              "stats": "FTM",
+              "order": "DESC"
+            },
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            }
+          ],
+          "games": [
+            "0042200122"
+          ]
+        },
+        {
+          "description": "ADD 1 Moment of the player with the most Points scored for each winning team in Monday through Wednesday’s Game 2s.",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "team_filter": "WIN",
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            },
+            {
+              "stats": "AST,REB",
+              "order": "DESC"
+            },
+            {
+              "stats": "FTM",
+              "order": "DESC"
+            },
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            }
+          ],
+          "games": [
+            "0042200162"
+          ]
+        },
+        {
+          "description": "ADD 1 Moment of the player with the most Points scored for each winning team in Monday through Wednesday’s Game 2s.",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "team_filter": "WIN",
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            },
+            {
+              "stats": "AST,REB",
+              "order": "DESC"
+            },
+            {
+              "stats": "FTM",
+              "order": "DESC"
+            },
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            }
+          ],
+          "games": [
+            "0042200112"
+          ]
+        },
+        {
+          "description": "ADD 1 Moment of the player with the most Points scored for each winning team in Monday through Wednesday’s Game 2s.",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "team_filter": "WIN",
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            },
+            {
+              "stats": "AST,REB",
+              "order": "DESC"
+            },
+            {
+              "stats": "FTM",
+              "order": "DESC"
+            },
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            }
+          ],
+          "games": [
+            "0042200132"
+          ]
+        },
+        {
+          "description": "ADD 1 Moment of the player with the most Points scored for each winning team in Monday through Wednesday’s Game 2s.",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "team_filter": "WIN",
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            },
+            {
+              "stats": "AST,REB",
+              "order": "DESC"
+            },
+            {
+              "stats": "FTM",
+              "order": "DESC"
+            },
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            }
+          ],
+          "games": [
+            "0042200172"
+          ]
+        },
+        {
+          "description": "ADD 1 Moment of the player with the most Points scored for each winning team in Monday through Wednesday’s Game 2s.",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "team_filter": "WIN",
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            },
+            {
+              "stats": "AST,REB",
+              "order": "DESC"
+            },
+            {
+              "stats": "FTM",
+              "order": "DESC"
+            },
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            }
+          ],
+          "games": [
+            "0042200102"
+          ]
+        },
+        {
+          "description": "ADD 1 Moment of the player with the most Points scored for each winning team in Monday through Wednesday’s Game 2s.",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "team_filter": "WIN",
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            },
+            {
+              "stats": "AST,REB",
+              "order": "DESC"
+            },
+            {
+              "stats": "FTM",
+              "order": "DESC"
+            },
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            }
+          ],
+          "games": [
+            "0042200142"
+          ]
+        },
+        {
+          "description": "ADD 1 Moment of the player with the most Points scored for each winning team in Monday through Wednesday’s Game 2s.",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "team_filter": "WIN",
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            },
+            {
+              "stats": "AST,REB",
+              "order": "DESC"
+            },
+            {
+              "stats": "FTM",
+              "order": "DESC"
+            },
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            }
+          ],
+          "games": [
+            "0042200152"
           ]
         }
       ]
