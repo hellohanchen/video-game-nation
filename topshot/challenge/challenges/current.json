@@ -28,7 +28,7 @@
       "title": "CAPTURE THE MOMENTUM: GAME 2 PACK CHALLENGE!",
       "buckets": [
         {
-          "description": "ADD 1 Moment of the player with the most Points scored for each winning team in Monday through Wednesday’s Game 2s.",
+          "description": "MONDAY: NETS X 76ERS. Most Points Scored for the winner",
           "is_wildcard": false,
           "type": "LB",
           "count": 1,
@@ -57,7 +57,7 @@
           ]
         },
         {
-          "description": "ADD 1 Moment of the player with the most Points scored for each winning team in Monday through Wednesday’s Game 2s.",
+          "description": "MONDAY: WARRIORS X KINGS. Most Points Scored for the winner",
           "is_wildcard": false,
           "type": "LB",
           "count": 1,
@@ -86,7 +86,7 @@
           ]
         },
         {
-          "description": "ADD 1 Moment of the player with the most Points scored for each winning team in Monday through Wednesday’s Game 2s.",
+          "description": "TUESDAY: HAWKS X CELTICS. Most Points Scored for the winner",
           "is_wildcard": false,
           "type": "LB",
           "count": 1,
@@ -115,7 +115,7 @@
           ]
         },
         {
-          "description": "ADD 1 Moment of the player with the most Points scored for each winning team in Monday through Wednesday’s Game 2s.",
+          "description": "TUESDAY: KNICKS X CAVS. Most Points Scored for the winner",
           "is_wildcard": false,
           "type": "LB",
           "count": 1,
@@ -144,7 +144,7 @@
           ]
         },
         {
-          "description": "ADD 1 Moment of the player with the most Points scored for each winning team in Monday through Wednesday’s Game 2s.",
+          "description": "TUESDAY: CLIPPERS X SUNS. Most Points Scored for the winner",
           "is_wildcard": false,
           "type": "LB",
           "count": 1,
@@ -173,7 +173,36 @@
           ]
         },
         {
-          "description": "ADD 1 Moment of the player with the most Points scored for each winning team in Monday through Wednesday’s Game 2s.",
+          "description": "WEDNESDAY: LAKERS X GRIZZLIES. Most Points Scored for the winner",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "team_filter": "WIN",
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            },
+            {
+              "stats": "AST,REB",
+              "order": "DESC"
+            },
+            {
+              "stats": "FTM",
+              "order": "DESC"
+            },
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            }
+          ],
+          "games": [
+            "0042200152"
+          ]
+        },
+        {
+          "description": "WEDNESDAY: HEAT X BUCKS. Most Points Scored for the winner",
           "is_wildcard": false,
           "type": "LB",
           "count": 1,
@@ -202,7 +231,7 @@
           ]
         },
         {
-          "description": "ADD 1 Moment of the player with the most Points scored for each winning team in Monday through Wednesday’s Game 2s.",
+          "description": "WEDNESDAY: TIMBERWOLVES X NUGGETS. Most Points Scored for the winner",
           "is_wildcard": false,
           "type": "LB",
           "count": 1,
@@ -228,35 +257,6 @@
           ],
           "games": [
             "0042200142"
-          ]
-        },
-        {
-          "description": "ADD 1 Moment of the player with the most Points scored for each winning team in Monday through Wednesday’s Game 2s.",
-          "is_wildcard": false,
-          "type": "LB",
-          "count": 1,
-          "is_team": false,
-          "team_filter": "WIN",
-          "tier_breakers": [
-            {
-              "stats": "PTS",
-              "order": "DESC"
-            },
-            {
-              "stats": "AST,REB",
-              "order": "DESC"
-            },
-            {
-              "stats": "FTM",
-              "order": "DESC"
-            },
-            {
-              "stats": "PMP",
-              "order": "DESC"
-            }
-          ],
-          "games": [
-            "0042200152"
           ]
         }
       ]
