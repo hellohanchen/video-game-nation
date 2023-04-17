@@ -53,17 +53,6 @@ async def on_ready():
     get_current_challenge.start()
 
 
-@bot.event
-async def on_ready():
-    for guild in bot.guilds:
-        for channel in guild.channels:
-            if channel.name in CHANNEL_NAMEs:
-                await purge_channel(channel)
-                MESSAGE_CHANNELS.append(channel)
-
-    get_current_challenge.start()
-
-
 @tasks.loop(minutes=2)
 async def get_current_challenge():
     messages = [get_scoreboard_message(START_MESSAGE)]
