@@ -42,7 +42,7 @@ class RankingProvider:
                 }
                 players.extend(self.lineups[user_id].player_ids)
                 for player_id in self.lineups[user_id].player_ids:
-                    self.collections[user_id][player_id] = all_collections[user_id][player_id]
+                    self.collections[user_id][player_id] = all_collections[user_id].get(player_id)
 
             players = list(set(players))
             self.player_stats = get_empty_players_stats(players)
@@ -130,7 +130,7 @@ class RankingProvider:
         messages = []
         message = "***Leaderboard {}***\n\n".format(self.current_game_date)
         for i in range(0, min(top, len(self.leaderboard))):
-            new_message = "#**{}.**  **{}** *+{:.2f}v*".format(
+            new_message = "#**{}.**  **{}** *+{:.2f}v*\n".format(
                 i + 1, self.collections[self.leaderboard[i]][0], self.scores[self.leaderboard[i]]['score'])
             message, _ = truncate_message(messages, message, new_message, 1950)
 
@@ -189,7 +189,7 @@ class RankingProvider:
             player['gameInfo']['homeScore'], player['gameInfo']['homeTeam'],
             player['gameInfo']['statusText']
         )
-        message += "{}pts {}reb {}ast {}stl {}blk {}3pt\n{}fgm {}ftm {}tov {}pfs {}win\n".format(
+        message += "{}xPTS {}xREB {}xAST {}xSTL {}xBLK {}x3PT\n{}xFGMi {}xFTMi {}xTOV {}xPFS {}xWIN\n".format(
             player["points"], player["reboundsTotal"], player['assists'], player['steals'], player['blocks'],
             player["threePointersMade"], player["fieldGoalsMissed"], player['freeThrowsMissed'], player['turnovers'],
             player['foulsPersonal'], player['win']

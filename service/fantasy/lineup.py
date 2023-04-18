@@ -252,12 +252,12 @@ class Lineup:
         message += "**🎽 f)** *Bench*   {}\n".format(self.formatted_lineup_player(5))
         message += "**🎽 g)** *Bench*   {}\n".format(self.formatted_lineup_player(6))
         message += "**🎽 h)** *Bench*   {}\n".format(self.formatted_lineup_player(7))
-        message += "Ⅰ. **/player** command get all players\n"
-        message += "Ⅱ. **/team <teamName>** command check players for team\n"
-        message += "Ⅲ. **/add <playerId> <pos>** command to add player to position\n"
-        message += "Ⅳ. **/remove <pos>** command to remove player to position\n"
-        message += "Ⅴ. **/swap <pos1> <pos2>** command to swap 2 positions\n"
-        message += "Ⅵ. **/submit** command to submit your lineup\n"
+        message += "Ⅰ) **.player** command get all players\n"
+        message += "Ⅱ) **.team <teamName>** command check players for team\n"
+        message += "Ⅲ) **.add <playerId> <pos>** command to add player to position\n"
+        message += "Ⅳ) **.remove <pos>** command to remove player to position\n"
+        message += "Ⅴ) **.swap <pos1> <pos2>** command to swap 2 positions\n"
+        message += "Ⅵ) **.submit** command to submit your lineup\n"
         return message
 
     def formatted_lineup_player(self, z_idx_pos):
