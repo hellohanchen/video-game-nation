@@ -1,4 +1,5 @@
-# vgn_bot.py
+#!/usr/bin/env python3
+
 import os
 from datetime import datetime
 
