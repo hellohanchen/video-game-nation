@@ -33,7 +33,7 @@
           "description": "BURN any 4 Series 3 or Series 2 Moments of winning teams on Thursday or Friday.",
           "is_wildcard": false,
           "type": "LB",
-          "count": 4,
+          "count": 6,
           "is_team": true,
           "team_filter": "WIN",
           "tier_breakers": [],
