@@ -9,7 +9,7 @@
           "description": "Predict ANY player to score 40 or more Points in any game this weekend and you’ll win a pack!",
           "is_wildcard": false,
           "type": "LB",
-          "count": 1,
+          "count": 3,
           "is_team": false,
           "tier_breakers": [
             {
@@ -18,7 +18,9 @@
             }
           ],
           "dates": [
-            "04/17/2023"
+            "04/21/2023",
+            "04/22/2023",
+            "04/23/2023"
           ]
         }
       ]
