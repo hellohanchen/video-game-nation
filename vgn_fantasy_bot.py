@@ -8,7 +8,7 @@ from discord.ext import commands, tasks
 from dotenv import load_dotenv
 
 from service.fantasy import LINEUP_PROVIDER
-from provider.nba.provider import NBA_PROVIDER
+from provider.nba_provider import NBA_PROVIDER
 from repository.vgn_collections import upsert_collection as repo_upsert_collection
 from repository.vgn_players import search_players_stats as repo_search_player
 from repository.vgn_users import get_user, insert_user
@@ -16,7 +16,7 @@ from constants import TEAM_TRICODES, TZ_ET
 from topshot.cadence.flow_collections import get_account_plays
 from service.fantasy.ranking import RANK_PROVIDER
 from topshot.graphql.get_address import get_flow_address
-from utils import get_scoreboard_message
+from utils import get_scoreboard_message, update_channel_messages
 
 # config bot
 load_dotenv()
@@ -31,16 +31,18 @@ intents.presences = False
 
 bot = commands.Bot(command_prefix='.', intents=intents)
 LB_CHANNEL_NAMES = ["📊-leaderboard"]
-LB_CHANNELS = []
-LB_MESSAGE_IDS = {}
 GAMES_CHANNEL_NAMES = ["📅-games"]
-GAMES_CHANNELS = []
-GAMES_MESSAGE_IDS = {}
 PLAYERS_CHANNEL_NAMES = ["⛹-players"]
-PLAYERS_CHANNELS = []
-PLAYERS_MESSAGE_IDS = {}
 ADMIN_CHANNELS = ["💻-admin"]
+
+LB_CHANNELS = []
+GAMES_CHANNELS = []
+PLAYERS_CHANNELS = []
 ADMIN_CHANNEL_IDS = []
+
+LB_MESSAGE_IDS = {}
+GAMES_MESSAGE_IDS = {}
+PLAYERS_MESSAGE_IDS = {}
 
 
 @bot.event
@@ -312,30 +314,6 @@ async def update_games():
                 "ET: **{}** , UPDATE EVERY 2 MINS".format(datetime.now(TZ_ET).strftime("%H:%M:%S"))]
 
     await update_channel_messages(messages, GAMES_CHANNELS, GAMES_MESSAGE_IDS)
-
-
-############
-# Utils
-############
-async def update_channel_messages(msgs, channels, messages_ids):
-    for channel in channels:
-        if channel.id not in messages_ids:
-            messages_ids[channel.id] = []
-        try:
-            for i in range(0, min(len(msgs), len(messages_ids[channel.id]))):
-                prev_message = await channel.fetch_message(messages_ids[channel.id][i])
-                await prev_message.edit(content=msgs[i])
-
-            for i in range(len(messages_ids[channel.id]), len(msgs)):
-                new_message = await channel.send(msgs[i])
-                messages_ids[channel.id].append(new_message.id)
-
-            for i in range(len(msgs), len(messages_ids[channel.id])):
-                prev_message = await channel.fetch_message(messages_ids[channel.id][i])
-                await prev_message.edit(content=".")
-
-        except Exception as err:
-            continue
 
 
 # start the bot

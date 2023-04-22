@@ -22,7 +22,16 @@ def get_player_avg_stats(player_id):
     return player_info, player_avg_stats
 
 
-def fresh_team_players():
+def fresh_team_players() -> None:
+    """
+    Generates a JSON file containing a dictionary with team abbreviations as keys and a list of player IDs as values.
+
+    This function retrieves data from an API that contains the biographical and statistical information of NBA players,
+    and generates a JSON file containing a dictionary with team abbreviations as keys and a list of player IDs as values.
+    The function saves the JSON file in a folder named 'data' within the same directory as this script. The JSON file is
+    named 'team_players.json'. If the 'data' folder or the JSON file do not exist, the function creates them. If they
+    already exist, the function overwrites them with the latest data. This function does not return anything.
+    """
     season = Season.default
     players = LeagueDashPlayerBioStats(season=season).get_data_frames()[0]
 

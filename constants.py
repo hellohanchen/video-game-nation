@@ -115,3 +115,36 @@ EMPTY_PLAYER_COLLECTION = {
 
 # Get the timezone object for New York
 TZ_ET = pytz.timezone('America/New_York')
+
+STATS_SCORE = {
+    'points': 1.0,
+    'threePointersMade': 1.0,
+    'reboundsDefensive': 1.0,
+    'reboundsOffensive': 2.0,
+    'assists': 2.0,
+    'steals': 2.5,
+    'blocks': 2.5,
+    'fieldGoalsMissed': -0.5,
+    'freeThrowsMissed': -0.5,
+    'turnovers': -2.0,
+    'foulsPersonal': -1.5,
+    'win': 3.0,
+    'doubleDouble': 3.0,
+    'tripleDouble': 6.0,
+    'quadrupleDouble': 12.0,
+    'fiveDouble': 24.0
+}
+STATS_PLAY_TYPE = {
+    'points': 'dunk',
+    'threePointersMade': 'three_pointer',
+    'reboundsDefensive': 'badge',
+    'reboundsOffensive': 'debut',
+    'assists': 'assist',
+    'steals': 'steal',
+    'blocks': 'block_shot',
+    'fieldGoalsMissed': 'jump_shot',
+    'freeThrowsMissed': 'hook_shot',
+    'turnovers': 'handle',
+    'foulsPersonal': 'layup',
+    "win": "team"
+}

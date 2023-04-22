@@ -9,8 +9,9 @@ from discord.ext import commands, tasks
 from dotenv import load_dotenv
 
 from constants import TZ_ET
+from provider.nba_provider import NBAProvider
 from topshot.challenge.challenge import Challenge
-from utils import get_scoreboard_message
+from utils import update_channel_messages
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN_CHALLENGE')
@@ -25,6 +26,14 @@ intents.presences = False
 bot = commands.Bot(command_prefix='/', intents=intents)
 
 
+class ChallengeProvider:
+    def __init__(self):
+        self.headline, self.challenges = load_challenges()
+
+    def reload(self):
+        self.headline, self.challenges = load_challenges()
+
+
 def load_challenges():
     with open(os.path.join(
             pathlib.Path(__file__).parent.resolve(),
@@ -34,11 +43,9 @@ def load_challenges():
         return loaded['message'], [Challenge.build_from_dict(challenge) for challenge in loaded['challenges']]
 
 
-START_MESSAGE, CHALLENGES = load_challenges()
-
+CHALLENGE_PROVIDER = ChallengeProvider()
 CHANNEL_NAMEs = ["🤖-mdv-flash-challenge-bot", "⚡-fc-tracker"]
 MESSAGE_CHANNELS = []
-START = False
 PREVIOUS_MESSAGE_IDS = {}
 
 
@@ -55,47 +62,16 @@ async def on_ready():
 
 @tasks.loop(minutes=2)
 async def get_current_challenge():
-    messages = [get_scoreboard_message(START_MESSAGE)]
+    messages = [NBAProvider.get_scoreboard_message(CHALLENGE_PROVIDER.headline)]
 
-    for challenge in CHALLENGES:
+    for challenge in CHALLENGE_PROVIDER.challenges:
         challenge_messages = challenge.get_formatted_messages()
-        if len(challenge_messages) > 0:
-            messages.extend(challenge_messages)
+        if challenge_messages:
+            messages += challenge_messages
 
     messages.append("ET: **{}** , UPDATE EVERY 2 MINS".format(datetime.now(TZ_ET).strftime("%H:%M:%S")))
 
-    for channel in MESSAGE_CHANNELS:
-        if channel.id not in PREVIOUS_MESSAGE_IDS:
-            PREVIOUS_MESSAGE_IDS[channel.id] = []
-        try:
-            for i in range(0, min(len(messages), len(PREVIOUS_MESSAGE_IDS[channel.id]))):
-                prev_message = await channel.fetch_message(PREVIOUS_MESSAGE_IDS[channel.id][i])
-                await prev_message.edit(content=messages[i])
-
-            for i in range(len(PREVIOUS_MESSAGE_IDS[channel.id]), len(messages)):
-                new_message = await channel.send(messages[i])
-                PREVIOUS_MESSAGE_IDS[channel.id].append(new_message.id)
-
-            for i in range(len(messages), len(PREVIOUS_MESSAGE_IDS[channel.id])):
-                prev_message = await channel.fetch_message(PREVIOUS_MESSAGE_IDS[channel.id][i])
-                await prev_message.edit(content=".")
-
-        except Exception as err:
-            continue
-
-
-@bot.command(name='track')
-@commands.cooldown(1, 30, commands.BucketType.user)
-async def track_challenge(context):
-    messages = [get_scoreboard_message(START_MESSAGE)]
-
-    for challenge in CHALLENGES:
-        messages.extend(challenge.get_formatted_messages())
-
-    messages.append("ET: **{}** , UPDATE EVERY MIN".format(datetime.now(TZ_ET).strftime("%H:%M:%S")))
-
-    for message in messages:
-        await context.channel.send(message)
+    await update_channel_messages(messages, MESSAGE_CHANNELS, PREVIOUS_MESSAGE_IDS)
 
 
 @bot.command(name="purge")
@@ -108,6 +84,21 @@ async def purge_channel(channel):
     await channel.send("Purge this channel to track new challenge.")
     if channel.id in PREVIOUS_MESSAGE_IDS:
         PREVIOUS_MESSAGE_IDS[channel.id] = []
+
+
+@bot.command(name="reload")
+async def reload(ctx):
+    try:
+        CHALLENGE_PROVIDER.reload()
+
+        for channel in MESSAGE_CHANNELS:
+            await purge_channel(channel)
+        PREVIOUS_MESSAGE_IDS.clear()
+    except Exception as err:
+        await ctx.channel.send(f'Failed: ${err}.')
+        return
+
+    await ctx.channel.send("Reloaded")
 
 
 bot.run(TOKEN)

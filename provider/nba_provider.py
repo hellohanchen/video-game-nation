@@ -6,6 +6,7 @@ import pathlib
 from nba_api.live.nba.endpoints import scoreboard, boxscore
 
 from provider.nba.schedule import download_schedule
+from utils import parse_dash_date, to_slash_date, parse_slash_date
 
 
 class NBAProvider:
@@ -20,19 +21,17 @@ class NBAProvider:
         self.__load_team_players()
 
     def __load_schedule(self):
-        new_schedule = json.load(open(os.path.join(pathlib.Path(__file__).parent.resolve(), 'data/game_dates.json'), 'r'))
+        with open(os.path.join(pathlib.Path(__file__).parent.resolve(), 'nba/data/game_dates.json'), 'r') as f:
+            new_schedule = json.load(f)
 
-        for date in new_schedule:
-            self.game_schedule[date] = new_schedule[date]
-            for game_id in new_schedule[date]:
-                self.game_teams[game_id] = new_schedule[date][game_id]
-
-        self.latest_date = date
+        self.game_schedule.update(new_schedule)
+        self.game_teams.update({game_id: games[game_id] for date, games in new_schedule.items() for game_id in games})
+        self.latest_date = list(new_schedule.keys())[-1]
         self.set_coming_game_date()
 
     def __load_team_players(self):
         self.team_players = json.load(
-            open(os.path.join(pathlib.Path(__file__).parent.resolve(), 'data/team_players.json'), 'r'))
+            open(os.path.join(pathlib.Path(__file__).parent.resolve(), 'nba/data/team_players.json'), 'r'))
 
     @staticmethod
     def get_scoreboard():
@@ -121,16 +120,16 @@ class NBAProvider:
                     break
 
         if not started:
-            self.coming_date = datetime.datetime.strptime(current_date, '%Y-%m-%d').strftime('%m/%d/%Y')
+            self.coming_date = to_slash_date(parse_dash_date(current_date))
         else:
-            cur_date = datetime.datetime.strptime(current_date, '%Y-%m-%d')
-            max_date = datetime.datetime.strptime(self.latest_date, '%m/%d/%Y')
+            cur_date = parse_dash_date(current_date)
+            max_date = parse_slash_date(self.latest_date)
 
             while cur_date < max_date:
                 cur_date = cur_date + datetime.timedelta(days=1)
 
-                if cur_date.strftime('%m/%d/%Y') in self.game_schedule:
-                    self.coming_date = cur_date.strftime('%m/%d/%Y')
+                if to_slash_date(cur_date) in self.game_schedule:
+                    self.coming_date = to_slash_date(cur_date)
                     return
 
             self.coming_date = "N/A"
@@ -138,6 +137,30 @@ class NBAProvider:
     def fresh_schedule(self):
         download_schedule()
         self.__load_schedule()
+
+    @staticmethod
+    def get_scoreboard_message(headline):
+        message = ""
+
+        score_board = NBAProvider.get_scoreboard()
+
+        if len(score_board['games']) > 0:
+            message += "-" * 40
+            message += "\n🏀 ***{}***\n".format(headline)
+            message += "**Games on {}**\n\n".format(score_board['gameDate'])
+
+            for game in score_board['games']:
+                message += "**{}** {} : {} **{}** {}\n".format(
+                    game['awayTeam']['teamTricode'],
+                    game['awayTeam']['score'],
+                    game['homeTeam']['score'],
+                    game['homeTeam']['teamTricode'],
+                    game['gameStatusText']
+                )
+
+            message += "\n\n"
+
+        return message
 
 
 NBA_PROVIDER = NBAProvider()

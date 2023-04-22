@@ -2,7 +2,7 @@ import datetime
 
 from nba_api.live.nba.endpoints import boxscore
 
-from provider.nba.provider import NBAProvider
+from provider.nba_provider import NBAProvider
 from repository.vgn_collections import get_collections
 from repository.vgn_lineups import get_lineups
 from repository.vgn_players import get_empty_players_stats
@@ -62,7 +62,7 @@ class RankingProvider:
             self.current_game_date = datetime.datetime.strptime(scoreboard['gameDate'], '%Y-%m-%d').strftime('%m/%d/%Y')
             self.games = [game['gameId'] for game in scoreboard['games']]
             try:
-                self.__load_lineups_and_collections()
+                self.reload()
                 self.status = status
                 LINEUP_PROVIDER.reload()
             except:
