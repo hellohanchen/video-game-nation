@@ -7,8 +7,8 @@ import discord
 from discord.ext import commands
 from dotenv import load_dotenv
 
-from topshot.compare import compare_moments
-from topshot.ts_info import TOPSHOT_SET_INFO
+from topshot.trade.compare import compare_moments
+from topshot.ts_info import TS_SET_INFO
 from utils import truncate_message
 
 load_dotenv()
@@ -45,12 +45,12 @@ def get_formatted_message(user1, user2, collection1, collection2, series):
 
         set_id = int(set_id_str)
 
-        if TOPSHOT_SET_INFO[set_id]['flowSeriesNumber'] != series:
+        if TS_SET_INFO[set_id]['flowSeriesNumber'] != series:
             continue
 
         new_message += "🏀 ***{} (Series {}):***\n".format(
-            TOPSHOT_SET_INFO[set_id]['flowName'],
-            TOPSHOT_SET_INFO[set_id]['flowSeriesNumber']
+            TS_SET_INFO[set_id]['flowName'],
+            TS_SET_INFO[set_id]['flowSeriesNumber']
         )
 
         message, new_message = truncate_message(messages, message, new_message, 1950)
@@ -97,12 +97,12 @@ def get_formatted_message(user1, user2, collection1, collection2, series):
 
         set_id = int(set_id_str)
 
-        if TOPSHOT_SET_INFO[set_id]['flowSeriesNumber'] != series:
+        if TS_SET_INFO[set_id]['flowSeriesNumber'] != series:
             continue
 
         new_message += "🏀 ***{} (Series {}):***\n".format(
-            TOPSHOT_SET_INFO[set_id]['flowName'],
-            TOPSHOT_SET_INFO[set_id]['flowSeriesNumber']
+            TS_SET_INFO[set_id]['flowName'],
+            TS_SET_INFO[set_id]['flowSeriesNumber']
         )
 
         new_message += "**{}** has **{}** needs:\n".format(user2, user1)

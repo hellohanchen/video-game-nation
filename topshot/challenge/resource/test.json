@@ -1,0 +1,127 @@
+{
+  "message": "PLAY-IN WEEK MADNESS!",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "FOLLOW THE ACTION AND EARN A PACK!",
+      "buckets": [
+        {
+          "description": "ADD 1 Moment of the player with the most Points scored for each winning team on Tuesday. (EC)",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "team_filter": "WIN",
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            },
+            {
+              "stats": "AST,REB",
+              "order": "DESC"
+            },
+            {
+              "stats": "FTM",
+              "order": "DESC"
+            },
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            }
+          ],
+          "games": [
+            "0052200101"
+          ]
+        },
+        {
+          "description": "ADD 1 Moment of the player with the most Points scored for each winning team on Tuesday. (WC)",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "team_filter": "WIN",
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            },
+            {
+              "stats": "AST,REB",
+              "order": "DESC"
+            },
+            {
+              "stats": "FTM",
+              "order": "DESC"
+            },
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            }
+          ],
+          "games": [
+            "0052200121"
+          ]
+        },
+        {
+          "description": "ADD 1 Moment of the player with the most Points + Assists + Rebounds for each winning team on Friday. (EC)",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "team_filter": "WIN",
+          "tier_breakers": [
+            {
+              "stats": "PTS,AST,REB",
+              "order": "DESC"
+            },
+            {
+              "stats": "AST,REB",
+              "order": "DESC"
+            },
+            {
+              "stats": "FTM",
+              "order": "DESC"
+            },
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            }
+          ],
+          "games": [
+            "0052200201"
+          ]
+        },
+        {
+          "description": "ADD 1 Moment of the player with the most Points + Assists + Rebounds for each winning team on Friday. (WC)",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "team_filter": "WIN",
+          "tier_breakers": [
+            {
+              "stats": "PTS,AST,REB",
+              "order": "DESC"
+            },
+            {
+              "stats": "AST,REB",
+              "order": "DESC"
+            },
+            {
+              "stats": "FTM",
+              "order": "DESC"
+            },
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            }
+          ],
+          "games": [
+            "0052200211"
+          ]
+        }
+      ]
+    }
+  ]
+}

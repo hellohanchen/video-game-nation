@@ -1,0 +1,266 @@
+{
+  "message": "PLAYOFF2023 Game 2s",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "PREDICTIVE CHALLENGE: BEAT THE GAME 1 HIGH SCORE!",
+      "buckets": [
+        {
+          "description": "Predict any player to beat the Game 1 points benchmark by scoring 39 or more in any Game 2 matchup and you’ll win a pack! \uD83E\uDD73",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "04/17/2023"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "CAPTURE THE MOMENTUM: GAME 2 PACK CHALLENGE!",
+      "buckets": [
+        {
+          "description": "MONDAY: NETS X 76ERS. Most Points Scored for the winner",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "team_filter": "WIN",
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            },
+            {
+              "stats": "AST,REB",
+              "order": "DESC"
+            },
+            {
+              "stats": "FTM",
+              "order": "DESC"
+            },
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            }
+          ],
+          "games": [
+            "0042200122"
+          ]
+        },
+        {
+          "description": "MONDAY: WARRIORS X KINGS. Most Points Scored for the winner",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "team_filter": "WIN",
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            },
+            {
+              "stats": "AST,REB",
+              "order": "DESC"
+            },
+            {
+              "stats": "FTM",
+              "order": "DESC"
+            },
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            }
+          ],
+          "games": [
+            "0042200162"
+          ]
+        },
+        {
+          "description": "TUESDAY: HAWKS X CELTICS. Most Points Scored for the winner",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "team_filter": "WIN",
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            },
+            {
+              "stats": "AST,REB",
+              "order": "DESC"
+            },
+            {
+              "stats": "FTM",
+              "order": "DESC"
+            },
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            }
+          ],
+          "games": [
+            "0042200112"
+          ]
+        },
+        {
+          "description": "TUESDAY: KNICKS X CAVS. Most Points Scored for the winner",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "team_filter": "WIN",
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            },
+            {
+              "stats": "AST,REB",
+              "order": "DESC"
+            },
+            {
+              "stats": "FTM",
+              "order": "DESC"
+            },
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            }
+          ],
+          "games": [
+            "0042200132"
+          ]
+        },
+        {
+          "description": "TUESDAY: CLIPPERS X SUNS. Most Points Scored for the winner",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "team_filter": "WIN",
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            },
+            {
+              "stats": "AST,REB",
+              "order": "DESC"
+            },
+            {
+              "stats": "FTM",
+              "order": "DESC"
+            },
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            }
+          ],
+          "games": [
+            "0042200172"
+          ]
+        },
+        {
+          "description": "WEDNESDAY: LAKERS X GRIZZLIES. Most Points Scored for the winner",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "team_filter": "WIN",
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            },
+            {
+              "stats": "AST,REB",
+              "order": "DESC"
+            },
+            {
+              "stats": "FTM",
+              "order": "DESC"
+            },
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            }
+          ],
+          "games": [
+            "0042200152"
+          ]
+        },
+        {
+          "description": "WEDNESDAY: HEAT X BUCKS. Most Points Scored for the winner",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "team_filter": "WIN",
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            },
+            {
+              "stats": "AST,REB",
+              "order": "DESC"
+            },
+            {
+              "stats": "FTM",
+              "order": "DESC"
+            },
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            }
+          ],
+          "games": [
+            "0042200102"
+          ]
+        },
+        {
+          "description": "WEDNESDAY: TIMBERWOLVES X NUGGETS. Most Points Scored for the winner",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "team_filter": "WIN",
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            },
+            {
+              "stats": "AST,REB",
+              "order": "DESC"
+            },
+            {
+              "stats": "FTM",
+              "order": "DESC"
+            },
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            }
+          ],
+          "games": [
+            "0042200142"
+          ]
+        }
+      ]
+    }
+  ]
+}
+

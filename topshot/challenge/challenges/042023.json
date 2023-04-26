@@ -1,0 +1,105 @@
+{
+  "message": "PLAYOFF2023",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "PREDICTIVE CHALLENGE: OVER THE HILL",
+      "buckets": [
+        {
+          "description": "Predict ANY player to score 40 or more Points in any game this weekend and you’ll win a pack!",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 3,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "04/21/2023",
+            "04/22/2023",
+            "04/23/2023"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "PACK CHALLENGE: PLAY WITH FIRE AND WIN A PACK!",
+      "buckets": [
+        {
+          "description": "BURN any 4 Series 3 or Series 2 Moments of winning teams on Thursday or Friday.",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 6,
+          "is_team": true,
+          "team_filter": "WIN",
+          "tier_breakers": [],
+          "dates": [
+            "04/20/2023",
+            "04/21/2023"
+          ]
+        },
+        {
+          "description": "ADD 1 Moment of the player with the most 3-Pointers Made on Thursday.",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "3PM",
+              "order": "DESC"
+            },
+            {
+              "stats": "WIN",
+              "order": "DESC"
+            },
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            },
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "04/20/2023"
+          ]
+        },
+        {
+          "description": "ADD 1 Moment of the player with the most 3-Pointers Made on Friday.",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "3PM",
+              "order": "DESC"
+            },
+            {
+              "stats": "WIN",
+              "order": "DESC"
+            },
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            },
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "04/21/2023"
+          ]
+        }
+      ]
+    }
+  ]
+}
+

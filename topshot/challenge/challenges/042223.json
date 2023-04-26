@@ -1,0 +1,258 @@
+{
+  "message": "PLAYOFF2023",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "PREDICTIVE CHALLENGE: OVER THE HILL",
+      "buckets": [
+        {
+          "description": "Predict ANY player to score 40 or more Points in any game this weekend and you’ll win a pack!",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 3,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "04/21/2023",
+            "04/22/2023",
+            "04/23/2023"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "POP-UP PLAYOFF PACK CHALLENGE!",
+      "buckets": [
+        {
+          "description": "ADD 1 Moment of the player with the most Points + Assists + Rebounds for the Eastern Conference each day.",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "team_filter": "EC",
+          "tier_breakers": [
+            {
+              "stats": "PTS,AST,REB",
+              "order": "DESC"
+            },
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            },
+            {
+              "stats": "FTM",
+              "order": "DESC"
+            },
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "04/22/2023"
+          ]
+        },
+        {
+          "description": "ADD 1 Moment of the player with the most Points + Assists + Rebounds for the Western Conference each day.",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "team_filter": "WC",
+          "tier_breakers": [
+            {
+              "stats": "PTS,AST,REB",
+              "order": "DESC"
+            },
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            },
+            {
+              "stats": "FTM",
+              "order": "DESC"
+            },
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "04/22/2023"
+          ]
+        },
+        {
+          "description": "BURN 1 Moment of the team with the most Points Scored each day.",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": true,
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "04/22/2023"
+          ]
+        },
+        {
+          "description": "ADD 1 Moment of the player with the most Points + Assists + Rebounds for the Eastern Conference each day.",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "team_filter": "EC",
+          "tier_breakers": [
+            {
+              "stats": "PTS,AST,REB",
+              "order": "DESC"
+            },
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            },
+            {
+              "stats": "FTM",
+              "order": "DESC"
+            },
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "04/23/2023"
+          ]
+        },
+        {
+          "description": "ADD 1 Moment of the player with the most Points + Assists + Rebounds for the Western Conference each day.",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "team_filter": "WC",
+          "tier_breakers": [
+            {
+              "stats": "PTS,AST,REB",
+              "order": "DESC"
+            },
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            },
+            {
+              "stats": "FTM",
+              "order": "DESC"
+            },
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "04/23/2023"
+          ]
+        },
+        {
+          "description": "BURN 1 Moment of the team with the most Points Scored each day.",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": true,
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "04/23/2023"
+          ]
+        },
+        {
+          "description": "ADD 1 Moment of the player with the most Points + Assists + Rebounds for the Eastern Conference each day.",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "team_filter": "EC",
+          "tier_breakers": [
+            {
+              "stats": "PTS,AST,REB",
+              "order": "DESC"
+            },
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            },
+            {
+              "stats": "FTM",
+              "order": "DESC"
+            },
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "04/24/2023"
+          ]
+        },
+        {
+          "description": "ADD 1 Moment of the player with the most Points + Assists + Rebounds for the Western Conference each day.",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "team_filter": "WC",
+          "tier_breakers": [
+            {
+              "stats": "PTS,AST,REB",
+              "order": "DESC"
+            },
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            },
+            {
+              "stats": "FTM",
+              "order": "DESC"
+            },
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "04/24/2023"
+          ]
+        },
+        {
+          "description": "BURN 1 Moment of the team with the most Points Scored each day.",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": true,
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "04/24/2023"
+          ]
+        }
+      ]
+    }
+  ]
+}
+

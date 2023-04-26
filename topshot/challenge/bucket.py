@@ -1,6 +1,6 @@
 from enum import Enum
 
-from nba import stats
+from provider.nba_provider import NBA_PROVIDER
 from topshot.challenge.player_filter import TopshotFilter
 from topshot.challenge.team_filter import TeamFilter
 from topshot.challenge.tier_breaker import TierBreaker
@@ -64,7 +64,7 @@ class Bucket:
         :param date: a game date
         :return: None
         """
-        self.games.extend(stats.get_games_on_date(date).keys())
+        self.games.extend(NBA_PROVIDER.get_games_on_date(date).keys())
 
     def add_game(self, game_id):
         """
@@ -100,7 +100,7 @@ class Bucket:
 
         :return: a dictionary of {name, stats:{}}
         """
-        games_teams = stats.get_teams_for_games(self.games)
+        games_teams = NBA_PROVIDER.get_teams_for_games(self.games)
 
         # apply team filter if exists
         if self.team_filter:
@@ -119,7 +119,7 @@ class Bucket:
             return self.tracker.get_team_ranking(games_teams)
 
         # get players for each game
-        game_players = stats.get_players_for_games(games_teams)
+        game_players = NBA_PROVIDER.get_players_for_games(games_teams)
 
         # apply player filters if exist
         for f in self.player_filters:
