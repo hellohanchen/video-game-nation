@@ -54,7 +54,6 @@ async def on_ready():
     for guild in bot.guilds:
         for channel in guild.channels:
             if channel.name in CHANNEL_NAMEs:
-                await purge_channel(channel)
                 MESSAGE_CHANNELS.append(channel)
 
     get_current_challenge.start()

@@ -102,7 +102,7 @@ class Challenge:
 
             new_message += "\n"
 
-            ranking = bucket.get_current_ranking()
+            ranking = bucket.get_current_scores()
 
             if len(ranking) == 0:
                 new_message += "\n\n"

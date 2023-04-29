@@ -1,4 +1,4 @@
-from typing import Dict, List, Any, Optional, Set
+from typing import Dict, List, Any, Optional, Set, Tuple
 
 STATS_MAP = {
     "PTS": "points",
@@ -44,11 +44,11 @@ class TierBreaker:
         result = 0
 
         for player_stats in team_player_stats:
-            result += self.load_play_stats(player_stats['statistics'])
+            result += self.load_player_stats(player_stats['statistics'])
 
         return result
 
-    def load_play_stats(self, player_stats: Dict) -> Any:
+    def load_player_stats(self, player_stats: Dict) -> Any:
         """
         Load player statistics for tier breaking.
 
@@ -84,3 +84,44 @@ class TierBreaker:
                 return action
 
         return None
+
+
+class Qualifier(TierBreaker):
+    def __init__(self, stats: List[str], target: int):
+        super().__init__(stats)
+        self.target = target
+
+    def load_team_stats(self, team_player_stats: List[Dict]) -> tuple[float, int]:
+        result = 0
+
+        for player_stats in team_player_stats:
+            result += self.load_player_stats(player_stats['statistics'])[1]
+
+        return min(1.0, float(result)/float(self.target)), result
+
+    def load_player_stats(self, player_stats: Dict) -> tuple[float, int]:
+        result = super().load_player_stats(player_stats)
+
+        return min(1.0, float(result)/float(self.target)), result
+
+
+class QualifierPass(Qualifier):
+    def __init__(self, target):
+        super().__init__(["☑"], target)
+
+    def load_team_stats(self, team_player_stats: List[Dict]) -> tuple[float, int]:
+        return 0.0, 0
+
+    def load_player_stats(self, player_stats: Dict) -> tuple[float, int]:
+        return 0.0, 0
+
+
+class QualifierProgress(Qualifier):
+    def __init__(self):
+        super().__init__(["%"], 0)
+
+    def load_team_stats(self, team_player_stats: List[Dict]) -> tuple[float, int]:
+        return 0.0, 0
+
+    def load_player_stats(self, player_stats: Dict) -> tuple[float, int]:
+        return 0.0, 0

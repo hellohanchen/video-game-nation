@@ -181,3 +181,28 @@ def parse_slash_date(dt):
 
 def to_slash_date(dt):
     return dt.strftime('%m/%d/%Y')
+
+
+def equals(s1: list, s2: list) -> bool:
+    """
+    Compares two lists element-wise and returns True if they are equal, False otherwise.
+
+    Args:
+        s1: The first list to compare.
+        s2: The second list to compare.
+
+    Returns:
+        True if the two lists are equal, False otherwise.
+    """
+    # If the two lists are not of equal length, they are not equal.
+    if len(s1) != len(s2):
+        return False
+
+    # Compare the elements of the two lists.
+    for i in range(len(s1)):
+        if s1[i] != s2[i]:
+            return False
+
+    # If all the elements are equal, the two lists are equal.
+    return True
+

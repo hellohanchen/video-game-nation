@@ -3,8 +3,10 @@ from enum import Enum
 from provider.nba_provider import NBA_PROVIDER
 from topshot.challenge.player_filter import TopshotFilter
 from topshot.challenge.team_filter import TeamFilter
-from topshot.challenge.tier_breaker import TierBreaker
-from topshot.challenge.tracker import LeaderBoardTracker, PlayByPlayTracker
+from topshot.challenge.tier_breaker import TierBreaker, Qualifier
+from topshot.challenge.tracker.leaderboard_tracker import LeaderBoardTracker, QualifierTracker
+from topshot.challenge.tracker.playbyplay_tracker import PlayByPlayTracker
+from topshot.challenge.tracker.tracker import Tracker
 
 
 class BucketType(Enum):
@@ -39,9 +41,11 @@ class Bucket:
         self.bucket_type = bucket_type
 
         if bucket_type == BucketType.LB:
-            self.tracker = LeaderBoardTracker(count)
+            self.tracker = LeaderBoardTracker(count)  # type: Tracker
         if bucket_type == BucketType.PBP:
-            self.tracker = PlayByPlayTracker(30)
+            self.tracker = PlayByPlayTracker(30)  # type: Tracker
+        if bucket_type == BucketType.QA:
+            self.tracker = QualifierTracker()  # type: Tracker
 
         self.is_team = is_team
         self.games = []
@@ -94,7 +98,7 @@ class Bucket:
         """
         self.team_filter = team_filter
 
-    def get_current_ranking(self):
+    def get_current_scores(self):
         """
         Get the current ranking of teams/players from ALL games tracked by this bucket.
 
@@ -116,7 +120,7 @@ class Bucket:
                 games_teams.pop(game_id)
 
         if self.is_team:
-            return self.tracker.get_team_ranking(games_teams)
+            return self.tracker.get_team_scores(games_teams)
 
         # get players for each game
         game_players = NBA_PROVIDER.get_players_for_games(games_teams)
@@ -134,7 +138,7 @@ class Bucket:
             for game_id in games_to_remove:
                 game_players.pop(game_id)
 
-        return self.tracker.get_player_ranking(game_players)
+        return self.tracker.get_player_scores(game_players)
 
     @staticmethod
     def build_from_dict(dict_obj):
@@ -147,11 +151,12 @@ class Bucket:
             Bucket: the Bucket object created from the dictionary
         """
         bucket = Bucket(
-            dict_obj['description'],
-            dict_obj['is_wildcard'],
-            BucketType[dict_obj['type']],
-            dict_obj['count'],
-            dict_obj['is_team'])
+            dict_obj.get('description'),
+            dict_obj.get('is_wildcard'),
+            BucketType[dict_obj.get('type')],
+            dict_obj.get('count', 0),
+            dict_obj.get('is_team')
+        )
 
         if dict_obj['type'] == BucketType.LB.name or dict_obj['type'] == BucketType.PBP.name:
             for tier_breaker in dict_obj['tier_breakers']:
@@ -159,6 +164,15 @@ class Bucket:
                     TierBreaker(
                         tier_breaker['stats'].split(','),
                         tier_breaker['order']
+                    )
+                )
+        if dict_obj['type'] == BucketType.QA.name:
+            for tier_breaker in dict_obj['tier_breakers']:
+                stats = tier_breaker['stats'].split(',')
+                bucket.add_tier_breaker(
+                    Qualifier(
+                        stats[:-1],
+                        int(stats[-1])
                     )
                 )
 
