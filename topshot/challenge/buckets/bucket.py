@@ -1,12 +1,13 @@
 from enum import Enum
+from typing import List, Dict, Any, Tuple
 
 from provider.nba_provider import NBA_PROVIDER
 from topshot.challenge.player_filter import TopshotFilter
 from topshot.challenge.team_filter import TeamFilter
 from topshot.challenge.tier_breaker import TierBreaker, Qualifier
-from topshot.challenge.tracker.leaderboard_tracker import LeaderBoardTracker, QualifierTracker
-from topshot.challenge.tracker.playbyplay_tracker import PlayByPlayTracker
-from topshot.challenge.tracker.tracker import Tracker
+from topshot.challenge.trackers.leaderboard_tracker import LeaderBoardTracker, QualifierTracker
+from topshot.challenge.trackers.playbyplay_tracker import PlayByPlayTracker
+from topshot.challenge.trackers.tracker import Tracker
 
 
 class BucketType(Enum):
@@ -41,11 +42,11 @@ class Bucket:
         self.bucket_type = bucket_type
 
         if bucket_type == BucketType.LB:
-            self.tracker = LeaderBoardTracker(count)  # type: Tracker
+            self.tracker: Tracker = LeaderBoardTracker(count)
         if bucket_type == BucketType.PBP:
-            self.tracker = PlayByPlayTracker(30)  # type: Tracker
+            self.tracker: Tracker = PlayByPlayTracker(30)
         if bucket_type == BucketType.QA:
-            self.tracker = QualifierTracker()  # type: Tracker
+            self.tracker: Tracker = QualifierTracker()
 
         self.is_team = is_team
         self.games = []
@@ -56,7 +57,7 @@ class Bucket:
         """
         Add a new tier breaker to the tracker.
 
-        :param tier_breaker: a tier breaker object
+        :param: tier_breaker: a tier breaker object
         :return: None
         """
         self.tracker.add_tier_breaker(tier_breaker)
@@ -65,7 +66,7 @@ class Bucket:
         """
         Add all games from a date to this bucket to track.
 
-        :param date: a game date
+        :param: date: a game date
         :return: None
         """
         self.games.extend(NBA_PROVIDER.get_games_on_date(date).keys())
@@ -74,7 +75,7 @@ class Bucket:
         """
         Add a single game to this bucket to track.
 
-        :param game_id: a game
+        :param: game_id: a game
         :return: None
         """
 
@@ -84,7 +85,7 @@ class Bucket:
         """
         Add a player filter to pre-select players.
 
-        :param player_filter: a player filter
+        :param: player_filter: a player filter
         :return: None
         """
         self.player_filters.append(player_filter)
@@ -93,17 +94,12 @@ class Bucket:
         """
         Set the filter to pre-select teams
 
-        :param team_filter: a team filter
+        :param: team_filter: a team filter
         :return: NOne
         """
         self.team_filter = team_filter
 
-    def get_current_scores(self):
-        """
-        Get the current ranking of teams/players from ALL games tracked by this bucket.
-
-        :return: a dictionary of {name, stats:{}}
-        """
+    def get_filtered_games_teams(self) -> Dict[str, List[str]]:
         games_teams = NBA_PROVIDER.get_teams_for_games(self.games)
 
         # apply team filter if exists
@@ -119,10 +115,9 @@ class Bucket:
             for game_id in games_to_remove:
                 games_teams.pop(game_id)
 
-        if self.is_team:
-            return self.tracker.get_team_scores(games_teams)
+        return games_teams
 
-        # get players for each game
+    def get_filtered_games_players(self, games_teams) -> Dict[str, List[int]]:
         game_players = NBA_PROVIDER.get_players_for_games(games_teams)
 
         # apply player filters if exist
@@ -138,7 +133,23 @@ class Bucket:
             for game_id in games_to_remove:
                 game_players.pop(game_id)
 
-        return self.tracker.get_player_scores(game_players)
+        return game_players
+
+    def get_current_scores(self) -> List[Tuple[int, List[Dict[str, Any]]]]:
+        """
+        Get the current ranking of teams/players from ALL games tracked by this bucket.
+
+        :return: a dictionary of {name, stats:{}}
+        """
+        games_teams = self.get_filtered_games_teams()
+
+        if self.is_team:
+            return [self.tracker.get_team_scores(games_teams)]
+
+        # get players for each game
+        game_players = self.get_filtered_games_players(games_teams)
+
+        return [self.tracker.get_player_scores(game_players)]
 
     @staticmethod
     def build_from_dict(dict_obj):
@@ -158,38 +169,57 @@ class Bucket:
             dict_obj.get('is_team')
         )
 
-        if dict_obj['type'] == BucketType.LB.name or dict_obj['type'] == BucketType.PBP.name:
-            for tier_breaker in dict_obj['tier_breakers']:
-                bucket.add_tier_breaker(
-                    TierBreaker(
-                        tier_breaker['stats'].split(','),
-                        tier_breaker['order']
-                    )
+        return fill_bucket(bucket, dict_obj)
+
+
+def fill_bucket(bucket: Bucket, dict_obj: Dict[str, any]) -> Bucket:
+    """
+    Populate a Bucket object based on the dictionary provided.
+
+    :param bucket: the Bucket object to populate
+    :param dict_obj: the dictionary containing the parameters for the Bucket
+    :return: the populated Bucket object
+    """
+    # If the bucket is of type LeaderBoard or PlayByPlay, add the specified TierBreakers to the bucket
+    if dict_obj['type'] == BucketType.LB.name or dict_obj['type'] == BucketType.PBP.name:
+        for tier_breaker in dict_obj['tier_breakers']:
+            bucket.add_tier_breaker(
+                TierBreaker(
+                    stats=tier_breaker['stats'].split(','),
+                    order=tier_breaker['order']
                 )
-        if dict_obj['type'] == BucketType.QA.name:
-            for tier_breaker in dict_obj['tier_breakers']:
-                stats = tier_breaker['stats'].split(',')
-                bucket.add_tier_breaker(
-                    Qualifier(
-                        stats[:-1],
-                        int(stats[-1])
-                    )
+            )
+
+    # If the bucket is of type Qualifier, add the specified Qualifier to the bucket
+    if dict_obj['type'] == BucketType.QA.name:
+        for tier_breaker in dict_obj['tier_breakers']:
+            stats = tier_breaker['stats'].split(',')
+            bucket.add_tier_breaker(
+                Qualifier(
+                    stats=stats[:-1],
+                    target=int(stats[-1])
                 )
+            )
 
-        if 'team_filter' in dict_obj:
-            bucket.set_team_filter(TeamFilter(dict_obj['team_filter']))
+    # If a team filter is specified, set the TeamFilter for the bucket
+    if 'team_filter' in dict_obj:
+        bucket.set_team_filter(TeamFilter(dict_obj['team_filter']))
 
-        if 'player_filters' not in dict_obj or len(dict_obj['player_filters']) == 0:
-            bucket.add_player_filter(TopshotFilter([]))
-        else:
-            for filter_def in dict_obj['player_filters']:
-                bucket.add_player_filter(TopshotFilter(filter_def.split(',')))
+    # If player filters are specified, add TopshotFilter for each player filter to the bucket
+    if 'player_filters' not in dict_obj or len(dict_obj['player_filters']) == 0:
+        bucket.add_player_filter(TopshotFilter([]))
+    else:
+        for filter_def in dict_obj['player_filters']:
+            bucket.add_player_filter(TopshotFilter(filter_def.split(',')))
 
-        if "dates" in dict_obj:
-            for date in dict_obj['dates']:
-                bucket.add_date(date)
-        else:
-            for game_id in dict_obj['games']:
-                bucket.add_game(game_id)
+    # If dates are specified, add the specified dates to the bucket
+    if "dates" in dict_obj:
+        for date in dict_obj['dates']:
+            bucket.add_date(date)
+    # Otherwise, add the specified game IDs to the bucket
+    else:
+        for game_id in dict_obj['games']:
+            bucket.add_game(game_id)
 
-        return bucket
+    # Return the populated Bucket object
+    return bucket

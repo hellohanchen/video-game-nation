@@ -13,16 +13,16 @@ class Players(Table):
     """Encapsulates an Amazon DynamoDB table of user data."""
     def __init__(self, dyn_resource):
         """
-        :param dyn_resource: A Boto3 DynamoDB resource.
+        :param: dyn_resource: A Boto3 DynamoDB resource.
         """
         super().__init__(dyn_resource, "players")
 
     def put_player(self, player_id, full_name, attributes):
         """
         Adds a player to the table
-        :param player_id: The topshot player id
-        :param full_name: The player's full name without punctuation
-        :param attributes: Other player attributes including team, jersey, and salary
+        :param: player_id: The topshot player id
+        :param: full_name: The player's full name without punctuation
+        :param: attributes: Other player attributes including team, jersey, and salary
         """
 
         first_name, last_name = split_fullname(full_name)
@@ -51,7 +51,7 @@ class Players(Table):
         """
         Queries for players by full name or first/last name
 
-        :param name: The year to query.
+        :param: name: The year to query.
         :return: The list of movies that were released in the specified year.
         """
         try:

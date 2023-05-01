@@ -1,12 +1,9 @@
+from typing import Set
+
 from nba_api.live.nba.endpoints import boxscore
-from typing import List, Set
 
-
+from provider.nba_provider import EAST_CONFERENCE, WEST_CONFERENCE
 from utils import get_lead_team
-
-
-EAST = {"MIL", "BOS", "PHI", "CLE", "NYK", "BKN", "MIA", "ATL", "TOR", "CHI", "WAS", "IND", "ORL", "CHA", "DET"}
-WEST = {"DEN", "MEM", "SAC", "PHX", "LAC", "GSW", "MIN", "NOP", "LAL", "OKC", "DAL", "UTA", "POR", "SAS", "HOU"}
 
 
 class TeamFilter:
@@ -57,12 +54,12 @@ class TeamFilter:
                     return set(teams)
 
         if self.tag == "EC":
-            return teams.intersection(EAST)
+            return teams.intersection(EAST_CONFERENCE)
 
         if self.tag == "WC":
-            return teams.intersection(WEST)
+            return teams.intersection(WEST_CONFERENCE)
 
-        if self.tag in EAST or self.tag in WEST:
+        if self.tag in EAST_CONFERENCE or self.tag in WEST_CONFERENCE:
             if self.tag in teams:
                 return {self.tag}
             else:

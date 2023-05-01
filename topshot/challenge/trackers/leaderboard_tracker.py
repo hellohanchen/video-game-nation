@@ -1,7 +1,7 @@
 from typing import List, Dict, Any, Union, Tuple
 
 from topshot.challenge.tier_breaker import TierBreaker, Qualifier
-from topshot.challenge.tracker.tracker import Tracker
+from topshot.challenge.trackers.tracker import Tracker
 from utils import equals
 
 
@@ -9,26 +9,31 @@ class LeaderBoardTracker(Tracker):
     """
     Represents a leaderboard tracker that tracks players or teams statistics.
 
-    :param count: the maximum number of results to return
+    :param: count: the maximum number of results to return
     """
 
     def __init__(self, count: int):
         super().__init__()
-        self.tier_breakers: List[TierBreaker] = []
         self.count: int = count
 
     def add_tier_breaker(self, tier_breaker: TierBreaker) -> None:
         """
         Add a tier breaker to the leaderboard tracker.
 
-        :param tier_breaker: the tier breaker to add
+        :param: tier_breaker: the tier breaker to add
         """
         self.tier_breakers.append(tier_breaker)
 
-    def load_team_stats(self, team_player_stats: List[Dict]) -> [float]:
+    def load_team_stats(self, team_player_stats: List[Dict[str, Any]]) -> List[float]:
+        """
+        Load team statistics based on the specified tier breakers.
+
+        :param: team_player_stats: list of player statistics for a team
+        :return: a list of float values containing the team scores based on the tier breakers
+        """
         return [tb.load_team_stats(team_player_stats) for tb in self.tier_breakers]
 
-    def get_team_scores(self, games_teams: Dict[int, List[str]]) -> List[Dict[str, Any]]:
+    def get_team_scores(self, games_teams: Dict[str, List[str]]) -> Tuple[int, List[Dict[str, Any]]]:
         scores: Dict[str, Dict[str, Any]] = {}
 
         all_final = True
@@ -52,10 +57,16 @@ class LeaderBoardTracker(Tracker):
 
         return self.sort(scores, all_final)
 
-    def load_player_stats(self, player_stats: Dict) -> [Any]:
+    def load_player_stats(self, player_stats: Dict[str, Any]) -> List[Any]:
+        """
+        Load player statistics based on the specified tier breakers.
+
+        :param player_stats: dictionary of statistics for a player
+        :return: a list of values containing the player scores based on the tier breakers
+        """
         return [tb.load_player_stats(player_stats) for tb in self.tier_breakers]
 
-    def get_player_scores(self, games_players: Dict[int, List[int]]) -> List[Dict[str, Any]]:
+    def get_player_scores(self, games_players: Dict[str, List[int]]) -> Tuple[int, List[Dict[str, Any]]]:
         scores: Dict[str, Dict[str, Any]] = {}
 
         all_final = True
@@ -88,7 +99,15 @@ class LeaderBoardTracker(Tracker):
         return self.sort(scores, all_final)
 
     def sort(self, scores: Dict[str, Dict[str, Union[Dict[str, Any], List[float]]]], all_final: bool) \
-            -> List[Dict[str, Union[str, Dict[str, Union[str, List[float]]]]]]:
+            -> Tuple[int, List[Dict[str, Any]]]:
+        """
+        Sort the scores based on the specified tier breakers.
+
+        :param: scores: dictionary mapping names to dictionaries containing score statistics
+        :param: all_final: a boolean indicating whether to return all teams/players or just the top teams/players
+        :return: a tuple containing the total number of teams/players and a list of dictionaries containing team/player
+                information and scores
+        """
         keys = list(scores.keys())
 
         # Sort the keys in descending order based on the scores for each tier breaker, as specified by the order of the
@@ -103,14 +122,17 @@ class LeaderBoardTracker(Tracker):
         # across all tier breakers, as well as any players/teams with the same total score as the last player/team in
         # the sorted_stats list
         out_count = max(5, self.count * 2) if not all_final else self.count
+        hit = len(scores)
         while len(sorted_stats) < out_count and idx < len(scores):
             sorted_stats.append({"name": keys[idx], "score": scores[keys[idx]]})
             idx += 1
             while idx < len(scores) and equals(scores[keys[idx - 1]]['stats'], scores[keys[idx]]['stats']):
                 sorted_stats.append({"name": keys[idx], "score": scores[keys[idx]]})
                 idx += 1
+            if idx >= self.count:
+                hit = idx
 
-        return sorted_stats
+        return hit, sorted_stats
 
 
 class QualifierTracker(LeaderBoardTracker):
@@ -128,18 +150,32 @@ class QualifierTracker(LeaderBoardTracker):
     def load_player_stats(self, player_stats: Dict) -> [Any]:
         return self.enrich_stats([tb.load_player_stats(player_stats) for tb in self.tier_breakers])
 
-    def enrich_stats(self, stats: [Tuple[float, int]]) -> [float]:
+    def enrich_stats(self, stats: List[Tuple[float, int]]) -> List[float]:
+        """
+        Enrich the statistics for the qualifier tracker.
+
+        :param: stats: list of statistics for a team/player
+        :return: a list of enriched statistics
+        """
         total = sum([1.0 if stat[0] == 1.0 else 0.0 for stat in stats])
         progress = sum([stat[0] for stat in stats])
         raw = [stat[1] for stat in stats]
 
         return [
-                   '☑' if total >= len(self.tier_breakers) else '☒',
-                   int(100.0 * progress / float(len(self.tier_breakers)))
-               ] + raw
+            '☑' if total >= len(self.tier_breakers) else '☒',
+            int(100.0 * progress / float(len(self.tier_breakers)))
+        ] + raw
 
     def sort(self, scores: Dict[str, Dict[str, Union[Dict[str, Any], List[float]]]], all_final: bool) \
-            -> List[Dict[str, Union[str, Dict[str, Union[str, List[float]]]]]]:
+            -> Tuple[int, List[Dict[str, Any]]]:
+        """
+        Sort the scores based on the specified tier breakers.
+
+        :param: scores: dictionary mapping names to dictionaries containing score statistics
+        :param: all_final: a boolean indicating whether to return all teams/players or just the top teams/players
+        :return: a tuple containing the total number of teams/players and a list of dictionaries containing team/player
+                information and scores
+        """
         keys = []
         passed = 0
 
@@ -182,4 +218,4 @@ class QualifierTracker(LeaderBoardTracker):
                 })
                 idx += 1
 
-        return sorted_stats
+        return passed, sorted_stats

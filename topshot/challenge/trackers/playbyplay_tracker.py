@@ -1,16 +1,15 @@
-from typing import List, Dict, Any, Tuple, Union
+from typing import List, Dict, Any, Tuple
 
 from nba_api.live.nba.endpoints import boxscore, PlayByPlay
 
-from topshot.challenge.tier_breaker import TierBreaker, Qualifier, QualifierPass, QualifierProgress
-from topshot.challenge.tracker.tracker import Tracker
+from topshot.challenge.tier_breaker import TierBreaker
+from topshot.challenge.trackers.tracker import Tracker
 from utils import get_game_info
 
 
 class PlayByPlayTracker(Tracker):
     def __init__(self, count_per_game: int):
         super().__init__()
-        self.tier_breakers = []
         self.count = count_per_game
 
     def add_tier_breaker(self, tier_breaker: TierBreaker) -> None:
@@ -25,8 +24,7 @@ class PlayByPlayTracker(Tracker):
         """
         self.tier_breakers.append(tier_breaker)
 
-    def get_team_scores(self, games_teams: Dict[int, List[str]]) \
-            -> List[Dict[str, Union[str, Dict[str, Union[str, List[str]]]]]]:
+    def get_team_scores(self, games_teams: Dict[str, List[str]]) -> Tuple[int, List[Dict[str, Any]]]:
         """
         Get the team ranking based on the given games and teams.
 
@@ -78,9 +76,9 @@ class PlayByPlayTracker(Tracker):
                     }
                 })
 
-        return result
+        return len(result), result
 
-    def get_player_scores(self, games_players: Dict[str, List[int]]) -> List[Dict[str, Any]]:
+    def get_player_scores(self, games_players: Dict[str, List[int]]) -> Tuple[int, List[Dict[str, Any]]]:
         """
         Gets the rankings of players based on their stats in games they played in.
 
@@ -108,7 +106,7 @@ class PlayByPlayTracker(Tracker):
 
             game_info = get_game_info(game_stats)
 
-            hit = self.tier_breakers[0].get_action(actions, games_players[game_id])
+            hit = self.tier_breakers[0].get_action(actions, set(games_players[game_id]))
 
             if hit is not None:
                 result.append({
@@ -125,4 +123,4 @@ class PlayByPlayTracker(Tracker):
                     }
                 })
 
-        return result
+        return len(result), result

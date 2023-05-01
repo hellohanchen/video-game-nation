@@ -2,6 +2,7 @@ import datetime
 import json
 import os.path
 import pathlib
+from typing import Optional
 
 from nba_api.live.nba.endpoints import scoreboard, boxscore
 
@@ -9,9 +10,16 @@ from provider.nba.schedule import download_schedule
 from utils import parse_dash_date, to_slash_date, parse_slash_date
 
 
+EAST_CONFERENCE = {"MIL", "BOS", "PHI", "CLE", "NYK", "BKN", "MIA", "ATL",
+                   "TOR", "CHI", "WAS", "IND", "ORL", "CHA", "DET"}
+WEST_CONFERENCE = {"DEN", "MEM", "SAC", "PHX", "LAC", "GSW", "MIN", "NOP",
+                   "LAL", "OKC", "DAL", "UTA", "POR", "SAS", "HOU"}
+
+
 class NBAProvider:
     def __init__(self):
         self.game_schedule = {}
+        self.game_dates = {}
         self.game_teams = {}
         self.team_players = {}
         self.latest_date = ""
@@ -25,6 +33,7 @@ class NBAProvider:
             new_schedule = json.load(f)
 
         self.game_schedule.update(new_schedule)
+        self.game_dates.update({game_id: date for date, games in new_schedule.items() for game_id in games})
         self.game_teams.update({game_id: games[game_id] for date, games in new_schedule.items() for game_id in games})
         self.latest_date = list(new_schedule.keys())[-1]
         self.set_coming_game_date()
@@ -46,16 +55,25 @@ class NBAProvider:
         """
         Get all game ids for a provided date.
 
-        :param date: game date, example 01/01/2023
+        :param: date: game date, example 01/01/2023
         :return: list of game ids
         """
         return self.game_schedule[date]
+
+    def get_date_for_game(self, game_id: str) -> Optional[str]:
+        """
+        Get the date for a given game ID.
+
+        :param: game_id: a string representing the game ID
+        :return: a string representing the date of the game, or None if the game ID is invalid or the date cant be found
+        """
+        return self.game_dates.get(game_id)
 
     def get_teams_for_games(self, games):
         """
         Get teams' tri codes for a list of games.
 
-        :param games: list of game id
+        :param: games: list of game id
         :return: a dictionary of {game_id, [teamTriCodes]}
         """
         return {game_id: self.get_teams_for_game(game_id) for game_id in games}
@@ -64,7 +82,7 @@ class NBAProvider:
         """
         Return 2 teams' tri code for a game.
 
-        :param game_id: game id
+        :param: game_id: game id
         :return: [homeTeamTriCode, awayTeamTriCode]
         """
         return {self.game_teams[game_id]['homeTeam'], self.game_teams[game_id]['awayTeam']}
@@ -74,7 +92,7 @@ class NBAProvider:
         """
         Get players' ids set of each game in a list.
 
-        :param games_teams: games and teams in each game
+        :param: games_teams: games and teams in each game
         :return: a dictionary of {game_id, {player_ids}}
         """
 

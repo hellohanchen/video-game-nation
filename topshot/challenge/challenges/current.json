@@ -6,7 +6,8 @@
       "title": "ADD 1 Redemption of the player who scores the most points for the winning team in each series clinching game. If a player does not have a Redemption, fans must use that team's Wild Card Redemption.",
       "buckets": [
         {
-          "description": "BOS x ATL G5",
+          "description": "Players with 10 pts and 5 AST + REB in each game",
+          "segment": "GAME",
           "is_wildcard": false,
           "type": "QA",
           "is_team": false,
@@ -18,25 +19,10 @@
               "stats": "AST,REB,5"
             }
           ],
-          "games": [
-            "0042200115"
-          ]
-        },
-        {
-          "description": "BOS x ATL G5",
-          "is_wildcard": false,
-          "type": "QA",
-          "is_team": true,
-          "tier_breakers": [
-            {
-              "stats": "PTS,100"
-            },
-            {
-              "stats": "AST,REB,5"
-            }
-          ],
-          "games": [
-            "0042200115"
+          "dates": [
+            "04/26/2023",
+            "04/27/2023",
+            "04/28/2023"
           ]
         }
       ]

@@ -12,15 +12,15 @@ class Users(Table):
     """Encapsulates an Amazon DynamoDB table of user data."""
     def __init__(self, dyn_resource):
         """
-        :param dyn_resource: A Boto3 DynamoDB resource.
+        :param: dyn_resource: A Boto3 DynamoDB resource.
         """
         super().__init__(dyn_resource, "users")
 
     def put_user(self, user_id, topshot_username):
         """
         Adds a user to the table.
-        :param user_id: The discord snowflake id of user
-        :param topshot_username: The username of user's topshot account
+        :param: user_id: The discord snowflake id of user
+        :param: topshot_username: The username of user's topshot account
         """
         try:
             self.table.put_item(

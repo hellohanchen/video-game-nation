@@ -1,6 +1,7 @@
 from typing import List, Dict, Any, Tuple
 
-from topshot.challenge.bucket import Bucket
+from topshot.challenge.buckets.bucket import Bucket
+from topshot.challenge.buckets.segment_bucket import SegmentBucket
 from topshot.challenge.player_filter import TopshotFilter
 from topshot.challenge.team_filter import TeamFilter
 from topshot.challenge.tier_breaker import TierBreaker
@@ -88,36 +89,37 @@ class Challenge:
 
     def get_formatted_messages(self) -> List[str]:
         messages = []
-        message = ""
-        new_message = "-" * 40
-        new_message += "\n:zap: ***{}***\n\n".format(self.title)
+        msg = ""
+        new_msg = "-" * 40
+        new_msg += "\n:zap: ***{}***\n\n".format(self.title)
 
-        message, new_message = truncate_message(messages, message, new_message, 1950)
+        msg, new_msg = truncate_message(messages, msg, new_msg, 1950)
 
         for bucket in self.buckets:
-            new_message += ":bar_chart: **{}** ".format(bucket.description)
+            new_msg += ":bar_chart: **{}** ".format(bucket.description)
 
             for tier_breaker in bucket.tracker.tier_breakers:
-                new_message += "[{}] ".format(','.join(tier_breaker.stats))
+                new_msg += "[{}] ".format(','.join(tier_breaker.stats))
 
-            new_message += "\n"
+            new_msg += "\n"
 
-            ranking = bucket.get_current_scores()
+            bucket_results = bucket.get_current_scores()
 
-            if len(ranking) == 0:
-                new_message += "\n\n"
-                message, new_message = truncate_message(messages, message, new_message, 1950)
-                continue
+            for result in bucket_results:
+                hit, scores = result
 
-            hit = min(bucket.tracker.count, len(ranking))
-            message, new_message = self.format_ranking(ranking[:hit], new_message, messages, message)
-            message, new_message = self.format_ranking(
-                ranking[hit:min(len(ranking), 20)], new_message, messages, message, hit)
+                if len(result) == 0:
+                    new_msg += "\n\n"
+                    msg, new_msg = truncate_message(messages, msg, new_msg, 1950)
+                    continue
 
-            new_message += "\n"
+                msg, new_msg = self.format_ranking(scores[:hit], new_msg, messages, msg)
+                msg, new_msg = self.format_ranking(scores[hit:min(len(result), 20)], new_msg, messages, msg, hit)
 
-        if message != "":
-            messages.append(message)
+                new_msg += "\n"
+
+        if msg != "":
+            messages.append(msg)
         return messages
 
     @staticmethod
@@ -176,6 +178,9 @@ class Challenge:
         challenge = Challenge(dict_obj['id'], dict_obj['title'])
 
         for bucket in dict_obj["buckets"]:
-            challenge.add_bucket(Bucket.build_from_dict(bucket))
+            if 'segment' in bucket:
+                challenge.add_bucket(SegmentBucket.build_from_dict(bucket))
+            else:
+                challenge.add_bucket(Bucket.build_from_dict(bucket))
 
         return challenge
