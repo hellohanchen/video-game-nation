@@ -9,7 +9,7 @@ class Table:
     """Encapsulates an Amazon DynamoDB table of user data."""
     def __init__(self, dyn_resource, table_name):
         """
-        :param dyn_resource: A Boto3 DynamoDB resource.
+        :param: dyn_resource: A Boto3 DynamoDB resource.
         """
         self.dyn_resource = dyn_resource
         self.table = None

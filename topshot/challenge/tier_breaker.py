@@ -1,4 +1,4 @@
-from typing import Dict, List, Any, Optional, Set
+from typing import Dict, List, Any, Optional, Set, Tuple
 
 STATS_MAP = {
     "PTS": "points",
@@ -28,8 +28,8 @@ class TierBreaker:
         """
         Initialize a TierBreaker object.
 
-        :param stats: list of statistics used to break tiers
-        :param order: order of tier breaking results, either "ASC" or "DESC"
+        :param: stats: list of statistics used to break tiers
+        :param: order: order of tier breaking results, either "ASC" or "DESC"
         """
         self.stats = stats
         self.order = order
@@ -38,21 +38,21 @@ class TierBreaker:
         """
         Load team statistics for tier breaking.
 
-        :param team_player_stats: list of player statistics for a team
+        :param: team_player_stats: list of player statistics for a team
         :return: sum of the specified statistics for the team
         """
         result = 0
 
         for player_stats in team_player_stats:
-            result += self.load_play_stats(player_stats['statistics'])
+            result += self.load_player_stats(player_stats['statistics'])
 
         return result
 
-    def load_play_stats(self, player_stats: Dict) -> Any:
+    def load_player_stats(self, player_stats: Dict) -> Any:
         """
         Load player statistics for tier breaking.
 
-        :param player_stats: dictionary of statistics for a player
+        :param: player_stats: dictionary of statistics for a player
         :return: sum of the specified statistics for the player
         """
         result = 0
@@ -69,8 +69,8 @@ class TierBreaker:
         """
         Get the action that breaks the tier.
 
-        :param actions: list of actions to be considered for tier breaking
-        :param players: set of player ids whose actions should be considered for tier breaking
+        :param: actions: list of actions to be considered for tier breaking
+        :param: players: set of player ids whose actions should be considered for tier breaking
         :return: action that breaks the tier, or None if no such action exists
         """
         if self.order == "DESC":
@@ -84,3 +84,94 @@ class TierBreaker:
                 return action
 
         return None
+
+
+class Qualifier(TierBreaker):
+    def __init__(self, stats: List[str], target: int) -> None:
+        """
+        Initialize a Qualifier object.
+
+        :param: stats: list of statistics used to qualify for the threshold
+        :param: target: the threshold value that must be reached for a player to qualify
+        """
+        super().__init__(stats)
+        self.target: int = target
+
+    def load_team_stats(self, team_player_stats: List[Dict]) -> Tuple[float, int]:
+        """
+        Load team statistics for tier breaking.
+
+        :param: team_player_stats: list of player statistics for a team
+        :return: a tuple containing the ratio of players who meet the threshold and the sum of their specified statistics
+        """
+        result: int = 0
+
+        for player_stats in team_player_stats:
+            result += self.load_player_stats(player_stats['statistics'])[1]
+
+        return min(1.0, float(result) / float(self.target)), result
+
+    def load_player_stats(self, player_stats: Dict[str, Any]) -> Tuple[float, int]:
+        """
+        Load player statistics for tier breaking.
+
+        :param: player_stats: dictionary of statistics for a player
+        :return: a tuple containing the ratio of statistics that meet the threshold and the sum of the specified statistics
+        """
+        result: int = super().load_player_stats(player_stats)
+
+        return min(1.0, float(result) / float(self.target)), result
+
+
+class QualifierPass(Qualifier):
+    def __init__(self, target: int) -> None:
+        """
+        Initialize a QualifierPass object.
+
+        :param: target: the threshold value that must be reached for a player to qualify
+        """
+        super().__init__(["☑"], target)
+
+    def load_team_stats(self, team_player_stats: List[Dict]) -> Tuple[float, int]:
+        """
+        Load team statistics for tier breaking.
+
+        :param: team_player_stats: list of player statistics for a team
+        :return: a tuple containing 0.0 and 0, indicating that the team passes the threshold
+        """
+        return 0.0, 0
+
+    def load_player_stats(self, player_stats: Dict[str, Any]) -> Tuple[float, int]:
+        """
+        Load player statistics for tier breaking.
+
+        :param: player_stats: dictionary of statistics for a player
+        :return: a tuple containing 0.0 and 0, indicating that the player passes the threshold
+        """
+        return 0.0, 0
+
+
+class QualifierProgress(Qualifier):
+    def __init__(self) -> None:
+        """
+        Initialize a QualifierProgress object.
+        """
+        super().__init__(["%"], 0)
+
+    def load_team_stats(self, team_player_stats: List[Dict]) -> Tuple[float, int]:
+        """
+        Load team statistics for tier breaking.
+
+        :param: team_player_stats: list of player statistics for a team
+        :return: a tuple containing 0.0 and 0, indicating that the team does not qualify based on progress
+        """
+        return 0.0, 0
+
+    def load_player_stats(self, player_stats: Dict[str, Any]) -> Tuple[float, int]:
+        """
+        Load player statistics for tier breaking.
+
+        :param: player_stats: dictionary of statistics for a player
+        :return: a tuple containing 0.0 and 0, indicating that the player does not qualify based on progress
+        """
+        return 0.0, 0
