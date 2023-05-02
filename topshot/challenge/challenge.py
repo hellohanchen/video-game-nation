@@ -105,11 +105,15 @@ class Challenge:
 
             bucket_results = bucket.get_current_scores()
 
+            if len(bucket_results) == 0:
+                new_msg += "\n\n"
+                msg, new_msg = truncate_message(messages, msg, new_msg, 1950)
+                continue
+
             for result in bucket_results:
                 hit, scores = result
 
-                if len(result) == 0:
-                    new_msg += "\n\n"
+                if len(scores) == 0:
                     msg, new_msg = truncate_message(messages, msg, new_msg, 1950)
                     continue
 
