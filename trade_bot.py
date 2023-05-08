@@ -34,19 +34,21 @@ def get_sorted_play_ids(set):
     return play_ids
 
 
-def get_formatted_message(user1, user2, collection1, collection2, series):
+def get_formatted_message(user1, user2, collection1, collection2, series_or_set):
     messages = []
     message = ""
     new_message = ""
 
-    for set_id_str in collection1:
-        if len(collection1[set_id_str]) == 0 and (set_id_str not in collection2 or len(collection2[set_id_str]) == 0):
+    for set_id in collection1:
+        if len(collection1[set_id]) == 0 and (set_id not in collection2 or len(collection2[set_id]) == 0):
             continue
 
-        set_id = int(set_id_str)
-
-        if TS_SET_INFO[set_id]['flowSeriesNumber'] != series:
-            continue
+        if series_or_set > 0:
+            if set_id != series_or_set:
+                continue
+        elif series_or_set < 0:
+            if TS_SET_INFO[set_id]['flowSeriesNumber'] != -series_or_set:
+                continue
 
         new_message += "🏀 ***{} (Series {}):***\n".format(
             TS_SET_INFO[set_id]['flowName'],
@@ -55,10 +57,10 @@ def get_formatted_message(user1, user2, collection1, collection2, series):
 
         message, new_message = truncate_message(messages, message, new_message, 1950)
 
-        if len(collection1[set_id_str]) > 0:
+        if len(collection1[set_id]) > 0:
             new_message += "**{}** has **{}** needs:\n".format(user1, user2)
 
-            plays = collection1[set_id_str]
+            plays = collection1[set_id]
             play_ids = get_sorted_play_ids(plays)
 
             for play_id in play_ids:
@@ -72,10 +74,10 @@ def get_formatted_message(user1, user2, collection1, collection2, series):
 
             new_message += "\n"
 
-        if set_id_str in collection2 and len(collection2[set_id_str]) > 0:
+        if set_id in collection2 and len(collection2[set_id]) > 0:
             new_message += "**{}** has **{}** needs:\n".format(user2, user1)
 
-            plays = collection2[set_id_str]
+            plays = collection2[set_id]
             play_ids = get_sorted_play_ids(plays)
 
             for play_id in play_ids:
@@ -91,13 +93,13 @@ def get_formatted_message(user1, user2, collection1, collection2, series):
 
         new_message += "\n"
 
-    for set_id_str in collection2:
-        if len(collection2[set_id_str]) == 0 or set_id_str in collection1:
+    for set_id in collection2:
+        if len(collection2[set_id]) == 0 or set_id in collection1:
             continue
 
-        set_id = int(set_id_str)
+        set_id = int(set_id)
 
-        if TS_SET_INFO[set_id]['flowSeriesNumber'] != series:
+        if TS_SET_INFO[set_id]['flowSeriesNumber'] != series_or_set:
             continue
 
         new_message += "🏀 ***{} (Series {}):***\n".format(
@@ -109,7 +111,7 @@ def get_formatted_message(user1, user2, collection1, collection2, series):
 
         message, new_message = truncate_message(messages, message, new_message, 1950)
 
-        plays = collection2[set_id_str]
+        plays = collection2[set_id]
         play_ids = get_sorted_play_ids(plays)
 
         for play_id in play_ids:
@@ -137,19 +139,23 @@ async def on_ready():
         )
 
 
-@bot.command(name='c', help='Compare the collection of 2 topshot users for given series \n'
-                            '/c <username1> <username2> <seriesNumber[1|2|3|4]>')
+@bot.command(name='c', help='Compare the collection of 2 topshot users for given series/set \n'
+                            '/c <username1> <username2> <S1/2/3/4 or set id (1~105)>')
 @commands.cooldown(1, 30, commands.BucketType.user)
-async def verify_user(context, user1, user2, series):
+async def verify_user(context, user1, user2, series_or_set):
     if not isinstance(context.channel, discord.channel.DMChannel):
         return
 
     try:
         await context.channel.send("LOADING... Takes about 60s...")
 
-        c1, c2 = await compare_moments(user1, user2, int(series))
+        if series_or_set[0] in ['s', 'S']:
+            series_or_set = -int(series_or_set[1:])
+        else:
+            series_or_set = int(series_or_set)
 
-        messages = get_formatted_message(user1, user2, c1, c2, int(series))
+        c1, c2 = await compare_moments(user1, user2, series_or_set)
+        messages = get_formatted_message(user1, user2, c1, c2, series_or_set)
 
         for message in messages:
             await context.channel.send(message)
@@ -162,6 +168,23 @@ async def verify_user(context, user1, user2, series):
     except Exception as err:
         print(err)
         await context.channel.send("Failed to fetch collection")
+
+
+@bot.command(name='sets', help='get all sets')
+@commands.cooldown(1, 15, commands.BucketType.user)
+async def verify_user(context):
+    messages = []
+    message = ""
+
+    for set_id in TS_SET_INFO:
+        new_message = f"**#{set_id}** {TS_SET_INFO[set_id]['flowName']} (S{TS_SET_INFO[set_id]['flowSeriesNumber']})\n"
+        message, _ = truncate_message(messages, message, new_message, 1950)
+
+    if len(message) > 0:
+        messages.append(message)
+
+    for message in messages:
+        await context.channel.send(message)
 
 
 @bot.event

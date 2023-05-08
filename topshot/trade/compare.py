@@ -3,23 +3,36 @@ import random
 import time
 
 from topshot.cadence.flow_collections import get_collection_for_trade
-from topshot.ts_info import TS_SET_INFO, get_player_flow_id_str, TS_TEAM_NAME_TO_ID
+from topshot.ts_info import TS_SET_INFO, get_player_flow_id_str, TS_TEAM_NAME_TO_ID, TS_PLAY_INFO
 from topshot.graphql.get_address import get_flow_address
 from topshot.graphql.get_price import get_listing_prices
 
 
-def remove_dupes(c1, c2, series):
+def remove_dupes(c1, c2, series_or_set):
+    c1_sets_to_remove = []
+    c2_sets_to_remove = []
+
+    if series_or_set > 0:
+        c1_sets_to_remove = list(c1.keys())
+        if series_or_set in c1_sets_to_remove:
+            c1_sets_to_remove.remove(series_or_set)
+        c2_sets_to_remove = list(c2.keys())
+        if series_or_set in c2_sets_to_remove:
+            c2_sets_to_remove.remove(series_or_set)
+    elif series_or_set < 0:
+        c1_sets_to_remove = [set_id for set_id in c1 if TS_SET_INFO[int(set_id)]['flowSeriesNumber'] != -series_or_set]
+        c2_sets_to_remove = [set_id for set_id in c2 if TS_SET_INFO[int(set_id)]['flowSeriesNumber'] != -series_or_set]
+
+    for set_id in c1_sets_to_remove:
+        c1.pop(set_id)
+
+    for set_id in c2_sets_to_remove:
+        c2.pop(set_id)
+
     c1_sets_to_remove = []
     c2_sets_to_remove = []
 
     for set_id in c1:
-        if TS_SET_INFO[int(set_id)]['flowSeriesNumber'] != series:
-            c1_sets_to_remove.append(set_id)
-
-            if set_id in c2:
-                c2_sets_to_remove.append(set_id)
-            continue
-
         if set_id not in c2:
             continue
 
@@ -39,14 +52,6 @@ def remove_dupes(c1, c2, series):
         if len(c2[set_id]) == 0:
             c2_sets_to_remove.append(set_id)
 
-    for set_id in c1_sets_to_remove:
-        c1.pop(set_id)
-
-    for set_id in c2_sets_to_remove:
-        c2.pop(set_id)
-
-    c2_sets_to_remove = [set_id for set_id in c2 if TS_SET_INFO[int(set_id)]['flowSeriesNumber'] != series]
-
     for set_id in c2_sets_to_remove:
         c2.pop(set_id)
 
@@ -62,16 +67,13 @@ async def get_lowest_listing_price(collection):
             while start < len(play_ids):
                 upper_bound = min(start + 12, len(play_ids))
 
-                player_ids = [
-                    get_player_flow_id_str(collection[set_id][play_id]['FullName'])
-                    for play_id in play_ids[start:upper_bound]
-                ]
+                player_ids = [TS_PLAY_INFO[int(play_id)][0]['playerId'] for play_id in play_ids[start:upper_bound]]
 
                 team_ids = []
 
-                if "" in player_ids:
-                    player_ids = [player_id for player_id in player_ids if player_id != ""]
-                    if len(player_ids) == 0: # only team moments
+                if None in player_ids:
+                    player_ids = [player_id for player_id in player_ids if player_id is not None]
+                    if len(player_ids) == 0:  # only team moments
                         team_ids = [
                             str(TS_TEAM_NAME_TO_ID[collection[set_id][play_id]['FullName']]['id'])
                             for play_id in play_ids[start:upper_bound]
@@ -113,9 +115,9 @@ async def get_account_collection(topshot_username):
     return await get_collection_for_trade(address)
 
 
-async def compare_moments(ts_user1, ts_user2, series):
+async def compare_moments(ts_user1, ts_user2, series_or_set):
     c1, c2 = await asyncio.gather(*[get_account_collection(ts_user1), get_account_collection(ts_user2)])
-    remove_dupes(c1, c2, series)
+    remove_dupes(c1, c2, series_or_set)
     await asyncio.gather(*[get_lowest_listing_price(c1)])
     await asyncio.gather(*[get_lowest_listing_price(c2)])
 

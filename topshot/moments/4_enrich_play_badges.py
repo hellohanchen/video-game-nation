@@ -3,51 +3,55 @@ import os
 import pathlib
 
 
+TIER_MAP = {
+    "C": "Common",
+    "R": "Rare",
+    "F": "Fandom",
+    "L": "Legendary",
+    "A": "Unknown"
+}
+
+
 def enrich_plays():
     with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "resource/plays.json"), 'r') as play_file:
-        plays = json.load(play_file)
+        play_moments = json.load(play_file)
 
-    with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "resource/otm_enriched_plays.json"),
+    with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "resource/enriched_plays.json"),
               'r') as enriched_file:
         loaded = json.load(enriched_file)['plays']
-        otm_plays = {}
+        previous_results = {}
 
-        for play in loaded:
-            otm_plays[play['flowID']] = play
+        for play_id in loaded:
+            previous_results[play_id] = loaded[play_id][0]
 
-    for pid in plays:
-        int_pid = int(pid)
-        if int_pid in otm_plays:
-            otm_play = otm_plays[int_pid]
-            for moment in plays[pid]:
-                if moment['id'] == otm_play['playID']:
-                    for m in plays[pid]:
-                        m['tier'] = otm_play['tier']
+    for play_id in play_moments:
+        if play_id in previous_results:
+            previous_result = previous_results[play_id]
+            for moment in play_moments[play_id]:
+                moment['tier'] = TIER_MAP[moment['tier']]
+                moment['badges'] = previous_result['badges']
+        else:
+            for moment in play_moments[play_id]:
+                moment['tier'] = TIER_MAP[moment['tier']]
 
-                    for badge in ["TSD", "RY", "RP", "MVP", "CY", "CR", "RM"]:
-                        if otm_play[badge]:
-                            for m in plays[pid]:
-                                m['badges'].append(badge)
-                    break
-
-    max_play_id = list(plays.keys())[0]
+    max_play_id = list(play_moments.keys())[0]
     missing_ids = []
 
     for i in range(1, int(max_play_id)):
-        if str(i) not in plays:
+        if str(i) not in play_moments:
             missing_ids.append(i)
 
-    play_ids = list(plays.keys())
+    play_ids = list(play_moments.keys())
     play_ids.sort(reverse=True, key=lambda pid: int(pid))
 
     result = {
         "notFound": missing_ids,
-        "count": sum([len(plays[pid]) for pid in play_ids]),
+        "count": sum([len(play_moments[pid]) for pid in play_ids]),
         "plays": {}
     }
 
-    for pid in play_ids:
-        result['plays'][pid] = plays[pid]
+    for play_id in play_ids:
+        result['plays'][play_id] = play_moments[play_id]
 
     with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "resource/enriched_plays.json"),
               'w') as enriched_file:
