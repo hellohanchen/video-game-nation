@@ -6,7 +6,7 @@ import unidecode
 
 
 def load_set_data():
-    with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "result/sets.json"), 'r') as set_file:
+    with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "moments/resource/sets.json"), 'r') as set_file:
         data = json.load(set_file)
 
         for set in data['sets']:
@@ -15,6 +15,12 @@ def load_set_data():
                 'flowName': set['flowName'],
                 'flowSeriesNumber': set['flowSeriesNumber']
             }
+
+
+def load_play_data():
+    with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "moments/resource/enriched_plays.json"), 'r') as set_file:
+        for play_id, play in json.load(set_file)['plays'].items():
+            TS_PLAY_INFO[play[0]['flowId']] = play
 
 
 def load_player_data():
@@ -43,14 +49,13 @@ def load_player_data():
 
 
 def load_team_data():
-    with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "result/teams.json"), 'r') as team_file:
+    with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "moments/resource/teams.json"), 'r') as team_file:
         data = json.load(team_file)
 
         for team in data['teams']:
             TS_TEAM_NAME_TO_ID[team['name']] = {
                 'id': team['id']
             }
-            TS_TEAM_NAME_TO_ID[team['name']]['id'] = team['id']
 
 
 def get_player_flow_id_str(player_fullname):
@@ -96,12 +101,14 @@ def load_enriched_plays():
 
 
 TS_SET_INFO = {}
+TS_PLAY_INFO = {}
 TS_PLAYER_NAME_TO_ID = {}
 TS_TEAM_NAME_TO_ID = {}
 TS_PLAYER_ID_MOMENTS = load_player_moment_info()
 TS_ENRICHED_PLAYS = load_enriched_plays()
 
 load_set_data()
+load_play_data()
 load_player_data()
 load_team_data()
 

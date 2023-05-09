@@ -9,7 +9,11 @@ def get_low_asks(result_dict):
     res = {}
 
     for price in price_data:
-        res[int(price['play']['flowID'])] = int(float(price['priceRange']['min']))
+        play_int_id = int(price['play']['flowID'])
+        if play_int_id not in res:
+            res[play_int_id] = int(float(price['priceRange']['min']))
+        else:
+            res[play_int_id] = min(res.get(play_int_id), int(float(price['priceRange']['min'])))
 
     return res
 
@@ -21,7 +25,10 @@ async def get_listing_prices(set_id, player_ids, team_ids):
     # Create a GraphQL client using the defined transport
     client = Client(transport=transport, fetch_schema_from_transport=True)
 
-    print("{}: Set: {}, Plays: {}...".format(time.strftime("%H:%M:%S", time.localtime()), set_id, ','.join(player_ids)))
+    if len(player_ids) == 0:
+        print("{}: Set: {}, Teams: {}...".format(time.strftime("%H:%M:%S", time.localtime()), set_id, team_ids))
+    else:
+        print("{}: Set: {}, Plays: {}...".format(time.strftime("%H:%M:%S", time.localtime()), set_id, player_ids))
 
     query = gql("""
         query SearchMomentListingsDefault($byPlayers: [ID], $byTagNames: [String!], $byTeams: [ID], $byPrice: PriceRangeFilterInput, $orderBy: MomentListingSortType, $byGameDate: DateRangeFilterInput, $byCreatedAt: DateRangeFilterInput, $byListingType: [MomentListingType], $bySets: [ID], $bySeries: [ID], $bySetVisuals: [VisualIdType], $byPrimaryPlayerPosition: [PlayerPosition], $bySerialNumber: IntegerRangeFilterInput, $searchInput: BaseSearchInput!) {
