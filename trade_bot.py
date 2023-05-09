@@ -24,12 +24,10 @@ intents.presences = False
 bot = commands.Bot(command_prefix='/', intents=intents)
 
 
-def get_sorted_play_ids(set):
-    play_ids = list(set.keys())
+def get_sorted_play_ids(plays):
+    play_ids = list(plays.keys())
 
-    play_ids.sort(reverse=True, key=lambda pid: set[pid]['LowAsk'])
-
-    play_ids.sort(reverse=True, key=lambda pid: set[pid]['Count'])
+    play_ids.sort(key=lambda pid: plays[pid]['FullName'])
 
     return play_ids
 
@@ -64,11 +62,18 @@ def get_formatted_message(user1, user2, collection1, collection2, series_or_set)
             play_ids = get_sorted_play_ids(plays)
 
             for play_id in play_ids:
-                new_message += ":black_small_square: {} ${} x{} ".format(
-                    plays[play_id]['FullName'],
-                    plays[play_id]['LowAsk'],
-                    plays[play_id]['Count'],
-                )
+                if int(plays[play_id]['Count']) > 1:
+                    new_message += ":black_small_square: **{} ${} x{}** ".format(
+                        plays[play_id]['FullName'],
+                        plays[play_id]['LowAsk'],
+                        plays[play_id]['Count']
+                    )
+                else:
+                    new_message += ":black_small_square: {} ${} x{} ".format(
+                        plays[play_id]['FullName'],
+                        plays[play_id]['LowAsk'],
+                        plays[play_id]['Count']
+                    )
 
                 message, new_message = truncate_message(messages, message, new_message, 1950)
 
