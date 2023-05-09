@@ -16,13 +16,13 @@ async def get_collection_for_trade(address):
 
                     let res: {UInt32:{UInt32:{String:String}}} = {}                        
 
-                    for id in collectionRef.getIDs() {
+                    for momentId in collectionRef.getIDs() {
                         // Borrow a reference to the specified moment
-                        let token = collectionRef.borrowMoment(id: id)
+                        let moment = collectionRef.borrowMoment(id: momentId)
                             ?? panic("Could not borrow a reference to the specified moment")
 
                         // Get the moment's metadata to access its play and Set IDs
-                        let data = token.data
+                        let data = moment.data
 
                         // Use the moment's play ID 
                         // to get all the metadata associated with that play
@@ -60,11 +60,11 @@ async def get_collection_for_trade(address):
         sets = {}
 
         for set_item in complex_script.value:
-            set_id = str(set_item.key)
+            set_id = int(str(set_item.key))
             sets[set_id] = {}
 
             for play_item in set_item.value.value:
-                play_id = str(play_item.key)
+                play_id = int(str(play_item.key))
                 sets[set_id][play_id] = {}
 
                 for play_info in play_item.value.value:
@@ -126,4 +126,4 @@ async def get_account_plays(address):
 
 
 if __name__ == '__main__':
-    asyncio.run(get_account_plays("0xad955e5d8047ef82"))
+    asyncio.run(get_collection_for_trade("0xad955e5d8047ef82"))
