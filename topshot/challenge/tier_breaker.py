@@ -82,6 +82,8 @@ class TierBreaker:
 
             if self.stats[0] == "3PM" and action['actionType'] == '3pt' and action['shotResult'] == 'Made':
                 return action
+            if self.stats[0] == "PTS" and action.get('shotResult', '') == 'Made':
+                return action
 
         return None
 

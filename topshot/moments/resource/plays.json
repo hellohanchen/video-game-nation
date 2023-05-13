@@ -2467,6 +2467,22 @@
       "badges": []
     }
   ],
+  "3625": [
+    {
+      "id": "9a91497e-f3dc-43b9-9851-643b86dc62b0",
+      "flowId": 3625,
+      "set": "Spotlight Series",
+      "setId": "c9d6ebe1-e92f-440a-852b-513adc91640a",
+      "setFlowId": 92,
+      "playerId": 1630567,
+      "playerName": "Scottie Barnes",
+      "team": "Toronto Raptors",
+      "playType": "Assist",
+      "date": "2023-01-22",
+      "tier": "C",
+      "badges": []
+    }
+  ],
   "3624": [
     {
       "id": "c73e482e-65a6-46f3-9ea2-eb9a6764d54e",
