@@ -58,7 +58,7 @@ class NBAProvider:
         :param: date: game date, example 01/01/2023
         :return: list of game ids
         """
-        return self.game_schedule[date]
+        return self.game_schedule.get(date, {})
 
     def get_date_for_game(self, game_id: str) -> Optional[str]:
         """

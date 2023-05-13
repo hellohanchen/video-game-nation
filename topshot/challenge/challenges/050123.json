@@ -1,0 +1,56 @@
+{
+  "message": "ROUND 2 CHALLENGES",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "CELEBRATE ROUND 2 AND WIN A PACK!",
+      "buckets": [
+        {
+          "description": "ADD 1 Moment of the player with the most Points + Assists + Rebounds each day.",
+          "segment": "DATE",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "PTS,AST,REB",
+              "order": "DESC"
+            },
+            {
+              "stats": "FTM",
+              "order": "DESC"
+            },
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            },
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "05/01/2023",
+            "05/02/2023",
+            "05/03/2023",
+            "05/04/2023",
+            "05/05/2023",
+            "05/06/2023",
+            "05/07/2023"
+          ]
+        },
+        {
+          "description": "BURN any 3 Redemptions.",
+          "is_wildcard": false,
+          "type": "LB",
+          "is_team": false,
+          "tier_breakers": [],
+          "dates": [
+          ]
+        }
+      ]
+    }
+  ]
+}
+

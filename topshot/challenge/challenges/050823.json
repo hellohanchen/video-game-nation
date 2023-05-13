@@ -1,0 +1,66 @@
+{
+  "message": "TRIPLE PLAY PREDICTIVE CHALLENGE",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "Make your picks for the first half of the week’s action! You can make your choices after Monday’s games conclude!",
+      "buckets": [
+        {
+          "description": "PLAYER WITH THE MOST POINTS SCORED IN ANY SINGLE GAME MON - WED",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "05/08/2023",
+            "05/09/2023",
+            "05/10/2023"
+          ]
+        },
+        {
+          "description": "PLAYER WITH THE MOST ASSISTS IN ANY SINGLE GAME MON - WED",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "AST",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "05/08/2023",
+            "05/09/2023",
+            "05/10/2023"
+          ]
+        },
+        {
+          "description": "PLAYER WITH THE MOST REBOUNDS IN ANY SINGLE GAME MON - WED",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "REB",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "05/08/2023",
+            "05/09/2023",
+            "05/10/2023"
+          ]
+        }
+      ]
+    }
+  ]
+}
+

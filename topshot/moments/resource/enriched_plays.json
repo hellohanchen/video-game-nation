@@ -8,9 +8,7 @@
     2629,
     3587,
     3599,
-    3602,
     3615,
-    3625,
     3678,
     3679,
     3680,
@@ -23,10 +21,735 @@
     3687,
     3702,
     3710,
-    3711
+    3711,
+    3758,
+    3760,
+    3777,
+    3781,
+    3784
   ],
-  "count": 4199,
+  "count": 4246,
   "plays": {
+    "3795": [
+      {
+        "id": "c8d05bea-abcb-4da9-981c-fb3da0e8072d",
+        "flowId": 3795,
+        "set": "Top Shot 50",
+        "setId": "ede72a8c-02e1-429f-b543-cec4a9513c5b",
+        "setFlowId": 103,
+        "playerId": 203078,
+        "playerName": "Bradley Beal",
+        "team": "Washington Wizards",
+        "playType": "Dunk",
+        "date": "2023-02-15",
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "3794": [
+      {
+        "id": "6cc2dde9-64ef-4163-8218-229967d2ae11",
+        "flowId": 3794,
+        "set": "Top Shot 50",
+        "setId": "ede72a8c-02e1-429f-b543-cec4a9513c5b",
+        "setFlowId": 103,
+        "playerId": 1628384,
+        "playerName": "O.G. Anunoby",
+        "team": "Toronto Raptors",
+        "playType": "Steal",
+        "date": "2022-10-31",
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "3793": [
+      {
+        "id": "261dcc52-48b1-41a5-afd4-a1a443fb1943",
+        "flowId": 3793,
+        "set": "Top Shot 50",
+        "setId": "ede72a8c-02e1-429f-b543-cec4a9513c5b",
+        "setFlowId": 103,
+        "playerId": 1627734,
+        "playerName": "Domantas Sabonis",
+        "team": "Sacramento Kings",
+        "playType": "Dunk",
+        "date": "2022-12-22",
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "3792": [
+      {
+        "id": "77d359d6-fed9-4022-a240-dcf23aff7962",
+        "flowId": 3792,
+        "set": "Top Shot 50",
+        "setId": "ede72a8c-02e1-429f-b543-cec4a9513c5b",
+        "setFlowId": 103,
+        "playerId": 203924,
+        "playerName": "Jerami Grant",
+        "team": "Portland Trail Blazers",
+        "playType": "Handles",
+        "date": "2022-11-11",
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "3791": [
+      {
+        "id": "4d98df69-8632-40ab-8a9e-01fc56898068",
+        "flowId": 3791,
+        "set": "Top Shot 50",
+        "setId": "ede72a8c-02e1-429f-b543-cec4a9513c5b",
+        "setFlowId": 103,
+        "playerId": 201142,
+        "playerName": "Kevin Durant",
+        "team": "Phoenix Suns",
+        "playType": "Jump Shot",
+        "date": "2023-03-05",
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "3790": [
+      {
+        "id": "418b01a2-a18b-42b5-bfc4-4e5ffb7530bf",
+        "flowId": 3790,
+        "set": "Top Shot 50",
+        "setId": "ede72a8c-02e1-429f-b543-cec4a9513c5b",
+        "setFlowId": 103,
+        "playerId": 101108,
+        "playerName": "Chris Paul",
+        "team": "Phoenix Suns",
+        "playType": "Handles",
+        "date": "2022-11-02",
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "3789": [
+      {
+        "id": "50cafb40-589d-4402-a623-0a6f75d696b3",
+        "flowId": 3789,
+        "set": "Top Shot 50",
+        "setId": "ede72a8c-02e1-429f-b543-cec4a9513c5b",
+        "setFlowId": 103,
+        "playerId": 1630178,
+        "playerName": "Tyrese Maxey",
+        "team": "Philadelphia 76ers",
+        "playType": "3 Pointer",
+        "date": "2023-01-26",
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "3788": [
+      {
+        "id": "3711fc53-d94d-4fd6-89b5-2c858c802006",
+        "flowId": 3788,
+        "set": "Top Shot 50",
+        "setId": "ede72a8c-02e1-429f-b543-cec4a9513c5b",
+        "setFlowId": 103,
+        "playerId": 201935,
+        "playerName": "James Harden",
+        "team": "Philadelphia 76ers",
+        "playType": "Reel",
+        "date": "2023-01-15",
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "3787": [
+      {
+        "id": "c51b0f10-48fe-4ad7-952b-085030bc0bb9",
+        "flowId": 3787,
+        "set": "Top Shot 50",
+        "setId": "ede72a8c-02e1-429f-b543-cec4a9513c5b",
+        "setFlowId": 103,
+        "playerId": 1630532,
+        "playerName": "Franz Wagner",
+        "team": "Orlando Magic",
+        "playType": "Steal",
+        "date": "2023-04-02",
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "3786": [
+      {
+        "id": "30944ea7-1454-4cef-9304-e84b55579688",
+        "flowId": 3786,
+        "set": "Top Shot 50",
+        "setId": "ede72a8c-02e1-429f-b543-cec4a9513c5b",
+        "setFlowId": 103,
+        "playerId": 1628983,
+        "playerName": "Shai Gilgeous-Alexander",
+        "team": "Oklahoma City Thunder",
+        "playType": "Jump Shot",
+        "date": "2022-12-20",
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "3785": [
+      {
+        "id": "cdaa7bc3-cd59-48ec-9200-a2ca7ddd74cc",
+        "flowId": 3785,
+        "set": "Top Shot 50",
+        "setId": "ede72a8c-02e1-429f-b543-cec4a9513c5b",
+        "setFlowId": 103,
+        "playerId": 203944,
+        "playerName": "Julius Randle",
+        "team": "New York Knicks",
+        "playType": "3 Pointer",
+        "date": "2023-03-04",
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "3783": [
+      {
+        "id": "fe5e0e1f-9e9b-4499-ac54-797da1d07910",
+        "flowId": 3783,
+        "set": "Top Shot 50",
+        "setId": "ede72a8c-02e1-429f-b543-cec4a9513c5b",
+        "setFlowId": 103,
+        "playerId": 203507,
+        "playerName": "Giannis Antetokounmpo",
+        "team": "Milwaukee Bucks",
+        "playType": "Reel",
+        "date": "2023-01-04",
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "3782": [
+      {
+        "id": "b98501c1-17be-4cf8-afe0-f16f6af59317",
+        "flowId": 3782,
+        "set": "Top Shot 50",
+        "setId": "ede72a8c-02e1-429f-b543-cec4a9513c5b",
+        "setFlowId": 103,
+        "playerId": 201572,
+        "playerName": "Brook Lopez",
+        "team": "Milwaukee Bucks",
+        "playType": "Reel",
+        "date": "2023-03-10",
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "3780": [
+      {
+        "id": "19ffdab4-d962-4f4d-8c25-acc34238c4a1",
+        "flowId": 3780,
+        "set": "Top Shot 50",
+        "setId": "ede72a8c-02e1-429f-b543-cec4a9513c5b",
+        "setFlowId": 103,
+        "playerId": 1628389,
+        "playerName": "Bam Adebayo",
+        "team": "Miami Heat",
+        "playType": "Block",
+        "date": "2022-11-01",
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "3779": [
+      {
+        "id": "ad92d32a-458e-4031-98a8-25328e76d234",
+        "flowId": 3779,
+        "set": "Top Shot 50",
+        "setId": "ede72a8c-02e1-429f-b543-cec4a9513c5b",
+        "setFlowId": 103,
+        "playerId": 1630217,
+        "playerName": "Desmond Bane",
+        "team": "Memphis Grizzlies",
+        "playType": "3 Pointer",
+        "date": "2022-10-25",
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "3778": [
+      {
+        "id": "ba37ae73-93ec-43de-8e60-bc7587bb6045",
+        "flowId": 3778,
+        "set": "Top Shot 50",
+        "setId": "ede72a8c-02e1-429f-b543-cec4a9513c5b",
+        "setFlowId": 103,
+        "playerId": 2544,
+        "playerName": "LeBron James",
+        "team": "Los Angeles Lakers",
+        "playType": "Dunk",
+        "date": "2023-01-03",
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "3776": [
+      {
+        "id": "7731b544-80b4-4612-a537-9cad15b340c1",
+        "flowId": 3776,
+        "set": "Top Shot 50",
+        "setId": "ede72a8c-02e1-429f-b543-cec4a9513c5b",
+        "setFlowId": 103,
+        "playerId": 202695,
+        "playerName": "Kawhi Leonard",
+        "team": "LA Clippers",
+        "playType": "Dunk",
+        "date": "2023-03-09",
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "3775": [
+      {
+        "id": "442f4fbe-22e8-487f-b0b9-28d06cb4070c",
+        "flowId": 3775,
+        "set": "Top Shot 50",
+        "setId": "ede72a8c-02e1-429f-b543-cec4a9513c5b",
+        "setFlowId": 103,
+        "playerId": 201939,
+        "playerName": "Steph Curry",
+        "team": "Golden State Warriors",
+        "playType": "Reel",
+        "date": "2023-03-12",
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "3774": [
+      {
+        "id": "7530bdb0-86e7-429b-a666-0ea4d5e86d56",
+        "flowId": 3774,
+        "set": "Top Shot 50",
+        "setId": "ede72a8c-02e1-429f-b543-cec4a9513c5b",
+        "setFlowId": 103,
+        "playerId": 202691,
+        "playerName": "Klay Thompson",
+        "team": "Golden State Warriors",
+        "playType": "3 Pointer",
+        "date": "2023-01-03",
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "3773": [
+      {
+        "id": "715fab68-fc0d-4cb8-8145-6f7e29ddb89f",
+        "flowId": 3773,
+        "set": "Top Shot 50",
+        "setId": "ede72a8c-02e1-429f-b543-cec4a9513c5b",
+        "setFlowId": 103,
+        "playerId": 1628386,
+        "playerName": "Jarrett Allen",
+        "team": "Cleveland Cavaliers",
+        "playType": "Block",
+        "date": "2023-03-26",
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "3772": [
+      {
+        "id": "e1e63fea-0875-4160-bcc4-3ae9923b4dc8",
+        "flowId": 3772,
+        "set": "Top Shot 50",
+        "setId": "ede72a8c-02e1-429f-b543-cec4a9513c5b",
+        "setFlowId": 103,
+        "playerId": 1629636,
+        "playerName": "Darius Garland",
+        "team": "Cleveland Cavaliers",
+        "playType": "3 Pointer",
+        "date": "2022-11-13",
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "3771": [
+      {
+        "id": "8dac4004-f38e-4d04-9f84-dacba396c86e",
+        "flowId": 3771,
+        "set": "Top Shot 50",
+        "setId": "ede72a8c-02e1-429f-b543-cec4a9513c5b",
+        "setFlowId": 103,
+        "playerId": 201942,
+        "playerName": "DeMar DeRozan",
+        "team": "Chicago Bulls",
+        "playType": "Jump Shot",
+        "date": "2022-12-24",
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "3770": [
+      {
+        "id": "452f530e-2099-454a-9f97-455be35e1af5",
+        "flowId": 3770,
+        "set": "Top Shot 50",
+        "setId": "ede72a8c-02e1-429f-b543-cec4a9513c5b",
+        "setFlowId": 103,
+        "playerId": 203935,
+        "playerName": "Marcus Smart",
+        "team": "Boston Celtics",
+        "playType": "Assist",
+        "date": "2023-03-22",
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "3769": [
+      {
+        "id": "2094ed0f-1b4f-41c8-a954-c5907868f5a1",
+        "flowId": 3769,
+        "set": "Top Shot 50",
+        "setId": "ede72a8c-02e1-429f-b543-cec4a9513c5b",
+        "setFlowId": 103,
+        "playerId": 1627759,
+        "playerName": "Jaylen Brown",
+        "team": "Boston Celtics",
+        "playType": "Dunk",
+        "date": "2023-03-26",
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "3768": [
+      {
+        "id": "718bb477-ab09-4795-82b5-205fecec60c9",
+        "flowId": 3768,
+        "set": "Top Shot 50",
+        "setId": "ede72a8c-02e1-429f-b543-cec4a9513c5b",
+        "setFlowId": 103,
+        "playerId": 1628969,
+        "playerName": "Mikal Bridges",
+        "team": "Brooklyn Nets",
+        "playType": "Jump Shot",
+        "date": "2023-02-16",
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "3767": [
+      {
+        "id": "4c1807c2-0f28-466e-a4e4-f0036a9ac557",
+        "flowId": 3767,
+        "set": "Top Shot 50",
+        "setId": "ede72a8c-02e1-429f-b543-cec4a9513c5b",
+        "setFlowId": 103,
+        "playerId": 202681,
+        "playerName": "Kyrie Irving",
+        "team": "Brooklyn Nets",
+        "playType": "3 Pointer",
+        "date": "2022-12-17",
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "3766": [
+      {
+        "id": "b7f5d20f-0ca8-4b70-9184-d5ba03ee9ce3",
+        "flowId": 3766,
+        "set": "Top Shot 50",
+        "setId": "ede72a8c-02e1-429f-b543-cec4a9513c5b",
+        "setFlowId": 103,
+        "playerId": 1629027,
+        "playerName": "Trae Young",
+        "team": "Atlanta Hawks",
+        "playType": "Handles",
+        "date": "2023-01-21",
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "3765": [
+      {
+        "id": "a907acb0-1d53-482e-ad96-870f19307ce0",
+        "flowId": 3765,
+        "set": "Metallic Gold LE",
+        "setId": "f55be824-34db-461f-ae2e-5f84e73025cb",
+        "setFlowId": 99,
+        "playerId": 203078,
+        "playerName": "Bradley Beal",
+        "team": "Washington Wizards",
+        "playType": "3 Pointer",
+        "date": "2023-02-17",
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "3764": [
+      {
+        "id": "abaccca4-46ca-4ef0-a3b5-5297b6fe833c",
+        "flowId": 3764,
+        "set": "Metallic Gold LE",
+        "setId": "f55be824-34db-461f-ae2e-5f84e73025cb",
+        "setFlowId": 99,
+        "playerId": 1631117,
+        "playerName": "Walker Kessler",
+        "team": "Utah Jazz",
+        "playType": "Layup",
+        "date": "2023-01-16",
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "3763": [
+      {
+        "id": "ad9ed53b-eba1-4405-9e66-4fcb9b264707",
+        "flowId": 3763,
+        "set": "Metallic Gold LE",
+        "setId": "f55be824-34db-461f-ae2e-5f84e73025cb",
+        "setFlowId": 99,
+        "playerId": 1630170,
+        "playerName": "Devin Vassell",
+        "team": "San Antonio Spurs",
+        "playType": "Jump Shot",
+        "date": "2022-12-10",
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "3762": [
+      {
+        "id": "b2d9908e-ee95-4ef4-abe5-375ac9439677",
+        "flowId": 3762,
+        "set": "Metallic Gold LE",
+        "setId": "f55be824-34db-461f-ae2e-5f84e73025cb",
+        "setFlowId": 99,
+        "playerId": 203924,
+        "playerName": "Jerami Grant",
+        "team": "Portland Trail Blazers",
+        "playType": "Layup",
+        "date": "2022-11-26",
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "3761": [
+      {
+        "id": "300abf10-2d35-41f4-ab71-8e59d35609c3",
+        "flowId": 3761,
+        "set": "Metallic Gold LE",
+        "setId": "f55be824-34db-461f-ae2e-5f84e73025cb",
+        "setFlowId": 99,
+        "playerId": 201142,
+        "playerName": "Kevin Durant",
+        "team": "Phoenix Suns",
+        "playType": "Block",
+        "date": "2023-04-02",
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "3759": [
+      {
+        "id": "6aa61352-4e7c-49e9-8e41-5ef2860bf0e9",
+        "flowId": 3759,
+        "set": "Metallic Gold LE",
+        "setId": "f55be824-34db-461f-ae2e-5f84e73025cb",
+        "setFlowId": 99,
+        "playerId": 201935,
+        "playerName": "James Harden",
+        "team": "Philadelphia 76ers",
+        "playType": "3 Pointer",
+        "date": "2023-02-24",
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "3757": [
+      {
+        "id": "a02ebcf8-c986-4d87-b2cb-ee656303498b",
+        "flowId": 3757,
+        "set": "Metallic Gold LE",
+        "setId": "f55be824-34db-461f-ae2e-5f84e73025cb",
+        "setFlowId": 99,
+        "playerId": 1627742,
+        "playerName": "Brandon Ingram",
+        "team": "New Orleans Pelicans",
+        "playType": "Layup",
+        "date": "2023-03-24",
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "3756": [
+      {
+        "id": "a8f7c49a-c802-4515-883e-0dcdc7494239",
+        "flowId": 3756,
+        "set": "Metallic Gold LE",
+        "setId": "f55be824-34db-461f-ae2e-5f84e73025cb",
+        "setFlowId": 99,
+        "playerId": 1626157,
+        "playerName": "Karl-Anthony Towns",
+        "team": "Minnesota Timberwolves",
+        "playType": "3 Pointer",
+        "date": "2023-03-27",
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "3755": [
+      {
+        "id": "e2d0c534-f7be-4855-a50d-a80441238671",
+        "flowId": 3755,
+        "set": "Metallic Gold LE",
+        "setId": "f55be824-34db-461f-ae2e-5f84e73025cb",
+        "setFlowId": 99,
+        "playerId": 1630217,
+        "playerName": "Desmond Bane",
+        "team": "Memphis Grizzlies",
+        "playType": "Handles",
+        "date": "2023-03-12",
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "3754": [
+      {
+        "id": "8414fdba-8c20-46c5-bc81-d2035a950c47",
+        "flowId": 3754,
+        "set": "Metallic Gold LE",
+        "setId": "f55be824-34db-461f-ae2e-5f84e73025cb",
+        "setFlowId": 99,
+        "playerId": 2544,
+        "playerName": "LeBron James",
+        "team": "Los Angeles Lakers",
+        "playType": "Dunk",
+        "date": "2023-01-17",
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "3753": [
+      {
+        "id": "fa06b38d-6ac9-4ce3-a94d-ed228bf0b480",
+        "flowId": 3753,
+        "set": "Metallic Gold LE",
+        "setId": "f55be824-34db-461f-ae2e-5f84e73025cb",
+        "setFlowId": 99,
+        "playerId": 202331,
+        "playerName": "Paul George",
+        "team": "LA Clippers",
+        "playType": "Dunk",
+        "date": "2023-03-22",
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "3752": [
+      {
+        "id": "f4c2c994-5b64-42c1-a504-9e4c7f956601",
+        "flowId": 3752,
+        "set": "Metallic Gold LE",
+        "setId": "f55be824-34db-461f-ae2e-5f84e73025cb",
+        "setFlowId": 99,
+        "playerId": 201939,
+        "playerName": "Steph Curry",
+        "team": "Golden State Warriors",
+        "playType": "3 Pointer",
+        "date": "2023-01-20",
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "3751": [
+      {
+        "id": "0e0140ca-023a-458b-9338-c47dc40ae3f9",
+        "flowId": 3751,
+        "set": "Metallic Gold LE",
+        "setId": "f55be824-34db-461f-ae2e-5f84e73025cb",
+        "setFlowId": 99,
+        "playerId": 1631093,
+        "playerName": "Jaden Ivey",
+        "team": "Detroit Pistons",
+        "playType": "Assist",
+        "date": "2023-04-05",
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "3750": [
+      {
+        "id": "392d03f2-ba76-4706-9e63-ea00cfa51a86",
+        "flowId": 3750,
+        "set": "Metallic Gold LE",
+        "setId": "f55be824-34db-461f-ae2e-5f84e73025cb",
+        "setFlowId": 99,
+        "playerId": 1629008,
+        "playerName": "Michael Porter Jr.",
+        "team": "Denver Nuggets",
+        "playType": "3 Pointer",
+        "date": "2023-02-27",
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "3749": [
+      {
+        "id": "d623e3ab-85d9-4084-b927-7dfa5b803d2a",
+        "flowId": 3749,
+        "set": "Metallic Gold LE",
+        "setId": "f55be824-34db-461f-ae2e-5f84e73025cb",
+        "setFlowId": 99,
+        "playerId": 1629023,
+        "playerName": "P.J. Washington",
+        "team": "Charlotte Hornets",
+        "playType": "Layup",
+        "date": "2023-03-29",
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "3748": [
+      {
+        "id": "413ace07-6ebf-45bc-95ee-6b34a2980df4",
+        "flowId": 3748,
+        "set": "Metallic Gold LE",
+        "setId": "f55be824-34db-461f-ae2e-5f84e73025cb",
+        "setFlowId": 99,
+        "playerId": 203915,
+        "playerName": "Spencer Dinwiddie",
+        "team": "Brooklyn Nets",
+        "playType": "Assist",
+        "date": "2023-03-29",
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "3747": [
+      {
+        "id": "551a6950-2732-4bc3-a66f-4750d1714303",
+        "flowId": 3747,
+        "set": "Metallic Gold LE",
+        "setId": "f55be824-34db-461f-ae2e-5f84e73025cb",
+        "setFlowId": 99,
+        "playerId": 1627749,
+        "playerName": "Dejounte Murray",
+        "team": "Atlanta Hawks",
+        "playType": "Jump Shot",
+        "date": "2023-03-28",
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "3746": [
+      {
+        "id": "eb6ab4ab-e305-4279-844d-65a9c9332279",
+        "flowId": 3746,
+        "set": "Metallic Gold LE",
+        "setId": "f55be824-34db-461f-ae2e-5f84e73025cb",
+        "setFlowId": 99,
+        "playerId": 203991,
+        "playerName": "Clint Capela",
+        "team": "Atlanta Hawks",
+        "playType": "Steal",
+        "date": "2023-04-05",
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
     "3745": [
       {
         "id": "ed8639a8-4b72-47cf-b416-b316b7d61949",
@@ -1775,6 +2498,24 @@
         "badges": []
       }
     ],
+    "3625": [
+      {
+        "id": "9a91497e-f3dc-43b9-9851-643b86dc62b0",
+        "flowId": 3625,
+        "set": "Spotlight Series",
+        "setId": "c9d6ebe1-e92f-440a-852b-513adc91640a",
+        "setFlowId": 92,
+        "playerId": 1630567,
+        "playerName": "Scottie Barnes",
+        "team": "Toronto Raptors",
+        "playType": "Assist",
+        "date": "2023-01-22",
+        "tier": "Common",
+        "badges": [
+          "CR"
+        ]
+      }
+    ],
     "3624": [
       {
         "id": "c73e482e-65a6-46f3-9ea2-eb9a6764d54e",
@@ -2109,6 +2850,24 @@
         "date": "2023-03-06",
         "tier": "Common",
         "badges": []
+      }
+    ],
+    "3602": [
+      {
+        "id": "865a5b58-7fa9-478b-8854-821b6b08de61",
+        "flowId": 3602,
+        "set": "Spotlight Series",
+        "setId": "c9d6ebe1-e92f-440a-852b-513adc91640a",
+        "setFlowId": 92,
+        "playerId": 202695,
+        "playerName": "Kawhi Leonard",
+        "team": "LA Clippers",
+        "playType": "Steal",
+        "date": "2023-01-15",
+        "tier": "Common",
+        "badges": [
+          "CR"
+        ]
       }
     ],
     "3601": [
@@ -6336,7 +7095,7 @@
         "team": "Los Angeles Lakers",
         "playType": "Jump Shot",
         "date": "2023-02-08",
-        "tier": "Legendary",
+        "tier": "Unknown",
         "badges": []
       }
     ],
@@ -15169,7 +15928,7 @@
         "team": "Los Angeles Lakers",
         "playType": "Hook Shot",
         "date": "1987-06-09",
-        "tier": "Legendary",
+        "tier": "Unknown",
         "badges": [
           "MVP",
           "CY"
@@ -18395,7 +19154,7 @@
         "team": "Los Angeles Lakers",
         "playType": "Assist",
         "date": "1988-01-04",
-        "tier": "Rare",
+        "tier": "Unknown",
         "badges": [
           "CY"
         ]
@@ -18413,7 +19172,7 @@
         "team": "Los Angeles Lakers",
         "playType": "Jump Shot",
         "date": "1987-12-11",
-        "tier": "Rare",
+        "tier": "Unknown",
         "badges": [
           "CY"
         ]
@@ -18431,7 +19190,7 @@
         "team": "Los Angeles Lakers",
         "playType": "Assist",
         "date": "1985-03-19",
-        "tier": "Legendary",
+        "tier": "Unknown",
         "badges": [
           "CY"
         ]
@@ -18449,7 +19208,7 @@
         "team": "Los Angeles Lakers",
         "playType": "Layup",
         "date": "1980-05-16",
-        "tier": "Legendary",
+        "tier": "Unknown",
         "badges": [
           "TSD",
           "RY",
