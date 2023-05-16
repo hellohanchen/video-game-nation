@@ -5945,7 +5945,7 @@
   },
   "05/17/2023": {
     "0042200301": {
-      "homeTeam": null,
+      "homeTeam": "BOS",
       "awayTeam": "MIA"
     }
   },
@@ -5957,7 +5957,7 @@
   },
   "05/19/2023": {
     "0042200302": {
-      "homeTeam": null,
+      "homeTeam": "BOS",
       "awayTeam": "MIA"
     }
   },
@@ -5970,7 +5970,7 @@
   "05/21/2023": {
     "0042200303": {
       "homeTeam": "MIA",
-      "awayTeam": null
+      "awayTeam": "BOS"
     }
   },
   "05/22/2023": {
@@ -5982,7 +5982,7 @@
   "05/23/2023": {
     "0042200304": {
       "homeTeam": "MIA",
-      "awayTeam": null
+      "awayTeam": "BOS"
     }
   },
   "05/24/2023": {
@@ -5993,7 +5993,7 @@
   },
   "05/25/2023": {
     "0042200305": {
-      "homeTeam": null,
+      "homeTeam": "BOS",
       "awayTeam": "MIA"
     }
   },
@@ -6006,7 +6006,7 @@
   "05/27/2023": {
     "0042200306": {
       "homeTeam": "MIA",
-      "awayTeam": null
+      "awayTeam": "BOS"
     }
   },
   "05/28/2023": {
@@ -6017,8 +6017,50 @@
   },
   "05/29/2023": {
     "0042200307": {
-      "homeTeam": null,
+      "homeTeam": "BOS",
       "awayTeam": "MIA"
+    }
+  },
+  "06/01/2023": {
+    "0042200401": {
+      "homeTeam": null,
+      "awayTeam": null
+    }
+  },
+  "06/04/2023": {
+    "0042200402": {
+      "homeTeam": null,
+      "awayTeam": null
+    }
+  },
+  "06/07/2023": {
+    "0042200403": {
+      "homeTeam": null,
+      "awayTeam": null
+    }
+  },
+  "06/09/2023": {
+    "0042200404": {
+      "homeTeam": null,
+      "awayTeam": null
+    }
+  },
+  "06/12/2023": {
+    "0042200405": {
+      "homeTeam": null,
+      "awayTeam": null
+    }
+  },
+  "06/15/2023": {
+    "0042200406": {
+      "homeTeam": null,
+      "awayTeam": null
+    }
+  },
+  "06/18/2023": {
+    "0042200407": {
+      "homeTeam": null,
+      "awayTeam": null
     }
   }
 }
