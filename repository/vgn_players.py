@@ -3,7 +3,7 @@ import time
 
 import pandas as pd
 
-from provider.nba.player_stats import get_player_avg_stats
+from provider.nba.players import get_player_avg_stats
 from repository.config import CNX_POOL
 from topshot.ts_info import TS_PLAYER_ID_MOMENTS
 

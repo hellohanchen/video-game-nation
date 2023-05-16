@@ -51,7 +51,7 @@ class LineupProvider:
             self.lineups[lineup['user_id']] = Lineup(lineup, self)
 
         if len(self.lineups) > 0:
-            self.collections = get_collections(self.lineups.keys())
+            self.collections = get_collections(self.lineups.keys(), self.players.keys())
 
     def reload(self):
         if self.coming_game_date != NBA_PROVIDER.get_coming_game_date():
