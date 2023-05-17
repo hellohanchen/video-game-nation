@@ -58,6 +58,64 @@
           "dates": []
         }
       ]
+    },
+    {
+      "id": 2,
+      "title": "EASTERN CONFERENCE FINALS PREDICTIVE: WIN NBA TOP SHOT BALANCE",
+      "buckets": [
+        {
+          "description": "PLAYER WITH THE MOST POINTS IN ANY ECF GAME",
+          "segment": "GAME",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            }
+          ],
+          "games": [
+            "0042200301",
+            "0042200302",
+            "0042200303",
+            "0042200304",
+            "0042200305",
+            "0042200306",
+            "0042200307"
+          ]
+        },
+        {
+          "description": "PLAYER WHO MAKES THE LAST 3-POINTER IN THE ECF",
+          "segment": "GAME",
+          "is_wildcard": false,
+          "type": "PBP",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "3PT",
+              "order": "DESC"
+            }
+          ],
+          "games": [
+            "0042200304",
+            "0042200305",
+            "0042200306",
+            "0042200307"
+          ]
+        },
+        {
+          "description": "WINNING TEAM AND NUMBER OF GAMES\nCeltics in 4 = Any Jaylen Brown Moment, Celtics in 5 = Any Jayson Tatum Moment, Celtics in 6 = Any Malcolm Brogdon Moment, Celtics in 7 = Any Marcus Smart Moment, Heat in 4 = Any Gabe Vincent Moment, Heat in 5 = Any Kyle Lowry Moment, Heat in 6 = Any Bam Adebayo Moment, Heat in 7 = Any Jimmy Butler Moment",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [],
+          "dates": []
+        }
+      ]
     }
   ]
 }
