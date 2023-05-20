@@ -34,8 +34,8 @@ def get_sorted_play_ids(plays):
 
 def get_formatted_message(user1, user2, collection1, collection2, series_or_set):
     messages = []
-    message = ""
-    new_message = ""
+    msg = ""
+    new_msg = ""
 
     for set_id in collection1:
         if len(collection1[set_id]) == 0 and (set_id not in collection2 or len(collection2[set_id]) == 0):
@@ -48,55 +48,55 @@ def get_formatted_message(user1, user2, collection1, collection2, series_or_set)
             if TS_SET_INFO[set_id]['flowSeriesNumber'] != -series_or_set:
                 continue
 
-        new_message += "🏀 ***{} (Series {}):***\n".format(
+        new_msg += "🏀 ***{} (Series {}):***\n".format(
             TS_SET_INFO[set_id]['flowName'],
             TS_SET_INFO[set_id]['flowSeriesNumber']
         )
 
-        message, new_message = truncate_message(messages, message, new_message, 1950)
+        msg, new_msg = truncate_message(messages, msg, new_msg, 1950)
 
         if len(collection1[set_id]) > 0:
-            new_message += "**{}** has **{}** needs:\n".format(user1, user2)
+            new_msg += "**{}** has **{}** needs:\n".format(user1, user2)
 
             plays = collection1[set_id]
             play_ids = get_sorted_play_ids(plays)
 
             for play_id in play_ids:
                 if int(plays[play_id]['Count']) > 1:
-                    new_message += ":black_small_square: **{} ${} x{}** ".format(
+                    new_msg += ":black_small_square: **{} ${} x{}** ".format(
                         plays[play_id]['FullName'],
                         plays[play_id]['LowAsk'],
                         plays[play_id]['Count']
                     )
                 else:
-                    new_message += ":black_small_square: {} ${} x{} ".format(
+                    new_msg += ":black_small_square: {} ${} x{} ".format(
                         plays[play_id]['FullName'],
                         plays[play_id]['LowAsk'],
                         plays[play_id]['Count']
                     )
 
-                message, new_message = truncate_message(messages, message, new_message, 1950)
+                msg, new_msg = truncate_message(messages, msg, new_msg, 1950)
 
-            new_message += "\n"
+            new_msg += "\n"
 
         if set_id in collection2 and len(collection2[set_id]) > 0:
-            new_message += "**{}** has **{}** needs:\n".format(user2, user1)
+            new_msg += "**{}** has **{}** needs:\n".format(user2, user1)
 
             plays = collection2[set_id]
             play_ids = get_sorted_play_ids(plays)
 
             for play_id in play_ids:
-                new_message += ":black_small_square: {} ${} x{} ".format(
+                new_msg += ":black_small_square: {} ${} x{} ".format(
                     plays[play_id]['FullName'],
                     plays[play_id]['LowAsk'],
                     plays[play_id]['Count'],
                 )
 
-                message, new_message = truncate_message(messages, message, new_message, 1950)
+                msg, new_msg = truncate_message(messages, msg, new_msg, 1950)
 
-            new_message += "\n"
+            new_msg += "\n"
 
-        new_message += "\n"
+        new_msg += "\n"
 
     for set_id in collection2:
         if len(collection2[set_id]) == 0 or set_id in collection1:
@@ -107,30 +107,30 @@ def get_formatted_message(user1, user2, collection1, collection2, series_or_set)
         if TS_SET_INFO[set_id]['flowSeriesNumber'] != series_or_set:
             continue
 
-        new_message += "🏀 ***{} (Series {}):***\n".format(
+        new_msg += "🏀 ***{} (Series {}):***\n".format(
             TS_SET_INFO[set_id]['flowName'],
             TS_SET_INFO[set_id]['flowSeriesNumber']
         )
 
-        new_message += "**{}** has **{}** needs:\n".format(user2, user1)
+        new_msg += "**{}** has **{}** needs:\n".format(user2, user1)
 
-        message, new_message = truncate_message(messages, message, new_message, 1950)
+        msg, new_msg = truncate_message(messages, msg, new_msg, 1950)
 
         plays = collection2[set_id]
         play_ids = get_sorted_play_ids(plays)
 
         for play_id in play_ids:
-            new_message += ":black_small_square: {} ${} x{} ".format(
+            new_msg += ":black_small_square: {} ${} x{} ".format(
                 plays[play_id]['FullName'],
                 plays[play_id]['LowAsk'],
                 plays[play_id]['Count'],
             )
 
-            message, new_message = truncate_message(messages, message, new_message, 1950)
+            msg, new_msg = truncate_message(messages, msg, new_msg, 1950)
 
-        new_message += "\n\n"
+        new_msg += "\n\n"
 
-    messages.append(message)
+    messages.append(msg)
 
     return messages
 
