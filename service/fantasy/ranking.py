@@ -2,7 +2,7 @@ import datetime
 
 from nba_api.live.nba.endpoints import boxscore
 
-from provider.nba_provider import NBAProvider
+from provider.nba_provider import NBAProvider, NBA_PROVIDER
 from repository.vgn_collections import get_collections
 from repository.vgn_lineups import get_lineups
 from repository.vgn_players import get_empty_players_stats
@@ -27,25 +27,31 @@ class RankingProvider:
         self.update()
 
     def __load_lineups_and_collections(self):
+        game_day_players = []
+        for game_id, game in NBA_PROVIDER.get_games_on_date(self.current_game_date).items():
+            for team in [game['homeTeam'], game['awayTeam']]:
+                for player in NBA_PROVIDER.get_players_for_team(team):
+                    game_day_players.append(player)
+
         loaded = get_lineups(self.current_game_date, True)
-        players = []
+        player_ids = []
         for lineup in loaded:
             self.lineups[lineup['user_id']] = Lineup(lineup, self)
 
         if len(self.lineups) > 0:
-            all_collections = get_collections(self.lineups.keys())
+            all_collections = get_collections(self.lineups.keys(), game_day_players)
             all_users = get_users(self.lineups.keys())
 
             for user_id in self.lineups:
                 self.collections[user_id] = {
                     0: all_users[user_id]['topshot_username']
                 }
-                players.extend(self.lineups[user_id].player_ids)
+                player_ids.extend(self.lineups[user_id].player_ids)
                 for player_id in self.lineups[user_id].player_ids:
                     self.collections[user_id][player_id] = all_collections[user_id].get(player_id)
 
-            players = list(set(players))
-            self.player_stats = get_empty_players_stats(players)
+            player_ids = list(set(player_ids))
+            self.player_stats = get_empty_players_stats(player_ids)
 
     def reload(self):
         self.lineups = {}
