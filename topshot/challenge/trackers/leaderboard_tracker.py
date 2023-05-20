@@ -71,27 +71,29 @@ class LeaderBoardTracker(Tracker):
 
         all_final = True
         for game_id in games_players:
-            game_stats, game_final, game_info = Tracker.load_game_stats(game_id)
-            all_final &= game_final
-            if game_stats is None:
+            game_boxscore, game_is_final, game_info = Tracker.load_game_stats(game_id)
+            all_final &= game_is_final
+            if game_boxscore is None:
                 continue
 
-            for player_stats in game_stats['homeTeam']['players']:
-                if player_stats['status'] == 'ACTIVE' and player_stats['personId'] in games_players[game_id]:
-                    statistics = player_stats['statistics']
+            for player_boxscore in game_boxscore['homeTeam']['players']:
+                if player_boxscore['status'] == 'ACTIVE' and player_boxscore['personId'] in games_players[game_id]:
+                    statistics = player_boxscore['statistics']
+                    statistics['order'] = player_boxscore['order']
                     statistics['teamWin'] = \
-                        1 if int(game_stats['homeTeam']['score']) > int(game_stats['awayTeam']['score']) else 0
-                    scores[player_stats['name'] + '/' + str(game_id)] = {
+                        1 if int(game_boxscore['homeTeam']['score']) > int(game_boxscore['awayTeam']['score']) else 0
+                    scores[player_boxscore['name'] + '/' + str(game_id)] = {
                         'game': game_info,
                         'stats': self.load_player_stats(statistics)
                     }
 
-            for player_stats in game_stats['awayTeam']['players']:
-                if player_stats['status'] == 'ACTIVE' and player_stats['personId'] in games_players[game_id]:
-                    statistics = player_stats['statistics']
+            for player_boxscore in game_boxscore['awayTeam']['players']:
+                if player_boxscore['status'] == 'ACTIVE' and player_boxscore['personId'] in games_players[game_id]:
+                    statistics = player_boxscore['statistics']
+                    statistics['order'] = player_boxscore['order']
                     statistics['teamWin'] = \
-                        1 if int(game_stats['homeTeam']['score']) > int(game_stats['awayTeam']['score']) else 0
-                    scores[player_stats['name'] + '/' + str(game_id)] = {
+                        1 if int(game_boxscore['homeTeam']['score']) > int(game_boxscore['awayTeam']['score']) else 0
+                    scores[player_boxscore['name'] + '/' + str(game_id)] = {
                         'game': game_info,
                         'stats': self.load_player_stats(statistics)
                     }
@@ -108,31 +110,30 @@ class LeaderBoardTracker(Tracker):
         :return: a tuple containing the total number of teams/players and a list of dictionaries containing team/player
                 information and scores
         """
-        keys = list(scores.keys())
-
         # Sort the keys in descending order based on the scores for each tier breaker, as specified by the order of the
         # tier breakers in the leaderboard tracker
+        sorted_keys = list(scores.keys())
         for i in range(len(self.tier_breakers) - 1, -1, -1):
-            keys.sort(reverse=self.tier_breakers[i].order == "DESC", key=lambda k: scores[k]['stats'][i])
-
-        sorted_stats = []
-        idx = 0
+            sorted_keys.sort(reverse=self.tier_breakers[i].order == "DESC", key=lambda k: scores[k]['stats'][i])
 
         # Append the top 2 * count (or at least 5) players/teams to the sorted_stats list, sorted by their total scores
         # across all tier breakers, as well as any players/teams with the same total score as the last player/team in
         # the sorted_stats list
-        out_count = max(5, self.count * 2) if not all_final else self.count
-        hit = len(scores)
-        while len(sorted_stats) < out_count and idx < len(scores):
-            sorted_stats.append({"name": keys[idx], "score": scores[keys[idx]]})
+        num_to_display = max(5, self.count * 2) if not all_final else self.count
+
+        sorted_scores = []
+        idx = 0
+        hit = 0
+        while len(sorted_scores) < num_to_display and idx < len(scores):
+            sorted_scores.append({"name": sorted_keys[idx], "score": scores[sorted_keys[idx]]})
             idx += 1
-            while idx < len(scores) and equals(scores[keys[idx - 1]]['stats'], scores[keys[idx]]['stats']):
-                sorted_stats.append({"name": keys[idx], "score": scores[keys[idx]]})
+            while idx < len(scores) and equals(scores[sorted_keys[idx - 1]]['stats'], scores[sorted_keys[idx]]['stats']):
+                sorted_scores.append({"name": sorted_keys[idx], "score": scores[sorted_keys[idx]]})
                 idx += 1
-            if idx >= self.count:
+            if idx >= self.count >= hit:
                 hit = idx
 
-        return hit, sorted_stats
+        return hit, sorted_scores
 
 
 class QualifierTracker(LeaderBoardTracker):

@@ -30,11 +30,11 @@ class SegmentBucket(Bucket):
         for segment in segments:
             if self.is_team:
                 results.append(self.tracker.get_team_scores(segment))
+            else:
+                # get players for each game
+                game_players = self.get_filtered_games_players(segment)
 
-            # get players for each game
-            game_players = self.get_filtered_games_players(segment)
-
-            results.append(self.tracker.get_player_scores(game_players))
+                results.append(self.tracker.get_player_scores(game_players))
 
         return results
 
