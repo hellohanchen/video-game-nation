@@ -128,8 +128,10 @@ class LeaderBoardTracker(Tracker):
             sorted_scores.append({"name": sorted_keys[idx], "score": scores[sorted_keys[idx]]})
             idx += 1
             while idx < len(scores) and equals(scores[sorted_keys[idx - 1]]['stats'], scores[sorted_keys[idx]]['stats']):
-                sorted_scores.append({"name": sorted_keys[idx], "score": scores[sorted_keys[idx]]})
-                idx += 1
+                # for extra score, we don't need to show ended games
+                if hit < self.count or scores[sorted_keys[idx]]['game']['status'] != 3:
+                    sorted_scores.append({"name": sorted_keys[idx], "score": scores[sorted_keys[idx]]})
+                    idx += 1
             if idx >= self.count > hit:
                 hit = idx
 
