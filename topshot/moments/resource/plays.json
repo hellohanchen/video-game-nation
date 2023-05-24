@@ -705,6 +705,22 @@
       "badges": []
     }
   ],
+  "3777": [
+    {
+      "id": "5550d9ce-3959-495d-a7a0-f36a430f0ee4",
+      "flowId": 3777,
+      "set": "Top Shot 50",
+      "setId": "ede72a8c-02e1-429f-b543-cec4a9513c5b",
+      "setFlowId": 103,
+      "playerId": 203076,
+      "playerName": "Anthony Davis",
+      "team": "Los Angeles Lakers",
+      "playType": "Reel",
+      "date": "2022-12-04",
+      "tier": "L",
+      "badges": []
+    }
+  ],
   "3776": [
     {
       "id": "7731b544-80b4-4612-a537-9cad15b340c1",
@@ -957,6 +973,22 @@
       "team": "Phoenix Suns",
       "playType": "Block",
       "date": "2023-04-02",
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "3760": [
+    {
+      "id": "9f6ae622-36a3-4946-b862-062128aa50eb",
+      "flowId": 3760,
+      "set": "Metallic Gold LE",
+      "setId": "f55be824-34db-461f-ae2e-5f84e73025cb",
+      "setFlowId": 99,
+      "playerId": 1626164,
+      "playerName": "Devin Booker",
+      "team": "Phoenix Suns",
+      "playType": "Jump Shot",
+      "date": "2023-03-09",
       "tier": "R",
       "badges": []
     }
@@ -3345,6 +3377,22 @@
       "team": "Houston Rockets",
       "playType": "Block",
       "date": "2023-02-02",
+      "tier": "C",
+      "badges": []
+    }
+  ],
+  "3599": [
+    {
+      "id": "7e9412d0-4be2-43cd-affc-da75322c3fdd",
+      "flowId": 3599,
+      "set": "Spotlight Series",
+      "setId": "c9d6ebe1-e92f-440a-852b-513adc91640a",
+      "setFlowId": 92,
+      "playerId": 201939,
+      "playerName": "Steph Curry",
+      "team": "Golden State Warriors",
+      "playType": "Assist",
+      "date": "2023-03-29",
       "tier": "C",
       "badges": []
     }

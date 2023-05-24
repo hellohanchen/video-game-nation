@@ -2,7 +2,7 @@ from enum import Enum
 from typing import List, Dict, Any, Tuple
 
 from provider.nba_provider import NBA_PROVIDER
-from topshot.challenge.player_filter import TopshotFilter
+from topshot.challenge.player_filter import TopshotFilter, PlayerIDFilter
 from topshot.challenge.team_filter import TeamFilter
 from topshot.challenge.tier_breaker import TierBreaker, Qualifier
 from topshot.challenge.trackers.leaderboard_tracker import LeaderBoardTracker, QualifierTracker
@@ -210,7 +210,10 @@ def fill_bucket(bucket: Bucket, dict_obj: Dict[str, any]) -> Bucket:
         bucket.add_player_filter(TopshotFilter([]))
     else:
         for filter_def in dict_obj['player_filters']:
-            bucket.add_player_filter(TopshotFilter(filter_def.split(',')))
+            if filter_def.startswith("TS"):
+                bucket.add_player_filter(TopshotFilter(filter_def.split(',')[1:]))
+            elif filter_def.startswith("ID"):
+                bucket.add_player_filter(PlayerIDFilter(filter_def.split(',')[1:]))
 
     # If dates are specified, add the specified dates to the bucket
     if "dates" in dict_obj:
