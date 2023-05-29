@@ -92,7 +92,7 @@ class LeaderBoardTracker(Tracker):
                     statistics = player_boxscore['statistics']
                     statistics['order'] = player_boxscore['order']
                     statistics['teamWin'] = \
-                        1 if int(game_boxscore['homeTeam']['score']) > int(game_boxscore['awayTeam']['score']) else 0
+                        1 if int(game_boxscore['awayTeam']['score']) > int(game_boxscore['homeTeam']['score']) else 0
                     scores[player_boxscore['name'] + '/' + str(game_id)] = {
                         'game': game_info,
                         'stats': self.load_player_stats(statistics)
