@@ -1,0 +1,13289 @@
+{
+  "203081": {
+    "id": 203081,
+    "name": "Damian Lillard",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {
+        "CR": true
+      },
+      "3": {},
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "203944": {
+    "id": 203944,
+    "name": "Julius Randle",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {
+        "CR": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1629652": {
+    "id": 1629652,
+    "name": "Luguentz Dort",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true,
+        "RY": true,
+        "RM": true
+      },
+      "2": {},
+      "3": {},
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1629027": {
+    "id": 1629027,
+    "name": "Trae Young",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {
+        "CR": true
+      },
+      "3": {
+        "CR": true
+      },
+      "4": {}
+    }
+  },
+  "1630224": {
+    "id": 1630224,
+    "name": "Jalen Green",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "RY": true,
+        "CR": true,
+        "RM": true,
+        "TSD": true,
+        "RP": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "203954": {
+    "id": 203954,
+    "name": "Joel Embiid",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {
+        "CR": true
+      },
+      "3": {
+        "CR": true
+      },
+      "4": {
+        "MVP": true,
+        "CR": true
+      }
+    }
+  },
+  "201935": {
+    "id": 201935,
+    "name": "James Harden",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {
+        "CR": true
+      },
+      "3": {
+        "CR": true
+      },
+      "4": {
+        "CR": true,
+        "CCR": true
+      }
+    }
+  },
+  "201939": {
+    "id": 201939,
+    "name": "Steph Curry",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {
+        "CR": true
+      },
+      "3": {
+        "CY": true,
+        "CR": true
+      },
+      "4": {
+        "CR": true,
+        "CCR": true
+      }
+    }
+  },
+  "202691": {
+    "id": 202691,
+    "name": "Klay Thompson",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "CY": true,
+        "CR": true,
+        "TSD": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "203952": {
+    "id": 203952,
+    "name": "Andrew Wiggins",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {
+        "CY": true,
+        "CR": true
+      },
+      "4": {}
+    }
+  },
+  "1629656": {
+    "id": 1629656,
+    "name": "Quentin Grimes",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true,
+        "RY": true,
+        "RM": true
+      },
+      "4": {}
+    }
+  },
+  "1628973": {
+    "id": 1628973,
+    "name": "Jalen Brunson",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {
+        "CR": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1629013": {
+    "id": 1629013,
+    "name": "Landry Shamet",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "201142": {
+    "id": 201142,
+    "name": "Kevin Durant",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true,
+        "MVP": true,
+        "CR": true
+      },
+      "2": {
+        "CR": true
+      },
+      "3": {
+        "CR": true
+      },
+      "4": {
+        "CR": true,
+        "CCR": true
+      }
+    }
+  },
+  "1626164": {
+    "id": 1626164,
+    "name": "Devin Booker",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "CR": true,
+        "TSD": true
+      },
+      "2": {
+        "CR": true
+      },
+      "3": {
+        "CR": true
+      },
+      "4": {
+        "CR": true,
+        "CCR": true
+      }
+    }
+  },
+  "1628369": {
+    "id": 1628369,
+    "name": "Jayson Tatum",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "CR": true,
+        "TSD": true
+      },
+      "2": {
+        "CR": true
+      },
+      "3": {
+        "CR": true
+      },
+      "4": {
+        "CR": true,
+        "CCR": true
+      }
+    }
+  },
+  "1627759": {
+    "id": 1627759,
+    "name": "Jaylen Brown",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {
+        "CR": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "203935": {
+    "id": 203935,
+    "name": "Marcus Smart",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {
+        "CR": true
+      },
+      "4": {}
+    }
+  },
+  "1629022": {
+    "id": 1629022,
+    "name": "Lonnie Walker IV",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "2544": {
+    "id": 2544,
+    "name": "LeBron James",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "CY": true,
+        "TSD": true
+      },
+      "2": {
+        "CR": true
+      },
+      "3": {
+        "CR": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "203076": {
+    "id": 203076,
+    "name": "Anthony Davis",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "CY": true,
+        "CR": true,
+        "TSD": true
+      },
+      "2": {
+        "CR": true
+      },
+      "3": {
+        "CR": true
+      },
+      "4": {
+        "CR": true,
+        "CCR": true
+      }
+    }
+  },
+  "200768": {
+    "id": 200768,
+    "name": "Kyle Lowry",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "202710": {
+    "id": 202710,
+    "name": "Jimmy Butler",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "CR": true,
+        "TSD": true
+      },
+      "2": {},
+      "3": {
+        "CR": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1628389": {
+    "id": 1628389,
+    "name": "Bam Adebayo",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {
+        "CR": true
+      },
+      "4": {
+        "CR": true,
+        "CCR": true
+      }
+    }
+  },
+  "1631128": {
+    "id": 1631128,
+    "name": "Christian Braun",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "RY": true,
+        "RM": true,
+        "TSD": true
+      }
+    }
+  },
+  "203999": {
+    "id": 203999,
+    "name": "Nikola Joki\u0107",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "CR": true,
+        "TSD": true
+      },
+      "2": {
+        "MVP": true,
+        "CR": true
+      },
+      "3": {
+        "MVP": true,
+        "CR": true
+      },
+      "4": {
+        "CR": true,
+        "CCR": true,
+        "MVP": true
+      }
+    }
+  },
+  "1627750": {
+    "id": 1627750,
+    "name": "Jamal Murray",
+    "series": [
+      4,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {
+        "CR": true
+      },
+      "3": {},
+      "4": {
+        "CR": true,
+        "CCR": true
+      }
+    }
+  },
+  "201950": {
+    "id": 201950,
+    "name": "Jrue Holiday",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {
+        "CY": true,
+        "CR": true
+      },
+      "3": {
+        "CR": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1630171": {
+    "id": 1630171,
+    "name": "Isaac Okoro",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "RY": true,
+        "RM": true,
+        "TSD": true,
+        "RP": true
+      },
+      "3": {
+        "CR": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1631223": {
+    "id": 1631223,
+    "name": "David Roddy",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      }
+    }
+  },
+  "1630530": {
+    "id": 1630530,
+    "name": "Trey Murphy III",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1631169": {
+    "id": 1631169,
+    "name": "Josh Minott",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      }
+    }
+  },
+  "1631254": {
+    "id": 1631254,
+    "name": "Kenneth Lofton Jr.",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      }
+    }
+  },
+  "1627832": {
+    "id": 1627832,
+    "name": "Fred VanVleet",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {
+        "CR": true
+      },
+      "3": {
+        "CR": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1629640": {
+    "id": 1629640,
+    "name": "Keldon Johnson",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {
+        "CR": true,
+        "CCR": true
+      }
+    }
+  },
+  "203924": {
+    "id": 203924,
+    "name": "Jerami Grant",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1629006": {
+    "id": 1629006,
+    "name": "Josh Okogie",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1629628": {
+    "id": 1629628,
+    "name": "RJ Barrett",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "RY": true,
+        "CR": true,
+        "RM": true,
+        "TSD": true,
+        "RP": true
+      },
+      "2": {},
+      "3": {},
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "201144": {
+    "id": 201144,
+    "name": "Mike Conley",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {
+        "CR": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "203507": {
+    "id": 203507,
+    "name": "Giannis Antetokounmpo",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "RY": true,
+        "MVP": true,
+        "CR": true,
+        "TSD": true
+      },
+      "2": {
+        "CY": true,
+        "CR": true
+      },
+      "3": {
+        "CR": true
+      },
+      "4": {
+        "CR": true,
+        "CCR": true
+      }
+    }
+  },
+  "1629622": {
+    "id": 1629622,
+    "name": "Max Strus",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "204456": {
+    "id": 204456,
+    "name": "T.J. McConnell",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1630228": {
+    "id": 1630228,
+    "name": "Jonathan Kuminga",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "RY": true,
+        "CY": true,
+        "RM": true,
+        "CR": true,
+        "TSD": true,
+        "RP": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1630164": {
+    "id": 1630164,
+    "name": "James Wiseman",
+    "series": [
+      4,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "RY": true,
+        "RM": true,
+        "TSD": true,
+        "RP": true
+      },
+      "3": {},
+      "4": {
+        "CR": true,
+        "CCR": true
+      }
+    }
+  },
+  "203501": {
+    "id": 203501,
+    "name": "Tim Hardaway Jr.",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1628378": {
+    "id": 1628378,
+    "name": "Donovan Mitchell",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {
+        "CR": true
+      },
+      "4": {
+        "CR": true,
+        "CCR": true
+      }
+    }
+  },
+  "1629023": {
+    "id": 1629023,
+    "name": "P.J. Washington",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true,
+        "RY": true,
+        "RM": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1631098": {
+    "id": 1631098,
+    "name": "Johnny Davis",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "203078": {
+    "id": 203078,
+    "name": "Bradley Beal",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1628384": {
+    "id": 1628384,
+    "name": "O.G. Anunoby",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "CR": true,
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1627734": {
+    "id": 1627734,
+    "name": "Domantas Sabonis",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "101108": {
+    "id": 101108,
+    "name": "Chris Paul",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {
+        "CR": true
+      },
+      "3": {
+        "CR": true,
+        "RY": true
+      },
+      "4": {
+        "CR": true,
+        "CCR": true
+      }
+    }
+  },
+  "1630178": {
+    "id": 1630178,
+    "name": "Tyrese Maxey",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "RY": true,
+        "RM": true,
+        "TSD": true,
+        "RP": true
+      },
+      "3": {
+        "CR": true
+      },
+      "4": {}
+    }
+  },
+  "1630532": {
+    "id": 1630532,
+    "name": "Franz Wagner",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "RY": true,
+        "RM": true,
+        "CR": true,
+        "TSD": true,
+        "RP": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1628983": {
+    "id": 1628983,
+    "name": "Shai Gilgeous-Alexander",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {
+        "CR": true
+      },
+      "3": {
+        "CR": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1630162": {
+    "id": 1630162,
+    "name": "Anthony Edwards",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "RY": true,
+        "RM": true,
+        "CR": true,
+        "TSD": true,
+        "RP": true
+      },
+      "3": {
+        "CR": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "201572": {
+    "id": 201572,
+    "name": "Brook Lopez",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {
+        "CY": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1630217": {
+    "id": 1630217,
+    "name": "Desmond Bane",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "202695": {
+    "id": 202695,
+    "name": "Kawhi Leonard",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {
+        "CR": true
+      },
+      "3": {
+        "CY": true,
+        "CR": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1628386": {
+    "id": 1628386,
+    "name": "Jarrett Allen",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {
+        "CR": true,
+        "CCR": true
+      }
+    }
+  },
+  "1629636": {
+    "id": 1629636,
+    "name": "Darius Garland",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true,
+        "RY": true,
+        "RM": true
+      },
+      "2": {},
+      "3": {
+        "CR": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "201942": {
+    "id": 201942,
+    "name": "DeMar DeRozan",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true,
+        "CR": true
+      },
+      "2": {
+        "CR": true
+      },
+      "3": {
+        "CR": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1628969": {
+    "id": 1628969,
+    "name": "Mikal Bridges",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {
+        "CR": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "202681": {
+    "id": 202681,
+    "name": "Kyrie Irving",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {
+        "CR": true
+      },
+      "3": {
+        "CR": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1631117": {
+    "id": 1631117,
+    "name": "Walker Kessler",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      }
+    }
+  },
+  "1630170": {
+    "id": 1630170,
+    "name": "Devin Vassell",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "RY": true,
+        "RM": true,
+        "TSD": true,
+        "RP": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1631114": {
+    "id": 1631114,
+    "name": "Jalen Williams",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "CR": true,
+        "RY": true,
+        "RM": true,
+        "TSD": true,
+        "RP": true
+      }
+    }
+  },
+  "1627742": {
+    "id": 1627742,
+    "name": "Brandon Ingram",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {
+        "CR": true
+      },
+      "4": {}
+    }
+  },
+  "1626157": {
+    "id": 1626157,
+    "name": "Karl-Anthony Towns",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {
+        "CR": true
+      },
+      "4": {}
+    }
+  },
+  "202331": {
+    "id": 202331,
+    "name": "Paul George",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "CR": true,
+        "TSD": true
+      },
+      "2": {
+        "CR": true
+      },
+      "3": {
+        "CR": true
+      },
+      "4": {}
+    }
+  },
+  "1631093": {
+    "id": 1631093,
+    "name": "Jaden Ivey",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      }
+    }
+  },
+  "1629008": {
+    "id": 1629008,
+    "name": "Michael Porter Jr.",
+    "series": [
+      4,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "RY": true,
+        "RM": true,
+        "TSD": true,
+        "CR": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "203915": {
+    "id": 203915,
+    "name": "Spencer Dinwiddie",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1627749": {
+    "id": 1627749,
+    "name": "Dejounte Murray",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {
+        "CR": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "203991": {
+    "id": 203991,
+    "name": "Clint Capela",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1628370": {
+    "id": 1628370,
+    "name": "Malik Monk",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1628368": {
+    "id": 1628368,
+    "name": "De'Aaron Fox",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "CR": true,
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1626172": {
+    "id": 1626172,
+    "name": "Kevon Looney",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {
+        "CY": true
+      },
+      "4": {}
+    }
+  },
+  "1628991": {
+    "id": 1628991,
+    "name": "Jaren Jackson Jr.",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1629630": {
+    "id": 1629630,
+    "name": "Ja Morant",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "RY": true,
+        "CR": true,
+        "RM": true,
+        "TSD": true
+      },
+      "2": {
+        "CR": true
+      },
+      "3": {
+        "CR": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1630559": {
+    "id": 1630559,
+    "name": "Austin Reaves",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1628401": {
+    "id": 1628401,
+    "name": "Derrick White",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "203114": {
+    "id": 203114,
+    "name": "Khris Middleton",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {
+        "CY": true,
+        "CR": true
+      },
+      "3": {
+        "CR": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1627747": {
+    "id": 1627747,
+    "name": "Caris LeVert",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1628404": {
+    "id": 1628404,
+    "name": "Josh Hart",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1626181": {
+    "id": 1626181,
+    "name": "Norman Powell",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "201566": {
+    "id": 201566,
+    "name": "Russell Westbrook",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {
+        "CR": true
+      },
+      "3": {
+        "CR": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1629638": {
+    "id": 1629638,
+    "name": "Nickeil Alexander-Walker",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1629651": {
+    "id": 1629651,
+    "name": "Nic Claxton",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {
+        "CR": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1629661": {
+    "id": 1629661,
+    "name": "Cameron Johnson",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1630169": {
+    "id": 1630169,
+    "name": "Tyrese Haliburton",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "RY": true,
+        "RM": true,
+        "CR": true,
+        "TSD": true,
+        "RP": true
+      },
+      "3": {
+        "CR": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1628976": {
+    "id": 1628976,
+    "name": "Wendell Carter Jr.",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1629673": {
+    "id": 1629673,
+    "name": "Jordan Poole",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {
+        "CY": true,
+        "CR": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "201145": {
+    "id": 201145,
+    "name": "Jeff Green",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1631101": {
+    "id": 1631101,
+    "name": "Shaedon Sharpe",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      }
+    }
+  },
+  "203482": {
+    "id": 203482,
+    "name": "Kelly Olynyk",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "RY": true,
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "203084": {
+    "id": 203084,
+    "name": "Harrison Barnes",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1630598": {
+    "id": 1630598,
+    "name": "Aaron Wiggins",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      },
+      "4": {}
+    }
+  },
+  "202685": {
+    "id": 202685,
+    "name": "Jonas Valan\u010di\u016bnas",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1630586": {
+    "id": 1630586,
+    "name": "Usman Garuba",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      },
+      "4": {}
+    }
+  },
+  "204001": {
+    "id": 204001,
+    "name": "Kristaps Porzi\u0146\u0123is",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {
+        "CR": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1630166": {
+    "id": 1630166,
+    "name": "Deni Avdija",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "RY": true,
+        "RM": true,
+        "TSD": true,
+        "RP": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1629659": {
+    "id": 1629659,
+    "name": "Talen Horton-Tucker",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1629012": {
+    "id": 1629012,
+    "name": "Collin Sexton",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1630567": {
+    "id": 1630567,
+    "name": "Scottie Barnes",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "RY": true,
+        "RM": true,
+        "CR": true,
+        "TSD": true,
+        "RP": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1630200": {
+    "id": 1630200,
+    "name": "Tre Jones",
+    "series": [
+      4,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1629680": {
+    "id": 1629680,
+    "name": "Matisse Thybulle",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1629028": {
+    "id": 1629028,
+    "name": "Deandre Ayton",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {
+        "CR": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1630175": {
+    "id": 1630175,
+    "name": "Cole Anthony",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "RY": true,
+        "RM": true,
+        "CR": true,
+        "TSD": true,
+        "RP": true
+      },
+      "3": {
+        "CR": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1630198": {
+    "id": 1630198,
+    "name": "Isaiah Joe",
+    "series": [
+      4,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1630193": {
+    "id": 1630193,
+    "name": "Immanuel Quickley",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "RY": true,
+        "RM": true,
+        "TSD": true,
+        "RP": true
+      },
+      "3": {
+        "CR": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "203497": {
+    "id": 203497,
+    "name": "Rudy Gobert",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {
+        "CR": true
+      },
+      "3": {
+        "RY": true
+      },
+      "4": {
+        "CR": true,
+        "CCR": true
+      }
+    }
+  },
+  "1629675": {
+    "id": 1629675,
+    "name": "Naz Reid",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1626145": {
+    "id": 1626145,
+    "name": "Tyus Jones",
+    "series": [
+      4,
+      3,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1626167": {
+    "id": 1626167,
+    "name": "Myles Turner",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1630578": {
+    "id": 1630578,
+    "name": "Alperen \u015eeng\u00fcn",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "RY": true,
+        "RM": true,
+        "CR": true,
+        "TSD": true,
+        "RP": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1628963": {
+    "id": 1628963,
+    "name": "Marvin Bagley III",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1630182": {
+    "id": 1630182,
+    "name": "Josh Green",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true,
+        "RY": true,
+        "RM": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1630596": {
+    "id": 1630596,
+    "name": "Evan Mobley",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "RY": true,
+        "RM": true,
+        "CR": true,
+        "TSD": true,
+        "RP": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "201976": {
+    "id": 201976,
+    "name": "Patrick Beverley",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "202696": {
+    "id": 202696,
+    "name": "Nikola Vu\u010devi\u0107",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {
+        "CR": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1626179": {
+    "id": 1626179,
+    "name": "Terry Rozier",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {
+        "CR": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "202330": {
+    "id": 202330,
+    "name": "Gordon Hayward",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1627763": {
+    "id": 1627763,
+    "name": "Malcolm Brogdon",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "CR": true,
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1628381": {
+    "id": 1628381,
+    "name": "John Collins",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true,
+        "CR": true
+      },
+      "2": {
+        "CR": true
+      },
+      "3": {},
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1628398": {
+    "id": 1628398,
+    "name": "Kyle Kuzma",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {
+        "CR": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1629655": {
+    "id": 1629655,
+    "name": "Daniel Gafford",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1627751": {
+    "id": 1627751,
+    "name": "Jakob Poeltl",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1628989": {
+    "id": 1628989,
+    "name": "Kevin Huerter",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1628365": {
+    "id": 1628365,
+    "name": "Markelle Fultz",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1630591": {
+    "id": 1630591,
+    "name": "Jalen Suggs",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "RY": true,
+        "RM": true,
+        "CR": true,
+        "TSD": true,
+        "RP": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1630544": {
+    "id": 1630544,
+    "name": "Tre Mann",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "RY": true,
+        "RM": true,
+        "TSD": true,
+        "RP": true
+      },
+      "4": {}
+    }
+  },
+  "1630581": {
+    "id": 1630581,
+    "name": "Josh Giddey",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "RY": true,
+        "CR": true,
+        "RM": true,
+        "TSD": true,
+        "RP": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1631111": {
+    "id": 1631111,
+    "name": "Wendell Moore Jr.",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1630183": {
+    "id": 1630183,
+    "name": "Jaden McDaniels",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "RY": true,
+        "RM": true,
+        "TSD": true,
+        "RP": true
+      },
+      "3": {},
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "204060": {
+    "id": 204060,
+    "name": "Joe Ingles",
+    "series": [
+      4,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1626171": {
+    "id": 1626171,
+    "name": "Bobby Portis",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "CY": true,
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1628415": {
+    "id": 1628415,
+    "name": "Dillon Brooks",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1627736": {
+    "id": 1627736,
+    "name": "Malik Beasley",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1627741": {
+    "id": 1627741,
+    "name": "Buddy Hield",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {
+        "CR": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1630174": {
+    "id": 1630174,
+    "name": "Aaron Nesmith",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1629645": {
+    "id": 1629645,
+    "name": "Kevin Porter Jr.",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true,
+        "RY": true,
+        "RM": true
+      },
+      "2": {},
+      "3": {},
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1630587": {
+    "id": 1630587,
+    "name": "Isaiah Livers",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "202711": {
+    "id": 202711,
+    "name": "Bojan Bogdanovi\u0107",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1626174": {
+    "id": 1626174,
+    "name": "Christian Wood",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {
+        "CR": true
+      },
+      "3": {},
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1630172": {
+    "id": 1630172,
+    "name": "Patrick Williams",
+    "series": [
+      4,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "RY": true,
+        "RM": true,
+        "TSD": true,
+        "RP": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1630163": {
+    "id": 1630163,
+    "name": "LaMelo Ball",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "RY": true,
+        "RM": true,
+        "CR": true,
+        "TSD": true,
+        "RP": true
+      },
+      "3": {
+        "CR": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "201143": {
+    "id": 201143,
+    "name": "Al Horford",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {
+        "CR": true
+      },
+      "4": {}
+    }
+  },
+  "1630180": {
+    "id": 1630180,
+    "name": "Saddiq Bey",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "RY": true,
+        "RM": true,
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "203468": {
+    "id": 203468,
+    "name": "CJ McCollum",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {
+        "CR": true
+      },
+      "4": {}
+    }
+  },
+  "1628374": {
+    "id": 1628374,
+    "name": "Lauri Markkanen",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "203110": {
+    "id": 203110,
+    "name": "Draymond Green",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {
+        "CY": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1629029": {
+    "id": 1629029,
+    "name": "Luka Don\u010di\u0107",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {
+        "CR": true
+      },
+      "3": {
+        "CR": true
+      },
+      "4": {
+        "CR": true,
+        "CCR": true
+      }
+    }
+  },
+  "203897": {
+    "id": 203897,
+    "name": "Zach LaVine",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {
+        "CR": true
+      },
+      "3": {},
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "200747": {
+    "id": 200747,
+    "name": "Adam Morrison",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "RY": true
+      }
+    }
+  },
+  "1631110": {
+    "id": 1631110,
+    "name": "Jeremy Sochan",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "RY": true,
+        "RM": true,
+        "TSD": true,
+        "RP": true
+      }
+    }
+  },
+  "1631099": {
+    "id": 1631099,
+    "name": "Keegan Murray",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "RY": true,
+        "RM": true,
+        "TSD": true,
+        "RP": true
+      }
+    }
+  },
+  "1631097": {
+    "id": 1631097,
+    "name": "Bennedict Mathurin",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "RY": true,
+        "CR": true,
+        "RM": true,
+        "TSD": true,
+        "RP": true
+      }
+    }
+  },
+  "1631109": {
+    "id": 1631109,
+    "name": "Mark Williams",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "RY": true,
+        "RM": true,
+        "TSD": true
+      }
+    }
+  },
+  "1629057": {
+    "id": 1629057,
+    "name": "Robert Williams III",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1629020": {
+    "id": 1629020,
+    "name": "Jarred Vanderbilt",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1626156": {
+    "id": 1626156,
+    "name": "D'Angelo Russell",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "203903": {
+    "id": 203903,
+    "name": "Jordan Clarkson",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {
+        "CR": true,
+        "CCR": true
+      }
+    }
+  },
+  "1628380": {
+    "id": 1628380,
+    "name": "Zach Collins",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "1629014": {
+    "id": 1629014,
+    "name": "Anfernee Simons",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "CR": true,
+        "TSD": true
+      },
+      "3": {
+        "CR": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1629001": {
+    "id": 1629001,
+    "name": "De'Anthony Melton",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1629611": {
+    "id": 1629611,
+    "name": "Terance Mann",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {
+        "CR": true
+      },
+      "4": {}
+    }
+  },
+  "203471": {
+    "id": 203471,
+    "name": "Dennis Schr\u00f6der",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "RY": true,
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1630231": {
+    "id": 1630231,
+    "name": "Kenyon Martin Jr.",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true,
+        "RY": true,
+        "RM": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1628449": {
+    "id": 1628449,
+    "name": "Chris Boucher",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1628978": {
+    "id": 1628978,
+    "name": "Donte DiVincenzo",
+    "series": [
+      4,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {
+        "CY": true
+      },
+      "3": {},
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1631104": {
+    "id": 1631104,
+    "name": "Blake Wesley",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      }
+    }
+  },
+  "1631119": {
+    "id": 1631119,
+    "name": "Jaylin Williams",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      }
+    }
+  },
+  "202699": {
+    "id": 202699,
+    "name": "Tobias Harris",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1630534": {
+    "id": 1630534,
+    "name": "Ochai Agbaji",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "RY": true,
+        "RM": true
+      }
+    }
+  },
+  "1630570": {
+    "id": 1630570,
+    "name": "Trendon Watford",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "1629626": {
+    "id": 1629626,
+    "name": "Bol Bol",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "RY": true,
+        "RM": true,
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1630529": {
+    "id": 1630529,
+    "name": "Herbert Jones",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "RY": true,
+        "RM": true,
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "203937": {
+    "id": 203937,
+    "name": "Kyle Anderson",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1629639": {
+    "id": 1629639,
+    "name": "Tyler Herro",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "RY": true,
+        "RM": true,
+        "CR": true,
+        "TSD": true
+      },
+      "2": {},
+      "3": {
+        "CR": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1629312": {
+    "id": 1629312,
+    "name": "Haywood Highsmith",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "203500": {
+    "id": 203500,
+    "name": "Steven Adams",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "RY": true,
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1627826": {
+    "id": 1627826,
+    "name": "Ivica Zubac",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1630543": {
+    "id": 1630543,
+    "name": "Isaiah Jackson",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true,
+        "RY": true,
+        "RM": true
+      },
+      "4": {}
+    }
+  },
+  "1631102": {
+    "id": 1631102,
+    "name": "TyTy Washington Jr.",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "RY": true,
+        "RM": true
+      }
+    }
+  },
+  "1631116": {
+    "id": 1631116,
+    "name": "Patrick Baldwin Jr.",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "RY": true,
+        "RM": true
+      }
+    }
+  },
+  "1630165": {
+    "id": 1630165,
+    "name": "Killian Hayes",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "RY": true,
+        "RM": true,
+        "TSD": true,
+        "RP": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1630191": {
+    "id": 1630191,
+    "name": "Isaiah Stewart",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "RY": true,
+        "RM": true,
+        "TSD": true,
+        "RP": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1630595": {
+    "id": 1630595,
+    "name": "Cade Cunningham",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "RY": true,
+        "RM": true,
+        "CR": true,
+        "TSD": true,
+        "RP": true
+      },
+      "4": {
+        "CR": true,
+        "CCR": true
+      }
+    }
+  },
+  "203493": {
+    "id": 203493,
+    "name": "Reggie Bullock",
+    "series": [
+      4,
+      3,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1630245": {
+    "id": 1630245,
+    "name": "Ayo Dosunmu",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "RY": true,
+        "RM": true,
+        "TSD": true,
+        "RP": true
+      },
+      "4": {}
+    }
+  },
+  "1627827": {
+    "id": 1627827,
+    "name": "Dorian Finney-Smith",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1630560": {
+    "id": 1630560,
+    "name": "Cam Thomas",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true,
+        "RY": true,
+        "RM": true
+      },
+      "4": {}
+    }
+  },
+  "203992": {
+    "id": 203992,
+    "name": "Bogdan Bogdanovi\u0107",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1631094": {
+    "id": 1631094,
+    "name": "Paolo Banchero",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "RY": true,
+        "RM": true,
+        "TSD": true,
+        "RP": true
+      }
+    }
+  },
+  "1629627": {
+    "id": 1629627,
+    "name": "Zion Williamson",
+    "series": [
+      4,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "RY": true,
+        "RM": true,
+        "TSD": true
+      },
+      "2": {
+        "CR": true
+      },
+      "3": {},
+      "4": {
+        "CR": true,
+        "CCR": true
+      }
+    }
+  },
+  "1631095": {
+    "id": 1631095,
+    "name": "Jabari Smith Jr.",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "RY": true,
+        "RM": true,
+        "TSD": true,
+        "RP": true
+      }
+    }
+  },
+  "1631105": {
+    "id": 1631105,
+    "name": "Jalen Duren",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "RY": true,
+        "RM": true,
+        "TSD": true,
+        "RP": true
+      }
+    }
+  },
+  "1630644": {
+    "id": 1630644,
+    "name": "Mac McClung",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "1630537": {
+    "id": 1630537,
+    "name": "Chris Duarte",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "RY": true,
+        "CR": true,
+        "RM": true,
+        "TSD": true,
+        "RP": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1626149": {
+    "id": 1626149,
+    "name": "Montrezl Harrell",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1630230": {
+    "id": 1630230,
+    "name": "Naji Marshall",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1629723": {
+    "id": 1629723,
+    "name": "John Konchar",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "1628427": {
+    "id": 1628427,
+    "name": "Vlatko Can\u010dar",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "1629632": {
+    "id": 1629632,
+    "name": "Coby White",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "RY": true,
+        "RM": true,
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "203083": {
+    "id": 203083,
+    "name": "Andre Drummond",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1630573": {
+    "id": 1630573,
+    "name": "Sam Hauser",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "CR": true
+      }
+    }
+  },
+  "1628371": {
+    "id": 1628371,
+    "name": "Jonathan Isaac",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "CR": true
+      }
+    }
+  },
+  "1630533": {
+    "id": 1630533,
+    "name": "Ziaire Williams",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1629614": {
+    "id": 1629614,
+    "name": "Andrew Nembhard",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "RY": true,
+        "RM": true,
+        "TSD": true,
+        "RP": true
+      }
+    }
+  },
+  "1631133": {
+    "id": 1631133,
+    "name": "Jabari Walker",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      }
+    }
+  },
+  "1631121": {
+    "id": 1631121,
+    "name": "Bryce McGowens",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      }
+    }
+  },
+  "1627783": {
+    "id": 1627783,
+    "name": "Pascal Siakam",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {
+        "CR": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1628418": {
+    "id": 1628418,
+    "name": "Thomas Bryant",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "203932": {
+    "id": 203932,
+    "name": "Aaron Gordon",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1629631": {
+    "id": 1629631,
+    "name": "De'Andre Hunter",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true,
+        "RY": true,
+        "RM": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1628420": {
+    "id": 1628420,
+    "name": "Monte Morris",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1629216": {
+    "id": 1629216,
+    "name": "Gabe Vincent",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "202704": {
+    "id": 202704,
+    "name": "Reggie Jackson",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1630702": {
+    "id": 1630702,
+    "name": "Jaden Hardy",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "RY": true,
+        "RM": true
+      }
+    }
+  },
+  "1626162": {
+    "id": 1626162,
+    "name": "Kelly Oubre Jr.",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1627732": {
+    "id": 1627732,
+    "name": "Ben Simmons",
+    "series": [
+      4,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {
+        "CR": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1630168": {
+    "id": 1630168,
+    "name": "Onyeka Okongwu",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "RY": true,
+        "RM": true,
+        "TSD": true,
+        "RP": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1631172": {
+    "id": 1631172,
+    "name": "Ousmane Dieng",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "RY": true,
+        "CR": true,
+        "RM": true
+      }
+    }
+  },
+  "1629634": {
+    "id": 1629634,
+    "name": "Brandon Clarke",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "201149": {
+    "id": 201149,
+    "name": "Joakim Noah",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "1631100": {
+    "id": 1631100,
+    "name": "AJ Griffin",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "RY": true,
+        "CR": true,
+        "RM": true,
+        "TSD": true,
+        "RP": true
+      }
+    }
+  },
+  "203506": {
+    "id": 203506,
+    "name": "Victor Oladipo",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "RY": true,
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1629018": {
+    "id": 1629018,
+    "name": "Gary Trent Jr.",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "203994": {
+    "id": 203994,
+    "name": "Jusuf Nurki\u0107",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "203486": {
+    "id": 203486,
+    "name": "Mason Plumlee",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1631103": {
+    "id": 1631103,
+    "name": "Malaki Branham",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      }
+    }
+  },
+  "1631216": {
+    "id": 1631216,
+    "name": "Caleb Houstan",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      }
+    }
+  },
+  "1630700": {
+    "id": 1630700,
+    "name": "Dyson Daniels",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      }
+    }
+  },
+  "1631113": {
+    "id": 1631113,
+    "name": "Kennedy Chandler",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      }
+    }
+  },
+  "1631222": {
+    "id": 1631222,
+    "name": "Jake LaRavia",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      }
+    }
+  },
+  "1631108": {
+    "id": 1631108,
+    "name": "Max Christie",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      }
+    }
+  },
+  "1631106": {
+    "id": 1631106,
+    "name": "Tari Eason",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      }
+    }
+  },
+  "1629641": {
+    "id": 1629641,
+    "name": "Romeo Langford",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "1629646": {
+    "id": 1629646,
+    "name": "Charles Bassey",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "1626168": {
+    "id": 1626168,
+    "name": "Trey Lyles",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1629056": {
+    "id": 1629056,
+    "name": "Terence Davis",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true,
+        "RY": true,
+        "RM": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1629234": {
+    "id": 1629234,
+    "name": "Drew Eubanks",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1629111": {
+    "id": 1629111,
+    "name": "Jock Landale",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      },
+      "4": {}
+    }
+  },
+  "1629021": {
+    "id": 1629021,
+    "name": "Moritz Wagner",
+    "series": [
+      4,
+      3,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1629011": {
+    "id": 1629011,
+    "name": "Mitchell Robinson",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "203085": {
+    "id": 203085,
+    "name": "Austin Rivers",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1628960": {
+    "id": 1628960,
+    "name": "Grayson Allen",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "201587": {
+    "id": 201587,
+    "name": "Nicolas Batum",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "202692": {
+    "id": 202692,
+    "name": "Alec Burks",
+    "series": [
+      4,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "203939": {
+    "id": 203939,
+    "name": "Dwight Powell",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1626224": {
+    "id": 1626224,
+    "name": "Cedi Osman",
+    "series": [
+      4,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1627936": {
+    "id": 1627936,
+    "name": "Alex Caruso",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "CY": true,
+        "TSD": true,
+        "CR": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "779": {
+    "id": 779,
+    "name": "Glen Rice",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "1630631": {
+    "id": 1630631,
+    "name": "Jose Alvarado",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "RY": true,
+        "RM": true,
+        "TSD": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1629003": {
+    "id": 1629003,
+    "name": "Shake Milton",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1630538": {
+    "id": 1630538,
+    "name": "Bones Hyland",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "RY": true,
+        "RM": true,
+        "TSD": true,
+        "RP": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "101181": {
+    "id": 101181,
+    "name": "Jos\u00e9 Calder\u00f3n",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "202322": {
+    "id": 202322,
+    "name": "John Wall",
+    "series": [
+      4,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {
+        "CR": true,
+        "CCR": true
+      }
+    }
+  },
+  "1626220": {
+    "id": 1626220,
+    "name": "Royce O'Neale",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1631107": {
+    "id": 1631107,
+    "name": "Nikola Jovi\u0107",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      }
+    }
+  },
+  "1626166": {
+    "id": 1626166,
+    "name": "Cameron Payne",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1630197": {
+    "id": 1630197,
+    "name": "Aleksej Pokusevski",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "RY": true,
+        "RM": true,
+        "TSD": true,
+        "RP": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1630579": {
+    "id": 1630579,
+    "name": "Jericho Sims",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "1628392": {
+    "id": 1628392,
+    "name": "Isaiah Hartenstein",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1626204": {
+    "id": 1626204,
+    "name": "Larry Nance Jr.",
+    "series": [
+      4,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1628997": {
+    "id": 1628997,
+    "name": "Caleb Martin",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1628971": {
+    "id": 1628971,
+    "name": "Bruce Brown",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "203552": {
+    "id": 203552,
+    "name": "Seth Curry",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "345": {
+    "id": 345,
+    "name": "Terry Porter",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "1629060": {
+    "id": 1629060,
+    "name": "Rui Hachimura",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true,
+        "RY": true,
+        "RM": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1630625": {
+    "id": 1630625,
+    "name": "Dalano Banton",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      },
+      "4": {}
+    }
+  },
+  "1627777": {
+    "id": 1627777,
+    "name": "Georges Niang",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1628964": {
+    "id": 1628964,
+    "name": "Mo Bamba",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1629647": {
+    "id": 1629647,
+    "name": "Darius Bazley",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true,
+        "RY": true,
+        "RM": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1628975": {
+    "id": 1628975,
+    "name": "Jevon Carter",
+    "series": [
+      4,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "201609": {
+    "id": 201609,
+    "name": "Goran Dragi\u0107",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1628372": {
+    "id": 1628372,
+    "name": "Dennis Smith Jr.",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1629139": {
+    "id": 1629139,
+    "name": "Yuta Watanabe",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1630699": {
+    "id": 1630699,
+    "name": "MarJon Beauchamp",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      }
+    }
+  },
+  "100720": {
+    "id": 100720,
+    "name": "Sue Bird",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "CY": true,
+        "TSD": true
+      },
+      "4": {
+        "CY": true,
+        "CR": true
+      }
+    }
+  },
+  "1627668": {
+    "id": 1627668,
+    "name": "Breanna Stewart",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "MVP": true,
+        "CY": true,
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "1629498": {
+    "id": 1629498,
+    "name": "Jackie Young",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {
+        "CY": true
+      }
+    }
+  },
+  "203833": {
+    "id": 203833,
+    "name": "Chelsea Gray",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {
+        "CY": true,
+        "CR": true
+      }
+    }
+  },
+  "1628932": {
+    "id": 1628932,
+    "name": "A'ja Wilson",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "CR": true,
+        "TSD": true
+      },
+      "4": {
+        "MVP": true,
+        "CY": true
+      }
+    }
+  },
+  "1627673": {
+    "id": 1627673,
+    "name": "Jonquel Jones",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "MVP": true,
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "203826": {
+    "id": 203826,
+    "name": "Alyssa Thomas",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "CR": true
+      }
+    }
+  },
+  "1627674": {
+    "id": 1627674,
+    "name": "Kahleah Copper",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "CY": true,
+        "TSD": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "201496": {
+    "id": 201496,
+    "name": "Candace Parker",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "CY": true,
+        "MVP": true,
+        "TSD": true
+      },
+      "4": {
+        "CR": true,
+        "RY": true,
+        "MVP": true,
+        "RP": true
+      }
+    }
+  },
+  "1630167": {
+    "id": 1630167,
+    "name": "Obi Toppin",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "RY": true,
+        "RM": true,
+        "CR": true,
+        "TSD": true,
+        "RP": true
+      },
+      "3": {
+        "CR": true
+      },
+      "4": {
+        "CR": true,
+        "CCR": true
+      }
+    }
+  },
+  "1631132": {
+    "id": 1631132,
+    "name": "Christian Koloko",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      }
+    }
+  },
+  "1629669": {
+    "id": 1629669,
+    "name": "Jaylen Nowell",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "1630346": {
+    "id": 1630346,
+    "name": "Matt Ryan",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "201567": {
+    "id": 201567,
+    "name": "Kevin Love",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {
+        "CR": true
+      },
+      "4": {}
+    }
+  },
+  "203115": {
+    "id": 203115,
+    "name": "Will Barton",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1627814": {
+    "id": 1627814,
+    "name": "Damion Lee",
+    "series": [
+      4,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1629629": {
+    "id": 1629629,
+    "name": "Cam Reddish",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "RY": true,
+        "RM": true,
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "202083": {
+    "id": 202083,
+    "name": "Wesley Matthews",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "1630583": {
+    "id": 1630583,
+    "name": "Santi Aldama",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      },
+      "4": {}
+    }
+  },
+  "1630188": {
+    "id": 1630188,
+    "name": "Jalen Smith",
+    "series": [
+      4,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1629048": {
+    "id": 1629048,
+    "name": "Goga Bitadze",
+    "series": [
+      4,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "203484": {
+    "id": 203484,
+    "name": "Kentavious Caldwell-Pope",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "RY": true,
+        "TSD": true,
+        "CY": true,
+        "CR": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1630208": {
+    "id": 1630208,
+    "name": "Nick Richards",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "1629684": {
+    "id": 1629684,
+    "name": "Grant Williams",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1629567": {
+    "id": 1629567,
+    "name": "Natisha Hiedeman",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "CR": true,
+        "TSD": true
+      }
+    }
+  },
+  "204329": {
+    "id": 204329,
+    "name": "Kiah Stokes",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "CY": true,
+        "CR": true
+      }
+    }
+  },
+  "1627675": {
+    "id": 1627675,
+    "name": "Courtney Williams",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "117": {
+    "id": 117,
+    "name": "Jeff Malone",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "76631": {
+    "id": 76631,
+    "name": "Mark Eaton",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "209": {
+    "id": 209,
+    "name": "Dell Curry",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "RY": true,
+        "CR": true
+      }
+    }
+  },
+  "1365": {
+    "id": 1365,
+    "name": "Xavier McDaniel",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "600014": {
+    "id": 600014,
+    "name": "Artis Gilmore",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "CR": true
+      }
+    }
+  },
+  "78310": {
+    "id": 78310,
+    "name": "Reggie Theus",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "901": {
+    "id": 901,
+    "name": "Otis Thorpe",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "78404": {
+    "id": 78404,
+    "name": "Kiki Vandeweghe",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "1453": {
+    "id": 1453,
+    "name": "Walter Davis",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "77685": {
+    "id": 77685,
+    "name": "Larry Nance",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "204": {
+    "id": 204,
+    "name": "Jeff Hornacek",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {
+        "RY": true
+      }
+    }
+  },
+  "786": {
+    "id": 786,
+    "name": "Gerald Wilkins",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "433": {
+    "id": 433,
+    "name": "Buck Williams",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "187": {
+    "id": 187,
+    "name": "Terry Cummings",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "894": {
+    "id": 894,
+    "name": "Ricky Pierce",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "77905": {
+    "id": 77905,
+    "name": "Kurt Rambis",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "CY": true
+      }
+    }
+  },
+  "262": {
+    "id": 262,
+    "name": "Michael Cage",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "456": {
+    "id": 456,
+    "name": "Chuck Person",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "RY": true
+      }
+    }
+  },
+  "1622": {
+    "id": 1622,
+    "name": "Rodney McCray",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "76353": {
+    "id": 76353,
+    "name": "Joe Barry Carroll",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "77167": {
+    "id": 77167,
+    "name": "Vinnie Johnson",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "76176": {
+    "id": 76176,
+    "name": "Rolando Blackman",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "157": {
+    "id": 157,
+    "name": "Derek Harper",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "73": {
+    "id": 73,
+    "name": "Hot Rod Williams",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "RY": true
+      }
+    }
+  },
+  "891": {
+    "id": 891,
+    "name": "Charles Oakley",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "76017": {
+    "id": 76017,
+    "name": "Danny Ainge",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "892": {
+    "id": 892,
+    "name": "Spud Webb",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "CR": true
+      }
+    }
+  },
+  "788": {
+    "id": 788,
+    "name": "Kevin Willis",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "470": {
+    "id": 470,
+    "name": "Doc Rivers",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "76195": {
+    "id": 76195,
+    "name": "Manute Bol",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "252": {
+    "id": 252,
+    "name": "Karl Malone",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "1472": {
+    "id": 1472,
+    "name": "Tom Chambers",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "107": {
+    "id": 107,
+    "name": "Dale Ellis",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "17": {
+    "id": 17,
+    "name": "Clyde Drexler",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "76385": {
+    "id": 76385,
+    "name": "Maurice Cheeks",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "121": {
+    "id": 121,
+    "name": "Patrick Ewing",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "76444": {
+    "id": 76444,
+    "name": "Michael Cooper",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "CY": true
+      }
+    }
+  },
+  "77142": {
+    "id": 77142,
+    "name": "Magic Johnson",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "MVP": true,
+        "CY": true,
+        "TSD": true,
+        "RY": true
+      }
+    }
+  },
+  "2": {
+    "id": 2,
+    "name": "Byron Scott",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "CY": true
+      }
+    }
+  },
+  "76726": {
+    "id": 76726,
+    "name": "Sleepy Floyd",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "23": {
+    "id": 23,
+    "name": "Dennis Rodman",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "RY": true,
+        "CR": true
+      }
+    }
+  },
+  "100263": {
+    "id": 100263,
+    "name": "Bill Laimbeer",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "76504": {
+    "id": 76504,
+    "name": "Adrian Dantley",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "77376": {
+    "id": 77376,
+    "name": "Fat Lever",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "76673": {
+    "id": 76673,
+    "name": "Alex English",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "76016": {
+    "id": 76016,
+    "name": "Mark Aguirre",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "166": {
+    "id": 166,
+    "name": "Ron Harper",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "RY": true
+      }
+    }
+  },
+  "899": {
+    "id": 899,
+    "name": "Mark Price",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "RY": true
+      }
+    }
+  },
+  "921": {
+    "id": 921,
+    "name": "Brad Daugherty",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "RY": true
+      }
+    }
+  },
+  "305": {
+    "id": 305,
+    "name": "Robert Parish",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "1449": {
+    "id": 1449,
+    "name": "Larry Bird",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "CR": true
+      }
+    }
+  },
+  "1460": {
+    "id": 1460,
+    "name": "James Worthy",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "CY": true
+      }
+    }
+  },
+  "165": {
+    "id": 165,
+    "name": "Hakeem Olajuwon",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "78318": {
+    "id": 78318,
+    "name": "Isiah Thomas",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "1450": {
+    "id": 1450,
+    "name": "Kevin McHale",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "1122": {
+    "id": 1122,
+    "name": "Dominique Wilkins",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "203029": {
+    "id": 203029,
+    "name": "Riquna Williams",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "CY": true,
+        "CR": true
+      }
+    }
+  },
+  "100682": {
+    "id": 100682,
+    "name": "Lauren Jackson",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {
+        "MVP": true,
+        "CY": true
+      }
+    }
+  },
+  "204319": {
+    "id": 204319,
+    "name": "Jewell Loyd",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true,
+        "CR": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "100382": {
+    "id": 100382,
+    "name": "Jennifer Azzi",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "100940": {
+    "id": 100940,
+    "name": "Diana Taurasi",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "CR": true,
+        "MVP": true,
+        "CY": true,
+        "TSD": true
+      },
+      "4": {
+        "CY": true,
+        "CR": true
+      }
+    }
+  },
+  "201480": {
+    "id": 201480,
+    "name": "Sylvia Fowles",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {
+        "MVP": true,
+        "CY": true,
+        "RY": true
+      }
+    }
+  },
+  "1629481": {
+    "id": 1629481,
+    "name": "Arike Ogunbowale",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "CR": true,
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "1631009": {
+    "id": 1631009,
+    "name": "Rhyne Howard",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "RY": true,
+        "RM": true,
+        "CR": true,
+        "TSD": true,
+        "RP": true
+      }
+    }
+  },
+  "1627700": {
+    "id": 1627700,
+    "name": "Julie Allemand",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "CR": true
+      }
+    }
+  },
+  "1630149": {
+    "id": 1630149,
+    "name": "Satou Sabally",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "CR": true,
+        "TSD": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1629546": {
+    "id": 1629546,
+    "name": "Marine Johann\u00e8s",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "CR": true,
+        "TSD": true
+      }
+    }
+  },
+  "1631022": {
+    "id": 1631022,
+    "name": "Shakira Austin",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "RY": true,
+        "RM": true,
+        "TSD": true,
+        "RP": true
+      }
+    }
+  },
+  "204333": {
+    "id": 204333,
+    "name": "Natasha Cloud",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "203399": {
+    "id": 203399,
+    "name": "Elena Delle Donne",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "CR": true,
+        "TSD": true,
+        "RY": true
+      },
+      "4": {}
+    }
+  },
+  "203400": {
+    "id": 203400,
+    "name": "Skylar Diggins-Smith",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true,
+        "CR": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1629477": {
+    "id": 1629477,
+    "name": "Sabrina Ionescu",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "203827": {
+    "id": 203827,
+    "name": "Natasha Howard",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "1627672": {
+    "id": 1627672,
+    "name": "Aerial Powers",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "1628276": {
+    "id": 1628276,
+    "name": "Kelsey Plum",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {
+        "CY": true,
+        "CR": true
+      }
+    }
+  },
+  "203014": {
+    "id": 203014,
+    "name": "Nneka Ogwumike",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "1631031": {
+    "id": 1631031,
+    "name": "Queen Egbo",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "RY": true,
+        "RM": true,
+        "TSD": true,
+        "RP": true
+      }
+    }
+  },
+  "1631019": {
+    "id": 1631019,
+    "name": "NaLyssa Smith",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "RY": true,
+        "RM": true,
+        "TSD": true,
+        "RP": true
+      }
+    }
+  },
+  "1628909": {
+    "id": 1628909,
+    "name": "Kelsey Mitchell",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "202664": {
+    "id": 202664,
+    "name": "Courtney Vandersloot",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "CY": true,
+        "CR": true,
+        "TSD": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1628922": {
+    "id": 1628922,
+    "name": "Azur\u00e1 Stevens",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "202250": {
+    "id": 202250,
+    "name": "Tina Charles",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "1631263": {
+    "id": 1631263,
+    "name": "Nikolina Milic",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      }
+    }
+  },
+  "1629491": {
+    "id": 1629491,
+    "name": "Jessica Shepard",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "203416": {
+    "id": 203416,
+    "name": "Emma Meesseman",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "CR": true
+      }
+    }
+  },
+  "203026": {
+    "id": 203026,
+    "name": "Tiffany Hayes",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "1627669": {
+    "id": 1627669,
+    "name": "Moriah Jefferson",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "CR": true,
+        "TSD": true
+      }
+    }
+  },
+  "1628878": {
+    "id": 1628878,
+    "name": "Ariel Atkins",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "1628882": {
+    "id": 1628882,
+    "name": "Lexie Brown",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "1628927": {
+    "id": 1628927,
+    "name": "Victoria Vivians",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "201886": {
+    "id": 201886,
+    "name": "DeWanna Bonner",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "1628280": {
+    "id": 1628280,
+    "name": "Brionna Jones",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "1629496": {
+    "id": 1629496,
+    "name": "Ezi Magbegor",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "1629482": {
+    "id": 1629482,
+    "name": "Sophie Cunningham",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "1628279": {
+    "id": 1628279,
+    "name": "Brittney Sykes",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "1629497": {
+    "id": 1629497,
+    "name": "Marina Mabrey",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "201516": {
+    "id": 201516,
+    "name": "Allie Quigley",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "CY": true,
+        "TSD": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "2210": {
+    "id": 2210,
+    "name": "Richard Jefferson",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {
+        "CY": true
+      }
+    }
+  },
+  "2747": {
+    "id": 2747,
+    "name": "J.R. Smith",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "CY": true
+      }
+    }
+  },
+  "101112": {
+    "id": 101112,
+    "name": "Channing Frye",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "CY": true
+      }
+    }
+  },
+  "1628886": {
+    "id": 1628886,
+    "name": "Jordin Canada",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1630957": {
+    "id": 1630957,
+    "name": "Rui Machida",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      }
+    }
+  },
+  "1628890": {
+    "id": 1628890,
+    "name": "Diamond DeShields",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "CY": true,
+        "CR": true,
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "1630150": {
+    "id": 1630150,
+    "name": "Chennedy Carter",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "1631089": {
+    "id": 1631089,
+    "name": "Destanni Henderson",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      }
+    }
+  },
+  "1631083": {
+    "id": 1631083,
+    "name": "Emily Engstler",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      }
+    }
+  },
+  "204365": {
+    "id": 204365,
+    "name": "Erica Wheeler",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "204323": {
+    "id": 204323,
+    "name": "Cheyenne Parker",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "1626159": {
+    "id": 1626159,
+    "name": "Justise Winslow",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1629637": {
+    "id": 1629637,
+    "name": "Jaxson Hayes",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1629052": {
+    "id": 1629052,
+    "name": "Oshae Brissett",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "2738": {
+    "id": 2738,
+    "name": "Andre Iguodala",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {
+        "CY": true
+      },
+      "4": {
+        "CY": true,
+        "CR": true
+      }
+    }
+  },
+  "1628366": {
+    "id": 1628366,
+    "name": "Lonzo Ball",
+    "series": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {
+        "CR": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "201933": {
+    "id": 201933,
+    "name": "Blake Griffin",
+    "series": [
+      4,
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "CR": true,
+        "TSD": true
+      },
+      "3": {},
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "200782": {
+    "id": 200782,
+    "name": "P.J. Tucker",
+    "series": [
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {
+        "CY": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "203490": {
+    "id": 203490,
+    "name": "Otto Porter Jr.",
+    "series": [
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true,
+        "RY": true
+      },
+      "2": {},
+      "3": {
+        "CY": true
+      },
+      "4": {}
+    }
+  },
+  "1628464": {
+    "id": 1628464,
+    "name": "Daniel Theis",
+    "series": [
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1628931": {
+    "id": 1628931,
+    "name": "Gabby Williams",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "201896": {
+    "id": 201896,
+    "name": "Briann January",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "203035": {
+    "id": 203035,
+    "name": "Shey Peddy",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "1629566": {
+    "id": 1629566,
+    "name": "Han Xu",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "203825": {
+    "id": 203825,
+    "name": "Kayla McBride",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "203823": {
+    "id": 203823,
+    "name": "Chiney Ogwumike",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "1628277": {
+    "id": 1628277,
+    "name": "Allisha Gray",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "202662": {
+    "id": 202662,
+    "name": "Jasmine Thomas",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "203822": {
+    "id": 203822,
+    "name": "Rebekah Gardner",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      }
+    }
+  },
+  "1628929": {
+    "id": 1628929,
+    "name": "Kristy Wallace",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      }
+    }
+  },
+  "1630096": {
+    "id": 1630096,
+    "name": "DiJonai Carrington",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true,
+        "RY": true,
+        "RM": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "100949": {
+    "id": 100949,
+    "name": "Alana Beard",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "100721": {
+    "id": 100721,
+    "name": "Swin Cash",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true,
+        "RY": true
+      },
+      "4": {}
+    }
+  },
+  "100234": {
+    "id": 100234,
+    "name": "Ticha Penicheiro",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "201499": {
+    "id": 201499,
+    "name": "Candice Wiggins",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "RY": true
+      }
+    }
+  },
+  "100396": {
+    "id": 100396,
+    "name": "DeLisha Milton-Jones",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "100646": {
+    "id": 100646,
+    "name": "Tamika Catchings",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true,
+        "MVP": true
+      },
+      "4": {}
+    }
+  },
+  "100076": {
+    "id": 100076,
+    "name": "Tina Thompson",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true,
+        "CY": true
+      },
+      "4": {}
+    }
+  },
+  "100412": {
+    "id": 100412,
+    "name": "Taj McWilliams-Franklin",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "CY": true
+      }
+    }
+  },
+  "100915": {
+    "id": 100915,
+    "name": "Lindsay Whalen",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true,
+        "CY": true
+      },
+      "4": {}
+    }
+  },
+  "201056": {
+    "id": 201056,
+    "name": "Ivory Latta",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "200674": {
+    "id": 200674,
+    "name": "Sophia Young-Malcolm",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "100342": {
+    "id": 100342,
+    "name": "Becky Hammon",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "100003": {
+    "id": 100003,
+    "name": "Lisa Leslie",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true,
+        "CY": true
+      },
+      "4": {}
+    }
+  },
+  "100404": {
+    "id": 100404,
+    "name": "Katie Smith",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {
+        "CY": true
+      }
+    }
+  },
+  "100639": {
+    "id": 100639,
+    "name": "Deanna Nolan",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "CY": true
+      }
+    }
+  },
+  "1627676": {
+    "id": 1627676,
+    "name": "Tiffany Mitchell",
+    "series": [
+      4,
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {
+        "CR": true
+      }
+    }
+  },
+  "1626192": {
+    "id": 1626192,
+    "name": "Pat Connaughton",
+    "series": [
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "CY": true,
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1629130": {
+    "id": 1629130,
+    "name": "Duncan Robinson",
+    "series": [
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1627780": {
+    "id": 1627780,
+    "name": "Gary Payton II",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "CY": true,
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "1628467": {
+    "id": 1628467,
+    "name": "Maxi Kleber",
+    "series": [
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1629483": {
+    "id": 1629483,
+    "name": "Napheesa Collier",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "CR": true,
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "2546": {
+    "id": 2546,
+    "name": "Carmelo Anthony",
+    "series": [
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {
+        "CR": true
+      },
+      "4": {}
+    }
+  },
+  "202694": {
+    "id": 202694,
+    "name": "Marcus Morris Sr.",
+    "series": [
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1628379": {
+    "id": 1628379,
+    "name": "Luke Kennard",
+    "series": [
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1630558": {
+    "id": 1630558,
+    "name": "Davion Mitchell",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "RY": true,
+        "RM": true,
+        "CR": true,
+        "TSD": true,
+        "RP": true
+      },
+      "4": {}
+    }
+  },
+  "201988": {
+    "id": 201988,
+    "name": "Patty Mills",
+    "series": [
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "201565": {
+    "id": 201565,
+    "name": "Derrick Rose",
+    "series": [
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {
+        "CR": true
+      },
+      "3": {
+        "CR": true
+      },
+      "4": {}
+    }
+  },
+  "202326": {
+    "id": 202326,
+    "name": "DeMarcus Cousins",
+    "series": [
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "202362": {
+    "id": 202362,
+    "name": "Lance Stephenson",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "1630267": {
+    "id": 1630267,
+    "name": "Facundo Campazzo",
+    "series": [
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "RY": true,
+        "RM": true,
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1628970": {
+    "id": 1628970,
+    "name": "Miles Bridges",
+    "series": [
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {
+        "CR": true
+      },
+      "4": {}
+    }
+  },
+  "203926": {
+    "id": 203926,
+    "name": "Doug McDermott",
+    "series": [
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1629308": {
+    "id": 1629308,
+    "name": "Juan Toscano-Anderson",
+    "series": [
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {
+        "CY": true
+      },
+      "4": {}
+    }
+  },
+  "1627884": {
+    "id": 1627884,
+    "name": "Derrick Jones Jr.",
+    "series": [
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1628984": {
+    "id": 1628984,
+    "name": "Devonte' Graham",
+    "series": [
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "CR": true,
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1629672": {
+    "id": 1629672,
+    "name": "Eric Paschall",
+    "series": [
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "RY": true,
+        "RM": true,
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1628966": {
+    "id": 1628966,
+    "name": "Keita Bates-Diop",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "203463": {
+    "id": 203463,
+    "name": "Ben McLemore",
+    "series": [
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "203109": {
+    "id": 203109,
+    "name": "Jae Crowder",
+    "series": [
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "201980": {
+    "id": 201980,
+    "name": "Danny Green",
+    "series": [
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "CY": true,
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1629643": {
+    "id": 1629643,
+    "name": "Chuma Okeke",
+    "series": [
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "RY": true,
+        "RM": true,
+        "TSD": true,
+        "RP": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1628373": {
+    "id": 1628373,
+    "name": "Frank Ntilikina",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "1630202": {
+    "id": 1630202,
+    "name": "Payton Pritchard",
+    "series": [
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "RY": true,
+        "RM": true,
+        "TSD": true,
+        "RP": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "201586": {
+    "id": 201586,
+    "name": "Serge Ibaka",
+    "series": [
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "203496": {
+    "id": 203496,
+    "name": "Robert Covington",
+    "series": [
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "202355": {
+    "id": 202355,
+    "name": "Hassan Whiteside",
+    "series": [
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1629604": {
+    "id": 1629604,
+    "name": "CJ Elleby",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "202687": {
+    "id": 202687,
+    "name": "Bismack Biyombo",
+    "series": [
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1627752": {
+    "id": 1627752,
+    "name": "Taurean Prince",
+    "series": [
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1630613": {
+    "id": 1630613,
+    "name": "Duane Washington Jr.",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true,
+        "RY": true,
+        "RM": true
+      },
+      "4": {}
+    }
+  },
+  "1630556": {
+    "id": 1630556,
+    "name": "Kessler Edwards",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      },
+      "4": {}
+    }
+  },
+  "1503": {
+    "id": 1503,
+    "name": "Tracy McGrady",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "1715": {
+    "id": 1715,
+    "name": "Jason Williams",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "467": {
+    "id": 467,
+    "name": "Jason Kidd",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "406": {
+    "id": 406,
+    "name": "Shaquille O'Neal",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "MVP": true,
+        "CR": true,
+        "CY": true,
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "1883": {
+    "id": 1883,
+    "name": "Steve Francis",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "RY": true,
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "1717": {
+    "id": 1717,
+    "name": "Dirk Nowitzki",
+    "series": [
+      3,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "203090": {
+    "id": 203090,
+    "name": "Maurice Harkless",
+    "series": [
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1626169": {
+    "id": 1626169,
+    "name": "Stanley Johnson",
+    "series": [
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "2730": {
+    "id": 2730,
+    "name": "Dwight Howard",
+    "series": [
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "CY": true,
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1628021": {
+    "id": 1628021,
+    "name": "David Nwaba",
+    "series": [
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "200765": {
+    "id": 200765,
+    "name": "Rajon Rondo",
+    "series": [
+      3,
+      1
+    ],
+    "badges": {
+      "1": {
+        "CY": true,
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "101150": {
+    "id": 101150,
+    "name": "Lou Williams",
+    "series": [
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {
+        "RY": true
+      },
+      "4": {}
+    }
+  },
+  "1713": {
+    "id": 1713,
+    "name": "Vince Carter",
+    "series": [
+      3,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {
+        "CR": true
+      },
+      "4": {}
+    }
+  },
+  "1495": {
+    "id": 1495,
+    "name": "Tim Duncan",
+    "series": [
+      3,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true,
+        "CY": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "947": {
+    "id": 947,
+    "name": "Allen Iverson",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "CR": true,
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "297": {
+    "id": 297,
+    "name": "Alonzo Mourning",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true,
+        "CY": true
+      },
+      "4": {}
+    }
+  },
+  "1885": {
+    "id": 1885,
+    "name": "Lamar Odom",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "RY": true,
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "203082": {
+    "id": 203082,
+    "name": "Terrence Ross",
+    "series": [
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1629660": {
+    "id": 1629660,
+    "name": "Ty Jerome",
+    "series": [
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "202689": {
+    "id": 202689,
+    "name": "Kemba Walker",
+    "series": [
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {
+        "CR": true
+      },
+      "4": {}
+    }
+  },
+  "1630214": {
+    "id": 1630214,
+    "name": "Xavier Tillman",
+    "series": [
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "RY": true,
+        "RM": true,
+        "TSD": true,
+        "RP": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1629681": {
+    "id": 1629681,
+    "name": "Killian Tillie",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "1629667": {
+    "id": 1629667,
+    "name": "Jalen McDaniels",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "1630256": {
+    "id": 1630256,
+    "name": "Jae'Sean Tate",
+    "series": [
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "RY": true,
+        "RM": true,
+        "TSD": true,
+        "RP": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1626158": {
+    "id": 1626158,
+    "name": "Richaun Holmes",
+    "series": [
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1630173": {
+    "id": 1630173,
+    "name": "Precious Achiuwa",
+    "series": [
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "RY": true,
+        "RM": true,
+        "TSD": true,
+        "RP": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1629599": {
+    "id": 1629599,
+    "name": "Amir Coffey",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "201569": {
+    "id": 201569,
+    "name": "Eric Gordon",
+    "series": [
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "203095": {
+    "id": 203095,
+    "name": "Evan Fournier",
+    "series": [
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1630209": {
+    "id": 1630209,
+    "name": "Omer Yurtseven",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      },
+      "4": {}
+    }
+  },
+  "203526": {
+    "id": 203526,
+    "name": "Raul Neto",
+    "series": [
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1628988": {
+    "id": 1628988,
+    "name": "Aaron Holiday",
+    "series": [
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "200752": {
+    "id": 200752,
+    "name": "Rudy Gay",
+    "series": [
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1629002": {
+    "id": 1629002,
+    "name": "Chimezie Metu",
+    "series": [
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1630194": {
+    "id": 1630194,
+    "name": "Paul Reed",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "201577": {
+    "id": 201577,
+    "name": "Robin Lopez",
+    "series": [
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "203914": {
+    "id": 203914,
+    "name": "Gary Harris",
+    "series": [
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "203473": {
+    "id": 203473,
+    "name": "Dewayne Dedmon",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "203504": {
+    "id": 203504,
+    "name": "Trey Burke",
+    "series": [
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1630550": {
+    "id": 1630550,
+    "name": "JT Thor",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true,
+        "RY": true,
+        "RM": true
+      },
+      "4": {}
+    }
+  },
+  "1630535": {
+    "id": 1630535,
+    "name": "Greg Brown III",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "RY": true,
+        "RM": true,
+        "TSD": true,
+        "RP": true
+      },
+      "4": {}
+    }
+  },
+  "1627854": {
+    "id": 1627854,
+    "name": "Bryn Forbes",
+    "series": [
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "CY": true,
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "203458": {
+    "id": 203458,
+    "name": "Alex Len",
+    "series": [
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "203488": {
+    "id": 203488,
+    "name": "Mike Muscala",
+    "series": [
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1629726": {
+    "id": 1629726,
+    "name": "Garrison Mathews",
+    "series": [
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1628977": {
+    "id": 1628977,
+    "name": "Hamidou Diallo",
+    "series": [
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "CR": true,
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1630547": {
+    "id": 1630547,
+    "name": "James Bouknight",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true,
+        "RY": true,
+        "RM": true
+      },
+      "4": {}
+    }
+  },
+  "200794": {
+    "id": 200794,
+    "name": "Paul Millsap",
+    "series": [
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "200755": {
+    "id": 200755,
+    "name": "JJ Redick",
+    "series": [
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "2548": {
+    "id": 2548,
+    "name": "Dwyane Wade",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "CY": true,
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "708": {
+    "id": 708,
+    "name": "Kevin Garnett",
+    "series": [
+      3,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1630527": {
+    "id": 1630527,
+    "name": "Brandon Boston Jr.",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      },
+      "4": {}
+    }
+  },
+  "1629103": {
+    "id": 1629103,
+    "name": "Kelan Martin",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "203200": {
+    "id": 203200,
+    "name": "Justin Holiday",
+    "series": [
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1628402": {
+    "id": 1628402,
+    "name": "Frank Jackson",
+    "series": [
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1629479": {
+    "id": 1629479,
+    "name": "Teaira McCowan",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true,
+        "CR": true
+      },
+      "4": {}
+    }
+  },
+  "1627745": {
+    "id": 1627745,
+    "name": "Damian Jones",
+    "series": [
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "203648": {
+    "id": 203648,
+    "name": "Thanasis Antetokounmpo",
+    "series": [
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true,
+        "CY": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "201588": {
+    "id": 201588,
+    "name": "George Hill",
+    "series": [
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "202709": {
+    "id": 202709,
+    "name": "Cory Joseph",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "1629605": {
+    "id": 1629605,
+    "name": "Tacko Fall",
+    "series": [
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "201568": {
+    "id": 201568,
+    "name": "Danilo Gallinari",
+    "series": [
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "204335": {
+    "id": 204335,
+    "name": "Betnijah Laney",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "CR": true,
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "959": {
+    "id": 959,
+    "name": "Steve Nash",
+    "series": [
+      3,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {
+        "MVP": true,
+        "CR": true
+      },
+      "4": {}
+    }
+  },
+  "202339": {
+    "id": 202339,
+    "name": "Eric Bledsoe",
+    "series": [
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "201937": {
+    "id": 201937,
+    "name": "Ricky Rubio",
+    "series": [
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1630563": {
+    "id": 1630563,
+    "name": "Joshua Primo",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      },
+      "4": {}
+    }
+  },
+  "1629642": {
+    "id": 1629642,
+    "name": "Nassir Little",
+    "series": [
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1626163": {
+    "id": 1626163,
+    "name": "Frank Kaminsky",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "1630181": {
+    "id": 1630181,
+    "name": "R.J. Hampton",
+    "series": [
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "RY": true,
+        "RM": true,
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1630526": {
+    "id": 1630526,
+    "name": "Jeremiah Robinson-Earl",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      },
+      "4": {}
+    }
+  },
+  "201599": {
+    "id": 201599,
+    "name": "DeAndre Jordan",
+    "series": [
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1626246": {
+    "id": 1626246,
+    "name": "Boban Marjanovi\u0107",
+    "series": [
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1630205": {
+    "id": 1630205,
+    "name": "Lamar Stevens",
+    "series": [
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true,
+        "RY": true,
+        "RM": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1626196": {
+    "id": 1626196,
+    "name": "Josh Richardson",
+    "series": [
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "2225": {
+    "id": 2225,
+    "name": "Tony Parker",
+    "series": [
+      3,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true,
+        "CY": true
+      },
+      "2": {},
+      "3": {
+        "CR": true
+      },
+      "4": {}
+    }
+  },
+  "100356": {
+    "id": 100356,
+    "name": "Chamique Holdsclaw",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true,
+        "RY": true,
+        "CR": true
+      },
+      "4": {}
+    }
+  },
+  "1630557": {
+    "id": 1630557,
+    "name": "Corey Kispert",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      },
+      "4": {}
+    }
+  },
+  "1629004": {
+    "id": 1629004,
+    "name": "Svi Mykhailiuk",
+    "series": [
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "202684": {
+    "id": 202684,
+    "name": "Tristan Thompson",
+    "series": [
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "201580": {
+    "id": 201580,
+    "name": "JaVale McGee",
+    "series": [
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true,
+        "CY": true,
+        "CR": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "202397": {
+    "id": 202397,
+    "name": "Ish Smith",
+    "series": [
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "201949": {
+    "id": 201949,
+    "name": "James Johnson",
+    "series": [
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1627761": {
+    "id": 1627761,
+    "name": "DeAndre' Bembry",
+    "series": [
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "2547": {
+    "id": 2547,
+    "name": "Chris Bosh",
+    "series": [
+      3,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {
+        "CR": true
+      },
+      "4": {}
+    }
+  },
+  "202722": {
+    "id": 202722,
+    "name": "D\u0101vis Bert\u0101ns",
+    "series": [
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1629676": {
+    "id": 1629676,
+    "name": "Isaiah Roby",
+    "series": [
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1629670": {
+    "id": 1629670,
+    "name": "Jordan Nwora",
+    "series": [
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "CY": true,
+        "RM": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1630528": {
+    "id": 1630528,
+    "name": "Josh Christopher",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      },
+      "4": {}
+    }
+  },
+  "202357": {
+    "id": 202357,
+    "name": "Nemanja Bjelica",
+    "series": [
+      3,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {
+        "CY": true
+      },
+      "4": {}
+    }
+  },
+  "1630541": {
+    "id": 1630541,
+    "name": "Moses Moody",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "CY": true,
+        "RM": true
+      },
+      "4": {}
+    }
+  },
+  "203210": {
+    "id": 203210,
+    "name": "JaMychal Green",
+    "series": [
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1629750": {
+    "id": 1629750,
+    "name": "Javonte Green",
+    "series": [
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1628998": {
+    "id": 1628998,
+    "name": "Cody Martin",
+    "series": [
+      3,
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "200746": {
+    "id": 200746,
+    "name": "LaMarcus Aldridge",
+    "series": [
+      3,
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1630552": {
+    "id": 1630552,
+    "name": "Jalen Johnson",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      },
+      "4": {}
+    }
+  },
+  "100101": {
+    "id": 100101,
+    "name": "Teresa Weatherspoon",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true,
+        "CR": true
+      },
+      "4": {}
+    }
+  },
+  "951": {
+    "id": 951,
+    "name": "Ray Allen",
+    "series": [
+      3,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true,
+        "CR": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "714": {
+    "id": 714,
+    "name": "Michael Finley",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "950": {
+    "id": 950,
+    "name": "Stephon Marbury",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "1887": {
+    "id": 1887,
+    "name": "Wally Szczerbiak",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "2617": {
+    "id": 2617,
+    "name": "Udonis Haslem",
+    "series": [
+      3,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {
+        "CY": true
+      },
+      "4": {}
+    }
+  },
+  "201596": {
+    "id": 201596,
+    "name": "Mario Chalmers",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "2575": {
+    "id": 2575,
+    "name": "Luke Walton",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "1888": {
+    "id": 1888,
+    "name": "Richard Hamilton",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "1497": {
+    "id": 1497,
+    "name": "Chauncey Billups",
+    "series": [
+      3,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "948": {
+    "id": 948,
+    "name": "Marcus Camby",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "2030": {
+    "id": 2030,
+    "name": "Kenyon Martin",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "2746": {
+    "id": 2746,
+    "name": "Josh Smith",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "202633": {
+    "id": 202633,
+    "name": "Liz Cambage",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true,
+        "CR": true
+      },
+      "4": {}
+    }
+  },
+  "203398": {
+    "id": 203398,
+    "name": "Brittney Griner",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "RY": true,
+        "RP": true,
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "2407": {
+    "id": 2407,
+    "name": "Jared Jeffries",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "101114": {
+    "id": 101114,
+    "name": "Deron Williams",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "RY": true,
+        "TSD": true,
+        "RP": true
+      },
+      "4": {}
+    }
+  },
+  "1905": {
+    "id": 1905,
+    "name": "Andrei Kirilenko",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "2050": {
+    "id": 2050,
+    "name": "Morris Peterson",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "2557": {
+    "id": 2557,
+    "name": "Luke Ridnour",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "109": {
+    "id": 109,
+    "name": "Robert Horry",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "1938": {
+    "id": 1938,
+    "name": "Manu Gin\u00f3bili",
+    "series": [
+      3,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true,
+        "CY": true,
+        "CR": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1719": {
+    "id": 1719,
+    "name": "Bonzi Wells",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "101127": {
+    "id": 101127,
+    "name": "Jarrett Jack",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true,
+        "RY": true
+      },
+      "4": {}
+    }
+  },
+  "1890": {
+    "id": 1890,
+    "name": "Shawn Marion",
+    "series": [
+      3,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "2564": {
+    "id": 2564,
+    "name": "Boris Diaw",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "2594": {
+    "id": 2594,
+    "name": "Kyle Korver",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "101126": {
+    "id": 101126,
+    "name": "Nate Robinson",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "RY": true,
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "2072": {
+    "id": 2072,
+    "name": "Michael Redd",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "101106": {
+    "id": 101106,
+    "name": "Andrew Bogut",
+    "series": [
+      3,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {
+        "RY": true
+      },
+      "4": {}
+    }
+  },
+  "2216": {
+    "id": 2216,
+    "name": "Zach Randolph",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "101124": {
+    "id": 101124,
+    "name": "Hakim Warrick",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true,
+        "RY": true
+      },
+      "4": {}
+    }
+  },
+  "2470": {
+    "id": 2470,
+    "name": "Smush Parker",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "1882": {
+    "id": 1882,
+    "name": "Elton Brand",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "979": {
+    "id": 979,
+    "name": "Jermaine O'Neal",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "101122": {
+    "id": 101122,
+    "name": "Danny Granger",
+    "series": [
+      3,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {
+        "RY": true,
+        "RP": true
+      },
+      "4": {}
+    }
+  },
+  "2031": {
+    "id": 2031,
+    "name": "Stromile Swift",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "2202": {
+    "id": 2202,
+    "name": "Jason Richardson",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "1884": {
+    "id": 1884,
+    "name": "Baron Davis",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "1112": {
+    "id": 1112,
+    "name": "Ben Wallace",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "711": {
+    "id": 711,
+    "name": "Jerry Stackhouse",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "2732": {
+    "id": 2732,
+    "name": "Ben Gordon",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "2222": {
+    "id": 2222,
+    "name": "Gerald Wallace",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "1718": {
+    "id": 1718,
+    "name": "Paul Pierce",
+    "series": [
+      3,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1733": {
+    "id": 1733,
+    "name": "Al Harrington",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "2406": {
+    "id": 2406,
+    "name": "Caron Butler",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "1712": {
+    "id": 1712,
+    "name": "Antawn Jamison",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "1740": {
+    "id": 1740,
+    "name": "Rashard Lewis",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "1710": {
+    "id": 1710,
+    "name": "Mike Bibby",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "2755": {
+    "id": 2755,
+    "name": "Kevin Martin",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "2032": {
+    "id": 2032,
+    "name": "Darius Miles",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "2047": {
+    "id": 2047,
+    "name": "Quentin Richardson",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "2203": {
+    "id": 2203,
+    "name": "Shane Battier",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "1889": {
+    "id": 1889,
+    "name": "Andre Miller",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "2199": {
+    "id": 2199,
+    "name": "Tyson Chandler",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "1628899": {
+    "id": 1628899,
+    "name": "Myisha Hines-Allen",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "1629478": {
+    "id": 1629478,
+    "name": "Katie Lou Samuelson",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "1629488": {
+    "id": 1629488,
+    "name": "Brianna Turner",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "1630446": {
+    "id": 1630446,
+    "name": "Michaela Onyenwere",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      },
+      "4": {}
+    }
+  },
+  "1630459": {
+    "id": 1630459,
+    "name": "DiDi Richards",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true,
+        "RY": true,
+        "RM": true
+      },
+      "4": {}
+    }
+  },
+  "203406": {
+    "id": 203406,
+    "name": "Layshia Clarendon",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "1630099": {
+    "id": 1630099,
+    "name": "Te'a Cooper",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "201911": {
+    "id": 201911,
+    "name": "Kristi Toliver",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "204320": {
+    "id": 204320,
+    "name": "Amanda Zahui B",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "1630454": {
+    "id": 1630454,
+    "name": "Charli Collier",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true,
+        "RY": true,
+        "RM": true
+      },
+      "4": {}
+    }
+  },
+  "1630386": {
+    "id": 1630386,
+    "name": "Awak Kuier",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true,
+        "RY": true,
+        "RM": true
+      },
+      "4": {}
+    }
+  },
+  "1630389": {
+    "id": 1630389,
+    "name": "Dana Evans",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true,
+        "RY": true,
+        "CY": true,
+        "RM": true
+      },
+      "4": {}
+    }
+  },
+  "203824": {
+    "id": 203824,
+    "name": "Odyssey Sims",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "1628881": {
+    "id": 1628881,
+    "name": "Monique Billings",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "100419": {
+    "id": 100419,
+    "name": "Yolanda Griffith",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true,
+        "RY": true,
+        "MVP": true
+      },
+      "4": {}
+    }
+  },
+  "200665": {
+    "id": 200665,
+    "name": "Cappie Pondexter",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "200671": {
+    "id": 200671,
+    "name": "Seimone Augustus",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true,
+        "CY": true
+      },
+      "4": {}
+    }
+  },
+  "202632": {
+    "id": 202632,
+    "name": "Maya Moore",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true,
+        "RY": true,
+        "CY": true
+      },
+      "4": {}
+    }
+  },
+  "100072": {
+    "id": 100072,
+    "name": "Sheryl Swoopes",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true,
+        "CY": true
+      },
+      "4": {}
+    }
+  },
+  "100073": {
+    "id": 100073,
+    "name": "Cynthia Cooper",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true,
+        "CY": true
+      },
+      "4": {}
+    }
+  },
+  "201881": {
+    "id": 201881,
+    "name": "Angel McCoughtry",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true,
+        "RY": true
+      },
+      "4": {}
+    }
+  },
+  "1628915": {
+    "id": 1628915,
+    "name": "Kia Nurse",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true,
+        "CR": true
+      },
+      "4": {}
+    }
+  },
+  "1628282": {
+    "id": 1628282,
+    "name": "Sydney Wiese",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "204325": {
+    "id": 204325,
+    "name": "Crystal Bradford",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "1628244": {
+    "id": 1628244,
+    "name": "Sami Whitcomb",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "1630101": {
+    "id": 1630101,
+    "name": "Crystal Dangerfield",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "204324": {
+    "id": 204324,
+    "name": "Dearica Hamby",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "1630438": {
+    "id": 1630438,
+    "name": "Kysre Gondrezick",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true,
+        "RY": true,
+        "RM": true
+      },
+      "4": {}
+    }
+  },
+  "202658": {
+    "id": 202658,
+    "name": "Danielle Robinson",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "204330": {
+    "id": 204330,
+    "name": "Isabelle Harrison",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true
+      },
+      "4": {}
+    }
+  },
+  "1630462": {
+    "id": 1630462,
+    "name": "Aari McDonald",
+    "series": [
+      3
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {
+        "TSD": true,
+        "RY": true,
+        "RM": true
+      },
+      "4": {}
+    }
+  },
+  "1629134": {
+    "id": 1629134,
+    "name": "Kendrick Nunn",
+    "series": [
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "RY": true,
+        "RM": true,
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1629067": {
+    "id": 1629067,
+    "name": "Isaac Bonga",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1628962": {
+    "id": 1628962,
+    "name": "Udoka Azubuike",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "203920": {
+    "id": 203920,
+    "name": "Khem Birch",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "203382": {
+    "id": 203382,
+    "name": "Aron Baynes",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "202734": {
+    "id": 202734,
+    "name": "E'Twaun Moore",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "203967": {
+    "id": 203967,
+    "name": "Dario \u0160ari\u0107",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "203933": {
+    "id": 203933,
+    "name": "T.J. Warren",
+    "series": [
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1630185": {
+    "id": 1630185,
+    "name": "Nico Mannion",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1629617": {
+    "id": 1629617,
+    "name": "Reggie Perry",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1628470": {
+    "id": 1628470,
+    "name": "Torrey Craig",
+    "series": [
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1629717": {
+    "id": 1629717,
+    "name": "Armoni Brooks",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true,
+        "RY": true,
+        "RM": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1630240": {
+    "id": 1630240,
+    "name": "Saben Lee",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1628455": {
+    "id": 1628455,
+    "name": "Mike James",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1627774": {
+    "id": 1627774,
+    "name": "Jake Layman",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1628425": {
+    "id": 1628425,
+    "name": "Sterling Brown",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1629610": {
+    "id": 1629610,
+    "name": "DaQuan Jeffries",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1628408": {
+    "id": 1628408,
+    "name": "PJ Dozier",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1629026": {
+    "id": 1629026,
+    "name": "Kenrich Williams",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "201959": {
+    "id": 201959,
+    "name": "Taj Gibson",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1628995": {
+    "id": 1628995,
+    "name": "Kevin Knox",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1629162": {
+    "id": 1629162,
+    "name": "Jordan McLaughlin",
+    "series": [
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true,
+        "RY": true,
+        "RM": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "202693": {
+    "id": 202693,
+    "name": "Markieff Morris",
+    "series": [
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true,
+        "CY": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "201571": {
+    "id": 201571,
+    "name": "D.J. Augustin",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1630192": {
+    "id": 1630192,
+    "name": "Zeke Nnaji",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true,
+        "RY": true,
+        "RM": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1628422": {
+    "id": 1628422,
+    "name": "Damyean Dotson",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1628990": {
+    "id": 1628990,
+    "name": "Chandler Hutchison",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "203087": {
+    "id": 203087,
+    "name": "Jeremy Lamb",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "203960": {
+    "id": 203960,
+    "name": "JaKarr Sampson",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1628539": {
+    "id": 1628539,
+    "name": "Mychal Mulder",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1629635": {
+    "id": 1629635,
+    "name": "Sekou Doumbouya",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1628367": {
+    "id": 1628367,
+    "name": "Josh Jackson",
+    "series": [
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "203107": {
+    "id": 203107,
+    "name": "Tom\u00e1\u0161 Satoransk\u00fd",
+    "series": [
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "202954": {
+    "id": 202954,
+    "name": "Brad Wanamaker",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1629682": {
+    "id": 1629682,
+    "name": "Tremont Waters",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1628400": {
+    "id": 1628400,
+    "name": "Semi Ojeleye",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "203925": {
+    "id": 203925,
+    "name": "Joe Harris",
+    "series": [
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "203524": {
+    "id": 203524,
+    "name": "Solomon Hill",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1628410": {
+    "id": 1628410,
+    "name": "Edmond Sumner",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "203487": {
+    "id": 203487,
+    "name": "Michael Carter-Williams",
+    "series": [
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true,
+        "RY": true,
+        "RP": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1629185": {
+    "id": 1629185,
+    "name": "Chris Chiozza",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "203145": {
+    "id": 203145,
+    "name": "Kent Bazemore",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1630201": {
+    "id": 1630201,
+    "name": "Malachi Flynn",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true,
+        "RY": true,
+        "RM": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1629650": {
+    "id": 1629650,
+    "name": "Moses Brown",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1629644": {
+    "id": 1629644,
+    "name": "KZ Okpala",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1627756": {
+    "id": 1627756,
+    "name": "Denzel Valentine",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1630233": {
+    "id": 1630233,
+    "name": "Nathan Knight",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true,
+        "RY": true,
+        "RM": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1627823": {
+    "id": 1627823,
+    "name": "Juancho Hernang\u00f3mez",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "201188": {
+    "id": 201188,
+    "name": "Marc Gasol",
+    "series": [
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1629685": {
+    "id": 1629685,
+    "name": "Dylan Windler",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "202066": {
+    "id": 202066,
+    "name": "Garrett Temple",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1627788": {
+    "id": 1627788,
+    "name": "Furkan Korkmaz",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1627863": {
+    "id": 1627863,
+    "name": "Danuel House Jr.",
+    "series": [
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1629731": {
+    "id": 1629731,
+    "name": "Dean Wade",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "203503": {
+    "id": 203503,
+    "name": "Tony Snell",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1630219": {
+    "id": 1630219,
+    "name": "Skylar Mays",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true,
+        "RY": true,
+        "RM": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1630177": {
+    "id": 1630177,
+    "name": "Th\u00e9o Maledon",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "RY": true,
+        "RM": true,
+        "TSD": true,
+        "RP": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "203922": {
+    "id": 203922,
+    "name": "Glenn Robinson III",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "203516": {
+    "id": 203516,
+    "name": "James Ennis III",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "203901": {
+    "id": 203901,
+    "name": "Elfrid Payton",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "202340": {
+    "id": 202340,
+    "name": "Avery Bradley",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1630253": {
+    "id": 1630253,
+    "name": "Sean McDermott",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1630222": {
+    "id": 1630222,
+    "name": "Mason Jones",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1626153": {
+    "id": 1626153,
+    "name": "Delon Wright",
+    "series": [
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1626161": {
+    "id": 1626161,
+    "name": "Willie Cauley-Stein",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "201152": {
+    "id": 201152,
+    "name": "Thaddeus Young",
+    "series": [
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "203469": {
+    "id": 203469,
+    "name": "Cody Zeller",
+    "series": [
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true,
+        "CR": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1628972": {
+    "id": 1628972,
+    "name": "Troy Brown Jr.",
+    "series": [
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1628407": {
+    "id": 1628407,
+    "name": "Dwayne Bacon",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "203457": {
+    "id": 203457,
+    "name": "Nerlens Noel",
+    "series": [
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1630184": {
+    "id": 1630184,
+    "name": "Kira Lewis Jr.",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true,
+        "RY": true,
+        "RP": true,
+        "RM": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1629633": {
+    "id": 1629633,
+    "name": "Jarrett Culver",
+    "series": [
+      2,
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true,
+        "RY": true,
+        "RM": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1630241": {
+    "id": 1630241,
+    "name": "Sam Merrill",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true,
+        "RY": true,
+        "CY": true,
+        "RM": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "1628981": {
+    "id": 1628981,
+    "name": "Bruno Fernando",
+    "series": [
+      2
+    ],
+    "badges": {
+      "1": {},
+      "2": {
+        "TSD": true
+      },
+      "3": {},
+      "4": {}
+    }
+  },
+  "2590": {
+    "id": 2590,
+    "name": "Mo Williams",
+    "series": [
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "2571": {
+    "id": 2571,
+    "name": "Leandro Barbosa",
+    "series": [
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "2749": {
+    "id": 2749,
+    "name": "Jameer Nelson",
+    "series": [
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "2555": {
+    "id": 2555,
+    "name": "Nick Collison",
+    "series": [
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "2405": {
+    "id": 2405,
+    "name": "Amar'e Stoudemire",
+    "series": [
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "201579": {
+    "id": 201579,
+    "name": "Roy Hibbert",
+    "series": [
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "2760": {
+    "id": 2760,
+    "name": "Anderson Varej\u00e3o",
+    "series": [
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1628385": {
+    "id": 1628385,
+    "name": "Harry Giles",
+    "series": [
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "204038": {
+    "id": 204038,
+    "name": "Langston Galloway",
+    "series": [
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1629714": {
+    "id": 1629714,
+    "name": "Jarrell Brantley",
+    "series": [
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true,
+        "RY": true,
+        "RM": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "201952": {
+    "id": 201952,
+    "name": "Jeff Teague",
+    "series": [
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "203894": {
+    "id": 203894,
+    "name": "Shabazz Napier",
+    "series": [
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "202683": {
+    "id": 202683,
+    "name": "Enes Kanter",
+    "series": [
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1627737": {
+    "id": 1627737,
+    "name": "Marquese Chriss",
+    "series": [
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "2772": {
+    "id": 2772,
+    "name": "Trevor Ariza",
+    "series": [
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1629065": {
+    "id": 1629065,
+    "name": "Ky Bowman",
+    "series": [
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true,
+        "RY": true,
+        "RM": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  },
+  "1628436": {
+    "id": 1628436,
+    "name": "Luke Kornet",
+    "series": [
+      1
+    ],
+    "badges": {
+      "1": {
+        "TSD": true
+      },
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  }
+}

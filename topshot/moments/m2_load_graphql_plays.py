@@ -47,6 +47,7 @@ def load_set_plays():
                     'team': play['stats'].get('teamAtMoment'),
                     'playType': play['stats'].get('playCategory'),
                     'date': game_date,
+                    'series': s['flowSeriesNumber'],
                     'tier': TIER_MAP[set_graphql['setVisualId']],
                     'badges': ['TEAM'] if play['stats'].get('playerID') is None else [],
                 }
