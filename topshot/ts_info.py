@@ -23,31 +23,6 @@ def load_play_data():
             TS_PLAY_INFO[play[0]['flowId']] = play
 
 
-def load_player_data():
-    with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "result/players.json"), 'r') as player_file:
-        data = json.load(player_file)
-
-        for player in data['players']:
-            player_name = unidecode.unidecode(player['label'])
-
-            TS_PLAYER_NAME_TO_ID[player_name] = {
-                'id': int(player['playerID'])
-            }
-
-    with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "result/players_2.json"), 'r') as player_file:
-        data = json.load(player_file)
-
-        for player in data['players']:
-            player_name = unidecode.unidecode(player['name'])
-
-            if player_name in TS_PLAYER_NAME_TO_ID:
-                continue
-
-            TS_PLAYER_NAME_TO_ID[player_name] = {
-                'id': int(player['id'])
-            }
-
-
 def load_team_data():
     with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "moments/resource/teams.json"), 'r') as team_file:
         data = json.load(team_file)
@@ -56,15 +31,6 @@ def load_team_data():
             TS_TEAM_NAME_TO_ID[team['name']] = {
                 'id': team['id']
             }
-
-
-def get_player_flow_id_str(player_fullname):
-    player_fullname_decoded = unidecode.unidecode(player_fullname)
-
-    if player_fullname_decoded not in TS_PLAYER_NAME_TO_ID:
-        return ""
-
-    return str(TS_PLAYER_NAME_TO_ID[player_fullname_decoded]['id'])
 
 
 def load_player_moment_info():
@@ -102,13 +68,11 @@ def load_enriched_plays():
 
 TS_SET_INFO = {}
 TS_PLAY_INFO = {}
-TS_PLAYER_NAME_TO_ID = {}
 TS_TEAM_NAME_TO_ID = {}
 TS_PLAYER_ID_MOMENTS = load_player_moment_info()
 TS_ENRICHED_PLAYS = load_enriched_plays()
 
 load_set_data()
 load_play_data()
-load_player_data()
 load_team_data()
 

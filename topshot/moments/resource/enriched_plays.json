@@ -468,7 +468,10 @@
         "playType": "Dunk",
         "date": "2023-05-10",
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "RY",
+          "RM"
+        ]
       }
     ],
     "3844": [
@@ -4911,7 +4914,8 @@
         "date": "2023-01-14",
         "tier": "Fandom",
         "badges": [
-          "CR"
+          "CR",
+          "CCR"
         ]
       }
     ],
@@ -5631,7 +5635,10 @@
         "playType": "Assist",
         "date": "2023-02-15",
         "tier": "Fandom",
-        "badges": []
+        "badges": [
+          "CR",
+          "CCR"
+        ]
       }
     ],
     "3503": [
@@ -5647,7 +5654,10 @@
         "playType": "Jump Shot",
         "date": "2023-02-26",
         "tier": "Fandom",
-        "badges": []
+        "badges": [
+          "CR",
+          "CCR"
+        ]
       }
     ],
     "3502": [
@@ -7602,7 +7612,8 @@
         "date": "2023-02-05",
         "tier": "Fandom",
         "badges": [
-          "CR"
+          "CR",
+          "CCR"
         ]
       }
     ],
@@ -8225,7 +8236,8 @@
         "date": "2022-10-30",
         "tier": "Fandom",
         "badges": [
-          "CR"
+          "CR",
+          "CCR"
         ]
       }
     ],
@@ -8349,7 +8361,8 @@
         "date": "2022-10-30",
         "tier": "Fandom",
         "badges": [
-          "CR"
+          "CR",
+          "CCR"
         ]
       }
     ],
@@ -12292,7 +12305,8 @@
         "date": "2022-11-08",
         "tier": "Fandom",
         "badges": [
-          "CR"
+          "CR",
+          "CCR"
         ]
       }
     ],
@@ -12310,7 +12324,8 @@
         "date": "2022-11-07",
         "tier": "Fandom",
         "badges": [
-          "CR"
+          "CR",
+          "CCR"
         ]
       }
     ],
@@ -13253,7 +13268,8 @@
         "date": "2022-10-18",
         "tier": "Fandom",
         "badges": [
-          "CR"
+          "CR",
+          "CCR"
         ]
       }
     ],
@@ -13820,7 +13836,8 @@
         "date": "2022-11-13",
         "tier": "Fandom",
         "badges": [
-          "CR"
+          "CR",
+          "CCR"
         ]
       }
     ],
@@ -13838,7 +13855,8 @@
         "date": "2022-11-08",
         "tier": "Fandom",
         "badges": [
-          "CR"
+          "CR",
+          "CCR"
         ]
       }
     ],
@@ -14008,7 +14026,8 @@
         "date": "2022-10-24",
         "tier": "Fandom",
         "badges": [
-          "CR"
+          "CR",
+          "CCR"
         ]
       }
     ],
@@ -14026,7 +14045,8 @@
         "date": "2022-10-25",
         "tier": "Fandom",
         "badges": [
-          "CR"
+          "CR",
+          "CCR"
         ]
       }
     ],
@@ -14396,7 +14416,8 @@
         "date": "2022-11-04",
         "tier": "Fandom",
         "badges": [
-          "CR"
+          "CR",
+          "CCR"
         ]
       }
     ],
@@ -14414,7 +14435,8 @@
         "date": "2022-10-29",
         "tier": "Fandom",
         "badges": [
-          "CR"
+          "CR",
+          "CCR"
         ]
       }
     ],
@@ -14432,7 +14454,8 @@
         "date": "2022-10-30",
         "tier": "Fandom",
         "badges": [
-          "CR"
+          "CR",
+          "CCR"
         ]
       }
     ],
@@ -14468,7 +14491,8 @@
         "date": "2022-11-05",
         "tier": "Fandom",
         "badges": [
-          "CR"
+          "CR",
+          "CCR"
         ]
       }
     ],
@@ -15059,7 +15083,8 @@
         "date": "2022-10-25",
         "tier": "Fandom",
         "badges": [
-          "CR"
+          "CR",
+          "CCR"
         ]
       }
     ],
@@ -15077,7 +15102,8 @@
         "date": "2022-10-29",
         "tier": "Fandom",
         "badges": [
-          "CR"
+          "CR",
+          "CCR"
         ]
       }
     ],
@@ -15095,7 +15121,8 @@
         "date": "2022-10-19",
         "tier": "Fandom",
         "badges": [
-          "CR"
+          "CR",
+          "CCR"
         ]
       }
     ],
@@ -15113,7 +15140,8 @@
         "date": "2022-10-20",
         "tier": "Fandom",
         "badges": [
-          "CR"
+          "CR",
+          "CCR"
         ]
       }
     ],
@@ -15479,7 +15507,8 @@
         "date": "2022-10-19",
         "tier": "Fandom",
         "badges": [
-          "CR"
+          "CR",
+          "CCR"
         ]
       }
     ],
@@ -15497,7 +15526,8 @@
         "date": "2022-10-18",
         "tier": "Fandom",
         "badges": [
-          "CR"
+          "CR",
+          "CCR"
         ]
       }
     ],

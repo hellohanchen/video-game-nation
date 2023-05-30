@@ -3,9 +3,9 @@ import random
 import time
 
 from topshot.cadence.flow_collections import get_collection_for_trade
-from topshot.ts_info import TS_SET_INFO, get_player_flow_id_str, TS_TEAM_NAME_TO_ID, TS_PLAY_INFO
 from topshot.graphql.get_address import get_flow_address
 from topshot.graphql.get_price import get_listing_prices
+from topshot.ts_info import TS_SET_INFO, TS_TEAM_NAME_TO_ID, TS_PLAY_INFO
 
 
 def remove_dupes(c1, c2, series_or_set):
