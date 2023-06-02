@@ -5543,56 +5543,44 @@
     "homeTeam": "MIA",
     "awayTeam": "BOS"
   },
-  "0042200315": {
-    "homeTeam": "DEN",
-    "awayTeam": "LAL"
-  },
   "0042200305": {
     "homeTeam": "BOS",
     "awayTeam": "MIA"
   },
-  "0042200316": {
-    "homeTeam": "LAL",
-    "awayTeam": "DEN"
-  },
   "0042200306": {
     "homeTeam": "MIA",
     "awayTeam": "BOS"
-  },
-  "0042200317": {
-    "homeTeam": "DEN",
-    "awayTeam": "LAL"
   },
   "0042200307": {
     "homeTeam": "BOS",
     "awayTeam": "MIA"
   },
   "0042200401": {
-    "homeTeam": null,
-    "awayTeam": null
+    "homeTeam": "DEN",
+    "awayTeam": "MIA"
   },
   "0042200402": {
-    "homeTeam": null,
-    "awayTeam": null
+    "homeTeam": "DEN",
+    "awayTeam": "MIA"
   },
   "0042200403": {
-    "homeTeam": null,
-    "awayTeam": null
+    "homeTeam": "MIA",
+    "awayTeam": "DEN"
   },
   "0042200404": {
-    "homeTeam": null,
-    "awayTeam": null
+    "homeTeam": "MIA",
+    "awayTeam": "DEN"
   },
   "0042200405": {
-    "homeTeam": null,
-    "awayTeam": null
+    "homeTeam": "DEN",
+    "awayTeam": "MIA"
   },
   "0042200406": {
-    "homeTeam": null,
-    "awayTeam": null
+    "homeTeam": "MIA",
+    "awayTeam": "DEN"
   },
   "0042200407": {
-    "homeTeam": null,
-    "awayTeam": null
+    "homeTeam": "DEN",
+    "awayTeam": "MIA"
   }
 }
