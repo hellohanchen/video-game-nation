@@ -1,4 +1,529 @@
 {
+  "3915": [
+    {
+      "id": "7f7eacef-8b6f-4403-a5fc-b487e21ffc2c",
+      "flowId": 3915,
+      "set": "Fit Check",
+      "setId": "6d164664-14a5-4b74-89b3-98343669d86a",
+      "setFlowId": 102,
+      "playerId": null,
+      "playerName": "Utah Jazz",
+      "team": "Utah Jazz",
+      "playType": "Reel",
+      "date": "",
+      "series": 4,
+      "tier": "R",
+      "badges": [
+        "TEAM"
+      ]
+    }
+  ],
+  "3914": [
+    {
+      "id": "9c496f77-b5b8-4a0a-a62c-bd0f25f66fc0",
+      "flowId": 3914,
+      "set": "Fit Check",
+      "setId": "6d164664-14a5-4b74-89b3-98343669d86a",
+      "setFlowId": 102,
+      "playerId": null,
+      "playerName": "San Antonio Spurs",
+      "team": "San Antonio Spurs",
+      "playType": "Reel",
+      "date": "",
+      "series": 4,
+      "tier": "R",
+      "badges": [
+        "TEAM"
+      ]
+    }
+  ],
+  "3913": [
+    {
+      "id": "4b21c5bd-8510-4993-b0a4-288f3b51d1f1",
+      "flowId": 3913,
+      "set": "Fit Check",
+      "setId": "6d164664-14a5-4b74-89b3-98343669d86a",
+      "setFlowId": 102,
+      "playerId": null,
+      "playerName": "Sacramento Kings",
+      "team": "Sacramento Kings",
+      "playType": "Reel",
+      "date": "",
+      "series": 4,
+      "tier": "R",
+      "badges": [
+        "TEAM"
+      ]
+    }
+  ],
+  "3912": [
+    {
+      "id": "c14ae9cc-56ed-43e2-85a9-b4b6aaafd567",
+      "flowId": 3912,
+      "set": "Fit Check",
+      "setId": "6d164664-14a5-4b74-89b3-98343669d86a",
+      "setFlowId": 102,
+      "playerId": null,
+      "playerName": "Portland Trail Blazers",
+      "team": "Portland Trail Blazers",
+      "playType": "Reel",
+      "date": "",
+      "series": 4,
+      "tier": "R",
+      "badges": [
+        "TEAM"
+      ]
+    }
+  ],
+  "3911": [
+    {
+      "id": "a46c6379-6f21-40ae-bd37-3010f0d536ac",
+      "flowId": 3911,
+      "set": "Fit Check",
+      "setId": "6d164664-14a5-4b74-89b3-98343669d86a",
+      "setFlowId": 102,
+      "playerId": null,
+      "playerName": "Phoenix Suns",
+      "team": "Phoenix Suns",
+      "playType": "Reel",
+      "date": "",
+      "series": 4,
+      "tier": "R",
+      "badges": [
+        "TEAM"
+      ]
+    }
+  ],
+  "3910": [
+    {
+      "id": "0c283315-9925-4d5c-a52c-22627ac82fcd",
+      "flowId": 3910,
+      "set": "Fit Check",
+      "setId": "6d164664-14a5-4b74-89b3-98343669d86a",
+      "setFlowId": 102,
+      "playerId": null,
+      "playerName": "Oklahoma City Thunder",
+      "team": "Oklahoma City Thunder",
+      "playType": "Reel",
+      "date": "",
+      "series": 4,
+      "tier": "R",
+      "badges": [
+        "TEAM"
+      ]
+    }
+  ],
+  "3909": [
+    {
+      "id": "8e0b0de4-3b40-4e62-9f10-671af411163d",
+      "flowId": 3909,
+      "set": "Fit Check",
+      "setId": "6d164664-14a5-4b74-89b3-98343669d86a",
+      "setFlowId": 102,
+      "playerId": null,
+      "playerName": "New Orleans Pelicans",
+      "team": "New Orleans Pelicans",
+      "playType": "Reel",
+      "date": "",
+      "series": 4,
+      "tier": "R",
+      "badges": [
+        "TEAM"
+      ]
+    }
+  ],
+  "3908": [
+    {
+      "id": "49447ba8-c1de-4f86-b8e2-a473348f343b",
+      "flowId": 3908,
+      "set": "Fit Check",
+      "setId": "6d164664-14a5-4b74-89b3-98343669d86a",
+      "setFlowId": 102,
+      "playerId": null,
+      "playerName": "Minnesota Timberwolves",
+      "team": "Minnesota Timberwolves",
+      "playType": "Reel",
+      "date": "",
+      "series": 4,
+      "tier": "R",
+      "badges": [
+        "TEAM"
+      ]
+    }
+  ],
+  "3907": [
+    {
+      "id": "efb13fa1-2b72-4efd-88da-8c0059735acc",
+      "flowId": 3907,
+      "set": "Fit Check",
+      "setId": "6d164664-14a5-4b74-89b3-98343669d86a",
+      "setFlowId": 102,
+      "playerId": null,
+      "playerName": "Memphis Grizzlies",
+      "team": "Memphis Grizzlies",
+      "playType": "Reel",
+      "date": "",
+      "series": 4,
+      "tier": "R",
+      "badges": [
+        "TEAM"
+      ]
+    }
+  ],
+  "3906": [
+    {
+      "id": "49191073-fd5b-46e0-9544-8c286b8b2ca2",
+      "flowId": 3906,
+      "set": "Fit Check",
+      "setId": "6d164664-14a5-4b74-89b3-98343669d86a",
+      "setFlowId": 102,
+      "playerId": null,
+      "playerName": "Los Angeles Lakers",
+      "team": "Los Angeles Lakers",
+      "playType": "Reel",
+      "date": "",
+      "series": 4,
+      "tier": "R",
+      "badges": [
+        "TEAM"
+      ]
+    }
+  ],
+  "3905": [
+    {
+      "id": "82ebe61a-392b-4f5b-9948-0db9994eb13c",
+      "flowId": 3905,
+      "set": "Fit Check",
+      "setId": "6d164664-14a5-4b74-89b3-98343669d86a",
+      "setFlowId": 102,
+      "playerId": null,
+      "playerName": "LA Clippers",
+      "team": "LA Clippers",
+      "playType": "Reel",
+      "date": "",
+      "series": 4,
+      "tier": "R",
+      "badges": [
+        "TEAM"
+      ]
+    }
+  ],
+  "3904": [
+    {
+      "id": "f982dfac-4a1f-4386-972f-dbea97d7c2c8",
+      "flowId": 3904,
+      "set": "Fit Check",
+      "setId": "6d164664-14a5-4b74-89b3-98343669d86a",
+      "setFlowId": 102,
+      "playerId": null,
+      "playerName": "Houston Rockets",
+      "team": "Houston Rockets",
+      "playType": "Reel",
+      "date": "",
+      "series": 4,
+      "tier": "R",
+      "badges": [
+        "TEAM"
+      ]
+    }
+  ],
+  "3903": [
+    {
+      "id": "35324566-c6cf-4175-939e-490eb993560b",
+      "flowId": 3903,
+      "set": "Fit Check",
+      "setId": "6d164664-14a5-4b74-89b3-98343669d86a",
+      "setFlowId": 102,
+      "playerId": null,
+      "playerName": "Golden State Warriors",
+      "team": "Golden State Warriors",
+      "playType": "Reel",
+      "date": "",
+      "series": 4,
+      "tier": "R",
+      "badges": [
+        "TEAM"
+      ]
+    }
+  ],
+  "3902": [
+    {
+      "id": "30e429ae-ac3b-477c-814d-5bf7b4d02594",
+      "flowId": 3902,
+      "set": "Fit Check",
+      "setId": "6d164664-14a5-4b74-89b3-98343669d86a",
+      "setFlowId": 102,
+      "playerId": null,
+      "playerName": "Denver Nuggets",
+      "team": "Denver Nuggets",
+      "playType": "Reel",
+      "date": "",
+      "series": 4,
+      "tier": "R",
+      "badges": [
+        "TEAM"
+      ]
+    }
+  ],
+  "3901": [
+    {
+      "id": "f103e527-e134-4ae0-9d85-5dfc27ea6142",
+      "flowId": 3901,
+      "set": "Fit Check",
+      "setId": "6d164664-14a5-4b74-89b3-98343669d86a",
+      "setFlowId": 102,
+      "playerId": null,
+      "playerName": "Dallas Mavericks",
+      "team": "Dallas Mavericks",
+      "playType": "Reel",
+      "date": "",
+      "series": 4,
+      "tier": "R",
+      "badges": [
+        "TEAM"
+      ]
+    }
+  ],
+  "3900": [
+    {
+      "id": "c0bf4a4b-dfb1-48ce-a670-760624e349e9",
+      "flowId": 3900,
+      "set": "2023 NBA Playoffs",
+      "setId": "f6e55a5b-8656-4a62-ab6d-6b61adee253b",
+      "setFlowId": 105,
+      "playerId": 202710,
+      "playerName": "Jimmy Butler",
+      "team": "Miami Heat",
+      "playType": "Jump Shot",
+      "date": "2023-05-20",
+      "series": 4,
+      "tier": "C",
+      "badges": []
+    }
+  ],
+  "3899": [
+    {
+      "id": "cb229420-2748-418a-bdfe-535c0c139c5a",
+      "flowId": 3899,
+      "set": "2023 NBA Playoffs",
+      "setId": "f6e55a5b-8656-4a62-ab6d-6b61adee253b",
+      "setFlowId": 105,
+      "playerId": 1628997,
+      "playerName": "Caleb Martin",
+      "team": "Miami Heat",
+      "playType": "3 Pointer",
+      "date": "2023-05-30",
+      "series": 4,
+      "tier": "C",
+      "badges": []
+    }
+  ],
+  "3898": [
+    {
+      "id": "c6e5ecd2-2dd6-4dbe-8571-1955b4f3fa79",
+      "flowId": 3898,
+      "set": "2023 NBA Playoffs",
+      "setId": "f6e55a5b-8656-4a62-ab6d-6b61adee253b",
+      "setFlowId": 105,
+      "playerId": 1628389,
+      "playerName": "Bam Adebayo",
+      "team": "Miami Heat",
+      "playType": "Dunk",
+      "date": "2023-05-22",
+      "series": 4,
+      "tier": "C",
+      "badges": []
+    }
+  ],
+  "3897": [
+    {
+      "id": "029ddafe-13e2-47a9-83c6-68e80292ee93",
+      "flowId": 3897,
+      "set": "2023 NBA Playoffs",
+      "setId": "f6e55a5b-8656-4a62-ab6d-6b61adee253b",
+      "setFlowId": 105,
+      "playerId": 1628369,
+      "playerName": "Jayson Tatum",
+      "team": "Boston Celtics",
+      "playType": "Dunk",
+      "date": "2023-05-26",
+      "series": 4,
+      "tier": "C",
+      "badges": []
+    }
+  ],
+  "3896": [
+    {
+      "id": "ca952cf9-1714-4825-930d-55ffa4747f75",
+      "flowId": 3896,
+      "set": "2023 NBA Playoffs",
+      "setId": "f6e55a5b-8656-4a62-ab6d-6b61adee253b",
+      "setFlowId": 105,
+      "playerId": 1627759,
+      "playerName": "Jaylen Brown",
+      "team": "Boston Celtics",
+      "playType": "Layup",
+      "date": "2023-05-24",
+      "series": 4,
+      "tier": "C",
+      "badges": []
+    }
+  ],
+  "3895": [
+    {
+      "id": "c67479e5-e102-4201-a32e-1d86917d589f",
+      "flowId": 3895,
+      "set": "2023 NBA Playoffs",
+      "setId": "f6e55a5b-8656-4a62-ab6d-6b61adee253b",
+      "setFlowId": 105,
+      "playerId": 1628401,
+      "playerName": "Derrick White",
+      "team": "Boston Celtics",
+      "playType": "Layup",
+      "date": "2023-05-28",
+      "series": 4,
+      "tier": "C",
+      "badges": []
+    }
+  ],
+  "3894": [
+    {
+      "id": "671f589b-bc66-44d6-ab14-9df97cd0e6a8",
+      "flowId": 3894,
+      "set": "2023 NBA Playoffs",
+      "setId": "f6e55a5b-8656-4a62-ab6d-6b61adee253b",
+      "setFlowId": 105,
+      "playerId": 1629060,
+      "playerName": "Rui Hachimura",
+      "team": "Los Angeles Lakers",
+      "playType": "Dunk",
+      "date": "2023-05-19",
+      "series": 4,
+      "tier": "C",
+      "badges": []
+    }
+  ],
+  "3893": [
+    {
+      "id": "fd568c92-1b73-4dc5-8723-cec45f4bf079",
+      "flowId": 3893,
+      "set": "2023 NBA Playoffs",
+      "setId": "f6e55a5b-8656-4a62-ab6d-6b61adee253b",
+      "setFlowId": 105,
+      "playerId": 2544,
+      "playerName": "LeBron James",
+      "team": "Los Angeles Lakers",
+      "playType": "Reel",
+      "date": "2023-05-23",
+      "series": 4,
+      "tier": "C",
+      "badges": []
+    }
+  ],
+  "3892": [
+    {
+      "id": "1400f7d9-dfa5-4b5f-af18-2d105052ffd0",
+      "flowId": 3892,
+      "set": "2023 NBA Playoffs",
+      "setId": "f6e55a5b-8656-4a62-ab6d-6b61adee253b",
+      "setFlowId": 105,
+      "playerId": 203076,
+      "playerName": "Anthony Davis",
+      "team": "Los Angeles Lakers",
+      "playType": "Layup",
+      "date": "2023-05-17",
+      "series": 4,
+      "tier": "C",
+      "badges": []
+    }
+  ],
+  "3891": [
+    {
+      "id": "2e208b73-3173-4d9b-b2ba-58aeceda7572",
+      "flowId": 3891,
+      "set": "2023 NBA Playoffs",
+      "setId": "f6e55a5b-8656-4a62-ab6d-6b61adee253b",
+      "setFlowId": 105,
+      "playerId": 203999,
+      "playerName": "Nikola Joki\u0107",
+      "team": "Denver Nuggets",
+      "playType": "3 Pointer",
+      "date": "2023-05-17",
+      "series": 4,
+      "tier": "C",
+      "badges": []
+    }
+  ],
+  "3890": [
+    {
+      "id": "8c1a46c1-003f-4d3b-affd-1c475682ca8b",
+      "flowId": 3890,
+      "set": "2023 NBA Playoffs",
+      "setId": "f6e55a5b-8656-4a62-ab6d-6b61adee253b",
+      "setFlowId": 105,
+      "playerId": 1627750,
+      "playerName": "Jamal Murray",
+      "team": "Denver Nuggets",
+      "playType": "Reel",
+      "date": "2023-05-19",
+      "series": 4,
+      "tier": "C",
+      "badges": []
+    }
+  ],
+  "3889": [
+    {
+      "id": "6037b18f-d772-4649-9831-ff9762a9f96d",
+      "flowId": 3889,
+      "set": "2023 NBA Playoffs",
+      "setId": "f6e55a5b-8656-4a62-ab6d-6b61adee253b",
+      "setFlowId": 105,
+      "playerId": null,
+      "playerName": "Denver Nuggets",
+      "team": "Denver Nuggets",
+      "playType": "Dunk",
+      "date": "2023-05-16",
+      "series": 4,
+      "tier": "C",
+      "badges": [
+        "TEAM"
+      ]
+    }
+  ],
+  "3888": [
+    {
+      "id": "84aeaf3d-450a-483b-8948-f407ca05c84a",
+      "flowId": 3888,
+      "set": "For the Win",
+      "setId": "92153794-84d8-4743-bb96-5112cb40a125",
+      "setFlowId": 95,
+      "playerId": 1629639,
+      "playerName": "Tyler Herro",
+      "team": "Miami Heat",
+      "playType": "3 Pointer",
+      "date": "2023-01-01",
+      "series": 4,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "3887": [
+    {
+      "id": "07c8353c-518d-4ddc-933f-1305cfcec6f0",
+      "flowId": 3887,
+      "set": "For the Win",
+      "setId": "92153794-84d8-4743-bb96-5112cb40a125",
+      "setFlowId": 95,
+      "playerId": 1627750,
+      "playerName": "Jamal Murray",
+      "team": "Denver Nuggets",
+      "playType": "Block",
+      "date": "2023-04-03",
+      "series": 4,
+      "tier": "R",
+      "badges": []
+    }
+  ],
   "3871": [
     {
       "id": "44ef3f27-ba9f-44db-819f-a0c6e8d83748",

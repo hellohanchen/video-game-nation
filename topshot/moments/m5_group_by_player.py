@@ -46,9 +46,12 @@ def group_play_by_player():
                     if badge not in result[player_id]['badges'][moment['series']]:
                         result[player_id]['badges'][moment['series']][badge] = True
 
+    player_ids = list(result.keys())
+    player_ids.sort(reverse=True)
+
     with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "resource/player_moments.json"),
               'w') as output_file:
-        json.dump(result, output_file, indent=2)
+        json.dump({player_id: result[player_id] for player_id in player_ids}, output_file, indent=2)
 
 
 if __name__ == '__main__':
