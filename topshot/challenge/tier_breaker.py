@@ -19,7 +19,8 @@ STATS_MAP = {
     "FTM": "freeThrowsMade",
     "FTP": "freeThrowsPercentage",
     "PMP": "plusMinusPoints",
-    "WIN": "teamWin"
+    "WIN": "teamWin",
+    "BENCH": "order"
 }
 
 
@@ -60,6 +61,8 @@ class TierBreaker:
         for stat in self.stats:
             if stat == "WIN":
                 return 'W' if player_stats[STATS_MAP[stat]] == 1 else 'L'
+            elif stat == "BENCH":
+                return 'B' if player_stats[STATS_MAP[stat]] > 5 else 'S'
             else:
                 result += int(float(player_stats[STATS_MAP[stat]]))
 

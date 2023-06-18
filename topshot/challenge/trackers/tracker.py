@@ -48,11 +48,11 @@ class Tracker:
         :return: a tuple containing the game statistics, a boolean indicating whether the game has ended, and the game information
         """
         try:
-            game_stats = boxscore.BoxScore(game_id=game_id).get_dict()['game']
+            game_boxscore = boxscore.BoxScore(game_id=game_id).get_dict()['game']
         except Exception:
             return None, True, None
 
-        if game_stats['gameStatus'] == 1:
+        if game_boxscore['gameStatus'] == 1:
             return None, False, None
 
-        return game_stats, game_stats['gameStatus'] == 3, get_game_info(game_stats)
+        return game_boxscore, game_boxscore['gameStatus'] == 3, get_game_info(game_boxscore)

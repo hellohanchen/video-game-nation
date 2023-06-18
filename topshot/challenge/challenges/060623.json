@@ -1,0 +1,172 @@
+{
+  "message": "2023 NBA FINALS",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "FINALS GAME 3 PREDICTIVE CHALLENGE!",
+      "buckets": [
+        {
+          "description": "Versus Battle! Who will total more of the following stats: Nikola Jokić: Points VS Jamal Murray: Points + Assists VS Bam Adebayo: Points + Assists + Rebounds?",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 3,
+          "is_team": false,
+          "player_filters": [
+            "ID,203999,1627750,1628389"
+          ],
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            },
+            {
+              "stats": "PTS,AST",
+              "order": "DESC"
+            },
+            {
+              "stats": "PTS,AST,REB",
+              "order": "DESC"
+            },
+            {
+              "stats": "FTM",
+              "order": "DESC"
+            },
+            {
+              "stats": "WIN",
+              "order": "DESC"
+            },
+            {
+              "stats": "AST,REB",
+              "order": "DESC"
+            },
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "06/07/2023"
+          ]
+        },
+        {
+          "description": "Most Points Scored: Jamal Murray, Michael Porter Jr., or Jimmy Butler?",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "player_filters": [
+            "ID,1627750,1629008,202710"
+          ],
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            },
+            {
+              "stats": "WIN",
+              "order": "DESC"
+            },
+            {
+              "stats": "FTM",
+              "order": "DESC"
+            },
+            {
+              "stats": "AST,REB",
+              "order": "DESC"
+            },
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "06/07/2023"
+          ]
+        },
+        {
+          "description": "Most Points Scored: Bruce Brown, Aaron Gordon, Duncan Robinson, Gabe Vincent, or Max Strus?",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "player_filters": [
+            "ID,1628971,203932,1629130,1629216,1629622"
+          ],
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            },
+            {
+              "stats": "WIN",
+              "order": "DESC"
+            },
+            {
+              "stats": "FTM",
+              "order": "DESC"
+            },
+            {
+              "stats": "AST,REB",
+              "order": "DESC"
+            },
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "06/07/2023"
+          ]
+        },
+        {
+          "description": "Most Steals + Blocks: Christian Braun, Nikola Jokić, Bam Adebayo, Kyle Lowry, or Caleb Martin?",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "player_filters": [
+            "ID,1631128,203999,1628389,200768,1628997"
+          ],
+          "tier_breakers": [
+            {
+              "stats": "STL,BLK",
+              "order": "DESC"
+            },
+            {
+              "stats": "WIN",
+              "order": "DESC"
+            },
+            {
+              "stats": "FTM",
+              "order": "DESC"
+            },
+            {
+              "stats": "AST,REB",
+              "order": "DESC"
+            },
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "06/07/2023"
+          ]
+        },
+        {
+          "description": "Who will win Game 3? Use a Heat or Nuggets Redemption or 2023 Playoffs Moment.",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": true,
+          "team_filter": "WIN",
+          "tier_breakers": [],
+          "dates": [
+            "06/07/2023"
+          ]
+        }
+      ]
+    }
+  ]
+}
+

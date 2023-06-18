@@ -1,0 +1,145 @@
+{
+  "message": "2023 NBA FINALS",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "PRIME TIME PICKS! GAME 2 PREDICTIVE",
+      "buckets": [
+        {
+          "description": "Versus Battle! Who will Score More Points? Nikola Jokić or Jimmy Butler and Kyle Lowry combined (Use 1 Nikola Jokić or either 1 Jimmy Butler or Kyle Lowry Moment)",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 3,
+          "is_team": false,
+          "player_filters": [
+            "ID,203999,202710,200768"
+          ],
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            },
+            {
+              "stats": "WIN",
+              "order": "DESC"
+            },
+            {
+              "stats": "AST,REB",
+              "order": "DESC"
+            },
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "06/04/2023"
+          ]
+        },
+        {
+          "description": "Which Heat player will record the most Free-Throws Made: Jimmy Butler, Bam Adebayo, or Caleb Martin",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "player_filters": [
+            "ID,202710,1628389,1628997"
+          ],
+          "tier_breakers": [
+            {
+              "stats": "FTM",
+              "order": "DESC"
+            },
+            {
+              "stats": "WIN",
+              "order": "DESC"
+            },
+            {
+              "stats": "AST,REB",
+              "order": "DESC"
+            },
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "06/04/2023"
+          ]
+        },
+        {
+          "description": "Most Points Scored: Aaron Gordon, Gabe Vincent, or Haywood Highsmith",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "player_filters": [
+            "ID,203932,1629216,1629312"
+          ],
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            },
+            {
+              "stats": "WIN",
+              "order": "DESC"
+            },
+            {
+              "stats": "AST,REB",
+              "order": "DESC"
+            },
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "06/04/2023"
+          ]
+        },
+        {
+          "description": "Most 3-Pointers Made: Gabe Vincent, Max Strus, Jamal Murray, or Michael Porter Jr.",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "player_filters": [
+            "ID,1629216,1629622,1627750,1629008"
+          ],
+          "tier_breakers": [
+            {
+              "stats": "3PT",
+              "order": "DESC"
+            },
+            {
+              "stats": "WIN",
+              "order": "DESC"
+            },
+            {
+              "stats": "AST,REB",
+              "order": "DESC"
+            },
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "06/04/2023"
+          ]
+        },
+        {
+          "description": "Who will win Game 2? Use a Heat or Nuggets Redemption or 2023 Playoffs Moment.",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [],
+          "dates": []
+        }
+      ]
+    }
+  ]
+}
+

@@ -106,7 +106,7 @@ class Challenge:
             bucket_results = bucket.get_current_scores()
 
             if len(bucket_results) == 0:
-                new_msg += "\n\n"
+                new_msg += "\n"
                 msg, new_msg = truncate_message(messages, msg, new_msg, 1950)
                 continue
 
@@ -114,13 +114,16 @@ class Challenge:
                 hit, scores = result
 
                 if len(scores) == 0:
-                    msg, new_msg = truncate_message(messages, msg, new_msg, 1950)
                     continue
 
                 msg, new_msg = self.format_ranking(scores[:hit], new_msg, messages, msg)
-                msg, new_msg = self.format_ranking(scores[hit:min(len(result), 20)], new_msg, messages, msg, hit)
+                msg, new_msg = self.format_ranking(scores[hit:min(len(scores), 20)], new_msg, messages, msg, hit)
 
                 new_msg += "\n"
+
+            msg, new_msg = truncate_message(messages, msg, new_msg, 1950)
+            if msg.endswith("\n") and not msg.endswith("\n\n"):
+                msg += "\n"
 
         if msg != "":
             messages.append(msg)

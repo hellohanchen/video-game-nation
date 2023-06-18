@@ -150,15 +150,18 @@ def build_vgn_collection(plays):
     return player_collections, not_found_plays
 
 
-def get_collections(user_ids):
+def get_collections(user_ids, player_ids):
     if user_ids is None or len(user_ids) == 0:
         return None
 
     try:
         db_conn = CNX_POOL.get_connection()
         query = \
-            "SELECT * FROM vgn.collections WHERE user_id IN ({})"\
+            "SELECT * FROM vgn.collections WHERE user_id IN ({}) "\
             .format(', '.join([str(user_id) for user_id in user_ids]))
+
+        if player_ids is not None and len(player_ids) > 0:
+            query += f"AND player_id IN ({', '.join([str(player_id) for player_id in player_ids])})"
 
         # Execute SQL query and store results in a pandas dataframe
         df = pd.read_sql(query, db_conn)

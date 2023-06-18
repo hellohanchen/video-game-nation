@@ -1,0 +1,145 @@
+{
+  "message": "2023 NBA FINALS",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "FINALS GAME 1 PREDICTIVE CHALLENGE",
+      "buckets": [
+        {
+          "description": "Most Points Scored: Jimmy Butler, Jamal Murray, or Nikola Jokić",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "player_filters": [
+            "ID,202710,1627750,203999"
+          ],
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            },
+            {
+              "stats": "WIN",
+              "order": "DESC"
+            },
+            {
+              "stats": "FTM",
+              "order": "DESC"
+            },
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "06/01/2023"
+          ]
+        },
+        {
+          "description": "Most Points Scored: Kyle Lowry, Bruce Brown, or Kentavious Caldwell-Pope",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "player_filters": [
+            "ID,200768,1628971,203484"
+          ],
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            },
+            {
+              "stats": "WIN",
+              "order": "DESC"
+            },
+            {
+              "stats": "FTM",
+              "order": "DESC"
+            },
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "06/01/2023"
+          ]
+        },
+        {
+          "description": "Most Points + Rebounds + Assists: Caleb Martin, Bam Adebayo, or Aaron Gordon",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "player_filters": [
+            "ID,1628997,1628389,203932"
+          ],
+          "tier_breakers": [
+            {
+              "stats": "PTS,REB,AST",
+              "order": "DESC"
+            },
+            {
+              "stats": "WIN",
+              "order": "DESC"
+            },
+            {
+              "stats": "FTM",
+              "order": "DESC"
+            },
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "06/01/2023"
+          ]
+        },
+        {
+          "description": "Most 3-Pointers Made: Gabe Vincent, Duncan Robinson, or Michael Porter Jr.",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "player_filters": [
+            "ID,1629216,1629130,1629008"
+          ],
+          "tier_breakers": [
+            {
+              "stats": "3PT",
+              "order": "DESC"
+            },
+            {
+              "stats": "WIN",
+              "order": "DESC"
+            },
+            {
+              "stats": "FTM",
+              "order": "DESC"
+            },
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "06/01/2023"
+          ]
+        },
+        {
+          "description": "Who will win Game 1? Use a Heat or Nuggets Redemption or 2023 Playoffs Moment.",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [],
+          "dates": []
+        }
+      ]
+    }
+  ]
+}
+

@@ -20,11 +20,11 @@
               "order": "DESC"
             },
             {
-              "stats": "WIN",
+              "stats": "FTM",
               "order": "DESC"
             },
             {
-              "stats": "FTM",
+              "stats": "WIN",
               "order": "DESC"
             },
             {
@@ -164,169 +164,9 @@
           "dates": [
             "06/09/2023"
           ]
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "title": "FINALS GAME 5 PREDICTIVE CHALLENGE!",
-      "buckets": [
-        {
-          "description": "Double Team Showdown! Who will total more Points Scored: Jamal Murray or Caleb Martin + Gabe Vincent combined?",
-          "is_wildcard": false,
-          "type": "LB",
-          "count": 3,
-          "is_team": false,
-          "player_filters": [
-            "ID,1627750,1628997,1629216"
-          ],
-          "tier_breakers": [
-            {
-              "stats": "PTS",
-              "order": "DESC"
-            },
-            {
-              "stats": "WIN",
-              "order": "DESC"
-            },
-            {
-              "stats": "FTM",
-              "order": "DESC"
-            },
-            {
-              "stats": "AST,REB",
-              "order": "DESC"
-            },
-            {
-              "stats": "PMP",
-              "order": "DESC"
-            }
-          ],
-          "dates": [
-            "06/12/2023"
-          ]
         },
         {
-          "description": "Battle of the Undrafted! Who will score more Points: Caleb Martin, Duncan Robinson, Haywood Highsmith, Max Strus, or Gabe Vincent?",
-          "is_wildcard": false,
-          "type": "LB",
-          "count": 1,
-          "is_team": false,
-          "player_filters": [
-            "ID,1628997,1629130,1629312,1629622,1629216"
-          ],
-          "tier_breakers": [
-            {
-              "stats": "PTS",
-              "order": "DESC"
-            },
-            {
-              "stats": "WIN",
-              "order": "DESC"
-            },
-            {
-              "stats": "FTM",
-              "order": "DESC"
-            },
-            {
-              "stats": "AST,REB",
-              "order": "DESC"
-            },
-            {
-              "stats": "PMP",
-              "order": "DESC"
-            }
-          ],
-          "dates": [
-            "06/12/2023"
-          ]
-        },
-        {
-          "description": "Skills Challenge! Who will record the most Assists + Rebounds: Kyle Lowry, Michael Porter Jr., or Aaron Gordon?",
-          "is_wildcard": false,
-          "type": "LB",
-          "count": 1,
-          "is_team": false,
-          "player_filters": [
-            "ID,200768,1629008,203932"
-          ],
-          "tier_breakers": [
-            {
-              "stats": "AST,REB",
-              "order": "DESC"
-            },
-            {
-              "stats": "WIN",
-              "order": "DESC"
-            },
-            {
-              "stats": "FTM",
-              "order": "DESC"
-            },
-            {
-              "stats": "PMP",
-              "order": "DESC"
-            }
-          ],
-          "dates": [
-            "06/12/2023"
-          ]
-        },
-        {
-          "description": "Award Winner Battle: Who will score more Points: Nikola Jokić (All-NBA), Jimmy Butler (All-NBA), or Bam Adebayo (All-Defensive)?",
-          "is_wildcard": false,
-          "type": "LB",
-          "count": 1,
-          "is_team": false,
-          "player_filters": [
-            "ID,203999,202710,1628389"
-          ],
-          "tier_breakers": [
-            {
-              "stats": "PTS",
-              "order": "DESC"
-            },
-            {
-              "stats": "WIN",
-              "order": "DESC"
-            },
-            {
-              "stats": "FTM",
-              "order": "DESC"
-            },
-            {
-              "stats": "AST,REB",
-              "order": "DESC"
-            },
-            {
-              "stats": "PMP",
-              "order": "DESC"
-            }
-          ],
-          "dates": [
-            "06/12/2023"
-          ]
-        },
-        {
-          "description": "Who will win Game 5? Use a Heat or Nuggets Redemption or 2023 Playoffs Moment.",
-          "is_wildcard": false,
-          "type": "LB",
-          "count": 1,
-          "is_team": true,
-          "team_filter": "WIN",
-          "tier_breakers": [],
-          "dates": [
-            "06/12/2023"
-          ]
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "title": "I am out this week so just display all player stats here.",
-      "buckets": [
-        {
-          "description": "Scorebox",
+          "description": "I will be out next week so just display all player stats here",
           "is_wildcard": false,
           "segment": "GAME",
           "type": "LB",
@@ -371,19 +211,21 @@
             }
           ],
           "dates": [
+            "06/12/2023",
             "06/15/2023",
             "06/18/2023"
           ]
         },
         {
-          "description": "Who will win Game 6/7?",
+          "description": "Who will win Game 5/6/7?",
           "is_wildcard": false,
           "type": "LB",
-          "count": 2,
+          "count": 3,
           "is_team": true,
           "team_filter": "WIN",
           "tier_breakers": [],
           "dates": [
+            "06/12/2023",
             "06/15/2023",
             "06/18/2023"
           ]

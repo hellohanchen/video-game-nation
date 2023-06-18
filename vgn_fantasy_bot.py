@@ -16,7 +16,7 @@ from constants import TEAM_TRICODES, TZ_ET
 from topshot.cadence.flow_collections import get_account_plays
 from service.fantasy.ranking import RANK_PROVIDER
 from topshot.graphql.get_address import get_flow_address
-from utils import get_scoreboard_message, update_channel_messages
+from utils import update_channel_messages
 
 # config bot
 load_dotenv()
@@ -310,7 +310,7 @@ async def update_scorebox():
 
 @tasks.loop(minutes=2)
 async def update_games():
-    messages = [get_scoreboard_message("VIDEO GAME NATION DAILY FANTASY"),
+    messages = [NBA_PROVIDER.get_scoreboard_message("VIDEO GAME NATION DAILY FANTASY"),
                 "ET: **{}** , UPDATE EVERY 2 MINS".format(datetime.now(TZ_ET).strftime("%H:%M:%S"))]
 
     await update_channel_messages(messages, GAMES_CHANNELS, GAMES_MESSAGE_IDS)

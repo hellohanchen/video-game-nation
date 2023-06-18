@@ -1,0 +1,207 @@
+{
+  "message": "CONFERENCE FINALS",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "WESTERN CONFERENCE FINALS PREDICTIVE: WIN NBA TOP SHOT BALANCE",
+      "buckets": [
+        {
+          "description": "PLAYER WITH THE MOST POINTS IN ANY WCF GAME",
+          "segment": "GAME",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            }
+          ],
+          "games": [
+            "0042200311",
+            "0042200312",
+            "0042200313",
+            "0042200314",
+            "0042200315",
+            "0042200316",
+            "0042200317"
+          ]
+        },
+        {
+          "description": "PLAYER WHO MAKES THE LAST 3-POINTER IN THE WCF",
+          "is_wildcard": false,
+          "type": "PBP",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "3PM",
+              "order": "DESC"
+            }
+          ],
+          "games": [
+            "0042200314"
+          ]
+        },
+        {
+          "description": "WINNING TEAM AND NUMBER OF GAMES\nNuggets in 4 (Aaron Gordon)",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [],
+          "dates": []
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "EASTERN CONFERENCE FINALS PREDICTIVE: WIN NBA TOP SHOT BALANCE",
+      "buckets": [
+        {
+          "description": "PLAYER WITH THE MOST POINTS IN ANY ECF GAME",
+          "segment": "GAME",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            }
+          ],
+          "games": [
+            "0042200301",
+            "0042200302",
+            "0042200303",
+            "0042200304",
+            "0042200305",
+            "0042200306",
+            "0042200307"
+          ]
+        },
+        {
+          "description": "PLAYER WHO MAKES THE LAST 3-POINTER IN THE ECF",
+          "is_wildcard": false,
+          "type": "PBP",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "3PM",
+              "order": "DESC"
+            }
+          ],
+          "games": [
+            "0042200305",
+            "0042200306",
+            "0042200307"
+          ]
+        },
+        {
+          "description": "WINNING TEAM AND NUMBER OF GAMES\nCeltics in 7 (Marcus Smart)\nHeat in 5 (Kyle Lowry), 6 (Bam Adebayo), 7 (Jimmy Butler)",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [],
+          "dates": []
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "GAME 5 PREDICTIVE CHALLENGE: HIGH 5S",
+      "buckets": [
+        {
+          "description": "Most Points: Jayson Tatum, Jaylen Brown, or Jimmy Butler",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "player_filters": [
+            "ID,1628369,1627759,202710"
+          ],
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "05/25/2023"
+          ]
+        },
+        {
+          "description": "Most Bench Points: Grant Williams, Malcolm Brogdon, or Caleb Martin",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "player_filters": [
+            "ID,1629684,1627763,1628997"
+          ],
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "05/25/2023"
+          ]
+        },
+        {
+          "description": "Most Assists + Rebounds: Al Horford, Robert Williams III, or Bam Adebayo",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "player_filters": [
+            "ID,201143,1629057,1628389"
+          ],
+          "tier_breakers": [
+            {
+              "stats": "REB,AST",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "05/25/2023"
+          ]
+        },
+        {
+          "description": "Most Blocks + Steals: Derrick White, Marcus Smart, or Kyle Lowry",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "player_filters": [
+            "ID,1628401,203935,200768"
+          ],
+          "tier_breakers": [
+            {
+              "stats": "STL,BLK",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "05/25/2023"
+          ]
+        },
+        {
+          "description": "Will the combined score be over or under 220.5? Use a Celtics Moment for over and a Heat Moment for under",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [],
+          "dates": []
+        }
+      ]
+    }
+  ]
+}
+

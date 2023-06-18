@@ -158,13 +158,12 @@ class NBAProvider:
 
     @staticmethod
     def get_scoreboard_message(headline):
-        message = ""
+        message = "-" * 40
+        message += "\n🏀 ***{}***\n".format(headline)
 
         score_board = NBAProvider.get_scoreboard()
 
         if len(score_board['games']) > 0:
-            message += "-" * 40
-            message += "\n🏀 ***{}***\n".format(headline)
             message += "**Games on {}**\n\n".format(score_board['gameDate'])
 
             for game in score_board['games']:

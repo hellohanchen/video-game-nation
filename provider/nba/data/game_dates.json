@@ -5985,34 +5985,16 @@
       "awayTeam": "BOS"
     }
   },
-  "05/24/2023": {
-    "0042200315": {
-      "homeTeam": "DEN",
-      "awayTeam": "LAL"
-    }
-  },
   "05/25/2023": {
     "0042200305": {
       "homeTeam": "BOS",
       "awayTeam": "MIA"
     }
   },
-  "05/26/2023": {
-    "0042200316": {
-      "homeTeam": "LAL",
-      "awayTeam": "DEN"
-    }
-  },
   "05/27/2023": {
     "0042200306": {
       "homeTeam": "MIA",
       "awayTeam": "BOS"
-    }
-  },
-  "05/28/2023": {
-    "0042200317": {
-      "homeTeam": "DEN",
-      "awayTeam": "LAL"
     }
   },
   "05/29/2023": {
@@ -6023,44 +6005,44 @@
   },
   "06/01/2023": {
     "0042200401": {
-      "homeTeam": null,
-      "awayTeam": null
+      "homeTeam": "DEN",
+      "awayTeam": "MIA"
     }
   },
   "06/04/2023": {
     "0042200402": {
-      "homeTeam": null,
-      "awayTeam": null
+      "homeTeam": "DEN",
+      "awayTeam": "MIA"
     }
   },
   "06/07/2023": {
     "0042200403": {
-      "homeTeam": null,
-      "awayTeam": null
+      "homeTeam": "MIA",
+      "awayTeam": "DEN"
     }
   },
   "06/09/2023": {
     "0042200404": {
-      "homeTeam": null,
-      "awayTeam": null
+      "homeTeam": "MIA",
+      "awayTeam": "DEN"
     }
   },
   "06/12/2023": {
     "0042200405": {
-      "homeTeam": null,
-      "awayTeam": null
+      "homeTeam": "DEN",
+      "awayTeam": "MIA"
     }
   },
   "06/15/2023": {
     "0042200406": {
-      "homeTeam": null,
-      "awayTeam": null
+      "homeTeam": "MIA",
+      "awayTeam": "DEN"
     }
   },
   "06/18/2023": {
     "0042200407": {
-      "homeTeam": null,
-      "awayTeam": null
+      "homeTeam": "DEN",
+      "awayTeam": "MIA"
     }
   }
 }

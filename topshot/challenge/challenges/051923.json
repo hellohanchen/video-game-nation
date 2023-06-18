@@ -49,7 +49,7 @@
           ]
         },
         {
-          "description": "WINNING TEAM AND NUMBER OF GAMES\nLakers in 4 (D'Angelo Russell), 5 (Austin Reaves), 6 (Anthony Davis), 7 (LeBron James). Nuggets in 4 (Aaron Gordon), 5 (Michael Porter Jr.), 6 (Jamal Murray), 7 (Nikola Jokić)",
+          "description": "WINNING TEAM AND NUMBER OF GAMES\nLakers in 6 (Anthony Davis), 7 (LeBron James)\nNuggets in 4 (Aaron Gordon), 5 (Michael Porter Jr.), 6 (Jamal Murray), 7 (Nikola Jokić)",
           "is_wildcard": false,
           "type": "LB",
           "count": 1,
@@ -107,13 +107,77 @@
           ]
         },
         {
-          "description": "WINNING TEAM AND NUMBER OF GAMES\nCeltics in 4 = Any Jaylen Brown Moment, Celtics in 5 = Any Jayson Tatum Moment, Celtics in 6 = Any Malcolm Brogdon Moment, Celtics in 7 = Any Marcus Smart Moment, Heat in 4 = Any Gabe Vincent Moment, Heat in 5 = Any Kyle Lowry Moment, Heat in 6 = Any Bam Adebayo Moment, Heat in 7 = Any Jimmy Butler Moment",
+          "description": "WINNING TEAM AND NUMBER OF GAMES\nCeltics in 6 (Malcolm Brogdon), 7 (Marcus Smart)\nHeat in 4 (Gabe Vincent), 5 (Kyle Lowry), 6 (Bam Adebayo), 7 (Jimmy Butler)",
           "is_wildcard": false,
           "type": "LB",
           "count": 1,
           "is_team": false,
           "tier_breakers": [],
           "dates": []
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "WEEKEND CONFERENCE FINALS PREDICTIVE CHALLENGE",
+      "buckets": [
+        {
+          "description": "Player with the most Points in a single game this weekend.",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "05/19/2023",
+            "05/20/2023",
+            "05/21/2023"
+          ]
+        },
+        {
+          "description": "Player with the most Assists + Rebounds in a single game this weekend.",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "AST,REB",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "05/19/2023",
+            "05/20/2023",
+            "05/21/2023"
+          ]
+        },
+        {
+          "description": "Player with the most Points off the bench in a single game this weekend.",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "BENCH",
+              "order": "ASC"
+            },
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "05/19/2023",
+            "05/20/2023",
+            "05/21/2023"
+          ]
         }
       ]
     }
