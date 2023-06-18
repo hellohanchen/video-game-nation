@@ -86,11 +86,18 @@ def get_formatted_message(user1, user2, collection1, collection2, series_or_set)
             play_ids = get_sorted_play_ids(plays)
 
             for play_id in play_ids:
-                new_msg += ":black_small_square: {} ${} x{} ".format(
-                    plays[play_id]['FullName'],
-                    plays[play_id]['LowAsk'],
-                    plays[play_id]['Count'],
-                )
+                if int(plays[play_id]['Count']) > 1:
+                    new_msg += ":black_small_square: **{} ${} x{}** ".format(
+                        plays[play_id]['FullName'],
+                        plays[play_id]['LowAsk'],
+                        plays[play_id]['Count']
+                    )
+                else:
+                    new_msg += ":black_small_square: {} ${} x{} ".format(
+                        plays[play_id]['FullName'],
+                        plays[play_id]['LowAsk'],
+                        plays[play_id]['Count']
+                    )
 
                 msg, new_msg = truncate_message(messages, msg, new_msg, 1950)
 
@@ -163,7 +170,8 @@ async def verify_user(context, user1, user2, series_or_set):
         messages = get_formatted_message(user1, user2, c1, c2, series_or_set)
 
         for message in messages:
-            await context.channel.send(message)
+            if len(message) > 0:
+                await context.channel.send(message)
 
         await context.channel.send("COMPLETE!!! For questions/comments please contact MingDynastyVase#5527")
 
