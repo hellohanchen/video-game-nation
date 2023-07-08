@@ -27,12 +27,338 @@
     3884,
     3885,
     3886,
-    3921,
-    3932,
-    3942
+    3955,
+    3958,
+    3962
   ],
-  "count": 4393,
+  "count": 4414,
   "plays": {
+    "3966": [
+      {
+        "id": "999b2aed-609e-456f-b068-c126a39a16da",
+        "flowId": 3966,
+        "set": "2023 NBA Playoffs",
+        "setId": "f6e55a5b-8656-4a62-ab6d-6b61adee253b",
+        "setFlowId": 105,
+        "playerId": null,
+        "playerName": "Denver Nuggets",
+        "team": "Denver Nuggets",
+        "playType": "Reel",
+        "date": "",
+        "series": 4,
+        "tier": "Common",
+        "badges": [
+          "TEAM",
+          "CR",
+          "CY"
+        ]
+      }
+    ],
+    "3965": [
+      {
+        "id": "1c1226f8-e011-4fb8-8fbf-85219cd5ebe7",
+        "flowId": 3965,
+        "set": "Rise With Us 2023",
+        "setId": "29f30415-d739-4b0d-a71a-24d736d0f003",
+        "setFlowId": 107,
+        "playerId": 1629501,
+        "playerName": "Alanna Smith",
+        "team": "Chicago Sky",
+        "playType": "Layup",
+        "date": "2023-06-07",
+        "series": 4,
+        "tier": "Fandom",
+        "badges": [
+          "TSD",
+          "CR"
+        ]
+      }
+    ],
+    "3964": [
+      {
+        "id": "57ebd5bb-b070-4c02-b722-d509f6a58aaa",
+        "flowId": 3964,
+        "set": "Rise With Us 2023",
+        "setId": "29f30415-d739-4b0d-a71a-24d736d0f003",
+        "setFlowId": 107,
+        "playerId": 1627668,
+        "playerName": "Breanna Stewart",
+        "team": "New York Liberty",
+        "playType": "Jump Shot",
+        "date": "2023-06-02",
+        "series": 4,
+        "tier": "Fandom",
+        "badges": [
+          "CR"
+        ]
+      }
+    ],
+    "3963": [
+      {
+        "id": "a70a183d-9a3d-42f2-be3a-500ed30ca8d0",
+        "flowId": 3963,
+        "set": "Rise With Us 2023",
+        "setId": "29f30415-d739-4b0d-a71a-24d736d0f003",
+        "setFlowId": 107,
+        "playerId": 1628932,
+        "playerName": "A'ja Wilson",
+        "team": "Las Vegas Aces",
+        "playType": "Block",
+        "date": "2023-05-28",
+        "series": 4,
+        "tier": "Fandom",
+        "badges": [
+          "CR"
+        ]
+      }
+    ],
+    "3961": [
+      {
+        "id": "ab30cb66-6092-4edb-a9a0-3726a4335aa0",
+        "flowId": 3961,
+        "set": "Video Game Numbers",
+        "setId": "2ff47eee-d42a-4109-ba2e-9b830c9719d6",
+        "setFlowId": 97,
+        "playerId": 1627783,
+        "playerName": "Pascal Siakam",
+        "team": "Toronto Raptors",
+        "playType": "Reel",
+        "date": "2022-12-22",
+        "series": 4,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "3960": [
+      {
+        "id": "deb36532-cb32-494b-a39c-022a96d947ff",
+        "flowId": 3960,
+        "set": "Video Game Numbers",
+        "setId": "2ff47eee-d42a-4109-ba2e-9b830c9719d6",
+        "setFlowId": 97,
+        "playerId": 201939,
+        "playerName": "Steph Curry",
+        "team": "Golden State Warriors",
+        "playType": "Reel",
+        "date": "2023-03-16",
+        "series": 4,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "3959": [
+      {
+        "id": "011ef548-695f-4886-985c-72d637e866b3",
+        "flowId": 3959,
+        "set": "Video Game Numbers",
+        "setId": "2ff47eee-d42a-4109-ba2e-9b830c9719d6",
+        "setFlowId": 97,
+        "playerId": 201942,
+        "playerName": "DeMar DeRozan",
+        "team": "Chicago Bulls",
+        "playType": "Reel",
+        "date": "2023-03-18",
+        "series": 4,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "3957": [
+      {
+        "id": "7cbf1a77-5be1-4e6e-a00e-c011bcb583b4",
+        "flowId": 3957,
+        "set": "For the Win",
+        "setId": "92153794-84d8-4743-bb96-5112cb40a125",
+        "setFlowId": 95,
+        "playerId": 1628368,
+        "playerName": "De'Aaron Fox",
+        "team": "Sacramento Kings",
+        "playType": "3 Pointer",
+        "date": "2023-03-16",
+        "series": 4,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "3956": [
+      {
+        "id": "23829488-a22c-475c-91cc-2972803d7c13",
+        "flowId": 3956,
+        "set": "For the Win",
+        "setId": "92153794-84d8-4743-bb96-5112cb40a125",
+        "setFlowId": 95,
+        "playerId": 1630169,
+        "playerName": "Tyrese Haliburton",
+        "team": "Indiana Pacers",
+        "playType": "3 Pointer",
+        "date": "2023-03-05",
+        "series": 4,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "3954": [
+      {
+        "id": "4bef2839-f854-43ee-aa9e-8168c0a534b0",
+        "flowId": 3954,
+        "set": "Throwdowns",
+        "setId": "6da955fb-774d-47d0-9c30-b22d8c09ba20",
+        "setFlowId": 94,
+        "playerId": 1628991,
+        "playerName": "Jaren Jackson Jr.",
+        "team": "Memphis Grizzlies",
+        "playType": "Dunk",
+        "date": "2022-11-19",
+        "series": 4,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "3953": [
+      {
+        "id": "c1bd81e9-c985-456d-9eff-144647e3ed3d",
+        "flowId": 3953,
+        "set": "Throwdowns",
+        "setId": "6da955fb-774d-47d0-9c30-b22d8c09ba20",
+        "setFlowId": 94,
+        "playerId": 1630702,
+        "playerName": "Jaden Hardy",
+        "team": "Dallas Mavericks",
+        "playType": "Dunk",
+        "date": "2023-03-09",
+        "series": 4,
+        "tier": "Rare",
+        "badges": [
+          "RY",
+          "RM"
+        ]
+      }
+    ],
+    "3952": [
+      {
+        "id": "c97e48a7-3c27-4a3e-b720-d5ba6ce88588",
+        "flowId": 3952,
+        "set": "Throwdowns",
+        "setId": "6da955fb-774d-47d0-9c30-b22d8c09ba20",
+        "setFlowId": 94,
+        "playerId": 1628372,
+        "playerName": "Dennis Smith Jr.",
+        "team": "Charlotte Hornets",
+        "playType": "Dunk",
+        "date": "2023-02-03",
+        "series": 4,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "3951": [
+      {
+        "id": "886eb865-0f77-4b36-83d7-d14d3552ebd0",
+        "flowId": 3951,
+        "set": "2023 NBA Playoffs",
+        "setId": "f6e55a5b-8656-4a62-ab6d-6b61adee253b",
+        "setFlowId": 105,
+        "playerId": 202710,
+        "playerName": "Jimmy Butler",
+        "team": "Miami Heat",
+        "playType": "Jump Shot",
+        "date": "2023-06-05",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "3950": [
+      {
+        "id": "805cd889-5d0b-44e3-89d7-29d7cc97ef04",
+        "flowId": 3950,
+        "set": "2023 NBA Playoffs",
+        "setId": "f6e55a5b-8656-4a62-ab6d-6b61adee253b",
+        "setFlowId": 105,
+        "playerId": 1629216,
+        "playerName": "Gabe Vincent",
+        "team": "Miami Heat",
+        "playType": "3 Pointer",
+        "date": "2023-06-05",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "3949": [
+      {
+        "id": "64196865-1fec-4704-980e-c7059fb3f042",
+        "flowId": 3949,
+        "set": "2023 NBA Playoffs",
+        "setId": "f6e55a5b-8656-4a62-ab6d-6b61adee253b",
+        "setFlowId": 105,
+        "playerId": 1628389,
+        "playerName": "Bam Adebayo",
+        "team": "Miami Heat",
+        "playType": "Block",
+        "date": "2023-06-10",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "3948": [
+      {
+        "id": "23770903-57de-49a9-b69c-86b9273d3b81",
+        "flowId": 3948,
+        "set": "2023 NBA Playoffs",
+        "setId": "f6e55a5b-8656-4a62-ab6d-6b61adee253b",
+        "setFlowId": 105,
+        "playerId": 203999,
+        "playerName": "Nikola Joki\u0107",
+        "team": "Denver Nuggets",
+        "playType": "Layup",
+        "date": "2023-06-13",
+        "series": 4,
+        "tier": "Common",
+        "badges": [
+          "CY"
+        ]
+      }
+    ],
+    "3947": [
+      {
+        "id": "dfe24151-d3ae-4805-8acd-ffee258950a8",
+        "flowId": 3947,
+        "set": "2023 NBA Playoffs",
+        "setId": "f6e55a5b-8656-4a62-ab6d-6b61adee253b",
+        "setFlowId": 105,
+        "playerId": 1627750,
+        "playerName": "Jamal Murray",
+        "team": "Denver Nuggets",
+        "playType": "Layup",
+        "date": "2023-06-08",
+        "series": 4,
+        "tier": "Common",
+        "badges": [
+          "CY"
+        ]
+      }
+    ],
+    "3946": [
+      {
+        "id": "872e4d36-55b8-416f-a803-daae7aadc766",
+        "flowId": 3946,
+        "set": "2023 NBA Playoffs",
+        "setId": "f6e55a5b-8656-4a62-ab6d-6b61adee253b",
+        "setFlowId": 105,
+        "playerId": 1628971,
+        "playerName": "Bruce Brown",
+        "team": "Denver Nuggets",
+        "playType": "Layup",
+        "date": "2023-06-10",
+        "series": 4,
+        "tier": "Common",
+        "badges": [
+          "CY"
+        ]
+      }
+    ],
     "3945": [
       {
         "id": "0328f8f9-0c4f-4040-8109-f2169726a91d",
@@ -82,6 +408,26 @@
         "series": 4,
         "tier": "Legendary",
         "badges": []
+      }
+    ],
+    "3942": [
+      {
+        "id": "25372ae3-d3ed-41bb-bc1b-715a477924b1",
+        "flowId": 3942,
+        "set": "2023 NBA Finals",
+        "setId": "9e03ce90-f80a-4a69-b453-b3d27bd1f07a",
+        "setFlowId": 110,
+        "playerId": 203999,
+        "playerName": "Nikola Joki\u0107",
+        "team": "Denver Nuggets",
+        "playType": "Reel",
+        "date": "2023-06-08",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": [
+          "CY",
+          "CR"
+        ]
       }
     ],
     "3941": [
@@ -245,6 +591,25 @@
         "series": 4,
         "tier": "Common",
         "badges": []
+      }
+    ],
+    "3932": [
+      {
+        "id": "9866b7d4-33d5-4bc2-9110-df4cd0c21ba7",
+        "flowId": 3932,
+        "set": "Hustle and Show",
+        "setId": "87a53eeb-f24f-419f-a107-36858967f91b",
+        "setFlowId": 108,
+        "playerId": 2544,
+        "playerName": "LeBron James",
+        "team": "Los Angeles Lakers",
+        "playType": "Dunk",
+        "date": "2022-11-27",
+        "series": 4,
+        "tier": "Common",
+        "badges": [
+          "CR"
+        ]
       }
     ],
     "3931": [
@@ -419,6 +784,25 @@
         "badges": []
       }
     ],
+    "3921": [
+      {
+        "id": "f60a5484-b393-48a3-886e-54102240326b",
+        "flowId": 3921,
+        "set": "Hustle and Show",
+        "setId": "87a53eeb-f24f-419f-a107-36858967f91b",
+        "setFlowId": 108,
+        "playerId": 203935,
+        "playerName": "Marcus Smart",
+        "team": "Boston Celtics",
+        "playType": "Assist",
+        "date": "2022-11-10",
+        "series": 4,
+        "tier": "Common",
+        "badges": [
+          "CR"
+        ]
+      }
+    ],
     "3920": [
       {
         "id": "411b3027-6832-4a8b-9bf1-d4a0d2e253de",
@@ -467,7 +851,9 @@
         "date": "2023-05-20",
         "series": 4,
         "tier": "Fandom",
-        "badges": []
+        "badges": [
+          "CR"
+        ]
       }
     ],
     "3917": [
@@ -484,7 +870,9 @@
         "date": "2023-05-19",
         "series": 4,
         "tier": "Fandom",
-        "badges": []
+        "badges": [
+          "CR"
+        ]
       }
     ],
     "3916": [
@@ -501,7 +889,9 @@
         "date": "2023-05-20",
         "series": 4,
         "tier": "Fandom",
-        "badges": []
+        "badges": [
+          "CR"
+        ]
       }
     ],
     "3915": [
@@ -519,7 +909,8 @@
         "series": 4,
         "tier": "Rare",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -538,7 +929,8 @@
         "series": 4,
         "tier": "Rare",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -557,7 +949,8 @@
         "series": 4,
         "tier": "Rare",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -576,7 +969,8 @@
         "series": 4,
         "tier": "Rare",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -595,7 +989,8 @@
         "series": 4,
         "tier": "Rare",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -614,7 +1009,8 @@
         "series": 4,
         "tier": "Rare",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -633,7 +1029,8 @@
         "series": 4,
         "tier": "Rare",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -652,7 +1049,8 @@
         "series": 4,
         "tier": "Rare",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -671,7 +1069,8 @@
         "series": 4,
         "tier": "Rare",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -690,7 +1089,8 @@
         "series": 4,
         "tier": "Rare",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -709,7 +1109,8 @@
         "series": 4,
         "tier": "Rare",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -728,7 +1129,8 @@
         "series": 4,
         "tier": "Rare",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -747,7 +1149,8 @@
         "series": 4,
         "tier": "Rare",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -767,7 +1170,8 @@
         "tier": "Rare",
         "badges": [
           "TEAM",
-          "CY"
+          "CY",
+          "CR"
         ]
       }
     ],
@@ -786,7 +1190,8 @@
         "series": 4,
         "tier": "Rare",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -7045,7 +7450,8 @@
         "series": 4,
         "tier": "Rare",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -7064,7 +7470,8 @@
         "series": 4,
         "tier": "Rare",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -7083,7 +7490,8 @@
         "series": 4,
         "tier": "Rare",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -7102,7 +7510,8 @@
         "series": 4,
         "tier": "Rare",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -7121,7 +7530,8 @@
         "series": 4,
         "tier": "Rare",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -7140,7 +7550,8 @@
         "series": 4,
         "tier": "Rare",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -7159,7 +7570,8 @@
         "series": 4,
         "tier": "Rare",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -7178,7 +7590,8 @@
         "series": 4,
         "tier": "Rare",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -7197,7 +7610,8 @@
         "series": 4,
         "tier": "Rare",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -7216,7 +7630,8 @@
         "series": 4,
         "tier": "Rare",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -7235,7 +7650,8 @@
         "series": 4,
         "tier": "Rare",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -7254,7 +7670,8 @@
         "series": 4,
         "tier": "Rare",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -7273,7 +7690,8 @@
         "series": 4,
         "tier": "Rare",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -7292,7 +7710,8 @@
         "series": 4,
         "tier": "Rare",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -7311,7 +7730,8 @@
         "series": 4,
         "tier": "Rare",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],

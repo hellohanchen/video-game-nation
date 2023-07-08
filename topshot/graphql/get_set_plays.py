@@ -10,7 +10,7 @@ async def get_set_plays(set_id):
     transport = AIOHTTPTransport(url="https://public-api.nbatopshot.com/graphql")
 
     # Create a GraphQL client using the defined transport
-    client = Client(transport=transport, fetch_schema_from_transport=True)
+    client = Client(transport=transport, fetch_schema_from_transport=False)
 
     query = gql(
         """
@@ -52,11 +52,11 @@ async def get_set_plays(set_id):
     # Execute the query on the transport
     try:
         result = await client.execute_async(query, variable_values={"input": {"setID": set_id}})
-    except:
+    except Exception as err:
         return None
 
     return result['getSet']['set']
 
 
 if __name__ == '__main__':
-    print(asyncio.run(get_set_plays('f55be824-34db-461f-ae2e-5f84e73025cb')))
+    print(asyncio.run(get_set_plays('7e3d08f9-061e-4c37-b58f-7b551b6adaab')))
