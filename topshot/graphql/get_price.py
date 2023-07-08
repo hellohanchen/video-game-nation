@@ -23,7 +23,7 @@ async def get_listing_prices(set_id, player_ids, team_ids):
     transport = AIOHTTPTransport(url="https://public-api.nbatopshot.com/graphql")
 
     # Create a GraphQL client using the defined transport
-    client = Client(transport=transport, fetch_schema_from_transport=True)
+    client = Client(transport=transport, fetch_schema_from_transport=False)
 
     if len(player_ids) == 0:
         print("{}: Set: {}, Teams: {}...".format(time.strftime("%H:%M:%S", time.localtime()), set_id, team_ids))
