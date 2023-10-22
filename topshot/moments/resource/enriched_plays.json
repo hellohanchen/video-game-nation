@@ -6,12 +6,9 @@
     1847,
     2400,
     2629,
-    3678,
     3702,
     3710,
     3711,
-    3833,
-    3834,
     3872,
     3873,
     3874,
@@ -52,10 +49,3589 @@
     4026,
     4027,
     4030,
-    4038
+    4038,
+    4165,
+    4221,
+    4234,
+    4283,
+    4287,
+    4298,
+    4300,
+    4305
   ],
-  "count": 4521,
+  "count": 4726,
   "plays": {
+    "4306": [
+      {
+        "id": "75010065-adc3-4d2a-8620-e0c413147599",
+        "flowId": 4306,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 101162,
+        "playerName": "Marcin Gortat",
+        "team": "Washington Wizards",
+        "playType": "Dunk",
+        "date": "2016-02-24",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4304": [
+      {
+        "id": "a0076a72-5f5a-4671-87be-c60b7f1d10b0",
+        "flowId": 4304,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 1628384,
+        "playerName": "O.G. Anunoby",
+        "team": "Toronto Raptors",
+        "playType": "Dunk",
+        "date": "2018-01-27",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4303": [
+      {
+        "id": "8c878b66-b39e-478b-a206-f40b2f6f4178",
+        "flowId": 4303,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 201942,
+        "playerName": "DeMar DeRozan",
+        "team": "Toronto Raptors",
+        "playType": "Layup",
+        "date": "2016-05-02",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4302": [
+      {
+        "id": "1ef2e60d-0de6-4146-a924-7f1080406a71",
+        "flowId": 4302,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 1628401,
+        "playerName": "Derrick White",
+        "team": "San Antonio Spurs",
+        "playType": "3 Pointer",
+        "date": "2018-03-13",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4301": [
+      {
+        "id": "89e1aad7-45c8-4f9c-8f9a-59495177d150",
+        "flowId": 4301,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 201571,
+        "playerName": "D.J. Augustin",
+        "team": "Orlando Magic",
+        "playType": "3 Pointer",
+        "date": "2019-04-13",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4299": [
+      {
+        "id": "295a8b37-9bdd-4152-8898-d5fa471c9469",
+        "flowId": 4299,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 1628415,
+        "playerName": "Dillon Brooks",
+        "team": "Memphis Grizzlies",
+        "playType": "3 Pointer",
+        "date": "2018-04-07",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4297": [
+      {
+        "id": "8dcc6ce7-57f2-4605-adbc-594b595f224e",
+        "flowId": 4297,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 200755,
+        "playerName": "JJ Redick",
+        "team": "LA Clippers",
+        "playType": "Jump Shot",
+        "date": "2016-03-25",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4296": [
+      {
+        "id": "4d6984fb-0c12-41d6-9b61-7f1a5c593ebe",
+        "flowId": 4296,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 101108,
+        "playerName": "Chris Paul",
+        "team": "Houston Rockets",
+        "playType": "3 Pointer",
+        "date": "2018-05-23",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4295": [
+      {
+        "id": "47e89d1c-c677-403c-81e2-f4b3bae4c2cf",
+        "flowId": 4295,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 201951,
+        "playerName": "Ty Lawson",
+        "team": "Denver Nuggets",
+        "playType": "Layup",
+        "date": "2015-02-11",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4294": [
+      {
+        "id": "55349c1e-a84a-4913-bfb3-0eb2ec56e60f",
+        "flowId": 4294,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 1628976,
+        "playerName": "Wendell Carter Jr.",
+        "team": "Chicago Bulls",
+        "playType": "Block",
+        "date": "2018-12-08",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4293": [
+      {
+        "id": "8fd05a70-1c14-46b3-80c7-d46ba66f0751",
+        "flowId": 4293,
+        "set": "Run It Back: Origins 2014-19",
+        "setId": "b3ba922b-8f72-40f5-b034-438238a2487c",
+        "setFlowId": 120,
+        "playerId": 1628378,
+        "playerName": "Donovan Mitchell",
+        "team": "Utah Jazz",
+        "playType": "Layup",
+        "date": "2018-04-28",
+        "series": 4,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4292": [
+      {
+        "id": "15fcb862-29a7-4772-87cc-311c79f84aab",
+        "flowId": 4292,
+        "set": "Run It Back: Origins 2014-19",
+        "setId": "b3ba922b-8f72-40f5-b034-438238a2487c",
+        "setFlowId": 120,
+        "playerId": 1628368,
+        "playerName": "De'Aaron Fox",
+        "team": "Sacramento Kings",
+        "playType": "Dunk",
+        "date": "2018-01-26",
+        "series": 4,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4291": [
+      {
+        "id": "bec09515-b369-45f9-8c22-f90c30b70ddf",
+        "flowId": 4291,
+        "set": "Run It Back: Origins 2014-19",
+        "setId": "b3ba922b-8f72-40f5-b034-438238a2487c",
+        "setFlowId": 120,
+        "playerId": 1628969,
+        "playerName": "Mikal Bridges",
+        "team": "Phoenix Suns",
+        "playType": "Steal",
+        "date": "2019-03-11",
+        "series": 4,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4290": [
+      {
+        "id": "f4968d95-ca17-4fbe-953b-104dc2b5d614",
+        "flowId": 4290,
+        "set": "Run It Back: Origins 2014-19",
+        "setId": "b3ba922b-8f72-40f5-b034-438238a2487c",
+        "setFlowId": 120,
+        "playerId": 1626164,
+        "playerName": "Devin Booker",
+        "team": "Phoenix Suns",
+        "playType": "Jump Shot",
+        "date": "2016-03-15",
+        "series": 4,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4289": [
+      {
+        "id": "fafcd569-bc68-489e-997e-5d6b1cf14dc4",
+        "flowId": 4289,
+        "set": "Run It Back: Origins 2014-19",
+        "setId": "b3ba922b-8f72-40f5-b034-438238a2487c",
+        "setFlowId": 120,
+        "playerId": 1628991,
+        "playerName": "Jaren Jackson Jr.",
+        "team": "Memphis Grizzlies",
+        "playType": "3 Pointer",
+        "date": "2018-12-01",
+        "series": 4,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4288": [
+      {
+        "id": "a413306b-46f2-4c2c-bf11-bb66975cb912",
+        "flowId": 4288,
+        "set": "Run It Back: Origins 2014-19",
+        "setId": "b3ba922b-8f72-40f5-b034-438238a2487c",
+        "setFlowId": 120,
+        "playerId": 1626156,
+        "playerName": "D'Angelo Russell",
+        "team": "Los Angeles Lakers",
+        "playType": "3 Pointer",
+        "date": "2016-03-02",
+        "series": 4,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4286": [
+      {
+        "id": "6710dca5-b0a0-4268-9765-5630ae3886cc",
+        "flowId": 4286,
+        "set": "Rise With Us 2023",
+        "setId": "29f30415-d739-4b0d-a71a-24d736d0f003",
+        "setFlowId": 107,
+        "playerId": 1628279,
+        "playerName": "Brittney Sykes",
+        "team": "Washington Mystics",
+        "playType": "3 Pointer",
+        "date": "2023-09-19",
+        "series": 4,
+        "tier": "Fandom",
+        "badges": []
+      }
+    ],
+    "4285": [
+      {
+        "id": "10bb7861-2398-4cc5-a5ea-8e8add4dd10a",
+        "flowId": 4285,
+        "set": "Rise With Us 2023",
+        "setId": "29f30415-d739-4b0d-a71a-24d736d0f003",
+        "setFlowId": 107,
+        "playerId": 203828,
+        "playerName": "Stefanie Dolson",
+        "team": "New York Liberty",
+        "playType": "3 Pointer",
+        "date": "2023-09-15",
+        "series": 4,
+        "tier": "Fandom",
+        "badges": []
+      }
+    ],
+    "4284": [
+      {
+        "id": "f23e7f8b-dd3c-41e7-94f6-c18c4b5426d3",
+        "flowId": 4284,
+        "set": "Rise With Us 2023",
+        "setId": "29f30415-d739-4b0d-a71a-24d736d0f003",
+        "setFlowId": 107,
+        "playerId": 1629567,
+        "playerName": "Natisha Hiedeman",
+        "team": "Connecticut Sun",
+        "playType": "Block",
+        "date": "2023-09-24",
+        "series": 4,
+        "tier": "Fandom",
+        "badges": []
+      }
+    ],
+    "4282": [
+      {
+        "id": "f7cffed5-0842-4420-82f0-a2291194b486",
+        "flowId": 4282,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 203078,
+        "playerName": "Bradley Beal",
+        "team": "Washington Wizards",
+        "playType": "Layup",
+        "date": "2014-12-11",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4281": [
+      {
+        "id": "ad67d3ad-e446-47b9-991d-05aedad0bb57",
+        "flowId": 4281,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 202344,
+        "playerName": "Trevor Booker",
+        "team": "Utah Jazz",
+        "playType": "Jump Shot",
+        "date": "2015-01-10",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4280": [
+      {
+        "id": "372b95cd-4bca-49e5-b844-c7458763fb18",
+        "flowId": 4280,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 1626181,
+        "playerName": "Norman Powell",
+        "team": "Toronto Raptors",
+        "playType": "Dunk",
+        "date": "2016-04-26",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4279": [
+      {
+        "id": "5a5ed993-65b5-4a94-afb2-7d767f7281e9",
+        "flowId": 4279,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 203937,
+        "playerName": "Kyle Anderson",
+        "team": "San Antonio Spurs",
+        "playType": "Assist",
+        "date": "2018-03-06",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4278": [
+      {
+        "id": "ba1b73d6-5017-4650-87b6-ae05d622f989",
+        "flowId": 4278,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 203924,
+        "playerName": "Jerami Grant",
+        "team": "Philadelphia 76ers",
+        "playType": "Dunk",
+        "date": "2015-02-01",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4277": [
+      {
+        "id": "e1b99e27-0e11-418a-aaa5-df75463ef6e2",
+        "flowId": 4277,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 201167,
+        "playerName": "Arron Afflalo",
+        "team": "New York Knicks",
+        "playType": "Handles",
+        "date": "2016-03-06",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4276": [
+      {
+        "id": "93b3a9bf-e7bb-4221-85d2-7d9e315d83db",
+        "flowId": 4276,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 203903,
+        "playerName": "Jordan Clarkson",
+        "team": "Los Angeles Lakers",
+        "playType": "Layup",
+        "date": "2015-04-08",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4275": [
+      {
+        "id": "81ac06cd-e730-4a3d-afba-b4f9a0277003",
+        "flowId": 4275,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 1627936,
+        "playerName": "Alex Caruso",
+        "team": "Los Angeles Lakers",
+        "playType": "Dunk",
+        "date": "2018-01-20",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4274": [
+      {
+        "id": "50b7362f-b2be-49ff-b015-1689cef1a64f",
+        "flowId": 4274,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 202331,
+        "playerName": "Paul George",
+        "team": "Indiana Pacers",
+        "playType": "Dunk",
+        "date": "2017-01-29",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4273": [
+      {
+        "id": "3a3cbe0c-b943-44d8-ba2e-b6c2aa9ef367",
+        "flowId": 4273,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 1626167,
+        "playerName": "Myles Turner",
+        "team": "Indiana Pacers",
+        "playType": "Block",
+        "date": "2016-02-02",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4272": [
+      {
+        "id": "f034370b-8a86-479f-ad63-582c24661adb",
+        "flowId": 4272,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 2733,
+        "playerName": "Shaun Livingston",
+        "team": "Golden State Warriors",
+        "playType": "Handles",
+        "date": "2018-05-21",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4271": [
+      {
+        "id": "323793f8-69eb-4ba4-8119-6bd5338139b5",
+        "flowId": 4271,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 203110,
+        "playerName": "Draymond Green",
+        "team": "Golden State Warriors",
+        "playType": "Block",
+        "date": "2017-04-16",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4270": [
+      {
+        "id": "d9317a0b-9c97-4915-bc7f-4cf92b4b67f5",
+        "flowId": 4270,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 1628971,
+        "playerName": "Bruce Brown",
+        "team": "Detroit Pistons",
+        "playType": "Steal",
+        "date": "2018-11-24",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4269": [
+      {
+        "id": "3e3d43f3-9104-41f4-bf90-2981918b38d1",
+        "flowId": 4269,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 201933,
+        "playerName": "Blake Griffin",
+        "team": "Detroit Pistons",
+        "playType": "Layup",
+        "date": "2018-10-23",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4268": [
+      {
+        "id": "f7a31b91-1e16-40f4-9bfc-c1808248495c",
+        "flowId": 4268,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 200826,
+        "playerName": "J.J. Barea",
+        "team": "Dallas Mavericks",
+        "playType": "Jump Shot",
+        "date": "2015-12-24",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4267": [
+      {
+        "id": "89eba041-f4b4-493e-9c67-ec6bbfe69f51",
+        "flowId": 4267,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 202710,
+        "playerName": "Jimmy Butler",
+        "team": "Chicago Bulls",
+        "playType": "Jump Shot",
+        "date": "2016-12-29",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4266": [
+      {
+        "id": "5604bbaa-bc59-487c-93b8-38eb8e333fc3",
+        "flowId": 4266,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 202689,
+        "playerName": "Kemba Walker",
+        "team": "Charlotte Hornets",
+        "playType": "Handles",
+        "date": "2016-11-19",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4265": [
+      {
+        "id": "d7de0a4c-ed76-4d46-99ee-cca6109bbce7",
+        "flowId": 4265,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 101127,
+        "playerName": "Jarrett Jack",
+        "team": "Brooklyn Nets",
+        "playType": "Jump Shot",
+        "date": "2015-03-03",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4264": [
+      {
+        "id": "54549721-3494-47c4-89d0-5cb13092c101",
+        "flowId": 4264,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 1628381,
+        "playerName": "John Collins",
+        "team": "Atlanta Hawks",
+        "playType": "Dunk",
+        "date": "2018-03-29",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4263": [
+      {
+        "id": "563a6a2b-08f6-42f5-a8f8-de77c9347fab",
+        "flowId": 4263,
+        "set": "Run It Back: Origins 2014-19",
+        "setId": "b3ba922b-8f72-40f5-b034-438238a2487c",
+        "setFlowId": 120,
+        "playerId": 1627749,
+        "playerName": "Dejounte Murray",
+        "team": "San Antonio Spurs",
+        "playType": "Assist",
+        "date": "2017-01-20",
+        "series": 4,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4262": [
+      {
+        "id": "efe597ee-60ce-42a6-893e-cd629d52c36b",
+        "flowId": 4262,
+        "set": "Run It Back: Origins 2014-19",
+        "setId": "b3ba922b-8f72-40f5-b034-438238a2487c",
+        "setFlowId": 120,
+        "playerId": 203954,
+        "playerName": "Joel Embiid",
+        "team": "Philadelphia 76ers",
+        "playType": "Block",
+        "date": "2017-01-14",
+        "series": 4,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4261": [
+      {
+        "id": "b161bb5d-f3c4-4863-8fb0-c027f9989946",
+        "flowId": 4261,
+        "set": "Run It Back: Origins 2014-19",
+        "setId": "b3ba922b-8f72-40f5-b034-438238a2487c",
+        "setFlowId": 120,
+        "playerId": 204001,
+        "playerName": "Kristaps Porzi\u0146\u0123is",
+        "team": "New York Knicks",
+        "playType": "Dunk",
+        "date": "2015-11-07",
+        "series": 4,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4260": [
+      {
+        "id": "7643c7bd-1604-4bd3-bdc8-36c5896996da",
+        "flowId": 4260,
+        "set": "Run It Back: Origins 2014-19",
+        "setId": "b3ba922b-8f72-40f5-b034-438238a2487c",
+        "setFlowId": 120,
+        "playerId": 203897,
+        "playerName": "Zach LaVine",
+        "team": "Minnesota Timberwolves",
+        "playType": "3 Pointer",
+        "date": "2015-04-12",
+        "series": 4,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4259": [
+      {
+        "id": "ba19d2ed-46d1-4e68-91e8-b61543477e28",
+        "flowId": 4259,
+        "set": "Run It Back: Origins 2014-19",
+        "setId": "b3ba922b-8f72-40f5-b034-438238a2487c",
+        "setFlowId": 120,
+        "playerId": 1628369,
+        "playerName": "Jayson Tatum",
+        "team": "Boston Celtics",
+        "playType": "Dunk",
+        "date": "2018-05-28",
+        "series": 4,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4258": [
+      {
+        "id": "95193652-186e-4c98-aa43-224635367793",
+        "flowId": 4258,
+        "set": "Run It Back: Origins 2014-19",
+        "setId": "b3ba922b-8f72-40f5-b034-438238a2487c",
+        "setFlowId": 120,
+        "playerId": 1627759,
+        "playerName": "Jaylen Brown",
+        "team": "Boston Celtics",
+        "playType": "Layup",
+        "date": "2017-05-16",
+        "series": 4,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4257": [
+      {
+        "id": "24a47611-436f-40fc-a53a-90655a828023",
+        "flowId": 4257,
+        "set": "Run It Back: Origins 2014-19",
+        "setId": "b3ba922b-8f72-40f5-b034-438238a2487c",
+        "setFlowId": 120,
+        "playerId": 1627734,
+        "playerName": "Domantas Sabonis",
+        "team": "Oklahoma City Thunder",
+        "playType": "Dunk",
+        "date": "2016-12-26",
+        "series": 4,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4256": [
+      {
+        "id": "339724a7-4314-4300-86b2-c9a08ae60b25",
+        "flowId": 4256,
+        "set": "Run It Back: Legacies 2014-19",
+        "setId": "733bdf78-8ce0-4992-aa78-bd08c2746907",
+        "setFlowId": 121,
+        "playerId": 202695,
+        "playerName": "Kawhi Leonard",
+        "team": "Toronto Raptors",
+        "playType": "Jump Shot",
+        "date": "2019-05-12",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "4255": [
+      {
+        "id": "adc91d30-3445-40d0-80ec-195b9aa5efa7",
+        "flowId": 4255,
+        "set": "Run It Back: Legacies 2014-19",
+        "setId": "733bdf78-8ce0-4992-aa78-bd08c2746907",
+        "setFlowId": 121,
+        "playerId": 203081,
+        "playerName": "Damian Lillard",
+        "team": "Portland Trail Blazers",
+        "playType": "3 Pointer",
+        "date": "2019-04-24",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "4254": [
+      {
+        "id": "2c671c2a-b79d-4e1c-869b-515f747a6a7c",
+        "flowId": 4254,
+        "set": "Run It Back: Legacies 2014-19",
+        "setId": "733bdf78-8ce0-4992-aa78-bd08c2746907",
+        "setFlowId": 121,
+        "playerId": 1626164,
+        "playerName": "Devin Booker",
+        "team": "Phoenix Suns",
+        "playType": "Reel",
+        "date": "2017-03-24",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "4253": [
+      {
+        "id": "01396e18-fdbd-4a35-8326-218600ce0b98",
+        "flowId": 4253,
+        "set": "Run It Back: Legacies 2014-19",
+        "setId": "733bdf78-8ce0-4992-aa78-bd08c2746907",
+        "setFlowId": 121,
+        "playerId": 201566,
+        "playerName": "Russell Westbrook",
+        "team": "Oklahoma City Thunder",
+        "playType": "3 Pointer",
+        "date": "2017-04-09",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "4252": [
+      {
+        "id": "5d065044-8c6a-4971-b15c-e1c3461fdbfa",
+        "flowId": 4252,
+        "set": "Run It Back: Legacies 2014-19",
+        "setId": "733bdf78-8ce0-4992-aa78-bd08c2746907",
+        "setFlowId": 121,
+        "playerId": 203076,
+        "playerName": "Anthony Davis",
+        "team": "New Orleans Pelicans",
+        "playType": "Reel",
+        "date": "2016-02-21",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "4251": [
+      {
+        "id": "9668dd1e-619f-4936-8f3b-33e67bbf4108",
+        "flowId": 4251,
+        "set": "Run It Back: Legacies 2014-19",
+        "setId": "733bdf78-8ce0-4992-aa78-bd08c2746907",
+        "setFlowId": 121,
+        "playerId": 203507,
+        "playerName": "Giannis Antetokounmpo",
+        "team": "Milwaukee Bucks",
+        "playType": "Dunk",
+        "date": "2018-02-07",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "4250": [
+      {
+        "id": "9bf8c046-058b-4079-8b41-e742797a302a",
+        "flowId": 4250,
+        "set": "Run It Back: Legacies 2014-19",
+        "setId": "733bdf78-8ce0-4992-aa78-bd08c2746907",
+        "setFlowId": 121,
+        "playerId": 101108,
+        "playerName": "Chris Paul",
+        "team": "Los Angeles Clippers",
+        "playType": "Jump Shot",
+        "date": "2015-05-02",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "4249": [
+      {
+        "id": "482f44b2-17e2-449a-9315-0c14796f5c51",
+        "flowId": 4249,
+        "set": "Run It Back: Legacies 2014-19",
+        "setId": "733bdf78-8ce0-4992-aa78-bd08c2746907",
+        "setFlowId": 121,
+        "playerId": 201935,
+        "playerName": "James Harden",
+        "team": "Houston Rockets",
+        "playType": "3 Pointer",
+        "date": "2019-01-04",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "4248": [
+      {
+        "id": "dc3e2c6c-6934-4932-a223-3bc94413695a",
+        "flowId": 4248,
+        "set": "Run It Back: Legacies 2014-19",
+        "setId": "733bdf78-8ce0-4992-aa78-bd08c2746907",
+        "setFlowId": 121,
+        "playerId": 202691,
+        "playerName": "Klay Thompson",
+        "team": "Golden State Warriors",
+        "playType": "Reel",
+        "date": "2016-05-29",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "4247": [
+      {
+        "id": "69ad0965-e3fd-43ad-800e-bc2830858030",
+        "flowId": 4247,
+        "set": "Run It Back: Legacies 2014-19",
+        "setId": "733bdf78-8ce0-4992-aa78-bd08c2746907",
+        "setFlowId": 121,
+        "playerId": 203999,
+        "playerName": "Nikola Joki\u0107",
+        "team": "Denver Nuggets",
+        "playType": "Reel",
+        "date": "2018-02-16",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "4246": [
+      {
+        "id": "bb7d37b3-544d-4ef0-b14b-4f3fcc75fc10",
+        "flowId": 4246,
+        "set": "Run It Back: Legacies 2014-19",
+        "setId": "733bdf78-8ce0-4992-aa78-bd08c2746907",
+        "setFlowId": 121,
+        "playerId": 1717,
+        "playerName": "Dirk Nowitzki",
+        "team": "Dallas Mavericks",
+        "playType": "Reel",
+        "date": "2019-04-10",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "4245": [
+      {
+        "id": "b4eff71a-aa4e-4446-a62f-bb0cdfdc822c",
+        "flowId": 4245,
+        "set": "Run It Back: Legacies 2014-19",
+        "setId": "733bdf78-8ce0-4992-aa78-bd08c2746907",
+        "setFlowId": 121,
+        "playerId": 202681,
+        "playerName": "Kyrie Irving",
+        "team": "Cleveland Cavaliers",
+        "playType": "3 Pointer",
+        "date": "2016-06-20",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "4244": [
+      {
+        "id": "b511190f-593c-4f26-bbd3-50e859074e82",
+        "flowId": 4244,
+        "set": "Run It Back: Legacies 2014-19",
+        "setId": "733bdf78-8ce0-4992-aa78-bd08c2746907",
+        "setFlowId": 121,
+        "playerId": 201565,
+        "playerName": "Derrick Rose",
+        "team": "Chicago Bulls",
+        "playType": "3 Pointer",
+        "date": "2015-05-09",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "4243": [
+      {
+        "id": "bd36ba69-ea43-4ae8-9970-b9c9cca7b82c",
+        "flowId": 4243,
+        "set": "Run It Back: Legacies 2014-19",
+        "setId": "733bdf78-8ce0-4992-aa78-bd08c2746907",
+        "setFlowId": 121,
+        "playerId": 202738,
+        "playerName": "Isaiah Thomas",
+        "team": "Boston Celtics",
+        "playType": "Reel",
+        "date": "2017-05-03",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "4242": [
+      {
+        "id": "d460c371-034f-4d3f-9158-2d2dd14e500c",
+        "flowId": 4242,
+        "set": "Run It Back: Legacies 2014-19",
+        "setId": "733bdf78-8ce0-4992-aa78-bd08c2746907",
+        "setFlowId": 121,
+        "playerId": 203932,
+        "playerName": "Aaron Gordon",
+        "team": "Orlando Magic",
+        "playType": "Reel",
+        "date": "2016-02-13",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "4241": [
+      {
+        "id": "55a743d9-f250-4993-9ae3-d7612fc8b1e4",
+        "flowId": 4241,
+        "set": "Run It Back: Legacies 2014-19",
+        "setId": "733bdf78-8ce0-4992-aa78-bd08c2746907",
+        "setFlowId": 121,
+        "playerId": 203897,
+        "playerName": "Zach LaVine",
+        "team": "Minnesota Timberwolves",
+        "playType": "Reel",
+        "date": "2016-02-13",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "4240": [
+      {
+        "id": "ff63146e-c071-4f96-8d05-eca69b58e6e0",
+        "flowId": 4240,
+        "set": "Run It Back: Origins 2014-19",
+        "setId": "b3ba922b-8f72-40f5-b034-438238a2487c",
+        "setFlowId": 120,
+        "playerId": 1627732,
+        "playerName": "Ben Simmons",
+        "team": "Philadelphia 76ers",
+        "playType": "Handles",
+        "date": "2018-04-19",
+        "series": 4,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4239": [
+      {
+        "id": "db3a07c3-0935-49ca-92e6-a5fbaa0ad741",
+        "flowId": 4239,
+        "set": "Run It Back: Origins 2014-19",
+        "setId": "b3ba922b-8f72-40f5-b034-438238a2487c",
+        "setFlowId": 120,
+        "playerId": 1626157,
+        "playerName": "Karl-Anthony Towns",
+        "team": "Minnesota Timberwolves",
+        "playType": "Layup",
+        "date": "2016-04-06",
+        "series": 4,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4238": [
+      {
+        "id": "8c417c8f-93b5-450d-91e9-7ec87913b543",
+        "flowId": 4238,
+        "set": "Run It Back: Origins 2014-19",
+        "setId": "b3ba922b-8f72-40f5-b034-438238a2487c",
+        "setFlowId": 120,
+        "playerId": 203952,
+        "playerName": "Andrew Wiggins",
+        "team": "Minnesota Timberwolves",
+        "playType": "Dunk",
+        "date": "2015-02-21",
+        "series": 4,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4237": [
+      {
+        "id": "9dcdc29e-3db2-4f66-bf8a-a5250722c2b7",
+        "flowId": 4237,
+        "set": "Run It Back: Origins 2014-19",
+        "setId": "b3ba922b-8f72-40f5-b034-438238a2487c",
+        "setFlowId": 120,
+        "playerId": 1627763,
+        "playerName": "Malcolm Brogdon",
+        "team": "Milwaukee Bucks",
+        "playType": "Dunk",
+        "date": "2016-12-21",
+        "series": 4,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4236": [
+      {
+        "id": "a2476d19-d0a5-4152-a2e3-142d23b7cadd",
+        "flowId": 4236,
+        "set": "Run It Back: Origins 2014-19",
+        "setId": "b3ba922b-8f72-40f5-b034-438238a2487c",
+        "setFlowId": 120,
+        "playerId": 1628389,
+        "playerName": "Bam Adebayo",
+        "team": "Miami Heat",
+        "playType": "Block",
+        "date": "2018-02-10",
+        "series": 4,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4235": [
+      {
+        "id": "d11ec666-85bf-4da1-a571-3b06b01322b1",
+        "flowId": 4235,
+        "set": "Run It Back: Origins 2014-19",
+        "setId": "b3ba922b-8f72-40f5-b034-438238a2487c",
+        "setFlowId": 120,
+        "playerId": 1627742,
+        "playerName": "Brandon Ingram",
+        "team": "Los Angeles Lakers",
+        "playType": "Dunk",
+        "date": "2017-04-12",
+        "series": 4,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4233": [
+      {
+        "id": "dd68454c-6692-4ddf-91e9-3a24345b10ad",
+        "flowId": 4233,
+        "set": "Run It Back: Origins 2014-19",
+        "setId": "b3ba922b-8f72-40f5-b034-438238a2487c",
+        "setFlowId": 120,
+        "playerId": 1628983,
+        "playerName": "Shai Gilgeous-Alexander",
+        "team": "Los Angeles Clippers",
+        "playType": "Layup",
+        "date": "2018-12-22",
+        "series": 4,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4232": [
+      {
+        "id": "395e0ce7-3277-4a61-a596-2aef531938f8",
+        "flowId": 4232,
+        "set": "Run It Back: Origins 2014-19",
+        "setId": "b3ba922b-8f72-40f5-b034-438238a2487c",
+        "setFlowId": 120,
+        "playerId": 203999,
+        "playerName": "Nikola Joki\u0107",
+        "team": "Denver Nuggets",
+        "playType": "Assist",
+        "date": "2016-01-22",
+        "series": 4,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4231": [
+      {
+        "id": "dcfd3b16-8244-4ba0-b89b-b9cf73863ce3",
+        "flowId": 4231,
+        "set": "Run It Back: Origins 2014-19",
+        "setId": "b3ba922b-8f72-40f5-b034-438238a2487c",
+        "setFlowId": 120,
+        "playerId": 1627750,
+        "playerName": "Jamal Murray",
+        "team": "Denver Nuggets",
+        "playType": "Dunk",
+        "date": "2017-01-20",
+        "series": 4,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4230": [
+      {
+        "id": "059af2ae-e208-411e-b244-b8a904b0d83e",
+        "flowId": 4230,
+        "set": "Run It Back: Origins 2014-19",
+        "setId": "b3ba922b-8f72-40f5-b034-438238a2487c",
+        "setFlowId": 120,
+        "playerId": 1628374,
+        "playerName": "Lauri Markkanen",
+        "team": "Chicago Bulls",
+        "playType": "Dunk",
+        "date": "2018-02-28",
+        "series": 4,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4229": [
+      {
+        "id": "09296398-b8f4-4435-b38c-6c8cd9b0a14c",
+        "flowId": 4229,
+        "set": "Run It Back: Origins 2014-19",
+        "setId": "b3ba922b-8f72-40f5-b034-438238a2487c",
+        "setFlowId": 120,
+        "playerId": 1629027,
+        "playerName": "Trae Young",
+        "team": "Atlanta Hawks",
+        "playType": "Jump Shot",
+        "date": "2019-03-31",
+        "series": 4,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4228": [
+      {
+        "id": "d8c390bd-a5a0-482b-b903-f984150207c2",
+        "flowId": 4228,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 202322,
+        "playerName": "John Wall",
+        "team": "Washington Wizards",
+        "playType": "Layup",
+        "date": "2014-12-25",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4227": [
+      {
+        "id": "3f4a836b-8467-4eb7-9320-1aedd5e6ee7a",
+        "flowId": 4227,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 202324,
+        "playerName": "Derrick Favors",
+        "team": "Utah Jazz",
+        "playType": "Layup",
+        "date": "2015-12-06",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4226": [
+      {
+        "id": "9ca2b41c-3635-44f6-ac64-a8dac3d1de7c",
+        "flowId": 4226,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 200768,
+        "playerName": "Kyle Lowry",
+        "team": "Toronto Raptors",
+        "playType": "Jump Shot",
+        "date": "2016-02-27",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4225": [
+      {
+        "id": "db09cebf-f32a-4e54-b70a-8ce0ac9df49e",
+        "flowId": 4225,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 1627741,
+        "playerName": "Buddy Hield",
+        "team": "Sacramento Kings",
+        "playType": "Jump Shot",
+        "date": "2017-02-24",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4224": [
+      {
+        "id": "0b6952fc-7a01-4523-b8d6-8c477e43933f",
+        "flowId": 4224,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 200746,
+        "playerName": "LaMarcus Aldridge",
+        "team": "Portland Trail Blazers",
+        "playType": "Layup",
+        "date": "2014-12-20",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4223": [
+      {
+        "id": "9756b3dc-31ea-4f21-8778-73bf3c30832d",
+        "flowId": 4223,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 1629014,
+        "playerName": "Anfernee Simons",
+        "team": "Portland Trail Blazers",
+        "playType": "Assist",
+        "date": "2019-04-11",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4222": [
+      {
+        "id": "fa17ff00-93f9-4e9d-a141-e3080bc96ac6",
+        "flowId": 4222,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 1629028,
+        "playerName": "Deandre Ayton",
+        "team": "Phoenix Suns",
+        "playType": "Dunk",
+        "date": "2018-12-14",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4220": [
+      {
+        "id": "1541b4e6-4275-4435-98f9-4f22c25027e1",
+        "flowId": 4220,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 201586,
+        "playerName": "Serge Ibaka",
+        "team": "Oklahoma City Thunder",
+        "playType": "3 Pointer",
+        "date": "2016-04-17",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4219": [
+      {
+        "id": "56b0d61b-3408-4cb0-88a3-05832a2f19fb",
+        "flowId": 4219,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 201937,
+        "playerName": "Ricky Rubio",
+        "team": "Minnesota Timberwolves",
+        "playType": "Assist",
+        "date": "2017-03-25",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4218": [
+      {
+        "id": "407564a6-f278-4cfc-b199-91c8d001f7ec",
+        "flowId": 4218,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 1627884,
+        "playerName": "Derrick Jones Jr.",
+        "team": "Miami Heat",
+        "playType": "Dunk",
+        "date": "2019-03-10",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4217": [
+      {
+        "id": "9685d8f3-1e0a-41cc-b487-3061d484a556",
+        "flowId": 4217,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 2754,
+        "playerName": "Tony Allen",
+        "team": "Memphis Grizzlies",
+        "playType": "Steal",
+        "date": "2015-05-06",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4216": [
+      {
+        "id": "a6c0db68-7886-4725-9221-c53e468fb3c7",
+        "flowId": 4216,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 2440,
+        "playerName": "Matt Barnes",
+        "team": "Memphis Grizzlies",
+        "playType": "3 Pointer",
+        "date": "2015-12-10",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4215": [
+      {
+        "id": "c8313d84-acc0-4e5b-8a90-66702eb612a2",
+        "flowId": 4215,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 1628398,
+        "playerName": "Kyle Kuzma",
+        "team": "Los Angeles Lakers",
+        "playType": "Assist",
+        "date": "2018-01-24",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4214": [
+      {
+        "id": "60273d49-b971-4033-97e0-3f227382468a",
+        "flowId": 4214,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 1628404,
+        "playerName": "Josh Hart",
+        "team": "Los Angeles Lakers",
+        "playType": "3 Pointer",
+        "date": "2018-04-12",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4213": [
+      {
+        "id": "5745cb70-7e84-405e-a0f2-4a5701dda4ea",
+        "flowId": 4213,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 2403,
+        "playerName": "Nen\u00ea",
+        "team": "Houston Rockets",
+        "playType": "Layup",
+        "date": "2017-04-23",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4212": [
+      {
+        "id": "33b4161b-90ba-4028-9eb7-96af6ab709b8",
+        "flowId": 4212,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 203915,
+        "playerName": "Spencer Dinwiddie",
+        "team": "Detroit Pistons",
+        "playType": "Dunk",
+        "date": "2015-03-01",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4211": [
+      {
+        "id": "82e87ea0-71a2-4712-947c-967cf64820bd",
+        "flowId": 4211,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 101109,
+        "playerName": "Raymond Felton",
+        "team": "Dallas Mavericks",
+        "playType": "Layup",
+        "date": "2016-04-19",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4210": [
+      {
+        "id": "1e31b62c-c939-495b-a948-b8af4bf4723c",
+        "flowId": 4210,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 1628973,
+        "playerName": "Jalen Brunson",
+        "team": "Dallas Mavericks",
+        "playType": "Jump Shot",
+        "date": "2019-03-13",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4209": [
+      {
+        "id": "90c78f48-6051-405a-8f7a-e0606b2e560c",
+        "flowId": 4209,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 101114,
+        "playerName": "Deron Williams",
+        "team": "Dallas Mavericks",
+        "playType": "3 Pointer",
+        "date": "2016-01-06",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4208": [
+      {
+        "id": "e46838cc-75aa-4281-a3f8-a76f70a9374a",
+        "flowId": 4208,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 201567,
+        "playerName": "Kevin Love",
+        "team": "Cleveland Cavaliers",
+        "playType": "3 Pointer",
+        "date": "2016-05-08",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4207": [
+      {
+        "id": "609c609e-414e-4ff7-9361-4896066c66e2",
+        "flowId": 4207,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 1629012,
+        "playerName": "Collin Sexton",
+        "team": "Cleveland Cavaliers",
+        "playType": "Dunk",
+        "date": "2019-03-09",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4206": [
+      {
+        "id": "9326f94c-ade9-4883-ad53-b14d3ffdb591",
+        "flowId": 4206,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 1628370,
+        "playerName": "Malik Monk",
+        "team": "Charlotte Hornets",
+        "playType": "Layup",
+        "date": "2018-04-04",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4205": [
+      {
+        "id": "bf853bff-4703-4139-bb0e-19a12d9b0691",
+        "flowId": 4205,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 203935,
+        "playerName": "Marcus Smart",
+        "team": "Boston Celtics",
+        "playType": "Layup",
+        "date": "2015-04-04",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4204": [
+      {
+        "id": "e2c05e2f-9194-403a-ad95-ccb9aa4d873f",
+        "flowId": 4204,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 201143,
+        "playerName": "Al Horford",
+        "team": "Boston Celtics",
+        "playType": "Jump Shot",
+        "date": "2018-02-04",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4203": [
+      {
+        "id": "0777ee55-67bf-4e6a-9f20-635fdd90b03d",
+        "flowId": 4203,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 202711,
+        "playerName": "Bojan Bogdanovi\u0107",
+        "team": "Brooklyn Nets",
+        "playType": "Handles",
+        "date": "2014-11-04",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4202": [
+      {
+        "id": "57f6b975-0c9c-472a-838d-374c36eadd90",
+        "flowId": 4202,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 200794,
+        "playerName": "Paul Millsap",
+        "team": "Atlanta Hawks",
+        "playType": "Jump Shot",
+        "date": "2017-04-09",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4201": [
+      {
+        "id": "11273de7-7fd4-4df3-a68e-21993b2f10b3",
+        "flowId": 4201,
+        "set": "WNBA 2023",
+        "setId": "486e96fc-8c5d-4083-8036-981a713c0c71",
+        "setFlowId": 111,
+        "playerId": 1641642,
+        "playerName": "Li Meng",
+        "team": "Washington Mystics",
+        "playType": "3 Pointer",
+        "date": "2023-06-17",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4200": [
+      {
+        "id": "cf03e84f-9081-4635-9513-a7e0c53f619c",
+        "flowId": 4200,
+        "set": "WNBA Metallic Gold LE 2023",
+        "setId": "6dd49975-d778-4dbe-9930-921b5e801d27",
+        "setFlowId": 112,
+        "playerId": 203399,
+        "playerName": "Elena Delle Donne",
+        "team": "Washington Mystics",
+        "playType": "Jump Shot",
+        "date": "2023-08-26",
+        "series": 4,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4199": [
+      {
+        "id": "3f61a153-085e-4a14-a41d-dc08d2a386be",
+        "flowId": 4199,
+        "set": "WNBA Metallic Gold LE 2023",
+        "setId": "6dd49975-d778-4dbe-9930-921b5e801d27",
+        "setFlowId": 112,
+        "playerId": 1629496,
+        "playerName": "Ezi Magbegor",
+        "team": "Seattle Storm",
+        "playType": "Layup",
+        "date": "2023-08-06",
+        "series": 4,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4198": [
+      {
+        "id": "aafa2d97-16e1-432f-8764-1b2c5876ef37",
+        "flowId": 4198,
+        "set": "WNBA Metallic Gold LE 2023",
+        "setId": "6dd49975-d778-4dbe-9930-921b5e801d27",
+        "setFlowId": 112,
+        "playerId": 203398,
+        "playerName": "Brittney Griner",
+        "team": "Phoenix Mercury",
+        "playType": "Dunk",
+        "date": "2023-07-09",
+        "series": 4,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4197": [
+      {
+        "id": "c55a3057-52f5-4c1d-a4d5-4a2fb6196979",
+        "flowId": 4197,
+        "set": "WNBA Metallic Gold LE 2023",
+        "setId": "6dd49975-d778-4dbe-9930-921b5e801d27",
+        "setFlowId": 112,
+        "playerId": 202664,
+        "playerName": "Courtney Vandersloot",
+        "team": "New York Liberty",
+        "playType": "Layup",
+        "date": "2023-06-25",
+        "series": 4,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4196": [
+      {
+        "id": "da7cb522-9fe8-4494-b316-317040ae7b48",
+        "flowId": 4196,
+        "set": "WNBA Metallic Gold LE 2023",
+        "setId": "6dd49975-d778-4dbe-9930-921b5e801d27",
+        "setFlowId": 112,
+        "playerId": 1641649,
+        "playerName": "Diamond Miller",
+        "team": "Minnesota Lynx",
+        "playType": "Layup",
+        "date": "2023-07-02",
+        "series": 4,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4195": [
+      {
+        "id": "31e3bcd6-af3a-46a9-8465-6cb1507dc8dd",
+        "flowId": 4195,
+        "set": "WNBA Metallic Gold LE 2023",
+        "setId": "6dd49975-d778-4dbe-9930-921b5e801d27",
+        "setFlowId": 112,
+        "playerId": 1628276,
+        "playerName": "Kelsey Plum",
+        "team": "Las Vegas Aces",
+        "playType": "Reel",
+        "date": "2023-07-09",
+        "series": 4,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4194": [
+      {
+        "id": "24588914-aa28-4b81-9c89-d73f5792f550",
+        "flowId": 4194,
+        "set": "WNBA Metallic Gold LE 2023",
+        "setId": "6dd49975-d778-4dbe-9930-921b5e801d27",
+        "setFlowId": 112,
+        "playerId": 1628932,
+        "playerName": "A'ja Wilson",
+        "team": "Las Vegas Aces",
+        "playType": "Reel",
+        "date": "2023-08-22",
+        "series": 4,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4193": [
+      {
+        "id": "5479bd3d-93d0-4b2c-b659-eef69a0aac76",
+        "flowId": 4193,
+        "set": "WNBA Metallic Gold LE 2023",
+        "setId": "6dd49975-d778-4dbe-9930-921b5e801d27",
+        "setFlowId": 112,
+        "playerId": 203014,
+        "playerName": "Nneka Ogwumike",
+        "team": "Los Angeles Sparks",
+        "playType": "Assist",
+        "date": "2023-08-06",
+        "series": 4,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4192": [
+      {
+        "id": "a3b887db-e814-43c1-a70e-53800a0bfdb0",
+        "flowId": 4192,
+        "set": "WNBA Metallic Gold LE 2023",
+        "setId": "6dd49975-d778-4dbe-9930-921b5e801d27",
+        "setFlowId": 112,
+        "playerId": 1641648,
+        "playerName": "Aliyah Boston",
+        "team": "Indiana Fever",
+        "playType": "3 Pointer",
+        "date": "2023-07-12",
+        "series": 4,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4191": [
+      {
+        "id": "213eb297-cc52-4ce3-9057-b6c3fb45712c",
+        "flowId": 4191,
+        "set": "WNBA Metallic Gold LE 2023",
+        "setId": "6dd49975-d778-4dbe-9930-921b5e801d27",
+        "setFlowId": 112,
+        "playerId": 1630149,
+        "playerName": "Satou Sabally",
+        "team": "Dallas Wings",
+        "playType": "Reel",
+        "date": "2023-09-01",
+        "series": 4,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4190": [
+      {
+        "id": "152ac696-5c9e-49aa-851c-78c06873401e",
+        "flowId": 4190,
+        "set": "WNBA Metallic Gold LE 2023",
+        "setId": "6dd49975-d778-4dbe-9930-921b5e801d27",
+        "setFlowId": 112,
+        "playerId": 1627674,
+        "playerName": "Kahleah Copper",
+        "team": "Chicago Sky",
+        "playType": "Layup",
+        "date": "2023-08-30",
+        "series": 4,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4189": [
+      {
+        "id": "69055ffa-d12d-4845-a602-21143cd1a66d",
+        "flowId": 4189,
+        "set": "WNBA Metallic Gold LE 2023",
+        "setId": "6dd49975-d778-4dbe-9930-921b5e801d27",
+        "setFlowId": 112,
+        "playerId": 1628277,
+        "playerName": "Allisha Gray",
+        "team": "Atlanta Dream",
+        "playType": "Layup",
+        "date": "2023-06-30",
+        "series": 4,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4188": [
+      {
+        "id": "89b55588-8837-4276-a47e-3033f7dbb746",
+        "flowId": 4188,
+        "set": "WNBA 2023",
+        "setId": "486e96fc-8c5d-4083-8036-981a713c0c71",
+        "setFlowId": 111,
+        "playerId": 1628279,
+        "playerName": "Brittney Sykes",
+        "team": "Washington Mystics",
+        "playType": "Layup",
+        "date": "2023-09-10",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4187": [
+      {
+        "id": "d60f5a96-9479-4bbf-8b84-eb624c79fec9",
+        "flowId": 4187,
+        "set": "WNBA 2023",
+        "setId": "486e96fc-8c5d-4083-8036-981a713c0c71",
+        "setFlowId": 111,
+        "playerId": 1628244,
+        "playerName": "Sami Whitcomb",
+        "team": "Seattle Storm",
+        "playType": "3 Pointer",
+        "date": "2023-08-27",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4186": [
+      {
+        "id": "81542407-5fc0-4053-97bd-4daf68b33852",
+        "flowId": 4186,
+        "set": "WNBA 2023",
+        "setId": "486e96fc-8c5d-4083-8036-981a713c0c71",
+        "setFlowId": 111,
+        "playerId": 204319,
+        "playerName": "Jewell Loyd",
+        "team": "Seattle Storm",
+        "playType": "3 Pointer",
+        "date": "2023-09-10",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4185": [
+      {
+        "id": "a7cd8a56-f426-4136-b678-6e191cfc7900",
+        "flowId": 4185,
+        "set": "WNBA 2023",
+        "setId": "486e96fc-8c5d-4083-8036-981a713c0c71",
+        "setFlowId": 111,
+        "playerId": 1629482,
+        "playerName": "Sophie Cunningham",
+        "team": "Phoenix Mercury",
+        "playType": "3 Pointer",
+        "date": "2023-08-09",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4184": [
+      {
+        "id": "a45daca2-da92-483d-adc5-b5275e50dc62",
+        "flowId": 4184,
+        "set": "WNBA 2023",
+        "setId": "486e96fc-8c5d-4083-8036-981a713c0c71",
+        "setFlowId": 111,
+        "playerId": 100940,
+        "playerName": "Diana Taurasi",
+        "team": "Phoenix Mercury",
+        "playType": "Assist",
+        "date": "2023-05-26",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4183": [
+      {
+        "id": "5547217c-add6-4ed9-b65d-493247e97852",
+        "flowId": 4183,
+        "set": "WNBA 2023",
+        "setId": "486e96fc-8c5d-4083-8036-981a713c0c71",
+        "setFlowId": 111,
+        "playerId": 1629477,
+        "playerName": "Sabrina Ionescu",
+        "team": "New York Liberty",
+        "playType": "3 Pointer",
+        "date": "2023-09-07",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4182": [
+      {
+        "id": "de152516-98a1-4ac0-9409-750d55cb5199",
+        "flowId": 4182,
+        "set": "WNBA 2023",
+        "setId": "486e96fc-8c5d-4083-8036-981a713c0c71",
+        "setFlowId": 111,
+        "playerId": 1627668,
+        "playerName": "Breanna Stewart",
+        "team": "New York Liberty",
+        "playType": "Jump Shot",
+        "date": "2023-05-31",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4181": [
+      {
+        "id": "dd1975a0-913a-4124-8b6e-b033f37e4c34",
+        "flowId": 4181,
+        "set": "WNBA 2023",
+        "setId": "486e96fc-8c5d-4083-8036-981a713c0c71",
+        "setFlowId": 111,
+        "playerId": 1628263,
+        "playerName": "Lindsay Allen",
+        "team": "Minnesota Lynx",
+        "playType": "Assist",
+        "date": "2023-06-23",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4180": [
+      {
+        "id": "8a01b712-a09e-4a30-b9e0-ff4bd97212f4",
+        "flowId": 4180,
+        "set": "WNBA 2023",
+        "setId": "486e96fc-8c5d-4083-8036-981a713c0c71",
+        "setFlowId": 111,
+        "playerId": 203825,
+        "playerName": "Kayla McBride",
+        "team": "Minnesota Lynx",
+        "playType": "Jump Shot",
+        "date": "2023-07-27",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4179": [
+      {
+        "id": "badbdb87-aca4-4e0d-b9f0-9136f55ddf25",
+        "flowId": 4179,
+        "set": "WNBA 2023",
+        "setId": "486e96fc-8c5d-4083-8036-981a713c0c71",
+        "setFlowId": 111,
+        "playerId": 1629498,
+        "playerName": "Jackie Young",
+        "team": "Las Vegas Aces",
+        "playType": "3 Pointer",
+        "date": "2023-08-02",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4178": [
+      {
+        "id": "b7d3210a-a2b7-4b97-ab5e-f42718c9ff5f",
+        "flowId": 4178,
+        "set": "WNBA 2023",
+        "setId": "486e96fc-8c5d-4083-8036-981a713c0c71",
+        "setFlowId": 111,
+        "playerId": 203833,
+        "playerName": "Chelsea Gray",
+        "team": "Las Vegas Aces",
+        "playType": "Jump Shot",
+        "date": "2023-08-18",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4177": [
+      {
+        "id": "ac0ac96b-56f4-4c52-bf2c-214c7ac7ba7f",
+        "flowId": 4177,
+        "set": "WNBA 2023",
+        "setId": "486e96fc-8c5d-4083-8036-981a713c0c71",
+        "setFlowId": 111,
+        "playerId": 203406,
+        "playerName": "Layshia Clarendon",
+        "team": "Los Angeles Sparks",
+        "playType": "Assist",
+        "date": "2023-08-08",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4176": [
+      {
+        "id": "991c1e88-ccf6-4ccb-9d30-56bd9bff499a",
+        "flowId": 4176,
+        "set": "WNBA 2023",
+        "setId": "486e96fc-8c5d-4083-8036-981a713c0c71",
+        "setFlowId": 111,
+        "playerId": 1628886,
+        "playerName": "Jordin Canada",
+        "team": "Los Angeles Sparks",
+        "playType": "3 Pointer",
+        "date": "2023-07-26",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4175": [
+      {
+        "id": "bd657671-f54a-4a03-b4d8-8efb8fd8bf3f",
+        "flowId": 4175,
+        "set": "WNBA 2023",
+        "setId": "486e96fc-8c5d-4083-8036-981a713c0c71",
+        "setFlowId": 111,
+        "playerId": 1631086,
+        "playerName": "Lexie Hull",
+        "team": "Indiana Fever",
+        "playType": "Layup",
+        "date": "2023-07-09",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4174": [
+      {
+        "id": "65ade3a1-b877-4363-9195-c1aeaf20d6ab",
+        "flowId": 4174,
+        "set": "WNBA 2023",
+        "setId": "486e96fc-8c5d-4083-8036-981a713c0c71",
+        "setFlowId": 111,
+        "playerId": 204365,
+        "playerName": "Erica Wheeler",
+        "team": "Indiana Fever",
+        "playType": "Assist",
+        "date": "2023-08-10",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4173": [
+      {
+        "id": "95436dbb-eecc-4165-a692-21aa52a439f3",
+        "flowId": 4173,
+        "set": "WNBA 2023",
+        "setId": "486e96fc-8c5d-4083-8036-981a713c0c71",
+        "setFlowId": 111,
+        "playerId": 203827,
+        "playerName": "Natasha Howard",
+        "team": "Dallas Wings",
+        "playType": "Layup",
+        "date": "2023-08-05",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4172": [
+      {
+        "id": "291b419b-c3fb-4b6f-8463-710824e05330",
+        "flowId": 4172,
+        "set": "WNBA 2023",
+        "setId": "486e96fc-8c5d-4083-8036-981a713c0c71",
+        "setFlowId": 111,
+        "playerId": 1629481,
+        "playerName": "Arike Ogunbowale",
+        "team": "Dallas Wings",
+        "playType": "Steal",
+        "date": "2023-08-03",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4171": [
+      {
+        "id": "9cedbc1f-a3a6-4645-9326-37ddb3a6d4c2",
+        "flowId": 4171,
+        "set": "WNBA 2023",
+        "setId": "486e96fc-8c5d-4083-8036-981a713c0c71",
+        "setFlowId": 111,
+        "playerId": 1631135,
+        "playerName": "Olivia Nelson-Ododa",
+        "team": "Connecticut Sun",
+        "playType": "Layup",
+        "date": "2023-08-04",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4170": [
+      {
+        "id": "e2e18851-f790-4ea1-b1dc-e9f52aed9acf",
+        "flowId": 4170,
+        "set": "WNBA 2023",
+        "setId": "486e96fc-8c5d-4083-8036-981a713c0c71",
+        "setFlowId": 111,
+        "playerId": 201886,
+        "playerName": "DeWanna Bonner",
+        "team": "Connecticut Sun",
+        "playType": "3 Pointer",
+        "date": "2023-06-21",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4169": [
+      {
+        "id": "92174264-859c-444a-8ba8-71fb1b3f8a60",
+        "flowId": 4169,
+        "set": "WNBA 2023",
+        "setId": "486e96fc-8c5d-4083-8036-981a713c0c71",
+        "setFlowId": 111,
+        "playerId": 1629497,
+        "playerName": "Marina Mabrey",
+        "team": "Chicago Sky",
+        "playType": "Jump Shot",
+        "date": "2023-08-06",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4168": [
+      {
+        "id": "b98696e6-0c3e-4c14-b1da-0181ac0e161d",
+        "flowId": 4168,
+        "set": "WNBA 2023",
+        "setId": "486e96fc-8c5d-4083-8036-981a713c0c71",
+        "setFlowId": 111,
+        "playerId": 204322,
+        "playerName": "Elizabeth Williams",
+        "team": "Chicago Sky",
+        "playType": "Block",
+        "date": "2023-08-05",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4167": [
+      {
+        "id": "4ad80946-b555-4f60-9969-0e76c5fa55b5",
+        "flowId": 4167,
+        "set": "WNBA 2023",
+        "setId": "486e96fc-8c5d-4083-8036-981a713c0c71",
+        "setFlowId": 111,
+        "playerId": 204323,
+        "playerName": "Cheyenne Parker",
+        "team": "Atlanta Dream",
+        "playType": "Steal",
+        "date": "2023-08-18",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4166": [
+      {
+        "id": "e5c113bf-9e4d-4a23-a4de-493b35f88555",
+        "flowId": 4166,
+        "set": "WNBA 2023",
+        "setId": "486e96fc-8c5d-4083-8036-981a713c0c71",
+        "setFlowId": 111,
+        "playerId": 1629476,
+        "playerName": "AD Durr",
+        "team": "Atlanta Dream",
+        "playType": "3 Pointer",
+        "date": "2023-07-25",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4164": [
+      {
+        "id": "b893e322-fdbd-420f-8d57-a8645dda19f1",
+        "flowId": 4164,
+        "set": "The Anthology: Steph Curry",
+        "setId": "3a880c8b-c080-4cc7-b393-b3a83dd54a35",
+        "setFlowId": 114,
+        "playerId": 201939,
+        "playerName": "Steph Curry",
+        "team": "Golden State Warriors",
+        "playType": "3 Pointer",
+        "date": "2015-04-24",
+        "series": 4,
+        "tier": "Unknown",
+        "badges": []
+      }
+    ],
+    "4163": [
+      {
+        "id": "74118804-c223-4f3b-9eaa-370e9d808359",
+        "flowId": 4163,
+        "set": "The Anthology: LeBron James",
+        "setId": "378eca01-3f24-40d4-b108-349af607dcf2",
+        "setFlowId": 100,
+        "playerId": 2544,
+        "playerName": "LeBron James",
+        "team": "Cleveland Cavaliers",
+        "playType": "Jump Shot",
+        "date": "2018-05-06",
+        "series": 4,
+        "tier": "Unknown",
+        "badges": []
+      }
+    ],
+    "4162": [
+      {
+        "id": "c2b9dc6a-5234-42c6-9bed-4088984eea97",
+        "flowId": 4162,
+        "set": "The Anthology: Kevin Durant",
+        "setId": "5edb821c-d808-4615-a6e7-7631aa15f7b0",
+        "setFlowId": 109,
+        "playerId": 201142,
+        "playerName": "Kevin Durant",
+        "team": "Golden State Warriors",
+        "playType": "Reel",
+        "date": "2019-04-27",
+        "series": 4,
+        "tier": "Unknown",
+        "badges": []
+      }
+    ],
+    "4161": [
+      {
+        "id": "7030bf2e-209f-4af0-9ecb-c12f932ed865",
+        "flowId": 4161,
+        "set": "Rise With Us 2023",
+        "setId": "29f30415-d739-4b0d-a71a-24d736d0f003",
+        "setFlowId": 107,
+        "playerId": 100940,
+        "playerName": "Diana Taurasi",
+        "team": "Phoenix Mercury",
+        "playType": "3 Pointer",
+        "date": "2023-08-04",
+        "series": 4,
+        "tier": "Fandom",
+        "badges": [
+          "CR"
+        ]
+      }
+    ],
+    "4160": [
+      {
+        "id": "021bce29-856a-4b40-8968-ce7c2ade6cc1",
+        "flowId": 4160,
+        "set": "Rise With Us 2023",
+        "setId": "29f30415-d739-4b0d-a71a-24d736d0f003",
+        "setFlowId": 107,
+        "playerId": 1629546,
+        "playerName": "Marine Johann\u00e8s",
+        "team": "New York Liberty",
+        "playType": "3 Pointer",
+        "date": "2023-08-16",
+        "series": 4,
+        "tier": "Fandom",
+        "badges": [
+          "CR"
+        ]
+      }
+    ],
+    "4159": [
+      {
+        "id": "251c2f12-d632-42d3-bde0-264617778276",
+        "flowId": 4159,
+        "set": "Rise With Us 2023",
+        "setId": "29f30415-d739-4b0d-a71a-24d736d0f003",
+        "setFlowId": 107,
+        "playerId": 1627673,
+        "playerName": "Jonquel Jones",
+        "team": "New York Liberty",
+        "playType": "Block",
+        "date": "2023-08-16",
+        "series": 4,
+        "tier": "Fandom",
+        "badges": [
+          "CR"
+        ]
+      }
+    ],
+    "4158": [
+      {
+        "id": "93d452e3-5894-433f-bc91-1fc280528979",
+        "flowId": 4158,
+        "set": "2022-23 Season Rewind",
+        "setId": "60f77380-f3d9-4cab-849d-d88f1c4cec72",
+        "setFlowId": 118,
+        "playerId": null,
+        "playerName": "Washington Wizards",
+        "team": "Washington Wizards",
+        "playType": "Reel",
+        "date": "",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": [
+          "TEAM",
+          "CR"
+        ]
+      }
+    ],
+    "4157": [
+      {
+        "id": "7d1bcdd3-d17a-4b73-b310-6da5a29b3c0e",
+        "flowId": 4157,
+        "set": "2022-23 Season Rewind",
+        "setId": "60f77380-f3d9-4cab-849d-d88f1c4cec72",
+        "setFlowId": 118,
+        "playerId": null,
+        "playerName": "Utah Jazz",
+        "team": "Utah Jazz",
+        "playType": "Reel",
+        "date": "",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": [
+          "TEAM",
+          "CR"
+        ]
+      }
+    ],
+    "4156": [
+      {
+        "id": "542797db-430e-45f5-826a-63f4bee7ed05",
+        "flowId": 4156,
+        "set": "2022-23 Season Rewind",
+        "setId": "60f77380-f3d9-4cab-849d-d88f1c4cec72",
+        "setFlowId": 118,
+        "playerId": null,
+        "playerName": "Toronto Raptors",
+        "team": "Toronto Raptors",
+        "playType": "Reel",
+        "date": "",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": [
+          "TEAM",
+          "CR"
+        ]
+      }
+    ],
+    "4155": [
+      {
+        "id": "61a6dfaf-34f4-4789-be21-9619b4af1ff6",
+        "flowId": 4155,
+        "set": "2022-23 Season Rewind",
+        "setId": "60f77380-f3d9-4cab-849d-d88f1c4cec72",
+        "setFlowId": 118,
+        "playerId": null,
+        "playerName": "San Antonio Spurs",
+        "team": "San Antonio Spurs",
+        "playType": "Reel",
+        "date": "",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": [
+          "TEAM",
+          "CR"
+        ]
+      }
+    ],
+    "4154": [
+      {
+        "id": "427880b0-9285-4614-bb60-abc57785f4ea",
+        "flowId": 4154,
+        "set": "2022-23 Season Rewind",
+        "setId": "60f77380-f3d9-4cab-849d-d88f1c4cec72",
+        "setFlowId": 118,
+        "playerId": null,
+        "playerName": "Sacramento Kings",
+        "team": "Sacramento Kings",
+        "playType": "Reel",
+        "date": "",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": [
+          "TEAM",
+          "CR"
+        ]
+      }
+    ],
+    "4153": [
+      {
+        "id": "0d89ac73-8bd9-4bce-be9a-cd4ba9e1a17b",
+        "flowId": 4153,
+        "set": "2022-23 Season Rewind",
+        "setId": "60f77380-f3d9-4cab-849d-d88f1c4cec72",
+        "setFlowId": 118,
+        "playerId": null,
+        "playerName": "Portland Trail Blazers",
+        "team": "Portland Trail Blazers",
+        "playType": "Reel",
+        "date": "",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": [
+          "TEAM",
+          "CR"
+        ]
+      }
+    ],
+    "4152": [
+      {
+        "id": "66e447d7-ff42-47ea-9473-c6c802742c11",
+        "flowId": 4152,
+        "set": "2022-23 Season Rewind",
+        "setId": "60f77380-f3d9-4cab-849d-d88f1c4cec72",
+        "setFlowId": 118,
+        "playerId": null,
+        "playerName": "Phoenix Suns",
+        "team": "Phoenix Suns",
+        "playType": "Reel",
+        "date": "",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": [
+          "TEAM",
+          "CR"
+        ]
+      }
+    ],
+    "4151": [
+      {
+        "id": "8c2668e2-0486-4117-8c83-a22cfed334ea",
+        "flowId": 4151,
+        "set": "2022-23 Season Rewind",
+        "setId": "60f77380-f3d9-4cab-849d-d88f1c4cec72",
+        "setFlowId": 118,
+        "playerId": null,
+        "playerName": "Philadelphia 76ers",
+        "team": "Philadelphia 76ers",
+        "playType": "Reel",
+        "date": "",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": [
+          "TEAM",
+          "CR"
+        ]
+      }
+    ],
+    "4150": [
+      {
+        "id": "5a561892-80d5-4c28-b614-d5e9534f6ec3",
+        "flowId": 4150,
+        "set": "2022-23 Season Rewind",
+        "setId": "60f77380-f3d9-4cab-849d-d88f1c4cec72",
+        "setFlowId": 118,
+        "playerId": null,
+        "playerName": "Orlando Magic",
+        "team": "Orlando Magic",
+        "playType": "Reel",
+        "date": "",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": [
+          "TEAM",
+          "CR"
+        ]
+      }
+    ],
+    "4149": [
+      {
+        "id": "f8d240b1-751f-479e-b380-a3386d16bc2b",
+        "flowId": 4149,
+        "set": "2022-23 Season Rewind",
+        "setId": "60f77380-f3d9-4cab-849d-d88f1c4cec72",
+        "setFlowId": 118,
+        "playerId": null,
+        "playerName": "Oklahoma City Thunder",
+        "team": "Oklahoma City Thunder",
+        "playType": "Reel",
+        "date": "",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": [
+          "TEAM",
+          "CR"
+        ]
+      }
+    ],
+    "4148": [
+      {
+        "id": "dae66a61-5bfc-440a-8545-94d44d613874",
+        "flowId": 4148,
+        "set": "2022-23 Season Rewind",
+        "setId": "60f77380-f3d9-4cab-849d-d88f1c4cec72",
+        "setFlowId": 118,
+        "playerId": null,
+        "playerName": "New York Knicks",
+        "team": "New York Knicks",
+        "playType": "Reel",
+        "date": "",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": [
+          "TEAM",
+          "CR"
+        ]
+      }
+    ],
+    "4147": [
+      {
+        "id": "c866ee4d-65ae-4921-9ea1-bd420eed9089",
+        "flowId": 4147,
+        "set": "2022-23 Season Rewind",
+        "setId": "60f77380-f3d9-4cab-849d-d88f1c4cec72",
+        "setFlowId": 118,
+        "playerId": null,
+        "playerName": "New Orleans Pelicans",
+        "team": "New Orleans Pelicans",
+        "playType": "Reel",
+        "date": "",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": [
+          "TEAM",
+          "CR"
+        ]
+      }
+    ],
+    "4146": [
+      {
+        "id": "2fa5fce4-2ea9-4d09-adc9-ca3caa73116e",
+        "flowId": 4146,
+        "set": "2022-23 Season Rewind",
+        "setId": "60f77380-f3d9-4cab-849d-d88f1c4cec72",
+        "setFlowId": 118,
+        "playerId": null,
+        "playerName": "Minnesota Timberwolves",
+        "team": "Minnesota Timberwolves",
+        "playType": "Reel",
+        "date": "",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": [
+          "TEAM",
+          "CR"
+        ]
+      }
+    ],
+    "4145": [
+      {
+        "id": "938cfda0-ef39-4f5b-90de-c26bbe9430ef",
+        "flowId": 4145,
+        "set": "2022-23 Season Rewind",
+        "setId": "60f77380-f3d9-4cab-849d-d88f1c4cec72",
+        "setFlowId": 118,
+        "playerId": null,
+        "playerName": "Milwaukee Bucks",
+        "team": "Milwaukee Bucks",
+        "playType": "Reel",
+        "date": "",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": [
+          "TEAM",
+          "CR"
+        ]
+      }
+    ],
+    "4144": [
+      {
+        "id": "9a982e8e-e88e-46e8-a2b0-5a97290dfb8f",
+        "flowId": 4144,
+        "set": "2022-23 Season Rewind",
+        "setId": "60f77380-f3d9-4cab-849d-d88f1c4cec72",
+        "setFlowId": 118,
+        "playerId": null,
+        "playerName": "Miami Heat",
+        "team": "Miami Heat",
+        "playType": "Reel",
+        "date": "",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": [
+          "TEAM",
+          "CR"
+        ]
+      }
+    ],
+    "4143": [
+      {
+        "id": "4c005a68-fbb4-4bae-85d6-53bd06a39229",
+        "flowId": 4143,
+        "set": "2022-23 Season Rewind",
+        "setId": "60f77380-f3d9-4cab-849d-d88f1c4cec72",
+        "setFlowId": 118,
+        "playerId": null,
+        "playerName": "Memphis Grizzlies",
+        "team": "Memphis Grizzlies",
+        "playType": "Reel",
+        "date": "",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": [
+          "TEAM",
+          "CR"
+        ]
+      }
+    ],
+    "4142": [
+      {
+        "id": "2ad23de8-14a3-47af-8c21-fcf208f80a97",
+        "flowId": 4142,
+        "set": "2022-23 Season Rewind",
+        "setId": "60f77380-f3d9-4cab-849d-d88f1c4cec72",
+        "setFlowId": 118,
+        "playerId": null,
+        "playerName": "Los Angeles Lakers",
+        "team": "Los Angeles Lakers",
+        "playType": "Reel",
+        "date": "",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": [
+          "TEAM",
+          "CR"
+        ]
+      }
+    ],
+    "4141": [
+      {
+        "id": "312496a0-f888-4fe5-bdac-bb76817717c2",
+        "flowId": 4141,
+        "set": "2022-23 Season Rewind",
+        "setId": "60f77380-f3d9-4cab-849d-d88f1c4cec72",
+        "setFlowId": 118,
+        "playerId": null,
+        "playerName": "LA Clippers",
+        "team": "LA Clippers",
+        "playType": "Reel",
+        "date": "",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": [
+          "TEAM",
+          "CR"
+        ]
+      }
+    ],
+    "4140": [
+      {
+        "id": "82cfe372-121d-488f-9ebb-73082dbd4e0c",
+        "flowId": 4140,
+        "set": "2022-23 Season Rewind",
+        "setId": "60f77380-f3d9-4cab-849d-d88f1c4cec72",
+        "setFlowId": 118,
+        "playerId": null,
+        "playerName": "Indiana Pacers",
+        "team": "Indiana Pacers",
+        "playType": "Reel",
+        "date": "",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": [
+          "TEAM",
+          "CR"
+        ]
+      }
+    ],
+    "4139": [
+      {
+        "id": "d790cc17-ecdb-4540-9cde-fceefa70cf92",
+        "flowId": 4139,
+        "set": "2022-23 Season Rewind",
+        "setId": "60f77380-f3d9-4cab-849d-d88f1c4cec72",
+        "setFlowId": 118,
+        "playerId": null,
+        "playerName": "Houston Rockets",
+        "team": "Houston Rockets",
+        "playType": "Reel",
+        "date": "",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": [
+          "TEAM",
+          "CR"
+        ]
+      }
+    ],
+    "4138": [
+      {
+        "id": "97e54000-3acd-411d-9e24-034d151695b5",
+        "flowId": 4138,
+        "set": "2022-23 Season Rewind",
+        "setId": "60f77380-f3d9-4cab-849d-d88f1c4cec72",
+        "setFlowId": 118,
+        "playerId": null,
+        "playerName": "Golden State Warriors",
+        "team": "Golden State Warriors",
+        "playType": "Reel",
+        "date": "",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": [
+          "TEAM",
+          "CR"
+        ]
+      }
+    ],
+    "4137": [
+      {
+        "id": "6f12db60-f57d-4e73-94a0-6e8d3f8ef54e",
+        "flowId": 4137,
+        "set": "2022-23 Season Rewind",
+        "setId": "60f77380-f3d9-4cab-849d-d88f1c4cec72",
+        "setFlowId": 118,
+        "playerId": null,
+        "playerName": "Detroit Pistons",
+        "team": "Detroit Pistons",
+        "playType": "Reel",
+        "date": "",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": [
+          "TEAM",
+          "CR"
+        ]
+      }
+    ],
+    "4136": [
+      {
+        "id": "9ec73cb6-d5c8-426c-bf69-ed33d84c3944",
+        "flowId": 4136,
+        "set": "2022-23 Season Rewind",
+        "setId": "60f77380-f3d9-4cab-849d-d88f1c4cec72",
+        "setFlowId": 118,
+        "playerId": null,
+        "playerName": "Denver Nuggets",
+        "team": "Denver Nuggets",
+        "playType": "Reel",
+        "date": "",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": [
+          "TEAM",
+          "CR",
+          "CY"
+        ]
+      }
+    ],
+    "4135": [
+      {
+        "id": "5f6bb0c5-8170-4849-9693-8118d5d75c60",
+        "flowId": 4135,
+        "set": "2022-23 Season Rewind",
+        "setId": "60f77380-f3d9-4cab-849d-d88f1c4cec72",
+        "setFlowId": 118,
+        "playerId": null,
+        "playerName": "Dallas Mavericks",
+        "team": "Dallas Mavericks",
+        "playType": "Reel",
+        "date": "",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": [
+          "TEAM",
+          "CR"
+        ]
+      }
+    ],
+    "4134": [
+      {
+        "id": "f184a16c-b01a-4580-8f77-670dd9a52858",
+        "flowId": 4134,
+        "set": "2022-23 Season Rewind",
+        "setId": "60f77380-f3d9-4cab-849d-d88f1c4cec72",
+        "setFlowId": 118,
+        "playerId": null,
+        "playerName": "Cleveland Cavaliers",
+        "team": "Cleveland Cavaliers",
+        "playType": "Reel",
+        "date": "",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": [
+          "TEAM",
+          "CR"
+        ]
+      }
+    ],
+    "4133": [
+      {
+        "id": "cd81805b-414e-4e27-bf7c-510548083b22",
+        "flowId": 4133,
+        "set": "2022-23 Season Rewind",
+        "setId": "60f77380-f3d9-4cab-849d-d88f1c4cec72",
+        "setFlowId": 118,
+        "playerId": null,
+        "playerName": "Chicago Bulls",
+        "team": "Chicago Bulls",
+        "playType": "Reel",
+        "date": "",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": [
+          "TEAM",
+          "CR"
+        ]
+      }
+    ],
+    "4132": [
+      {
+        "id": "e8a06659-9d1f-4c72-bde7-cc45af097cfe",
+        "flowId": 4132,
+        "set": "2022-23 Season Rewind",
+        "setId": "60f77380-f3d9-4cab-849d-d88f1c4cec72",
+        "setFlowId": 118,
+        "playerId": null,
+        "playerName": "Charlotte Hornets",
+        "team": "Charlotte Hornets",
+        "playType": "Reel",
+        "date": "",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": [
+          "TEAM",
+          "CR"
+        ]
+      }
+    ],
+    "4131": [
+      {
+        "id": "c653d74c-1dcd-4c36-814a-e55d8a181099",
+        "flowId": 4131,
+        "set": "2022-23 Season Rewind",
+        "setId": "60f77380-f3d9-4cab-849d-d88f1c4cec72",
+        "setFlowId": 118,
+        "playerId": null,
+        "playerName": "Brooklyn Nets",
+        "team": "Brooklyn Nets",
+        "playType": "Reel",
+        "date": "",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": [
+          "TEAM",
+          "CR"
+        ]
+      }
+    ],
+    "4130": [
+      {
+        "id": "ef59e9d2-48e0-4eac-97ab-829466784020",
+        "flowId": 4130,
+        "set": "2022-23 Season Rewind",
+        "setId": "60f77380-f3d9-4cab-849d-d88f1c4cec72",
+        "setFlowId": 118,
+        "playerId": null,
+        "playerName": "Boston Celtics",
+        "team": "Boston Celtics",
+        "playType": "Reel",
+        "date": "",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": [
+          "TEAM",
+          "CR"
+        ]
+      }
+    ],
+    "4129": [
+      {
+        "id": "6f8da151-d029-4dd2-af64-d2aee74db42b",
+        "flowId": 4129,
+        "set": "2022-23 Season Rewind",
+        "setId": "60f77380-f3d9-4cab-849d-d88f1c4cec72",
+        "setFlowId": 118,
+        "playerId": null,
+        "playerName": "Atlanta Hawks",
+        "team": "Atlanta Hawks",
+        "playType": "Reel",
+        "date": "",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": [
+          "TEAM",
+          "CR"
+        ]
+      }
+    ],
+    "4128": [
+      {
+        "id": "0c27272d-2fbd-47df-a027-eb5a04203203",
+        "flowId": 4128,
+        "set": "The Anthology: Larry Bird",
+        "setId": "b32d535a-8e69-401d-a303-872b84c9f77b",
+        "setFlowId": 117,
+        "playerId": 1449,
+        "playerName": "Larry Bird",
+        "team": "Boston Celtics",
+        "playType": "Layup",
+        "date": "1981-05-05",
+        "series": 4,
+        "tier": "Unknown",
+        "badges": [
+          "CY"
+        ]
+      }
+    ],
+    "4127": [
+      {
+        "id": "490cb225-c665-4e0d-a96c-7734a3c8c0fd",
+        "flowId": 4127,
+        "set": "The Anthology: Larry Bird",
+        "setId": "b32d535a-8e69-401d-a303-872b84c9f77b",
+        "setFlowId": 117,
+        "playerId": 1449,
+        "playerName": "Larry Bird",
+        "team": "Boston Celtics",
+        "playType": "Reel",
+        "date": "1986-02-08",
+        "series": 4,
+        "tier": "Unknown",
+        "badges": [
+          "MVP",
+          "CY"
+        ]
+      }
+    ],
+    "4126": [
+      {
+        "id": "e2c30136-e81e-4c13-81c8-f0dc55055975",
+        "flowId": 4126,
+        "set": "The Anthology: Larry Bird",
+        "setId": "b32d535a-8e69-401d-a303-872b84c9f77b",
+        "setFlowId": 117,
+        "playerId": 1449,
+        "playerName": "Larry Bird",
+        "team": "Boston Celtics",
+        "playType": "Reel",
+        "date": "1986-06-08",
+        "series": 4,
+        "tier": "Unknown",
+        "badges": [
+          "CY",
+          "MVP"
+        ]
+      }
+    ],
+    "4125": [
+      {
+        "id": "4cd8d5fd-f14f-42a4-9045-36202de8f46f",
+        "flowId": 4125,
+        "set": "The Anthology: Larry Bird",
+        "setId": "b32d535a-8e69-401d-a303-872b84c9f77b",
+        "setFlowId": 117,
+        "playerId": 1449,
+        "playerName": "Larry Bird",
+        "team": "Boston Celtics",
+        "playType": "Reel",
+        "date": "1986-02-14",
+        "series": 4,
+        "tier": "Unknown",
+        "badges": [
+          "CY",
+          "MVP"
+        ]
+      }
+    ],
+    "4124": [
+      {
+        "id": "6a899d7d-706d-4bbc-b81d-8cb9d97b324c",
+        "flowId": 4124,
+        "set": "The Anthology: Larry Bird",
+        "setId": "b32d535a-8e69-401d-a303-872b84c9f77b",
+        "setFlowId": 117,
+        "playerId": 1449,
+        "playerName": "Larry Bird",
+        "team": "Boston Celtics",
+        "playType": "Reel",
+        "date": "1985-03-12",
+        "series": 4,
+        "tier": "Unknown",
+        "badges": [
+          "MVP"
+        ]
+      }
+    ],
+    "4123": [
+      {
+        "id": "0a324a2d-4c8c-4519-a9ec-6a673bfebc56",
+        "flowId": 4123,
+        "set": "WNBA 2023",
+        "setId": "486e96fc-8c5d-4083-8036-981a713c0c71",
+        "setFlowId": 111,
+        "playerId": 1629479,
+        "playerName": "Teaira McCowan",
+        "team": "Dallas Wings",
+        "playType": "Block",
+        "date": "2023-07-08",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4122": [
+      {
+        "id": "13e70d1e-207f-4cbe-9311-2131674ee965",
+        "flowId": 4122,
+        "set": "WNBA 2023",
+        "setId": "486e96fc-8c5d-4083-8036-981a713c0c71",
+        "setFlowId": 111,
+        "playerId": 1630149,
+        "playerName": "Satou Sabally",
+        "team": "Dallas Wings",
+        "playType": "Assist",
+        "date": "2023-07-29",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4121": [
+      {
+        "id": "d9517b27-d94c-447c-bbe4-25fe8f3abad8",
+        "flowId": 4121,
+        "set": "WNBA 2023",
+        "setId": "486e96fc-8c5d-4083-8036-981a713c0c71",
+        "setFlowId": 111,
+        "playerId": 1631009,
+        "playerName": "Rhyne Howard",
+        "team": "Atlanta Dream",
+        "playType": "Layup",
+        "date": "2023-06-18",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4120": [
+      {
+        "id": "fedffa2c-11df-4d51-b676-be3af59b2737",
+        "flowId": 4120,
+        "set": "WNBA 2023",
+        "setId": "486e96fc-8c5d-4083-8036-981a713c0c71",
+        "setFlowId": 111,
+        "playerId": 204296,
+        "playerName": "Rebecca Allen",
+        "team": "Connecticut Sun",
+        "playType": "Block",
+        "date": "2023-07-20",
+        "series": 4,
+        "tier": "Common",
+        "badges": [
+          "TSD"
+        ]
+      }
+    ],
+    "4119": [
+      {
+        "id": "bfc3bbd8-1e9f-4093-b9fa-46772b086e87",
+        "flowId": 4119,
+        "set": "WNBA 2023",
+        "setId": "486e96fc-8c5d-4083-8036-981a713c0c71",
+        "setFlowId": 111,
+        "playerId": 1631055,
+        "playerName": "Nyara Sabally",
+        "team": "New York Liberty",
+        "playType": "Layup",
+        "date": "2023-05-27",
+        "series": 4,
+        "tier": "Common",
+        "badges": [
+          "TSD",
+          "RM",
+          "RY",
+          "RP"
+        ]
+      }
+    ],
+    "4118": [
+      {
+        "id": "9e8181d2-9445-4d91-8623-8890cd60534a",
+        "flowId": 4118,
+        "set": "WNBA 2023",
+        "setId": "486e96fc-8c5d-4083-8036-981a713c0c71",
+        "setFlowId": 111,
+        "playerId": 203014,
+        "playerName": "Nneka Ogwumike",
+        "team": "Los Angeles Sparks",
+        "playType": "Jump Shot",
+        "date": "2023-06-24",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4117": [
+      {
+        "id": "521a58dd-7356-493b-b74c-d64f0b8f9ceb",
+        "flowId": 4117,
+        "set": "WNBA 2023",
+        "setId": "486e96fc-8c5d-4083-8036-981a713c0c71",
+        "setFlowId": 111,
+        "playerId": 1628269,
+        "playerName": "Nia Coffey",
+        "team": "Atlanta Dream",
+        "playType": "Block",
+        "date": "2023-07-30",
+        "series": 4,
+        "tier": "Common",
+        "badges": [
+          "TSD"
+        ]
+      }
+    ],
+    "4116": [
+      {
+        "id": "5fdea038-283d-4e27-b488-4aef9c2b343b",
+        "flowId": 4116,
+        "set": "WNBA 2023",
+        "setId": "486e96fc-8c5d-4083-8036-981a713c0c71",
+        "setFlowId": 111,
+        "playerId": 1629567,
+        "playerName": "Natisha Hiedeman",
+        "team": "Connecticut Sun",
+        "playType": "3 Pointer",
+        "date": "2023-07-20",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4115": [
+      {
+        "id": "5faf2c60-6bd8-409c-affe-128ef1fcb717",
+        "flowId": 4115,
+        "set": "WNBA 2023",
+        "setId": "486e96fc-8c5d-4083-8036-981a713c0c71",
+        "setFlowId": 111,
+        "playerId": 204333,
+        "playerName": "Natasha Cloud",
+        "team": "Washington Mystics",
+        "playType": "Assist",
+        "date": "2023-07-23",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4114": [
+      {
+        "id": "929f41bf-5525-424b-b648-3d34bbed7749",
+        "flowId": 4114,
+        "set": "WNBA 2023",
+        "setId": "486e96fc-8c5d-4083-8036-981a713c0c71",
+        "setFlowId": 111,
+        "playerId": 1629483,
+        "playerName": "Napheesa Collier",
+        "team": "Minnesota Lynx",
+        "playType": "Jump Shot",
+        "date": "2023-06-28",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4113": [
+      {
+        "id": "164224a3-5c15-4870-b661-621bf9d411e5",
+        "flowId": 4113,
+        "set": "WNBA 2023",
+        "setId": "486e96fc-8c5d-4083-8036-981a713c0c71",
+        "setFlowId": 111,
+        "playerId": 1629571,
+        "playerName": "Morgan Bertsch",
+        "team": "Chicago Sky",
+        "playType": "Layup",
+        "date": "2023-05-20",
+        "series": 4,
+        "tier": "Common",
+        "badges": [
+          "TSD",
+          "RM",
+          "RY",
+          "RP"
+        ]
+      }
+    ],
+    "4112": [
+      {
+        "id": "37ea62b2-f256-4dad-8b21-edd183893f56",
+        "flowId": 4112,
+        "set": "WNBA 2023",
+        "setId": "486e96fc-8c5d-4083-8036-981a713c0c71",
+        "setFlowId": 111,
+        "playerId": 1630446,
+        "playerName": "Michaela Onyenwere",
+        "team": "Phoenix Mercury",
+        "playType": "Block",
+        "date": "2023-06-30",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4111": [
+      {
+        "id": "18fe1046-99b1-4aa8-b369-d09ff5dc5628",
+        "flowId": 4111,
+        "set": "WNBA 2023",
+        "setId": "486e96fc-8c5d-4083-8036-981a713c0c71",
+        "setFlowId": 111,
+        "playerId": 1629484,
+        "playerName": "Megan Gustafson",
+        "team": "Phoenix Mercury",
+        "playType": "Hook Shot",
+        "date": "2023-07-21",
+        "series": 4,
+        "tier": "Common",
+        "badges": [
+          "TSD"
+        ]
+      }
+    ],
+    "4110": [
+      {
+        "id": "3a69f6dd-32cd-45df-a30f-492088efc554",
+        "flowId": 4110,
+        "set": "WNBA 2023",
+        "setId": "486e96fc-8c5d-4083-8036-981a713c0c71",
+        "setFlowId": 111,
+        "playerId": 1628909,
+        "playerName": "Kelsey Mitchell",
+        "team": "Indiana Fever",
+        "playType": "Handles",
+        "date": "2023-06-13",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4109": [
+      {
+        "id": "b8ae6139-1e61-43ac-9dc8-f20012dcf789",
+        "flowId": 4109,
+        "set": "WNBA 2023",
+        "setId": "486e96fc-8c5d-4083-8036-981a713c0c71",
+        "setFlowId": 111,
+        "playerId": 1627674,
+        "playerName": "Kahleah Copper",
+        "team": "Chicago Sky",
+        "playType": "Layup",
+        "date": "2023-06-07",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4108": [
+      {
+        "id": "bf392e63-9d37-4fcf-a15d-7f76150a643c",
+        "flowId": 4108,
+        "set": "WNBA 2023",
+        "setId": "486e96fc-8c5d-4083-8036-981a713c0c71",
+        "setFlowId": 111,
+        "playerId": 1627673,
+        "playerName": "Jonquel Jones",
+        "team": "New York Liberty",
+        "playType": "Assist",
+        "date": "2023-07-12",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4107": [
+      {
+        "id": "e52c28a9-dafd-4f7d-9cd8-4c65dc30afcb",
+        "flowId": 4107,
+        "set": "WNBA 2023",
+        "setId": "486e96fc-8c5d-4083-8036-981a713c0c71",
+        "setFlowId": 111,
+        "playerId": 1641658,
+        "playerName": "Grace Berger",
+        "team": "Indiana Fever",
+        "playType": "Layup",
+        "date": "2023-05-21",
+        "series": 4,
+        "tier": "Common",
+        "badges": [
+          "TSD",
+          "RM",
+          "RY",
+          "RP"
+        ]
+      }
+    ],
+    "4106": [
+      {
+        "id": "bb4af4b0-6a4d-404b-ac6b-f328378fbf62",
+        "flowId": 4106,
+        "set": "WNBA 2023",
+        "setId": "486e96fc-8c5d-4083-8036-981a713c0c71",
+        "setFlowId": 111,
+        "playerId": 1641675,
+        "playerName": "Dulcy Fankam Mendjiadeu",
+        "team": "Seattle Storm",
+        "playType": "Block",
+        "date": "2023-07-08",
+        "series": 4,
+        "tier": "Common",
+        "badges": [
+          "TSD",
+          "RM",
+          "RY"
+        ]
+      }
+    ],
+    "4105": [
+      {
+        "id": "08a5c998-195b-43a2-9d04-a7f5cc9131a4",
+        "flowId": 4105,
+        "set": "WNBA 2023",
+        "setId": "486e96fc-8c5d-4083-8036-981a713c0c71",
+        "setFlowId": 111,
+        "playerId": 204324,
+        "playerName": "Dearica Hamby",
+        "team": "Los Angeles Sparks",
+        "playType": "Steal",
+        "date": "2023-06-14",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4104": [
+      {
+        "id": "452d6989-2c6e-446b-82e4-51d5b30cd31f",
+        "flowId": 4104,
+        "set": "WNBA 2023",
+        "setId": "486e96fc-8c5d-4083-8036-981a713c0c71",
+        "setFlowId": 111,
+        "playerId": 202664,
+        "playerName": "Courtney Vandersloot",
+        "team": "New York Liberty",
+        "playType": "Layup",
+        "date": "2023-08-02",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4103": [
+      {
+        "id": "2a5492e3-d0d7-4fe9-8293-9577afe7bd0f",
+        "flowId": 4103,
+        "set": "WNBA 2023",
+        "setId": "486e96fc-8c5d-4083-8036-981a713c0c71",
+        "setFlowId": 111,
+        "playerId": 1628878,
+        "playerName": "Ariel Atkins",
+        "team": "Washington Mystics",
+        "playType": "Jump Shot",
+        "date": "2023-07-07",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4102": [
+      {
+        "id": "3f16097b-e77a-42d7-a661-f2adefd4fc54",
+        "flowId": 4102,
+        "set": "WNBA 2023",
+        "setId": "486e96fc-8c5d-4083-8036-981a713c0c71",
+        "setFlowId": 111,
+        "playerId": 203826,
+        "playerName": "Alyssa Thomas",
+        "team": "Connecticut Sun",
+        "playType": "Assist",
+        "date": "2023-08-01",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4101": [
+      {
+        "id": "d31c34e3-f0be-45e2-977a-5d57b0262e20",
+        "flowId": 4101,
+        "set": "WNBA 2023",
+        "setId": "486e96fc-8c5d-4083-8036-981a713c0c71",
+        "setFlowId": 111,
+        "playerId": 202252,
+        "playerName": "Alysha Clark",
+        "team": "Las Vegas Aces",
+        "playType": "Assist",
+        "date": "2023-07-13",
+        "series": 4,
+        "tier": "Common",
+        "badges": [
+          "TSD"
+        ]
+      }
+    ],
+    "4100": [
+      {
+        "id": "f77a50e2-5b06-4455-b4c2-d46d48543113",
+        "flowId": 4100,
+        "set": "WNBA 2023",
+        "setId": "486e96fc-8c5d-4083-8036-981a713c0c71",
+        "setFlowId": 111,
+        "playerId": 1628932,
+        "playerName": "A'ja Wilson",
+        "team": "Las Vegas Aces",
+        "playType": "Layup",
+        "date": "2023-07-30",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4099": [
+      {
+        "id": "f6a2f7a4-ada7-4747-adf2-25601e2501ee",
+        "flowId": 4099,
+        "set": "Rise With Us 2023",
+        "setId": "29f30415-d739-4b0d-a71a-24d736d0f003",
+        "setFlowId": 107,
+        "playerId": 1629477,
+        "playerName": "Sabrina Ionescu",
+        "team": "New York Liberty",
+        "playType": "Reel",
+        "date": "2023-07-14",
+        "series": 4,
+        "tier": "Fandom",
+        "badges": []
+      }
+    ],
+    "4098": [
+      {
+        "id": "fda1a13c-dca1-479a-b2c7-b3a7e6f3f660",
+        "flowId": 4098,
+        "set": "Rise With Us 2023",
+        "setId": "29f30415-d739-4b0d-a71a-24d736d0f003",
+        "setFlowId": 107,
+        "playerId": 1628277,
+        "playerName": "Allisha Gray",
+        "team": "Team Wilson",
+        "playType": "3 Pointer",
+        "date": "2023-07-16",
+        "series": 4,
+        "tier": "Fandom",
+        "badges": []
+      }
+    ],
+    "4097": [
+      {
+        "id": "e17d5c51-bd38-4dda-9de7-1cd0a9b18be3",
+        "flowId": 4097,
+        "set": "Rise With Us 2023",
+        "setId": "29f30415-d739-4b0d-a71a-24d736d0f003",
+        "setFlowId": 107,
+        "playerId": 204319,
+        "playerName": "Jewell Loyd",
+        "team": "Team Stewart",
+        "playType": "3 Pointer",
+        "date": "2023-07-16",
+        "series": 4,
+        "tier": "Fandom",
+        "badges": []
+      }
+    ],
     "4096": [
       {
         "id": "27bc3d55-8703-41b3-8988-0ff8437be895",
@@ -654,7 +4230,7 @@
         "playType": "Handles",
         "date": "2015-03-08",
         "series": 4,
-        "tier": "Legendary",
+        "tier": "Unknown",
         "badges": []
       }
     ],
@@ -4072,6 +7648,44 @@
         ]
       }
     ],
+    "3834": [
+      {
+        "id": "9717601d-53ec-4be8-ace7-1c6cfca8e5c4",
+        "flowId": 3834,
+        "set": "Spotlight Series",
+        "setId": "c9d6ebe1-e92f-440a-852b-513adc91640a",
+        "setFlowId": 92,
+        "playerId": 1628991,
+        "playerName": "Jaren Jackson Jr.",
+        "team": "Memphis Grizzlies",
+        "playType": "Dunk",
+        "date": "2023-02-08",
+        "series": 4,
+        "tier": "Common",
+        "badges": [
+          "CR"
+        ]
+      }
+    ],
+    "3833": [
+      {
+        "id": "b9944340-17db-413c-8dd0-01b29296de51",
+        "flowId": 3833,
+        "set": "Spotlight Series",
+        "setId": "c9d6ebe1-e92f-440a-852b-513adc91640a",
+        "setFlowId": 92,
+        "playerId": 203897,
+        "playerName": "Zach LaVine",
+        "team": "Chicago Bulls",
+        "playType": "3 Pointer",
+        "date": "2023-04-02",
+        "series": 4,
+        "tier": "Common",
+        "badges": [
+          "CR"
+        ]
+      }
+    ],
     "3832": [
       {
         "id": "875d2070-8a5d-4c0d-87b4-ded1e30fb5a2",
@@ -6666,6 +10280,25 @@
         "tier": "Common",
         "badges": [
           "CY"
+        ]
+      }
+    ],
+    "3678": [
+      {
+        "id": "055dd599-e15a-4f5c-90a0-b7832061cfb6",
+        "flowId": 3678,
+        "set": "Spotlight Series",
+        "setId": "c9d6ebe1-e92f-440a-852b-513adc91640a",
+        "setFlowId": 92,
+        "playerId": 1629027,
+        "playerName": "Trae Young",
+        "team": "Atlanta Hawks",
+        "playType": "Steal",
+        "date": "2023-03-17",
+        "series": 4,
+        "tier": "Common",
+        "badges": [
+          "CR"
         ]
       }
     ],

@@ -24,7 +24,7 @@ TOKEN = os.getenv('DISCORD_TOKEN')
 GUILD = os.getenv('DISCORD_GUILD')
 
 intents = discord.Intents.default()
-intents.message_content = True
+# intents.message_content = True
 intents.members = True
 intents.typing = False
 intents.presences = False
