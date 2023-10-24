@@ -8,7 +8,8 @@ from topshot.ts_info import TS_ENRICHED_PLAYS, TS_PLAYER_ID_MOMENTS
 TIERS = {'Common': 2, 'Fandom': 5, 'Rare': 10, 'Legendary': 25}
 TYPES = {
     'Dunk': 'dunk', '3 Pointer': 'three_pointer', 'Assist': 'assist', 'Steal': 'steal', 'Block': 'block_shot',
-    'Jump Shot': 'jump_shot', 'Hook Shot': 'hook_shot', 'Handles': 'handle', 'Layup': 'layup', 'Reel': 'reel'
+    'Jump Shot': 'jump_shot', 'Hook Shot': 'hook_shot', 'Handles': 'handle', 'Layup': 'layup', 'Reel': 'reel',
+    'Redemption': 'dunk'
 }
 
 
@@ -113,10 +114,12 @@ def build_vgn_collection(plays):
         count = plays[play_id]
         play = TS_ENRICHED_PLAYS[play_id]
 
-        player_id = play['playerID']
+        player_id = play['playerId']
 
-        if player_id != 0:
-            if not TS_PLAYER_ID_MOMENTS[player_id]['isNBA']:
+        if player_id is not None and player_id != 0:
+            if player_id not in TS_PLAYER_ID_MOMENTS \
+                    or 'isNBA' not in TS_PLAYER_ID_MOMENTS[player_id] \
+                    or not TS_PLAYER_ID_MOMENTS[player_id]['isNBA']:
                 continue
 
             if player_id not in player_collections:
@@ -139,10 +142,11 @@ def build_vgn_collection(plays):
             points = TIERS[play['tier']] * count
             player_collections[player_id][TYPES[play['playType']]] += points
 
-            if play['RM'] or play['RY'] or play['RP'] or play['CY'] or play['MVP'] or play['CR']:
-                player_collections[player_id]['badge'] += points
-            if play['TSD']:
-                player_collections[player_id]['debut'] += points
+            for badge in play['badges']:
+                if badge != 'TSD':
+                    player_collections[player_id]['badge'] += points
+                else:
+                    player_collections[player_id]['debut'] += points
         else:
             # TODO build team collection
             pass

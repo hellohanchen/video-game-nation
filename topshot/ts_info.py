@@ -36,7 +36,7 @@ def load_team_data():
 def load_player_moment_info():
     result = {}
 
-    with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "result/player_moment_info.json"), 'r') as player_file:
+    with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "moments/resource/player_moments.json"), 'r') as player_file:
         loaded = json.load(player_file)
 
         for player_id in loaded:
@@ -52,16 +52,17 @@ def load_player_moment_info():
 
 
 def load_enriched_plays():
-    with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "result/otm_enriched_plays_fixed.json"), 'r') as plays_file:
+    with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "moments/resource/enriched_plays.json"), 'r') as plays_file:
         loaded = json.load(plays_file)
 
         result = {}
 
-        for play in loaded['plays']:
-            if play['flowID'] in result:
+        for play_id in loaded['plays']:
+            play = loaded['plays'][play_id][0]
+            if play['flowId'] in result:
                 continue
 
-            result[play['flowID']] = play
+            result[play['flowId']] = play
 
         return result
 

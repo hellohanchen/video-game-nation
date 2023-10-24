@@ -67,7 +67,7 @@ async def upsert_collection(context):
     if not isinstance(context.channel, discord.channel.DMChannel):
         return
 
-    vgn_user = get_user(context.message.author)
+    vgn_user = get_user(context.message.author.id)
 
     if vgn_user is None:
         await context.channel.send("Account not found, contact admin for registration.")
