@@ -78,20 +78,23 @@ class LineupProvider:
             self
         )
 
-    def get_lineup(self, user_id):
-        return self.lineups[user_id]
-
-    def check_lineup(self, user_id):
+    def get_or_create_lineup(self, user_id):
         if user_id not in self.lineups:
             self.__create_lineup(user_id)
 
-        return self.get_lineup(user_id)
+        return self.lineups[user_id]
 
     def load_user_collection(self, user_id):
-        collection = get_collections([user_id])
+        collection = get_collections([user_id], self.player_ids)
 
         if collection is not None:
             self.collections[user_id] = collection[user_id]
+
+    def get_user_collection(self, user_id):
+        if user_id not in self.collections:
+            self.load_user_collection(user_id)
+
+        return self.collections.get(user_id)
 
     def get_opponent(self, player_id):
         return self.team_to_opponent[self.player_to_team[player_id]]
@@ -100,7 +103,7 @@ class LineupProvider:
         score = compute_vgn_score(player, collection)
         return \
             "***{}.*** **{} +{:.2f}v {}#{}** vs *{}*\n" \
-            "{:.2f}pts {:.2f}reb {:.2f}ast {:.2f}stl {:.2f}blk\n".format(
+            "{:.2f}p {:.2f}r {:.2f}a {:.2f}s {:.2f}b\n".format(
                 player['index'],
                 player['full_name'],
                 score,
@@ -127,6 +130,15 @@ class LineupProvider:
             messages.append(message)
 
         return messages
+
+    def formatted_10_players(self, page):
+        start = (page - 1) * 10 + 1
+        end = len(self.players) if page * 10 > len(self.players) else page * 10
+
+        message = ""
+        for player_id in self.player_ids[start-1:end]:
+            message += self.players[player_id]['formatted']
+        return message
 
     def formatted_team_players(self, team):
         if team not in self.team_to_players:
@@ -194,10 +206,7 @@ class LineupProvider:
             )
 
     def detailed_players(self, players, user_id):
-        if user_id not in self.collections:
-            self.load_user_collection(user_id)
-
-        collection = self.collections.get(user_id)
+        collection = self.get_user_collection(user_id)
         if collection is None:
             return ["Fail to load user collection."]
 
@@ -216,6 +225,22 @@ class LineupProvider:
             messages.append(message)
 
         return messages
+
+    def detailed_player_by_id(self, player_id, user_id):
+        collection = self.get_user_collection(user_id)
+        if collection is None:
+            return "Fail to load user collection."
+        return self.detailed_player(self.players[player_id], collection.get(player_id))
+
+    def get_coming_games(self):
+        return NBA_PROVIDER.get_games_on_date(self.coming_game_date).items()
+
+    def formatted_schedule(self):
+        message = "🏀 ***{} GAMES***\n".format(self.coming_game_date)
+        for game_id, game in self.get_coming_games():
+            message += f"{game['awayTeam']} at {game['homeTeam']}\n"
+
+        return message
 
 
 class Lineup:
@@ -252,19 +277,13 @@ class Lineup:
         message += "**🎽 f)** *Bench*   {}\n".format(self.formatted_lineup_player(5))
         message += "**🎽 g)** *Bench*   {}\n".format(self.formatted_lineup_player(6))
         message += "**🎽 h)** *Bench*   {}\n".format(self.formatted_lineup_player(7))
-        message += "Ⅰ) **.player** command get all players\n"
-        message += "Ⅱ) **.team <teamName>** command check players for team\n"
-        message += "Ⅲ) **.add <playerId> <pos>** command to add player to position\n"
-        message += "Ⅳ) **.remove <pos>** command to remove player to position\n"
-        message += "Ⅴ) **.swap <pos1> <pos2>** command to swap 2 positions\n"
-        message += "Ⅵ) **.submit** command to submit your lineup\n"
         return message
 
     def formatted_lineup_player(self, z_idx_pos):
         player_id = self.player_ids[z_idx_pos]
 
         if player_id is None:
-            return ".add <playerId> {}".format(chr(97 + z_idx_pos))
+            return "---"
         else:
             player = self.provider.players[player_id]
             return "**{}** ***+{:.2f}v {}*** vs *{}*".format(
@@ -274,11 +293,11 @@ class Lineup:
                 self.provider.get_opponent(player_id)
             )
 
-    def add_player(self, o_idx_player, z_idx_pos):
-        if o_idx_player < 1 or o_idx_player > len(self.provider.player_ids):
+    def add_player_by_idx(self, player_idx, pos_idx):
+        if player_idx < 1 or player_idx > len(self.provider.player_ids):
             return "Player index should be between [1, {}]".format(len(self.provider.player_ids))
 
-        player_id = self.provider.player_ids[o_idx_player - 1]
+        player_id = self.provider.player_ids[player_idx - 1]
         if player_id in self.player_ids:
             return "Player **{}. {}** is already in the lineup.".format(
                 self.provider.players[player_id]['index'],
@@ -287,13 +306,13 @@ class Lineup:
 
         message = ""
 
-        previous_player = self.player_ids[z_idx_pos]
-        if previous_player is not None:
+        player_to_place = self.player_ids[pos_idx]
+        if player_to_place is not None:
             message += "Removed **{}. {}**. ".format(
-                self.provider.players[previous_player]['index'],
-                self.provider.players[previous_player]['full_name'],
+                self.provider.players[player_to_place]['index'],
+                self.provider.players[player_to_place]['full_name'],
             )
-        self.player_ids[z_idx_pos] = player_id
+        self.player_ids[pos_idx] = player_id
 
         successful, _ = upsert_lineup(
             (self.user_id, self.game_date, self.player_ids[0], self.player_ids[1], self.player_ids[2],
@@ -301,22 +320,22 @@ class Lineup:
         )
         if successful:
             message += "Added **{}. {}** to position {}. ".format(
-                self.provider.players[self.player_ids[z_idx_pos]]['index'],
-                self.provider.players[self.player_ids[z_idx_pos]]['full_name'],
-                chr(97 + z_idx_pos)
+                self.provider.players[self.player_ids[pos_idx]]['index'],
+                self.provider.players[self.player_ids[pos_idx]]['full_name'],
+                chr(97 + pos_idx)
             )
 
             return message
         else:
-            self.player_ids[z_idx_pos] = previous_player
+            self.player_ids[pos_idx] = player_to_place
             return "Failed to update lineup, please retry."
 
-    def remove_player(self, z_idx_pos):
-        if self.player_ids[z_idx_pos] is None:
-            return "Nothing to remove."
+    def remove_player(self, pos_idx):
+        if self.player_ids[pos_idx] is None:
+            return "No player at this position."
 
-        previous_player = self.player_ids[z_idx_pos]
-        self.player_ids[z_idx_pos] = None
+        player_to_remove = self.player_ids[pos_idx]
+        self.player_ids[pos_idx] = None
 
         successful, _ = upsert_lineup(
             (self.user_id, self.game_date, self.player_ids[0], self.player_ids[1], self.player_ids[2],
@@ -325,20 +344,20 @@ class Lineup:
 
         if successful:
             return "Removed **{}. {}**. ".format(
-                self.provider.players[previous_player]['index'],
-                self.provider.players[previous_player]['full_name'],
+                self.provider.players[player_to_remove]['index'],
+                self.provider.players[player_to_remove]['full_name'],
             )
         else:
-            self.player_ids[z_idx_pos] = previous_player
+            self.player_ids[pos_idx] = player_to_remove
             return "Failed to update lineup, please retry."
 
-    def swap_players(self, z_idx_pos1, z_idx_pos2):
-        if self.player_ids[z_idx_pos1] is None and self.player_ids[z_idx_pos2] is None:
+    def swap_players(self, pos_idx_1, pos_idx_2):
+        if self.player_ids[pos_idx_1] is None and self.player_ids[pos_idx_2] is None:
             return "Swapped."
 
-        tmp = self.player_ids[z_idx_pos1]
-        self.player_ids[z_idx_pos1] = self.player_ids[z_idx_pos2]
-        self.player_ids[z_idx_pos2] = tmp
+        tmp = self.player_ids[pos_idx_1]
+        self.player_ids[pos_idx_1] = self.player_ids[pos_idx_2]
+        self.player_ids[pos_idx_2] = tmp
 
         successful, _ = upsert_lineup(
             (self.user_id, self.game_date, self.player_ids[0], self.player_ids[1], self.player_ids[2],
@@ -348,8 +367,8 @@ class Lineup:
         if successful:
             return "Swapped."
         else:
-            self.player_ids[z_idx_pos2] = self.player_ids[z_idx_pos1]
-            self.player_ids[z_idx_pos1] = tmp
+            self.player_ids[pos_idx_2] = self.player_ids[pos_idx_1]
+            self.player_ids[pos_idx_1] = tmp
             return "Failed to update lineup, please retry."
 
     def submit(self):
@@ -359,9 +378,9 @@ class Lineup:
         successful, _ = submit_lineup(self.user_id, self.game_date)
         if successful:
             self.submitted = True
-            return "Submitted."
+            return self.formatted() + "\nSubmitted."
         else:
-            return "Failed to update lineup, please retry."
+            return self.formatted() + "\nFailed to update lineup, please retry."
 
 
 LINEUP_PROVIDER = LineupProvider()

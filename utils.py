@@ -205,4 +205,3 @@ def equals(s1: list, s2: list) -> bool:
 
     # If all the elements are equal, the two lists are equal.
     return True
-
