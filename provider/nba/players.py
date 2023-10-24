@@ -35,6 +35,10 @@ def fresh_team_players() -> None:
     season = Season.default
     players = LeagueDashPlayerBioStats(season=season).get_data_frames()[0]
 
+    if len(players) == 0:
+        print("Team player data unavailable")
+        return
+
     result = {}
     for i in range(0, len(players)):
         player = players.iloc[i]
