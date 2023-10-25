@@ -54,8 +54,16 @@ class LineupProvider:
             self.collections = get_collections(self.lineups.keys(), self.players.keys())
 
     def reload(self):
-        if self.coming_game_date != NBA_PROVIDER.get_coming_game_date():
-            self.coming_game_date = NBA_PROVIDER.get_coming_game_date()
+        coming_game_date = NBA_PROVIDER.get_coming_game_date()
+        if self.coming_game_date != coming_game_date:
+            self.team_to_opponent = {}
+            self.team_to_players = {}
+            self.player_to_team = {}
+            self.players = {}
+            self.player_ids = []
+            self.lineups = {}
+
+            self.coming_game_date = coming_game_date
             self.__load_players()
 
         self.__load_lineups()

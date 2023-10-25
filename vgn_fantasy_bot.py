@@ -8,7 +8,7 @@ from discord.ext import commands, tasks
 from dotenv import load_dotenv
 
 from constants import TZ_ET
-from discord_fantasy.views import LineupView
+from discord_fantasy.views import MainPage
 from provider.nba_provider import NBA_PROVIDER
 from repository.vgn_collections import upsert_collection as repo_upsert_collection
 from repository.vgn_users import get_user, insert_user
@@ -32,10 +32,12 @@ intents.presences = False
 bot = commands.Bot(command_prefix='.', intents=intents)
 LB_CHANNEL_NAMES = ["📊-leaderboard"]
 GAMES_CHANNEL_NAMES = ["📅-games"]
+FANTASY_CHANNEL_NAMES = ["🎮-fantasy"]
 ADMIN_CHANNEL_NAMES = ["💻-admin"]
 
 LB_CHANNELS = []
 GAMES_CHANNELS = []
+FANTASY_CHANNEL_MESSAGES = []
 
 ADMIN_CHANNEL_IDS = []
 
@@ -54,28 +56,14 @@ async def on_ready():
                 GAMES_CHANNELS.append(channel)
             if channel.name in ADMIN_CHANNEL_NAMES:
                 ADMIN_CHANNEL_IDS.append(channel.id)
+            if channel.name in FANTASY_CHANNEL_NAMES:
+                view = MainPage(LINEUP_PROVIDER, RANK_PROVIDER)
+                message = await channel.send("Ready to start daily NBA fantasy game? :vgn:", view=view)
+                FANTASY_CHANNEL_MESSAGES.append(message)
 
     update_scorebox.start()
     update_games.start()
-
-
-############
-# Collection (DM only)
-############
-@bot.command(name='collection', help="Update user's topshot collections info.")
-async def upsert_collection(context):
-    if not isinstance(context.channel, discord.channel.DMChannel):
-        return
-
-    vgn_user = get_user(context.message.author.id)
-
-    if vgn_user is None:
-        await context.channel.send("Account not found, contact admin for registration.")
-        return
-
-    message = await load_and_upsert_collection(vgn_user[0], vgn_user[2])
-
-    await context.channel.send(message)
+    refresh_entry.start()
 
 
 async def load_and_upsert_collection(user_id, flow_address):
@@ -91,28 +79,7 @@ async def load_and_upsert_collection(user_id, flow_address):
 
 
 ############
-# Lineup (DM only)
-############
-async def send_messages(channel, messages, view=None):
-    for i in range(len(messages)):
-        if i == len(messages) - 1 and view is not None:
-            await channel.send(messages[i], view=view)
-        else:
-            await channel.send(messages[i])
-
-
-@bot.command(name='nba', help="Launch NBA daily fantasy game.")
-async def main_menu(context):
-    if not isinstance(context.channel, discord.channel.DMChannel):
-        return
-
-    messages = [LINEUP_PROVIDER.get_or_create_lineup(context.author.id).formatted()]
-    view = LineupView(LINEUP_PROVIDER, context.author.id)
-    await send_messages(context.message.channel, messages, view)
-
-
-############
-# System
+# Admin
 ############
 @bot.command(name='reload', help="[Admin] Reload game schedules, lineups and ranking")
 async def reload(context):
@@ -158,6 +125,9 @@ async def find_user_id(context, username):
         await context.channel.send(member.id)
 
 
+############
+# Routines
+############
 @tasks.loop(minutes=5)
 async def update_scorebox():
     RANK_PROVIDER.update()
@@ -175,6 +145,13 @@ async def update_games():
                 "ET: **{}** , UPDATE EVERY 2 MINS".format(datetime.now(TZ_ET).strftime("%H:%M:%S"))]
 
     await update_channel_messages(messages, GAMES_CHANNELS, GAMES_MESSAGE_IDS)
+
+
+@tasks.loop(minutes=2)
+async def refresh_entry():
+    for message in FANTASY_CHANNEL_MESSAGES:
+        view = MainPage(LINEUP_PROVIDER, RANK_PROVIDER)
+        await message.edit(content="Ready to start daily NBA fantasy game? :vgn:", view=view)
 
 
 # start the bot

@@ -1,5 +1,9 @@
 import discord
+
+from repository.vgn_collections import upsert_collection as repo_upsert_collection
+from repository.vgn_users import get_user
 from service.fantasy.ranking import RANK_PROVIDER
+from topshot.cadence.flow_collections import get_account_plays
 
 
 class FantasyView(discord.ui.View):
@@ -12,6 +16,34 @@ class FantasyView(discord.ui.View):
         message = self.lineup_provider.get_or_create_lineup(self.user_id).formatted()
 
         return message, LineupView(self.lineup_provider, self.user_id)
+
+
+class MainStartButton(discord.ui.Button['Start']):
+    def __init__(self):
+        super().__init__(style=discord.ButtonStyle.success, label="GO!", row=1)
+
+    async def callback(self, interaction: discord.Interaction):
+        assert self.view is not None
+        view: LineupView = self.view
+        message, new_view = view.launch_fantasy(interaction.user.id)
+
+        await interaction.response.send_message(content=message, view=new_view, ephemeral=True)
+
+
+class MainPage(discord.ui.View):
+    def __init__(self, lineup_provider, rank_provider):
+        super().__init__()
+        self.add_item(MainStartButton())
+        self.lineup_provider = lineup_provider
+        self.rank_provider = rank_provider
+
+    def launch_fantasy(self, user_id):
+        if self.rank_provider.status == "PRE_GAME":
+            message = self.lineup_provider.get_or_create_lineup(user_id).formatted()
+        else:
+            message = RANK_PROVIDER.formatted_user_score(user_id)[0]
+
+        return message, LineupView(self.lineup_provider, user_id)
 
 
 class LineupButton(discord.ui.Button['Lineup']):
@@ -52,7 +84,7 @@ class LineupTeamsButton(discord.ui.Button['LineupTeams']):
 
 class LineupSubmitButton(discord.ui.Button['LineupSubmit']):
     def __init__(self):
-        super().__init__(style=discord.ButtonStyle.success, label="Submit", row=3)
+        super().__init__(style=discord.ButtonStyle.success, label="Submit", row=2)
 
     async def callback(self, interaction: discord.Interaction):
         assert self.view is not None
@@ -98,15 +130,28 @@ class LineupScoreButton(discord.ui.Button['LineupScore']):
         await interaction.response.edit_message(content=message, view=new_view)
 
 
+class LineupReloadButton(discord.ui.Button['LineupReload']):
+    def __init__(self):
+        super().__init__(style=discord.ButtonStyle.secondary, label="Refresh TS Moments", row=1)
+
+    async def callback(self, interaction: discord.Interaction):
+        assert self.view is not None
+        view: LineupView = self.view
+        message, new_view = await view.reload_collection()
+
+        await interaction.response.edit_message(content=message, view=new_view)
+
+
 class LineupView(FantasyView):
     def __init__(self, lineup_provider, user_id):
         super().__init__(lineup_provider, user_id)
         self.add_item(LineupPlayersButton())
         self.add_item(LineupTeamsButton())
+        self.add_item(LineupReloadButton())
         self.add_item(LineupRemoveButton())
         self.add_item(LineupSwapButton())
-        self.add_item(LineupButton(3))
         self.add_item(LineupSubmitButton())
+        self.add_item(LineupButton(3))
         self.add_item(LineupScoreButton())
         self.lineup = self.lineup_provider.get_or_create_lineup(self.user_id)
 
@@ -133,6 +178,28 @@ class LineupView(FantasyView):
 
     def check_score(self):
         return RANK_PROVIDER.formatted_user_score(self.user_id)[0], self
+
+    async def reload_collection(self):
+        vgn_user = get_user(self.user_id)
+
+        if vgn_user is None:
+            return "Account not found, contact admin for registration.", self
+
+        user_id = vgn_user[0]
+        flow_address = vgn_user[2]
+
+        try:
+            plays = await get_account_plays(flow_address)
+        except:
+            return "Failed to fetch collection, try again or contact admin.", self
+
+        try:
+            message = repo_upsert_collection(user_id, plays)
+        except:
+            return "Failed to update database, try again or contact admin.", self
+
+        self.lineup_provider.load_user_collection(self.user_id)
+        return message, self
 
 
 class RemovePlayerButton(discord.ui.Button['RemovePlayer']):

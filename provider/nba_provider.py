@@ -122,6 +122,7 @@ class NBAProvider:
         return self.team_players[team]
 
     def get_coming_game_date(self):
+        self.set_coming_game_date()
         return self.coming_date
 
     def set_coming_game_date(self):
