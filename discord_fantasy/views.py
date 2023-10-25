@@ -38,7 +38,7 @@ class MainPage(discord.ui.View):
         self.rank_provider = rank_provider
 
     def launch_fantasy(self, user_id):
-        if self.rank_provider.status == "PRE_GAME":
+        if self.rank_provider.status != "IN_GAME":
             message = self.lineup_provider.get_or_create_lineup(user_id).formatted()
         else:
             message = RANK_PROVIDER.formatted_user_score(user_id)[0]

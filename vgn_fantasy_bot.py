@@ -46,6 +46,9 @@ GAMES_MESSAGE_IDS = {}
 PLAYERS_MESSAGE_IDS = {}
 
 
+VGN_EMOJI_ID = 1166225667952758815
+
+
 @bot.event
 async def on_ready():
     for guild in bot.guilds:
@@ -57,8 +60,12 @@ async def on_ready():
             if channel.name in ADMIN_CHANNEL_NAMES:
                 ADMIN_CHANNEL_IDS.append(channel.id)
             if channel.name in FANTASY_CHANNEL_NAMES:
+                emoji = guild.get_emoji(VGN_EMOJI_ID)
                 view = MainPage(LINEUP_PROVIDER, RANK_PROVIDER)
-                message = await channel.send("Ready to start daily NBA fantasy game? :vgn:", view=view)
+                if emoji is None:
+                    message = await channel.send(f"Ready to start daily NBA fantasy game?", view=view)
+                else:
+                    message = await channel.send(f"Ready to start daily NBA fantasy game? {emoji}", view=view)
                 FANTASY_CHANNEL_MESSAGES.append(message)
 
     update_scorebox.start()
@@ -150,8 +157,12 @@ async def update_games():
 @tasks.loop(minutes=2)
 async def refresh_entry():
     for message in FANTASY_CHANNEL_MESSAGES:
+        emoji = message.guild.get_emoji(VGN_EMOJI_ID)
         view = MainPage(LINEUP_PROVIDER, RANK_PROVIDER)
-        await message.edit(content="Ready to start daily NBA fantasy game? :vgn:", view=view)
+        if emoji is None:
+            await message.edit(content="Ready to start daily NBA fantasy game?", view=view)
+        else:
+            await message.edit(content=f"Ready to start daily NBA fantasy game? {emoji}", view=view)
 
 
 # start the bot
