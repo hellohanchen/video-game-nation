@@ -59,8 +59,25 @@
     4300,
     4305
   ],
-  "count": 4726,
+  "count": 4727,
   "plays": {
+    "4307": [
+      {
+        "id": "365b50f1-c332-4eb9-91d7-abb3dcafa419",
+        "flowId": 4307,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 1628365,
+        "playerName": "Markelle Fultz",
+        "team": "Philadelphia 76ers",
+        "playType": "Assist",
+        "date": "2018-04-12",
+        "series": 4,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
     "4306": [
       {
         "id": "75010065-adc3-4d2a-8620-e0c413147599",

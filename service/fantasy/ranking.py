@@ -195,7 +195,7 @@ class RankingProvider:
             player['gameInfo']['homeScore'], player['gameInfo']['homeTeam'],
             player['gameInfo']['statusText']
         )
-        message += "{}pts {}reb {}ast {}stl {}blk {}x3p\n{}fgm {}ftm {}tov {}pfs {}win\n".format(
+        message += "{}pts {}reb {}ast {}stl {}blk {}x3p\n{}mfg {}mft {}tov {}pfs {}win\n".format(
             player["points"], player["reboundsTotal"], player['assists'], player['steals'], player['blocks'],
             player["threePointersMade"], player["fieldGoalsMissed"], player['freeThrowsMissed'], player['turnovers'],
             player['foulsPersonal'], player['win']

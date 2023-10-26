@@ -167,26 +167,26 @@ class LineupProvider:
     def detailed_player(self, player, collection):
         scores, total, bonus = compute_vgn_scores(player, collection)
         return \
-            "***{}.*** **{} {}#{}** vs *{}*\n" \
-            "{:.2f} PTS {:.2f}v (+{:.2f}) " \
-            "point-bonus {:.2f}v (+{:.2f})\n" \
-            "{:.2f} 3PT {:.2f}v (+{:.2f})\n" \
-            "{:.2f} DRB {:.2f}v (+{:.2f})\n" \
-            "{:.2f} ORB {:.2f}v (+{:.2f})\n" \
-            "{:.2f} AST {:.2f}v (+{:.2f})\n" \
-            "{:.2f} STL {:.2f}v (+{:.2f})\n" \
-            "{:.2f} BLK {:.2f}v (+{:.2f})\n" \
-            "{:.2f} FGM {:.2f}v (+{:.2f})\n" \
-            "{:.2f} FTM {:.2f}v (+{:.2f})\n" \
-            "{:.2f} TOV {:.2f}v (+{:.2f})\n" \
-            "{:.2f} PFS {:.2f}v (+{:.2f}) " \
-            "foul-out {:.2f}v\n" \
-            "{:.2f} WIN {:.2f}v (+{:.2f})\n" \
-            "{:.2f} 2DD {:.2f}v\n" \
-            "{:.2f} 3TD {:.2f}v\n" \
-            "{:.2f} 4QD {:.2f}v\n" \
-            "{:.2f} 5FD {:.2f}v\n" \
-            "**sum: {:.2f}v (+{:.2f})**\n\n" \
+            "***{}. {} {}#{}*** vs *{}*\n" \
+            "**{:.2f}** points **{:.2f}v** (+{:.2f}) " \
+            "bonus **{:.2f}v** (+{:.2f})\n" \
+            "**{:.2f}** three-pointers **{:.2f}v** (+{:.2f})\n" \
+            "**{:.2f}** defensive reb **{:.2f}v** (+{:.2f})\n" \
+            "**{:.2f}** offensive reb **{:.2f}v** (+{:.2f})\n" \
+            "**{:.2f}** assists **{:.2f}v** (+{:.2f})\n" \
+            "**{:.2f}** steals **{:.2f}v** (+{:.2f})\n" \
+            "**{:.2f}** blocks **{:.2f}v** (+{:.2f})\n" \
+            "**{:.2f}** missed fgs **{:.2f}v** (+{:.2f})\n" \
+            "**{:.2f}** missed fts **{:.2f}v** (+{:.2f})\n" \
+            "**{:.2f}** turnovers **{:.2f}v** (+{:.2f})\n" \
+            "**{:.2f}** fouls **{:.2f}v** (+{:.2f}) " \
+            "foul-out **{:.2f}v**\n" \
+            "**{:.2f}** win **{:.2f}v** (+{:.2f})\n" \
+            "**{:.2f}** double-double **{:.2f}v**\n" \
+            "**{:.2f}** triple-double **{:.2f}v**\n" \
+            "**{:.2f}** quadruple-double **{:.2f}v**\n" \
+            "**{:.2f}** five-double **{:.2f}v**\n" \
+            "***Total: {:.2f}v (+{:.2f})***\n\n" \
             "".format(
                 player['index'], player['full_name'], self.player_to_team[player['id']], player['jersey_number'],
                 self.get_opponent(player['id']),
@@ -381,7 +381,7 @@ class Lineup:
 
     def submit(self):
         if None in self.player_ids:
-            return "Still have unfilled positions {}".format([i+1 for i in range(0, 8) if self.player_ids[i] is None])
+            return "Still have unfilled positions {}".format([chr(i+97) for i in range(0, 8) if self.player_ids[i] is None])
 
         successful, _ = submit_lineup(self.user_id, self.game_date)
         if successful:

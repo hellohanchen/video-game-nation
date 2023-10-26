@@ -115,6 +115,7 @@ class LeaderBoardTracker(Tracker):
         sorted_keys = list(scores.keys())
         for i in range(len(self.tier_breakers) - 1, -1, -1):
             sorted_keys.sort(reverse=self.tier_breakers[i].order == "DESC", key=lambda k: scores[k]['stats'][i])
+        sorted_keys = sorted_keys[0:25]
 
         # Append the top 2 * count (or at least 5) players/teams to the sorted_stats list, sorted by their total scores
         # across all tier breakers, as well as any players/teams with the same total score as the last player/team in
@@ -124,13 +125,13 @@ class LeaderBoardTracker(Tracker):
         sorted_scores = []
         idx = 0
         hit = 0
-        while len(sorted_scores) < num_to_display and idx < len(scores):
+        while len(sorted_scores) < num_to_display and idx < len(sorted_keys):
             # for extra score, we don't need to show ended games
             if hit < self.count or scores[sorted_keys[idx]]['game']['status'] != 3:
                 sorted_scores.append({"name": sorted_keys[idx], "score": scores[sorted_keys[idx]]})
                 idx += 1
 
-                while idx < len(scores) and equals(scores[sorted_keys[idx - 1]]['stats'], scores[sorted_keys[idx]]['stats']):
+                while idx < len(sorted_keys) and equals(scores[sorted_keys[idx - 1]]['stats'], scores[sorted_keys[idx]]['stats']):
                     if hit < self.count or scores[sorted_keys[idx]]['game']['status'] != 3:
                         sorted_scores.append({"name": sorted_keys[idx], "score": scores[sorted_keys[idx]]})
                         idx += 1

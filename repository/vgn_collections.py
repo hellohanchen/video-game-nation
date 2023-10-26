@@ -19,7 +19,7 @@ def upsert_collection(user_id, plays):
 
     Args:
         user_id: The ID of the user whose collection is being updated.
-        plays: A list of play IDs representing the plays in the user's collection.
+        plays: A dictionary of playID --> setID --> count
 
     Returns:
         A string indicating the status of the update operation. If the operation was successful, the string "Updated
@@ -111,42 +111,50 @@ def build_vgn_collection(plays):
             not_found_plays.append(play_id)
             continue
 
-        count = plays[play_id]
-        play = TS_ENRICHED_PLAYS[play_id]
-
-        player_id = play['playerId']
-
-        if player_id is not None and player_id != 0:
-            if player_id not in TS_PLAYER_ID_MOMENTS \
-                    or 'isNBA' not in TS_PLAYER_ID_MOMENTS[player_id] \
-                    or not TS_PLAYER_ID_MOMENTS[player_id]['isNBA']:
+        for set_id in plays[play_id]:
+            play = None
+            for play_with_set_info in TS_ENRICHED_PLAYS[play_id]:
+                if play_with_set_info['setFlowId'] == set_id:
+                    play = play_with_set_info
+                    break
+            if play is None:
+                not_found_plays.append(play_id * 10000 + set_id)
                 continue
 
-            if player_id not in player_collections:
-                player_collections[player_id] = {
-                    'dunk': 0,
-                    'three_pointer': 0,
-                    'badge': 0,
-                    'debut': 0,
-                    'assist': 0,
-                    'steal': 0,
-                    'block_shot': 0,
-                    'jump_shot': 0,
-                    'hook_shot': 0,
-                    'handle': 0,
-                    'layup': 0,
-                    'reel': 0,
-                    'team': 0  # TODO: cache a player_id -> team mapping
-                }
+            count = plays[play_id][set_id]
+            player_id = play['playerId']
 
-            points = TIERS[play['tier']] * count
-            player_collections[player_id][TYPES[play['playType']]] += points
+            if player_id is not None and player_id != 0:
+                if player_id not in TS_PLAYER_ID_MOMENTS \
+                        or 'isNBA' not in TS_PLAYER_ID_MOMENTS[player_id] \
+                        or not TS_PLAYER_ID_MOMENTS[player_id]['isNBA']:
+                    continue
 
-            for badge in play['badges']:
-                if badge != 'TSD':
-                    player_collections[player_id]['badge'] += points
-                else:
-                    player_collections[player_id]['debut'] += points
+                if player_id not in player_collections:
+                    player_collections[player_id] = {
+                        'dunk': 0,
+                        'three_pointer': 0,
+                        'badge': 0,
+                        'debut': 0,
+                        'assist': 0,
+                        'steal': 0,
+                        'block_shot': 0,
+                        'jump_shot': 0,
+                        'hook_shot': 0,
+                        'handle': 0,
+                        'layup': 0,
+                        'reel': 0,
+                        'team': 0  # TODO: cache a player_id -> team mapping
+                    }
+
+                points = TIERS[play['tier']] * count
+                player_collections[player_id][TYPES[play['playType']]] += points
+
+                for badge in play['badges']:
+                    if badge != 'TSD':
+                        player_collections[player_id]['badge'] += points
+                    else:
+                        player_collections[player_id]['debut'] += points
         else:
             # TODO build team collection
             pass
@@ -189,5 +197,6 @@ def get_collections(user_ids, player_ids):
 
 
 if __name__ == '__main__':
-    plays = asyncio.run(get_account_plays('ad955e5d8047ef82'))
+    plays = asyncio.run(get_account_plays('0xad955e5d8047ef82'))
+    vgn_collection, not_found_plays = build_vgn_collection(plays)
     print(upsert_collection(723723650909601833, plays))

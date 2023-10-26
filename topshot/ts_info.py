@@ -62,7 +62,7 @@ def load_enriched_plays():
             if play['flowId'] in result:
                 continue
 
-            result[play['flowId']] = play
+            result[play['flowId']] = loaded['plays'][play_id]
 
         return result
 
