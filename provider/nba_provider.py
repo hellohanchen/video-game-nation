@@ -40,7 +40,7 @@ class NBAProvider:
 
     def __load_team_players(self):
         self.team_players = json.load(
-            open(os.path.join(pathlib.Path(__file__).parent.resolve(), 'nba/data/team_players.json'), 'r'))
+            open(os.path.join(pathlib.Path(__file__).parent.resolve(), 'nba/data/team_players_23_24.json'), 'r'))
 
     @staticmethod
     def get_scoreboard():
@@ -120,6 +120,12 @@ class NBAProvider:
 
     def get_players_for_team(self, team):
         return self.team_players[team]
+
+    def get_all_player_ids(self):
+        players = []
+        for team in self.team_players:
+            players.extend(self.team_players[team])
+        return players
 
     def get_coming_game_date(self):
         self.set_coming_game_date()
