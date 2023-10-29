@@ -53,13 +53,12 @@
     4165,
     4221,
     4234,
-    4283,
     4287,
     4298,
     4300,
     4305
   ],
-  "count": 4727,
+  "count": 4728,
   "plays": {
     "4307": [
       {
@@ -75,7 +74,10 @@
         "date": "2018-04-12",
         "series": 4,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "RY",
+          "CR"
+        ]
       }
     ],
     "4306": [
@@ -92,7 +94,9 @@
         "date": "2016-02-24",
         "series": 4,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "TSD"
+        ]
       }
     ],
     "4304": [
@@ -109,7 +113,9 @@
         "date": "2018-01-27",
         "series": 4,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "RY"
+        ]
       }
     ],
     "4303": [
@@ -143,7 +149,9 @@
         "date": "2018-03-13",
         "series": 4,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "RY"
+        ]
       }
     ],
     "4301": [
@@ -177,7 +185,9 @@
         "date": "2018-04-07",
         "series": 4,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "RY"
+        ]
       }
     ],
     "4297": [
@@ -228,7 +238,9 @@
         "date": "2015-02-11",
         "series": 4,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "TSD"
+        ]
       }
     ],
     "4294": [
@@ -245,7 +257,9 @@
         "date": "2018-12-08",
         "series": 4,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "RY"
+        ]
       }
     ],
     "4293": [
@@ -262,7 +276,9 @@
         "date": "2018-04-28",
         "series": 4,
         "tier": "Rare",
-        "badges": []
+        "badges": [
+          "RY"
+        ]
       }
     ],
     "4292": [
@@ -279,7 +295,9 @@
         "date": "2018-01-26",
         "series": 4,
         "tier": "Rare",
-        "badges": []
+        "badges": [
+          "RY"
+        ]
       }
     ],
     "4291": [
@@ -296,7 +314,9 @@
         "date": "2019-03-11",
         "series": 4,
         "tier": "Rare",
-        "badges": []
+        "badges": [
+          "RY"
+        ]
       }
     ],
     "4290": [
@@ -313,7 +333,9 @@
         "date": "2016-03-15",
         "series": 4,
         "tier": "Rare",
-        "badges": []
+        "badges": [
+          "RY"
+        ]
       }
     ],
     "4289": [
@@ -330,7 +352,9 @@
         "date": "2018-12-01",
         "series": 4,
         "tier": "Rare",
-        "badges": []
+        "badges": [
+          "RY"
+        ]
       }
     ],
     "4288": [
@@ -347,7 +371,9 @@
         "date": "2016-03-02",
         "series": 4,
         "tier": "Rare",
-        "badges": []
+        "badges": [
+          "RY"
+        ]
       }
     ],
     "4286": [
@@ -364,7 +390,9 @@
         "date": "2023-09-19",
         "series": 4,
         "tier": "Fandom",
-        "badges": []
+        "badges": [
+          "CR"
+        ]
       }
     ],
     "4285": [
@@ -381,7 +409,10 @@
         "date": "2023-09-15",
         "series": 4,
         "tier": "Fandom",
-        "badges": []
+        "badges": [
+          "TSD",
+          "CR"
+        ]
       }
     ],
     "4284": [
@@ -398,7 +429,29 @@
         "date": "2023-09-24",
         "series": 4,
         "tier": "Fandom",
-        "badges": []
+        "badges": [
+          "CR"
+        ]
+      }
+    ],
+    "4283": [
+      {
+        "id": "40db65f7-876c-4b34-9faf-63a6acdfa906",
+        "flowId": 4283,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 1628386,
+        "playerName": "Jarrett Allen",
+        "team": "Brooklyn Nets",
+        "playType": "Dunk",
+        "date": "2018-02-27",
+        "series": 4,
+        "tier": "Common",
+        "badges": [
+          "RY",
+          "CR"
+        ]
       }
     ],
     "4282": [
@@ -432,7 +485,9 @@
         "date": "2015-01-10",
         "series": 4,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "TSD"
+        ]
       }
     ],
     "4280": [
@@ -449,7 +504,9 @@
         "date": "2016-04-26",
         "series": 4,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "RY"
+        ]
       }
     ],
     "4279": [
@@ -483,7 +540,9 @@
         "date": "2015-02-01",
         "series": 4,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "RY"
+        ]
       }
     ],
     "4277": [
@@ -500,7 +559,9 @@
         "date": "2016-03-06",
         "series": 4,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "TSD"
+        ]
       }
     ],
     "4276": [
@@ -517,7 +578,9 @@
         "date": "2015-04-08",
         "series": 4,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "RY"
+        ]
       }
     ],
     "4275": [
@@ -534,7 +597,9 @@
         "date": "2018-01-20",
         "series": 4,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "RY"
+        ]
       }
     ],
     "4274": [
@@ -568,7 +633,9 @@
         "date": "2016-02-02",
         "series": 4,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "RY"
+        ]
       }
     ],
     "4272": [
@@ -585,7 +652,10 @@
         "date": "2018-05-21",
         "series": 4,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "TSD",
+          "CY"
+        ]
       }
     ],
     "4271": [
@@ -602,7 +672,9 @@
         "date": "2017-04-16",
         "series": 4,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "CY"
+        ]
       }
     ],
     "4270": [
@@ -619,7 +691,9 @@
         "date": "2018-11-24",
         "series": 4,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "RY"
+        ]
       }
     ],
     "4269": [
@@ -653,7 +727,9 @@
         "date": "2015-12-24",
         "series": 4,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "TSD"
+        ]
       }
     ],
     "4267": [
@@ -721,7 +797,9 @@
         "date": "2018-03-29",
         "series": 4,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "RY"
+        ]
       }
     ],
     "4263": [
@@ -738,7 +816,9 @@
         "date": "2017-01-20",
         "series": 4,
         "tier": "Rare",
-        "badges": []
+        "badges": [
+          "RY"
+        ]
       }
     ],
     "4262": [
@@ -755,7 +835,9 @@
         "date": "2017-01-14",
         "series": 4,
         "tier": "Rare",
-        "badges": []
+        "badges": [
+          "RY"
+        ]
       }
     ],
     "4261": [
@@ -772,7 +854,9 @@
         "date": "2015-11-07",
         "series": 4,
         "tier": "Rare",
-        "badges": []
+        "badges": [
+          "RY"
+        ]
       }
     ],
     "4260": [
@@ -789,7 +873,9 @@
         "date": "2015-04-12",
         "series": 4,
         "tier": "Rare",
-        "badges": []
+        "badges": [
+          "RY"
+        ]
       }
     ],
     "4259": [
@@ -806,7 +892,10 @@
         "date": "2018-05-28",
         "series": 4,
         "tier": "Rare",
-        "badges": []
+        "badges": [
+          "RY",
+          "CR"
+        ]
       }
     ],
     "4258": [
@@ -823,7 +912,9 @@
         "date": "2017-05-16",
         "series": 4,
         "tier": "Rare",
-        "badges": []
+        "badges": [
+          "RY"
+        ]
       }
     ],
     "4257": [
@@ -840,7 +931,9 @@
         "date": "2016-12-26",
         "series": 4,
         "tier": "Rare",
-        "badges": []
+        "badges": [
+          "RY"
+        ]
       }
     ],
     "4256": [
@@ -857,7 +950,10 @@
         "date": "2019-05-12",
         "series": 4,
         "tier": "Legendary",
-        "badges": []
+        "badges": [
+          "CY",
+          "CR"
+        ]
       }
     ],
     "4255": [
@@ -874,7 +970,9 @@
         "date": "2019-04-24",
         "series": 4,
         "tier": "Legendary",
-        "badges": []
+        "badges": [
+          "CR"
+        ]
       }
     ],
     "4254": [
@@ -908,7 +1006,9 @@
         "date": "2017-04-09",
         "series": 4,
         "tier": "Legendary",
-        "badges": []
+        "badges": [
+          "MVP"
+        ]
       }
     ],
     "4252": [
@@ -1044,7 +1144,9 @@
         "date": "2016-06-20",
         "series": 4,
         "tier": "Legendary",
-        "badges": []
+        "badges": [
+          "CY"
+        ]
       }
     ],
     "4244": [
@@ -1078,7 +1180,9 @@
         "date": "2017-05-03",
         "series": 4,
         "tier": "Legendary",
-        "badges": []
+        "badges": [
+          "TSD"
+        ]
       }
     ],
     "4242": [
@@ -1129,7 +1233,10 @@
         "date": "2018-04-19",
         "series": 4,
         "tier": "Rare",
-        "badges": []
+        "badges": [
+          "RY",
+          "ROY"
+        ]
       }
     ],
     "4239": [
@@ -1146,7 +1253,10 @@
         "date": "2016-04-06",
         "series": 4,
         "tier": "Rare",
-        "badges": []
+        "badges": [
+          "RY",
+          "ROY"
+        ]
       }
     ],
     "4238": [
@@ -1163,7 +1273,10 @@
         "date": "2015-02-21",
         "series": 4,
         "tier": "Rare",
-        "badges": []
+        "badges": [
+          "RY",
+          "ROY"
+        ]
       }
     ],
     "4237": [
@@ -1180,7 +1293,10 @@
         "date": "2016-12-21",
         "series": 4,
         "tier": "Rare",
-        "badges": []
+        "badges": [
+          "RY",
+          "ROY"
+        ]
       }
     ],
     "4236": [
@@ -1197,7 +1313,9 @@
         "date": "2018-02-10",
         "series": 4,
         "tier": "Rare",
-        "badges": []
+        "badges": [
+          "RY"
+        ]
       }
     ],
     "4235": [
@@ -1214,7 +1332,9 @@
         "date": "2017-04-12",
         "series": 4,
         "tier": "Rare",
-        "badges": []
+        "badges": [
+          "RY"
+        ]
       }
     ],
     "4233": [
@@ -1231,7 +1351,9 @@
         "date": "2018-12-22",
         "series": 4,
         "tier": "Rare",
-        "badges": []
+        "badges": [
+          "RY"
+        ]
       }
     ],
     "4232": [
@@ -1248,7 +1370,10 @@
         "date": "2016-01-22",
         "series": 4,
         "tier": "Rare",
-        "badges": []
+        "badges": [
+          "RY",
+          "CR"
+        ]
       }
     ],
     "4231": [
@@ -1265,7 +1390,9 @@
         "date": "2017-01-20",
         "series": 4,
         "tier": "Rare",
-        "badges": []
+        "badges": [
+          "RY"
+        ]
       }
     ],
     "4230": [
@@ -1282,7 +1409,9 @@
         "date": "2018-02-28",
         "series": 4,
         "tier": "Rare",
-        "badges": []
+        "badges": [
+          "RY"
+        ]
       }
     ],
     "4229": [
@@ -1299,7 +1428,9 @@
         "date": "2019-03-31",
         "series": 4,
         "tier": "Rare",
-        "badges": []
+        "badges": [
+          "RY"
+        ]
       }
     ],
     "4228": [
@@ -1333,7 +1464,9 @@
         "date": "2015-12-06",
         "series": 4,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "TSD"
+        ]
       }
     ],
     "4226": [
@@ -1367,7 +1500,10 @@
         "date": "2017-02-24",
         "series": 4,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "RY",
+          "CR"
+        ]
       }
     ],
     "4224": [
@@ -1401,7 +1537,9 @@
         "date": "2019-04-11",
         "series": 4,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "RY"
+        ]
       }
     ],
     "4222": [
@@ -1418,7 +1556,10 @@
         "date": "2018-12-14",
         "series": 4,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "RY",
+          "CR"
+        ]
       }
     ],
     "4220": [
@@ -1486,7 +1627,9 @@
         "date": "2015-05-06",
         "series": 4,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "TSD"
+        ]
       }
     ],
     "4216": [
@@ -1503,7 +1646,9 @@
         "date": "2015-12-10",
         "series": 4,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "TSD"
+        ]
       }
     ],
     "4215": [
@@ -1520,7 +1665,10 @@
         "date": "2018-01-24",
         "series": 4,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "RY",
+          "CR"
+        ]
       }
     ],
     "4214": [
@@ -1537,7 +1685,9 @@
         "date": "2018-04-12",
         "series": 4,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "RY"
+        ]
       }
     ],
     "4213": [
@@ -1554,7 +1704,9 @@
         "date": "2017-04-23",
         "series": 4,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "TSD"
+        ]
       }
     ],
     "4212": [
@@ -1571,7 +1723,9 @@
         "date": "2015-03-01",
         "series": 4,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "RY"
+        ]
       }
     ],
     "4211": [
@@ -1588,7 +1742,9 @@
         "date": "2016-04-19",
         "series": 4,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "TSD"
+        ]
       }
     ],
     "4210": [
@@ -1605,7 +1761,10 @@
         "date": "2019-03-13",
         "series": 4,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "RY",
+          "CR"
+        ]
       }
     ],
     "4209": [
@@ -1639,7 +1798,9 @@
         "date": "2016-05-08",
         "series": 4,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "CY"
+        ]
       }
     ],
     "4207": [
@@ -1656,7 +1817,9 @@
         "date": "2019-03-09",
         "series": 4,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "RY"
+        ]
       }
     ],
     "4206": [
@@ -1673,7 +1836,9 @@
         "date": "2018-04-04",
         "series": 4,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "RY"
+        ]
       }
     ],
     "4205": [
@@ -1690,7 +1855,10 @@
         "date": "2015-04-04",
         "series": 4,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "RY",
+          "CR"
+        ]
       }
     ],
     "4204": [
@@ -1724,7 +1892,9 @@
         "date": "2014-11-04",
         "series": 4,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "RY"
+        ]
       }
     ],
     "4202": [
@@ -1758,7 +1928,11 @@
         "date": "2023-06-17",
         "series": 4,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "TSD",
+          "RY",
+          "RM"
+        ]
       }
     ],
     "4200": [
@@ -1843,7 +2017,10 @@
         "date": "2023-07-02",
         "series": 4,
         "tier": "Rare",
-        "badges": []
+        "badges": [
+          "RY",
+          "RM"
+        ]
       }
     ],
     "4195": [
@@ -1860,7 +2037,9 @@
         "date": "2023-07-09",
         "series": 4,
         "tier": "Rare",
-        "badges": []
+        "badges": [
+          "CY"
+        ]
       }
     ],
     "4194": [
@@ -1877,7 +2056,9 @@
         "date": "2023-08-22",
         "series": 4,
         "tier": "Rare",
-        "badges": []
+        "badges": [
+          "CY"
+        ]
       }
     ],
     "4193": [
@@ -1911,7 +2092,11 @@
         "date": "2023-07-12",
         "series": 4,
         "tier": "Rare",
-        "badges": []
+        "badges": [
+          "ROY",
+          "RY",
+          "RM"
+        ]
       }
     ],
     "4191": [
@@ -2081,7 +2266,9 @@
         "date": "2023-05-31",
         "series": 4,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "MVP"
+        ]
       }
     ],
     "4181": [
@@ -2098,7 +2285,9 @@
         "date": "2023-06-23",
         "series": 4,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "TSD"
+        ]
       }
     ],
     "4180": [
@@ -2132,7 +2321,9 @@
         "date": "2023-08-02",
         "series": 4,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "CY"
+        ]
       }
     ],
     "4178": [
@@ -2149,7 +2340,9 @@
         "date": "2023-08-18",
         "series": 4,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "CY"
+        ]
       }
     ],
     "4177": [
@@ -2200,7 +2393,9 @@
         "date": "2023-07-09",
         "series": 4,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "TSD"
+        ]
       }
     ],
     "4174": [
@@ -2268,7 +2463,9 @@
         "date": "2023-08-04",
         "series": 4,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "TSD"
+        ]
       }
     ],
     "4170": [
@@ -2319,7 +2516,9 @@
         "date": "2023-08-05",
         "series": 4,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "TSD"
+        ]
       }
     ],
     "4167": [
@@ -2353,7 +2552,9 @@
         "date": "2023-07-25",
         "series": 4,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "TSD"
+        ]
       }
     ],
     "4164": [
@@ -2370,7 +2571,10 @@
         "date": "2015-04-24",
         "series": 4,
         "tier": "Unknown",
-        "badges": []
+        "badges": [
+          "CY",
+          "MVP"
+        ]
       }
     ],
     "4163": [
@@ -3577,7 +3781,8 @@
         "series": 4,
         "tier": "Common",
         "badges": [
-          "TSD"
+          "TSD",
+          "CY"
         ]
       }
     ],
@@ -3595,7 +3800,9 @@
         "date": "2023-07-30",
         "series": 4,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "CY"
+        ]
       }
     ],
     "4099": [
@@ -3703,6 +3910,7 @@
         "tier": "Legendary",
         "badges": [
           "CR",
+          "ROY",
           "RY",
           "RM"
         ]
@@ -3806,7 +4014,8 @@
         "badges": [
           "CR",
           "RY",
-          "RM"
+          "RM",
+          "ROY"
         ]
       }
     ],
@@ -4248,7 +4457,10 @@
         "date": "2015-03-08",
         "series": 4,
         "tier": "Unknown",
-        "badges": []
+        "badges": [
+          "CY",
+          "MVP"
+        ]
       }
     ],
     "4065": [
@@ -4932,7 +5144,8 @@
         "series": 4,
         "tier": "Rare",
         "badges": [
-          "CR"
+          "CR",
+          "MVP"
         ]
       }
     ],
@@ -4967,7 +5180,9 @@
         "date": "2023-05-26",
         "series": 4,
         "tier": "Rare",
-        "badges": []
+        "badges": [
+          "CY"
+        ]
       }
     ],
     "3998": [
@@ -4984,7 +5199,9 @@
         "date": "2023-06-25",
         "series": 4,
         "tier": "Rare",
-        "badges": []
+        "badges": [
+          "CY"
+        ]
       }
     ],
     "3997": [
@@ -5241,7 +5458,9 @@
         "date": "2023-07-01",
         "series": 4,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "CY"
+        ]
       }
     ],
     "3982": [
@@ -5258,7 +5477,9 @@
         "date": "2023-07-01",
         "series": 4,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "CY"
+        ]
       }
     ],
     "3981": [
@@ -5462,7 +5683,12 @@
         "date": "2023-05-20",
         "series": 4,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "TSD",
+          "RP",
+          "RY",
+          "RM"
+        ]
       }
     ],
     "3970": [
@@ -5503,6 +5729,7 @@
         "tier": "Common",
         "badges": [
           "TSD",
+          "ROY",
           "RP",
           "RY",
           "RM"
@@ -5608,7 +5835,8 @@
         "series": 4,
         "tier": "Fandom",
         "badges": [
-          "CR"
+          "CR",
+          "MVP"
         ]
       }
     ],
@@ -5627,7 +5855,8 @@
         "series": 4,
         "tier": "Fandom",
         "badges": [
-          "CR"
+          "CR",
+          "CY"
         ]
       }
     ],
@@ -5645,7 +5874,9 @@
         "date": "2023-01-16",
         "series": 4,
         "tier": "Rare",
-        "badges": []
+        "badges": [
+          "CR"
+        ]
       }
     ],
     "3961": [
@@ -5764,7 +5995,9 @@
         "date": "2022-12-10",
         "series": 4,
         "tier": "Rare",
-        "badges": []
+        "badges": [
+          "CR"
+        ]
       }
     ],
     "3954": [
@@ -6404,7 +6637,9 @@
         "date": "2016-06-20",
         "series": 4,
         "tier": "Unknown",
-        "badges": []
+        "badges": [
+          "CY"
+        ]
       }
     ],
     "3918": [
@@ -7567,7 +7802,9 @@
         "date": "2023-03-11",
         "series": 4,
         "tier": "Rare",
-        "badges": []
+        "badges": [
+          "MVP"
+        ]
       }
     ],
     "3839": [
@@ -7601,7 +7838,10 @@
         "date": "2023-04-01",
         "series": 4,
         "tier": "Rare",
-        "badges": []
+        "badges": [
+          "RY",
+          "RM"
+        ]
       }
     ],
     "3837": [
@@ -7989,7 +8229,10 @@
         "date": "2023-04-04",
         "series": 4,
         "tier": "Legendary",
-        "badges": []
+        "badges": [
+          "RY",
+          "RM"
+        ]
       }
     ],
     "3815": [
@@ -8006,7 +8249,10 @@
         "date": "2023-02-02",
         "series": 4,
         "tier": "Legendary",
-        "badges": []
+        "badges": [
+          "RY",
+          "RM"
+        ]
       }
     ],
     "3814": [
@@ -8023,7 +8269,10 @@
         "date": "2023-01-16",
         "series": 4,
         "tier": "Legendary",
-        "badges": []
+        "badges": [
+          "RY",
+          "RM"
+        ]
       }
     ],
     "3813": [
@@ -8040,7 +8289,10 @@
         "date": "2023-02-14",
         "series": 4,
         "tier": "Legendary",
-        "badges": []
+        "badges": [
+          "RY",
+          "RM"
+        ]
       }
     ],
     "3812": [
@@ -8057,7 +8309,10 @@
         "date": "2023-01-12",
         "series": 4,
         "tier": "Legendary",
-        "badges": []
+        "badges": [
+          "RY",
+          "RM"
+        ]
       }
     ],
     "3811": [
@@ -8074,7 +8329,11 @@
         "date": "2023-03-30",
         "series": 4,
         "tier": "Legendary",
-        "badges": []
+        "badges": [
+          "RY",
+          "RM",
+          "CR"
+        ]
       }
     ],
     "3810": [
@@ -8091,7 +8350,10 @@
         "date": "2023-03-01",
         "series": 4,
         "tier": "Legendary",
-        "badges": []
+        "badges": [
+          "RY",
+          "RM"
+        ]
       }
     ],
     "3809": [
@@ -8108,7 +8370,11 @@
         "date": "2023-01-26",
         "series": 4,
         "tier": "Legendary",
-        "badges": []
+        "badges": [
+          "RY",
+          "RM",
+          "ROY"
+        ]
       }
     ],
     "3808": [
@@ -8125,7 +8391,10 @@
         "date": "2023-03-08",
         "series": 4,
         "tier": "Legendary",
-        "badges": []
+        "badges": [
+          "RY",
+          "RM"
+        ]
       }
     ],
     "3807": [
@@ -8142,7 +8411,10 @@
         "date": "2023-03-30",
         "series": 4,
         "tier": "Legendary",
-        "badges": []
+        "badges": [
+          "RY",
+          "RM"
+        ]
       }
     ],
     "3806": [
@@ -8159,7 +8431,10 @@
         "date": "2022-12-01",
         "series": 4,
         "tier": "Legendary",
-        "badges": []
+        "badges": [
+          "RY",
+          "RM"
+        ]
       }
     ],
     "3805": [
@@ -8176,7 +8451,10 @@
         "date": "2023-02-11",
         "series": 4,
         "tier": "Legendary",
-        "badges": []
+        "badges": [
+          "RY",
+          "RM"
+        ]
       }
     ],
     "3804": [
@@ -8193,7 +8471,10 @@
         "date": "2022-12-06",
         "series": 4,
         "tier": "Legendary",
-        "badges": []
+        "badges": [
+          "RY",
+          "RM"
+        ]
       }
     ],
     "3803": [
@@ -8210,7 +8491,10 @@
         "date": "2023-02-02",
         "series": 4,
         "tier": "Legendary",
-        "badges": []
+        "badges": [
+          "RY",
+          "RM"
+        ]
       }
     ],
     "3802": [
@@ -8227,7 +8511,11 @@
         "date": "2023-03-18",
         "series": 4,
         "tier": "Legendary",
-        "badges": []
+        "badges": [
+          "RY",
+          "RM",
+          "CR"
+        ]
       }
     ],
     "3801": [
@@ -8244,7 +8532,10 @@
         "date": "2023-02-11",
         "series": 4,
         "tier": "Legendary",
-        "badges": []
+        "badges": [
+          "RY",
+          "RM"
+        ]
       }
     ],
     "3800": [
@@ -8261,7 +8552,10 @@
         "date": "2022-12-18",
         "series": 4,
         "tier": "Legendary",
-        "badges": []
+        "badges": [
+          "RY",
+          "RM"
+        ]
       }
     ],
     "3799": [
@@ -8278,7 +8572,10 @@
         "date": "2023-02-07",
         "series": 4,
         "tier": "Legendary",
-        "badges": []
+        "badges": [
+          "RY",
+          "RM"
+        ]
       }
     ],
     "3798": [
@@ -8295,7 +8592,10 @@
         "date": "2023-02-14",
         "series": 4,
         "tier": "Legendary",
-        "badges": []
+        "badges": [
+          "RY",
+          "RM"
+        ]
       }
     ],
     "3797": [
@@ -8312,7 +8612,10 @@
         "date": "2022-12-11",
         "series": 4,
         "tier": "Legendary",
-        "badges": []
+        "badges": [
+          "RY",
+          "RM"
+        ]
       }
     ],
     "3796": [
@@ -8329,7 +8632,11 @@
         "date": "2023-03-22",
         "series": 4,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "TSD",
+          "RY",
+          "RM"
+        ]
       }
     ],
     "3795": [
@@ -10142,7 +10449,10 @@
         "date": "2023-02-15",
         "series": 4,
         "tier": "Rare",
-        "badges": []
+        "badges": [
+          "RY",
+          "RM"
+        ]
       }
     ],
     "3687": [
@@ -12188,7 +12498,11 @@
         "date": "2022-12-01",
         "series": 4,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "TSD",
+          "RY",
+          "RM"
+        ]
       }
     ],
     "3570": [
@@ -12409,7 +12723,9 @@
         "date": "2023-01-29",
         "series": 4,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "TSD"
+        ]
       }
     ],
     "3557": [
@@ -15626,7 +15942,8 @@
         "tier": "Rare",
         "badges": [
           "RY",
-          "RM"
+          "RM",
+          "ROY"
         ]
       }
     ],
@@ -19651,7 +19968,8 @@
         "series": 4,
         "tier": "Common",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -19670,7 +19988,8 @@
         "series": 4,
         "tier": "Common",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -19689,7 +20008,8 @@
         "series": 4,
         "tier": "Common",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -19708,7 +20028,8 @@
         "series": 4,
         "tier": "Common",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -19727,7 +20048,8 @@
         "series": 4,
         "tier": "Common",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -19746,7 +20068,8 @@
         "series": 4,
         "tier": "Common",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -19765,7 +20088,8 @@
         "series": 4,
         "tier": "Common",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -19784,7 +20108,8 @@
         "series": 4,
         "tier": "Common",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -19803,7 +20128,8 @@
         "series": 4,
         "tier": "Common",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -19822,7 +20148,8 @@
         "series": 4,
         "tier": "Common",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -19841,7 +20168,8 @@
         "series": 4,
         "tier": "Common",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -19860,7 +20188,8 @@
         "series": 4,
         "tier": "Common",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -19879,7 +20208,8 @@
         "series": 4,
         "tier": "Common",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -19898,7 +20228,8 @@
         "series": 4,
         "tier": "Common",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -19917,7 +20248,8 @@
         "series": 4,
         "tier": "Common",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -19936,7 +20268,8 @@
         "series": 4,
         "tier": "Common",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -19955,7 +20288,8 @@
         "series": 4,
         "tier": "Common",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -19974,7 +20308,8 @@
         "series": 4,
         "tier": "Common",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -19993,7 +20328,8 @@
         "series": 4,
         "tier": "Common",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -20012,7 +20348,8 @@
         "series": 4,
         "tier": "Common",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -20031,7 +20368,8 @@
         "series": 4,
         "tier": "Common",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -20050,7 +20388,8 @@
         "series": 4,
         "tier": "Common",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -20070,7 +20409,8 @@
         "tier": "Common",
         "badges": [
           "TEAM",
-          "CY"
+          "CY",
+          "CR"
         ]
       }
     ],
@@ -20089,7 +20429,8 @@
         "series": 4,
         "tier": "Common",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -20108,7 +20449,8 @@
         "series": 4,
         "tier": "Common",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -20127,7 +20469,8 @@
         "series": 4,
         "tier": "Common",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -20146,7 +20489,8 @@
         "series": 4,
         "tier": "Common",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -20165,7 +20509,8 @@
         "series": 4,
         "tier": "Common",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -20184,7 +20529,8 @@
         "series": 4,
         "tier": "Common",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -20203,7 +20549,8 @@
         "series": 4,
         "tier": "Common",
         "badges": [
-          "TEAM"
+          "TEAM",
+          "CR"
         ]
       }
     ],
@@ -20697,7 +21044,8 @@
           "TSD",
           "RY",
           "RP",
-          "RM"
+          "RM",
+          "ROY"
         ]
       }
     ],
@@ -23617,7 +23965,8 @@
         "tier": "Rare",
         "badges": [
           "TEAM",
-          "TSD"
+          "TSD",
+          "CR"
         ]
       }
     ],
@@ -23637,7 +23986,8 @@
         "tier": "Rare",
         "badges": [
           "TEAM",
-          "TSD"
+          "TSD",
+          "CR"
         ]
       }
     ],
@@ -23657,7 +24007,8 @@
         "tier": "Rare",
         "badges": [
           "TEAM",
-          "TSD"
+          "TSD",
+          "CR"
         ]
       }
     ],
@@ -23677,7 +24028,8 @@
         "tier": "Rare",
         "badges": [
           "TEAM",
-          "TSD"
+          "TSD",
+          "CR"
         ]
       }
     ],
@@ -23697,7 +24049,8 @@
         "tier": "Rare",
         "badges": [
           "TEAM",
-          "TSD"
+          "TSD",
+          "CR"
         ]
       }
     ],
@@ -23718,7 +24071,8 @@
         "badges": [
           "TEAM",
           "TSD",
-          "CY"
+          "CY",
+          "CR"
         ]
       }
     ],
@@ -23738,7 +24092,8 @@
         "tier": "Rare",
         "badges": [
           "TEAM",
-          "TSD"
+          "TSD",
+          "CR"
         ]
       }
     ],
@@ -23758,7 +24113,8 @@
         "tier": "Rare",
         "badges": [
           "TEAM",
-          "TSD"
+          "TSD",
+          "CR"
         ]
       }
     ],
@@ -23778,7 +24134,8 @@
         "tier": "Rare",
         "badges": [
           "TEAM",
-          "TSD"
+          "TSD",
+          "CR"
         ]
       }
     ],
@@ -23798,7 +24155,8 @@
         "tier": "Rare",
         "badges": [
           "TEAM",
-          "TSD"
+          "TSD",
+          "CR"
         ]
       }
     ],
@@ -23818,7 +24176,8 @@
         "tier": "Rare",
         "badges": [
           "TEAM",
-          "TSD"
+          "TSD",
+          "CR"
         ]
       }
     ],
@@ -23838,7 +24197,8 @@
         "tier": "Rare",
         "badges": [
           "TEAM",
-          "TSD"
+          "TSD",
+          "CR"
         ]
       }
     ],
