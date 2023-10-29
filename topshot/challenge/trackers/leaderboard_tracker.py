@@ -125,7 +125,7 @@ class LeaderBoardTracker(Tracker):
         sorted_keys = list(scores.keys())
         sorted_keys.sort(reverse=self.tier_breakers[0].order == "DESC", key=lambda k: scores[k]['stats'][0])
         sorted_keys = sorted_keys[0:30]  # only keep top 30 records to save time
-        for i in range(len(self.tier_breakers) - 1, 0, -1):
+        for i in range(len(self.tier_breakers) - 1, -1, -1):
             sorted_keys.sort(reverse=self.tier_breakers[i].order == "DESC", key=lambda k: scores[k]['stats'][i])
 
         # Append the top 2 * count (or at least 5) players/teams to the sorted_stats list, sorted by their total scores
