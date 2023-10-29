@@ -88,6 +88,7 @@ async def purge_channel(channel):
 
 @bot.command(name="reload")
 async def reload(ctx):
+    get_current_challenge.stop()
     try:
         CHALLENGE_PROVIDER.reload()
 
@@ -98,6 +99,7 @@ async def reload(ctx):
         await ctx.channel.send(f'Failed: ${err}.')
         return
 
+    get_current_challenge.start()
     await ctx.channel.send("Reloaded")
 
 

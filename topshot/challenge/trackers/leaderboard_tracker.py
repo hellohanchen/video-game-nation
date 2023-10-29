@@ -64,7 +64,19 @@ class LeaderBoardTracker(Tracker):
         :param player_stats: dictionary of statistics for a player
         :return: a list of values containing the player scores based on the tier breakers
         """
-        return [tb.load_player_stats(player_stats) for tb in self.tier_breakers]
+        scores_for_leaderboard = []
+        if len(self.tier_breakers) > 0:
+            first_tb = self.tier_breakers[0]
+            first_score = first_tb.load_player_stats(player_stats)
+            if first_score == 0:  # skip players without stats
+                return scores_for_leaderboard
+            else:
+                scores_for_leaderboard.append(first_score)
+
+        for i in range(1, len(self.tier_breakers)):
+            scores_for_leaderboard.append(self.tier_breakers[i].load_player_stats(player_stats))
+
+        return scores_for_leaderboard
 
     def get_player_scores(self, games_players: Dict[str, List[int]]) -> Tuple[int, List[Dict[str, Any]]]:
         scores: Dict[str, Dict[str, Any]] = {}
@@ -76,27 +88,25 @@ class LeaderBoardTracker(Tracker):
             if game_boxscore is None:
                 continue
 
-            for player_boxscore in game_boxscore['homeTeam']['players']:
-                if player_boxscore['status'] == 'ACTIVE' and player_boxscore['personId'] in games_players[game_id]:
-                    statistics = player_boxscore['statistics']
-                    statistics['order'] = player_boxscore['order']
-                    statistics['teamWin'] = \
-                        1 if int(game_boxscore['homeTeam']['score']) > int(game_boxscore['awayTeam']['score']) else 0
-                    scores[player_boxscore['name'] + '/' + str(game_id)] = {
-                        'game': game_info,
-                        'stats': self.load_player_stats(statistics)
-                    }
+            home_team_score = game_boxscore['homeTeam']['score']
+            away_team_score = game_boxscore['awayTeam']['score']
+            wins = {
+                'homeTeam': 1 if home_team_score > away_team_score else 0,
+                'awayTeam': 1 if away_team_score > home_team_score else 0
+            }
 
-            for player_boxscore in game_boxscore['awayTeam']['players']:
-                if player_boxscore['status'] == 'ACTIVE' and player_boxscore['personId'] in games_players[game_id]:
-                    statistics = player_boxscore['statistics']
-                    statistics['order'] = player_boxscore['order']
-                    statistics['teamWin'] = \
-                        1 if int(game_boxscore['awayTeam']['score']) > int(game_boxscore['homeTeam']['score']) else 0
-                    scores[player_boxscore['name'] + '/' + str(game_id)] = {
-                        'game': game_info,
-                        'stats': self.load_player_stats(statistics)
-                    }
+            for team in ['homeTeam', 'awayTeam']:
+                for player_boxscore in game_boxscore[team]['players']:
+                    if player_boxscore['status'] == 'ACTIVE' and player_boxscore['personId'] in games_players[game_id]:
+                        statistics = player_boxscore['statistics']
+                        statistics['order'] = player_boxscore['order']
+                        statistics['teamWin'] = wins[team]
+                        scores_for_leaderboard = self.load_player_stats(statistics)
+                        if len(scores_for_leaderboard) > 0:  # skip players without valid stats
+                            scores[player_boxscore['name'] + '/' + str(game_id)] = {
+                                'game': game_info,
+                                'stats': scores_for_leaderboard
+                            }
 
         return self.sort(scores, all_final)
 
@@ -113,9 +123,10 @@ class LeaderBoardTracker(Tracker):
         # Sort the keys in descending order based on the scores for each tier breaker, as specified by the order of the
         # tier breakers in the leaderboard tracker
         sorted_keys = list(scores.keys())
-        for i in range(len(self.tier_breakers) - 1, -1, -1):
+        sorted_keys.sort(reverse=self.tier_breakers[0].order == "DESC", key=lambda k: scores[k]['stats'][0])
+        sorted_keys = sorted_keys[0:30]  # only keep top 30 records to save time
+        for i in range(len(self.tier_breakers) - 1, 0, -1):
             sorted_keys.sort(reverse=self.tier_breakers[i].order == "DESC", key=lambda k: scores[k]['stats'][i])
-        sorted_keys = sorted_keys[0:25]
 
         # Append the top 2 * count (or at least 5) players/teams to the sorted_stats list, sorted by their total scores
         # across all tier breakers, as well as any players/teams with the same total score as the last player/team in

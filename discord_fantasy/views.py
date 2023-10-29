@@ -512,7 +512,7 @@ class TeamsView(FantasyView):
             for game_id, game in self.lineup_provider.get_coming_games():
                 self.add_item(TeamsGameButton(int(i / 4), game['homeTeam'], game['awayTeam']))
                 i += 1
-        self.add_item(LineupButton(int((i + 3) / 4) + 1))
+        self.add_item(LineupButton(int((i - 1) / 4) + 1))
 
     def get_team_info(self, team):
         message = self.lineup_provider.formatted_team_players(team)[0]
