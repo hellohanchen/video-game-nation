@@ -1013,6 +1013,7 @@
       "4": {
         "RY": true,
         "RM": true,
+        "ROY": true,
         "CR": true,
         "TSD": true,
         "RP": true
@@ -1403,6 +1404,7 @@
       "3": {
         "RY": true,
         "RM": true,
+        "ROY": true,
         "CR": true,
         "TSD": true,
         "RP": true
@@ -1927,7 +1929,8 @@
         "TSD": true,
         "RY": true,
         "RP": true,
-        "RM": true
+        "RM": true,
+        "ROY": true
       },
       "4": {}
     }
@@ -2953,6 +2956,7 @@
       "2": {
         "RY": true,
         "RM": true,
+        "ROY": true,
         "CR": true,
         "TSD": true,
         "RP": true
@@ -3864,6 +3868,7 @@
         "RY": true,
         "CR": true,
         "RM": true,
+        "ROY": true,
         "TSD": true
       },
       "2": {
@@ -8973,7 +8978,8 @@
       "1": {
         "TSD": true,
         "RY": true,
-        "RP": true
+        "RP": true,
+        "ROY": true
       },
       "2": {},
       "3": {},
@@ -9222,7 +9228,8 @@
       "3": {
         "CR": true,
         "TSD": true,
-        "RY": true
+        "RY": true,
+        "ROY": true
       },
       "4": {}
     }
@@ -10123,7 +10130,8 @@
       "3": {
         "TSD": true,
         "RY": true,
-        "CY": true
+        "CY": true,
+        "ROY": true
       },
       "4": {}
     }
@@ -10706,7 +10714,8 @@
       "2": {},
       "3": {
         "TSD": true,
-        "RY": true
+        "RY": true,
+        "ROY": true
       },
       "4": {}
     }
@@ -11059,6 +11068,7 @@
         "CR": true,
         "RY": true,
         "MVP": true,
+        "ROY": true,
         "RP": true
       }
     }
@@ -11631,7 +11641,8 @@
       },
       "3": {
         "CR": true,
-        "RY": true
+        "RY": true,
+        "ROY": true
       },
       "4": {
         "CR": true,
@@ -11893,7 +11904,8 @@
       "3": {
         "TSD": true,
         "RY": true,
-        "CR": true
+        "CR": true,
+        "ROY": true
       },
       "4": {}
     }
@@ -13126,6 +13138,7 @@
       "2": {},
       "3": {
         "RY": true,
+        "ROY": true,
         "TSD": true
       },
       "4": {}
@@ -13797,7 +13810,8 @@
       "3": {},
       "4": {
         "TSD": true,
-        "RY": true
+        "RY": true,
+        "ROY": true
       }
     }
   },
