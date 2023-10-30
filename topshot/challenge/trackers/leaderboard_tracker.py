@@ -160,7 +160,7 @@ class QualifierTracker(LeaderBoardTracker):
         self.tier_breakers: List[Qualifier] = []
 
     def add_tier_breaker(self, tier_breaker: TierBreaker) -> None:
-        assert isinstance(tier_breaker, Qualifier), "filter tracker can only use filter breaker"
+        assert isinstance(tier_breaker, Qualifier), "filter tracker can only use qualifier tier breaker"
         self.tier_breakers.append(tier_breaker)
 
     def load_team_stats(self, team_player_stats: List[Dict]) -> [float]:
@@ -209,7 +209,9 @@ class QualifierTracker(LeaderBoardTracker):
 
         # Sort the keys in descending order based on the scores for each tier breaker, as specified by the order of the
         # tier breakers in the leaderboard tracker
-        for i in range(len(self.tier_breakers) - 1, -1, -1):
+        keys.sort(reverse=True, key=lambda k: scores[k]['stats'][2])
+        keys = keys[0:60]  # only keep top 60 records to save time
+        for i in range(len(self.tier_breakers) - 1, 0, -1):
             keys.sort(reverse=True, key=lambda k: scores[k]['stats'][i + 2])
 
         sorted_stats = []
