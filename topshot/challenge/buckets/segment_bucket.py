@@ -9,6 +9,7 @@ class SegmentType(Enum):
     CONFERENCE = 1
     GAME = 2
     DATE = 3
+    TEAM = 4
 
 
 class SegmentBucket(Bucket):
@@ -38,7 +39,7 @@ class SegmentBucket(Bucket):
 
         return results
 
-    def __segment(self, games_teams: Dict[str, List[str]]) -> List[Dict[str, List[str]]]:
+    def __segment(self, game_id_to_teams: Dict[str, List[str]]) -> List[Dict[str, List[str]]]:
         """
         Private method that divides the teams or players into segments.
 
@@ -46,25 +47,34 @@ class SegmentBucket(Bucket):
         :return: a list of dictionaries, where each dictionary maps game IDs to lists of team IDs
         """
         if self.segment_type == SegmentType.GAME:
-            return [{game_id: games_teams[game_id]} for game_id in games_teams]
+            return [{game_id: game_id_to_teams[game_id]} for game_id in game_id_to_teams]
 
         if self.segment_type == SegmentType.DATE:
             games_dates = {}
 
-            for game_id in games_teams:
+            for game_id in game_id_to_teams:
                 game_date = NBA_PROVIDER.get_date_for_game(game_id)
                 if game_date not in games_dates:
                     games_dates[game_date] = {}
 
-                games_dates[game_date][game_id] = games_teams[game_id]
+                games_dates[game_date][game_id] = game_id_to_teams[game_id]
 
             return [games for _, games in games_dates.items()]
+
+        if self.segment_type == SegmentType.TEAM:
+            segments = []
+
+            for game_id in game_id_to_teams:
+                for team in game_id_to_teams[game_id]:
+                    segments.append({game_id: [team]})
+
+            return segments
 
         if self.segment_type == SegmentType.CONFERENCE:
             segment_east = {}
             segment_west = {}
 
-            for game_id, teams in games_teams.items():
+            for game_id, teams in game_id_to_teams.items():
                 for team in teams:
                     if team in EAST_CONFERENCE:
                         if game_id not in segment_east:

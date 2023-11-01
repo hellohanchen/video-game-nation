@@ -6,7 +6,8 @@
       "title": "$2,023 FLASH CHALLENGE OCTOBER 31, 2023",
       "buckets": [
         {
-          "description": "ADD 1 Rare or Legendary Moment of the player that leads NYK in scoring.",
+          "description": "ADD 1 Rare or Legendary Moment of the player that leads each team in scoring.",
+          "segment": "TEAM",
           "is_wildcard": false,
           "type": "LB",
           "count": 1,
@@ -17,92 +18,6 @@
               "order": "DESC"
             }
           ],
-          "team_filter": "NYK",
-          "dates": [
-            "10/31/2023"
-          ]
-        },
-        {
-          "description": "ADD 1 Rare or Legendary Moment of the player that leads CLE in scoring.",
-          "is_wildcard": false,
-          "type": "LB",
-          "count": 1,
-          "is_team": false,
-          "tier_breakers": [
-            {
-              "stats": "PTS",
-              "order": "DESC"
-            }
-          ],
-          "team_filter": "CLE",
-          "dates": [
-            "10/31/2023"
-          ]
-        },
-        {
-          "description": "ADD 1 Rare or Legendary Moment of the player that leads SAS in scoring.",
-          "is_wildcard": false,
-          "type": "LB",
-          "count": 1,
-          "is_team": false,
-          "tier_breakers": [
-            {
-              "stats": "PTS",
-              "order": "DESC"
-            }
-          ],
-          "team_filter": "SAS",
-          "dates": [
-            "10/31/2023"
-          ]
-        },
-        {
-          "description": "ADD 1 Rare or Legendary Moment of the player that leads PHX in scoring.",
-          "is_wildcard": false,
-          "type": "LB",
-          "count": 1,
-          "is_team": false,
-          "tier_breakers": [
-            {
-              "stats": "PTS",
-              "order": "DESC"
-            }
-          ],
-          "team_filter": "PHX",
-          "dates": [
-            "10/31/2023"
-          ]
-        },
-        {
-          "description": "ADD 1 Rare or Legendary Moment of the player that leads ORL in scoring.",
-          "is_wildcard": false,
-          "type": "LB",
-          "count": 1,
-          "is_team": false,
-          "tier_breakers": [
-            {
-              "stats": "PTS",
-              "order": "DESC"
-            }
-          ],
-          "team_filter": "ORL",
-          "dates": [
-            "10/31/2023"
-          ]
-        },
-        {
-          "description": "ADD 1 Rare or Legendary Moment of the player that leads LAC in scoring.",
-          "is_wildcard": false,
-          "type": "LB",
-          "count": 1,
-          "is_team": false,
-          "tier_breakers": [
-            {
-              "stats": "PTS",
-              "order": "DESC"
-            }
-          ],
-          "team_filter": "LAC",
           "dates": [
             "10/31/2023"
           ]
