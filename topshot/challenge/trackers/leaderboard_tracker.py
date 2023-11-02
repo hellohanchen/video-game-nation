@@ -1,4 +1,4 @@
-from typing import List, Dict, Any, Union, Tuple
+from typing import List, Dict, Any, Union, Tuple, Optional
 
 from topshot.challenge.tier_breaker import TierBreaker, Qualifier
 from topshot.challenge.trackers.tracker import Tracker
@@ -33,12 +33,15 @@ class LeaderBoardTracker(Tracker):
         """
         return [tb.load_team_stats(team_player_stats) for tb in self.tier_breakers]
 
-    def get_team_scores(self, games_teams: Dict[str, List[str]]) -> Tuple[int, List[Dict[str, Any]]]:
+    def get_team_scores(self, games_teams: Dict[str, List[str]], all_games_stats: Dict[str, Tuple[Optional[Dict[str, Any]], bool, Optional[Dict[str, Any]]]]) -> Tuple[int, List[Dict[str, Any]]]:
         scores: Dict[str, Dict[str, Any]] = {}
 
         all_final = True
         for game_id in games_teams:
-            game_stats, game_final, game_info = Tracker.load_game_stats(game_id)
+            if game_id not in all_games_stats:
+                continue
+
+            game_stats, game_final, game_info = all_games_stats[game_id]
             all_final &= game_final
             if game_stats is None:
                 continue
@@ -78,25 +81,28 @@ class LeaderBoardTracker(Tracker):
 
         return scores_for_leaderboard
 
-    def get_player_scores(self, games_players: Dict[str, List[int]]) -> Tuple[int, List[Dict[str, Any]]]:
+    def get_player_scores(self, games_players: Dict[str, List[int]], all_games_stats: Dict[str, Tuple[Optional[Dict[str, Any]], bool, Optional[Dict[str, Any]]]]) -> Tuple[int, List[Dict[str, Any]]]:
         scores: Dict[str, Dict[str, Any]] = {}
 
         all_final = True
         for game_id in games_players:
-            game_boxscore, game_is_final, game_info = Tracker.load_game_stats(game_id)
-            all_final &= game_is_final
-            if game_boxscore is None:
+            if game_id not in all_games_stats:
                 continue
 
-            home_team_score = game_boxscore['homeTeam']['score']
-            away_team_score = game_boxscore['awayTeam']['score']
+            game_stats, game_final, game_info = all_games_stats[game_id]
+            all_final &= game_final
+            if game_stats is None:
+                continue
+
+            home_team_score = game_stats['homeTeam']['score']
+            away_team_score = game_stats['awayTeam']['score']
             wins = {
                 'homeTeam': 1 if home_team_score > away_team_score else 0,
                 'awayTeam': 1 if away_team_score > home_team_score else 0
             }
 
             for team in ['homeTeam', 'awayTeam']:
-                for player_boxscore in game_boxscore[team]['players']:
+                for player_boxscore in game_stats[team]['players']:
                     if player_boxscore['status'] == 'ACTIVE' and player_boxscore['personId'] in games_players[game_id]:
                         statistics = player_boxscore['statistics']
                         statistics['order'] = player_boxscore['order']
@@ -122,36 +128,84 @@ class LeaderBoardTracker(Tracker):
         """
         # Sort the keys in descending order based on the scores for each tier breaker, as specified by the order of the
         # tier breakers in the leaderboard tracker
-        sorted_keys = list(scores.keys())
-        sorted_keys.sort(reverse=self.tier_breakers[0].order == "DESC", key=lambda k: scores[k]['stats'][0])
-        sorted_keys = sorted_keys[0:30]  # only keep top 30 records to save time
-        for i in range(len(self.tier_breakers) - 1, -1, -1):
-            sorted_keys.sort(reverse=self.tier_breakers[i].order == "DESC", key=lambda k: scores[k]['stats'][i])
+        keys_sorted = list(scores.keys())
+        keys_sorted.sort(reverse=self.tier_breakers[0].order == "DESC", key=lambda k: scores[k]['stats'][0])
+
+        length = len(keys_sorted)
+        if length > 60:
+            length = 60
+            keys_sorted = keys_sorted[0:60]  # only keep top 60 records to save time
 
         # Append the top 2 * count (or at least 5) players/teams to the sorted_stats list, sorted by their total scores
         # across all tier breakers, as well as any players/teams with the same total score as the last player/team in
         # the sorted_stats list
-        num_to_display = max(5, self.count * 2) if not all_final else self.count
-
-        sorted_scores = []
+        num_to_return = max(5, self.count * 2) if not all_final else self.count
+        keys_sorted_and_filtered_by_first_tier = []
         idx = 0
         hit = 0
-        while len(sorted_scores) < num_to_display and idx < len(sorted_keys):
-            # for extra score, we don't need to show ended games
-            if hit < self.count or scores[sorted_keys[idx]]['game']['status'] != 3:
-                sorted_scores.append({"name": sorted_keys[idx], "score": scores[sorted_keys[idx]]})
+        while len(keys_sorted_and_filtered_by_first_tier) < num_to_return and idx < length:
+            if hit < self.count:
+                keys_sorted_and_filtered_by_first_tier.append(keys_sorted[idx])
+                hit += 1
                 idx += 1
 
-                while idx < len(sorted_keys) and equals(scores[sorted_keys[idx - 1]]['stats'], scores[sorted_keys[idx]]['stats']):
-                    if hit < self.count or scores[sorted_keys[idx]]['game']['status'] != 3:
-                        sorted_scores.append({"name": sorted_keys[idx], "score": scores[sorted_keys[idx]]})
+                if hit <= self.count:
+                    while idx < length and scores[keys_sorted[idx - 1]]['stats'][0] == scores[keys_sorted[idx]]['stats'][0]:
+                        keys_sorted_and_filtered_by_first_tier.append(keys_sorted[idx])
+                        hit += 1
                         idx += 1
-                if idx >= self.count > hit:
-                    hit = idx
+                else:
+                    while idx < length and scores[keys_sorted[idx - 1]]['stats'][0] == scores[keys_sorted[idx]]['stats'][0]:
+                        if scores[keys_sorted[idx]]['game']['status'] != 3:
+                            keys_sorted_and_filtered_by_first_tier.append(keys_sorted[idx])
+                        idx += 1
+            elif scores[keys_sorted[idx]]['game']['status'] != 3:
+                keys_sorted_and_filtered_by_first_tier.append(keys_sorted[idx])
+                idx += 1
+
+                while idx < length and scores[keys_sorted[idx - 1]]['stats'][0] == scores[keys_sorted[idx]]['stats'][0]:
+                    if scores[keys_sorted[idx]]['game']['status'] != 3:
+                        keys_sorted_and_filtered_by_first_tier.append(keys_sorted[idx])
+                    idx += 1
             else:
                 idx += 1
 
-        return hit, sorted_scores
+        keys_sorted = keys_sorted_and_filtered_by_first_tier
+        for i in range(len(self.tier_breakers) - 1, -1, -1):
+            keys_sorted.sort(reverse=self.tier_breakers[i].order == "DESC", key=lambda k: scores[k]['stats'][i])
+        length = len(keys_sorted)
+
+        scores_sorted_by_all_tiers = []
+        idx = 0
+        hit = 0
+        while len(scores_sorted_by_all_tiers) < num_to_return and idx < length:
+            if hit < self.count:
+                scores_sorted_by_all_tiers.append({"name": keys_sorted[idx], "score": scores[keys_sorted[idx]]})
+                hit += 1
+                idx += 1
+
+                if hit <= self.count:
+                    while idx < length and equals(scores[keys_sorted[idx - 1]]['stats'], scores[keys_sorted[idx]]['stats']):
+                        scores_sorted_by_all_tiers.append({"name": keys_sorted[idx], "score": scores[keys_sorted[idx]]})
+                        hit += 1
+                        idx += 1
+                else:
+                    while idx < length and equals(scores[keys_sorted[idx - 1]]['stats'], scores[keys_sorted[idx]]['stats']):
+                        if scores[keys_sorted[idx]]['game']['status'] != 3:
+                            scores_sorted_by_all_tiers.append({"name": keys_sorted[idx], "score": scores[keys_sorted[idx]]})
+                        idx += 1
+            elif scores[keys_sorted[idx]]['game']['status'] != 3:
+                scores_sorted_by_all_tiers.append({"name": keys_sorted[idx], "score": scores[keys_sorted[idx]]})
+                idx += 1
+
+                while idx < length and equals(scores[keys_sorted[idx - 1]]['stats'], scores[keys_sorted[idx]]['stats']):
+                    if scores[keys_sorted[idx]]['game']['status'] != 3:
+                        scores_sorted_by_all_tiers.append({"name": keys_sorted[idx], "score": scores[keys_sorted[idx]]})
+                    idx += 1
+            else:
+                idx += 1
+
+        return hit, scores_sorted_by_all_tiers
 
 
 class QualifierTracker(LeaderBoardTracker):

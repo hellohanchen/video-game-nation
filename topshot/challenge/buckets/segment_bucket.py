@@ -1,5 +1,5 @@
 from enum import Enum
-from typing import Dict, List, Any, Tuple
+from typing import Dict, List, Any, Tuple, Optional
 
 from provider.nba_provider import NBA_PROVIDER, EAST_CONFERENCE, WEST_CONFERENCE
 from topshot.challenge.buckets.bucket import Bucket, BucketType, fill_bucket
@@ -17,7 +17,7 @@ class SegmentBucket(Bucket):
         super().__init__(description, is_wildcard, bucket_type, count, is_team)
         self.segment_type = segment_type
 
-    def get_current_scores(self) -> List[Tuple[int, List[Dict[str, Any]]]]:
+    def get_current_scores(self, games_stats: Dict[str, Tuple[Optional[Dict[str, Any]], bool, Optional[Dict[str, Any]]]]) -> List[Tuple[int, List[Dict[str, Any]]]]:
         """
         Get the current ranking of teams/players from ALL games tracked by this bucket.
 
@@ -30,12 +30,12 @@ class SegmentBucket(Bucket):
 
         for segment in segments:
             if self.is_team:
-                results.append(self.tracker.get_team_scores(segment))
+                results.append(self.tracker.get_team_scores(segment, games_stats))
             else:
                 # get players for each game
                 game_players = self.get_filtered_games_players(segment)
 
-                results.append(self.tracker.get_player_scores(game_players))
+                results.append(self.tracker.get_player_scores(game_players, games_stats))
 
         return results
 

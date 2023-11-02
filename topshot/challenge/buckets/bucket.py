@@ -1,5 +1,5 @@
 from enum import Enum
-from typing import List, Dict, Any, Tuple
+from typing import List, Dict, Any, Tuple, Optional
 
 from provider.nba_provider import NBA_PROVIDER
 from topshot.challenge.player_filter import TopshotFilter, PlayerIDFilter
@@ -135,21 +135,22 @@ class Bucket:
 
         return game_players
 
-    def get_current_scores(self) -> List[Tuple[int, List[Dict[str, Any]]]]:
+    def get_current_scores(self, games_stats: Dict[str, Tuple[Optional[Dict[str, Any]], bool, Optional[Dict[str, Any]]]]) -> List[Tuple[int, List[Dict[str, Any]]]]:
         """
         Get the current ranking of teams/players from ALL games tracked by this bucket.
 
+        :games_stats: dictionary of game_id to (game_boxscore, isFinal, game_info) tuple
         :return: a dictionary of {name, stats:{}}
         """
         games_teams = self.get_filtered_games_teams()
 
         if self.is_team:
-            return [self.tracker.get_team_scores(games_teams)]
+            return [self.tracker.get_team_scores(games_teams, games_stats)]
 
         # get players for each game
         game_players = self.get_filtered_games_players(games_teams)
 
-        return [self.tracker.get_player_scores(game_players)]
+        return [self.tracker.get_player_scores(game_players, games_stats)]
 
     @staticmethod
     def build_from_dict(dict_obj):

@@ -1,4 +1,4 @@
-from typing import List, Dict, Any, Tuple
+from typing import List, Dict, Any, Tuple, Optional
 
 from nba_api.live.nba.endpoints import boxscore, PlayByPlay
 
@@ -24,7 +24,7 @@ class PlayByPlayTracker(Tracker):
         """
         self.tier_breakers.append(tier_breaker)
 
-    def get_team_scores(self, games_teams: Dict[str, List[str]]) -> Tuple[int, List[Dict[str, Any]]]:
+    def get_team_scores(self, games_teams: Dict[str, List[str]], all_games_stats: Dict[str, Tuple[Optional[Dict[str, Any]], bool, Optional[Dict[str, Any]]]]) -> Tuple[int, List[Dict[str, Any]]]:
         """
         Get the team ranking based on the given games and teams.
 
@@ -43,13 +43,14 @@ class PlayByPlayTracker(Tracker):
         result = []
 
         for game_id in games_teams:
-            try:
-                # Get the game stats and the play-by-play actions.
-                game_stats = boxscore.BoxScore(game_id=game_id).get_dict()['game']
-                actions = PlayByPlay(game_id).get_dict()['game']['actions']
-            except Exception:
+            if game_id not in all_games_stats:
                 continue
 
+            game_stats, game_final, game_info = all_games_stats[game_id]
+            if game_stats is None:
+                continue
+
+            actions = PlayByPlay(game_id).get_dict()['game']['actions']
             # Skip games with no actions.
             if len(actions) == 0:
                 continue
@@ -78,7 +79,7 @@ class PlayByPlayTracker(Tracker):
 
         return len(result), result
 
-    def get_player_scores(self, games_players: Dict[str, List[int]]) -> Tuple[int, List[Dict[str, Any]]]:
+    def get_player_scores(self, games_players: Dict[str, List[int]], all_games_stats: Dict[str, Tuple[Optional[Dict[str, Any]], bool, Optional[Dict[str, Any]]]]) -> Tuple[int, List[Dict[str, Any]]]:
         """
         Gets the rankings of players based on their stats in games they played in.
 
@@ -95,12 +96,15 @@ class PlayByPlayTracker(Tracker):
         result = []
 
         for game_id in games_players:
-            try:
-                game_stats = boxscore.BoxScore(game_id=game_id).get_dict()['game']
-                actions = PlayByPlay(game_id).get_dict()['game']['actions']
-            except Exception:
+            if game_id not in all_games_stats:
                 continue
 
+            game_stats, game_final, game_info = all_games_stats[game_id]
+            if game_stats is None:
+                continue
+
+            actions = PlayByPlay(game_id).get_dict()['game']['actions']
+            # Skip games with no actions.
             if len(actions) == 0:
                 continue
 
