@@ -60,7 +60,7 @@ async def on_ready():
     get_current_challenge.start()
 
 
-@tasks.loop(minutes=1)
+@tasks.loop(seconds=90)
 async def get_current_challenge():
     messages = [NBAProvider.get_scoreboard_message(CHALLENGE_PROVIDER.headline)]
 
@@ -69,7 +69,7 @@ async def get_current_challenge():
         if challenge_messages:
             messages += challenge_messages
 
-    messages.append("ET: **{}** , UPDATE EVERY MINUTE".format(datetime.now(TZ_ET).strftime("%m/%d/%Y, %H:%M:%S")))
+    messages.append("ET: **{}** , UPDATE EVERY 90 SECONDS".format(datetime.now(TZ_ET).strftime("%m/%d/%Y, %H:%M:%S")))
 
     await update_channel_messages(messages, MESSAGE_CHANNELS, PREVIOUS_MESSAGE_IDS)
 
