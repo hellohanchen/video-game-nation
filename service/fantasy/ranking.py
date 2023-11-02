@@ -73,6 +73,8 @@ class RankingProvider:
                 LINEUP_PROVIDER.reload()
             except:
                 return
+        else:
+            self.status = status
 
         self.__update_leaderboard()
 
