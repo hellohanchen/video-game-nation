@@ -44,7 +44,7 @@ def load_challenges():
 
 
 CHALLENGE_PROVIDER = ChallengeProvider()
-CHANNEL_NAMEs = ["🤖-mdv-flash-challenge-bot", "⚡-fc-tracker", "⚡-challenge-tracker-bot"]
+CHANNEL_NAMEs = ["🤖-mdv-flash-challenge-bot", "⚡-fc-tracker"]
 MESSAGE_CHANNELS = []
 PREVIOUS_MESSAGE_IDS = {}
 
@@ -52,6 +52,10 @@ PREVIOUS_MESSAGE_IDS = {}
 @bot.event
 async def on_ready():
     for guild in bot.guilds:
+        ts_channel = guild.get_channel(924447554480013343)
+        if ts_channel is not None:
+            MESSAGE_CHANNELS.append(ts_channel)
+
         for channel in guild.channels:
             if channel.name in CHANNEL_NAMEs:
                 await purge_channel(channel)
