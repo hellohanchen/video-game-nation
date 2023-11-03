@@ -55,11 +55,603 @@
     4234,
     4287,
     4298,
-    4300,
-    4305
+    4305,
+    4310,
+    4314,
+    4319
   ],
-  "count": 4728,
+  "count": 4759,
   "plays": {
+    "4340": [
+      {
+        "id": "c2f783fb-9ab4-4aee-b1b2-cb9d08f21e2a",
+        "flowId": 4340,
+        "set": "Rookie Debut",
+        "setId": "39eb0ef6-a729-4bdb-a9ca-783e2d825ef8",
+        "setFlowId": 125,
+        "playerId": 1641705,
+        "playerName": "Victor Wembanyama",
+        "team": "San Antonio Spurs",
+        "playType": "3 Pointer",
+        "date": "2023-10-26",
+        "series": 5,
+        "tier": "Common",
+        "badges": [
+          "TSD",
+          "RY",
+          "RM",
+          "RP"
+        ]
+      }
+    ],
+    "4339": [
+      {
+        "id": "f76eae6b-d973-4eaa-88ec-78da4fc0b42b",
+        "flowId": 4339,
+        "set": "Rookie Debut",
+        "setId": "39eb0ef6-a729-4bdb-a9ca-783e2d825ef8",
+        "setFlowId": 125,
+        "playerId": 1630703,
+        "playerName": "Scoot Henderson",
+        "team": "Portland Trail Blazers",
+        "playType": "Jump Shot",
+        "date": "2023-10-26",
+        "series": 5,
+        "tier": "Common",
+        "badges": [
+          "TSD",
+          "RY",
+          "RM",
+          "RP"
+        ]
+      }
+    ],
+    "4338": [
+      {
+        "id": "29b0e1fd-e641-4719-8217-d1106214d624",
+        "flowId": 4338,
+        "set": "Rookie Debut",
+        "setId": "39eb0ef6-a729-4bdb-a9ca-783e2d825ef8",
+        "setFlowId": 125,
+        "playerId": 1631096,
+        "playerName": "Chet Holmgren",
+        "team": "Oklahoma City Thunder",
+        "playType": "Jump Shot",
+        "date": "2023-10-26",
+        "series": 5,
+        "tier": "Common",
+        "badges": [
+          "TSD",
+          "RY",
+          "RM",
+          "RP"
+        ]
+      }
+    ],
+    "4337": [
+      {
+        "id": "99ac3adf-bb00-4d5e-bd12-d9bbc84be0e4",
+        "flowId": 4337,
+        "set": "Rookie Debut",
+        "setId": "39eb0ef6-a729-4bdb-a9ca-783e2d825ef8",
+        "setFlowId": 125,
+        "playerId": 1641708,
+        "playerName": "Amen Thompson",
+        "team": "Houston Rockets",
+        "playType": "Dunk",
+        "date": "2023-10-25",
+        "series": 5,
+        "tier": "Common",
+        "badges": [
+          "TSD",
+          "RY",
+          "RM",
+          "RP"
+        ]
+      }
+    ],
+    "4336": [
+      {
+        "id": "0bb66167-cd89-416f-af4e-1a7b3f1c1774",
+        "flowId": 4336,
+        "set": "Rookie Debut",
+        "setId": "39eb0ef6-a729-4bdb-a9ca-783e2d825ef8",
+        "setFlowId": 125,
+        "playerId": 1641709,
+        "playerName": "Ausar Thompson",
+        "team": "Detroit Pistons",
+        "playType": "Block",
+        "date": "2023-10-25",
+        "series": 5,
+        "tier": "Common",
+        "badges": [
+          "TSD",
+          "RY",
+          "RM",
+          "RP"
+        ]
+      }
+    ],
+    "4335": [
+      {
+        "id": "f8870937-b1b6-4c6a-9a23-49f766fa4073",
+        "flowId": 4335,
+        "set": "Rookie Debut",
+        "setId": "39eb0ef6-a729-4bdb-a9ca-783e2d825ef8",
+        "setFlowId": 125,
+        "playerId": 1641706,
+        "playerName": "Brandon Miller",
+        "team": "Charlotte Hornets",
+        "playType": "3 Pointer",
+        "date": "2023-10-25",
+        "series": 5,
+        "tier": "Common",
+        "badges": [
+          "TSD",
+          "RY",
+          "RM",
+          "RP"
+        ]
+      }
+    ],
+    "4334": [
+      {
+        "id": "8d23e0ae-c684-4790-9639-6b6344ca3182",
+        "flowId": 4334,
+        "set": "WNBA Origins",
+        "setId": "046246c6-5614-477d-a323-916306dae024",
+        "setFlowId": 123,
+        "playerId": 100940,
+        "playerName": "Diana Taurasi",
+        "team": "Phoenix Mercury",
+        "playType": "3 Pointer",
+        "date": "2004-05-20",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": [
+          "ROY",
+          "RY",
+          "RM",
+          "CR"
+        ]
+      }
+    ],
+    "4333": [
+      {
+        "id": "0fc621e9-b605-4ea5-9bf5-e2fad39743b8",
+        "flowId": 4333,
+        "set": "WNBA Origins",
+        "setId": "046246c6-5614-477d-a323-916306dae024",
+        "setFlowId": 123,
+        "playerId": 204333,
+        "playerName": "Natasha Cloud",
+        "team": "Washington Mystics",
+        "playType": "Assist",
+        "date": "2015-09-03",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": [
+          "RY",
+          "CR"
+        ]
+      }
+    ],
+    "4332": [
+      {
+        "id": "573dd73b-adf5-4c83-b1e5-840bc19e59ca",
+        "flowId": 4332,
+        "set": "WNBA Origins",
+        "setId": "046246c6-5614-477d-a323-916306dae024",
+        "setFlowId": 123,
+        "playerId": 204319,
+        "playerName": "Jewell Loyd",
+        "team": "Seattle Storm",
+        "playType": "Layup",
+        "date": "2015-06-28",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": [
+          "ROY",
+          "RY",
+          "CR"
+        ]
+      }
+    ],
+    "4331": [
+      {
+        "id": "37c88697-4c13-453d-a6e9-9a18c69dc90e",
+        "flowId": 4331,
+        "set": "WNBA Origins",
+        "setId": "046246c6-5614-477d-a323-916306dae024",
+        "setFlowId": 123,
+        "playerId": 1629477,
+        "playerName": "Sabrina Ionescu",
+        "team": "New York Liberty",
+        "playType": "3 Pointer",
+        "date": "2020-07-29",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": [
+          "RY",
+          "CR"
+        ]
+      }
+    ],
+    "4330": [
+      {
+        "id": "36bdc63b-6f80-4078-af50-a04f3ae985aa",
+        "flowId": 4330,
+        "set": "WNBA Origins",
+        "setId": "046246c6-5614-477d-a323-916306dae024",
+        "setFlowId": 123,
+        "playerId": 1629483,
+        "playerName": "Napheesa Collier",
+        "team": "Minnesota Lynx",
+        "playType": "3 Pointer",
+        "date": "2019-05-25",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": [
+          "ROY",
+          "RY",
+          "RM",
+          "CR"
+        ]
+      }
+    ],
+    "4329": [
+      {
+        "id": "c57538ab-b2bd-4d85-8410-5bd675e27b89",
+        "flowId": 4329,
+        "set": "WNBA Origins",
+        "setId": "046246c6-5614-477d-a323-916306dae024",
+        "setFlowId": 123,
+        "playerId": 1628932,
+        "playerName": "A'ja Wilson",
+        "team": "Las Vegas Aces",
+        "playType": "Layup",
+        "date": "2018-05-27",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": [
+          "ROY",
+          "RY",
+          "CR"
+        ]
+      }
+    ],
+    "4328": [
+      {
+        "id": "f67e4dbc-64a5-48f9-86a6-6864f416dd58",
+        "flowId": 4328,
+        "set": "WNBA Origins",
+        "setId": "046246c6-5614-477d-a323-916306dae024",
+        "setFlowId": 123,
+        "playerId": 203014,
+        "playerName": "Nneka Ogwumike",
+        "team": "Los Angeles Sparks",
+        "playType": "Layup",
+        "date": "2012-09-13",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": [
+          "ROY",
+          "RY",
+          "CR"
+        ]
+      }
+    ],
+    "4327": [
+      {
+        "id": "ab88935b-c7f0-4017-8b39-b7b8231733df",
+        "flowId": 4327,
+        "set": "WNBA Origins",
+        "setId": "046246c6-5614-477d-a323-916306dae024",
+        "setFlowId": 123,
+        "playerId": 1628909,
+        "playerName": "Kelsey Mitchell",
+        "team": "Indiana Fever",
+        "playType": "Jump Shot",
+        "date": "2018-08-07",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": [
+          "RY",
+          "CR"
+        ]
+      }
+    ],
+    "4326": [
+      {
+        "id": "ceb68edd-2803-4290-a21e-b22e65379f1f",
+        "flowId": 4326,
+        "set": "WNBA Origins",
+        "setId": "046246c6-5614-477d-a323-916306dae024",
+        "setFlowId": 123,
+        "playerId": 1630149,
+        "playerName": "Satou Sabally",
+        "team": "Dallas Wings",
+        "playType": "3 Pointer",
+        "date": "2020-08-25",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": [
+          "RY",
+          "CR"
+        ]
+      }
+    ],
+    "4325": [
+      {
+        "id": "8d0b5c61-95c1-40d6-ae74-fbf5a6deb0d5",
+        "flowId": 4325,
+        "set": "WNBA Origins",
+        "setId": "046246c6-5614-477d-a323-916306dae024",
+        "setFlowId": 123,
+        "playerId": 203826,
+        "playerName": "Alyssa Thomas",
+        "team": "Connecticut Sun",
+        "playType": "Steal",
+        "date": "2014-07-23",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": [
+          "RY",
+          "CR"
+        ]
+      }
+    ],
+    "4324": [
+      {
+        "id": "d3e6a3f9-f645-449f-a1f6-c398c8e781b3",
+        "flowId": 4324,
+        "set": "WNBA Origins",
+        "setId": "046246c6-5614-477d-a323-916306dae024",
+        "setFlowId": 123,
+        "playerId": 202664,
+        "playerName": "Courtney Vandersloot",
+        "team": "Chicago Sky",
+        "playType": "Assist",
+        "date": "2011-06-04",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": [
+          "RY",
+          "CR",
+          "RM"
+        ]
+      }
+    ],
+    "4323": [
+      {
+        "id": "91067e84-349a-4ee8-897f-8db49f2f1004",
+        "flowId": 4323,
+        "set": "WNBA Origins",
+        "setId": "046246c6-5614-477d-a323-916306dae024",
+        "setFlowId": 123,
+        "playerId": 1628881,
+        "playerName": "Monique Billings",
+        "team": "Atlanta Dream",
+        "playType": "Jump Shot",
+        "date": "2018-08-26",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": [
+          "RY",
+          "CR"
+        ]
+      }
+    ],
+    "4322": [
+      {
+        "id": "7e2da76b-8108-4fc2-a4f5-7dbab9d3423a",
+        "flowId": 4322,
+        "set": "Road To Royalty",
+        "setId": "449c21ff-7dd0-4fde-a6f3-a6cc0a201e52",
+        "setFlowId": 122,
+        "playerId": 204333,
+        "playerName": "Natasha Cloud",
+        "team": "Washington Mystics",
+        "playType": "Layup",
+        "date": "2023-09-19",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "4321": [
+      {
+        "id": "80643056-04a2-4cef-9997-a394f3334a25",
+        "flowId": 4321,
+        "set": "Road To Royalty",
+        "setId": "449c21ff-7dd0-4fde-a6f3-a6cc0a201e52",
+        "setFlowId": 122,
+        "playerId": 1629477,
+        "playerName": "Sabrina Ionescu",
+        "team": "New York Liberty",
+        "playType": "3 Pointer",
+        "date": "2023-09-15",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "4320": [
+      {
+        "id": "46c60da0-a54b-462b-ae96-85e73ddeb9da",
+        "flowId": 4320,
+        "set": "Road To Royalty",
+        "setId": "449c21ff-7dd0-4fde-a6f3-a6cc0a201e52",
+        "setFlowId": 122,
+        "playerId": 1627673,
+        "playerName": "Jonquel Jones",
+        "team": "New York Liberty",
+        "playType": "Block",
+        "date": "2023-10-15",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "4318": [
+      {
+        "id": "66d40882-9d6a-473d-a96f-cb98bdd43ade",
+        "flowId": 4318,
+        "set": "Road To Royalty",
+        "setId": "449c21ff-7dd0-4fde-a6f3-a6cc0a201e52",
+        "setFlowId": 122,
+        "playerId": 1629483,
+        "playerName": "Napheesa Collier",
+        "team": "Minnesota Lynx",
+        "playType": "Jump Shot",
+        "date": "2023-09-21",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "4317": [
+      {
+        "id": "ba316ed5-11a9-4087-bbcf-1e1fb3939208",
+        "flowId": 4317,
+        "set": "Road To Royalty",
+        "setId": "449c21ff-7dd0-4fde-a6f3-a6cc0a201e52",
+        "setFlowId": 122,
+        "playerId": 1628276,
+        "playerName": "Kelsey Plum",
+        "team": "Las Vegas Aces",
+        "playType": "Layup",
+        "date": "2023-10-08",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": [
+          "CY"
+        ]
+      }
+    ],
+    "4316": [
+      {
+        "id": "e864c0eb-7c91-4c1b-ac9f-d8e32fe04fe8",
+        "flowId": 4316,
+        "set": "Road To Royalty",
+        "setId": "449c21ff-7dd0-4fde-a6f3-a6cc0a201e52",
+        "setFlowId": 122,
+        "playerId": 1629498,
+        "playerName": "Jackie Young",
+        "team": "Las Vegas Aces",
+        "playType": "Layup",
+        "date": "2023-10-12",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": [
+          "CY"
+        ]
+      }
+    ],
+    "4315": [
+      {
+        "id": "ad7ba7ed-cf2d-4707-b521-927c31831ddd",
+        "flowId": 4315,
+        "set": "Road To Royalty",
+        "setId": "449c21ff-7dd0-4fde-a6f3-a6cc0a201e52",
+        "setFlowId": 122,
+        "playerId": 203833,
+        "playerName": "Chelsea Gray",
+        "team": "Las Vegas Aces",
+        "playType": "Steal",
+        "date": "2023-10-12",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": [
+          "CY"
+        ]
+      }
+    ],
+    "4313": [
+      {
+        "id": "5489e585-8140-4155-924f-ea8dab7c297b",
+        "flowId": 4313,
+        "set": "Road To Royalty",
+        "setId": "449c21ff-7dd0-4fde-a6f3-a6cc0a201e52",
+        "setFlowId": 122,
+        "playerId": 1630149,
+        "playerName": "Satou Sabally",
+        "team": "Dallas Wings",
+        "playType": "3 Pointer",
+        "date": "2023-09-16",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "4312": [
+      {
+        "id": "99250394-31c5-43e8-8d3f-20c9817b5a8d",
+        "flowId": 4312,
+        "set": "Road To Royalty",
+        "setId": "449c21ff-7dd0-4fde-a6f3-a6cc0a201e52",
+        "setFlowId": 122,
+        "playerId": 1629481,
+        "playerName": "Arike Ogunbowale",
+        "team": "Dallas Wings",
+        "playType": "Steal",
+        "date": "2023-09-16",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "4311": [
+      {
+        "id": "b7d4c1b0-0022-49b0-ba41-6e572de3ed0c",
+        "flowId": 4311,
+        "set": "Road To Royalty",
+        "setId": "449c21ff-7dd0-4fde-a6f3-a6cc0a201e52",
+        "setFlowId": 122,
+        "playerId": 201886,
+        "playerName": "DeWanna Bonner",
+        "team": "Connecticut Sun",
+        "playType": "Handles",
+        "date": "2023-09-21",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "4309": [
+      {
+        "id": "af804ef2-a9db-4800-9b4d-4ca41910915f",
+        "flowId": 4309,
+        "set": "Road To Royalty",
+        "setId": "449c21ff-7dd0-4fde-a6f3-a6cc0a201e52",
+        "setFlowId": 122,
+        "playerId": 1627674,
+        "playerName": "Kahleah Copper",
+        "team": "Chicago Sky",
+        "playType": "3 Pointer",
+        "date": "2023-09-17",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "4308": [
+      {
+        "id": "57491db4-fc66-4279-a8e3-6d7cf7de71ea",
+        "flowId": 4308,
+        "set": "Road To Royalty",
+        "setId": "449c21ff-7dd0-4fde-a6f3-a6cc0a201e52",
+        "setFlowId": 122,
+        "playerId": 1631009,
+        "playerName": "Rhyne Howard",
+        "team": "Atlanta Dream",
+        "playType": "Handles",
+        "date": "2023-09-16",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
     "4307": [
       {
         "id": "365b50f1-c332-4eb9-91d7-abb3dcafa419",
@@ -169,6 +761,26 @@
         "series": 4,
         "tier": "Common",
         "badges": []
+      }
+    ],
+    "4300": [
+      {
+        "id": "456391e1-6076-4e0f-ab6a-433a1119d957",
+        "flowId": 4300,
+        "set": "Archive Set 2014-19",
+        "setId": "82747952-73e4-4922-81f1-12e96bd89e23",
+        "setFlowId": 119,
+        "playerId": 203932,
+        "playerName": "Aaron Gordon",
+        "team": "Orlando Magic",
+        "playType": "Block",
+        "date": "2015-03-13",
+        "series": 4,
+        "tier": "Common",
+        "badges": [
+          "CR",
+          "RY"
+        ]
       }
     ],
     "4299": [

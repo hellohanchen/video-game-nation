@@ -15,7 +15,7 @@ TIER_MAP = {
 
 
 def load_set_plays():
-    with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "resource/s4_sets.json"), 'r') as set_file:
+    with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "resource/s5_sets.json"), 'r') as set_file:
         data = json.load(set_file)['sets']
 
     plays = {}
