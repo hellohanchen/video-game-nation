@@ -78,13 +78,13 @@ async def get_account_plays(address):
         code="""
                 import TopShot from 0x0b2a3299cc857e29
 
-                pub fun main(account: Address): {UInt32:UInt32} {
+                pub fun main(account: Address): {UInt32:{UInt32:UInt32}} {
                     let acct = getAccount(account)
 
                     let collectionRef = acct.getCapability(/public/MomentCollection)
                                             .borrow<&{TopShot.MomentCollectionPublic}>()!
 
-                    let res: {UInt32:UInt32} = {}                        
+                    let res: {UInt32:{UInt32:UInt32}} = {}                        
 
                     for id in collectionRef.getIDs() {
                         // Borrow a reference to the specified moment
@@ -95,11 +95,20 @@ async def get_account_plays(address):
                         let data = token.data
                         
                         if res.containsKey(data.playID) == false {
-                            res.insert(key: data.playID, 1)
+                            let playCountPerSet: {UInt32:UInt32} = {}
+                            playCountPerSet.insert(key: data.setID, 1)
+                            res.insert(key: data.playID, playCountPerSet)
                         } else {
-                            var count: UInt32 = res[data.playID]!
-                            count = count + 1
-                            res.insert(key: data.playID, count)
+                            let playCountPerSet: {UInt32:UInt32} = res[data.playID]!
+                            if playCountPerSet.containsKey(data.setID) == false {
+                                playCountPerSet.insert(key: data.setID, 1)
+                            } else {
+                                var count: UInt32 = playCountPerSet[data.setID]!
+                                count = count + 1
+                                playCountPerSet.insert(key: data.setID, count)
+                            }
+                            
+                            res.insert(key: data.playID, playCountPerSet)
                         }
                     }
 
@@ -120,10 +129,14 @@ async def get_account_plays(address):
         plays = {}
 
         for play in complex_script.value:
-            plays[play.key.value] = play.value.value
+            play_count_per_set = {}
+            for set in play.value.value:
+                play_count_per_set[set.key.value] = set.value.value
+
+            plays[play.key.value] = play_count_per_set
 
     return plays
 
 
 if __name__ == '__main__':
-    asyncio.run(get_collection_for_trade("0xad955e5d8047ef82"))
+    asyncio.run(get_account_plays("0xad955e5d8047ef82"))

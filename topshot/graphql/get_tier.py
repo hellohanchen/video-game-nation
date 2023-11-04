@@ -19,7 +19,7 @@ async def get_listing_tiers(series, player_id):
     transport = AIOHTTPTransport(url="https://public-api.nbatopshot.com/graphql")
 
     # Create a GraphQL client using the defined transport
-    client = Client(transport=transport, fetch_schema_from_transport=True)
+    client = Client(transport=transport, fetch_schema_from_transport=False)
 
     query = gql("""
         query SearchMomentListingsDefault($byPlayers: [ID], $byTagNames: [String!], $byTeams: [ID], $byPrice: PriceRangeFilterInput, $orderBy: MomentListingSortType, $byGameDate: DateRangeFilterInput, $byCreatedAt: DateRangeFilterInput, $byListingType: [MomentListingType], $bySets: [ID], $bySeries: [ID], $bySetVisuals: [VisualIdType], $byPrimaryPlayerPosition: [PlayerPosition], $bySerialNumber: IntegerRangeFilterInput, $searchInput: BaseSearchInput!) {

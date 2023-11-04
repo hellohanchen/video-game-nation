@@ -3,28 +3,10 @@
   "challenges": [
     {
       "id": 1,
-      "title": "FLASH CHALLENGE NOVEMBER 3-5, 2023",
+      "title": "$2,023 PREDICTIVE CHALLENGE OCTOBER 27, 2023",
       "buckets": [
         {
-          "description": "BURN a Top Shot Debut or Rookie Moment for every winning team in Friday's In-Season Tournament Games",
-          "segment": "GAME",
-          "is_wildcard": false,
-          "type": "LB",
-          "count": 1,
-          "is_team": true,
-          "tier_breakers": [
-            {
-              "stats": "WIN",
-              "order": "DESC"
-            }
-          ],
-          "dates": [
-            "11/03/2023"
-          ]
-        },
-        {
-          "description": "ADD a Top Shot Debut or Rookie Moment from the player with the most points on Friday, Saturday and Sunday",
-          "segment": "DATE",
+          "description": "The player with the most points across all games.",
           "is_wildcard": false,
           "type": "LB",
           "count": 1,
@@ -36,14 +18,27 @@
             }
           ],
           "dates": [
-            "11/03/2023",
-            "11/04/2023",
-            "11/05/2023"
+            "10/27/2023"
           ]
         },
         {
-          "description": "ADD a Top Shot Debut or Rookie Moment from the player with the most assists on Friday, Saturday and Sunday",
-          "segment": "DATE",
+          "description": "The player with the most rebounds across all games.",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "REB",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "10/27/2023"
+          ]
+        },
+        {
+          "description": "The player with the most assists across all games.",
           "is_wildcard": false,
           "type": "LB",
           "count": 1,
@@ -55,9 +50,7 @@
             }
           ],
           "dates": [
-            "11/03/2023",
-            "11/04/2023",
-            "11/05/2023"
+            "10/27/2023"
           ]
         }
       ]

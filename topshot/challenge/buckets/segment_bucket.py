@@ -1,5 +1,5 @@
 from enum import Enum
-from typing import Dict, List, Any, Tuple
+from typing import Dict, List, Any, Tuple, Optional
 
 from provider.nba_provider import NBA_PROVIDER, EAST_CONFERENCE, WEST_CONFERENCE
 from topshot.challenge.buckets.bucket import Bucket, BucketType, fill_bucket
@@ -9,6 +9,7 @@ class SegmentType(Enum):
     CONFERENCE = 1
     GAME = 2
     DATE = 3
+    TEAM = 4
 
 
 class SegmentBucket(Bucket):
@@ -16,7 +17,7 @@ class SegmentBucket(Bucket):
         super().__init__(description, is_wildcard, bucket_type, count, is_team)
         self.segment_type = segment_type
 
-    def get_current_scores(self) -> List[Tuple[int, List[Dict[str, Any]]]]:
+    def get_current_scores(self, games_stats: Dict[str, Tuple[Optional[Dict[str, Any]], bool, Optional[Dict[str, Any]]]]) -> List[Tuple[int, List[Dict[str, Any]]]]:
         """
         Get the current ranking of teams/players from ALL games tracked by this bucket.
 
@@ -29,16 +30,16 @@ class SegmentBucket(Bucket):
 
         for segment in segments:
             if self.is_team:
-                results.append(self.tracker.get_team_scores(segment))
+                results.append(self.tracker.get_team_scores(segment, games_stats))
             else:
                 # get players for each game
                 game_players = self.get_filtered_games_players(segment)
 
-                results.append(self.tracker.get_player_scores(game_players))
+                results.append(self.tracker.get_player_scores(game_players, games_stats))
 
         return results
 
-    def __segment(self, games_teams: Dict[str, List[str]]) -> List[Dict[str, List[str]]]:
+    def __segment(self, game_id_to_teams: Dict[str, List[str]]) -> List[Dict[str, List[str]]]:
         """
         Private method that divides the teams or players into segments.
 
@@ -46,25 +47,34 @@ class SegmentBucket(Bucket):
         :return: a list of dictionaries, where each dictionary maps game IDs to lists of team IDs
         """
         if self.segment_type == SegmentType.GAME:
-            return [{game_id: games_teams[game_id]} for game_id in games_teams]
+            return [{game_id: game_id_to_teams[game_id]} for game_id in game_id_to_teams]
 
         if self.segment_type == SegmentType.DATE:
             games_dates = {}
 
-            for game_id in games_teams:
+            for game_id in game_id_to_teams:
                 game_date = NBA_PROVIDER.get_date_for_game(game_id)
                 if game_date not in games_dates:
                     games_dates[game_date] = {}
 
-                games_dates[game_date][game_id] = games_teams[game_id]
+                games_dates[game_date][game_id] = game_id_to_teams[game_id]
 
             return [games for _, games in games_dates.items()]
+
+        if self.segment_type == SegmentType.TEAM:
+            segments = []
+
+            for game_id in game_id_to_teams:
+                for team in game_id_to_teams[game_id]:
+                    segments.append({game_id: [team]})
+
+            return segments
 
         if self.segment_type == SegmentType.CONFERENCE:
             segment_east = {}
             segment_west = {}
 
-            for game_id, teams in games_teams.items():
+            for game_id, teams in game_id_to_teams.items():
                 for team in teams:
                     if team in EAST_CONFERENCE:
                         if game_id not in segment_east:

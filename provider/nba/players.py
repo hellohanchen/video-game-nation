@@ -2,11 +2,13 @@ import json
 import os
 import pathlib
 
-from nba_api.stats.endpoints import CommonPlayerInfo, PlayerDashboardByYearOverYear, LeagueDashPlayerBioStats
+from nba_api.stats.endpoints import CommonPlayerInfo, PlayerDashboardByYearOverYear, LeagueDashPlayerBioStats, CommonAllPlayers
 from nba_api.stats.library.parameters import Season
 
 
 def get_player_avg_stats(player_id):
+    player_info = None
+    player_avg_stats = None
     try:
         # Create a CommonPlayerInfo instance to get the player's name
         player_profile = CommonPlayerInfo(player_id=str(player_id), timeout=30)
@@ -17,7 +19,7 @@ def get_player_avg_stats(player_id):
         player_avg_stats = player_stats.get_data_frames()[1].iloc[0]
     except Exception as err:
         print(err)
-        return None, None
+        return player_info, player_avg_stats
 
     return player_info, player_avg_stats
 
@@ -33,7 +35,11 @@ def fresh_team_players() -> None:
     already exist, the function overwrites them with the latest data. This function does not return anything.
     """
     season = Season.default
-    players = LeagueDashPlayerBioStats(season=season).get_data_frames()[0]
+    players = CommonAllPlayers(is_only_current_season=1, season=season).get_data_frames()[0]
+
+    if len(players) == 0:
+        print("Team player data unavailable")
+        return
 
     result = {}
     for i in range(0, len(players)):
@@ -43,9 +49,9 @@ def fresh_team_players() -> None:
         if team not in result:
             result[team] = []
 
-        result[team].append(int(player['PLAYER_ID']))
+        result[team].append(int(player['PERSON_ID']))
 
-    with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "data/team_players.json"), 'w') as file:
+    with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "data/team_players_23_24.json"), 'w') as file:
         json.dump(result, file, indent=2)
 
 

@@ -5,6 +5,7 @@ from topshot.challenge.buckets.segment_bucket import SegmentBucket
 from topshot.challenge.player_filter import TopshotFilter
 from topshot.challenge.team_filter import TeamFilter
 from topshot.challenge.tier_breaker import TierBreaker
+from topshot.challenge.trackers.tracker import Tracker
 from utils import truncate_message
 
 
@@ -20,6 +21,7 @@ class Challenge:
         self.id = challenge_id
         self.title = title
         self.buckets: List[Bucket] = []
+        self.game_ids: List[str] = []
 
     def build_bucket(self, description: str, is_wildcard: bool, bucket_type: str, count: int, is_team: bool) -> None:
         """Create a new Bucket object and add it to the list of buckets in the challenge.
@@ -40,24 +42,9 @@ class Challenge:
             bucket (Bucket): the Bucket object to add
         """
         self.buckets.append(bucket)
-
-    def add_bucket_date(self, bucket_idx: int, date: str) -> None:
-        """Add a date to the specified Bucket's tracker object.
-
-        Args:
-            bucket_idx (int): the index of the Bucket in the list of buckets
-            date (str): the date to add to the Bucket's tracker
-        """
-        self.buckets[bucket_idx].add_date(date)
-
-    def add_bucket_game(self, bucket_idx: int, game_id: int) -> None:
-        """Add a game ID to the specified Bucket's tracker object.
-
-        Args:
-            bucket_idx (int): the index of the Bucket in the list of buckets
-            game_id (int): the ID of the game to add to the Bucket's tracker
-        """
-        self.buckets[bucket_idx].add_game(game_id)
+        for game_id in bucket.games:
+            if game_id not in self.game_ids:
+                self.game_ids.append(game_id)
 
     def build_bucket_tier_breaker(self, bucket_idx: int, stats: List[str], order: str) -> None:
         """Add a TierBreaker object to the specified Bucket's tracker object.
@@ -95,6 +82,10 @@ class Challenge:
 
         msg, new_msg = truncate_message(messages, msg, new_msg, 1950)
 
+        games_stats = {}
+        for game_id in self.game_ids:
+            games_stats[game_id] = Tracker.load_game_stats(game_id)
+
         for bucket in self.buckets:
             new_msg += ":bar_chart: **{}** ".format(bucket.description)
 
@@ -103,7 +94,7 @@ class Challenge:
 
             new_msg += "\n"
 
-            bucket_results = bucket.get_current_scores()
+            bucket_results = bucket.get_current_scores(games_stats)
 
             if len(bucket_results) == 0:
                 new_msg += "\n"

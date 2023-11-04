@@ -1,0 +1,104 @@
+{
+  "message": "NBA 2023-24",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "$2,023 FLASH CHALLENGE NOVEMBER 2, 2023",
+      "buckets": [
+        {
+          "description": "DUEL 1: JOEL EMBIID VS. SCOTTIE BARNES (MOST REBOUNDS)",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "REB",
+              "order": "DESC"
+            },
+            {
+              "stats": "WIN",
+              "order": "DESC"
+            }
+          ],
+          "player_filters": [
+            "ID,203954,1630567"
+          ],
+          "games": [
+            "0022300128"
+          ]
+        },
+        {
+          "description": "DUEL 2: CADE CUNNINGHAM VS. CJ MCCOLLUM (MOST POINTS)",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            },
+            {
+              "stats": "WIN",
+              "order": "DESC"
+            }
+          ],
+          "player_filters": [
+            "ID,1630595,203468"
+          ],
+          "games": [
+            "0022300129"
+          ]
+        },
+        {
+          "description": "DUEL 3: FRANZ WAGNER VS. LAURI MARKKANEN (MOST FREE THROWS MADE)",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "FTM",
+              "order": "DESC"
+            },
+            {
+              "stats": "WIN",
+              "order": "DESC"
+            }
+          ],
+          "player_filters": [
+            "ID,1630532,1628374"
+          ],
+          "games": [
+            "0022300130"
+          ]
+        },
+        {
+          "description": "DUEL 4: KEVIN DURANT VS. DEVIN VASSELL (MOST THREE POINTERS)",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "3PT",
+              "order": "DESC"
+            },
+            {
+              "stats": "WIN",
+              "order": "DESC"
+            }
+          ],
+          "player_filters": [
+            "ID,201142,1630170"
+          ],
+          "games": [
+            "0022300131"
+          ]
+        }
+      ]
+    }
+  ]
+}
+

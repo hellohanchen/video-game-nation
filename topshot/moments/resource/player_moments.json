@@ -1,4 +1,217 @@
 {
+  "1641675": {
+    "id": 1641675,
+    "name": "Dulcy Fankam Mendjiadeu",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "RM": true,
+        "RY": true
+      }
+    }
+  },
+  "1641660": {
+    "id": 1641660,
+    "name": "Zia Cooke",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "RP": true,
+        "RY": true,
+        "RM": true
+      }
+    }
+  },
+  "1641658": {
+    "id": 1641658,
+    "name": "Grace Berger",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "RM": true,
+        "RY": true,
+        "RP": true
+      }
+    }
+  },
+  "1641657": {
+    "id": 1641657,
+    "name": "Dorka Juh\u00e1sz",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "RP": true,
+        "RY": true,
+        "RM": true
+      }
+    }
+  },
+  "1641652": {
+    "id": 1641652,
+    "name": "Maddy Siegrist",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "RY": true,
+        "RM": true
+      }
+    }
+  },
+  "1641651": {
+    "id": 1641651,
+    "name": "Jordan Horston",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "RP": true,
+        "RY": true,
+        "RM": true
+      }
+    }
+  },
+  "1641650": {
+    "id": 1641650,
+    "name": "Haley Jones",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "RP": true,
+        "RY": true,
+        "RM": true
+      }
+    }
+  },
+  "1641649": {
+    "id": 1641649,
+    "name": "Diamond Miller",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "RY": true,
+        "RM": true,
+        "TSD": true,
+        "RP": true
+      }
+    }
+  },
+  "1641648": {
+    "id": 1641648,
+    "name": "Aliyah Boston",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "ROY": true,
+        "RY": true,
+        "RM": true,
+        "TSD": true,
+        "RP": true
+      }
+    }
+  },
+  "1641642": {
+    "id": 1641642,
+    "name": "Li Meng",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "RY": true,
+        "RM": true
+      }
+    }
+  },
+  "1641602": {
+    "id": 1641602,
+    "name": "Ivana Dojkic",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "RP": true,
+        "RY": true,
+        "RM": true
+      }
+    }
+  },
+  "1631323": {
+    "id": 1631323,
+    "name": "Simone Fontecchio",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "RY": true,
+        "RM": true
+      }
+    }
+  },
   "1631263": {
     "id": 1631263,
     "name": "Nikolina Milic",
@@ -46,10 +259,10 @@
       "2": {},
       "3": {},
       "4": {
-        "TSD": true,
         "RY": true,
-        "RP": true,
-        "RM": true
+        "RM": true,
+        "TSD": true,
+        "RP": true
       }
     }
   },
@@ -89,6 +302,41 @@
       }
     }
   },
+  "1631212": {
+    "id": 1631212,
+    "name": "Peyton Watson",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "CY": true,
+        "RY": true,
+        "RM": true
+      }
+    }
+  },
+  "1631207": {
+    "id": 1631207,
+    "name": "Dalen Terry",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "RY": true,
+        "RM": true
+      }
+    }
+  },
   "1631172": {
     "id": 1631172,
     "name": "Ousmane Dieng",
@@ -100,10 +348,10 @@
       "2": {},
       "3": {},
       "4": {
-        "TSD": true,
         "RY": true,
-        "CR": true,
-        "RM": true
+        "RM": true,
+        "TSD": true,
+        "CR": true
       }
     }
   },
@@ -122,6 +370,21 @@
         "RY": true,
         "RP": true,
         "RM": true
+      }
+    }
+  },
+  "1631135": {
+    "id": 1631135,
+    "name": "Olivia Nelson-Ododa",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
       }
     }
   },
@@ -226,10 +489,11 @@
       "2": {},
       "3": {},
       "4": {
-        "TSD": true,
+        "CR": true,
         "RY": true,
-        "RP": true,
-        "RM": true
+        "RM": true,
+        "TSD": true,
+        "RP": true
       }
     }
   },
@@ -297,7 +561,11 @@
       "1": {},
       "2": {},
       "3": {},
-      "4": {}
+      "4": {
+        "TSD": true,
+        "RY": true,
+        "RM": true
+      }
     }
   },
   "1631110": {
@@ -382,10 +650,10 @@
       "2": {},
       "3": {},
       "4": {
-        "TSD": true,
         "RY": true,
-        "RP": true,
-        "RM": true
+        "RM": true,
+        "TSD": true,
+        "RP": true
       }
     }
   },
@@ -436,10 +704,10 @@
       "2": {},
       "3": {},
       "4": {
-        "TSD": true,
         "RY": true,
-        "RP": true,
-        "RM": true
+        "RM": true,
+        "TSD": true,
+        "RP": true
       }
     }
   },
@@ -471,10 +739,10 @@
       "2": {},
       "3": {},
       "4": {
-        "TSD": true,
         "RY": true,
-        "RP": true,
-        "RM": true
+        "RM": true,
+        "TSD": true,
+        "RP": true
       }
     }
   },
@@ -490,8 +758,8 @@
       "3": {},
       "4": {
         "RY": true,
-        "CR": true,
         "RM": true,
+        "CR": true,
         "TSD": true,
         "RP": true
       }
@@ -508,6 +776,7 @@
       "2": {},
       "3": {},
       "4": {
+        "CR": true,
         "RY": true,
         "RM": true,
         "TSD": true,
@@ -525,7 +794,11 @@
       "1": {},
       "2": {},
       "3": {},
-      "4": {}
+      "4": {
+        "RY": true,
+        "RM": true,
+        "TSD": true
+      }
     }
   },
   "1631097": {
@@ -539,8 +812,8 @@
       "2": {},
       "3": {},
       "4": {
-        "RY": true,
         "CR": true,
+        "RY": true,
         "RM": true,
         "TSD": true,
         "RP": true
@@ -560,6 +833,7 @@
       "4": {
         "RY": true,
         "RM": true,
+        "CR": true,
         "TSD": true,
         "RP": true
       }
@@ -576,6 +850,8 @@
       "2": {},
       "3": {},
       "4": {
+        "CR": true,
+        "ROY": true,
         "RY": true,
         "RM": true,
         "TSD": true,
@@ -594,10 +870,10 @@
       "2": {},
       "3": {},
       "4": {
-        "TSD": true,
         "RY": true,
-        "RP": true,
-        "RM": true
+        "RM": true,
+        "TSD": true,
+        "RP": true
       }
     }
   },
@@ -619,6 +895,21 @@
       }
     }
   },
+  "1631086": {
+    "id": 1631086,
+    "name": "Lexie Hull",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
   "1631083": {
     "id": 1631083,
     "name": "Emily Engstler",
@@ -634,6 +925,24 @@
         "RY": true,
         "RP": true,
         "RM": true
+      }
+    }
+  },
+  "1631055": {
+    "id": 1631055,
+    "name": "Nyara Sabally",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "RM": true,
+        "RY": true,
+        "RP": true
       }
     }
   },
@@ -704,6 +1013,7 @@
       "4": {
         "RY": true,
         "RM": true,
+        "ROY": true,
         "CR": true,
         "TSD": true,
         "RP": true
@@ -739,9 +1049,9 @@
       "2": {},
       "3": {},
       "4": {
-        "TSD": true,
         "RY": true,
-        "RM": true
+        "RM": true,
+        "TSD": true
       }
     }
   },
@@ -756,10 +1066,10 @@
       "2": {},
       "3": {},
       "4": {
-        "TSD": true,
         "RY": true,
-        "RP": true,
-        "RM": true
+        "RM": true,
+        "TSD": true,
+        "RP": true
       }
     }
   },
@@ -948,7 +1258,9 @@
       "1": {},
       "2": {},
       "3": {},
-      "4": {}
+      "4": {
+        "TSD": true
+      }
     }
   },
   "1630586": {
@@ -1092,6 +1404,7 @@
       "3": {
         "RY": true,
         "RM": true,
+        "ROY": true,
         "CR": true,
         "TSD": true,
         "RP": true
@@ -1409,9 +1722,9 @@
       "2": {},
       "3": {},
       "4": {
-        "TSD": true,
         "RY": true,
-        "RM": true
+        "RM": true,
+        "TSD": true
       }
     }
   },
@@ -1606,6 +1919,7 @@
     "id": 1630446,
     "name": "Michaela Onyenwere",
     "series": [
+      4,
       3
     ],
     "badges": {
@@ -1615,7 +1929,8 @@
         "TSD": true,
         "RY": true,
         "RP": true,
-        "RM": true
+        "RM": true,
+        "ROY": true
       },
       "4": {}
     }
@@ -1641,6 +1956,7 @@
     "id": 1630389,
     "name": "Dana Evans",
     "series": [
+      4,
       3
     ],
     "badges": {
@@ -1709,6 +2025,7 @@
     "id": 1630256,
     "name": "Jae'Sean Tate",
     "series": [
+      4,
       3,
       2
     ],
@@ -2639,6 +2956,7 @@
       "2": {
         "RY": true,
         "RM": true,
+        "ROY": true,
         "CR": true,
         "TSD": true,
         "RP": true
@@ -2707,6 +3025,21 @@
       },
       "4": {
         "CR": true
+      }
+    }
+  },
+  "1630134": {
+    "id": 1630134,
+    "name": "Sug Sutton",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
       }
     }
   },
@@ -3535,6 +3868,7 @@
         "RY": true,
         "CR": true,
         "RM": true,
+        "ROY": true,
         "TSD": true
       },
       "2": {
@@ -3769,6 +4103,24 @@
       "4": {}
     }
   },
+  "1629571": {
+    "id": 1629571,
+    "name": "Morgan Bertsch",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "RM": true,
+        "RY": true,
+        "RP": true
+      }
+    }
+  },
   "1629567": {
     "id": 1629567,
     "name": "Natisha Hiedeman",
@@ -3813,6 +4165,22 @@
       "4": {
         "CR": true,
         "TSD": true
+      }
+    }
+  },
+  "1629501": {
+    "id": 1629501,
+    "name": "Alanna Smith",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "CR": true
       }
     }
   },
@@ -3898,10 +4266,26 @@
       "4": {}
     }
   },
+  "1629484": {
+    "id": 1629484,
+    "name": "Megan Gustafson",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
   "1629483": {
     "id": 1629483,
     "name": "Napheesa Collier",
     "series": [
+      4,
       3
     ],
     "badges": {
@@ -3947,10 +4331,26 @@
       "4": {}
     }
   },
+  "1629480": {
+    "id": 1629480,
+    "name": "Kalani Brown",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
   "1629479": {
     "id": 1629479,
     "name": "Teaira McCowan",
     "series": [
+      4,
       3
     ],
     "badges": {
@@ -3993,6 +4393,21 @@
       },
       "4": {
         "CR": true
+      }
+    }
+  },
+  "1629476": {
+    "id": 1629476,
+    "name": "AD Durr",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
       }
     }
   },
@@ -4348,7 +4763,10 @@
         "CR": true
       },
       "3": {},
-      "4": {}
+      "4": {
+        "RY": true,
+        "CR": true
+      }
     }
   },
   "1629027": {
@@ -4370,7 +4788,10 @@
       "3": {
         "CR": true
       },
-      "4": {}
+      "4": {
+        "RY": true,
+        "CR": true
+      }
     }
   },
   "1629026": {
@@ -4495,6 +4916,7 @@
         "CR": true
       },
       "4": {
+        "RY": true,
         "CR": true
       }
     }
@@ -4532,7 +4954,9 @@
       },
       "2": {},
       "3": {},
-      "4": {}
+      "4": {
+        "RY": true
+      }
     }
   },
   "1629011": {
@@ -4728,6 +5152,7 @@
       "2": {},
       "3": {},
       "4": {
+        "RY": true,
         "CR": true
       }
     }
@@ -4819,6 +5244,7 @@
         "CR": true
       },
       "4": {
+        "RY": true,
         "CR": true
       }
     }
@@ -4890,7 +5316,9 @@
         "TSD": true
       },
       "3": {},
-      "4": {}
+      "4": {
+        "RY": true
+      }
     }
   },
   "1628975": {
@@ -4927,6 +5355,7 @@
         "CR": true
       },
       "4": {
+        "RY": true,
         "CR": true
       }
     }
@@ -4963,6 +5392,7 @@
       "2": {},
       "3": {},
       "4": {
+        "RY": true,
         "CY": true
       }
     }
@@ -5004,6 +5434,7 @@
         "CR": true
       },
       "4": {
+        "RY": true,
         "CR": true
       }
     }
@@ -5113,8 +5544,9 @@
         "TSD": true
       },
       "4": {
-        "MVP": true,
-        "CY": true
+        "CY": true,
+        "CR": true,
+        "MVP": true
       }
     }
   },
@@ -5243,7 +5675,12 @@
         "CR": true,
         "TSD": true
       },
-      "4": {}
+      "4": {
+        "TSD": true,
+        "RP": true,
+        "RY": true,
+        "RM": true
+      }
     }
   },
   "1628886": {
@@ -5345,6 +5782,7 @@
     "id": 1628467,
     "name": "Maxi Kleber",
     "series": [
+      4,
       3,
       2,
       1
@@ -5411,6 +5849,7 @@
     "id": 1628436,
     "name": "Luke Kornet",
     "series": [
+      4,
       1
     ],
     "badges": {
@@ -5515,7 +5954,9 @@
       },
       "2": {},
       "3": {},
-      "4": {}
+      "4": {
+        "RY": true
+      }
     }
   },
   "1628410": {
@@ -5576,7 +6017,9 @@
       },
       "2": {},
       "3": {},
-      "4": {}
+      "4": {
+        "RY": true
+      }
     }
   },
   "1628402": {
@@ -5609,7 +6052,9 @@
         "TSD": true
       },
       "3": {},
-      "4": {}
+      "4": {
+        "RY": true
+      }
     }
   },
   "1628400": {
@@ -5644,6 +6089,7 @@
         "CR": true
       },
       "4": {
+        "RY": true,
         "CR": true
       }
     }
@@ -5681,6 +6127,7 @@
         "CR": true
       },
       "4": {
+        "RY": true,
         "CR": true,
         "CCR": true
       }
@@ -5702,6 +6149,7 @@
       "2": {},
       "3": {},
       "4": {
+        "RY": true,
         "CR": true,
         "CCR": true
       }
@@ -5738,7 +6186,9 @@
       },
       "2": {},
       "3": {},
-      "4": {}
+      "4": {
+        "RY": true
+      }
     }
   },
   "1628381": {
@@ -5760,6 +6210,7 @@
       },
       "3": {},
       "4": {
+        "RY": true,
         "CR": true
       }
     }
@@ -5783,6 +6234,7 @@
     "id": 1628379,
     "name": "Luke Kennard",
     "series": [
+      4,
       3,
       2
     ],
@@ -5813,6 +6265,7 @@
         "CR": true
       },
       "4": {
+        "RY": true,
         "CR": true,
         "CCR": true
       }
@@ -5831,6 +6284,7 @@
       "2": {},
       "3": {},
       "4": {
+        "RY": true,
         "CR": true
       }
     }
@@ -5899,6 +6353,7 @@
       },
       "3": {},
       "4": {
+        "RY": true,
         "CR": true
       }
     }
@@ -5924,6 +6379,7 @@
         "CR": true
       },
       "4": {
+        "RY": true,
         "CR": true,
         "CCR": true
       }
@@ -5946,6 +6402,7 @@
       "2": {},
       "3": {},
       "4": {
+        "RY": true,
         "CR": true
       }
     }
@@ -6004,6 +6461,7 @@
       "2": {},
       "3": {},
       "4": {
+        "RY": true,
         "CR": true
       }
     }
@@ -6052,7 +6510,9 @@
       "3": {
         "TSD": true
       },
-      "4": {}
+      "4": {
+        "CR": true
+      }
     }
   },
   "1628277": {
@@ -6090,10 +6550,41 @@
       }
     }
   },
+  "1628269": {
+    "id": 1628269,
+    "name": "Nia Coffey",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "1628263": {
+    "id": 1628263,
+    "name": "Lindsay Allen",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
   "1628244": {
     "id": 1628244,
     "name": "Sami Whitcomb",
     "series": [
+      4,
       3
     ],
     "badges": {
@@ -6138,13 +6629,17 @@
       },
       "2": {},
       "3": {},
-      "4": {}
+      "4": {
+        "RY": true,
+        "CR": true
+      }
     }
   },
   "1627884": {
     "id": 1627884,
     "name": "Derrick Jones Jr.",
     "series": [
+      4,
       3,
       2
     ],
@@ -6382,7 +6877,10 @@
       },
       "2": {},
       "3": {},
-      "4": {}
+      "4": {
+        "RY": true,
+        "ROY": true
+      }
     }
   },
   "1627761": {
@@ -6419,6 +6917,7 @@
         "CR": true
       },
       "4": {
+        "RY": true,
         "CR": true
       }
     }
@@ -6489,6 +6988,7 @@
       },
       "3": {},
       "4": {
+        "RY": true,
         "CY": true,
         "CR": true,
         "CCR": true
@@ -6513,6 +7013,7 @@
         "CR": true
       },
       "4": {
+        "RY": true,
         "CR": true
       }
     }
@@ -6566,7 +7067,9 @@
       "3": {
         "CR": true
       },
-      "4": {}
+      "4": {
+        "RY": true
+      }
     }
   },
   "1627741": {
@@ -6587,6 +7090,7 @@
         "CR": true
       },
       "4": {
+        "RY": true,
         "CR": true
       }
     }
@@ -6639,6 +7143,7 @@
       "2": {},
       "3": {},
       "4": {
+        "RY": true,
         "CR": true
       }
     }
@@ -6659,7 +7164,10 @@
         "CR": true
       },
       "3": {},
-      "4": {}
+      "4": {
+        "RY": true,
+        "ROY": true
+      }
     }
   },
   "1627700": {
@@ -6747,7 +7255,9 @@
         "MVP": true,
         "TSD": true
       },
-      "4": {}
+      "4": {
+        "CR": true
+      }
     }
   },
   "1627672": {
@@ -6796,7 +7306,10 @@
         "CY": true,
         "TSD": true
       },
-      "4": {}
+      "4": {
+        "MVP": true,
+        "CR": true
+      }
     }
   },
   "1626246": {
@@ -6916,7 +7429,9 @@
       },
       "2": {},
       "3": {},
-      "4": {}
+      "4": {
+        "RY": true
+      }
     }
   },
   "1626179": {
@@ -7044,7 +7559,9 @@
       },
       "2": {},
       "3": {},
-      "4": {}
+      "4": {
+        "RY": true
+      }
     }
   },
   "1626166": {
@@ -7086,6 +7603,7 @@
         "CR": true
       },
       "4": {
+        "RY": true,
         "CR": true,
         "CCR": true
       }
@@ -7191,7 +7709,10 @@
       "3": {
         "CR": true
       },
-      "4": {}
+      "4": {
+        "RY": true,
+        "ROY": true
+      }
     }
   },
   "1626156": {
@@ -7209,7 +7730,9 @@
       },
       "2": {},
       "3": {},
-      "4": {}
+      "4": {
+        "RY": true
+      }
     }
   },
   "1626153": {
@@ -7317,6 +7840,7 @@
     "id": 204335,
     "name": "Betnijah Laney",
     "series": [
+      4,
       3
     ],
     "badges": {
@@ -7398,6 +7922,7 @@
     "id": 204324,
     "name": "Dearica Hamby",
     "series": [
+      4,
       3
     ],
     "badges": {
@@ -7412,6 +7937,21 @@
   "204323": {
     "id": 204323,
     "name": "Cheyenne Parker",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
+  "204322": {
+    "id": 204322,
+    "name": "Elizabeth Williams",
     "series": [
       4
     ],
@@ -7455,6 +7995,21 @@
       },
       "4": {
         "CR": true
+      }
+    }
+  },
+  "204296": {
+    "id": 204296,
+    "name": "Rebecca Allen",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
       }
     }
   },
@@ -7508,6 +8063,7 @@
         "CR": true
       },
       "4": {
+        "RY": true,
         "CR": true
       }
     }
@@ -7535,8 +8091,9 @@
         "CR": true
       },
       "4": {
-        "CY": true,
+        "RY": true,
         "CR": true,
+        "CY": true,
         "CCR": true,
         "MVP": true
       }
@@ -7647,8 +8204,9 @@
         "CR": true
       },
       "4": {
-        "MVP": true,
-        "CR": true
+        "RY": true,
+        "CR": true,
+        "MVP": true
       }
     }
   },
@@ -7670,7 +8228,10 @@
         "CY": true,
         "CR": true
       },
-      "4": {}
+      "4": {
+        "RY": true,
+        "ROY": true
+      }
     }
   },
   "203944": {
@@ -7746,7 +8307,10 @@
       "3": {
         "CR": true
       },
-      "4": {}
+      "4": {
+        "RY": true,
+        "CR": true
+      }
     }
   },
   "203933": {
@@ -7781,7 +8345,10 @@
       "2": {},
       "3": {},
       "4": {
-        "CY": true
+        "TSD": true,
+        "CY": true,
+        "RY": true,
+        "RM": true
       }
     }
   },
@@ -7832,7 +8399,9 @@
       },
       "2": {},
       "3": {},
-      "4": {}
+      "4": {
+        "RY": true
+      }
     }
   },
   "203922": {
@@ -7880,7 +8449,9 @@
       },
       "2": {},
       "3": {},
-      "4": {}
+      "4": {
+        "RY": true
+      }
     }
   },
   "203914": {
@@ -7916,6 +8487,7 @@
       "2": {},
       "3": {},
       "4": {
+        "RY": true,
         "CR": true,
         "CCR": true
       }
@@ -7954,6 +8526,7 @@
       },
       "3": {},
       "4": {
+        "RY": true,
         "CR": true
       }
     }
@@ -7992,6 +8565,22 @@
       }
     }
   },
+  "203828": {
+    "id": 203828,
+    "name": "Stefanie Dolson",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "CR": true
+      }
+    }
+  },
   "203827": {
     "id": 203827,
     "name": "Natasha Howard",
@@ -8019,8 +8608,8 @@
       "2": {},
       "3": {},
       "4": {
-        "TSD": true,
-        "CR": true
+        "CR": true,
+        "TSD": true
       }
     }
   },
@@ -8389,7 +8978,8 @@
       "1": {
         "TSD": true,
         "RY": true,
-        "RP": true
+        "RP": true,
+        "ROY": true
       },
       "2": {},
       "3": {},
@@ -8594,6 +9184,7 @@
     "id": 203406,
     "name": "Layshia Clarendon",
     "series": [
+      4,
       3
     ],
     "badges": {
@@ -8637,7 +9228,8 @@
       "3": {
         "CR": true,
         "TSD": true,
-        "RY": true
+        "RY": true,
+        "ROY": true
       },
       "4": {}
     }
@@ -8657,7 +9249,9 @@
         "RP": true,
         "TSD": true
       },
-      "4": {}
+      "4": {
+        "CR": true
+      }
     }
   },
   "203382": {
@@ -8784,6 +9378,7 @@
         "CY": true
       },
       "4": {
+        "CY": true,
         "CR": true
       }
     }
@@ -9087,6 +9682,21 @@
       "4": {}
     }
   },
+  "202738": {
+    "id": 202738,
+    "name": "Isaiah Thomas",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
   "202734": {
     "id": 202734,
     "name": "E'Twaun Moore",
@@ -9134,7 +9744,9 @@
       },
       "2": {},
       "3": {},
-      "4": {}
+      "4": {
+        "RY": true
+      }
     }
   },
   "202710": {
@@ -9253,6 +9865,7 @@
         "CR": true
       },
       "4": {
+        "CY": true,
         "CR": true
       }
     }
@@ -9331,6 +9944,7 @@
     "id": 202689,
     "name": "Kemba Walker",
     "series": [
+      4,
       3,
       2,
       1
@@ -9432,6 +10046,7 @@
         "CR": true
       },
       "4": {
+        "CY": true,
         "CR": true
       }
     }
@@ -9515,7 +10130,8 @@
       "3": {
         "TSD": true,
         "RY": true,
-        "CY": true
+        "CY": true,
+        "ROY": true
       },
       "4": {}
     }
@@ -9585,6 +10201,21 @@
       "2": {},
       "3": {},
       "4": {}
+    }
+  },
+  "202344": {
+    "id": 202344,
+    "name": "Trevor Booker",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
     }
   },
   "202340": {
@@ -9676,6 +10307,21 @@
       "4": {}
     }
   },
+  "202324": {
+    "id": 202324,
+    "name": "Derrick Favors",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
   "202322": {
     "id": 202322,
     "name": "John Wall",
@@ -9692,6 +10338,22 @@
       "4": {
         "CR": true,
         "CCR": true
+      }
+    }
+  },
+  "202252": {
+    "id": 202252,
+    "name": "Alysha Clark",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "CY": true
       }
     }
   },
@@ -9825,6 +10487,21 @@
       "4": {}
     }
   },
+  "201951": {
+    "id": 201951,
+    "name": "Ty Lawson",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
   "201950": {
     "id": 201950,
     "name": "Jrue Holiday",
@@ -9910,6 +10587,8 @@
         "CR": true
       },
       "4": {
+        "CY": true,
+        "MVP": true,
         "CR": true,
         "CCR": true
       }
@@ -9919,6 +10598,7 @@
     "id": 201937,
     "name": "Ricky Rubio",
     "series": [
+      4,
       3,
       2,
       1
@@ -10034,7 +10714,8 @@
       "2": {},
       "3": {
         "TSD": true,
-        "RY": true
+        "RY": true,
+        "ROY": true
       },
       "4": {}
     }
@@ -10127,6 +10808,7 @@
     "id": 201586,
     "name": "Serge Ibaka",
     "series": [
+      4,
       3,
       2,
       1
@@ -10207,13 +10889,16 @@
         "CY": true
       },
       "3": {},
-      "4": {}
+      "4": {
+        "CR": true
+      }
     }
   },
   "201571": {
     "id": 201571,
     "name": "D.J. Augustin",
     "series": [
+      4,
       2
     ],
     "badges": {
@@ -10276,7 +10961,9 @@
       "3": {
         "CR": true
       },
-      "4": {}
+      "4": {
+        "CY": true
+      }
     }
   },
   "201566": {
@@ -10299,6 +10986,7 @@
         "CR": true
       },
       "4": {
+        "MVP": true,
         "CR": true
       }
     }
@@ -10307,6 +10995,7 @@
     "id": 201565,
     "name": "Derrick Rose",
     "series": [
+      4,
       3,
       2,
       1
@@ -10375,9 +11064,11 @@
         "TSD": true
       },
       "4": {
+        "CY": true,
         "CR": true,
         "RY": true,
         "MVP": true,
+        "ROY": true,
         "RP": true
       }
     }
@@ -10416,6 +11107,21 @@
       "2": {},
       "3": {},
       "4": {}
+    }
+  },
+  "201167": {
+    "id": 201167,
+    "name": "Arron Afflalo",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
     }
   },
   "201152": {
@@ -10551,10 +11257,26 @@
       }
     }
   },
+  "200826": {
+    "id": 200826,
+    "name": "J.J. Barea",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
   "200794": {
     "id": 200794,
     "name": "Paul Millsap",
     "series": [
+      4,
       3,
       2
     ],
@@ -10625,6 +11347,7 @@
     "id": 200755,
     "name": "JJ Redick",
     "series": [
+      4,
       3,
       2
     ],
@@ -10674,6 +11397,7 @@
     "id": 200746,
     "name": "LaMarcus Aldridge",
     "series": [
+      4,
       3,
       2,
       1
@@ -10748,6 +11472,21 @@
       }
     }
   },
+  "101162": {
+    "id": 101162,
+    "name": "Marcin Gortat",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
   "101150": {
     "id": 101150,
     "name": "Lou Williams",
@@ -10771,6 +11510,7 @@
     "id": 101127,
     "name": "Jarrett Jack",
     "series": [
+      4,
       3
     ],
     "badges": {
@@ -10838,6 +11578,7 @@
     "id": 101114,
     "name": "Deron Williams",
     "series": [
+      4,
       3
     ],
     "badges": {
@@ -10867,6 +11608,21 @@
       }
     }
   },
+  "101109": {
+    "id": 101109,
+    "name": "Raymond Felton",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
   "101108": {
     "id": 101108,
     "name": "Chris Paul",
@@ -10885,7 +11641,8 @@
       },
       "3": {
         "CR": true,
-        "RY": true
+        "RY": true,
+        "ROY": true
       },
       "4": {
         "CR": true,
@@ -10943,8 +11700,8 @@
         "TSD": true
       },
       "4": {
-        "CY": true,
-        "CR": true
+        "CR": true,
+        "CY": true
       }
     }
   },
@@ -11147,7 +11904,8 @@
       "3": {
         "TSD": true,
         "RY": true,
-        "CR": true
+        "CR": true,
+        "ROY": true
       },
       "4": {}
     }
@@ -11616,6 +12374,21 @@
       "4": {}
     }
   },
+  "2754": {
+    "id": 2754,
+    "name": "Tony Allen",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
+    }
+  },
   "2749": {
     "id": 2749,
     "name": "Jameer Nelson",
@@ -11682,6 +12455,22 @@
       "4": {
         "CY": true,
         "CR": true
+      }
+    }
+  },
+  "2733": {
+    "id": 2733,
+    "name": "Shaun Livingston",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true,
+        "CY": true
       }
     }
   },
@@ -11916,7 +12705,8 @@
         "CR": true
       },
       "4": {
-        "CR": true
+        "CR": true,
+        "CY": true
       }
     }
   },
@@ -11933,6 +12723,21 @@
         "TSD": true
       },
       "4": {}
+    }
+  },
+  "2440": {
+    "id": 2440,
+    "name": "Matt Barnes",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
     }
   },
   "2407": {
@@ -11978,6 +12783,21 @@
       "2": {},
       "3": {},
       "4": {}
+    }
+  },
+  "2403": {
+    "id": 2403,
+    "name": "Nen\u00ea",
+    "series": [
+      4
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {
+        "TSD": true
+      }
     }
   },
   "2225": {
@@ -12318,6 +13138,7 @@
       "2": {},
       "3": {
         "RY": true,
+        "ROY": true,
         "TSD": true
       },
       "4": {}
@@ -12403,6 +13224,7 @@
     "id": 1717,
     "name": "Dirk Nowitzki",
     "series": [
+      4,
       3,
       1
     ],
@@ -12613,6 +13435,8 @@
       "2": {},
       "3": {},
       "4": {
+        "CY": true,
+        "MVP": true,
         "TSD": true,
         "CR": true
       }
@@ -12986,7 +13810,8 @@
       "3": {},
       "4": {
         "TSD": true,
-        "RY": true
+        "RY": true,
+        "ROY": true
       }
     }
   },

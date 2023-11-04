@@ -10,7 +10,7 @@ async def get_player_stats(player_id):
     transport = AIOHTTPTransport(url="https://public-api.nbatopshot.com/graphql")
 
     # Create a GraphQL client using the defined transport
-    client = Client(transport=transport, fetch_schema_from_transport=True)
+    client = Client(transport=transport, fetch_schema_from_transport=False)
 
     query = gql(
         """

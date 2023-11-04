@@ -1,0 +1,28 @@
+{
+  "message": "NBA 2023-24",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "$2,023 PREDICTIVE CHALLENGE OCTOBER 30, 2023",
+      "buckets": [
+        {
+          "description": "Predict and lock 3 players who will score 30 points each tonight.",
+          "is_wildcard": false,
+          "type": "QA",
+          "count": 30,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "PTS,30",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "10/30/2023"
+          ]
+        }
+      ]
+    }
+  ]
+}
+

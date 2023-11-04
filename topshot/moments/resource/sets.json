@@ -1,6 +1,104 @@
 {
   "sets": [
     {
+      "id": "39eb0ef6-a729-4bdb-a9ca-783e2d825ef8",
+      "flowId": 125,
+      "flowName": "Rookie Debut",
+      "flowSeriesNumber": 5,
+      "sortID": null
+    },
+    {
+      "id": "046246c6-5614-477d-a323-916306dae024",
+      "flowId": 123,
+      "flowName": "WNBA Origins",
+      "flowSeriesNumber": 4,
+      "sortID": null
+    },
+    {
+      "id": "449c21ff-7dd0-4fde-a6f3-a6cc0a201e52",
+      "flowId": 122,
+      "flowName": "Road To Royalty",
+      "flowSeriesNumber": 4,
+      "sortID": null
+    },
+    {
+      "id": "733bdf78-8ce0-4992-aa78-bd08c2746907",
+      "flowId": 121,
+      "flowName": "Run It Back: Legacies 2014-19",
+      "flowSeriesNumber": 4,
+      "sortID": null
+    },
+    {
+      "id": "b3ba922b-8f72-40f5-b034-438238a2487c",
+      "flowId": 120,
+      "flowName": "Run It Back: Origins 2014-19",
+      "flowSeriesNumber": 4,
+      "sortID": null
+    },
+    {
+      "id": "82747952-73e4-4922-81f1-12e96bd89e23",
+      "flowId": 119,
+      "flowName": "Archive Set 2014-19",
+      "flowSeriesNumber": 4,
+      "sortID": null
+    },
+    {
+      "id": "60f77380-f3d9-4cab-849d-d88f1c4cec72",
+      "flowId": 118,
+      "flowName": "2022-23 Season Rewind",
+      "flowSeriesNumber": 4,
+      "sortID": null
+    },
+    {
+      "id": "b32d535a-8e69-401d-a303-872b84c9f77b",
+      "flowId": 117,
+      "flowName": "The Anthology: Larry Bird",
+      "flowSeriesNumber": 4,
+      "sortID": null
+    },
+    {
+      "id": "c7abbed4-91dd-4432-bc91-a6e78c386e30",
+      "flowId": 116,
+      "flowName": "2023-23 Hardware",
+      "flowSeriesNumber": 4,
+      "sortID": null
+    },
+    {
+      "id": "b0863663-2561-4e02-a550-02561fcfcbf5",
+      "flowId": 115,
+      "flowName": "2023-23 Honors",
+      "flowSeriesNumber": 4,
+      "sortID": null
+    },
+    {
+      "id": "3a880c8b-c080-4cc7-b393-b3a83dd54a35",
+      "flowId": 114,
+      "flowName": "The Anthology: Steph Curry",
+      "flowSeriesNumber": 4,
+      "sortID": null
+    },
+    {
+      "id": "882d3d6d-610c-4015-863e-08d2a1954bae",
+      "flowId": 113,
+      "flowName": "Extra Spice",
+      "flowSeriesNumber": 4,
+      "sortID": null
+    },
+    {
+      "id": "6dd49975-d778-4dbe-9930-921b5e801d27",
+      "flowId": 112,
+      "flowName": "WNBA Metallic Gold LE 2023",
+      "flowSeriesNumber": 4,
+      "sortID": null
+    },
+    {
+      "id": "486e96fc-8c5d-4083-8036-981a713c0c71",
+      "flowId": 111,
+      "flowName": "WNBA 2023",
+      "flowSeriesNumber": 4,
+      "sortID": null
+    },
+    {
       "id": "9e03ce90-f80a-4a69-b453-b3d27bd1f07a",
       "flowId": 110,
       "flowName": "2023 NBA Finals",

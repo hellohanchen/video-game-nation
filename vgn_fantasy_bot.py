@@ -7,14 +7,14 @@ import discord
 from discord.ext import commands, tasks
 from dotenv import load_dotenv
 
-from service.fantasy import LINEUP_PROVIDER
+from constants import TZ_ET
+from discord_fantasy.views import MainPage
 from provider.nba_provider import NBA_PROVIDER
 from repository.vgn_collections import upsert_collection as repo_upsert_collection
-from repository.vgn_players import search_players_stats as repo_search_player
 from repository.vgn_users import get_user, insert_user
-from constants import TEAM_TRICODES, TZ_ET
-from topshot.cadence.flow_collections import get_account_plays
+from service.fantasy import LINEUP_PROVIDER
 from service.fantasy.ranking import RANK_PROVIDER
+from topshot.cadence.flow_collections import get_account_plays
 from topshot.graphql.get_address import get_flow_address
 from utils import update_channel_messages
 
@@ -32,17 +32,21 @@ intents.presences = False
 bot = commands.Bot(command_prefix='.', intents=intents)
 LB_CHANNEL_NAMES = ["📊-leaderboard"]
 GAMES_CHANNEL_NAMES = ["📅-games"]
-PLAYERS_CHANNEL_NAMES = ["⛹-players"]
-ADMIN_CHANNELS = ["💻-admin"]
+FANTASY_CHANNEL_NAMES = ["🎮-fantasy"]
+ADMIN_CHANNEL_NAMES = ["💻-admin"]
 
 LB_CHANNELS = []
 GAMES_CHANNELS = []
-PLAYERS_CHANNELS = []
+FANTASY_CHANNEL_MESSAGES = []
+
 ADMIN_CHANNEL_IDS = []
 
 LB_MESSAGE_IDS = {}
 GAMES_MESSAGE_IDS = {}
 PLAYERS_MESSAGE_IDS = {}
+
+
+VGN_EMOJI_ID = 1166225667952758815
 
 
 @bot.event
@@ -53,32 +57,20 @@ async def on_ready():
                 LB_CHANNELS.append(channel)
             if channel.name in GAMES_CHANNEL_NAMES:
                 GAMES_CHANNELS.append(channel)
-            if channel.name in PLAYERS_CHANNEL_NAMES:
-                PLAYERS_CHANNELS.append(channel)
-            if channel.name in ADMIN_CHANNELS:
+            if channel.name in ADMIN_CHANNEL_NAMES:
                 ADMIN_CHANNEL_IDS.append(channel.id)
+            if channel.name in FANTASY_CHANNEL_NAMES:
+                emoji = guild.get_emoji(VGN_EMOJI_ID)
+                view = MainPage(LINEUP_PROVIDER, RANK_PROVIDER)
+                if emoji is None:
+                    message = await channel.send(f"Ready to start daily NBA fantasy game?", view=view)
+                else:
+                    message = await channel.send(f"Ready to start daily NBA fantasy game? {emoji}", view=view)
+                FANTASY_CHANNEL_MESSAGES.append(message)
 
     update_scorebox.start()
     update_games.start()
-
-
-############
-# Collection (DM only)
-############
-@bot.command(name='collection', help="Update user's topshot collections info.")
-async def upsert_collection(context):
-    if not isinstance(context.channel, discord.channel.DMChannel):
-        return
-
-    vgn_user = get_user(context.message.author)
-
-    if vgn_user is None:
-        await context.channel.send("Account not found, contact admin for registration.")
-        return
-
-    message = await load_and_upsert_collection(vgn_user[0], vgn_user[2])
-
-    await context.channel.send(message)
+    refresh_entry.start()
 
 
 async def load_and_upsert_collection(user_id, flow_address):
@@ -94,157 +86,7 @@ async def load_and_upsert_collection(user_id, flow_address):
 
 
 ############
-# Lineup (DM only)
-############
-@bot.command(name='lineup', help="Check the current line up for user.")
-async def check_lineup(context):
-    if not isinstance(context.channel, discord.channel.DMChannel):
-        return
-
-    await context.message.channel.send(LINEUP_PROVIDER.check_lineup(context.author.id).formatted())
-
-
-@bot.command(name='submit', help="Submit the current lineup.")
-async def submit_lineup(context):
-    if not isinstance(context.channel, discord.channel.DMChannel):
-        return
-
-    await context.message.channel.send(LINEUP_PROVIDER.check_lineup(context.author.id).submit())
-
-
-@bot.command(name='add', help="Add a player to a lineup position.")
-async def add_player(context, o_idx, pos):
-    if not isinstance(context.channel, discord.channel.DMChannel):
-        return
-
-    if not o_idx.isdigit():
-        await context.message.channel.send(
-            "Provided player id {} is not positive integer.\n"
-            "Please use **/player** or **/team <team_name>** to check player ids.".format(o_idx))
-        return
-    if pos.lower() not in ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']:
-        await context.message.channel.send("Lineup position can only be one of [a|b|c|d|e|f|g|h].")
-        return
-
-    lineup = LINEUP_PROVIDER.check_lineup(context.author.id)
-    if lineup is None:
-        await context.message.channel.send("Fail to load lineup.")
-        return
-
-    messages = [lineup.add_player(int(o_idx), ord(pos.lower()) - 97), lineup.formatted()]
-
-    for message in messages:
-        await context.message.channel.send(message)
-
-
-@bot.command(name='remove', help="Remove a player from lineup.")
-async def remove_player(context, pos):
-    if not isinstance(context.channel, discord.channel.DMChannel):
-        return
-
-    if pos.lower() not in ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']:
-        await context.message.channel.send("Lineup position can only be one of [a|b|c|d|e|f|g|h].")
-        return
-
-    lineup = LINEUP_PROVIDER.check_lineup(context.author.id)
-    if lineup is None:
-        await context.message.channel.send("Fail to load lineup.")
-        return
-
-    messages = [lineup.remove_player(ord(pos.lower()) - 97), lineup.formatted()]
-
-    for message in messages:
-        await context.message.channel.send(message)
-
-
-@bot.command(name='swap', help="Swap players in the lineup.")
-async def swap_players(context, pos1, pos2):
-    if not isinstance(context.channel, discord.channel.DMChannel):
-        return
-
-    if pos1.lower() not in ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']:
-        await context.message.channel.send("Lineup position can only be one of [a|b|c|d|e|f|g|h].")
-        return
-    if pos2.lower() not in ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']:
-        await context.message.channel.send("Lineup position can only be one of [a|b|c|d|e|f|g|h].")
-        return
-    if pos1 == pos2:
-        await context.message.channel.send("Two positions are the same.")
-        return
-
-    lineup = LINEUP_PROVIDER.check_lineup(context.author.id)
-    if lineup is None:
-        await context.message.channel.send("Fail to load lineup.")
-        return
-
-    messages = [
-        lineup.swap_players(ord(pos1.lower()) - 97, ord(pos2.lower()) - 97),  # ord('a') = 97
-        lineup.formatted()
-    ]
-
-    for message in messages:
-        await context.message.channel.send(message)
-
-
-############
-# Player (DM only)
-############
-@bot.command(name='search', help="Search for a player by giving name.")
-async def search_player(context, name):
-    if not isinstance(context.channel, discord.channel.DMChannel):
-        return
-
-    players = repo_search_player(name, [('points_avg', 'DESC')])
-
-    if players is None or len(players) == 0:
-        await context.message.channel.send("Player {} not found.".format(name))
-    else:
-        user_id = context.author.id
-
-        messages = LINEUP_PROVIDER.detailed_players(players, user_id)
-
-        for message in messages:
-            await context.message.channel.send(message)
-
-
-@bot.command(name='player', help="List all players for the coming game date.")
-async def all_players(context):
-    if not isinstance(context.channel, discord.channel.DMChannel):
-        return
-
-    messages = LINEUP_PROVIDER.formatted_all_players()
-
-    for message in messages:
-        await context.message.channel.send(message)
-
-
-@bot.command(name='team', help="List all players for the coming game date for a specific team.")
-async def team_players(context, team):
-    if not isinstance(context.channel, discord.channel.DMChannel):
-        return
-
-    messages = LINEUP_PROVIDER.formatted_team_players(TEAM_TRICODES[team.upper()])
-
-    for message in messages:
-        await context.message.channel.send(message)
-
-
-############
-# Score (DM only)
-############
-@bot.command(name='score', help="Get current score breakdown for a user")
-async def get_score(context):
-    if not isinstance(context.channel, discord.channel.DMChannel):
-        return
-
-    messages = RANK_PROVIDER.formatted_user_score(context.author.id)
-
-    for message in messages:
-        await context.message.channel.send(message)
-
-
-############
-# System
+# Admin
 ############
 @bot.command(name='reload', help="[Admin] Reload game schedules, lineups and ranking")
 async def reload(context):
@@ -290,16 +132,12 @@ async def find_user_id(context, username):
         await context.channel.send(member.id)
 
 
+############
+# Routines
+############
 @tasks.loop(minutes=5)
 async def update_scorebox():
-    old_status = RANK_PROVIDER.status
     RANK_PROVIDER.update()
-    new_status = RANK_PROVIDER.status
-
-    if new_status != old_status and new_status == "PRE_GAME":
-        messages = ["***Players for next game day {}:***".format(LINEUP_PROVIDER.coming_game_date)]
-        messages.extend(LINEUP_PROVIDER.formatted_all_players())
-        await update_channel_messages(messages, PLAYERS_CHANNELS, PLAYERS_MESSAGE_IDS)
 
     messages = RANK_PROVIDER.formatted_leaderboard(20)
 
@@ -314,6 +152,17 @@ async def update_games():
                 "ET: **{}** , UPDATE EVERY 2 MINS".format(datetime.now(TZ_ET).strftime("%H:%M:%S"))]
 
     await update_channel_messages(messages, GAMES_CHANNELS, GAMES_MESSAGE_IDS)
+
+
+@tasks.loop(minutes=2)
+async def refresh_entry():
+    for message in FANTASY_CHANNEL_MESSAGES:
+        emoji = message.guild.get_emoji(VGN_EMOJI_ID)
+        view = MainPage(LINEUP_PROVIDER, RANK_PROVIDER)
+        if emoji is None:
+            await message.edit(content="Ready to start daily NBA fantasy game?", view=view)
+        else:
+            await message.edit(content=f"Ready to start daily NBA fantasy game? {emoji}", view=view)
 
 
 # start the bot

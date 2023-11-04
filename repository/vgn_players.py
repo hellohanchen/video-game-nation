@@ -4,11 +4,12 @@ import time
 import pandas as pd
 
 from provider.nba.players import get_player_avg_stats
+from provider.nba_provider import NBA_PROVIDER
 from repository.config import CNX_POOL
 from topshot.ts_info import TS_PLAYER_ID_MOMENTS
 
 
-def add_player(id):
+def upsert_player(id):
     """
     Adds a new player to the vgn.players MySQL table, given their ID.
 
@@ -22,7 +23,7 @@ def add_player(id):
         None.
 
     Examples:
-        >>> add_player(201939)
+        >>> upsert_player(201939)
         Inserted new player id: 201939, name: curry, stephen.
 
     This function fetches the player's average stats using the `get_player_avg_stats` function, and inserts them
@@ -38,9 +39,29 @@ def add_player(id):
         print(err)
         return
 
-    if info is None or stats is None:
+    if info is None:
         print("Error fetching player: {}".format(id))
         return
+    if stats is None:
+        stats = {
+            'PTS': 0.0,
+            'FG3M': 0.0,
+            'DREB': 0.0,
+            'OREB': 0.0,
+            'AST': 0.0,
+            'STL': 0.0,
+            'BLK': 0.0,
+            'FGA': 0.0,
+            'FGM': 0.0,
+            'FTA': 0.0,
+            'FTM': 0.0,
+            'TOV': 0.0,
+            'PF': 0.0,
+            'W': 0.0,
+            'GP': 1.0,
+            'DD2': 0.0,
+            'TD3': 0.0,
+        }
 
     try:
         full_name = info['DISPLAY_FIRST_LAST'][0].lower().replace('\'', '\\\'')
@@ -82,7 +103,25 @@ def add_player(id):
             "{}, {}, {}, {}, {}, {}," \
             "{}, {}, {}, {}," \
             "{}, {}, {}, {}" \
-            ")".format(
+            ") AS new ON DUPLICATE KEY UPDATE full_name = new.full_name, first_name = new.first_name, " \
+            "last_name = new.last_name, jersey_number = new.jersey_number, current_team = new.current_team, " \
+            "points_recent = new.points_recent, points_avg = new.points_avg, " \
+            "three_pointers_recent = new.three_pointers_recent, three_pointers_avg = new.three_pointers_avg, " \
+            "defensive_rebounds_recent = new.defensive_rebounds_recent, defensive_rebounds_avg = new.defensive_rebounds_avg, " \
+            "offensive_rebounds_recent = new.offensive_rebounds_recent, offensive_rebounds_avg = new.offensive_rebounds_avg, " \
+            "assists_recent = new.assists_recent, assists_avg = new.assists_avg, " \
+            "steals_recent = new.steals_recent, steals_avg = new.steals_avg, " \
+            "blocks_recent = new.blocks_recent, blocks_avg = new.blocks_avg, " \
+            "field_goal_misses_recent = new.field_goal_misses_recent, field_goal_misses_avg = new.field_goal_misses_avg, " \
+            "free_throw_misses_recent = new.free_throw_misses_recent, free_throw_misses_avg = new.free_throw_misses_avg, " \
+            "turnovers_recent = new.turnovers_recent, turnovers_avg = new.turnovers_avg, " \
+            "fouls_recent = new.fouls_recent, fouls_avg = new.fouls_avg, " \
+            "wins_recent = new.wins_recent, wins_avg = new.wins_avg, " \
+            "double_double_recent = new.double_double_recent, double_double_avg = new.double_double_avg, " \
+            "triple_double_recent = new.triple_double_recent, triple_double_avg = new.triple_double_avg, " \
+            "quadruple_double_recent = new.quadruple_double_recent, quadruple_double_avg = new.quadruple_double_avg, " \
+            "five_double_recent = new.five_double_recent, five_double_avg = new.five_double_avg" \
+            "".format(
                 id, full_name, first_name, last_name, jersey, team,
                 stats['PTS'], stats['PTS'], stats['FG3M'], stats['FG3M'],
                 stats['DREB'], stats['DREB'], stats['OREB'], stats['OREB'],
@@ -103,7 +142,7 @@ def add_player(id):
             db_conn.close()
         return
 
-    print("Inserted new player id: {}, name: {}.".format(id, full_name))
+    print("Upserted player id: {}, name: {}.".format(id, full_name))
 
 
 def get_player(player_id):
@@ -261,7 +300,7 @@ def upload_players(player_ids):
         player_id = int(player)
 
         if get_player(player_id) is None:
-            add_player(player_id)
+            upsert_player(player_id)
             time.sleep(10.0)
 
 
@@ -290,11 +329,9 @@ def check_current_nba_players():
 
 
 if __name__ == '__main__':
-    not_found_ids = [
-        1627814, 202355, 1629312, 203944, 203994, 203482, 1626162, 201567,
-        1626149, 1629021, 1628539, 203457, 1629651, 2555, 201587, 203999, 202696, 1630534,
-        1628384, 1630168, 1629052, 201988, 1630202, 2210, 1626158,
-        1626220, 1628380, 2216
-    ]
-
-    get_players_stats(not_found_ids)
+    player_ids = NBA_PROVIDER.get_all_player_ids()
+    random.shuffle(player_ids)
+    for player_id in player_ids:
+        print(f"upsert {player_id}")
+        upsert_player(player_id)
+        time.sleep(1.0)

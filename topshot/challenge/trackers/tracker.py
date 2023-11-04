@@ -21,7 +21,7 @@ class Tracker:
         """
         pass
 
-    def get_team_scores(self, games_teams: Dict[str, List[str]]) -> Tuple[int, List[Dict[str, Any]]]:
+    def get_team_scores(self, games_teams: Dict[str, List[str]], games_stats: Dict[str, Tuple[Optional[Dict[str, Any]], bool, Optional[Dict[str, Any]]]]) -> Tuple[int, List[Dict[str, Any]]]:
         """
         Get the team scores based on the specified tier breakers.
 
@@ -30,7 +30,7 @@ class Tracker:
         """
         pass
 
-    def get_player_scores(self, games_players: Dict[str, List[int]]) -> Tuple[int, List[Dict[str, Any]]]:
+    def get_player_scores(self, games_players: Dict[str, List[int]], games_stats: Dict[str, Tuple[Optional[Dict[str, Any]], bool, Optional[Dict[str, Any]]]]) -> Tuple[int, List[Dict[str, Any]]]:
         """
         Get the player scores based on the specified tier breakers.
 

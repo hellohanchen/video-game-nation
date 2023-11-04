@@ -1,0 +1,140 @@
+{
+  "message": "NBA 2023-24",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "$2,023 FLASH CHALLENGE NOVEMBER 1, 2023",
+      "buckets": [
+        {
+          "description": "POINTS LEADER.",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "11/01/2023"
+          ]
+        },
+        {
+          "description": "REBOUNDS LEADER",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "REB",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "11/01/2023"
+          ]
+        },
+        {
+          "description": "ASSISTS LEADER",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "AST",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "11/01/2023"
+          ]
+        },
+        {
+          "description": "BLOCKS LEADER",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "BLK",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "11/01/2023"
+          ]
+        },
+        {
+          "description": "STEALS LEADER",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "STL",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "11/01/2023"
+          ]
+        },
+        {
+          "description": "3 POINTERS LEADER",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "3PT",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "11/01/2023"
+          ]
+        },
+        {
+          "description": "FREE THROWS LEADER",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "FTM",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "11/01/2023"
+          ]
+        },
+        {
+          "description": "MINUTES  LEADER",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "MIN",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "11/01/2023"
+          ]
+        }
+      ]
+    }
+  ]
+}
+

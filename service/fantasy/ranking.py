@@ -73,6 +73,8 @@ class RankingProvider:
                 LINEUP_PROVIDER.reload()
             except:
                 return
+        else:
+            self.status = status
 
         self.__update_leaderboard()
 
@@ -195,7 +197,7 @@ class RankingProvider:
             player['gameInfo']['homeScore'], player['gameInfo']['homeTeam'],
             player['gameInfo']['statusText']
         )
-        message += "{}xPTS {}xREB {}xAST {}xSTL {}xBLK {}x3PT\n{}xFGMi {}xFTMi {}xTOV {}xPFS {}xWIN\n".format(
+        message += "{}pts {}reb {}ast {}stl {}blk {}x3p\n{}mfg {}mft {}tov {}pfs {}win\n".format(
             player["points"], player["reboundsTotal"], player['assists'], player['steals'], player['blocks'],
             player["threePointersMade"], player["fieldGoalsMissed"], player['freeThrowsMissed'], player['turnovers'],
             player['foulsPersonal'], player['win']

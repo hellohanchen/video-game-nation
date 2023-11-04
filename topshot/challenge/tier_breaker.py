@@ -1,3 +1,4 @@
+import re
 from typing import Dict, List, Any, Optional, Set, Tuple
 
 STATS_MAP = {
@@ -20,7 +21,8 @@ STATS_MAP = {
     "FTP": "freeThrowsPercentage",
     "PMP": "plusMinusPoints",
     "WIN": "teamWin",
-    "BENCH": "order"
+    "BENCH": "order",
+    "MIN": "minutes",
 }
 
 
@@ -63,6 +65,11 @@ class TierBreaker:
                 return 'W' if player_stats[STATS_MAP[stat]] == 1 else 'L'
             elif stat == "BENCH":
                 return 'B' if player_stats[STATS_MAP[stat]] > 5 else 'S'
+            elif stat == 'MIN':
+                match = re.match('^PT(.+)M(.+)S', player_stats[STATS_MAP[stat]])
+                minutes = float(match.group(1))
+                seconds = round(float(match.group(2)) / 60.0, 2)
+                result = float(result) + minutes + seconds
             else:
                 result += int(float(player_stats[STATS_MAP[stat]]))
 

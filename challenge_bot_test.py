@@ -2,6 +2,7 @@
 import json
 import os
 import pathlib
+import threading
 from datetime import datetime
 
 import discord
@@ -48,6 +49,8 @@ CHANNEL_NAMEs = ["⚡-fc-tracker"]
 MESSAGE_CHANNELS = []
 PREVIOUS_MESSAGE_IDS = {}
 
+LOCK = threading.Lock()
+
 
 @bot.event
 async def on_ready():
@@ -59,8 +62,9 @@ async def on_ready():
     get_current_challenge.start()
 
 
-@tasks.loop(minutes=2)
+@tasks.loop(minutes=1)
 async def get_current_challenge():
+    LOCK.acquire()
     messages = [NBAProvider.get_scoreboard_message(CHALLENGE_PROVIDER.headline)]
 
     for challenge in CHALLENGE_PROVIDER.challenges:
@@ -68,14 +72,10 @@ async def get_current_challenge():
         if challenge_messages:
             messages += challenge_messages
 
-    messages.append("ET: **{}** , UPDATE EVERY 2 MINS".format(datetime.now(TZ_ET).strftime("%H:%M:%S")))
+    messages.append("ET: **{}** , UPDATE EVERY MINUTE".format(datetime.now(TZ_ET).strftime("%m/%d/%Y, %H:%M:%S")))
 
     await update_channel_messages(messages, MESSAGE_CHANNELS, PREVIOUS_MESSAGE_IDS)
-
-
-@bot.command(name="purge")
-async def purge(ctx):
-    await purge_channel(ctx.channel)
+    LOCK.release()
 
 
 async def purge_channel(channel):
@@ -85,19 +85,23 @@ async def purge_channel(channel):
         PREVIOUS_MESSAGE_IDS[channel.id] = []
 
 
-@bot.command(name="reload")
+@bot.command(name="testreload")
 async def reload(ctx):
+    LOCK.acquire()
     try:
         CHALLENGE_PROVIDER.reload()
 
         for channel in MESSAGE_CHANNELS:
-            await purge_channel(channel)
+            messages = [await channel.fetch_message(message_id) for message_id in PREVIOUS_MESSAGE_IDS[channel.id]]
+            await channel.delete_messages(messages)
         PREVIOUS_MESSAGE_IDS.clear()
     except Exception as err:
         await ctx.channel.send(f'Failed: ${err}.')
+        LOCK.release()
         return
 
     await ctx.channel.send("Reloaded")
+    LOCK.release()
 
 
 bot.run(TOKEN)

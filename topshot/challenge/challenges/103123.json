@@ -1,0 +1,46 @@
+{
+  "message": "NBA 2023-24",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "$2,023 FLASH CHALLENGE OCTOBER 31, 2023",
+      "buckets": [
+        {
+          "description": "ADD 1 Rare or Legendary Moment of the player that leads each team in scoring.",
+          "segment": "TEAM",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "10/31/2023"
+          ]
+        },
+        {
+          "description": "BURN a Rare, Legendary, or Top Shot Debut Moment from the player that scores the last point in each game.",
+          "segment": "GAME",
+          "is_wildcard": false,
+          "type": "PBP",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "10/31/2023"
+          ]
+        }
+      ]
+    }
+  ]
+}
+

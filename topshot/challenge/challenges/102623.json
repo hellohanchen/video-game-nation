@@ -1,0 +1,84 @@
+{
+  "message": "NBA 2023-24",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "$12,023 PREDICTIVE CHALLENGE OCTOBER 26, 2023",
+      "buckets": [
+        {
+          "description": "The player with the most points for the Sixers",
+          "segment": "GAME",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            }
+          ],
+          "team_filter": "PHI",
+          "games": [
+            "0022300075"
+          ]
+        },
+        {
+          "description": "The player with the most points for the Bucks",
+          "segment": "GAME",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            }
+          ],
+          "team_filter": "MIL",
+          "games": [
+            "0022300075"
+          ]
+        },
+        {
+          "description": "The player with the most points for the Suns",
+          "segment": "GAME",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            }
+          ],
+          "team_filter": "PHX",
+          "games": [
+            "0022300076"
+          ]
+        },
+        {
+          "description": "The player with the most points for the Lakers",
+          "segment": "GAME",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            }
+          ],
+          "team_filter": "LAL",
+          "games": [
+            "0022300076"
+          ]
+        }
+      ]
+    }
+  ]
+}
+
