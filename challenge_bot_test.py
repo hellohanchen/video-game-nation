@@ -52,9 +52,6 @@ PREVIOUS_MESSAGE_IDS = {}
 @bot.event
 async def on_ready():
     for guild in bot.guilds:
-        ts_channel = guild.get_channel(1151225889472917564)
-        if ts_channel is not None:
-            MESSAGE_CHANNELS.append(ts_channel)
         for channel in guild.channels:
             if channel.name in CHANNEL_NAMEs:
                 MESSAGE_CHANNELS.append(channel)

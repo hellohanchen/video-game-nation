@@ -7,13 +7,14 @@
       "buckets": [
         {
           "description": "BURN a Top Shot Debut or Rookie Moment for every winning team in Friday's In-Season Tournament Games",
+          "segment": "GAME",
           "is_wildcard": false,
           "type": "LB",
           "count": 1,
           "is_team": true,
           "tier_breakers": [
             {
-              "stats": "WIN",
+              "stats": "PTS",
               "order": "DESC"
             }
           ],
