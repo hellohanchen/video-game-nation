@@ -151,20 +151,22 @@ def compute_vgn_scores(player, collection=None):
 
 async def update_channel_messages(msgs, channels, messages_ids):
     for channel in channels:
-        if channel.id not in messages_ids:
-            messages_ids[channel.id] = []
+        channel_id = channel.id
+        if channel_id not in messages_ids:
+            messages_ids[channel_id] = []
         try:
-            for i in range(0, min(len(msgs), len(messages_ids[channel.id]))):
-                prev_message = await channel.fetch_message(messages_ids[channel.id][i])
+            for i in range(0, min(len(msgs), len(messages_ids[channel_id]))):
+                prev_message = await channel.fetch_message(messages_ids[channel_id][i])
                 await prev_message.edit(content=msgs[i])
 
-            for i in range(len(messages_ids[channel.id]), len(msgs)):
+            for i in range(len(messages_ids[channel_id]), len(msgs)):
                 new_message = await channel.send(msgs[i])
-                messages_ids[channel.id].append(new_message.id)
+                messages_ids[channel_id].append(new_message.id)
 
-            for i in range(len(msgs), len(messages_ids[channel.id])):
-                prev_message = await channel.fetch_message(messages_ids[channel.id][i])
-                await prev_message.edit(content=".")
+            if len(msgs) < len(messages_ids[channel_id]):
+                redundant_messages = [await channel.fetch_message(messages_ids[channel_id][i]) for i in range(len(msgs), len(messages_ids[channel_id]))]
+                await channel.delete_messages(redundant_messages)
+                messages_ids[channel.id] = messages_ids[channel.id][0:len(msgs)]
 
         except Exception as err:
             print(err)

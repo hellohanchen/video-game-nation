@@ -184,12 +184,20 @@ def fill_bucket(bucket: Bucket, dict_obj: Dict[str, any]) -> Bucket:
     # If the bucket is of type LeaderBoard or PlayByPlay, add the specified TierBreakers to the bucket
     if dict_obj['type'] == BucketType.LB.name or dict_obj['type'] == BucketType.PBP.name:
         for tier_breaker in dict_obj['tier_breakers']:
-            bucket.add_tier_breaker(
-                TierBreaker(
-                    stats=tier_breaker['stats'].split(','),
-                    order=tier_breaker['order']
+            if bucket.is_team and tier_breaker['stats'] == "WIN":
+                bucket.add_tier_breaker(
+                    TierBreaker(
+                        stats=['PTS'],
+                        order=tier_breaker['order']
+                    )
                 )
-            )
+            else:
+                bucket.add_tier_breaker(
+                    TierBreaker(
+                        stats=tier_breaker['stats'].split(','),
+                        order=tier_breaker['order']
+                    )
+                )
 
     # If the bucket is of type Qualifier, add the specified Qualifier to the bucket
     if dict_obj['type'] == BucketType.QA.name:
