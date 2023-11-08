@@ -10,7 +10,7 @@ from discord.ext import commands, tasks
 from dotenv import load_dotenv
 
 from constants import TZ_ET
-from provider.nba_provider import NBAProvider
+from provider.nba_provider import NBAProvider, NBA_PROVIDER
 from topshot.challenge.challenge import Challenge
 from utils import update_channel_messages
 
@@ -95,6 +95,7 @@ async def purge_channel(channel):
 async def reload(ctx):
     LOCK.acquire()
     try:
+        NBA_PROVIDER.reload()
         CHALLENGE_PROVIDER.reload()
 
         for channel in MESSAGE_CHANNELS:

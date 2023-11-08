@@ -93,7 +93,7 @@ async def reload(context):
     if context.channel.id not in ADMIN_CHANNEL_IDS:
         return
 
-    NBA_PROVIDER.fresh_schedule()
+    NBA_PROVIDER.reload()
     LINEUP_PROVIDER.reload()
     RANK_PROVIDER.reload()
     LB_MESSAGE_IDS.clear()

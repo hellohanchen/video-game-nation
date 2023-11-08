@@ -159,9 +159,10 @@ class NBAProvider:
 
             self.coming_date = "N/A"
 
-    def fresh_schedule(self):
+    def reload(self):
         download_schedule()
         self.__load_schedule()
+        self.__load_team_players()
 
     @staticmethod
     def get_scoreboard_message(headline):
