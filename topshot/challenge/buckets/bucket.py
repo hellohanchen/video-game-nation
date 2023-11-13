@@ -14,7 +14,7 @@ class BucketType(Enum):
     LB = 1  # leaderboard
     QA = 2  # qualifier
     NL = 3  # nested leaderboard
-    PBP = 4 # play-by-play
+    PBP = 4  # play-by-play
 
 
 class Bucket:
@@ -36,6 +36,7 @@ class Bucket:
         whether this bucket resolved into a list of teams
 
     """
+
     def __init__(self, description, is_wildcard, bucket_type, count=0, is_team=False):
         self.description = description
         self.is_wildcard = is_wildcard
@@ -135,7 +136,9 @@ class Bucket:
 
         return game_players
 
-    def get_current_scores(self, games_stats: Dict[str, Tuple[Optional[Dict[str, Any]], bool, Optional[Dict[str, Any]]]]) -> List[Tuple[int, List[Dict[str, Any]]]]:
+    def get_current_scores(self,
+                           games_stats: Dict[str, Tuple[Optional[Dict[str, Any]], bool, Optional[Dict[str, Any]]]]) -> \
+    List[Tuple[int, List[Dict[str, Any]]]]:
         """
         Get the current ranking of teams/players from ALL games tracked by this bucket.
 
@@ -216,11 +219,20 @@ def fill_bucket(bucket: Bucket, dict_obj: Dict[str, any]) -> Bucket:
 
     # If player filters are specified, add TopshotFilter for each player filter to the bucket
     if 'player_filters' not in dict_obj or len(dict_obj['player_filters']) == 0:
-        bucket.add_player_filter(TopshotFilter([]))
+        bucket.add_player_filter(TopshotFilter([], []))
     else:
         for filter_def in dict_obj['player_filters']:
             if filter_def.startswith("TS"):
-                bucket.add_player_filter(TopshotFilter(filter_def.split(',')[1:]))
+                filter_tags = filter_def.split(',')[1:]
+                series = []
+                badges = []
+                for tag in filter_tags:
+                    if tag.isnumeric():
+                        series.append(tag)
+                    else:
+                        badges.append(tag)
+
+                bucket.add_player_filter(TopshotFilter(series, badges))
             elif filter_def.startswith("ID"):
                 bucket.add_player_filter(PlayerIDFilter(filter_def.split(',')[1:]))
 

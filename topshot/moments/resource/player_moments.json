@@ -1,4 +1,156 @@
 {
+  "1641738": {
+    "id": 1641738,
+    "name": "Kobe Brown",
+    "series": [
+      5
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {},
+      "5": {
+        "TSD": true,
+        "RY": true,
+        "RM": true,
+        "RP": true
+      }
+    }
+  },
+  "1641732": {
+    "id": 1641732,
+    "name": "Colby Jones",
+    "series": [
+      5
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {},
+      "5": {
+        "TSD": true,
+        "RY": true,
+        "RM": true,
+        "RP": true
+      }
+    }
+  },
+  "1641726": {
+    "id": 1641726,
+    "name": "Dereck Lively II",
+    "series": [
+      5
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {},
+      "5": {
+        "TSD": true,
+        "RY": true,
+        "RM": true,
+        "RP": true
+      }
+    }
+  },
+  "1641722": {
+    "id": 1641722,
+    "name": "Jordan Hawkins",
+    "series": [
+      5
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {},
+      "5": {
+        "TSD": true,
+        "RY": true,
+        "RM": true,
+        "RP": true
+      }
+    }
+  },
+  "1641718": {
+    "id": 1641718,
+    "name": "Keyonte George",
+    "series": [
+      5
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {},
+      "5": {
+        "TSD": true,
+        "RY": true,
+        "RM": true,
+        "RP": true
+      }
+    }
+  },
+  "1641717": {
+    "id": 1641717,
+    "name": "Cason Wallace",
+    "series": [
+      5
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {},
+      "5": {
+        "TSD": true,
+        "RY": true,
+        "RM": true,
+        "RP": true
+      }
+    }
+  },
+  "1641716": {
+    "id": 1641716,
+    "name": "Jarace Walker",
+    "series": [
+      5
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {},
+      "5": {
+        "TSD": true,
+        "RY": true,
+        "RM": true,
+        "RP": true
+      }
+    }
+  },
+  "1641711": {
+    "id": 1641711,
+    "name": "Gradey Dick",
+    "series": [
+      5
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {},
+      "5": {
+        "TSD": true,
+        "RY": true,
+        "RM": true,
+        "RP": true
+      }
+    }
+  },
   "1641709": {
     "id": 1641709,
     "name": "Ausar Thompson",
@@ -338,6 +490,25 @@
       "5": {}
     }
   },
+  "1631243": {
+    "id": 1631243,
+    "name": "Mouhamed Gueye",
+    "series": [
+      5
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {},
+      "5": {
+        "TSD": true,
+        "RY": true,
+        "RM": true,
+        "RP": true
+      }
+    }
+  },
   "1631223": {
     "id": 1631223,
     "name": "David Roddy",
@@ -374,6 +545,25 @@
         "RM": true
       },
       "5": {}
+    }
+  },
+  "1631218": {
+    "id": 1631218,
+    "name": "Trayce Jackson-Davis",
+    "series": [
+      5
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {},
+      "5": {
+        "TSD": true,
+        "RY": true,
+        "RM": true,
+        "RP": true
+      }
     }
   },
   "1631216": {
@@ -432,6 +622,25 @@
       "5": {}
     }
   },
+  "1631204": {
+    "id": 1631204,
+    "name": "Marcus Sasser",
+    "series": [
+      5
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {},
+      "5": {
+        "TSD": true,
+        "RY": true,
+        "RM": true,
+        "RP": true
+      }
+    }
+  },
   "1631172": {
     "id": 1631172,
     "name": "Ousmane Dieng",
@@ -449,6 +658,25 @@
         "CR": true
       },
       "5": {}
+    }
+  },
+  "1631170": {
+    "id": 1631170,
+    "name": "Jaime Jaquez Jr.",
+    "series": [
+      5
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {},
+      "5": {
+        "TSD": true,
+        "RY": true,
+        "RM": true,
+        "RP": true
+      }
     }
   },
   "1631169": {
@@ -4325,6 +4553,25 @@
       "3": {},
       "4": {},
       "5": {}
+    }
+  },
+  "1629618": {
+    "id": 1629618,
+    "name": "Jalen Pickett",
+    "series": [
+      5
+    ],
+    "badges": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {},
+      "5": {
+        "TSD": true,
+        "RY": true,
+        "RM": true,
+        "RP": true
+      }
     }
   },
   "1629617": {

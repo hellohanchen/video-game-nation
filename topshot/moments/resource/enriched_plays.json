@@ -56,8 +56,294 @@
     4314,
     4319
   ],
-  "count": 4790,
+  "count": 4803,
   "plays": {
+    "4380": [
+      {
+        "id": "001d2253-6386-4a2e-b45a-af73e96bb05c",
+        "flowId": 4380,
+        "set": "Rookie Debut",
+        "setId": "39eb0ef6-a729-4bdb-a9ca-783e2d825ef8",
+        "setFlowId": 125,
+        "playerId": 1641718,
+        "playerName": "Keyonte George",
+        "team": "Utah Jazz",
+        "playType": "Layup",
+        "date": "2023-10-26",
+        "series": 5,
+        "tier": "Common",
+        "badges": [
+          "TSD",
+          "RY",
+          "RM",
+          "RP"
+        ]
+      }
+    ],
+    "4379": [
+      {
+        "id": "ea65c39a-fd72-4781-b9a0-5e03e3b1ab7c",
+        "flowId": 4379,
+        "set": "Rookie Debut",
+        "setId": "39eb0ef6-a729-4bdb-a9ca-783e2d825ef8",
+        "setFlowId": 125,
+        "playerId": 1641711,
+        "playerName": "Gradey Dick",
+        "team": "Toronto Raptors",
+        "playType": "Assist",
+        "date": "2023-10-25",
+        "series": 5,
+        "tier": "Common",
+        "badges": [
+          "TSD",
+          "RY",
+          "RM",
+          "RP"
+        ]
+      }
+    ],
+    "4378": [
+      {
+        "id": "b660a84d-21d2-4563-a63d-b7e22c19cec5",
+        "flowId": 4378,
+        "set": "Rookie Debut",
+        "setId": "39eb0ef6-a729-4bdb-a9ca-783e2d825ef8",
+        "setFlowId": 125,
+        "playerId": 1641732,
+        "playerName": "Colby Jones",
+        "team": "Sacramento Kings",
+        "playType": "Layup",
+        "date": "2023-11-02",
+        "series": 5,
+        "tier": "Common",
+        "badges": [
+          "TSD",
+          "RY",
+          "RM",
+          "RP"
+        ]
+      }
+    ],
+    "4377": [
+      {
+        "id": "0574f676-1d27-4cfb-ad61-ee1155fe19e2",
+        "flowId": 4377,
+        "set": "Rookie Debut",
+        "setId": "39eb0ef6-a729-4bdb-a9ca-783e2d825ef8",
+        "setFlowId": 125,
+        "playerId": 1641717,
+        "playerName": "Cason Wallace",
+        "team": "Oklahoma City Thunder",
+        "playType": "Jump Shot",
+        "date": "2023-10-26",
+        "series": 5,
+        "tier": "Common",
+        "badges": [
+          "TSD",
+          "RY",
+          "RM",
+          "RP"
+        ]
+      }
+    ],
+    "4376": [
+      {
+        "id": "6bee154e-b8c0-4ac0-af56-57bc45006ae1",
+        "flowId": 4376,
+        "set": "Rookie Debut",
+        "setId": "39eb0ef6-a729-4bdb-a9ca-783e2d825ef8",
+        "setFlowId": 125,
+        "playerId": 1641722,
+        "playerName": "Jordan Hawkins",
+        "team": "New Orleans Pelicans",
+        "playType": "3 Pointer",
+        "date": "2023-10-26",
+        "series": 5,
+        "tier": "Common",
+        "badges": [
+          "TSD",
+          "RY",
+          "RM",
+          "RP"
+        ]
+      }
+    ],
+    "4375": [
+      {
+        "id": "88a2701c-9f6d-4758-a594-3e2eaf36e93a",
+        "flowId": 4375,
+        "set": "Rookie Debut",
+        "setId": "39eb0ef6-a729-4bdb-a9ca-783e2d825ef8",
+        "setFlowId": 125,
+        "playerId": 1631170,
+        "playerName": "Jaime Jaquez Jr.",
+        "team": "Miami Heat",
+        "playType": "Layup",
+        "date": "2023-10-25",
+        "series": 5,
+        "tier": "Common",
+        "badges": [
+          "TSD",
+          "RY",
+          "RM",
+          "RP"
+        ]
+      }
+    ],
+    "4374": [
+      {
+        "id": "502c547c-095a-41a2-979e-6710cc1d8ecc",
+        "flowId": 4374,
+        "set": "Rookie Debut",
+        "setId": "39eb0ef6-a729-4bdb-a9ca-783e2d825ef8",
+        "setFlowId": 125,
+        "playerId": 1641738,
+        "playerName": "Kobe Brown",
+        "team": "LA Clippers",
+        "playType": "3 Pointer",
+        "date": "2023-10-30",
+        "series": 5,
+        "tier": "Common",
+        "badges": [
+          "TSD",
+          "RY",
+          "RM",
+          "RP"
+        ]
+      }
+    ],
+    "4373": [
+      {
+        "id": "a476285b-5097-4f58-9fb2-2e3976d2bf5b",
+        "flowId": 4373,
+        "set": "Rookie Debut",
+        "setId": "39eb0ef6-a729-4bdb-a9ca-783e2d825ef8",
+        "setFlowId": 125,
+        "playerId": 1641716,
+        "playerName": "Jarace Walker",
+        "team": "Indiana Pacers",
+        "playType": "Steal",
+        "date": "2023-10-25",
+        "series": 5,
+        "tier": "Common",
+        "badges": [
+          "TSD",
+          "RY",
+          "RM",
+          "RP"
+        ]
+      }
+    ],
+    "4372": [
+      {
+        "id": "c91c9184-600b-4d4a-aa19-17a90cdf98b5",
+        "flowId": 4372,
+        "set": "Rookie Debut",
+        "setId": "39eb0ef6-a729-4bdb-a9ca-783e2d825ef8",
+        "setFlowId": 125,
+        "playerId": 1631218,
+        "playerName": "Trayce Jackson-Davis",
+        "team": "Golden State Warriors",
+        "playType": "Dunk",
+        "date": "2023-10-31",
+        "series": 5,
+        "tier": "Common",
+        "badges": [
+          "TSD",
+          "RY",
+          "RM",
+          "RP"
+        ]
+      }
+    ],
+    "4371": [
+      {
+        "id": "248baac4-0995-4614-b3a9-3e52341974fc",
+        "flowId": 4371,
+        "set": "Rookie Debut",
+        "setId": "39eb0ef6-a729-4bdb-a9ca-783e2d825ef8",
+        "setFlowId": 125,
+        "playerId": 1631204,
+        "playerName": "Marcus Sasser",
+        "team": "Detroit Pistons",
+        "playType": "3 Pointer",
+        "date": "2023-10-25",
+        "series": 5,
+        "tier": "Common",
+        "badges": [
+          "TSD",
+          "RY",
+          "RM",
+          "RP"
+        ]
+      }
+    ],
+    "4370": [
+      {
+        "id": "b7ee9546-b65d-444c-b22f-03ffdfb5529e",
+        "flowId": 4370,
+        "set": "Rookie Debut",
+        "setId": "39eb0ef6-a729-4bdb-a9ca-783e2d825ef8",
+        "setFlowId": 125,
+        "playerId": 1629618,
+        "playerName": "Jalen Pickett",
+        "team": "Denver Nuggets",
+        "playType": "Jump Shot",
+        "date": "2023-10-24",
+        "series": 5,
+        "tier": "Common",
+        "badges": [
+          "TSD",
+          "RY",
+          "RM",
+          "RP"
+        ]
+      }
+    ],
+    "4369": [
+      {
+        "id": "3837f89c-c62b-4014-8598-9808defab09d",
+        "flowId": 4369,
+        "set": "Rookie Debut",
+        "setId": "39eb0ef6-a729-4bdb-a9ca-783e2d825ef8",
+        "setFlowId": 125,
+        "playerId": 1641726,
+        "playerName": "Dereck Lively II",
+        "team": "Dallas Mavericks",
+        "playType": "Dunk",
+        "date": "2023-10-26",
+        "series": 5,
+        "tier": "Common",
+        "badges": [
+          "TSD",
+          "RY",
+          "RM",
+          "RP"
+        ]
+      }
+    ],
+    "4368": [
+      {
+        "id": "dc433eb5-032e-43dd-bbae-8ae6800a402c",
+        "flowId": 4368,
+        "set": "Rookie Debut",
+        "setId": "39eb0ef6-a729-4bdb-a9ca-783e2d825ef8",
+        "setFlowId": 125,
+        "playerId": 1631243,
+        "playerName": "Mouhamed Gueye",
+        "team": "Atlanta Hawks",
+        "playType": "Steal",
+        "date": "2023-10-29",
+        "series": 5,
+        "tier": "Common",
+        "badges": [
+          "TSD",
+          "RY",
+          "RM",
+          "RP"
+        ]
+      }
+    ],
     "4367": [
       {
         "id": "7cf7171c-a294-403f-81bf-77ce7d839e8c",
