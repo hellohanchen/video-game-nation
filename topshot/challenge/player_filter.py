@@ -17,7 +17,7 @@ class TopshotFilter(PlayerFilter):
             tags (List[str]): A list of tags used to filter players.
         """
         self.series = series
-        self.tags = tags
+        self.badges = tags
 
     def filter_players(self, player_ids: Set[int]) -> Set[int]:
         """
@@ -38,8 +38,9 @@ class TopshotFilter(PlayerFilter):
             for series in self.series:
                 matched = False
                 all_badges = True
-                for tag in self.tags:
-                    if not TS_PLAYER_ID_MOMENTS[player_id]['badges'][series][tag]:
+                for badge in self.badges:
+                    if badge not in TS_PLAYER_ID_MOMENTS[player_id]['badges'][series] or \
+                            not TS_PLAYER_ID_MOMENTS[player_id]['badges'][series][badge]:
                         all_badges = False
                         break
                 if all_badges:
