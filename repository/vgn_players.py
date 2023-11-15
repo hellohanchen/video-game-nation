@@ -332,6 +332,5 @@ if __name__ == '__main__':
     player_ids = NBA_PROVIDER.get_all_player_ids()
     random.shuffle(player_ids)
     for player_id in player_ids:
-        print(f"upsert {player_id}")
         upsert_player(player_id)
         time.sleep(1.0)

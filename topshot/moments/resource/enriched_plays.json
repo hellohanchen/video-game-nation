@@ -53,11 +53,265 @@
     4165,
     4221,
     4234,
-    4314,
-    4319
+    4314
   ],
-  "count": 4803,
+  "count": 4819,
   "plays": {
+    "4395": [
+      {
+        "id": "8766aaa4-24f6-4d74-a9f0-158568739ef6",
+        "flowId": 4395,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 203903,
+        "playerName": "Jordan Clarkson",
+        "team": "Utah Jazz",
+        "playType": "3 Pointer",
+        "date": "2023-10-28",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4394": [
+      {
+        "id": "84c1e2e5-7a45-4297-9c95-076a7d6876d0",
+        "flowId": 4394,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 1631101,
+        "playerName": "Shaedon Sharpe",
+        "team": "Portland Trail Blazers",
+        "playType": "Layup",
+        "date": "2023-10-29",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4393": [
+      {
+        "id": "11b238c2-43f1-4bae-b457-b6d27a19d040",
+        "flowId": 4393,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 1626164,
+        "playerName": "Devin Booker",
+        "team": "Phoenix Suns",
+        "playType": "Jump Shot",
+        "date": "2023-10-25",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4392": [
+      {
+        "id": "2a7ff02b-1862-4c84-9ab6-a31735e65fb2",
+        "flowId": 4392,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 1630532,
+        "playerName": "Franz Wagner",
+        "team": "Orlando Magic",
+        "playType": "Assist",
+        "date": "2023-10-28",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4391": [
+      {
+        "id": "1f064bd9-ad18-451b-be2f-03cbb77a4c4f",
+        "flowId": 4391,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 1631114,
+        "playerName": "Jalen Williams",
+        "team": "Oklahoma City Thunder",
+        "playType": "Assist",
+        "date": "2023-10-31",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4390": [
+      {
+        "id": "1f16080f-76dd-4340-9564-1240247cbe4f",
+        "flowId": 4390,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 1630529,
+        "playerName": "Herbert Jones",
+        "team": "New Orleans Pelicans",
+        "playType": "Block",
+        "date": "2023-11-03",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4389": [
+      {
+        "id": "db759eaf-c9dc-4391-861e-03771ed3df6d",
+        "flowId": 4389,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 203937,
+        "playerName": "Kyle Anderson",
+        "team": "Minnesota Timberwolves",
+        "playType": "Jump Shot",
+        "date": "2023-11-05",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4388": [
+      {
+        "id": "a40e6790-94ce-4a70-81c2-9166ac8cdb1d",
+        "flowId": 4388,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 201572,
+        "playerName": "Brook Lopez",
+        "team": "Milwaukee Bucks",
+        "playType": "Block",
+        "date": "2023-11-03",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4387": [
+      {
+        "id": "a64ac2bb-6dcc-44c0-9484-0e8ef8a02730",
+        "flowId": 4387,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 1630217,
+        "playerName": "Desmond Bane",
+        "team": "Memphis Grizzlies",
+        "playType": "Layup",
+        "date": "2023-11-04",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4386": [
+      {
+        "id": "ba04d8ba-9298-4540-a0ef-f43980201f7f",
+        "flowId": 4386,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 201566,
+        "playerName": "Russell Westbrook",
+        "team": "LA Clippers",
+        "playType": "Dunk",
+        "date": "2023-10-26",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4385": [
+      {
+        "id": "b1f18e20-424c-4295-9e70-553e0b057113",
+        "flowId": 4385,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 1630578,
+        "playerName": "Alperen \u015eeng\u00fcn",
+        "team": "Houston Rockets",
+        "playType": "Dunk",
+        "date": "2023-11-02",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4384": [
+      {
+        "id": "64097f40-523c-4ad4-a180-453a8ad0a697",
+        "flowId": 4384,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 1631212,
+        "playerName": "Peyton Watson",
+        "team": "Denver Nuggets",
+        "playType": "Dunk",
+        "date": "2023-10-29",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4383": [
+      {
+        "id": "78eef377-2e24-40d9-bae4-b173ad18b139",
+        "flowId": 4383,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 1631109,
+        "playerName": "Mark Williams",
+        "team": "Charlotte Hornets",
+        "playType": "Steal",
+        "date": "2023-10-25",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4382": [
+      {
+        "id": "119eb9dc-b04e-4acf-b959-7bf5bfc666ad",
+        "flowId": 4382,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 1627827,
+        "playerName": "Dorian Finney-Smith",
+        "team": "Brooklyn Nets",
+        "playType": "Block",
+        "date": "2023-11-04",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4381": [
+      {
+        "id": "cff5b93d-7c44-48e4-9432-eb3bc002d7a2",
+        "flowId": 4381,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 1629631,
+        "playerName": "De'Andre Hunter",
+        "team": "Atlanta Hawks",
+        "playType": "Jump Shot",
+        "date": "2023-11-01",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
     "4380": [
       {
         "id": "001d2253-6386-4a2e-b45a-af73e96bb05c",
@@ -1229,6 +1483,23 @@
         "team": "New York Liberty",
         "playType": "Block",
         "date": "2023-10-15",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "4319": [
+      {
+        "id": "e8f6eaf9-eda8-496a-86a9-cd840fd97be7",
+        "flowId": 4319,
+        "set": "Road To Royalty",
+        "setId": "449c21ff-7dd0-4fde-a6f3-a6cc0a201e52",
+        "setFlowId": 122,
+        "playerId": 1627668,
+        "playerName": "Breanna Stewart",
+        "team": "New York Liberty",
+        "playType": "Block",
+        "date": "2023-09-27",
         "series": 4,
         "tier": "Legendary",
         "badges": []

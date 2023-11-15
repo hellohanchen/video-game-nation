@@ -6,6 +6,8 @@ from repository.vgn_lineups import get_lineups, upsert_lineup, submit_lineup
 from repository.vgn_players import get_players_stats
 from utils import compute_vgn_score, truncate_message, compute_vgn_scores
 
+SALARY_CAP = 165.00
+
 
 class LineupProvider:
     def __init__(self):
@@ -31,7 +33,7 @@ class LineupProvider:
                     self.player_to_team[player] = team
                     players_to_load.append(player)
 
-        loaded = get_players_stats(players_to_load, [("points_avg", "DESC")])
+        loaded = get_players_stats(players_to_load, [("current_salary", "DESC")])
 
         index = 0
         for player in loaded:
@@ -110,7 +112,7 @@ class LineupProvider:
     def formatted_player(self, player, collection):
         score = compute_vgn_score(player, collection)
         return \
-            "***{}.*** **{} +{:.2f}v {}#{}** vs *{}*\n" \
+            "***{}.*** **{} +{:.2f}v {}#{}** vs *{}* **${:.2f}m**\n" \
             "{:.2f}p {:.2f}r {:.2f}a {:.2f}s {:.2f}b\n".format(
                 player['index'],
                 player['full_name'],
@@ -118,6 +120,7 @@ class LineupProvider:
                 self.player_to_team[player['id']],
                 player['jersey_number'],
                 self.get_opponent(player['id']),
+                player['current_salary'] / 100,
                 player['points_recent'],
                 player['defensive_rebounds_recent'] + player['offensive_rebounds_recent'],
                 player['assists_recent'],
@@ -144,7 +147,7 @@ class LineupProvider:
         end = len(self.players) if page * 10 > len(self.players) else page * 10
 
         message = ""
-        for player_id in self.player_ids[start-1:end]:
+        for player_id in self.player_ids[start - 1:end]:
             message += self.players[player_id]['formatted']
         return message
 
@@ -167,7 +170,7 @@ class LineupProvider:
     def detailed_player(self, player, collection):
         scores, total, bonus = compute_vgn_scores(player, collection)
         return \
-            "***{}. {} {}#{}*** vs *{}*\n" \
+            "***{}. {} {}#{}*** *vs {}* **${:.2f}m**\n" \
             "**{:.2f}** points **{:.2f}v** (+{:.2f}) " \
             "bonus **{:.2f}v** (+{:.2f})\n" \
             "**{:.2f}** three-pointers **{:.2f}v** (+{:.2f})\n" \
@@ -189,7 +192,7 @@ class LineupProvider:
             "***Total: {:.2f}v (+{:.2f})***\n\n" \
             "".format(
                 player['index'], player['full_name'], self.player_to_team[player['id']], player['jersey_number'],
-                self.get_opponent(player['id']),
+                self.get_opponent(player['id']), player['current_salary'] / 100,
                 player['points'], scores['points']['score'], scores['points']['bonus'],
                 scores['pointBonus']['score'], scores['pointBonus']['bonus'],
                 player['threePointersMade'], scores['threePointersMade']['score'], scores['threePointersMade']['bonus'],
@@ -275,7 +278,7 @@ class Lineup:
         return None
 
     def formatted(self):
-        message = "Your lineup for **{}** is {}.\n"\
+        message = "Your lineup for **{}** is {}.\n" \
             .format(self.game_date, "**submitted**" if self.submitted else "**NOT** submitted")
         message += "**🏅 a)** Captain {}\n".format(self.formatted_lineup_player(0))
         message += "**🏀 b)** Starter {}\n".format(self.formatted_lineup_player(1))
@@ -285,6 +288,9 @@ class Lineup:
         message += "**🎽 f)** *Bench*   {}\n".format(self.formatted_lineup_player(5))
         message += "**🎽 g)** *Bench*   {}\n".format(self.formatted_lineup_player(6))
         message += "**🎽 h)** *Bench*   {}\n".format(self.formatted_lineup_player(7))
+
+        total_salary = self.get_total_salary()
+        message += "\nTotal salary ${:.2f}m, cap $165.00m, ${:.2f}m space".format(total_salary, SALARY_CAP - total_salary)
         return message
 
     def formatted_lineup_player(self, z_idx_pos):
@@ -294,11 +300,12 @@ class Lineup:
             return "---"
         else:
             player = self.provider.players[player_id]
-            return "**{}** ***+{:.2f}v {}*** vs *{}*".format(
+            return "**{}** ***+{:.2f}v {}*** vs *{}* **${:.2f}m**".format(
                 player['full_name'],
                 player['score'],
                 self.provider.player_to_team[player_id],
-                self.provider.get_opponent(player_id)
+                self.provider.get_opponent(player_id),
+                player['current_salary'] / 100
             )
 
     def add_player_by_idx(self, player_idx, pos_idx):
@@ -381,7 +388,11 @@ class Lineup:
 
     def submit(self):
         if None in self.player_ids:
-            return "Still have unfilled positions {}".format([chr(i+97) for i in range(0, 8) if self.player_ids[i] is None])
+            return "Still have unfilled positions {}".format(
+                [chr(i + 97) for i in range(0, 8) if self.player_ids[i] is None])
+
+        if self.get_total_salary() > SALARY_CAP:
+            return self.formatted() + "\nTotal salary exceeds cap, please adjust lineup."
 
         successful, _ = submit_lineup(self.user_id, self.game_date)
         if successful:
@@ -389,6 +400,14 @@ class Lineup:
             return self.formatted() + "\nSubmitted."
         else:
             return self.formatted() + "\nFailed to update lineup, please retry."
+
+    def get_total_salary(self):
+        total_salary = 0
+        for player_id in self.player_ids:
+            if player_id is not None:
+                player = self.provider.players[player_id]
+                total_salary += player['current_salary'] / 100
+        return total_salary
 
 
 LINEUP_PROVIDER = LineupProvider()
