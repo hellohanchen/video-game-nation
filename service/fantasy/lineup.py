@@ -112,13 +112,12 @@ class LineupProvider:
     def formatted_player(self, player, collection):
         score = compute_vgn_score(player, collection)
         return \
-            "***{}.*** **{} +{:.2f}v {}#{}** vs *{}* **${:.2f}m**\n" \
+            "***{}.*** **{} +{:.2f}v {}** vs *{}* **${:.2f}m**\n" \
             "{:.2f}p {:.2f}r {:.2f}a {:.2f}s {:.2f}b\n".format(
                 player['index'],
                 player['full_name'],
                 score,
                 self.player_to_team[player['id']],
-                player['jersey_number'],
                 self.get_opponent(player['id']),
                 player['current_salary'] / 100,
                 player['points_recent'],
@@ -170,7 +169,7 @@ class LineupProvider:
     def detailed_player(self, player, collection):
         scores, total, bonus = compute_vgn_scores(player, collection)
         return \
-            "***{}. {} {}#{}*** *vs {}* **${:.2f}m**\n" \
+            "**{}.** ***{} {}#{}*** *vs {}* **${:.2f}m**\n" \
             "**{:.2f}** points **{:.2f}v** (+{:.2f}) " \
             "bonus **{:.2f}v** (+{:.2f})\n" \
             "**{:.2f}** three-pointers **{:.2f}v** (+{:.2f})\n" \
@@ -280,14 +279,14 @@ class Lineup:
     def formatted(self):
         message = "Your lineup for **{}** is {}.\n" \
             .format(self.game_date, "**submitted**" if self.submitted else "**NOT** submitted")
-        message += "**🏅 a)** Captain {}\n".format(self.formatted_lineup_player(0))
-        message += "**🏀 b)** Starter {}\n".format(self.formatted_lineup_player(1))
-        message += "**🏀 c)** Starter {}\n".format(self.formatted_lineup_player(2))
-        message += "**🏀 d)** Starter {}\n".format(self.formatted_lineup_player(3))
-        message += "**🏀 e)** Starter {}\n".format(self.formatted_lineup_player(4))
-        message += "**🎽 f)** *Bench*   {}\n".format(self.formatted_lineup_player(5))
-        message += "**🎽 g)** *Bench*   {}\n".format(self.formatted_lineup_player(6))
-        message += "**🎽 h)** *Bench*   {}\n".format(self.formatted_lineup_player(7))
+        message += "🏅 {}\n".format(self.formatted_lineup_player(0))
+        message += "🏀 {}\n".format(self.formatted_lineup_player(1))
+        message += "🏀 {}\n".format(self.formatted_lineup_player(2))
+        message += "🏀 {}\n".format(self.formatted_lineup_player(3))
+        message += "🏀 {}\n".format(self.formatted_lineup_player(4))
+        message += "🎽 {}\n".format(self.formatted_lineup_player(5))
+        message += "🎽 {}\n".format(self.formatted_lineup_player(6))
+        message += "🎽 {}\n".format(self.formatted_lineup_player(7))
 
         total_salary = self.get_total_salary()
         message += "\nTotal salary ${:.2f}m, cap $165.00m, ${:.2f}m space".format(total_salary, SALARY_CAP - total_salary)
@@ -334,10 +333,10 @@ class Lineup:
              self.player_ids[3], self.player_ids[4], self.player_ids[5], self.player_ids[6], self.player_ids[7])
         )
         if successful:
-            message += "Added **{}. {}** to position {}. ".format(
+            message += "Added **{}. {}** to {}. ".format(
                 self.provider.players[self.player_ids[pos_idx]]['index'],
                 self.provider.players[self.player_ids[pos_idx]]['full_name'],
-                chr(97 + pos_idx)
+                "🏅 Captain" if pos_idx == 0 else "🏀 Starter" if pos_idx < 5 else "🎽 Bench"
             )
 
             return message
