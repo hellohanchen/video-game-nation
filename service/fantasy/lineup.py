@@ -289,7 +289,7 @@ class Lineup:
         message += "🎽 {}\n".format(self.formatted_lineup_player(7))
 
         total_salary = self.get_total_salary()
-        message += "\nTotal salary ${:.2f}m, cap $165.00m, ${:.2f}m space".format(total_salary, SALARY_CAP - total_salary)
+        message += "\nTotal salary ${:.2f}m, cap $165.00m, space ${:.2f}m".format(total_salary, SALARY_CAP - total_salary)
         return message
 
     def formatted_lineup_player(self, z_idx_pos):

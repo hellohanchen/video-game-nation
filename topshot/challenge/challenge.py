@@ -108,7 +108,7 @@ class Challenge:
                     continue
 
                 msg, new_msg = self.format_ranking(scores[:hit], new_msg, messages, msg)
-                msg, new_msg = self.format_ranking(scores[hit:min(len(scores), 20)], new_msg, messages, msg, hit)
+                msg, new_msg = self.format_ranking(scores[hit:min(len(scores), 30)], new_msg, messages, msg, hit)
 
                 new_msg += "\n"
 
