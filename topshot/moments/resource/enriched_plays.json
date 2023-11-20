@@ -52,11 +52,252 @@
     4038,
     4165,
     4221,
-    4234,
-    4314
+    4234
   ],
-  "count": 4819,
+  "count": 4831,
   "plays": {
+    "4406": [
+      {
+        "id": "dae7f412-32b7-45e6-9aaf-8fa7068d4f1d",
+        "flowId": 4406,
+        "set": "Rookie Debut",
+        "setId": "39eb0ef6-a729-4bdb-a9ca-783e2d825ef8",
+        "setFlowId": 125,
+        "playerId": 1641731,
+        "playerName": "Bilal Coulibaly",
+        "team": "Washington Wizards",
+        "playType": "Block",
+        "date": "2023-10-25",
+        "series": 5,
+        "tier": "Common",
+        "badges": [
+          "TSD",
+          "RY",
+          "RM",
+          "RP"
+        ]
+      }
+    ],
+    "4405": [
+      {
+        "id": "d3e6a9c1-2249-485d-a8b2-bfd38389084d",
+        "flowId": 4405,
+        "set": "Rookie Debut",
+        "setId": "39eb0ef6-a729-4bdb-a9ca-783e2d825ef8",
+        "setFlowId": 125,
+        "playerId": 1628426,
+        "playerName": "Sasha Vezenkov",
+        "team": "Sacramento Kings",
+        "playType": "3 Pointer",
+        "date": "2023-10-26",
+        "series": 5,
+        "tier": "Common",
+        "badges": [
+          "TSD",
+          "RY",
+          "RM",
+          "RP"
+        ]
+      }
+    ],
+    "4404": [
+      {
+        "id": "1a8ab99c-c3f5-4873-a8fd-094769a140dc",
+        "flowId": 4404,
+        "set": "Rookie Debut",
+        "setId": "39eb0ef6-a729-4bdb-a9ca-783e2d825ef8",
+        "setFlowId": 125,
+        "playerId": 1641739,
+        "playerName": "Toumani Camara",
+        "team": "Portland Trail Blazers",
+        "playType": "3 Pointer",
+        "date": "2023-10-26",
+        "series": 5,
+        "tier": "Common",
+        "badges": [
+          "TSD",
+          "RY",
+          "RM",
+          "RP"
+        ]
+      }
+    ],
+    "4403": [
+      {
+        "id": "e2c51a4d-4269-4b85-83be-3a6479af3fab",
+        "flowId": 4403,
+        "set": "Rookie Debut",
+        "setId": "39eb0ef6-a729-4bdb-a9ca-783e2d825ef8",
+        "setFlowId": 125,
+        "playerId": 1641724,
+        "playerName": "Jett Howard",
+        "team": "Orlando Magic",
+        "playType": "Assist",
+        "date": "2023-10-25",
+        "series": 5,
+        "tier": "Common",
+        "badges": [
+          "TSD",
+          "RY",
+          "RM",
+          "RP"
+        ]
+      }
+    ],
+    "4402": [
+      {
+        "id": "9c182e19-8451-451f-95b3-3f2d9a54559c",
+        "flowId": 4402,
+        "set": "Rookie Debut",
+        "setId": "39eb0ef6-a729-4bdb-a9ca-783e2d825ef8",
+        "setFlowId": 125,
+        "playerId": 1641710,
+        "playerName": "Anthony Black",
+        "team": "Orlando Magic",
+        "playType": "Jump Shot",
+        "date": "2023-10-25",
+        "series": 5,
+        "tier": "Common",
+        "badges": [
+          "TSD",
+          "RY",
+          "RM",
+          "RP"
+        ]
+      }
+    ],
+    "4401": [
+      {
+        "id": "5524f4cb-08fb-4338-abd9-7dd3ee88dd2c",
+        "flowId": 4401,
+        "set": "Rookie Debut",
+        "setId": "39eb0ef6-a729-4bdb-a9ca-783e2d825ef8",
+        "setFlowId": 125,
+        "playerId": 203995,
+        "playerName": "Vasilije Mici\u0107",
+        "team": "Oklahoma City Thunder",
+        "playType": "3 Pointer",
+        "date": "2023-10-27",
+        "series": 5,
+        "tier": "Common",
+        "badges": [
+          "TSD",
+          "RY",
+          "RM",
+          "RP"
+        ]
+      }
+    ],
+    "4400": [
+      {
+        "id": "93e67f7a-144e-4bab-bac9-7ebc05d2256b",
+        "flowId": 4400,
+        "set": "Rookie Debut",
+        "setId": "39eb0ef6-a729-4bdb-a9ca-783e2d825ef8",
+        "setFlowId": 125,
+        "playerId": 1641748,
+        "playerName": "Andre Jackson Jr.",
+        "team": "Milwaukee Bucks",
+        "playType": "Steal",
+        "date": "2023-10-29",
+        "series": 5,
+        "tier": "Common",
+        "badges": [
+          "TSD",
+          "RY",
+          "RM",
+          "RP"
+        ]
+      }
+    ],
+    "4399": [
+      {
+        "id": "d53bbd5e-09c0-4d7e-bb64-b84eac1b69b0",
+        "flowId": 4399,
+        "set": "Rookie Debut",
+        "setId": "39eb0ef6-a729-4bdb-a9ca-783e2d825ef8",
+        "setFlowId": 125,
+        "playerId": 1641715,
+        "playerName": "Cam Whitmore",
+        "team": "Houston Rockets",
+        "playType": "Layup",
+        "date": "2023-11-07",
+        "series": 5,
+        "tier": "Common",
+        "badges": [
+          "TSD",
+          "RY",
+          "RM",
+          "RP"
+        ]
+      }
+    ],
+    "4398": [
+      {
+        "id": "d2d30cbb-d62e-463b-8e02-ef1382a7b8ce",
+        "flowId": 4398,
+        "set": "Rookie Debut",
+        "setId": "39eb0ef6-a729-4bdb-a9ca-783e2d825ef8",
+        "setFlowId": 125,
+        "playerId": 1641764,
+        "playerName": "Brandin Podziemski",
+        "team": "Golden State Warriors",
+        "playType": "Layup",
+        "date": "2023-10-31",
+        "series": 5,
+        "tier": "Common",
+        "badges": [
+          "TSD",
+          "RY",
+          "RM",
+          "RP"
+        ]
+      }
+    ],
+    "4397": [
+      {
+        "id": "f224a07f-d427-4125-9817-7d5beb70c9da",
+        "flowId": 4397,
+        "set": "Rookie Debut",
+        "setId": "39eb0ef6-a729-4bdb-a9ca-783e2d825ef8",
+        "setFlowId": 125,
+        "playerId": 1631124,
+        "playerName": "Julian Strawther",
+        "team": "Denver Nuggets",
+        "playType": "3 Pointer",
+        "date": "2023-10-29",
+        "series": 5,
+        "tier": "Common",
+        "badges": [
+          "TSD",
+          "RY",
+          "RM",
+          "RP"
+        ]
+      }
+    ],
+    "4396": [
+      {
+        "id": "fa2251d8-b031-411d-b908-01549fbc649d",
+        "flowId": 4396,
+        "set": "Rookie Debut",
+        "setId": "39eb0ef6-a729-4bdb-a9ca-783e2d825ef8",
+        "setFlowId": 125,
+        "playerId": 1641733,
+        "playerName": "Nick Smith Jr.",
+        "team": "Charlotte Hornets",
+        "playType": "Jump Shot",
+        "date": "2023-11-09",
+        "series": 5,
+        "tier": "Common",
+        "badges": [
+          "TSD",
+          "RY",
+          "RM",
+          "RP"
+        ]
+      }
+    ],
     "4395": [
       {
         "id": "8766aaa4-24f6-4d74-a9f0-158568739ef6",
@@ -1576,6 +1817,26 @@
         "tier": "Legendary",
         "badges": [
           "CY"
+        ]
+      }
+    ],
+    "4314": [
+      {
+        "id": "1501a47c-6680-4a54-921d-954b772c1126",
+        "flowId": 4314,
+        "set": "Road To Royalty",
+        "setId": "449c21ff-7dd0-4fde-a6f3-a6cc0a201e52",
+        "setFlowId": 122,
+        "playerId": 1628932,
+        "playerName": "A'ja Wilson",
+        "team": "Las Vegas Aces",
+        "playType": "Jump Shot",
+        "date": "2023-10-19",
+        "series": 4,
+        "tier": "Legendary",
+        "badges": [
+          "CY",
+          "CR"
         ]
       }
     ],

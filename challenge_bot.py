@@ -45,7 +45,7 @@ def load_challenges():
 
 
 CHALLENGE_PROVIDER = ChallengeProvider()
-CHANNEL_NAMEs = ["🤖-mdv-flash-challenge-bot", "⚡-fc-tracker"]
+CHANNEL_NAMEs = ["⚡-fc-tracker"]
 MESSAGE_CHANNELS = []
 PREVIOUS_MESSAGE_IDS = {}
 TS_CHANNEL_ID = 924447554480013343
