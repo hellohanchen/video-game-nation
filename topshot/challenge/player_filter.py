@@ -84,3 +84,36 @@ class PlayerIDFilter(PlayerFilter):
             filtered.add(player_id)
 
         return filtered
+
+
+class TopshotSetFilter(PlayerFilter):
+    def __init__(self, set: str):
+        """
+        Initialize a new instance of the TopshotSetFilter class.
+
+        Args:
+            set (str): flow id of TS set
+        """
+        self.set = int(set)
+
+    def filter_players(self, player_ids: Set[int]) -> Set[int]:
+        """
+        Filter a set of player IDs based on the tags associated with the TopshotFilter object.
+
+        Args:
+            player_ids (Set[int]): A set of player IDs to filter.
+
+        Returns:
+            Set[int]: A set of player IDs that passed the filter.
+        """
+        filtered = set()
+        for player_id in player_ids:
+            if player_id not in TS_PLAYER_ID_MOMENTS:
+                continue
+
+            if self.set not in TS_PLAYER_ID_MOMENTS[player_id]['sets']:
+                continue
+
+            filtered.add(player_id)
+
+        return filtered

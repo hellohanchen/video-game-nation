@@ -12,7 +12,7 @@
           "count": 1,
           "is_team": false,
           "player_filters": [
-            "TS,5,RP"
+            "SET,125"
           ],
           "tier_breakers": [
             {
@@ -32,7 +32,7 @@
           "count": 1,
           "is_team": false,
           "player_filters": [
-            "TS,5,RP"
+            "SET,125"
           ],
           "tier_breakers": [
             {
@@ -52,7 +52,7 @@
           "count": 1,
           "is_team": false,
           "player_filters": [
-            "TS,5,RP"
+            "SET,125"
           ],
           "tier_breakers": [
             {
@@ -72,7 +72,7 @@
           "count": 1,
           "is_team": false,
           "player_filters": [
-            "TS,5,RP"
+            "SET,125"
           ],
           "tier_breakers": [
             {
@@ -92,7 +92,7 @@
           "count": 1,
           "is_team": false,
           "player_filters": [
-            "TS,5,RP"
+            "SET,125"
           ],
           "tier_breakers": [
             {
@@ -109,4 +109,3 @@
     }
   ]
 }
-

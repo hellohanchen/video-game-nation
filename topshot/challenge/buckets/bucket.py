@@ -2,7 +2,7 @@ from enum import Enum
 from typing import List, Dict, Any, Tuple, Optional
 
 from provider.nba_provider import NBA_PROVIDER
-from topshot.challenge.player_filter import TopshotFilter, PlayerIDFilter
+from topshot.challenge.player_filter import TopshotFilter, PlayerIDFilter, TopshotSetFilter
 from topshot.challenge.team_filter import TeamFilter
 from topshot.challenge.tier_breaker import TierBreaker, Qualifier
 from topshot.challenge.trackers.leaderboard_tracker import LeaderBoardTracker, QualifierTracker
@@ -233,6 +233,8 @@ def fill_bucket(bucket: Bucket, dict_obj: Dict[str, any]) -> Bucket:
                         badges.append(tag)
 
                 bucket.add_player_filter(TopshotFilter(series, badges))
+            elif filter_def.startswith("SET"):
+                bucket.add_player_filter(TopshotSetFilter(filter_def.split(',')[1]))
             elif filter_def.startswith("ID"):
                 bucket.add_player_filter(PlayerIDFilter(filter_def.split(',')[1:]))
 

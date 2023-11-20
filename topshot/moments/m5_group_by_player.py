@@ -37,11 +37,15 @@ def group_play_by_player():
                             3: {},
                             4: {},
                             5: {}
-                        }
+                        },
+                        'sets': []
                     }
 
                 if moment['series'] not in result[player_id]['series']:
                     result[player_id]['series'].append(moment['series'])
+
+                if moment['setFlowId'] not in result[player_id]['sets']:
+                    result[player_id]['sets'].append(moment['setFlowId'])
 
                 for badge in moment['badges']:
                     if badge not in result[player_id]['badges'][moment['series']]:
