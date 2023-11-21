@@ -162,7 +162,7 @@ class LineupView(FantasyView):
         return message, view
 
     def jump_to_teams(self):
-        message = self.lineup_provider.formatted_schedule()
+        message = self.lineup_provider.formatted_schedule
         return message, TeamsView(self.lineup_provider, self.user_id)
 
     def submit_lineup(self):
@@ -598,4 +598,4 @@ class TeamView(FantasyView):
         return message, PlayerView(player_idx, self.lineup_provider, self.user_id)
 
     def back_to_teams(self):
-        return self.lineup_provider.formatted_schedule(), TeamsView(self.lineup_provider, self.user_id)
+        return self.lineup_provider.formatted_schedule, TeamsView(self.lineup_provider, self.user_id)

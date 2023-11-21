@@ -19,6 +19,7 @@ class LineupProvider:
         self.player_ids = []
         self.lineups = {}
         self.collections = {}
+        self.formatted_schedule = ""
         self.reload()
 
     def __load_players(self):
@@ -66,6 +67,7 @@ class LineupProvider:
             self.lineups = {}
 
             self.coming_game_date = coming_game_date
+            self.formatted_schedule = self.__formatted_schedule()
             self.__load_players()
 
         self.__load_lineups()
@@ -245,7 +247,7 @@ class LineupProvider:
     def get_coming_games(self):
         return NBA_PROVIDER.get_games_on_date(self.coming_game_date).items()
 
-    def formatted_schedule(self):
+    def __formatted_schedule(self):
         message = "🏀 ***{} GAMES***\n".format(self.coming_game_date)
         for game_id, game in self.get_coming_games():
             message += f"{game['awayTeam']} at {game['homeTeam']}\n"
@@ -277,7 +279,9 @@ class Lineup:
         return None
 
     def formatted(self):
-        message = "Your lineup for **{}** is {}.\n" \
+        message = self.provider.formatted_schedule + "\n"
+
+        message += "Your lineup for **{}** is {}.\n" \
             .format(self.game_date, "**submitted**" if self.submitted else "**NOT** submitted")
         message += "🏅 {}\n".format(self.formatted_lineup_player(0))
         message += "🏀 {}\n".format(self.formatted_lineup_player(1))

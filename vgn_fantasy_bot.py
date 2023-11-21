@@ -137,13 +137,19 @@ async def find_user_id(context, username):
 ############
 @tasks.loop(minutes=5)
 async def update_scorebox():
+    init_status = RANK_PROVIDER.status
     RANK_PROVIDER.update()
+    new_status = RANK_PROVIDER.status
 
+    global LB_MESSAGE_IDS
     messages = RANK_PROVIDER.formatted_leaderboard(20)
 
     messages.append("ET: **{}** , UPDATE EVERY 5 MINS".format(datetime.now(TZ_ET).strftime("%H:%M:%S")))
 
     await update_channel_messages(messages, LB_CHANNELS, LB_MESSAGE_IDS)
+
+    if init_status == "IN_GAME" and new_status == "POST_GAME":
+        LB_MESSAGE_IDS.clear()
 
 
 @tasks.loop(minutes=2)

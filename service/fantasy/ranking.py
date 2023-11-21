@@ -61,20 +61,24 @@ class RankingProvider:
 
     def update(self):
         scoreboard = NBAProvider.get_scoreboard()
-        status = self.get_status(scoreboard['games'])
-        if status == "NO_GAME" or status == "PRE_GAME":
+        new_status = self.get_status(scoreboard['games'])
+        if new_status == "NO_GAME" or new_status == "PRE_GAME":
+            if self.status == "POST_GAME":
+                NBA_PROVIDER.reload()
+                LINEUP_PROVIDER.reload()
+
             self.status = "PRE_GAME"
         elif self.status == "PRE_GAME":
             self.current_game_date = datetime.datetime.strptime(scoreboard['gameDate'], '%Y-%m-%d').strftime('%m/%d/%Y')
             self.games = [game['gameId'] for game in scoreboard['games']]
             try:
                 self.reload()
-                self.status = status
+                self.status = new_status
                 LINEUP_PROVIDER.reload()
             except:
                 return
         else:
-            self.status = status
+            self.status = new_status
 
         self.__update_leaderboard()
 
@@ -132,7 +136,7 @@ class RankingProvider:
         self.leaderboard = leaderboard
 
     def formatted_leaderboard(self, top):
-        if self.status == "NO_GAME" or self.status == "PRE_GAME":
+        if self.status != "IN_GAME":
             return ["Games are not started yet."]
 
         messages = []
@@ -235,10 +239,10 @@ class RankingProvider:
             if game['gameStatus'] < 3:
                 final = False
 
-        if started and not final:
-            return "IN_GAME"
         if not started and not final:
             return "PRE_GAME"
+        if started and not final:
+            return "IN_GAME"
         if started and final:
             return "POST_GAME"
 

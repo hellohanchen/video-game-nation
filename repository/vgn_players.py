@@ -3,7 +3,7 @@ import time
 
 import pandas as pd
 
-from provider.nba.players import get_player_avg_stats
+from provider.nba.players import get_player_avg_stats, fresh_team_players
 from provider.nba_provider import NBA_PROVIDER
 from repository.config import CNX_POOL
 from topshot.ts_info import TS_PLAYER_ID_MOMENTS
@@ -328,9 +328,14 @@ def check_current_nba_players():
                 print("Player not found: {}".format(player_id))
 
 
-if __name__ == '__main__':
+def reload_players():
+    fresh_team_players()
     player_ids = NBA_PROVIDER.get_all_player_ids()
     random.shuffle(player_ids)
     for player_id in player_ids:
         upsert_player(player_id)
         time.sleep(1.0)
+
+
+if __name__ == '__main__':
+    reload_players()
