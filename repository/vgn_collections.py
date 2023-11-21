@@ -73,7 +73,7 @@ def upsert_collection(user_id, plays):
     if len(not_found_plays) > 0:
         return "Updated with not found play ids: {}.".format(', '.join([str(play) for play in not_found_plays]))
 
-    return f"Updated successfully, found plays: {len(plays)}!"
+    return f"Updated successfully, found {len(plays)} plays!"
 
 
 def build_vgn_collection(plays):
