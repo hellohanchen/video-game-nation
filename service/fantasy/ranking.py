@@ -4,7 +4,7 @@ from nba_api.live.nba.endpoints import boxscore
 
 from provider.nba_provider import NBAProvider, NBA_PROVIDER
 from repository.vgn_collections import get_collections
-from repository.vgn_lineups import get_lineups
+from repository.vgn_lineups import get_lineups, upsert_score, get_weekly_ranks
 from repository.vgn_players import get_empty_players_stats
 from repository.vgn_users import get_users
 from service.fantasy.lineup import Lineup, LINEUP_PROVIDER
@@ -64,6 +64,9 @@ class RankingProvider:
         new_status = self.get_status(scoreboard['games'])
         if new_status == "NO_GAME" or new_status == "PRE_GAME":
             if self.status == "POST_GAME":
+                self.__update_leaderboard()
+                self.__upload_leaderboard()
+
                 NBA_PROVIDER.reload()
                 LINEUP_PROVIDER.reload()
 
@@ -135,6 +138,10 @@ class RankingProvider:
         self.scores = scores
         self.leaderboard = leaderboard
 
+    def __upload_leaderboard(self):
+        for user_id in self.lineups:
+            upsert_score(user_id, self.lineups[user_id].game_date, self.scores[user_id])
+
     def formatted_leaderboard(self, top):
         if self.status != "IN_GAME":
             return ["Games are not started yet."]
@@ -144,6 +151,21 @@ class RankingProvider:
         for i in range(0, min(top, len(self.leaderboard))):
             new_message = "#**{}.**  **{}** *+{:.2f}v*\n".format(
                 i + 1, self.collections[self.leaderboard[i]][0], self.scores[self.leaderboard[i]]['score'])
+            message, _ = truncate_message(messages, message, new_message, 1950)
+
+        if message != "":
+            messages.append(message)
+
+        return messages
+
+    @staticmethod
+    def formatted_weekly_leaderboard(dates, top):
+        messages = []
+        message = "***Weekly Leaderboard {}~{}***\n\n".format(dates[0], dates[-1])
+        loaded = get_weekly_ranks(dates, top)
+        for i in range(0, min(top, len(loaded))):
+            new_message = "#**{}.**  **{}** *+{:.2f}v*\n".format(
+                i + 1, loaded[i]['username'], loaded[i]['total_score'])
             message, _ = truncate_message(messages, message, new_message, 1950)
 
         if message != "":

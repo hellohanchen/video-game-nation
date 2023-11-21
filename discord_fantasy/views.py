@@ -1,6 +1,8 @@
 import discord
 
+import utils
 from repository.vgn_collections import upsert_collection as repo_upsert_collection
+from repository.vgn_lineups import get_weekly_score
 from repository.vgn_users import get_user
 from service.fantasy.ranking import RANK_PROVIDER
 from topshot.cadence.flow_collections import get_account_plays
@@ -130,6 +132,18 @@ class LineupScoreButton(discord.ui.Button['LineupScore']):
         await interaction.response.edit_message(content=message, view=new_view)
 
 
+class LineupWeekScoreButton(discord.ui.Button['LineupWeek']):
+    def __init__(self):
+        super().__init__(style=discord.ButtonStyle.success, label="My Week", row=3)
+
+    async def callback(self, interaction: discord.Interaction):
+        assert self.view is not None
+        view: LineupView = self.view
+        message, new_view = view.check_week_score()
+
+        await interaction.response.edit_message(content=message, view=new_view)
+
+
 class LineupReloadButton(discord.ui.Button['LineupReload']):
     def __init__(self):
         super().__init__(style=discord.ButtonStyle.secondary, label="Refresh TS Moments", row=1)
@@ -153,6 +167,7 @@ class LineupView(FantasyView):
         self.add_item(LineupSubmitButton())
         self.add_item(LineupButton(3))
         self.add_item(LineupScoreButton())
+        self.add_item(LineupWeekScoreButton())
         self.lineup = self.lineup_provider.get_or_create_lineup(self.user_id)
 
     def jump_to_players(self):
@@ -178,6 +193,16 @@ class LineupView(FantasyView):
 
     def check_score(self):
         return RANK_PROVIDER.formatted_user_score(self.user_id)[0], self
+
+    def check_week_score(self):
+        if RANK_PROVIDER.current_game_date == "":
+            date = self.lineup_provider.coming_game_date
+        else:
+            date = RANK_PROVIDER.current_game_date
+
+        dates = utils.get_the_past_week(date)
+        score = get_weekly_score(dates, self.user_id)
+        return f"Total score {dates[0]}~{dates[-1]}: **{score}**", self
 
     async def reload_collection(self):
         vgn_user = get_user(self.user_id)

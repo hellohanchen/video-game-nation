@@ -16,7 +16,7 @@ from service.fantasy import LINEUP_PROVIDER
 from service.fantasy.ranking import RANK_PROVIDER
 from topshot.cadence.flow_collections import get_account_plays
 from topshot.graphql.get_address import get_flow_address
-from utils import update_channel_messages
+from utils import update_channel_messages, get_the_past_week, send_channel_messages
 
 # config bot
 load_dotenv()
@@ -68,7 +68,7 @@ async def on_ready():
                     message = await channel.send(f"Ready to start daily NBA fantasy game? {emoji}", view=view)
                 FANTASY_CHANNEL_MESSAGES.append(message)
 
-    update_scorebox.start()
+    update_leaderboard.start()
     update_games.start()
     refresh_entry.start()
 
@@ -136,7 +136,7 @@ async def find_user_id(context, username):
 # Routines
 ############
 @tasks.loop(minutes=5)
-async def update_scorebox():
+async def update_leaderboard():
     init_status = RANK_PROVIDER.status
     RANK_PROVIDER.update()
     new_status = RANK_PROVIDER.status
@@ -149,6 +149,10 @@ async def update_scorebox():
     await update_channel_messages(messages, LB_CHANNELS, LB_MESSAGE_IDS)
 
     if init_status == "IN_GAME" and new_status == "POST_GAME":
+        dates = get_the_past_week(RANK_PROVIDER.current_game_date)
+        messages = RANK_PROVIDER.formatted_weekly_leaderboard(dates, 20)
+        await send_channel_messages(messages, LB_CHANNELS)
+
         LB_MESSAGE_IDS.clear()
 
 

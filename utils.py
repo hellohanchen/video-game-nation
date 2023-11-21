@@ -173,6 +173,17 @@ async def update_channel_messages(msgs, channels, messages_ids):
             continue
 
 
+async def send_channel_messages(msgs, channels):
+    for channel in channels:
+        try:
+            for i in range(0, len(msgs)):
+                await channel.send(msgs[i])
+
+        except Exception as err:
+            print(err)
+            continue
+
+
 def parse_dash_date(dt):
     return datetime.datetime.strptime(dt, '%Y-%m-%d')
 
@@ -183,6 +194,18 @@ def parse_slash_date(dt):
 
 def to_slash_date(dt):
     return dt.strftime('%m/%d/%Y')
+
+
+def get_the_past_week(date):
+    today = parse_slash_date(date)
+    idx = (today.weekday() + 1) % 7  # Mon = 1, ..., Sat = 6, Sun = 0
+
+    dates = []
+    for i in range(idx, -1, -1):
+        d = today - datetime.timedelta(days=i)
+        dates.append(to_slash_date(d))
+
+    return dates
 
 
 def equals(s1: list, s2: list) -> bool:

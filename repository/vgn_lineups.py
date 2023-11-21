@@ -43,6 +43,60 @@ def get_lineups(game_date, submitted=False):
     return lineups
 
 
+def get_weekly_ranks(game_dates, count):
+    try:
+        db_conn = CNX_POOL.get_connection()
+        query = "SELECT u.topshot_username as username, SUM(l.score) as total_score FROM " \
+                "(SELECT * FROM vgn.lineups WHERE game_date IN ({})) l JOIN vgn.users u ON l.user_id = u.id " \
+                "GROUP BY u.id ORDER BY total_score DESC LIMIT {}"\
+            .format(', '.join("'" + date + "'" for date in game_dates), count)
+
+        # Execute SQL query and store results in a pandas dataframe
+        df = pd.read_sql(query, db_conn)
+
+        # Convert dataframe to a dictionary with headers
+        leaderboard = df.to_dict('records')
+
+        db_conn.commit()
+        db_conn.close()
+    except Exception as err:
+        print("DB error: {}".format(err))
+
+        if db_conn is not None:
+            db_conn.close()
+        return {}
+
+    return leaderboard
+
+
+def get_weekly_score(game_dates, user_id):
+    try:
+        db_conn = CNX_POOL.get_connection()
+        query = "SELECT SUM(l.score) as total_score FROM " \
+                "(SELECT * FROM vgn.lineups WHERE game_date IN ({})) l JOIN " \
+                "(SELECT * FROM vgn.users WHERE id = {}) u ON l.user_id = u.id " \
+            .format(', '.join("'" + date + "'" for date in game_dates), user_id)
+
+        # Execute SQL query and store results in a pandas dataframe
+        df = pd.read_sql(query, db_conn)
+
+        # Convert dataframe to a dictionary with headers
+        score = df.to_dict('records')
+
+        db_conn.commit()
+        db_conn.close()
+    except Exception as err:
+        print("DB error: {}".format(err))
+
+        if db_conn is not None:
+            db_conn.close()
+        return {}
+
+    if len(score) > 0:
+        return score[0]['total_score']
+    return 0
+
+
 def upsert_lineup(lineup):
     try:
         db_conn = CNX_POOL.get_connection()
@@ -60,6 +114,19 @@ def upsert_lineup(lineup):
         return True, "Updated"
     except Exception as err:
         return False, "DB error: {}".format(err)
+
+
+def upsert_score(user_id, game_date, score):
+    try:
+        db_conn = CNX_POOL.get_connection()
+        cursor = db_conn.cursor()
+        query = "UPDATE vgn.lineups SET score = {} " \
+                "WHERE user_id = {} AND game_date = '{}'".format(score, user_id, game_date)
+        cursor.execute(query)
+        db_conn.commit()
+        db_conn.close()
+    except Exception as err:
+        print("DB error: {}".format(err))
 
 
 def submit_lineup(user_id, game_date):
