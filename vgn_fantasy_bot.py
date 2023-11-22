@@ -31,7 +31,7 @@ intents.presences = False
 
 bot = commands.Bot(command_prefix='.', intents=intents)
 LB_CHANNEL_NAMES = ["📊-leaderboard"]
-GAMES_CHANNEL_NAMES = ["📅-games"]
+GAMES_CHANNEL_NAMES = ["📅-game-schedule"]
 FANTASY_CHANNEL_NAMES = ["🎮-fantasy"]
 ADMIN_CHANNEL_NAMES = ["💻-admin"]
 
@@ -97,6 +97,8 @@ async def reload(context):
     LINEUP_PROVIDER.reload()
     RANK_PROVIDER.reload()
     LB_MESSAGE_IDS.clear()
+
+    await context.channel.send("reloaded")
 
 
 @bot.command(name='verify', help='[Admin] Insert a verified user record into db')
