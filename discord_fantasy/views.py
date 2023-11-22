@@ -29,7 +29,7 @@ class MainStartButton(discord.ui.Button['Start']):
         view: LineupView = self.view
         message, new_view = view.launch_fantasy(interaction.user.id)
 
-        await interaction.response.send_message(content=message, view=new_view, ephemeral=True)
+        await interaction.response.send_message(content=message, view=new_view, ephemeral=True, delete_after=600.0)
 
 
 class MainPage(discord.ui.View):
