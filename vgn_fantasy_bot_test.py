@@ -10,10 +10,11 @@ from dotenv import load_dotenv
 from constants import TZ_ET
 from discord_fantasy.views import MainPage
 from repository.vgn_collections import upsert_collection as repo_upsert_collection
-from repository.vgn_users import get_user
+from repository.vgn_users import get_user, insert_user
 from service.fantasy import LINEUP_PROVIDER
 from service.fantasy.ranking import RANK_PROVIDER
 from topshot.cadence.flow_collections import get_account_plays
+from topshot.graphql.get_address import get_flow_address
 from utils import get_the_past_week, send_channel_messages
 
 # config bot
@@ -63,6 +64,29 @@ async def on_ready():
                 FANTASY_CHANNEL_MESSAGES.append(message)
 
     refresh_entry.start()
+
+
+@bot.command(name='verify', help='[Admin] Insert a verified user record into db')
+async def verify_user(context, username, topshot_username):
+    if context.channel.id not in ADMIN_CHANNEL_IDS:
+        return
+
+    guild = discord.utils.find(lambda g: g.name == GUILD, bot.guilds)
+    member = discord.utils.find(lambda m: username == m.name, guild.members)
+
+    if member is None:
+        await context.channel.send("Discord user {} not found.".format(username))
+        return
+
+    flow_address = await get_flow_address(topshot_username)
+
+    if flow_address is not None:
+        message = insert_user(member.id, topshot_username, flow_address)
+        await context.channel.send(message)
+        message = await load_and_upsert_collection(member.id, flow_address)
+        await context.channel.send(message)
+    else:
+        await context.channel.send("Topshot user {} not found.".format(topshot_username))
 
 
 ############

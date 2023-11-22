@@ -140,7 +140,7 @@ class RankingProvider:
 
     def __upload_leaderboard(self):
         for user_id in self.lineups:
-            upsert_score(user_id, self.lineups[user_id].game_date, self.scores[user_id])
+            upsert_score(user_id, self.lineups[user_id].game_date, self.scores[user_id]['score'])
 
     def formatted_leaderboard(self, top):
         if self.status != "IN_GAME" and self.status != "POST_GAME":

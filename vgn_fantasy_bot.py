@@ -107,10 +107,11 @@ async def verify_user(context, username, topshot_username):
         return
 
     guild = discord.utils.find(lambda g: g.name == GUILD, bot.guilds)
-    member = discord.utils.find(lambda m: username == "{}#{}".format(m.name, m.discriminator), guild.members)
+    member = discord.utils.find(lambda m: username == m.name, guild.members)
 
     if member is None:
         await context.channel.send("Discord user {} not found.".format(username))
+        return
 
     flow_address = await get_flow_address(topshot_username)
 
