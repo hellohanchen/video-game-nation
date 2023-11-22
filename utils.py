@@ -108,17 +108,18 @@ def compute_vgn_scores(player, collection=None):
     total_score = 0.0
     total_bonus = 0.0
     for stats, play_type in STATS_PLAY_TYPE.items():
-        if STATS_SCORE[stats] > 0.0:
+        bonus_rate = min(0.1, float(collection[play_type]) / 1000.0)
+        if STATS_SCORE[stats] >= 0.0:
             scores[stats] = {
                 'score': player[stats] * STATS_SCORE[stats],
-                'bonus': player[stats] * STATS_SCORE[stats] * float(collection[play_type]) / 1000.0,
+                'bonus': player[stats] * STATS_SCORE[stats] * bonus_rate,
             }
             total_score += scores[stats]['score']
             total_bonus += scores[stats]['bonus']
         else:
             scores[stats] = {
                 'score': player[stats] * STATS_SCORE[stats],
-                'bonus': - player[stats] * STATS_SCORE[stats] * float(collection[play_type]) / 1000.0,
+                'bonus': - player[stats] * STATS_SCORE[stats] * bonus_rate,
             }
             total_score += scores[stats]['score']
             total_bonus += scores[stats]['bonus']

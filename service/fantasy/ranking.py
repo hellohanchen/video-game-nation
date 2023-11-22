@@ -143,7 +143,7 @@ class RankingProvider:
             upsert_score(user_id, self.lineups[user_id].game_date, self.scores[user_id])
 
     def formatted_leaderboard(self, top):
-        if self.status != "IN_GAME":
+        if self.status != "IN_GAME" and self.status != "POST_GAME":
             return ["Games are not started yet."]
 
         messages = []
@@ -184,7 +184,7 @@ class RankingProvider:
             return ["Scores are not updated yet."]
 
         messages = []
-        message = "**{} +{:.2f}v Rank#{}**\n".format(
+        message = "**{} {:.2f}v Rank#{}**\n".format(
             self.collections[user_id][0], self.scores[user_id]['score'], self.scores[user_id]['rank']
         )
         for i in range(0, 8):
@@ -212,21 +212,22 @@ class RankingProvider:
         _, total_score, total_bonus = compute_vgn_scores(player, collection)
 
         if idx == 0:
-            message = "🏅 **{} +{:.2f}v** (+{:.2f}v) ".format(player['name'], total_score, total_bonus)
+            message = "🏅 **{} {:.2f}v** (+{:.2f}v) ".format(player['name'], total_score, total_bonus)
         elif idx < 5:
-            message = "🏀 **{} +{:.2f}v** (+{:.2f}v) ".format(player['name'], total_score, total_bonus)
+            message = "🏀 **{} {:.2f}v** (+{:.2f}v) ".format(player['name'], total_score, total_bonus)
         else:
-            message = "🎽 **{} +{:.2f}v** (+{:.2f}v) ".format(player['name'], total_score, total_bonus)
+            message = "🎽 **{} {:.2f}v** (+{:.2f}v) ".format(player['name'], total_score, total_bonus)
 
         message += "{} {}-{} {} {}\n".format(
             player['gameInfo']['awayTeam'], player['gameInfo']['awayScore'],
             player['gameInfo']['homeScore'], player['gameInfo']['homeTeam'],
             player['gameInfo']['statusText']
         )
-        message += "{}pts {}reb {}ast {}stl {}blk {}x3p\n{}mfg {}mft {}tov {}pfs {}win\n".format(
-            player["points"], player["reboundsTotal"], player['assists'], player['steals'], player['blocks'],
-            player["threePointersMade"], player["fieldGoalsMissed"], player['freeThrowsMissed'], player['turnovers'],
-            player['foulsPersonal'], player['win']
+        message += "{}pts {}orb {}drb {}ast {}stl {}blk {}x3p\n{}mfg {}mft {}tov {}pfs {}win\n".format(
+            player["points"], player["reboundsOffensive"], player["reboundsDefensive"], player['assists'],
+            player['steals'], player['blocks'], player["threePointersMade"],
+            player["fieldGoalsMissed"], player['freeThrowsMissed'], player['turnovers'], player['foulsPersonal'],
+            player['win']
         )
 
         return message

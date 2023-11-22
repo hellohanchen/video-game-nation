@@ -42,6 +42,7 @@ def fresh_team_players() -> None:
         return
 
     result = {}
+    player_ids = {}
     for i in range(0, len(players)):
         player = players.iloc[i]
         team = player['TEAM_ABBREVIATION']
@@ -49,10 +50,17 @@ def fresh_team_players() -> None:
         if team not in result:
             result[team] = []
 
+        player_id = str(player['PERSON_ID'])
         result[team].append(int(player['PERSON_ID']))
+
+        if player_id not in player_ids:
+            player_ids[player_id] = True
 
     with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "data/team_players_23_24.json"), 'w') as file:
         json.dump(result, file, indent=2)
+
+    with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "data/current_nba_players.json"), 'w') as output:
+        json.dump(player_ids, output, indent=2)
 
 
 if __name__ == '__main__':

@@ -12,7 +12,7 @@ STATS_MAP = {
     "3PP": "threePointersPercentage",
     "REB": "reboundsTotal",
     "ORB": "reboundsOffensive",
-    "DRE": "reboundsDefensive",
+    "DRB": "reboundsDefensive",
     "AST": "assists",
     "STL": "steals",
     "BLK": "blocks",

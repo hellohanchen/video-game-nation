@@ -148,7 +148,7 @@ async def update_leaderboard():
 
     await update_channel_messages(messages, LB_CHANNELS, LB_MESSAGE_IDS)
 
-    if init_status == "IN_GAME" and new_status == "POST_GAME":
+    if init_status == "POST_GAME" and new_status == "PRE_GAME":
         dates = get_the_past_week(RANK_PROVIDER.current_game_date)
         messages = RANK_PROVIDER.formatted_weekly_leaderboard(dates, 20)
         await send_channel_messages(messages, LB_CHANNELS)

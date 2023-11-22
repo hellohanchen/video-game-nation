@@ -46,7 +46,9 @@ def load_player_moment_info():
         loaded = json.load(player_file)
 
         for player_id in loaded:
-            result[int(player_id)]['isNBA'] = loaded[player_id]
+            player_id_int = int(player_id)
+            if player_id_int in result:
+                result[player_id_int]['isNBA'] = loaded[player_id]
 
     return result
 

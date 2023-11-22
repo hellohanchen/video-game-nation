@@ -64,9 +64,9 @@ def upsert_player(id):
         }
 
     try:
-        full_name = info['DISPLAY_FIRST_LAST'][0].lower().replace('\'', '\\\'')
-        first_name = info['FIRST_NAME'][0].lower().replace('\'', '\\\'')
-        last_name = info['LAST_NAME'][0].lower().replace('\'', '\\\'')
+        full_name = info['DISPLAY_FIRST_LAST'][0].replace('\'', '\\\'')
+        first_name = info['FIRST_NAME'][0].replace('\'', '\\\'')
+        last_name = info['LAST_NAME'][0].replace('\'', '\\\'')
 
         if info['JERSEY'][0] == '00':
             jersey = 100
