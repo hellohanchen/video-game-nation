@@ -3,106 +3,64 @@
   "challenges": [
     {
       "id": 1,
-      "title": "$2,023 NBA FLASH CHALLENGE - ALL ABOUT ROOKIES: LOCK a Rookie Debut 2023-24 Moment from the player that leads the league in each of the following categories across games on November 20th & November 21st, 2023",
+      "title": "NBA WEEKEND FLASH CHALLENGE 11/24-11/26",
       "buckets": [
         {
-          "description": "Points",
+          "description": "1 Rare or Legendary from every player who scores 35 or more points in a single game",
           "is_wildcard": false,
-          "type": "LB",
-          "count": 1,
+          "type": "QA",
+          "count": 30,
           "is_team": false,
-          "player_filters": [
-            "SET,125"
-          ],
           "tier_breakers": [
             {
-              "stats": "PTS",
+              "stats": "PTS,35",
               "order": "DESC"
             }
           ],
           "dates": [
-            "11/20/2023",
-            "11/21/2023"
+            "11/24/2023",
+            "11/25/2023",
+            "11/26/2023"
           ]
         },
         {
-          "description": "Rebounds",
+          "description": "1 Rare or Legendary from every player that grabs 15 or more rebounds in a single game",
           "is_wildcard": false,
-          "type": "LB",
-          "count": 1,
+          "type": "QA",
+          "count": 30,
           "is_team": false,
-          "player_filters": [
-            "SET,125"
-          ],
           "tier_breakers": [
             {
-              "stats": "REB",
+              "stats": "REB,15",
               "order": "DESC"
             }
           ],
           "dates": [
-            "11/20/2023",
-            "11/21/2023"
+            "11/24/2023",
+            "11/25/2023",
+            "11/26/2023"
           ]
         },
         {
-          "description": "Assists",
+          "description": "1 Rare or Legendary from the bench scorer with the most points in a single game",
           "is_wildcard": false,
           "type": "LB",
           "count": 1,
           "is_team": false,
-          "player_filters": [
-            "SET,125"
-          ],
           "tier_breakers": [
             {
-              "stats": "AST",
-              "order": "DESC"
-            }
-          ],
-          "dates": [
-            "11/20/2023",
-            "11/21/2023"
-          ]
-        },
-        {
-          "description": "Blocks + Steals",
-          "is_wildcard": false,
-          "type": "LB",
-          "count": 1,
-          "is_team": false,
-          "player_filters": [
-            "SET,125"
-          ],
-          "tier_breakers": [
-            {
-              "stats": "BLK,STL",
-              "order": "DESC"
-            }
-          ],
-          "dates": [
-            "11/20/2023",
-            "11/21/2023"
-          ]
-        },
-        {
-          "description": "3 Pointers Made",
-          "is_wildcard": false,
-          "type": "LB",
-          "count": 1,
-          "is_team": false,
-          "player_filters": [
-            "SET,125"
-          ],
-          "tier_breakers": [
+              "stats": "BENCH",
+              "order": "ASC"
+            },
             {
               "stats": "3PT",
               "order": "DESC"
             }
           ],
           "dates": [
-            "11/20/2023",
-            "11/21/2023"
+            "11/24/2023",
+            "11/25/2023",
+            "11/26/2023"
           ]
         }
       ]
