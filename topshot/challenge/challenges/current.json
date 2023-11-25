@@ -53,7 +53,7 @@
               "order": "ASC"
             },
             {
-              "stats": "3PT",
+              "stats": "PTS",
               "order": "DESC"
             }
           ],
