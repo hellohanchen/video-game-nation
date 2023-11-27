@@ -25,17 +25,12 @@ def enrich_plays():
             existing_plays[play_id] = loaded[play_id]
 
     for play_id in new_plays:
-        if play_id in existing_plays:
-            for new_moment in new_plays[play_id]:
-                new_moment['tier'] = TIER_MAP[new_moment['tier']]
-                new_moment['badges'] = existing_plays[play_id][0]['badges']
-        else:
+        if play_id not in existing_plays:
             for new_moment in new_plays[play_id]:
                 new_moment['tier'] = TIER_MAP[new_moment['tier']]
 
     for play_id in existing_plays:
-        if play_id not in new_plays:
-            new_plays[play_id] = existing_plays[play_id]
+        new_plays[play_id] = existing_plays[play_id]
 
     max_play_id = list(new_plays.keys())[0]
     missing_ids = []

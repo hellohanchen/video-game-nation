@@ -1,9 +1,6 @@
-import asyncio
 import json
 import os
 import pathlib
-
-from topshot.graphql.get_set_plays import get_set_plays
 
 
 def find_missing_plays():

@@ -54,8 +54,263 @@
     4221,
     4234
   ],
-  "count": 4831,
+  "count": 4846,
   "plays": {
+    "4421": [
+      {
+        "id": "631852a4-667c-439b-9d45-ef9bd68932ff",
+        "flowId": 4421,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 1628398,
+        "playerName": "Kyle Kuzma",
+        "team": "Washington Wizards",
+        "playType": "3 Pointer",
+        "date": "2023-11-09",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4420": [
+      {
+        "id": "a1e44945-1980-4c9f-897e-30f172d8db50",
+        "flowId": 4420,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 1627751,
+        "playerName": "Jakob Poeltl",
+        "team": "Toronto Raptors",
+        "playType": "Block",
+        "date": "2023-11-01",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4419": [
+      {
+        "id": "56465487-d14c-4109-a5e5-e7de342ccd44",
+        "flowId": 4419,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 1628370,
+        "playerName": "Malik Monk",
+        "team": "Sacramento Kings",
+        "playType": "Assist",
+        "date": "2023-11-09",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4418": [
+      {
+        "id": "3fe47076-0300-46a8-94df-6dd53c9cea9b",
+        "flowId": 4418,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 1627788,
+        "playerName": "Furkan Korkmaz",
+        "team": "Philadelphia 76ers",
+        "playType": "Layup",
+        "date": "2023-11-02",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4417": [
+      {
+        "id": "5e861a0b-fad6-4fbf-8216-1c4c20ad2fbc",
+        "flowId": 4417,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 1630193,
+        "playerName": "Immanuel Quickley",
+        "team": "New York Knicks",
+        "playType": "3 Pointer",
+        "date": "2023-11-09",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4416": [
+      {
+        "id": "ad04de60-67c9-4c93-b093-e1d0ead9ec46",
+        "flowId": 4416,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 203497,
+        "playerName": "Rudy Gobert",
+        "team": "Minnesota Timberwolves",
+        "playType": "Dunk",
+        "date": "2023-11-09",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4415": [
+      {
+        "id": "05f27fb4-a889-4de8-906e-aa330827cd1c",
+        "flowId": 4415,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 202710,
+        "playerName": "Jimmy Butler",
+        "team": "Miami Heat",
+        "playType": "Assist",
+        "date": "2023-11-07",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4414": [
+      {
+        "id": "e076dea5-158f-4aca-bfa8-07fada329df9",
+        "flowId": 4414,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 1630559,
+        "playerName": "Austin Reaves",
+        "team": "Los Angeles Lakers",
+        "playType": "Dunk",
+        "date": "2023-11-07",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4413": [
+      {
+        "id": "2892851a-5bb5-4f33-9875-45306befbc11",
+        "flowId": 4413,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 1627741,
+        "playerName": "Buddy Hield",
+        "team": "Indiana Pacers",
+        "playType": "3 Pointer",
+        "date": "2023-11-03",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4412": [
+      {
+        "id": "405338d7-e89e-4a23-83f1-5c3f5c401132",
+        "flowId": 4412,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 201145,
+        "playerName": "Jeff Green",
+        "team": "Houston Rockets",
+        "playType": "3 Pointer",
+        "date": "2023-11-13",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4411": [
+      {
+        "id": "ca49b18e-7dc1-46b2-9299-0cbb1ce6c440",
+        "flowId": 4411,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 201939,
+        "playerName": "Steph Curry",
+        "team": "Golden State Warriors",
+        "playType": "3 Pointer",
+        "date": "2023-10-28",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4410": [
+      {
+        "id": "658db01c-47dc-4886-accd-d027e13e5add",
+        "flowId": 4410,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 203501,
+        "playerName": "Tim Hardaway Jr.",
+        "team": "Dallas Mavericks",
+        "playType": "3 Pointer",
+        "date": "2023-11-02",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4409": [
+      {
+        "id": "39bd5318-7780-4f72-a2a5-4dad397ea0bf",
+        "flowId": 4409,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 1628378,
+        "playerName": "Donovan Mitchell",
+        "team": "Cleveland Cavaliers",
+        "playType": "Layup",
+        "date": "2023-11-01",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4408": [
+      {
+        "id": "2eff4c3a-bd01-4faf-9ca9-c990cdb5a756",
+        "flowId": 4408,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 1627936,
+        "playerName": "Alex Caruso",
+        "team": "Chicago Bulls",
+        "playType": "Layup",
+        "date": "2023-11-09",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4407": [
+      {
+        "id": "728608ec-c6c8-4690-b585-a20bb17f28ad",
+        "flowId": 4407,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 1630202,
+        "playerName": "Payton Pritchard",
+        "team": "Boston Celtics",
+        "playType": "Assist",
+        "date": "2023-11-11",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
     "4406": [
       {
         "id": "dae7f412-32b7-45e6-9aaf-8fa7068d4f1d",

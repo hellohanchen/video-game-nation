@@ -3,15 +3,6 @@ import os
 import pathlib
 
 
-TIER_MAP = {
-    "C": "Common",
-    "R": "Rare",
-    "F": "Fandom",
-    "L": "Legendary",
-    "A": "Unknown"
-}
-
-
 def group_play_by_player():
     result = {}
 
