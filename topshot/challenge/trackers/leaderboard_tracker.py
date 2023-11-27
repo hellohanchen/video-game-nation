@@ -132,7 +132,7 @@ class LeaderBoardTracker(Tracker):
         keys_sorted.sort(reverse=self.tier_breakers[0].order == "DESC", key=lambda k: scores[k]['stats'][0])
 
         length = len(keys_sorted)
-        if length > 60:
+        if self.tier_breakers[0].stats[0] != 'BENCH' and length > 60:
             length = 60
             keys_sorted = keys_sorted[0:60]  # only keep top 60 records to save time
 
