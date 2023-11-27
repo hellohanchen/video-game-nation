@@ -63,10 +63,10 @@ async def on_ready():
                 message = await channel.send("Ready to start daily NBA fantasy game?", view=view)
                 FANTASY_CHANNEL_MESSAGES.append(message)
 
-    refresh_entry.start()
+    # refresh_entry.start()
 
 
-@bot.command(name='verify', help='[Admin] Insert a verified user record into db')
+@bot.command(name='verifytest', help='[Admin] Insert a verified user record into db')
 async def verify_user(context, username, topshot_username):
     if context.channel.id not in ADMIN_CHANNEL_IDS:
         return

@@ -43,17 +43,17 @@ def upsert_collection(user_id, plays):
         >>> print(result)
         "Updated successfully!"
     """
-    coll, not_found_plays = build_vgn_collection(plays)
-
-    sql_records = [
-        (user_id, player_id, coll[player_id]['dunk'], coll[player_id]['three_pointer'],
-         coll[player_id]['badge'], coll[player_id]['debut'], coll[player_id]['assist'], coll[player_id]['steal'],
-         coll[player_id]['block_shot'], coll[player_id]['jump_shot'], coll[player_id]['hook_shot'],
-         coll[player_id]['handle'], coll[player_id]['layup'], coll[player_id]['reel'], coll[player_id]['team'])
-        for player_id in coll
-    ]
-
     try:
+        coll, not_found_plays = build_vgn_collection(plays)
+
+        sql_records = [
+            (user_id, player_id, coll[player_id]['dunk'], coll[player_id]['three_pointer'],
+             coll[player_id]['badge'], coll[player_id]['debut'], coll[player_id]['assist'], coll[player_id]['steal'],
+             coll[player_id]['block_shot'], coll[player_id]['jump_shot'], coll[player_id]['hook_shot'],
+             coll[player_id]['handle'], coll[player_id]['layup'], coll[player_id]['reel'], coll[player_id]['team'])
+            for player_id in coll
+        ]
+
         db_conn = CNX_POOL.get_connection()
         cursor = db_conn.cursor()
         query = "INSERT INTO vgn.collections (user_id, player_id, dunk, three_pointer, " \

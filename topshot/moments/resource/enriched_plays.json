@@ -4535,7 +4535,7 @@
         "playType": "3 Pointer",
         "date": "2015-04-24",
         "series": 4,
-        "tier": "Unknown",
+        "tier": "Rare",
         "badges": [
           "CY",
           "MVP"
@@ -4555,7 +4555,7 @@
         "playType": "Jump Shot",
         "date": "2018-05-06",
         "series": 4,
-        "tier": "Unknown",
+        "tier": "Rare",
         "badges": []
       }
     ],
@@ -4572,7 +4572,7 @@
         "playType": "Reel",
         "date": "2019-04-27",
         "series": 4,
-        "tier": "Unknown",
+        "tier": "Rare",
         "badges": []
       }
     ],
@@ -5247,7 +5247,7 @@
         "playType": "Layup",
         "date": "1981-05-05",
         "series": 4,
-        "tier": "Unknown",
+        "tier": "Legendary",
         "badges": [
           "CY"
         ]
@@ -5266,7 +5266,7 @@
         "playType": "Reel",
         "date": "1986-02-08",
         "series": 4,
-        "tier": "Unknown",
+        "tier": "Rare",
         "badges": [
           "MVP",
           "CY"
@@ -5286,7 +5286,7 @@
         "playType": "Reel",
         "date": "1986-06-08",
         "series": 4,
-        "tier": "Unknown",
+        "tier": "Legendary",
         "badges": [
           "CY",
           "MVP"
@@ -5306,7 +5306,7 @@
         "playType": "Reel",
         "date": "1986-02-14",
         "series": 4,
-        "tier": "Unknown",
+        "tier": "Rare",
         "badges": [
           "CY",
           "MVP"
@@ -5326,7 +5326,7 @@
         "playType": "Reel",
         "date": "1985-03-12",
         "series": 4,
-        "tier": "Unknown",
+        "tier": "Rare",
         "badges": [
           "MVP"
         ]
@@ -6421,7 +6421,7 @@
         "playType": "Handles",
         "date": "2015-03-08",
         "series": 4,
-        "tier": "Unknown",
+        "tier": "Legendary",
         "badges": [
           "CY",
           "MVP"
@@ -8270,7 +8270,7 @@
         "playType": "3 Pointer",
         "date": "2017-06-08",
         "series": 4,
-        "tier": "Unknown",
+        "tier": "Legendary",
         "badges": [
           "CY"
         ]
@@ -8601,7 +8601,7 @@
         "playType": "Block",
         "date": "2016-06-20",
         "series": 4,
-        "tier": "Unknown",
+        "tier": "Legendary",
         "badges": [
           "CY"
         ]
@@ -18494,7 +18494,7 @@
         "playType": "Jump Shot",
         "date": "2023-02-08",
         "series": 4,
-        "tier": "Unknown",
+        "tier": "Legendary",
         "badges": []
       }
     ],
@@ -27927,7 +27927,7 @@
         "playType": "Hook Shot",
         "date": "1987-06-09",
         "series": 4,
-        "tier": "Unknown",
+        "tier": "Legendary",
         "badges": [
           "MVP",
           "CY"
@@ -31346,7 +31346,7 @@
         "playType": "Assist",
         "date": "1988-01-04",
         "series": 4,
-        "tier": "Unknown",
+        "tier": "Rare",
         "badges": [
           "CY"
         ]
@@ -31365,7 +31365,7 @@
         "playType": "Jump Shot",
         "date": "1987-12-11",
         "series": 4,
-        "tier": "Unknown",
+        "tier": "Rare",
         "badges": [
           "CY"
         ]
@@ -31384,7 +31384,7 @@
         "playType": "Assist",
         "date": "1985-03-19",
         "series": 4,
-        "tier": "Unknown",
+        "tier": "Legendary",
         "badges": [
           "CY"
         ]
@@ -31403,7 +31403,7 @@
         "playType": "Layup",
         "date": "1980-05-16",
         "series": 4,
-        "tier": "Unknown",
+        "tier": "Legendary",
         "badges": [
           "TSD",
           "RY",
