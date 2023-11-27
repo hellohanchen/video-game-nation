@@ -63,8 +63,10 @@ class TierBreaker:
         for stat in self.stats:
             if stat == "WIN":
                 return 'W' if player_stats[STATS_MAP[stat]] == 1 else 'L'
-            elif stat == "BENCH":
-                return 'B' if player_stats[STATS_MAP[stat]] > 5 else 'S'
+            elif stat.startswith("BENCH"):
+                if player_stats[STATS_MAP["BENCH"]] > 5:
+                    bench_stat = stat[6:]
+                    result += int(float(player_stats[STATS_MAP[bench_stat]]))
             elif stat == 'MIN':
                 match = re.match('^PT(.+)M(.+)S', player_stats[STATS_MAP[stat]])
                 minutes = float(match.group(1))
