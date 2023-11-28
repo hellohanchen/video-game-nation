@@ -431,7 +431,7 @@ class PlayersPlayerButton(discord.ui.Button['PlayersPlayer']):
     def __init__(self, idx_in_page):
         super().__init__(style=discord.ButtonStyle.primary,
                          label=f'#{idx_in_page}',
-                         row=int((idx_in_page + 2) / 3) if idx_in_page != 10 else 3)
+                         row=int((idx_in_page + 2) / 3) - 1 if idx_in_page != 10 else 2)
         self.idx_in_page = idx_in_page
 
     # This function is called whenever this particular button is pressed
@@ -462,6 +462,20 @@ class PlayersToggleButton(discord.ui.Button['Players']):
         await interaction.response.edit_message(content=content, view=new_view)
 
 
+class PlayersSalaryButton(discord.ui.Button['PlayersSalary']):
+    def __init__(self, salary):
+        super().__init__(style=discord.ButtonStyle.secondary, row=3, label="${}".format(salary))
+        self.salary = salary
+
+    async def callback(self, interaction: discord.Interaction):
+        assert self.view is not None
+        view: PlayersView = self.view
+        view.current_page = view.get_page_of_salary(self.salary)
+        content, new_view = view.get_players_info()
+
+        await interaction.response.edit_message(content=content, view=new_view)
+
+
 class PlayersView(FantasyView):
     def __init__(self, page, lineup_provider, user_id):
         super().__init__(lineup_provider, user_id)
@@ -472,6 +486,11 @@ class PlayersView(FantasyView):
         for i in range(1, 11):
             self.add_item(PlayersPlayerButton(i))
 
+        self.add_item(PlayersSalaryButton(45))
+        self.add_item(PlayersSalaryButton(30))
+        self.add_item(PlayersSalaryButton(20))
+        self.add_item(PlayersSalaryButton(10))
+        self.add_item(PlayersSalaryButton(5))
         self.add_item(LineupButton(4))
         self.add_item(PlayersToggleButton(-1))
         self.add_item(PlayersToggleButton(1))
@@ -484,6 +503,9 @@ class PlayersView(FantasyView):
 
         message = self.lineup_provider.formatted_10_players(self.current_page)
         return message, self
+
+    def get_page_of_salary(self, salary):
+        return self.lineup_provider.salary_pages[salary]
 
     def get_player_info(self, idx_in_page):
         player_idx = self.current_page * 10 + idx_in_page - 10

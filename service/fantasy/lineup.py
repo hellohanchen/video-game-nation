@@ -7,6 +7,7 @@ from repository.vgn_players import get_players_stats
 from utils import compute_vgn_score, truncate_message, compute_vgn_scores
 
 SALARY_CAP = 165.00
+SALARY_GROUPS = [5, 10, 20, 30, 45]
 
 
 class LineupProvider:
@@ -20,6 +21,14 @@ class LineupProvider:
         self.lineups = {}
         self.collections = {}
         self.formatted_schedule = ""
+        self.formatted_all_players = ""
+        self.salary_pages = {
+            45: 1,
+            30: 1,
+            20: 1,
+            10: 1,
+            5: 1,
+        }
         self.reload()
 
     def __load_players(self):
@@ -35,6 +44,16 @@ class LineupProvider:
                     players_to_load.append(player)
 
         loaded = get_players_stats(players_to_load, [("current_salary", "DESC")])
+        group = 0
+        i = len(loaded) - 1
+        while i >= 0:
+            if loaded[i]['current_salary'] / 100.0 >= float(SALARY_GROUPS[group]):
+                self.salary_pages[SALARY_GROUPS[group]] = int(i / 10) + 1
+                i += 1
+                if group == 4:
+                    break
+                group += 1
+            i -= 1
 
         index = 0
         for player in loaded:
@@ -69,6 +88,7 @@ class LineupProvider:
             self.coming_game_date = coming_game_date
             self.formatted_schedule = self.__formatted_schedule()
             self.__load_players()
+            self.formatted_all_players = self.__formatted_all_players()
 
         self.__load_lineups()
 
@@ -130,12 +150,17 @@ class LineupProvider:
             ), \
             score
 
-    def formatted_all_players(self):
+    def __formatted_all_players(self):
         messages = []
         message = ""
 
         for player_id in self.players:
-            new_message = self.players[player_id]['formatted']
+            new_message = "***{}.*** *{}* {} ${:.2f}m\n".format(
+                self.players[player_id]['index'],
+                self.player_to_team[self.players[player_id]['id']],
+                self.players[player_id]['full_name'],
+                self.players[player_id]['current_salary'] / 100,
+            )
             message, _ = truncate_message(messages, message, new_message, 1950)
 
         if message != "":

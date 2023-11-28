@@ -235,7 +235,9 @@ def get_empty_players_stats(player_ids, order_by=None):
         query = \
             "SELECT id, full_name as name, 0 as points, 0 as threePointersMade, 0 as reboundsDefensive, " \
             "0 as reboundsOffensive, 0 as assists, 0 as steals, 0 as blocks, " \
-            "0 as fieldGoalsMissed, 0 as freeThrowsMissed, 0 as turnovers, 0 as foulsPersonal, 0 as win, " \
+            "0 as fieldGoalsMade, 0 as fieldGoalsAttempted, 0 as fieldGoalsMissed, " \
+            "0 as freeThrowsMade, 0 as freeThrowsAttempted, 0 as freeThrowsMissed, " \
+            "0 as threePointersAttempted, 0 as turnovers, 0 as foulsPersonal, 0 as win, " \
             "0 as doubleDouble, 0 as tripleDouble, 0 as quadrupleDouble, 0 as fiveDouble" \
             " from vgn.players WHERE id IN ({}) " \
                 .format(', '.join([str(player_id) for player_id in player_ids]))

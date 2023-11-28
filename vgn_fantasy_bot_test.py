@@ -31,7 +31,7 @@ intents.presences = False
 bot = commands.Bot(command_prefix='.', intents=intents)
 LB_CHANNEL_NAMES = ["📊-leaderboard"]
 GAMES_CHANNEL_NAMES = ["📅-games"]
-FANTASY_CHANNEL_NAMES = ["🎮-fantasy"]
+FANTASY_CHANNEL_NAMES = ["🎮-fantasy-test"]
 ADMIN_CHANNEL_NAMES = ["💻-admin"]
 
 LB_CHANNELS = []
@@ -63,7 +63,7 @@ async def on_ready():
                 message = await channel.send("Ready to start daily NBA fantasy game?", view=view)
                 FANTASY_CHANNEL_MESSAGES.append(message)
 
-    # refresh_entry.start()
+    refresh_entry.start()
 
 
 @bot.command(name='verifytest', help='[Admin] Insert a verified user record into db')
@@ -87,6 +87,17 @@ async def verify_user(context, username, topshot_username):
         await context.channel.send(message)
     else:
         await context.channel.send("Topshot user {} not found.".format(topshot_username))
+
+
+@bot.command(name='players', help="Get all players for the next game date")
+async def get_players(context):
+    if not isinstance(context.channel, discord.channel.DMChannel):
+        return
+
+    messages = LINEUP_PROVIDER.formatted_all_players
+
+    for message in messages:
+        await context.channel.send(message)
 
 
 ############

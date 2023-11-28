@@ -1,4 +1,5 @@
 import datetime
+import time
 from typing import Dict, Union
 
 from constants import EMPTY_PLAYER_COLLECTION, STATS_PLAY_TYPE, STATS_SCORE
@@ -172,6 +173,7 @@ async def update_channel_messages(msgs, channels, messages_ids):
         except Exception as err:
             print(err)
             continue
+        time.sleep(5)
 
 
 async def send_channel_messages(msgs, channels):

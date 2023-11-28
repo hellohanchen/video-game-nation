@@ -153,6 +153,7 @@ class RankingProvider:
                 i + 1, self.collections[self.leaderboard[i]][0], self.scores[self.leaderboard[i]]['score'])
             message, _ = truncate_message(messages, message, new_message, 1950)
 
+        message, _ = truncate_message(messages, message, "Total submissions: **{}**\n".format(len(self.lineups)), 1950)
         if message != "":
             messages.append(message)
 
@@ -223,11 +224,13 @@ class RankingProvider:
             player['gameInfo']['homeScore'], player['gameInfo']['homeTeam'],
             player['gameInfo']['statusText']
         )
-        message += "{}pts {}orb {}drb {}ast {}stl {}blk {}x3p\n{}mfg {}mft {}tov {}pfs {}win\n".format(
-            player["points"], player["reboundsOffensive"], player["reboundsDefensive"], player['assists'],
-            player['steals'], player['blocks'], player["threePointersMade"],
-            player["fieldGoalsMissed"], player['freeThrowsMissed'], player['turnovers'], player['foulsPersonal'],
-            player['win']
+        message += "{}pts {}reb[{}+{}] {}ast {}stl {}blk\n[{}/{}]fg [{}/{}]3p [{}/{}]ft {}tov {}fouls {}\n".format(
+            player["points"], player['reboundsTotal'], player["reboundsOffensive"], player["reboundsDefensive"],
+            player['assists'], player['steals'], player['blocks'],
+            player['fieldGoalsMade'], player['fieldGoalsAttempted'],
+            player["threePointersMade"], player['threePointersAttempted'],
+            player["freeThrowsMade"], player['freeThrowsAttempted'],
+            player['turnovers'], player['foulsPersonal'], 'WIN' if player['win'] else ''
         )
 
         return message

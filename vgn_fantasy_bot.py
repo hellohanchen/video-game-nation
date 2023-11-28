@@ -136,6 +136,21 @@ async def find_user_id(context, username):
 
 
 ############
+# Commands
+############
+@bot.command(name='players', help="Get all players for the next game date")
+async def get_players(context):
+    if not isinstance(context.channel, discord.channel.DMChannel):
+        return
+
+    messages = LINEUP_PROVIDER.formatted_all_players
+
+    for message in messages:
+        await context.channel.send(message)
+
+
+
+############
 # Routines
 ############
 @tasks.loop(minutes=5)
