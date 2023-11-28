@@ -4,7 +4,7 @@ from nba_api.live.nba.endpoints import boxscore
 
 from provider.nba_provider import NBAProvider, NBA_PROVIDER
 from repository.vgn_collections import get_collections
-from repository.vgn_lineups import get_lineups, upsert_score, get_weekly_ranks
+from repository.vgn_lineups import get_lineups, upsert_score, get_weekly_ranks, get_submission_count
 from repository.vgn_players import get_empty_players_stats
 from repository.vgn_users import get_users
 from service.fantasy.lineup import Lineup, LINEUP_PROVIDER
@@ -145,7 +145,8 @@ class RankingProvider:
     def formatted_leaderboard(self, top):
         message = "***Leaderboard {}***\n\n".format(self.current_game_date)
         if self.status != "IN_GAME" and self.status != "POST_GAME":
-            return [message + "Games are not started yet."]
+            submissions = get_submission_count(self.current_game_date)
+            return [message + "Games are not started yet.\nTotal submissions: **{}**\n".format(submissions)]
 
         messages = []
         for i in range(0, min(top, len(self.leaderboard))):

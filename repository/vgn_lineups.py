@@ -43,6 +43,30 @@ def get_lineups(game_date, submitted=False):
     return lineups
 
 
+def get_submission_count(game_date):
+    try:
+        db_conn = CNX_POOL.get_connection()
+        query = "SELECT COUNT(*) AS submissions FROM vgn.lineups " \
+                "WHERE game_date = '{}' AND submitted = TRUE".format(game_date)
+
+        # Execute SQL query and store results in a pandas dataframe
+        df = pd.read_sql(query, db_conn)
+
+        # Convert dataframe to a dictionary with headers
+        submissions = df.to_dict('records')[0]['submissions']
+
+        db_conn.commit()
+        db_conn.close()
+    except Exception as err:
+        print("DB error: {}".format(err))
+
+        if db_conn is not None:
+            db_conn.close()
+        return {}
+
+    return submissions
+
+
 def get_weekly_ranks(game_dates, count):
     try:
         db_conn = CNX_POOL.get_connection()

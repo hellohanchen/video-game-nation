@@ -71,6 +71,7 @@ async def verify_user(context, username, topshot_username):
     if context.channel.id not in ADMIN_CHANNEL_IDS:
         return
 
+    username = username.replace("~", " ")
     guild = discord.utils.find(lambda g: g.name == GUILD, bot.guilds)
     member = discord.utils.find(lambda m: username == m.name, guild.members)
 
