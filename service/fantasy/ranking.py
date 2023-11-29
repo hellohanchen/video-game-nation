@@ -108,7 +108,10 @@ class RankingProvider:
                     player_stats[player_id]['win'] = 1 if win else 0
                     player_stats[player_id]['name'] = player['name']
                     player_stats[player_id]['gameInfo'] = game_info
-                    player_stats[player_id]['current_salary'] = self.player_stats['current_salary']
+                    if player_id in self.player_stats:
+                        player_stats[player_id]['current_salary'] = self.player_stats[player_id]['current_salary']
+                    else:
+                        player_stats[player_id]['current_salary'] = 0.0
 
             win = game_stats['awayTeam']['score'] > game_stats['homeTeam']['score']
             for player in game_stats['awayTeam']['players']:
@@ -118,7 +121,10 @@ class RankingProvider:
                     player_stats[player_id]['win'] = 1 if win else 0
                     player_stats[player_id]['name'] = player['name']
                     player_stats[player_id]['gameInfo'] = game_info
-                    player_stats[player_id]['current_salary'] = self.player_stats['current_salary']
+                    if player_id in self.player_stats:
+                        player_stats[player_id]['current_salary'] = self.player_stats[player_id]['current_salary']
+                    else:
+                        player_stats[player_id]['current_salary'] = 0.0
 
         user_scores = {}
         for user_id in self.lineups:
