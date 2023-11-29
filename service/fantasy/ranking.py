@@ -103,18 +103,22 @@ class RankingProvider:
             win = game_stats['homeTeam']['score'] > game_stats['awayTeam']['score']
             for player in game_stats['homeTeam']['players']:
                 if player['status'] == 'ACTIVE':
-                    player_stats[player['personId']] = self.enrich_stats(player['statistics'])
-                    player_stats[player['personId']]['win'] = 1 if win else 0
-                    player_stats[player['personId']]['name'] = player['name']
-                    player_stats[player['personId']]['gameInfo'] = game_info
+                    player_id = player['personId']
+                    player_stats[player_id] = self.enrich_stats(player['statistics'])
+                    player_stats[player_id]['win'] = 1 if win else 0
+                    player_stats[player_id]['name'] = player['name']
+                    player_stats[player_id]['gameInfo'] = game_info
+                    player_stats[player_id]['current_salary'] = self.player_stats['current_salary']
 
             win = game_stats['awayTeam']['score'] > game_stats['homeTeam']['score']
             for player in game_stats['awayTeam']['players']:
                 if player['status'] == 'ACTIVE':
-                    player_stats[player['personId']] = self.enrich_stats(player['statistics'])
-                    player_stats[player['personId']]['win'] = 1 if win else 0
-                    player_stats[player['personId']]['name'] = player['name']
-                    player_stats[player['personId']]['gameInfo'] = game_info
+                    player_id = player['personId']
+                    player_stats[player_id] = self.enrich_stats(player['statistics'])
+                    player_stats[player_id]['win'] = 1 if win else 0
+                    player_stats[player_id]['name'] = player['name']
+                    player_stats[player_id]['gameInfo'] = game_info
+                    player_stats[player_id]['current_salary'] = self.player_stats['current_salary']
 
         user_scores = {}
         for user_id in self.lineups:
