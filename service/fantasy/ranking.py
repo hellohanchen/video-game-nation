@@ -111,7 +111,7 @@ class RankingProvider:
                     if player_id in self.player_stats:
                         player_stats[player_id]['current_salary'] = self.player_stats[player_id]['current_salary']
                     else:
-                        player_stats[player_id]['current_salary'] = 0.0
+                        player_stats[player_id]['current_salary'] = None
 
             win = game_stats['awayTeam']['score'] > game_stats['homeTeam']['score']
             for player in game_stats['awayTeam']['players']:
@@ -124,7 +124,7 @@ class RankingProvider:
                     if player_id in self.player_stats:
                         player_stats[player_id]['current_salary'] = self.player_stats[player_id]['current_salary']
                     else:
-                        player_stats[player_id]['current_salary'] = 0.0
+                        player_stats[player_id]['current_salary'] = None
 
         user_scores = {}
         for user_id in self.lineups:
@@ -275,11 +275,16 @@ class RankingProvider:
 
         message = "***#{}.*** **{} {:.2f}v **".format(rank, player['name'], total_score)
 
-        message += "{} {}-{} {} {} **${:.2f}m**\n".format(
+        message += "{} {}-{} {} {} ".format(
             player['gameInfo']['awayTeam'], player['gameInfo']['awayScore'],
             player['gameInfo']['homeScore'], player['gameInfo']['homeTeam'],
-            player['gameInfo']['statusText'], player['current_salary'] / 100
+            player['gameInfo']['statusText']
         )
+        if player['current_salary'] is None:
+            message += "**no pick**\n"
+        else:
+            message += "**${:.2f}m**\n".format(player['current_salary'] / 100)
+
         message += "{}pts {}reb[{}+{}] {}ast {}stl {}blk\n[{}/{}]fg [{}/{}]3p [{}/{}]ft {}tov {}fouls {}\n".format(
             player["points"], player['reboundsTotal'], player["reboundsOffensive"], player["reboundsDefensive"],
             player['assists'], player['steals'], player['blocks'],
