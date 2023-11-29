@@ -22,7 +22,8 @@ class RankingProvider:
 
         self.player_stats = {}
         self.scores = {}
-        self.leaderboard = []
+        self.leaderboard = {}
+        self.player_leaderboard = []
 
         self.update()
 
@@ -57,6 +58,7 @@ class RankingProvider:
         self.lineups = {}
         self.collections = {}
         self.leaderboard = {}
+        self.player_leaderboard = []
         self.__load_lineups_and_collections()
 
     def update(self):
@@ -114,29 +116,35 @@ class RankingProvider:
                     player_stats[player['personId']]['name'] = player['name']
                     player_stats[player['personId']]['gameInfo'] = game_info
 
-        scores = {}
+        user_scores = {}
         for user_id in self.lineups:
             vgn_scores = [compute_vgn_score(
                 player_stats.get(player_id),
                 self.collections[user_id].get(player_id)
             ) for player_id in self.lineups[user_id].player_ids]
-            scores[user_id] = {
+            user_scores[user_id] = {
                 'score': sum([vgn_scores[0] * 1.5, vgn_scores[1], vgn_scores[2], vgn_scores[3], vgn_scores[4],
                               vgn_scores[5] * 0.5, vgn_scores[6] * 0.5, vgn_scores[7] * 0.5])
             }
 
-        user_ids = list(scores.keys())
-        user_ids.sort(key=lambda user_id: scores[user_id]['score'], reverse=True)
+        user_ids = list(user_scores.keys())
+        user_ids.sort(key=lambda user_id: user_scores[user_id]['score'], reverse=True)
 
         leaderboard = []
         for i, user_id in enumerate(user_ids):
-            scores[user_id]['rank'] = i + 1
+            user_scores[user_id]['rank'] = i + 1
             leaderboard.append(user_id)
 
+        self.scores = user_scores
+        self.leaderboard = leaderboard
+
+        player_scores = {}
         for player_id in player_stats:
             self.player_stats[player_id] = player_stats[player_id]
-        self.scores = scores
-        self.leaderboard = leaderboard
+            player_scores[player_id] = compute_vgn_score(player_stats[player_id])
+        player_ids = list(player_scores.keys())
+        player_ids.sort(key=lambda player_id: player_scores[player_id], reverse=True)
+        self.player_leaderboard = player_ids
 
     def __upload_leaderboard(self):
         for user_id in self.lineups:
@@ -155,6 +163,21 @@ class RankingProvider:
             message, _ = truncate_message(messages, message, new_message, 1950)
 
         message, _ = truncate_message(messages, message, "Total submissions: **{}**\n".format(len(self.lineups)), 1950)
+        if message != "":
+            messages.append(message)
+
+        return messages
+
+    def formatted_players(self, top):
+        message = "***Players {}***\n\n".format(self.current_game_date)
+        if self.status != "IN_GAME" and self.status != "POST_GAME":
+            return [message + "Games are not started yet.\n"]
+
+        messages = []
+        for i in range(0, min(top, len(self.player_leaderboard))):
+            new_message = self.__formatted_player_by_id(self.player_leaderboard[i], i + 1)
+            message, _ = truncate_message(messages, message, new_message, 1950)
+
         if message != "":
             messages.append(message)
 
@@ -224,6 +247,28 @@ class RankingProvider:
             player['gameInfo']['awayTeam'], player['gameInfo']['awayScore'],
             player['gameInfo']['homeScore'], player['gameInfo']['homeTeam'],
             player['gameInfo']['statusText']
+        )
+        message += "{}pts {}reb[{}+{}] {}ast {}stl {}blk\n[{}/{}]fg [{}/{}]3p [{}/{}]ft {}tov {}fouls {}\n".format(
+            player["points"], player['reboundsTotal'], player["reboundsOffensive"], player["reboundsDefensive"],
+            player['assists'], player['steals'], player['blocks'],
+            player['fieldGoalsMade'], player['fieldGoalsAttempted'],
+            player["threePointersMade"], player['threePointersAttempted'],
+            player["freeThrowsMade"], player['freeThrowsAttempted'],
+            player['turnovers'], player['foulsPersonal'], 'WIN' if player['win'] else ''
+        )
+
+        return message
+
+    def __formatted_player_by_id(self, player_id, rank):
+        player = self.player_stats.get(player_id)
+        _, total_score, _ = compute_vgn_scores(player)
+
+        message = "***#{}.*** **{} {:.2f}v **".format(rank, player['name'], total_score)
+
+        message += "{} {}-{} {} {} **${:.2f}m**\n".format(
+            player['gameInfo']['awayTeam'], player['gameInfo']['awayScore'],
+            player['gameInfo']['homeScore'], player['gameInfo']['homeTeam'],
+            player['gameInfo']['statusText'], player['current_salary'] / 100
         )
         message += "{}pts {}reb[{}+{}] {}ast {}stl {}blk\n[{}/{}]fg [{}/{}]3p [{}/{}]ft {}tov {}fouls {}\n".format(
             player["points"], player['reboundsTotal'], player["reboundsOffensive"], player["reboundsDefensive"],

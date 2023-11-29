@@ -349,13 +349,17 @@ class Lineup:
 
         message = ""
 
-        player_to_place = self.player_ids[pos_idx]
-        if player_to_place is not None:
+        player_to_remove = self.player_ids[pos_idx]
+        if player_to_remove is not None:
             message += "Removed **{}. {}**. ".format(
-                self.provider.players[player_to_place]['index'],
-                self.provider.players[player_to_place]['full_name'],
+                self.provider.players[player_to_remove]['index'],
+                self.provider.players[player_to_remove]['full_name'],
             )
         self.player_ids[pos_idx] = player_id
+
+        if self.submitted and self.get_total_salary() > SALARY_CAP:
+            self.player_ids[pos_idx] = player_to_remove
+            return "Total salary exceeds cap, please adjust lineup."
 
         successful, _ = upsert_lineup(
             (self.user_id, self.game_date, self.player_ids[0], self.player_ids[1], self.player_ids[2],
@@ -370,7 +374,7 @@ class Lineup:
 
             return message
         else:
-            self.player_ids[pos_idx] = player_to_place
+            self.player_ids[pos_idx] = player_to_remove
             return "Failed to update lineup, please retry."
 
     def remove_player(self, pos_idx):

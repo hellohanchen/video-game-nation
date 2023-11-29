@@ -233,7 +233,8 @@ def get_empty_players_stats(player_ids, order_by=None):
     try:
         db_conn = CNX_POOL.get_connection()
         query = \
-            "SELECT id, full_name as name, 0 as points, 0 as threePointersMade, 0 as reboundsDefensive, " \
+            "SELECT id, full_name as name, , current_salary as current_salary, " \
+            "0 as points, 0 as threePointersMade, 0 as reboundsDefensive, " \
             "0 as reboundsOffensive, 0 as assists, 0 as steals, 0 as blocks, " \
             "0 as fieldGoalsMade, 0 as fieldGoalsAttempted, 0 as fieldGoalsMissed, " \
             "0 as freeThrowsMade, 0 as freeThrowsAttempted, 0 as freeThrowsMissed, " \

@@ -32,11 +32,13 @@ intents.presences = False
 bot = commands.Bot(command_prefix='.', intents=intents)
 LB_CHANNEL_NAMES = ["📊-leaderboard"]
 GAMES_CHANNEL_NAMES = ["📅-game-schedule"]
+PLAYERS_CHANNEL_NAMES = ["⛹-players"]
 FANTASY_CHANNEL_NAMES = ["🎮-fantasy"]
 ADMIN_CHANNEL_NAMES = ["💻-admin"]
 
 LB_CHANNELS = []
 GAMES_CHANNELS = []
+PLAYERS_CHANNELS = []
 FANTASY_CHANNEL_MESSAGES = []
 
 ADMIN_CHANNEL_IDS = []
@@ -57,6 +59,8 @@ async def on_ready():
                 LB_CHANNELS.append(channel)
             if channel.name in GAMES_CHANNEL_NAMES:
                 GAMES_CHANNELS.append(channel)
+            if channel.name in PLAYERS_CHANNEL_NAMES:
+                PLAYERS_CHANNELS.append(channel)
             if channel.name in ADMIN_CHANNEL_NAMES:
                 ADMIN_CHANNEL_IDS.append(channel.id)
             if channel.name in FANTASY_CHANNEL_NAMES:
@@ -96,7 +100,6 @@ async def reload(context):
     NBA_PROVIDER.reload()
     LINEUP_PROVIDER.reload()
     RANK_PROVIDER.reload()
-    LB_MESSAGE_IDS.clear()
 
     await context.channel.send("reloaded")
 
@@ -150,7 +153,6 @@ async def get_players(context):
         await context.channel.send(message)
 
 
-
 ############
 # Routines
 ############
@@ -166,12 +168,17 @@ async def update_leaderboard():
         messages = RANK_PROVIDER.formatted_weekly_leaderboard(dates, 20)
         await send_channel_messages(messages, LB_CHANNELS)
 
+        PLAYERS_MESSAGE_IDS.clear()
         LB_MESSAGE_IDS.clear()
     else:
         messages = RANK_PROVIDER.formatted_leaderboard(20)
         messages.append("ET: **{}** , UPDATE EVERY 5 MINS".format(datetime.now(TZ_ET).strftime("%H:%M:%S")))
 
         await update_channel_messages(messages, LB_CHANNELS, LB_MESSAGE_IDS)
+
+        messages = RANK_PROVIDER.formatted_players(20)
+        messages.append("ET: **{}** , UPDATE EVERY 5 MINS".format(datetime.now(TZ_ET).strftime("%H:%M:%S")))
+        await update_channel_messages(messages, PLAYERS_CHANNELS, PLAYERS_MESSAGE_IDS)
 
 
 @tasks.loop(minutes=2)
