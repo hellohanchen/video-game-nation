@@ -161,11 +161,12 @@ class RankingProvider:
             upsert_score(user_id, self.lineups[user_id].game_date, self.scores[user_id]['score'])
 
     def formatted_leaderboard(self, top):
-        message = "***Leaderboard {}***\n\n".format(self.current_game_date)
         if self.status != "IN_GAME" and self.status != "POST_GAME":
-            submissions = get_submission_count(self.current_game_date)
+            message = "***Leaderboard {}***\n\n".format(LINEUP_PROVIDER.coming_game_date)
+            submissions = get_submission_count(LINEUP_PROVIDER.coming_game_date)
             return [message + "Games are not started yet.\nTotal submissions: **{}**\n".format(submissions)]
 
+        message = "***Leaderboard {}***\n\n".format(self.current_game_date)
         messages = []
         for i in range(0, min(top, len(self.leaderboard))):
             new_message = "#**{}.**  **{}** *+{:.2f}v*\n".format(
@@ -179,10 +180,11 @@ class RankingProvider:
         return messages
 
     def formatted_players(self, top):
-        message = "***Players {}***\n\n".format(self.current_game_date)
         if self.status != "IN_GAME" and self.status != "POST_GAME":
+            message = "***Players {}***\n\n".format(LINEUP_PROVIDER.coming_game_date)
             return [message + "Games are not started yet.\n"]
 
+        message = "***Players {}***\n\n".format(self.current_game_date)
         messages = []
         for i in range(0, min(top, len(self.player_leaderboard))):
             new_message = self.__formatted_player_by_id(self.player_leaderboard[i], i + 1)
