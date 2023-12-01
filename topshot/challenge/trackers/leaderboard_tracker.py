@@ -209,8 +209,9 @@ class LeaderBoardTracker(Tracker):
 
 
 class QualifierTracker(LeaderBoardTracker):
-    def __init__(self):
+    def __init__(self, target = 0):
         super().__init__(0)
+        self.target = target
         self.tier_breakers: List[Qualifier] = []
 
     def add_tier_breaker(self, tier_breaker: TierBreaker) -> None:
@@ -231,12 +232,13 @@ class QualifierTracker(LeaderBoardTracker):
         :return: a list of enriched statistics
         """
         total = sum([1.0 if stat[0] == 1.0 else 0.0 for stat in stats])
+        target = len(self.tier_breakers) if self.target == 0 else self.target
         progress = sum([stat[0] for stat in stats])
         raw = [stat[1] for stat in stats]
 
         return [
-            '☑' if total >= len(self.tier_breakers) else '☒',
-            int(100.0 * progress / float(len(self.tier_breakers)))
+            '☑' if total >= target else '☒',
+            int(100.0 * progress / float(target))
         ] + raw
 
     def sort(self, scores: Dict[str, Dict[str, Union[Dict[str, Any], List[float]]]], all_final: bool) \

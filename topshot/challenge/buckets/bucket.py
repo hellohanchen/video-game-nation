@@ -47,7 +47,7 @@ class Bucket:
         if bucket_type == BucketType.PBP:
             self.tracker: Tracker = PlayByPlayTracker(30)
         if bucket_type == BucketType.QA:
-            self.tracker: Tracker = QualifierTracker()
+            self.tracker: Tracker = QualifierTracker(count)
 
         self.is_team = is_team
         self.games = []

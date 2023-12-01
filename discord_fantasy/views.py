@@ -26,7 +26,7 @@ class MainStartButton(discord.ui.Button['Start']):
 
     async def callback(self, interaction: discord.Interaction):
         assert self.view is not None
-        view: LineupView = self.view
+        view: MainPage = self.view
         message, new_view = view.launch_fantasy(interaction.user.id)
 
         await interaction.response.send_message(content=message, view=new_view, ephemeral=True, delete_after=600.0)
@@ -43,7 +43,7 @@ class MainPage(discord.ui.View):
         if self.rank_provider.status != "IN_GAME":
             message = self.lineup_provider.get_or_create_lineup(user_id).formatted()
         else:
-            message = RANK_PROVIDER.formatted_user_score(user_id)[0]
+            message = self.rank_provider.formatted_user_score(user_id)[0]
 
         return message, LineupView(self.lineup_provider, user_id)
 
