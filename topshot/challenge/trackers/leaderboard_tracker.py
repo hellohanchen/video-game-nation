@@ -231,14 +231,15 @@ class QualifierTracker(LeaderBoardTracker):
         :param: stats: list of statistics for a team/player
         :return: a list of enriched statistics
         """
-        total = sum([1.0 if stat[0] == 1.0 else 0.0 for stat in stats])
+        total = sum([1.0 if stat[0] >= 1.0 else 0.0 for stat in stats])
         target = len(self.tier_breakers) if self.target == 0 else self.target
         progress = sum([stat[0] for stat in stats])
         raw = [stat[1] for stat in stats]
 
         return [
             '☑' if total >= target else '☒',
-            int(100.0 * progress / float(target))
+            total,
+            int(100.0 * progress / target)
         ] + raw
 
     def sort(self, scores: Dict[str, Dict[str, Union[Dict[str, Any], List[float]]]], all_final: bool) \
@@ -265,10 +266,10 @@ class QualifierTracker(LeaderBoardTracker):
 
         # Sort the keys in descending order based on the scores for each tier breaker, as specified by the order of the
         # tier breakers in the leaderboard tracker
-        keys.sort(reverse=True, key=lambda k: scores[k]['stats'][2])
+        keys.sort(reverse=True, key=lambda k: scores[k]['stats'][1])
         keys = keys[0:60]  # only keep top 60 records to save time
-        for i in range(len(self.tier_breakers) - 1, 0, -1):
-            keys.sort(reverse=True, key=lambda k: scores[k]['stats'][i + 2])
+        for i in range(len(self.tier_breakers) + 1, -1, -1):
+            keys.sort(reverse=True, key=lambda k: scores[k]['stats'][i + 1])
 
         sorted_stats = []
         idx = 0
@@ -281,7 +282,7 @@ class QualifierTracker(LeaderBoardTracker):
                 "name": keys[idx],
                 "score": {
                     'game': scores[keys[idx]]['game'],
-                    'stats': scores[keys[idx]]['stats'][2:]
+                    'stats': scores[keys[idx]]['stats'][3:]
                 }
             })
             idx += 1
@@ -290,7 +291,7 @@ class QualifierTracker(LeaderBoardTracker):
                     "name": keys[idx],
                     "score": {
                         'game': scores[keys[idx]]['game'],
-                        'stats': scores[keys[idx]]['stats'][2:]
+                        'stats': scores[keys[idx]]['stats'][3:]
                     }
                 })
                 idx += 1
