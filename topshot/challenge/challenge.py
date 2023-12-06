@@ -107,7 +107,7 @@ class Challenge:
                 if len(scores) == 0:
                     continue
 
-                msg, new_msg = self.format_ranking(scores[:hit], new_msg, messages, msg)
+                msg, new_msg = self.format_ranking(scores[:hit], new_msg, messages, msg, -1)
                 msg, new_msg = self.format_ranking(scores[hit:min(len(scores), 30)], new_msg, messages, msg, hit)
 
                 new_msg += "\n"
@@ -137,7 +137,7 @@ class Challenge:
             Tuple[str, str]: a tuple containing the updated message and new_message
         """
         for i, rank in enumerate(ranking):
-            if offset == 0:
+            if offset < 0:
                 new_message += "**{}.** **{}** ".format(i + 1, rank['name'].split('/')[0])
             else:
                 new_message += "{}. {} ".format(i + 1 + offset, rank['name'].split('/')[0])

@@ -233,13 +233,13 @@ class QualifierTracker(LeaderBoardTracker):
         """
         total = sum([1.0 if stat[0] >= 1.0 else 0.0 for stat in stats])
         target = len(self.tier_breakers) if self.target == 0 else self.target
-        progress = sum([stat[0] for stat in stats])
+        progress = max([stat[0] if stat[0] < 1.0 else 0.0 for stat in stats]) + total
         raw = [stat[1] for stat in stats]
 
         return [
             '☑' if total >= target else '☒',
             total,
-            int(100.0 * progress / target)
+            progress
         ] + raw
 
     def sort(self, scores: Dict[str, Dict[str, Union[Dict[str, Any], List[float]]]], all_final: bool) \
