@@ -23,7 +23,7 @@
           ]
         },
         {
-          "description": "Lock one (1) Top Shot Debut badge Moment from the Eastern Conference player with the most combined points + rebs + assists across games played on 12/8",
+          "description": "Lock one (1) Top Shot Debut badge Moment from the Eastern Conference player with the most combined steals + blocks + rebounds across games played on 12/8",
           "is_wildcard": false,
           "type": "LB",
           "count": 1,
@@ -31,7 +31,7 @@
           "team_filter": "EC",
           "tier_breakers": [
             {
-              "stats": "PTS,REB,AST",
+              "stats": "STL,BLK,REB",
               "order": "DESC"
             }
           ],
