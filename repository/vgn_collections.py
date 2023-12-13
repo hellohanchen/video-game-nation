@@ -71,9 +71,10 @@ def upsert_collection(user_id, plays):
         return "DB error: {}.".format(err)
 
     if len(not_found_plays) > 0:
-        return "Updated with not found play ids: {}.".format(', '.join([str(play) for play in not_found_plays]))
+        return "Collection updated with {} players, play ids not found: {}.".format(
+            len(plays) - len(not_found_plays), ', '.join([str(play) for play in not_found_plays]))
 
-    return f"Updated successfully, found {len(plays)} plays!"
+    return f"Collection updated with {len(plays)} plays!"
 
 
 def build_vgn_collection(plays):

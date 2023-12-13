@@ -91,7 +91,12 @@ class LineupSubmitButton(discord.ui.Button['LineupSubmit']):
     async def callback(self, interaction: discord.Interaction):
         assert self.view is not None
         view: LineupView = self.view
-        message, new_view = view.submit_lineup()
+        message, new_view, success = await view.reload_collection()
+        if not success:
+            message = f"Submission failed: {message}, please retry"
+        else:
+            submission_message, new_view = view.submit_lineup()
+            message = f"{submission_message}\n{message}"
 
         await interaction.response.edit_message(content=message, view=new_view)
 
@@ -151,7 +156,7 @@ class LineupReloadButton(discord.ui.Button['LineupReload']):
     async def callback(self, interaction: discord.Interaction):
         assert self.view is not None
         view: LineupView = self.view
-        message, new_view = await view.reload_collection()
+        message, new_view, _ = await view.reload_collection()
 
         await interaction.response.edit_message(content=message, view=new_view)
 
@@ -208,7 +213,7 @@ class LineupView(FantasyView):
         vgn_user = get_user(self.user_id)
 
         if vgn_user is None:
-            return "Account not found, contact admin for registration.", self
+            return "Account not found, contact admin for registration.", self, False
 
         user_id = vgn_user[0]
         flow_address = vgn_user[2]
@@ -216,15 +221,15 @@ class LineupView(FantasyView):
         try:
             plays = await get_account_plays(flow_address)
         except:
-            return "Failed to fetch collection, try again or contact admin.", self
+            return "Failed to fetch collection, try again or contact admin.", self, False
 
         try:
             message = repo_upsert_collection(user_id, plays)
         except:
-            return "Failed to update database, try again or contact admin.", self
+            return "Failed to update database, try again or contact admin.", self, False
 
         self.lineup_provider.load_user_collection(self.user_id)
-        return message, self
+        return message, self, True
 
 
 class RemovePlayerButton(discord.ui.Button['RemovePlayer']):
