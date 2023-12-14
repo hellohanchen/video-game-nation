@@ -43,12 +43,8 @@
           "type": "LB",
           "count": 9,
           "is_team": true,
-          "tier_breakers": [
-            {
-              "stats": "WIN",
-              "order": "DESC"
-            }
-          ],
+          "team_filter": "WIN",
+          "tier_breakers": [],
           "dates": [
             "12/13/2023"
           ]
@@ -91,12 +87,8 @@
           "type": "LB",
           "count": 7,
           "is_team": true,
-          "tier_breakers": [
-            {
-              "stats": "WIN",
-              "order": "DESC"
-            }
-          ],
+          "team_filter": "WIN",
+          "tier_breakers": [],
           "dates": [
             "12/14/2023"
           ]
