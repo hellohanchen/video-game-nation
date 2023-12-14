@@ -13,6 +13,15 @@ TIER_MAP = {
     "SET_VISUAL_ANTHOLOGY": "A"
 }
 
+historical_teams = {
+    "Charlotte Bobcats": "Charlotte Hornets",
+    "Seattle SuperSonics": "Oklahoma City Thunder",
+    "New Jersey Nets": "Brooklyn Nets",
+    "Los Angeles Clippers": "LA Clippers",
+    "New Orleans/Oklahoma City Hornets": "New Orleans Pelicans",
+    "Washington Bullets": "Washington Wizards"
+}
+
 
 def load_set_plays():
     with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "resource/s5_sets.json"), 'r') as set_file:
@@ -35,6 +44,11 @@ def load_set_plays():
             if play_id not in plays:
                 plays[play_id] = []
 
+            team_at_moment = play['stats'].get('teamAtMoment')
+            team = team_at_moment
+            if team_at_moment in historical_teams:
+                team = historical_teams[team_at_moment]
+
             plays[play_id].append(
                 {
                     'id': play['id'],
@@ -42,9 +56,11 @@ def load_set_plays():
                     'set': s['flowName'],
                     'setId': s['id'],
                     'setFlowId': int(s['flowId']),
-                    'playerId': int(play['stats'].get('playerID')) if play['stats'].get('playerID') is not None else None,
+                    'playerId': int(play['stats'].get('playerID')) if play['stats'].get(
+                        'playerID') is not None else None,
                     'playerName': player_name,
-                    'team': play['stats'].get('teamAtMoment'),
+                    'team': team,
+                    'teamAtMoment': play['stats'].get('teamAtMoment'),
                     'playType': play['stats'].get('playCategory'),
                     'date': game_date,
                     'series': s['flowSeriesNumber'],

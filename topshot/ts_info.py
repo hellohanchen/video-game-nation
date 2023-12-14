@@ -69,11 +69,23 @@ def load_enriched_plays():
         return result
 
 
+def load_set_checklists():
+    with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "moments/resource/set_checklists.json"), 'r') as in_file:
+        return json.load(in_file)
+
+
+def load_team_checklists():
+    with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "moments/resource/team_checklists.json"), 'r') as in_file:
+        return json.load(in_file)
+
+
 TS_SET_INFO = {}
 TS_PLAY_INFO = {}
 TS_TEAM_NAME_TO_ID = {}
 TS_PLAYER_ID_MOMENTS = load_player_moment_info()
 TS_ENRICHED_PLAYS = load_enriched_plays()
+TS_SET_CHECKLISTS = load_set_checklists()
+TS_TEAM_CHECKLISTS = load_team_checklists()
 
 load_set_data()
 load_play_data()
