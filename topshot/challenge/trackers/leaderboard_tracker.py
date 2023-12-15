@@ -24,14 +24,14 @@ class LeaderBoardTracker(Tracker):
         """
         self.tier_breakers.append(tier_breaker)
 
-    def load_team_stats(self, team_player_stats: List[Dict[str, Any]]) -> List[float]:
+    def load_team_stats(self, team_player_stats: List[Dict[str, Any]], win: int) -> List[float]:
         """
         Load team statistics based on the specified tier breakers.
 
         :param: team_player_stats: list of player statistics for a team
         :return: a list of float values containing the team scores based on the tier breakers
         """
-        return [tb.load_team_stats(team_player_stats) for tb in self.tier_breakers]
+        return [tb.load_team_stats(team_player_stats, win) for tb in self.tier_breakers]
 
     def get_team_scores(self, games_teams: Dict[str, List[str]], all_games_stats: Dict[str, Tuple[Optional[Dict[str, Any]], bool, Optional[Dict[str, Any]]]]) -> Tuple[int, List[Dict[str, Any]]]:
         scores: Dict[str, Dict[str, Any]] = {}
@@ -46,16 +46,19 @@ class LeaderBoardTracker(Tracker):
             if game_stats is None:
                 continue
 
+            home_team_score = game_stats['homeTeam']['score']
+            away_team_score = game_stats['awayTeam']['score']
+
             if game_stats['homeTeam']['teamTricode'] in games_teams[game_id]:
                 scores[game_stats['homeTeam']['teamTricode'] + '/' + str(game_id)] = {
                     'game': game_info,
-                    'stats': self.load_team_stats(game_stats['homeTeam']['players'])
+                    'stats': self.load_team_stats(game_stats['homeTeam']['players'], home_team_score - away_team_score)
                 }
 
             if game_stats['awayTeam']['teamTricode'] in games_teams[game_id]:
                 scores[game_stats['awayTeam']['teamTricode'] + '/' + str(game_id)] = {
                     'game': game_info,
-                    'stats': self.load_team_stats(game_stats['awayTeam']['players'])
+                    'stats': self.load_team_stats(game_stats['awayTeam']['players'], away_team_score - home_team_score)
                 }
 
         return self.sort(scores, all_final)
@@ -218,8 +221,8 @@ class QualifierTracker(LeaderBoardTracker):
         assert isinstance(tier_breaker, Qualifier), "filter tracker can only use qualifier tier breaker"
         self.tier_breakers.append(tier_breaker)
 
-    def load_team_stats(self, team_player_stats: List[Dict]) -> [float]:
-        return self.enrich_stats([tb.load_team_stats(team_player_stats) for tb in self.tier_breakers])
+    def load_team_stats(self, team_player_stats: List[Dict], win: int) -> [float]:
+        return self.enrich_stats([tb.load_team_stats(team_player_stats, win) for tb in self.tier_breakers])
 
     def load_player_stats(self, player_stats: Dict) -> [Any]:
         return self.enrich_stats([tb.load_player_stats(player_stats) for tb in self.tier_breakers])

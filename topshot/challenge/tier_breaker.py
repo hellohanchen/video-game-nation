@@ -37,7 +37,7 @@ class TierBreaker:
         self.stats = stats
         self.order = order
 
-    def load_team_stats(self, team_player_stats: List[Dict]) -> int:
+    def load_team_stats(self, team_player_stats: List[Dict], win: int) -> int:
         """
         Load team statistics for tier breaking.
 
@@ -47,6 +47,8 @@ class TierBreaker:
         result = 0
 
         for player_stats in team_player_stats:
+            if len(self.stats) > 0 and self.stats[0] == "WIN":
+                return win
             result += self.load_player_stats(player_stats['statistics'])
 
         return result
@@ -111,7 +113,7 @@ class Qualifier(TierBreaker):
         super().__init__(stats)
         self.target: int = target
 
-    def load_team_stats(self, team_player_stats: List[Dict]) -> Tuple[float, int]:
+    def load_team_stats(self, team_player_stats: List[Dict], win: int) -> Tuple[float, int]:
         """
         Load team statistics for tier breaking.
 
