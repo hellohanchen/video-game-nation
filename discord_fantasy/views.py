@@ -639,7 +639,7 @@ class TeamView(FantasyView):
             player = self.lineup_provider.players[player_ids[i]]
             self.add_item(TeamPlayerButton(int(i / 5), player['index'], player['full_name']))
 
-        last_row = int(len(player_ids) / 5) + 1
+        last_row = int((len(player_ids) - 1) / 5) + 1
         self.add_item(LineupButton(last_row))
         self.add_item(TeamTeamsButton(last_row))
 
