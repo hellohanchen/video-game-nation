@@ -16,7 +16,7 @@
           ],
           "tier_breakers": [
             {
-              "stats": "ASTS",
+              "stats": "AST",
               "order": "DESC"
             }
           ],
