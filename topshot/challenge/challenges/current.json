@@ -30,7 +30,6 @@
           "type": "LB",
           "count": 8,
           "is_team": true,
-          "team_filter": "WIN",
           "tier_breakers": [
             {
               "stats": "WIN",
@@ -66,7 +65,6 @@
           "type": "LB",
           "count": 10,
           "is_team": true,
-          "team_filter": "WIN",
           "tier_breakers": [
             {
               "stats": "WIN",
@@ -102,7 +100,6 @@
           "type": "LB",
           "count": 5,
           "is_team": true,
-          "team_filter": "WIN",
           "tier_breakers": [
             {
               "stats": "WIN",
