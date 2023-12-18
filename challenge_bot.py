@@ -11,7 +11,7 @@ from dotenv import load_dotenv
 
 from constants import TZ_ET
 from provider.nba.nba_provider import NBAProvider, NBA_PROVIDER
-from provider.topshot import Challenge
+from provider.topshot.challenge.challenge import Challenge
 from utils import update_channel_messages
 
 load_dotenv()
