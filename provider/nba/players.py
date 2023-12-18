@@ -2,7 +2,7 @@ import json
 import os
 import pathlib
 
-from nba_api.stats.endpoints import CommonPlayerInfo, PlayerDashboardByYearOverYear, LeagueDashPlayerBioStats, CommonAllPlayers
+from nba_api.stats.endpoints import CommonPlayerInfo, PlayerDashboardByYearOverYear, CommonAllPlayers
 from nba_api.stats.library.parameters import Season
 
 

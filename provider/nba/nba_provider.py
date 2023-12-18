@@ -6,6 +6,7 @@ from typing import Optional
 
 from nba_api.live.nba.endpoints import scoreboard, boxscore
 
+from provider.nba.injuries import load_injuries
 from provider.nba.schedule import download_schedule
 from utils import parse_dash_date, to_slash_date, parse_slash_date
 
@@ -14,6 +15,11 @@ EAST_CONFERENCE = {"MIL", "BOS", "PHI", "CLE", "NYK", "BKN", "MIA", "ATL",
                    "TOR", "CHI", "WAS", "IND", "ORL", "CHA", "DET"}
 WEST_CONFERENCE = {"DEN", "MEM", "SAC", "PHX", "LAC", "GSW", "MIN", "NOP",
                    "LAL", "OKC", "DAL", "UTA", "POR", "SAS", "HOU"}
+INJURIES = {
+    "Day-To-Day": "DTD",
+    "Game-Time-Decision": "GTD",
+    "Out": "OUT",
+}
 
 
 class NBAProvider:
@@ -24,9 +30,11 @@ class NBAProvider:
         self.team_players = {}
         self.latest_date = ""
         self.coming_date = ""
+        self.injuries = {}
 
         self.__load_schedule()
         self.__load_team_players()
+        self.__load_injuries()
 
     def __load_schedule(self):
         with open(os.path.join(pathlib.Path(__file__).parent.resolve(), 'data/game_dates.json'), 'r') as f:
@@ -41,6 +49,9 @@ class NBAProvider:
     def __load_team_players(self):
         self.team_players = json.load(
             open(os.path.join(pathlib.Path(__file__).parent.resolve(), 'data/team_players_23_24.json'), 'r'))
+
+    def __load_injuries(self):
+        self.injuries = load_injuries()
 
     @staticmethod
     def get_scoreboard():
@@ -127,6 +138,17 @@ class NBAProvider:
             players.extend(self.team_players[team])
         return players
 
+    def get_player_injury(self, player_name):
+        injury = self.injuries.get(player_name)
+        if injury is None:
+            return None
+
+        short_injury = INJURIES.get(injury)
+        if short_injury is None:
+            return injury
+
+        return short_injury
+
     def get_coming_game_date(self):
         self.set_coming_game_date()
         return self.coming_date
@@ -163,6 +185,7 @@ class NBAProvider:
         download_schedule()
         self.__load_schedule()
         self.__load_team_players()
+        self.__load_injuries()
 
     @staticmethod
     def get_scoreboard_message(headline):
