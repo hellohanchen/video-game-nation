@@ -6,9 +6,9 @@ import time
 import pandas as pd
 
 from provider.nba.players import get_player_avg_stats, fresh_team_players
-from provider.nba_provider import NBA_PROVIDER
+from provider.nba.nba_provider import NBA_PROVIDER
 from repository.config import CNX_POOL
-from topshot.ts_info import TS_PLAYER_ID_MOMENTS
+from provider.topshot.ts_info import TS_PLAYER_ID_MOMENTS
 
 
 def upsert_player(id):

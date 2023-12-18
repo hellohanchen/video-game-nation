@@ -1,21 +1,18 @@
 #!/usr/bin/env python3
 
 import os
-from datetime import datetime
 
 import discord
 from discord.ext import commands, tasks
 from dotenv import load_dotenv
 
-from constants import TZ_ET
-from discord_fantasy.views import MainPage
+from service.discord.views import MainPage
 from repository.vgn_collections import upsert_collection as repo_upsert_collection
 from repository.vgn_users import get_user, insert_user
 from service.fantasy import LINEUP_PROVIDER
 from service.fantasy.ranking import RANK_PROVIDER
-from topshot.cadence.flow_collections import get_account_plays
-from topshot.graphql.get_address import get_flow_address
-from utils import get_the_past_week, send_channel_messages
+from provider.topshot.cadence.flow_collections import get_account_plays
+from provider.topshot.graphql.get_address import get_flow_address
 
 # config bot
 load_dotenv()

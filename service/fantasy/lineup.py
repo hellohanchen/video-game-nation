@@ -1,6 +1,6 @@
 import math
 
-from provider.nba_provider import NBA_PROVIDER
+from provider.nba.nba_provider import NBA_PROVIDER
 from repository.vgn_collections import get_collections
 from repository.vgn_lineups import get_lineups, upsert_lineup, submit_lineup
 from repository.vgn_players import get_players_stats

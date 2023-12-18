@@ -7,8 +7,8 @@ import discord
 from discord.ext import commands
 from dotenv import load_dotenv
 
-from topshot.trade.compare import compare_moments
-from topshot.ts_info import TS_SET_INFO
+from provider.topshot import compare_moments
+from provider.topshot import TS_SET_INFO
 from utils import truncate_message
 
 load_dotenv()

@@ -2,8 +2,8 @@ import asyncio
 import pandas as pd
 
 from repository.config import CNX_POOL
-from topshot.cadence.flow_collections import get_account_plays
-from topshot.ts_info import TS_ENRICHED_PLAYS, TS_PLAYER_ID_MOMENTS
+from provider.topshot.cadence.flow_collections import get_account_plays
+from provider.topshot.ts_info import TS_ENRICHED_PLAYS, TS_PLAYER_ID_MOMENTS
 
 TIERS = {'Common': 2, 'Fandom': 5, 'Rare': 10, 'Legendary': 25}
 TYPES = {

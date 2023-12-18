@@ -10,8 +10,8 @@ from discord.ext import commands, tasks
 from dotenv import load_dotenv
 
 from constants import TZ_ET
-from provider.nba_provider import NBAProvider
-from topshot.challenge.challenge import Challenge
+from provider.nba.nba_provider import NBAProvider
+from provider.topshot.challenge.challenge import Challenge
 from utils import update_channel_messages
 
 load_dotenv()
@@ -38,7 +38,7 @@ class ChallengeProvider:
 def load_challenges():
     with open(os.path.join(
             pathlib.Path(__file__).parent.resolve(),
-            'topshot/challenge/challenges/current.json'
+            'provider/topshot/challenge/challenges/current.json'
     ), 'r') as json_file:
         loaded = json.load(json_file)
         return loaded['message'], [Challenge.build_from_dict(challenge) for challenge in loaded['challenges']]

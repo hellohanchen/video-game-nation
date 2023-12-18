@@ -8,14 +8,14 @@ from discord.ext import commands, tasks
 from dotenv import load_dotenv
 
 from constants import TZ_ET
-from discord_fantasy.views import MainPage
-from provider.nba_provider import NBA_PROVIDER
+from service.discord.views import MainPage
+from provider.nba.nba_provider import NBA_PROVIDER
 from repository.vgn_collections import upsert_collection as repo_upsert_collection
-from repository.vgn_users import get_user, insert_user
+from repository.vgn_users import insert_user
 from service.fantasy import LINEUP_PROVIDER
 from service.fantasy.ranking import RANK_PROVIDER
-from topshot.cadence.flow_collections import get_account_plays
-from topshot.graphql.get_address import get_flow_address
+from provider.topshot.cadence import get_account_plays
+from provider.topshot.graphql.get_address import get_flow_address
 from utils import update_channel_messages, get_the_past_week, send_channel_messages
 
 # config bot

@@ -2,7 +2,7 @@ import datetime
 
 from nba_api.live.nba.endpoints import boxscore
 
-from provider.nba_provider import NBAProvider, NBA_PROVIDER
+from provider.nba.nba_provider import NBAProvider, NBA_PROVIDER
 from repository.vgn_collections import get_collections
 from repository.vgn_lineups import get_lineups, upsert_score, get_weekly_ranks, get_submission_count
 from repository.vgn_players import get_empty_players_stats
