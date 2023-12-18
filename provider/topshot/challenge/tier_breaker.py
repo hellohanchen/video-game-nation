@@ -26,6 +26,21 @@ STATS_MAP = {
 }
 
 
+def compute_espn_fantasy_score(player_stats):
+    pts = int(float(player_stats['points']))
+    tpm = int(float(player_stats['threePointersMade']))
+    fga = int(float(player_stats['fieldGoalsAttempted']))
+    fgm = int(float(player_stats['fieldGoalsMade']))
+    fta = int(float(player_stats['freeThrowsAttempted']))
+    ftm = int(float(player_stats['freeThrowsMade']))
+    reb = int(float(player_stats['reboundsTotal']))
+    ast = int(float(player_stats['assists']))
+    stl = int(float(player_stats['steals']))
+    blk = int(float(player_stats['blocks']))
+    tov = int(float(player_stats['turnovers']))
+    return pts + tpm - fga + 2 * fgm - fta + ftm + reb + 2 * ast + 4 * stl + 4 * blk - 2 * tov
+
+
 class TierBreaker:
     def __init__(self, stats: List[str], order: str = "DESC") -> None:
         """
@@ -65,6 +80,8 @@ class TierBreaker:
         for stat in self.stats:
             if stat == "WIN":
                 return 'W' if player_stats[STATS_MAP[stat]] == 1 else 'L'
+            elif stat == "FPT":
+                return compute_espn_fantasy_score(player_stats)
             elif stat.startswith("BENCH"):
                 if player_stats[STATS_MAP["BENCH"]] > 5:
                     bench_stat = stat[6:]
