@@ -22,6 +22,7 @@ STATS_MAP = {
     "PMP": "plusMinusPoints",
     "WIN": "teamWin",
     "BENCH": "order",
+    "START": "order",
     "MIN": "minutes",
 }
 
@@ -86,6 +87,10 @@ class TierBreaker:
                 if player_stats[STATS_MAP["BENCH"]] > 5:
                     bench_stat = stat[6:]
                     result += int(float(player_stats[STATS_MAP[bench_stat]]))
+            elif stat.startswith("START"):
+                if player_stats[STATS_MAP["START"]] <= 5:
+                    start_stat = stat[6:]
+                    result += int(float(player_stats[STATS_MAP[start_stat]]))
             elif stat == 'MIN':
                 match = re.match('^PT(.+)M(.+)S', player_stats[STATS_MAP[stat]])
                 minutes = float(match.group(1))
