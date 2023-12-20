@@ -65,7 +65,9 @@ class TierBreaker:
         for player_stats in team_player_stats:
             if len(self.stats) > 0 and self.stats[0] == "WIN":
                 return win
-            result += self.load_player_stats(player_stats['statistics'])
+            player_stats = player_stats['statistics']
+            player_stats['order'] = player_stats['order']
+            result += self.load_player_stats(player_stats)
 
         return result
 
