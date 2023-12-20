@@ -64,12 +64,8 @@
           "is_team": true,
           "tier_breakers": [
             {
-              "stats": "PTS",
+              "stats": "START_PTS",
               "order": "DESC"
-            },
-            {
-              "stats": "BENCH_PTS",
-              "order": "ASC"
             }
           ],
           "dates": [
@@ -85,12 +81,8 @@
           "is_team": true,
           "tier_breakers": [
             {
-              "stats": "PTS",
+              "stats": "START_PTS",
               "order": "ASC"
-            },
-            {
-              "stats": "BENCH_PTS",
-              "order": "DESC"
             }
           ],
           "dates": [
