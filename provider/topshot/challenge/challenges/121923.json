@@ -1,0 +1,128 @@
+{
+  "message": "NBA 2023-24",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "TURN UP THE HEAT FLASH CHALLENGE",
+      "buckets": [
+        {
+          "description": "Lock one (1) Top Shot Debut or Rare+ of the player who scores the most points in a single night across 12/19 & 12/20",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "12/19/2023",
+            "12/20/2023"
+          ]
+        },
+        {
+          "description": "Lock one (1) Top Shot Debut or Rare+ of the player who scores the most assists in a single night across 12/19 & 12/20",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "AST",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "12/19/2023",
+            "12/20/2023"
+          ]
+        },
+        {
+          "description": "Lock one (1) Top Shot Debut or Rare+ of the player who scores the most rebounds in a single night across 12/19 & 12/20",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "REB",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "12/19/2023",
+            "12/20/2023"
+          ]
+        },
+        {
+          "description": "Burn any one (1) Series 4 Moment from a player in the teams starting five whose five players score the most points together on 12/19",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 30,
+          "is_team": true,
+          "tier_breakers": [
+            {
+              "stats": "START_PTS",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "12/19/2023",
+            "12/20/2023"
+          ]
+        },
+        {
+          "description": "Burn any one (1) Series 3 Moment from a player in the teams starting five whose five players score the least points together on 12/19",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 30,
+          "is_team": true,
+          "tier_breakers": [
+            {
+              "stats": "START_PTS",
+              "order": "ASC"
+            }
+          ],
+          "dates": [
+            "12/19/2023",
+            "12/20/2023"
+          ]
+        },
+        {
+          "description": "Burn any one (1) Series 2 Moment from a team who wins by the most on 12/20",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": true,
+          "tier_breakers": [
+            {
+              "stats": "WIN",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "12/20/2023"
+          ]
+        },
+        {
+          "description": "Burn any one (1) Historic Moment from a team who loses by the most on 12/20",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": true,
+          "tier_breakers": [
+            {
+              "stats": "WIN",
+              "order": "ASC"
+            }
+          ],
+          "dates": [
+            "12/20/2023"
+          ]
+        }
+      ]
+    }
+  ]
+}
