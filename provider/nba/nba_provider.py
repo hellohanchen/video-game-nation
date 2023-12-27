@@ -18,6 +18,7 @@ WEST_CONFERENCE = {"DEN", "MEM", "SAC", "PHX", "LAC", "GSW", "MIN", "NOP",
 INJURIES = {
     "Day-To-Day": "DTD",
     "Game-Time-Decision": "GTD",
+    "Game Time Decision": "GTD",
     "Out": "OUT",
 }
 
