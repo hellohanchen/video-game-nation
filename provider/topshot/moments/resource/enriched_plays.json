@@ -53,15 +53,384 @@
     4165,
     4221,
     4234,
-    4573,
-    4574,
-    4575,
-    4576,
-    4577,
-    4578
+    4580,
+    4581,
+    4582,
+    4583,
+    4584,
+    4585,
+    4586,
+    4587,
+    4588,
+    4601
   ],
-  "count": 4998,
+  "count": 5024,
   "plays": {
+    "4609": [
+      {
+        "id": "55537a9d-9e76-485b-9bc9-1be0fe2b99ca",
+        "flowId": 4609,
+        "set": "Holo Icon",
+        "setId": "5f422f6c-fd11-4338-91e0-b9bbcb878583",
+        "setFlowId": 131,
+        "playerId": 1627783,
+        "playerName": "Pascal Siakam",
+        "team": "Toronto Raptors",
+        "teamAtMoment": "Toronto Raptors",
+        "playType": "Jump Shot",
+        "date": "2023-11-14",
+        "series": 5,
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "4608": [
+      {
+        "id": "b122e492-0b83-4f0c-abb0-ee6d7e4737c3",
+        "flowId": 4608,
+        "set": "Holo Icon",
+        "setId": "5f422f6c-fd11-4338-91e0-b9bbcb878583",
+        "setFlowId": 131,
+        "playerId": 1627734,
+        "playerName": "Domantas Sabonis",
+        "team": "Sacramento Kings",
+        "teamAtMoment": "Sacramento Kings",
+        "playType": "Dunk",
+        "date": "2023-11-11",
+        "series": 5,
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "4607": [
+      {
+        "id": "2f2ac8bb-52e4-44f6-ad50-8a0ac621d748",
+        "flowId": 4607,
+        "set": "Holo Icon",
+        "setId": "5f422f6c-fd11-4338-91e0-b9bbcb878583",
+        "setFlowId": 131,
+        "playerId": 1626164,
+        "playerName": "Devin Booker",
+        "team": "Phoenix Suns",
+        "teamAtMoment": "Phoenix Suns",
+        "playType": "3 Pointer",
+        "date": "2023-11-26",
+        "series": 5,
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "4606": [
+      {
+        "id": "a8174a71-147f-41d8-9664-f2a8927c4b54",
+        "flowId": 4606,
+        "set": "Holo Icon",
+        "setId": "5f422f6c-fd11-4338-91e0-b9bbcb878583",
+        "setFlowId": 131,
+        "playerId": 1630178,
+        "playerName": "Tyrese Maxey",
+        "team": "Philadelphia 76ers",
+        "teamAtMoment": "Philadelphia 76ers",
+        "playType": "3 Pointer",
+        "date": "2023-11-12",
+        "series": 5,
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "4605": [
+      {
+        "id": "729ffb66-ee35-49ee-9664-39212019f312",
+        "flowId": 4605,
+        "set": "Holo Icon",
+        "setId": "5f422f6c-fd11-4338-91e0-b9bbcb878583",
+        "setFlowId": 131,
+        "playerId": 1629627,
+        "playerName": "Zion Williamson",
+        "team": "New Orleans Pelicans",
+        "teamAtMoment": "New Orleans Pelicans",
+        "playType": "Dunk",
+        "date": "2023-10-26",
+        "series": 5,
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "4604": [
+      {
+        "id": "30e8f0a4-748c-44f5-b53c-f78341a930ff",
+        "flowId": 4604,
+        "set": "Holo Icon",
+        "setId": "5f422f6c-fd11-4338-91e0-b9bbcb878583",
+        "setFlowId": 131,
+        "playerId": 1630162,
+        "playerName": "Anthony Edwards",
+        "team": "Minnesota Timberwolves",
+        "teamAtMoment": "Minnesota Timberwolves",
+        "playType": "Jump Shot",
+        "date": "2023-11-07",
+        "series": 5,
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "4603": [
+      {
+        "id": "64ac476b-87e7-46dd-bd65-5064ac8c18c0",
+        "flowId": 4603,
+        "set": "Holo Icon",
+        "setId": "5f422f6c-fd11-4338-91e0-b9bbcb878583",
+        "setFlowId": 131,
+        "playerId": 202710,
+        "playerName": "Jimmy Butler",
+        "team": "Miami Heat",
+        "teamAtMoment": "Miami Heat",
+        "playType": "Jump Shot",
+        "date": "2023-12-17",
+        "series": 5,
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "4602": [
+      {
+        "id": "b9e1dc6f-2de6-421f-a464-e1fde9091fa6",
+        "flowId": 4602,
+        "set": "Holo Icon",
+        "setId": "5f422f6c-fd11-4338-91e0-b9bbcb878583",
+        "setFlowId": 131,
+        "playerId": 202331,
+        "playerName": "Paul George",
+        "team": "LA Clippers",
+        "teamAtMoment": "LA Clippers",
+        "playType": "3 Pointer",
+        "date": "2023-12-02",
+        "series": 5,
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "4600": [
+      {
+        "id": "703ffeb4-ae74-4e97-bf2d-45ad25d46053",
+        "flowId": 4600,
+        "set": "Holo Icon",
+        "setId": "5f422f6c-fd11-4338-91e0-b9bbcb878583",
+        "setFlowId": 131,
+        "playerId": 1627832,
+        "playerName": "Fred VanVleet",
+        "team": "Houston Rockets",
+        "teamAtMoment": "Houston Rockets",
+        "playType": "3 Pointer",
+        "date": "2023-11-11",
+        "series": 5,
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "4599": [
+      {
+        "id": "483cf283-92dc-400f-a688-21910c376fa3",
+        "flowId": 4599,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 1630166,
+        "playerName": "Deni Avdija",
+        "team": "Washington Wizards",
+        "teamAtMoment": "Washington Wizards",
+        "playType": "Assist",
+        "date": "2023-11-11",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4598": [
+      {
+        "id": "486e61dc-1fea-40e7-a722-6ba5aeec7823",
+        "flowId": 4598,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 1631110,
+        "playerName": "Jeremy Sochan",
+        "team": "San Antonio Spurs",
+        "teamAtMoment": "San Antonio Spurs",
+        "playType": "Dunk",
+        "date": "2023-12-01",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4597": [
+      {
+        "id": "32dcc736-a9db-4e0c-835c-4ea0615aef11",
+        "flowId": 4597,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 201580,
+        "playerName": "JaVale McGee",
+        "team": "Sacramento Kings",
+        "teamAtMoment": "Sacramento Kings",
+        "playType": "Block",
+        "date": "2023-11-02",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4596": [
+      {
+        "id": "9e17ddcd-8b60-4a68-8d48-a367dcdb4ce1",
+        "flowId": 4596,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 1628960,
+        "playerName": "Grayson Allen",
+        "team": "Phoenix Suns",
+        "teamAtMoment": "Phoenix Suns",
+        "playType": "3 Pointer",
+        "date": "2023-11-09",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4595": [
+      {
+        "id": "7e1ecc87-7e36-4dc7-a7f0-fe4ca8616fb9",
+        "flowId": 4595,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 201144,
+        "playerName": "Mike Conley",
+        "team": "Minnesota Timberwolves",
+        "teamAtMoment": "Minnesota Timberwolves",
+        "playType": "3 Pointer",
+        "date": "2023-11-15",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4594": [
+      {
+        "id": "944544dc-a342-4d76-a6e7-8d0971d32cd0",
+        "flowId": 4594,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 1628991,
+        "playerName": "Jaren Jackson Jr.",
+        "team": "Memphis Grizzlies",
+        "teamAtMoment": "Memphis Grizzlies",
+        "playType": "Handles",
+        "date": "2023-12-03",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4593": [
+      {
+        "id": "057d3787-f1c3-41ca-a24a-81af96a065b0",
+        "flowId": 4593,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 1628988,
+        "playerName": "Aaron Holiday",
+        "team": "Houston Rockets",
+        "teamAtMoment": "Houston Rockets",
+        "playType": "Layup",
+        "date": "2023-11-25",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4592": [
+      {
+        "id": "ff6ffa6d-ebb5-420f-ae47-c44a93715971",
+        "flowId": 4592,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 1630165,
+        "playerName": "Killian Hayes",
+        "team": "Detroit Pistons",
+        "teamAtMoment": "Detroit Pistons",
+        "playType": "Assist",
+        "date": "2023-12-03",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4591": [
+      {
+        "id": "f0f115d1-b336-4288-ab8a-452a3d00d6a1",
+        "flowId": 4591,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 203932,
+        "playerName": "Aaron Gordon",
+        "team": "Denver Nuggets",
+        "teamAtMoment": "Denver Nuggets",
+        "playType": "Layup",
+        "date": "2023-11-04",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4590": [
+      {
+        "id": "4a8bc854-336a-44fb-a43d-de52d2f009c1",
+        "flowId": 4590,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 203897,
+        "playerName": "Zach LaVine",
+        "team": "Chicago Bulls",
+        "teamAtMoment": "Chicago Bulls",
+        "playType": "3 Pointer",
+        "date": "2023-10-28",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4589": [
+      {
+        "id": "e0c6196e-64e1-442e-bfc7-4df3ceeb55da",
+        "flowId": 4589,
+        "set": "Rookie Debut",
+        "setId": "39eb0ef6-a729-4bdb-a9ca-783e2d825ef8",
+        "setFlowId": 125,
+        "playerId": 1641720,
+        "playerName": "Jalen Hood-Schifino",
+        "team": "Los Angeles Lakers",
+        "teamAtMoment": "Los Angeles Lakers",
+        "playType": "Assist",
+        "date": "2023-11-28",
+        "series": 5,
+        "tier": "Common",
+        "badges": [
+          "TSD",
+          "RP",
+          "RM",
+          "RY"
+        ]
+      }
+    ],
     "4579": [
       {
         "id": "c30ad18b-a150-4134-9975-424c25d624a0",
@@ -77,6 +446,120 @@
         "date": "2023-12-03",
         "series": 5,
         "tier": "Common",
+        "badges": [
+          "TSD",
+          "RM",
+          "RY"
+        ]
+      }
+    ],
+    "4578": [
+      {
+        "id": "72def3e9-850f-4227-8ca2-860def525550",
+        "flowId": 4578,
+        "set": "Video Game Numbers",
+        "setId": "05750986-0bfe-4b6b-91c2-ac000db27f2d",
+        "setFlowId": 130,
+        "playerId": 203954,
+        "playerName": "Joel Embiid",
+        "team": "Philadelphia 76ers",
+        "teamAtMoment": "Philadelphia 76ers",
+        "playType": "Reel",
+        "date": "2023-11-07",
+        "series": 5,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4577": [
+      {
+        "id": "ece4db56-81f4-4ce8-8f6d-ebadfaa99397",
+        "flowId": 4577,
+        "set": "Video Game Numbers",
+        "setId": "05750986-0bfe-4b6b-91c2-ac000db27f2d",
+        "setFlowId": 130,
+        "playerId": 1628983,
+        "playerName": "Shai Gilgeous-Alexander",
+        "team": "Oklahoma City Thunder",
+        "teamAtMoment": "Oklahoma City Thunder",
+        "playType": "Reel",
+        "date": "2023-11-23",
+        "series": 5,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4576": [
+      {
+        "id": "fb52a8eb-e2a8-471a-a62d-1b784d41bcc6",
+        "flowId": 4576,
+        "set": "Video Game Numbers",
+        "setId": "05750986-0bfe-4b6b-91c2-ac000db27f2d",
+        "setFlowId": 130,
+        "playerId": 1628389,
+        "playerName": "Bam Adebayo",
+        "team": "Miami Heat",
+        "teamAtMoment": "Miami Heat",
+        "playType": "Reel",
+        "date": "2023-11-07",
+        "series": 5,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4575": [
+      {
+        "id": "c0902246-0264-4846-8048-781891ae0db1",
+        "flowId": 4575,
+        "set": "Video Game Numbers",
+        "setId": "05750986-0bfe-4b6b-91c2-ac000db27f2d",
+        "setFlowId": 130,
+        "playerId": 203076,
+        "playerName": "Anthony Davis",
+        "team": "Los Angeles Lakers",
+        "teamAtMoment": "Los Angeles Lakers",
+        "playType": "Reel",
+        "date": "2023-12-10",
+        "series": 5,
+        "tier": "Rare",
+        "badges": [
+          "CR"
+        ]
+      }
+    ],
+    "4574": [
+      {
+        "id": "c0fefcc7-cf34-44db-86d3-5c10e376535a",
+        "flowId": 4574,
+        "set": "Video Game Numbers",
+        "setId": "05750986-0bfe-4b6b-91c2-ac000db27f2d",
+        "setFlowId": 130,
+        "playerId": 1630169,
+        "playerName": "Tyrese Haliburton",
+        "team": "Indiana Pacers",
+        "teamAtMoment": "Indiana Pacers",
+        "playType": "Reel",
+        "date": "2023-11-22",
+        "series": 5,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4573": [
+      {
+        "id": "e5adb0bd-4dba-48ef-b5ae-4b2802797684",
+        "flowId": 4573,
+        "set": "Video Game Numbers",
+        "setId": "05750986-0bfe-4b6b-91c2-ac000db27f2d",
+        "setFlowId": 130,
+        "playerId": 1628969,
+        "playerName": "Mikal Bridges",
+        "team": "Brooklyn Nets",
+        "teamAtMoment": "Brooklyn Nets",
+        "playType": "Reel",
+        "date": "2023-11-23",
+        "series": 5,
+        "tier": "Rare",
         "badges": []
       }
     ],
@@ -113,7 +596,9 @@
         "date": "2015-12-29",
         "series": 5,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "TSD"
+        ]
       }
     ],
     "4570": [
@@ -185,7 +670,9 @@
         "date": "2015-01-15",
         "series": 5,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "RY"
+        ]
       }
     ],
     "4566": [
@@ -203,7 +690,9 @@
         "date": "2014-04-22",
         "series": 5,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "TSD"
+        ]
       }
     ],
     "4565": [
@@ -257,7 +746,10 @@
         "date": "2014-04-12",
         "series": 5,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "TSD",
+          "RY"
+        ]
       }
     ],
     "4562": [
@@ -329,7 +821,9 @@
         "date": "2015-11-05",
         "series": 5,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "TSD"
+        ]
       }
     ],
     "4558": [
@@ -347,7 +841,9 @@
         "date": "2015-01-17",
         "series": 5,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "TSD"
+        ]
       }
     ],
     "4557": [
@@ -365,7 +861,9 @@
         "date": "2016-03-06",
         "series": 5,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "TSD"
+        ]
       }
     ],
     "4556": [
@@ -401,7 +899,9 @@
         "date": "2015-12-05",
         "series": 5,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "TSD"
+        ]
       }
     ],
     "4554": [
@@ -437,7 +937,9 @@
         "date": "2015-06-10",
         "series": 5,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "TSD"
+        ]
       }
     ],
     "4552": [
@@ -455,7 +957,9 @@
         "date": "2014-01-14",
         "series": 5,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "TSD"
+        ]
       }
     ],
     "4551": [
@@ -491,7 +995,9 @@
         "date": "2015-03-05",
         "series": 5,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "TSD"
+        ]
       }
     ],
     "4549": [
@@ -634,7 +1140,9 @@
         "date": "2014-05-22",
         "series": 5,
         "tier": "Common",
-        "badges": [],
+        "badges": [
+          "CY"
+        ],
         "teamAtMoment": "San Antonio Spurs"
       }
     ],
@@ -742,7 +1250,9 @@
         "date": "2014-01-10",
         "series": 5,
         "tier": "Common",
-        "badges": [],
+        "badges": [
+          "RY"
+        ],
         "teamAtMoment": "New York Knicks"
       }
     ],
@@ -778,7 +1288,9 @@
         "date": "2013-11-11",
         "series": 5,
         "tier": "Common",
-        "badges": [],
+        "badges": [
+          "TSD"
+        ],
         "teamAtMoment": "New Orleans Pelicans"
       }
     ],
@@ -796,7 +1308,9 @@
         "date": "2015-02-28",
         "series": 5,
         "tier": "Common",
-        "badges": [],
+        "badges": [
+          "TSD"
+        ],
         "teamAtMoment": "New Orleans Pelicans"
       }
     ],
@@ -814,7 +1328,9 @@
         "date": "2014-01-16",
         "series": 5,
         "tier": "Common",
-        "badges": [],
+        "badges": [
+          "TSD"
+        ],
         "teamAtMoment": "Milwaukee Bucks"
       }
     ],
@@ -832,7 +1348,9 @@
         "date": "2015-12-08",
         "series": 5,
         "tier": "Common",
-        "badges": [],
+        "badges": [
+          "TSD"
+        ],
         "teamAtMoment": "Milwaukee Bucks"
       }
     ],
@@ -868,7 +1386,9 @@
         "date": "2015-03-18",
         "series": 5,
         "tier": "Common",
-        "badges": [],
+        "badges": [
+          "TSD"
+        ],
         "teamAtMoment": "Miami Heat"
       }
     ],
@@ -922,7 +1442,9 @@
         "date": "2016-11-23",
         "series": 5,
         "tier": "Common",
-        "badges": [],
+        "badges": [
+          "TSD"
+        ],
         "teamAtMoment": "Los Angeles Lakers"
       }
     ],
