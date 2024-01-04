@@ -87,9 +87,9 @@ class LineupProvider:
 
             self.coming_game_date = coming_game_date
             self.formatted_schedule = self.__formatted_schedule()
-            self.__load_players()
             self.formatted_all_players = self.__formatted_all_players()
 
+        self.__load_players()
         self.__load_lineups()
 
     def __create_lineup(self, user_id):

@@ -5,7 +5,7 @@ import time
 from provider.topshot.cadence.flow_collections import get_collection_for_trade
 from provider.topshot.graphql.get_address import get_flow_address
 from provider.topshot.graphql.get_price import get_listing_prices
-from provider.topshot.ts_info import TS_SET_INFO, TS_TEAM_NAME_TO_ID, TS_PLAY_INFO
+from provider.topshot.ts_provider import TS_PROVIDER
 
 
 def remove_dupes(c1, c2, series_or_set):
@@ -20,8 +20,8 @@ def remove_dupes(c1, c2, series_or_set):
         if series_or_set in c2_sets_to_remove:
             c2_sets_to_remove.remove(series_or_set)
     elif series_or_set < 0:
-        c1_sets_to_remove = [set_id for set_id in c1 if TS_SET_INFO[int(set_id)]['flowSeriesNumber'] != -series_or_set]
-        c2_sets_to_remove = [set_id for set_id in c2 if TS_SET_INFO[int(set_id)]['flowSeriesNumber'] != -series_or_set]
+        c1_sets_to_remove = [set_id for set_id in c1 if TS_PROVIDER.set_info[int(set_id)]['flowSeriesNumber'] != -series_or_set]
+        c2_sets_to_remove = [set_id for set_id in c2 if TS_PROVIDER.set_info[int(set_id)]['flowSeriesNumber'] != -series_or_set]
 
     for set_id in c1_sets_to_remove:
         c1.pop(set_id)
@@ -58,7 +58,7 @@ def remove_dupes(c1, c2, series_or_set):
 
 async def get_lowest_listing_price(collection):
     for set_id in collection:
-        set_uuid = TS_SET_INFO[int(set_id)]["id"]
+        set_uuid = TS_PROVIDER.set_info[int(set_id)]["id"]
         play_ids = list(collection[set_id].keys())
 
         while len(play_ids) > 0:
@@ -67,7 +67,7 @@ async def get_lowest_listing_price(collection):
             while start < len(play_ids):
                 upper_bound = min(start + 12, len(play_ids))
 
-                player_ids = [TS_PLAY_INFO[int(play_id)][0]['playerId'] for play_id in play_ids[start:upper_bound]]
+                player_ids = [TS_PROVIDER.play_info[int(play_id)][0]['playerId'] for play_id in play_ids[start:upper_bound]]
 
                 team_ids = []
 
@@ -75,7 +75,7 @@ async def get_lowest_listing_price(collection):
                     player_ids = [player_id for player_id in player_ids if player_id is not None]
                     if len(player_ids) == 0:  # only team moments
                         team_ids = [
-                            str(TS_TEAM_NAME_TO_ID[collection[set_id][play_id]['FullName']]['id'])
+                            str(TS_PROVIDER.team_name_to_id[collection[set_id][play_id]['FullName']]['id'])
                             for play_id in play_ids[start:upper_bound]
                         ]
 

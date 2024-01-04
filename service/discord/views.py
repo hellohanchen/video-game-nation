@@ -91,14 +91,10 @@ class LineupSubmitButton(discord.ui.Button['LineupSubmit']):
     async def callback(self, interaction: discord.Interaction):
         assert self.view is not None
         view: LineupView = self.view
-        message, new_view, success = await view.reload_collection()
-        if not success:
-            message = f"Submission failed: {message}, please retry"
-        else:
-            submission_message, new_view = view.submit_lineup()
-            message = f"{submission_message}\n{message}"
 
+        message, new_view = view.submit_lineup()
         await interaction.response.edit_message(content=message, view=new_view)
+        await view.reload_collection()
 
 
 class LineupRemoveButton(discord.ui.Button['LineupRemove']):
@@ -149,24 +145,11 @@ class LineupWeekScoreButton(discord.ui.Button['LineupWeek']):
         await interaction.response.edit_message(content=message, view=new_view)
 
 
-class LineupReloadButton(discord.ui.Button['LineupReload']):
-    def __init__(self):
-        super().__init__(style=discord.ButtonStyle.secondary, label="Refresh TS Moments", row=1)
-
-    async def callback(self, interaction: discord.Interaction):
-        assert self.view is not None
-        view: LineupView = self.view
-        message, new_view, _ = await view.reload_collection()
-
-        await interaction.response.edit_message(content=message, view=new_view)
-
-
 class LineupView(FantasyView):
     def __init__(self, lineup_provider, user_id):
         super().__init__(lineup_provider, user_id)
         self.add_item(LineupPlayersButton())
         self.add_item(LineupTeamsButton())
-        self.add_item(LineupReloadButton())
         self.add_item(LineupRemoveButton())
         self.add_item(LineupSwapButton())
         self.add_item(LineupSubmitButton())

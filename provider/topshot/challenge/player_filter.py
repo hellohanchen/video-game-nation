@@ -1,6 +1,6 @@
 from typing import List, Set
 
-from provider.topshot.ts_info import TS_PLAYER_ID_MOMENTS
+from provider.topshot.ts_provider import TS_PROVIDER
 
 
 class PlayerFilter:
@@ -31,7 +31,7 @@ class TopshotFilter(PlayerFilter):
         """
         filtered = set()
         for player_id in player_ids:
-            if player_id not in TS_PLAYER_ID_MOMENTS:
+            if player_id not in TS_PROVIDER.player_moments:
                 continue
 
             matched = True
@@ -39,8 +39,8 @@ class TopshotFilter(PlayerFilter):
                 matched = False
                 all_badges = True
                 for badge in self.badges:
-                    if badge not in TS_PLAYER_ID_MOMENTS[player_id]['badges'][series] or \
-                            not TS_PLAYER_ID_MOMENTS[player_id]['badges'][series][badge]:
+                    if badge not in TS_PROVIDER.player_moments[player_id]['badges'][series] or \
+                            not TS_PROVIDER.player_moments[player_id]['badges'][series][badge]:
                         all_badges = False
                         break
                 if all_badges:
@@ -78,7 +78,7 @@ class PlayerIDFilter(PlayerFilter):
             if player_id not in self.ids:
                 continue
 
-            if player_id not in TS_PLAYER_ID_MOMENTS:
+            if player_id not in TS_PROVIDER.player_moments:
                 continue
 
             filtered.add(player_id)
@@ -108,10 +108,10 @@ class TopshotSetFilter(PlayerFilter):
         """
         filtered = set()
         for player_id in player_ids:
-            if player_id not in TS_PLAYER_ID_MOMENTS:
+            if player_id not in TS_PROVIDER.player_moments:
                 continue
 
-            if self.set not in TS_PLAYER_ID_MOMENTS[player_id]['sets']:
+            if self.set not in TS_PROVIDER.player_moments[player_id]['sets']:
                 continue
 
             filtered.add(player_id)

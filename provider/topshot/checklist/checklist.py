@@ -1,63 +1,63 @@
 import asyncio
 
 from provider.topshot.cadence.flow_collections import get_account_plays
-from provider.topshot.ts_info import TS_SET_CHECKLISTS, TS_TEAM_CHECKLISTS
+from provider.topshot.ts_provider import TS_PROVIDER, TS_PROVIDER
 
 
 def check_sets_and_teams(plays):
     complete_sets = []
     complete_teams = []
 
-    for set in TS_SET_CHECKLISTS:
+    for set in TS_PROVIDER.set_checklists:
         set_id = int(set)
         count = 0
-        for play in TS_SET_CHECKLISTS[set]['moments']:
+        for play in TS_PROVIDER.set_checklists[set]['moments']:
             play_id = int(play)
             if play_id in plays and set_id in plays[play_id]:
                 count += 1
-        if count == TS_SET_CHECKLISTS[set]['count']:
-            complete_sets.append(TS_SET_CHECKLISTS[set]['name'])
+        if count == TS_PROVIDER.set_checklists[set]['count']:
+            complete_sets.append(TS_PROVIDER.set_checklists[set]['name'])
 
-    for team in TS_TEAM_CHECKLISTS:
+    for team in TS_PROVIDER.team_checklists:
         complete_team_sets = []
-        for series in TS_TEAM_CHECKLISTS[team]['series']:
+        for series in TS_PROVIDER.team_checklists[team]['series']:
             count = 0
-            for player in TS_TEAM_CHECKLISTS[team]['series'][series]['players']:
+            for player in TS_PROVIDER.team_checklists[team]['series'][series]['players']:
                 found = False
-                for play_id in TS_TEAM_CHECKLISTS[team]['series'][series]['players'][player]['plays']:
+                for play_id in TS_PROVIDER.team_checklists[team]['series'][series]['players'][player]['plays']:
                     if play_id in plays:
                         found = True
                         break
                 if found:
                     count += 1
 
-            if count == TS_TEAM_CHECKLISTS[team]['series'][series]['count']:
+            if count == TS_PROVIDER.team_checklists[team]['series'][series]['count']:
                 complete_team_sets.append(f"{team} {series}")
 
         count = 0
-        for player in TS_TEAM_CHECKLISTS[team]['contemporary']['players']:
+        for player in TS_PROVIDER.team_checklists[team]['contemporary']['players']:
             found = False
-            for play_id in TS_TEAM_CHECKLISTS[team]['contemporary']['players'][player]['plays']:
+            for play_id in TS_PROVIDER.team_checklists[team]['contemporary']['players'][player]['plays']:
                 if play_id in plays:
                     found = True
                     break
             if found:
                 count += 1
 
-        if count == TS_TEAM_CHECKLISTS[team]['contemporary']['count']:
+        if count == TS_PROVIDER.team_checklists[team]['contemporary']['count']:
             complete_team_sets.append(f"{team} contemporary")
 
         count = 0
-        for player in TS_TEAM_CHECKLISTS[team]['all']['players']:
+        for player in TS_PROVIDER.team_checklists[team]['all']['players']:
             found = False
-            for play_id in TS_TEAM_CHECKLISTS[team]['all']['players'][player]['plays']:
+            for play_id in TS_PROVIDER.team_checklists[team]['all']['players'][player]['plays']:
                 if play_id in plays:
                     found = True
                     break
             if found:
                 count += 1
 
-        if count == TS_TEAM_CHECKLISTS[team]['all']['count']:
+        if count == TS_PROVIDER.team_checklists[team]['all']['count']:
             complete_team_sets.append(f"{team} all")
 
         if len(complete_team_sets) > 0:

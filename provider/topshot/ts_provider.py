@@ -2,35 +2,54 @@ import json
 import os
 import pathlib
 
-import unidecode
+
+class TopshotProvider:
+    def __init__(self):
+        self.play_info = {}
+        self.player_moments = {}
+        self.set_info = {}
+        self.set_checklists = {}
+        self.team_name_to_id = {}
+        self.team_checklists = {}
+        self.reload()
+
+    def reload(self):
+        self.play_info = load_enriched_plays()
+        self.player_moments = load_player_moment_info()
+        self.set_info = load_set_data()
+        self.set_checklists = load_set_checklists()
+        self.team_name_to_id = load_team_data()
+        self.team_checklists = load_team_checklists()
 
 
 def load_set_data():
+    result = {}
+
     with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "moments/resource/sets.json"), 'r') as set_file:
         data = json.load(set_file)
 
         for set in data['sets']:
-            TS_SET_INFO[set['flowId']] = {
+            result[set['flowId']] = {
                 'id': set['id'],
                 'flowName': set['flowName'],
                 'flowSeriesNumber': set['flowSeriesNumber']
             }
 
-
-def load_play_data():
-    with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "moments/resource/enriched_plays.json"), 'r') as set_file:
-        for play_id, play in json.load(set_file)['plays'].items():
-            TS_PLAY_INFO[play[0]['flowId']] = play
+    return result
 
 
 def load_team_data():
+    result = {}
+
     with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "moments/resource/teams.json"), 'r') as team_file:
         data = json.load(team_file)
 
         for team in data['teams']:
-            TS_TEAM_NAME_TO_ID[team['name']] = {
+            result[team['name']] = {
                 'id': team['id']
             }
+
+    return result
 
 
 def load_player_moment_info():
@@ -79,15 +98,4 @@ def load_team_checklists():
         return json.load(in_file)
 
 
-TS_SET_INFO = {}
-TS_PLAY_INFO = {}
-TS_TEAM_NAME_TO_ID = {}
-TS_PLAYER_ID_MOMENTS = load_player_moment_info()
-TS_ENRICHED_PLAYS = load_enriched_plays()
-TS_SET_CHECKLISTS = load_set_checklists()
-TS_TEAM_CHECKLISTS = load_team_checklists()
-
-load_set_data()
-load_play_data()
-load_team_data()
-
+TS_PROVIDER = TopshotProvider()

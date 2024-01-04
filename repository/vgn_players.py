@@ -8,7 +8,7 @@ import pandas as pd
 from provider.nba.players import get_player_avg_stats, fresh_team_players
 from provider.nba.nba_provider import NBA_PROVIDER
 from repository.config import CNX_POOL
-from provider.topshot.ts_info import TS_PLAYER_ID_MOMENTS
+from provider.topshot.ts_provider import TS_PROVIDER
 
 
 def upsert_player(id):
@@ -298,7 +298,7 @@ def upload_players(player_ids):
     """
 
     if len(player_ids) == 0:
-        player_ids = list(TS_PLAYER_ID_MOMENTS.keys())
+        player_ids = list(TS_PROVIDER.player_moments.keys())
         random.shuffle(player_ids)
 
     for player in player_ids:
@@ -327,8 +327,8 @@ def check_current_nba_players():
     found in the database, the function prints a message to the console indicating that the player was not found.
     This function is useful for checking if all current NBA players have been properly uploaded to the database.
     """
-    for player_id in TS_PLAYER_ID_MOMENTS:
-        if TS_PLAYER_ID_MOMENTS[player_id]['isNBA']:
+    for player_id in TS_PROVIDER.player_moments:
+        if TS_PROVIDER.player_moments[player_id]['isNBA']:
             if get_player(player_id) is None:
                 print("Player not found: {}".format(player_id))
 
@@ -340,6 +340,7 @@ def reload_players():
     for player_id in player_ids:
         upsert_player(player_id)
         time.sleep(1.0)
+    check_current_nba_players()
 
 
 if __name__ == '__main__':
