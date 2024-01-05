@@ -267,7 +267,7 @@ def get_empty_players_stats(player_ids, order_by=None):
             }
 
         return player_stats
-    except Exception:
+    except Exception as err:
         return None
 
 

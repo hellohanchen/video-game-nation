@@ -49,9 +49,13 @@ class RankingProvider:
                 }
                 player_ids.extend(self.lineups[user_id].player_ids)
                 for player_id in self.lineups[user_id].player_ids:
+                    if player_id is None:
+                        continue
+
                     self.collections[user_id][player_id] = all_collections[user_id].get(player_id)
 
             player_ids = list(set(player_ids))
+            player_ids.remove(None)
             self.player_stats = get_empty_players_stats(player_ids)
 
     def reload(self):
