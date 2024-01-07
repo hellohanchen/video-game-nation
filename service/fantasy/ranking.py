@@ -55,7 +55,8 @@ class RankingProvider:
                     self.collections[user_id][player_id] = all_collections[user_id].get(player_id)
 
             player_ids = list(set(player_ids))
-            player_ids.remove(None)
+            if None in player_ids:
+                player_ids.remove(None)
             self.player_stats = get_empty_players_stats(player_ids)
 
     def reload(self):
