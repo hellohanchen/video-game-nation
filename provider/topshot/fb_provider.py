@@ -19,7 +19,7 @@ class FastBreakProvider:
                 "isCombine": True,
                 "buckets": []
             }
-        return
+        return fb
 
 
 def load_fb_data():
