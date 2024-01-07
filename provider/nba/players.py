@@ -1,6 +1,7 @@
 import json
 import os
 import pathlib
+from typing import Dict, List, Tuple
 
 from nba_api.stats.endpoints import CommonPlayerInfo, PlayerDashboardByYearOverYear, CommonAllPlayers, \
     LeagueDashPlayerStats
@@ -19,7 +20,7 @@ def get_player_avg_stats(player_id):
         player_stats = PlayerDashboardByYearOverYear(player_id=str(player_id), per_mode_detailed='PerGame')
         player_avg_stats = player_stats.get_data_frames()[1].iloc[0]
     except Exception as err:
-        print(err)
+        print(f"Failed player id: {id}, fetch error {err}")
         return player_info, player_avg_stats
 
     return player_info, player_avg_stats
@@ -38,7 +39,7 @@ def get_player_stats_dashboard():
     return player_avg_stats
 
 
-def fresh_team_players() -> None:
+def fresh_team_players() -> tuple[Dict[str, List[int]], List[str]]:
     """
     Generates a JSON file containing a dictionary with team abbreviations as keys and a list of player IDs as values.
 
@@ -53,28 +54,30 @@ def fresh_team_players() -> None:
 
     if len(players) == 0:
         print("Team player data unavailable")
-        return
+        return {}, []
 
-    result = {}
+    team_players = {}
     player_ids = {}
     for i in range(0, len(players)):
         player = players.iloc[i]
         team = player['TEAM_ABBREVIATION']
 
-        if team not in result:
-            result[team] = []
+        if team not in team_players:
+            team_players[team] = []
 
         player_id = str(player['PERSON_ID'])
-        result[team].append(int(player['PERSON_ID']))
+        team_players[team].append(int(player['PERSON_ID']))
 
         if player_id not in player_ids:
             player_ids[player_id] = True
 
     with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "data/team_players_23_24.json"), 'w') as file:
-        json.dump(result, file, indent=2)
+        json.dump(team_players, file, indent=2)
 
     with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "data/current_nba_players.json"), 'w') as output:
         json.dump(player_ids, output, indent=2)
+
+    return team_players, list(player_ids.keys())
 
 
 if __name__ == '__main__':

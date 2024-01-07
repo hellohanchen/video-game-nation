@@ -38,11 +38,11 @@ def upsert_player_with_stats(id):
     try:
         info, stats = get_player_avg_stats(id)
     except Exception as err:
-        print(err)
+        print(f"Failed player id: {id}, fetch error {err}")
         return
 
     if info is None:
-        print("Error fetching player: {}".format(id))
+        print(f"Failed player id: {id}, no info")
         return
     if stats is None:
         stats = {
@@ -82,7 +82,7 @@ def upsert_player_with_stats(id):
         dd_rate = stats['DD2'] / stats['GP'] if stats['GP'] > 0 else 0.0
         td_rate = stats['TD3'] / stats['GP'] if stats['GP'] > 0 else 0.0
     except Exception as err:
-        print("Error parsing info: {}, err: {}".format(info, err))
+        print(f"Failed player id: {id}, parse error {err}, {info}")
         return
 
     try:
@@ -138,13 +138,13 @@ def upsert_player_with_stats(id):
         db_conn.commit()
         db_conn.close()
     except Exception as err:
-        print("DB error: {}".format(err))
+        print(f"Failed player id: {id}, db error {err}")
 
         if db_conn is not None:
             db_conn.close()
         return
 
-    print("Upserted player id: {}, name: {}.".format(id, full_name))
+    print(f"Upserted player id: {id}, name: {full_name}.")
 
 
 def get_player(player_id):
@@ -249,40 +249,6 @@ def get_empty_players_stats(player_ids, order_by=None):
         return None
 
 
-def check_current_nba_players():
-    """
-    Checks if the current NBA players in the TS_PLAYER_ID_MOMENTS global variable are in the vgn.players MySQL table.
-
-    Args:
-        None.
-
-    Returns:
-        None.
-
-    Raises:
-        None.
-
-    This function checks if the current NBA players in the TS_PLAYER_ID_MOMENTS global variable are in the vgn.players
-    MySQL table, by calling the `get_player` function for each player ID in the global variable. If a player is not
-    found in the database, the function prints a message to the console indicating that the player was not found.
-    This function is useful for checking if all current NBA players have been properly uploaded to the database.
-    """
-    for player_id in TS_PROVIDER.player_moments:
-        if TS_PROVIDER.player_moments[player_id]['isNBA']:
-            if get_player(player_id) is None:
-                print("Player not found: {}".format(player_id))
-
-
-def reload_players():
-    fresh_team_players()
-    player_ids = NBA_PROVIDER.get_all_player_ids()
-    random.shuffle(player_ids)
-    for player_id in player_ids:
-        upsert_player_with_stats(player_id)
-        time.sleep(1.0)
-    check_current_nba_players()
-
-
 def reformat_dashboard(raw_player_stats):
     result = []
     for ps in raw_player_stats:
@@ -304,7 +270,7 @@ def reformat_dashboard(raw_player_stats):
     return result
 
 
-def update_player_stats_from_dashboard():
+def update_player_stats_from_dashboard(player_ids):
     player_stats = reformat_dashboard(get_player_stats_dashboard())
     err_ids = []
 
@@ -353,6 +319,9 @@ def update_player_stats_from_dashboard():
             cursor.execute(query, player)
             db_conn.commit()
             db_conn.close()
+
+            if player[0] in player_ids:
+                player_ids.remove(player[0])
         except Exception as err:
             err_ids.append(player[0])
             print(f"DB error: {err}, player: {player[0]} {player[1]}")
@@ -363,6 +332,19 @@ def update_player_stats_from_dashboard():
     print(f"Upserted {len(player_stats) - len(err_ids)} players.")
     print(f"Failed players: {err_ids}")
 
+    return player_ids
+
+
+def reload_players():
+    _, player_ids = fresh_team_players()
+    player_ids = [int(pid) for pid in player_ids]
+    player_ids = update_player_stats_from_dashboard(player_ids)
+    print(f"Players not upserted: {player_ids}")
+    random.shuffle(player_ids)
+    for player_id in player_ids:
+        upsert_player_with_stats(player_id)
+        time.sleep(1.0)
+
 
 if __name__ == '__main__':
-    update_player_stats_from_dashboard()
+    reload_players()
