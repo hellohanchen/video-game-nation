@@ -5,13 +5,13 @@ import time
 
 import pandas as pd
 
-from provider.nba.players import get_player_avg_stats, fresh_team_players
+from provider.nba.players import get_player_avg_stats, fresh_team_players, get_player_stats_dashboard
 from provider.nba.nba_provider import NBA_PROVIDER
 from repository.config import CNX_POOL
 from provider.topshot.ts_provider import TS_PROVIDER
 
 
-def upsert_player(id):
+def upsert_player_with_stats(id):
     """
     Adds a new player to the vgn.players MySQL table, given their ID.
 
@@ -25,7 +25,7 @@ def upsert_player(id):
         None.
 
     Examples:
-        >>> upsert_player(201939)
+        >>> upsert_player_with_stats(201939)
         Inserted new player id: 201939, name: curry, stephen.
 
     This function fetches the player's average stats using the `get_player_avg_stats` function, and inserts them
@@ -177,28 +177,6 @@ def get_player(player_id):
         return None
 
 
-def search_players_stats(name, order_by=None):
-    try:
-        db_conn = CNX_POOL.get_connection()
-        query = \
-            "SELECT * FROM vgn.players WHERE last_name='{}' OR first_name='{}'".format(name.lower(), name.lower())
-
-        if order_by is not None:
-            query += " ORDER BY {} ".format(', '.join([o[0] + " " + o[1] + " " for o in order_by]))
-
-        # Execute SQL query and store results in a pandas dataframe
-        df = pd.read_sql(query, db_conn)
-
-        # Convert dataframe to a dictionary with headers
-        players = df.to_dict('records')
-
-        db_conn.close()
-
-        return players
-    except Exception:
-        return None
-
-
 def get_players_stats(player_ids, order_by=None):
     try:
         db_conn = CNX_POOL.get_connection()
@@ -271,44 +249,6 @@ def get_empty_players_stats(player_ids, order_by=None):
         return None
 
 
-def upload_players(player_ids):
-    """
-    Uploads player data to the vgn.players MySQL table, given a list of player IDs.
-
-    Args:
-        player_ids: An optional list of integers representing the IDs of the players to upload. If empty,
-        all player IDs from the TS_PLAYER_ID_MOMENTS global variable will be used, shuffled randomly.
-
-    Returns:
-        None.
-
-    Raises:
-        None.
-
-    Examples:
-        >>> await upload_players([201939, 203081])
-        Inserted new player id: 201939, name: curry, stephen.
-        Inserted new player id: 203081, name: george, paul.
-
-    This function uploads player data to the vgn.players MySQL table, by calling the `add_player` function for
-    each player ID in the input list. If the input list is empty, the function uses all player IDs from the
-    TS_PLAYER_ID_MOMENTS global variable, shuffles them randomly, and uploads their data. If a player is already
-    in the database, their data is not uploaded again. To avoid overloading the database, the function waits for
-    10 seconds between each upload.
-    """
-
-    if len(player_ids) == 0:
-        player_ids = list(TS_PROVIDER.player_moments.keys())
-        random.shuffle(player_ids)
-
-    for player in player_ids:
-        player_id = int(player)
-
-        if get_player(player_id) is None:
-            upsert_player(player_id)
-            time.sleep(10.0)
-
-
 def check_current_nba_players():
     """
     Checks if the current NBA players in the TS_PLAYER_ID_MOMENTS global variable are in the vgn.players MySQL table.
@@ -338,10 +278,91 @@ def reload_players():
     player_ids = NBA_PROVIDER.get_all_player_ids()
     random.shuffle(player_ids)
     for player_id in player_ids:
-        upsert_player(player_id)
+        upsert_player_with_stats(player_id)
         time.sleep(1.0)
     check_current_nba_players()
 
 
+def reformat_dashboard(raw_player_stats):
+    result = []
+    for ps in raw_player_stats:
+        games_play = float(ps['GP'])
+
+        result.append((
+            int(ps['PLAYER_ID']), ps['PLAYER_NAME'], ps['TEAM_ABBREVIATION'],
+            ps['PTS'], ps['PTS'], ps['FG3M'], ps['FG3M'],
+            ps['DREB'], ps['DREB'], ps['OREB'], ps['OREB'],
+            ps['AST'], ps['AST'], ps['STL'], ps['STL'], ps['BLK'], ps['BLK'],
+            ps['FGM'], ps['FGM'], ps['FTM'], ps['FTM'],
+            ps['TOV'], ps['TOV'], ps['PF'], ps['PF'], ps['W_PCT'], ps['W_PCT'],
+            round(float(ps['DD2']) / games_play, 2), round(float(ps['DD2']) / games_play, 2),
+            round(float(ps['TD3']) / games_play, 2), round(float(ps['TD3']) / games_play, 2),
+            0.0, 0.0, 0.0, 0.0,
+            ps['MIN'], ps['MIN'], ps['PFD'], ps['PFD'],
+         ))
+
+    return result
+
+
+def update_player_stats_from_dashboard():
+    player_stats = reformat_dashboard(get_player_stats_dashboard())
+    err_ids = []
+
+    for player in player_stats:
+        try:
+            db_conn = CNX_POOL.get_connection()
+            cursor = db_conn.cursor()
+            query = \
+                "INSERT INTO vgn.players (id, full_name, current_team," \
+                "points_recent, points_avg, three_pointers_recent, three_pointers_avg," \
+                "defensive_rebounds_recent, defensive_rebounds_avg, offensive_rebounds_recent, offensive_rebounds_avg," \
+                "assists_recent, assists_avg, steals_recent, steals_avg, blocks_recent, blocks_avg," \
+                "field_goal_misses_recent, field_goal_misses_avg, free_throw_misses_recent, free_throw_misses_avg," \
+                "turnovers_recent, turnovers_avg, fouls_recent, fouls_avg, wins_recent, wins_avg," \
+                "double_double_recent, double_double_avg, triple_double_recent, triple_double_avg," \
+                "quadruple_double_recent, quadruple_double_avg, five_double_recent, five_double_avg," \
+                "minutes_recent, minutes_avg, fouls_drawn_recent, fouls_drawn_avg) " \
+                "VALUES(%s, %s, %s," \
+                "%s, %s, %s, %s," \
+                "%s, %s, %s, %s," \
+                "%s, %s, %s, %s, %s, %s," \
+                "%s, %s, %s, %s," \
+                "%s, %s, %s, %s, %s, %s," \
+                "%s, %s, %s, %s," \
+                "%s, %s, %s, %s," \
+                "%s, %s, %s, %s" \
+                ") AS new ON DUPLICATE KEY UPDATE full_name = new.full_name, current_team = new.current_team, " \
+                "points_recent = new.points_recent, points_avg = new.points_avg, " \
+                "three_pointers_recent = new.three_pointers_recent, three_pointers_avg = new.three_pointers_avg, " \
+                "defensive_rebounds_recent = new.defensive_rebounds_recent, defensive_rebounds_avg = new.defensive_rebounds_avg, " \
+                "offensive_rebounds_recent = new.offensive_rebounds_recent, offensive_rebounds_avg = new.offensive_rebounds_avg, " \
+                "assists_recent = new.assists_recent, assists_avg = new.assists_avg, " \
+                "steals_recent = new.steals_recent, steals_avg = new.steals_avg, " \
+                "blocks_recent = new.blocks_recent, blocks_avg = new.blocks_avg, " \
+                "field_goal_misses_recent = new.field_goal_misses_recent, field_goal_misses_avg = new.field_goal_misses_avg, " \
+                "free_throw_misses_recent = new.free_throw_misses_recent, free_throw_misses_avg = new.free_throw_misses_avg, " \
+                "turnovers_recent = new.turnovers_recent, turnovers_avg = new.turnovers_avg, " \
+                "fouls_recent = new.fouls_recent, fouls_avg = new.fouls_avg, " \
+                "wins_recent = new.wins_recent, wins_avg = new.wins_avg, " \
+                "double_double_recent = new.double_double_recent, double_double_avg = new.double_double_avg, " \
+                "triple_double_recent = new.triple_double_recent, triple_double_avg = new.triple_double_avg, " \
+                "quadruple_double_recent = new.quadruple_double_recent, quadruple_double_avg = new.quadruple_double_avg, " \
+                "five_double_recent = new.five_double_recent, five_double_avg = new.five_double_avg," \
+                "minutes_recent = new.minutes_recent, minutes_avg = new.minutes_avg," \
+                "fouls_drawn_recent = new.fouls_drawn_recent, fouls_drawn_avg = new.fouls_drawn_avg"
+            cursor.execute(query, player)
+            db_conn.commit()
+            db_conn.close()
+        except Exception as err:
+            err_ids.append(player[0])
+            print(f"DB error: {err}, player: {player[0]} {player[1]}")
+
+            if db_conn is not None:
+                db_conn.close()
+
+    print(f"Upserted {len(player_stats) - len(err_ids)} players.")
+    print(f"Failed players: {err_ids}")
+
+
 if __name__ == '__main__':
-    reload_players()
+    update_player_stats_from_dashboard()

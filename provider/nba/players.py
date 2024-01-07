@@ -2,7 +2,8 @@ import json
 import os
 import pathlib
 
-from nba_api.stats.endpoints import CommonPlayerInfo, PlayerDashboardByYearOverYear, CommonAllPlayers
+from nba_api.stats.endpoints import CommonPlayerInfo, PlayerDashboardByYearOverYear, CommonAllPlayers, \
+    LeagueDashPlayerStats
 from nba_api.stats.library.parameters import Season
 
 
@@ -22,6 +23,19 @@ def get_player_avg_stats(player_id):
         return player_info, player_avg_stats
 
     return player_info, player_avg_stats
+
+
+def get_player_stats_dashboard():
+    player_avg_stats = None
+    try:
+        # Create a LeagueDashPlayerStats instance to get all player's seasonal average stats
+        player_stats = LeagueDashPlayerStats(per_mode_detailed='PerGame')
+        player_avg_stats = player_stats.get_data_frames()[0].iloc
+    except Exception as err:
+        print(err)
+        return player_avg_stats
+
+    return player_avg_stats
 
 
 def fresh_team_players() -> None:
@@ -64,4 +78,4 @@ def fresh_team_players() -> None:
 
 
 if __name__ == '__main__':
-    fresh_team_players()
+    get_player_stats_dashboard()
