@@ -6,7 +6,7 @@ import discord
 from discord.ext import commands, tasks
 from dotenv import load_dotenv
 
-from service.discord.views import MainPage
+from service.fantasy.views import MainPage
 from repository.vgn_collections import upsert_collection as repo_upsert_collection
 from repository.vgn_users import get_user, insert_user
 from service.fantasy import LINEUP_PROVIDER

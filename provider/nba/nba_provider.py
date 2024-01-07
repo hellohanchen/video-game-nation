@@ -7,6 +7,7 @@ from typing import Optional
 from nba_api.live.nba.endpoints import scoreboard, boxscore
 
 from provider.nba.injuries import load_injuries
+from provider.nba.players import fresh_team_players
 from provider.nba.schedule import download_schedule
 from utils import parse_dash_date, to_slash_date, parse_slash_date
 
@@ -184,6 +185,7 @@ class NBAProvider:
 
     def reload(self):
         download_schedule()
+        fresh_team_players()
         self.__load_schedule()
         self.__load_team_players()
         self.__load_injuries()

@@ -8,7 +8,7 @@ from discord.ext import commands, tasks
 from dotenv import load_dotenv
 
 from constants import TZ_ET
-from service.discord.views import MainPage
+from service.fantasy.views import MainPage
 from provider.nba.nba_provider import NBA_PROVIDER
 from repository.vgn_collections import upsert_collection as repo_upsert_collection
 from repository.vgn_users import insert_user
