@@ -12,7 +12,14 @@ class FastBreakProvider:
         self.fb_info = load_fb_data()
 
     def get_fb(self, game_date):
-        return self.fb_info[game_date]
+        fb = self.fb_info.get(game_date)
+        if fb is None:
+            return {
+                "count": 8,
+                "isCombine": True,
+                "buckets": []
+            }
+        return
 
 
 def load_fb_data():

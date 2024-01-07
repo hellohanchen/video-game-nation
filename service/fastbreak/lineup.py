@@ -149,9 +149,6 @@ class LineupService(FastBreakService):
             self.team_to_players[self.player_to_team[player_id]].append(player_id)
 
     def __load_lineups(self):
-        if self.fb is None:
-            return
-
         loaded = get_lineups(self.coming_game_date)
         for lineup in loaded:
             self.lineups[lineup['user_id']] = Lineup(lineup, self)
@@ -167,9 +164,7 @@ class LineupService(FastBreakService):
             self.lineups = {}
 
             self.coming_game_date = coming_game_date
-            fb = FB_PROVIDER.get_fb(self.coming_game_date)
-            if fb is not None:
-                self.fb = FastBreak(fb)
+            self.fb = FastBreak(FB_PROVIDER.get_fb(self.coming_game_date))
             self.formatted_schedule = self.__formatted_schedule()
 
         self.__load_players()
