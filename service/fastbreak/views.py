@@ -39,7 +39,7 @@ class MainPage(discord.ui.View):
         if self.rank_service.status != "IN_GAME":
             message = self.lineup_service.get_or_create_lineup(user_id).formatted()
         else:
-            message = self.rank_service.formatted_user_score(user_id)[0]
+            message = self.rank_service.formatted_user_score(user_id)
 
         return message, LineupView(self.lineup_service, user_id)
 
