@@ -1,6 +1,27 @@
 {
   "sets": [
     {
+      "id": "1435ea5e-d16f-4622-8a27-58d7f6b62c81",
+      "flowId": 134,
+      "flowName": "Metallic Gold LE",
+      "flowSeriesNumber": 5,
+      "sortID": null
+    },
+    {
+      "id": "b350a61d-28b1-4468-8f2c-2960166aeb57",
+      "flowId": 133,
+      "flowName": "Extra Spice",
+      "flowSeriesNumber": 5,
+      "sortID": null
+    },
+    {
+      "id": "fb847463-981a-49ba-8167-2f5bd595dc82",
+      "flowId": 132,
+      "flowName": "Hustle and Show",
+      "flowSeriesNumber": 5,
+      "sortID": null
+    },
+    {
       "id": "5f422f6c-fd11-4338-91e0-b9bbcb878583",
       "flowId": 131,
       "flowName": "Holo Icon",
