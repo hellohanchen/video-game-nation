@@ -183,7 +183,6 @@ class NBAProvider:
 
     def reload(self):
         download_schedule()
-        fresh_team_players()
         self.__load_schedule()
         self.__load_team_players()
         self.__load_injuries()
