@@ -34,9 +34,7 @@ class NBAProvider:
         self.coming_date = ""
         self.injuries = {}
 
-        self.__load_schedule()
-        self.__load_team_players()
-        self.__load_injuries()
+        self.reload()
 
     def __load_schedule(self):
         with open(os.path.join(pathlib.Path(__file__).parent.resolve(), 'data/game_dates.json'), 'r') as f:

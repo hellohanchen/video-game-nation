@@ -1,11 +1,10 @@
 import json
 import os
 import pathlib
-from typing import Dict, List, Tuple
+from typing import Dict, List
 
 from nba_api.stats.endpoints import CommonPlayerInfo, PlayerDashboardByYearOverYear, CommonAllPlayers, \
     LeagueDashPlayerStats
-from nba_api.stats.library.parameters import Season
 
 
 def get_player_avg_stats(player_id):
@@ -20,7 +19,7 @@ def get_player_avg_stats(player_id):
         player_stats = PlayerDashboardByYearOverYear(player_id=str(player_id), per_mode_detailed='PerGame')
         player_avg_stats = player_stats.get_data_frames()[1].iloc[0]
     except Exception as err:
-        print(f"Failed player id: {id}, fetch error {err}")
+        print(f"Failed player id: {player_id}, fetch error {err}")
         return player_info, player_avg_stats
 
     return player_info, player_avg_stats
@@ -49,8 +48,7 @@ def fresh_team_players() -> tuple[Dict[str, List[int]], List[str]]:
     named 'team_players.json'. If the 'data' folder or the JSON file do not exist, the function creates them. If they
     already exist, the function overwrites them with the latest data. This function does not return anything.
     """
-    season = Season.default
-    players = CommonAllPlayers(is_only_current_season=1, season=season).get_data_frames()[0]
+    players = CommonAllPlayers(is_only_current_season=1, timeout=30).get_data_frames()[0]
 
     if len(players) == 0:
         print("Team player data unavailable")
@@ -62,6 +60,8 @@ def fresh_team_players() -> tuple[Dict[str, List[int]], List[str]]:
         player = players.iloc[i]
         team = player['TEAM_ABBREVIATION']
 
+        if team == "":
+            continue
         if team not in team_players:
             team_players[team] = []
 
