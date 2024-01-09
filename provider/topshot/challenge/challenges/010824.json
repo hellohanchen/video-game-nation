@@ -10,7 +10,6 @@
           "is_wildcard": false,
           "type": "LB",
           "count": 1,
-          "is_team": true,
           "team_filter": "EC",
           "tier_breakers": [
             {
