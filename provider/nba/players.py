@@ -48,7 +48,7 @@ def fresh_team_players() -> tuple[Dict[str, List[int]], List[str]]:
     named 'team_players.json'. If the 'data' folder or the JSON file do not exist, the function creates them. If they
     already exist, the function overwrites them with the latest data. This function does not return anything.
     """
-    players = CommonAllPlayers(is_only_current_season=1, timeout=30).get_data_frames()[0]
+    players = CommonAllPlayers(is_only_current_season=1, timeout=60).get_data_frames()[0]
 
     if len(players) == 0:
         print("Team player data unavailable")
