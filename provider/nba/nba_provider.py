@@ -7,10 +7,9 @@ from typing import Optional
 from nba_api.live.nba.endpoints import scoreboard, boxscore
 
 from provider.nba.injuries import load_injuries
-from provider.nba.players import fresh_team_players
 from provider.nba.schedule import download_schedule
+from repository.vgn_players import get_all_team_players
 from utils import parse_dash_date, to_slash_date, parse_slash_date
-
 
 EAST_CONFERENCE = {"MIL", "BOS", "PHI", "CLE", "NYK", "BKN", "MIA", "ATL",
                    "TOR", "CHI", "WAS", "IND", "ORL", "CHA", "DET"}
@@ -30,6 +29,7 @@ class NBAProvider:
         self.game_dates = {}
         self.game_teams = {}
         self.team_players = {}
+        self.players = []
         self.latest_date = ""
         self.coming_date = ""
         self.injuries = {}
@@ -46,9 +46,8 @@ class NBAProvider:
         self.latest_date = list(new_schedule.keys())[-1]
         self.set_coming_game_date()
 
-    def __load_team_players(self):
-        self.team_players = json.load(
-            open(os.path.join(pathlib.Path(__file__).parent.resolve(), 'data/team_players_23_24.json'), 'r'))
+    def __load_all_players(self):
+        self.team_players, self.players = get_all_team_players(True)
 
     def __load_injuries(self):
         self.injuries = load_injuries()
@@ -133,10 +132,7 @@ class NBAProvider:
         return self.team_players[team]
 
     def get_all_player_ids(self):
-        players = []
-        for team in self.team_players:
-            players.extend(self.team_players[team])
-        return players
+        return self.players
 
     def get_player_injury(self, player_name):
         injury = self.injuries.get(player_name)
@@ -184,7 +180,7 @@ class NBAProvider:
     def reload(self):
         download_schedule()
         self.__load_schedule()
-        self.__load_team_players()
+        self.__load_all_players()
         self.__load_injuries()
 
     @staticmethod

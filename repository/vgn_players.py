@@ -6,9 +6,7 @@ import time
 import pandas as pd
 
 from provider.nba.players import get_player_avg_stats, fresh_team_players, get_player_stats_dashboard
-from provider.nba.nba_provider import NBA_PROVIDER
 from repository.config import CNX_POOL
-from provider.topshot.ts_provider import TS_PROVIDER
 
 
 def upsert_player_with_stats(id):
@@ -96,7 +94,7 @@ def upsert_player_with_stats(id):
             "field_goal_misses_recent, field_goal_misses_avg, free_throw_misses_recent, free_throw_misses_avg," \
             "turnovers_recent, turnovers_avg, fouls_recent, fouls_avg, wins_recent, wins_avg," \
             "double_double_recent, double_double_avg, triple_double_recent, triple_double_avg," \
-            "quadruple_double_recent, quadruple_double_avg, five_double_recent, five_double_avg) " \
+            "quadruple_double_recent, quadruple_double_avg, five_double_recent, five_double_avg, is_current) " \
             "VALUES({}, '{}' ,'{}', '{}', {}, '{}'," \
             "{}, {}, {}, {}," \
             "{}, {}, {}, {}," \
@@ -104,7 +102,7 @@ def upsert_player_with_stats(id):
             "{}, {}, {}, {}," \
             "{}, {}, {}, {}, {}, {}," \
             "{}, {}, {}, {}," \
-            "{}, {}, {}, {}" \
+            "{}, {}, {}, {}, TRUE" \
             ") AS new ON DUPLICATE KEY UPDATE full_name = new.full_name, first_name = new.first_name, " \
             "last_name = new.last_name, jersey_number = new.jersey_number, current_team = new.current_team, " \
             "points_recent = new.points_recent, points_avg = new.points_avg, " \
@@ -122,7 +120,7 @@ def upsert_player_with_stats(id):
             "double_double_recent = new.double_double_recent, double_double_avg = new.double_double_avg, " \
             "triple_double_recent = new.triple_double_recent, triple_double_avg = new.triple_double_avg, " \
             "quadruple_double_recent = new.quadruple_double_recent, quadruple_double_avg = new.quadruple_double_avg, " \
-            "five_double_recent = new.five_double_recent, five_double_avg = new.five_double_avg" \
+            "five_double_recent = new.five_double_recent, five_double_avg = new.five_double_avg, is_current = TRUE" \
             "".format(
                 id, full_name, first_name, last_name, jersey, team,
                 stats['PTS'], stats['PTS'], stats['FG3M'], stats['FG3M'],
@@ -207,6 +205,40 @@ def get_players_stats(player_ids, order_by=None):
         return None
 
 
+def get_all_team_players(current_only = True):
+    try:
+        db_conn = CNX_POOL.get_connection()
+        query = \
+            "SELECT id, current_team FROM vgn.players WHERE current_team IS NOT NULL AND current_team <> ''"
+
+        if current_only:
+            query += " AND is_current = TRUE"
+
+        # Execute SQL query and store results in a pandas dataframe
+        df = pd.read_sql(query, db_conn)
+
+        # Convert dataframe to a dictionary with headers
+        records = df.to_dict('records')
+
+        db_conn.close()
+
+        players = []
+        teams = {}
+        for player in records:
+            pid = player['id']
+            team = player['current_team']
+
+            if team not in teams:
+                teams[team] = []
+
+            teams[team].append(pid)
+            players.append(pid)
+
+        return teams, players
+    except Exception:
+        return {}, []
+
+
 def get_empty_players_stats(player_ids, order_by=None):
     try:
         db_conn = CNX_POOL.get_connection()
@@ -287,7 +319,7 @@ def update_player_stats_from_dashboard(player_ids):
                 "turnovers_recent, turnovers_avg, fouls_recent, fouls_avg, wins_recent, wins_avg," \
                 "double_double_recent, double_double_avg, triple_double_recent, triple_double_avg," \
                 "quadruple_double_recent, quadruple_double_avg, five_double_recent, five_double_avg," \
-                "minutes_recent, minutes_avg, fouls_drawn_recent, fouls_drawn_avg) " \
+                "minutes_recent, minutes_avg, fouls_drawn_recent, fouls_drawn_avg, is_current) " \
                 "VALUES(%s, %s, %s," \
                 "%s, %s, %s, %s," \
                 "%s, %s, %s, %s," \
@@ -296,7 +328,7 @@ def update_player_stats_from_dashboard(player_ids):
                 "%s, %s, %s, %s, %s, %s," \
                 "%s, %s, %s, %s," \
                 "%s, %s, %s, %s," \
-                "%s, %s, %s, %s" \
+                "%s, %s, %s, %s, TRUE" \
                 ") AS new ON DUPLICATE KEY UPDATE full_name = new.full_name, current_team = new.current_team, " \
                 "points_recent = new.points_recent, points_avg = new.points_avg, " \
                 "three_pointers_recent = new.three_pointers_recent, three_pointers_avg = new.three_pointers_avg, " \
@@ -315,7 +347,7 @@ def update_player_stats_from_dashboard(player_ids):
                 "quadruple_double_recent = new.quadruple_double_recent, quadruple_double_avg = new.quadruple_double_avg, " \
                 "five_double_recent = new.five_double_recent, five_double_avg = new.five_double_avg," \
                 "minutes_recent = new.minutes_recent, minutes_avg = new.minutes_avg," \
-                "fouls_drawn_recent = new.fouls_drawn_recent, fouls_drawn_avg = new.fouls_drawn_avg"
+                "fouls_drawn_recent = new.fouls_drawn_recent, fouls_drawn_avg = new.fouls_drawn_avg, is_current = TRUE"
             cursor.execute(query, player)
             db_conn.commit()
             db_conn.close()
@@ -335,7 +367,29 @@ def update_player_stats_from_dashboard(player_ids):
     return player_ids
 
 
+def reset_is_current(player_ids):
+    if len(player_ids) == 0:
+        return
+
+    try:
+        db_conn = CNX_POOL.get_connection()
+        cursor = db_conn.cursor()
+        query = f"UPDATE vgn.players SET is_current = FALSE WHERE id IN ({', '.join(player_ids)})"
+
+        # Execute SQL query and store results in a pandas dataframe
+        cursor.execute(query)
+        db_conn.commit()
+        db_conn.close()
+
+        print(f"Players reset: {player_ids}")
+
+        return
+    except Exception:
+        return
+
+
 def reload_players():
+    _, db_player_ids = get_all_team_players()
     _, player_ids = fresh_team_players()
     player_ids = [int(pid) for pid in player_ids]
     player_ids = update_player_stats_from_dashboard(player_ids)
@@ -344,6 +398,9 @@ def reload_players():
     for player_id in player_ids:
         upsert_player_with_stats(player_id)
         time.sleep(1.0)
+
+    non_current_ids = list(filter(lambda p: p not in player_ids, db_player_ids))
+    reset_is_current(non_current_ids)
 
 
 if __name__ == '__main__':
