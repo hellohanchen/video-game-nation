@@ -374,7 +374,7 @@ def reset_is_current(player_ids):
     try:
         db_conn = CNX_POOL.get_connection()
         cursor = db_conn.cursor()
-        query = f"UPDATE vgn.players SET is_current = FALSE WHERE id IN ({', '.join(player_ids)})"
+        query = f"UPDATE vgn.players SET is_current = FALSE WHERE id IN ({', '.join([str(p) for p in player_ids])})"
 
         # Execute SQL query and store results in a pandas dataframe
         cursor.execute(query)
@@ -384,14 +384,15 @@ def reset_is_current(player_ids):
         print(f"Players reset: {player_ids}")
 
         return
-    except Exception:
+    except Exception as err:
+        print(err)
         return
 
 
 def reload_players():
     _, db_player_ids = get_all_team_players()
-    _, player_ids = fresh_team_players()
-    player_ids = [int(pid) for pid in player_ids]
+    _, current_player_ids = fresh_team_players()
+    player_ids = [int(pid) for pid in current_player_ids]
     player_ids = update_player_stats_from_dashboard(player_ids)
     print(f"Players not upserted: {player_ids}")
     random.shuffle(player_ids)
@@ -399,7 +400,8 @@ def reload_players():
         upsert_player_with_stats(player_id)
         time.sleep(1.0)
 
-    non_current_ids = list(filter(lambda p: p not in player_ids, db_player_ids))
+    current_player_ids = [int(pid) for pid in current_player_ids]
+    non_current_ids = list(filter(lambda p: p not in current_player_ids, db_player_ids))
     reset_is_current(non_current_ids)
 
 
