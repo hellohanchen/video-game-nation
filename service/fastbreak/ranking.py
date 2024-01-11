@@ -51,6 +51,7 @@ class RankingService(FastBreakService):
             self.player_stats = get_empty_players_stats(player_ids)
 
     def reload(self):
+        FB_PROVIDER.reload()
         self.fb = FastBreak(FB_PROVIDER.get_fb(self.current_game_date))
         self.lineups = {}
         self.__load_lineups()

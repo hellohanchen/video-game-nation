@@ -1,0 +1,29 @@
+{
+  "01/06/2024": {
+    "count": 5,
+    "isCombine": true,
+    "buckets": [
+      {
+        "stats": "AST",
+        "target": 20,
+        "order": "DESC"
+      }
+    ]
+  },
+  "01/07/2024": {
+    "count": 5,
+    "isCombine": true,
+    "buckets": [
+      {
+        "stats": "REB",
+        "target": 50,
+        "order": "DESC"
+      },
+      {
+        "stats": "DD2",
+        "target": 3,
+        "order": "DESC"
+      }
+    ]
+  }
+}

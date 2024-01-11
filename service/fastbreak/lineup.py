@@ -164,9 +164,10 @@ class LineupService(FastBreakService):
             self.lineups = {}
 
             self.coming_game_date = coming_game_date
-            self.fb = FastBreak(FB_PROVIDER.get_fb(self.coming_game_date))
             self.formatted_schedule = self.__formatted_schedule()
 
+        FB_PROVIDER.reload()
+        self.fb = FastBreak(FB_PROVIDER.get_fb(self.coming_game_date))
         self.__load_players()
         self.__load_lineups()
 
