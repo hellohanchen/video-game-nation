@@ -411,7 +411,7 @@ class PlayerView(FantasyView):
         player_id = self.lineup_provider.player_ids[self.current_player - 1]
         team = self.lineup_provider.player_to_team[player_id]
 
-        message = self.lineup_provider.formatted_team_players(team)[0]
+        message = self.lineup_provider.formatted_team_players(team)
         return message, TeamView(team, self.lineup_provider, self.user_id)
 
 
@@ -550,7 +550,7 @@ class TeamsView(FantasyView):
         self.add_item(LineupButton(int((i - 1) / 4) + 1))
 
     def get_team_info(self, team):
-        message = self.lineup_provider.formatted_team_players(team)[0]
+        message = self.lineup_provider.formatted_team_players(team)
 
         return message, TeamView(team, self.lineup_provider, self.user_id)
 
@@ -582,7 +582,7 @@ class GameView(FantasyView):
         self.add_item(LineupButton(2))
 
     def get_team_info(self, team):
-        message = self.lineup_provider.formatted_team_players(team)[0]
+        message = self.lineup_provider.formatted_team_players(team)
 
         return message, TeamView(team, self.lineup_provider, self.user_id)
 

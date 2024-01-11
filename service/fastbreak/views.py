@@ -194,7 +194,7 @@ class TeamsView(FastBreakView):
         self.add_item(LineupButton(int((i - 1) / 4) + 1))
 
     def get_team_info(self, team):
-        message = self.lineup_service.formatted_team_players(team)[0]
+        message = self.lineup_service.formatted_team_players(team)
 
         return message, TeamView(team, self.lineup_service, self.user_id)
 
@@ -226,7 +226,7 @@ class GameView(FastBreakView):
         self.add_item(LineupButton(2))
 
     def get_team_info(self, team):
-        message = self.lineup_service.formatted_team_players(team)[0]
+        message = self.lineup_service.formatted_team_players(team)
 
         return message, TeamView(team, self.lineup_service, self.user_id)
 

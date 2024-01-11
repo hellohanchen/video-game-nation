@@ -20,6 +20,7 @@ class LineupProvider:
         self.player_ids = []
         self.lineups = {}
         self.collections = {}
+        self.formatted_teams = {}
         self.formatted_schedule = ""
         self.formatted_all_players = ""
         self.salary_pages = {
@@ -67,6 +68,12 @@ class LineupProvider:
 
             self.team_to_players[self.player_to_team[player_id]].append(player_id)
 
+        for team in self.team_to_players:
+            message = ""
+            for player_id in self.team_to_players[team]:
+                message += self.players[player_id]['formatted']
+            self.formatted_teams[team] = message
+
     def __load_lineups(self):
         loaded = get_lineups(self.coming_game_date)
         for lineup in loaded:
@@ -78,14 +85,14 @@ class LineupProvider:
     def reload(self):
         coming_game_date = NBA_PROVIDER.get_coming_game_date()
         if self.coming_game_date != coming_game_date:
+            self.coming_game_date = coming_game_date
             self.team_to_opponent = {}
             self.team_to_players = {}
             self.player_to_team = {}
             self.players = {}
             self.player_ids = []
             self.lineups = {}
-
-            self.coming_game_date = coming_game_date
+            self.formatted_teams = {}
             self.formatted_schedule = self.__formatted_schedule()
             self.formatted_all_players = self.__formatted_all_players()
 
@@ -186,20 +193,9 @@ class LineupProvider:
         return message
 
     def formatted_team_players(self, team):
-        if team not in self.team_to_players:
+        if team not in self.formatted_teams:
             return ["{} is not playing on {}.".format(team, self.coming_game_date)]
-
-        messages = []
-        message = ""
-
-        for player_id in self.team_to_players[team]:
-            new_message = self.players[player_id]['formatted']
-            message, _ = truncate_message(messages, message, new_message, 1950)
-
-        if message != "":
-            messages.append(message)
-
-        return messages
+        return self.formatted_teams[team]
 
     def detailed_player(self, player, collection):
         scores, total, bonus = compute_vgn_scores(player, collection)
