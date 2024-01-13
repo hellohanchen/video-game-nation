@@ -50,8 +50,6 @@ MESSAGE_CHANNELS = []
 PREVIOUS_MESSAGE_IDS = {}
 TS_CHANNEL_ID = 924447554480013343
 
-LOCK = threading.Lock()
-
 
 @bot.event
 async def on_ready():
@@ -70,7 +68,6 @@ async def on_ready():
 
 @tasks.loop(seconds=90)
 async def get_current_challenge():
-    LOCK.acquire()
     messages = [NBAProvider.get_scoreboard_message(CHALLENGE_PROVIDER.headline)]
 
     for challenge in CHALLENGE_PROVIDER.challenges:
@@ -81,7 +78,6 @@ async def get_current_challenge():
     messages.append("ET: **{}** , UPDATE EVERY 90 SECONDS".format(datetime.now(TZ_ET).strftime("%m/%d/%Y, %H:%M:%S")))
 
     await update_channel_messages(messages, MESSAGE_CHANNELS, PREVIOUS_MESSAGE_IDS)
-    LOCK.release()
 
 
 async def purge_channel(channel):
@@ -93,22 +89,14 @@ async def purge_channel(channel):
 
 @bot.command(name="reload")
 async def reload(ctx):
-    LOCK.acquire()
     try:
         NBA_PROVIDER.reload()
         CHALLENGE_PROVIDER.reload()
-
-        for channel in MESSAGE_CHANNELS:
-            messages = [await channel.fetch_message(message_id) for message_id in PREVIOUS_MESSAGE_IDS[channel.id]]
-            await channel.delete_messages(messages)
-        PREVIOUS_MESSAGE_IDS.clear()
     except Exception as err:
         await ctx.channel.send(f'Failed: ${err}.')
-        LOCK.release()
         return
 
     await ctx.channel.send("Reloaded")
-    LOCK.release()
 
 
 bot.run(TOKEN)
