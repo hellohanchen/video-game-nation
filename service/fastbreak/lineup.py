@@ -161,8 +161,8 @@ class LineupService(FastBreakService):
             self.lineups[lineup['user_id']] = Lineup(lineup, self)
 
     def reload(self):
-        coming_game_date = NBA_PROVIDER.get_coming_game_date()
         FB_PROVIDER.reload()
+        coming_game_date = FB_PROVIDER.get_coming_game_date()
         if self.coming_game_date != coming_game_date:
             self.coming_game_date = coming_game_date
             self.team_to_opponent = {}
