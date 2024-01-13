@@ -38,7 +38,7 @@ class MainPage(discord.ui.View):
         self.rank_service = rank_service
 
     def launch_fb(self, user_id):
-        if self.rank_service.status != "IN_GAME":
+        if self.rank_service.status != "IN_GAME" or self.rank_service.current_game_date not in FB_PROVIDER.fb_info:
             message = self.lineup_service.get_or_create_lineup(user_id).formatted()
         else:
             message = self.rank_service.formatted_user_score(user_id)

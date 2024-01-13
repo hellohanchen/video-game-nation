@@ -115,10 +115,13 @@ class RankingService(FastBreakService):
 
     def formatted_user_score(self, user_id):
         if self.status == "NO_GAME" or self.status == "PRE_GAME":
-            return ["Games are not started yet."]
+            return "Games are not started yet."
+
+        if self.current_game_date not in FB_PROVIDER.fb_info:
+            return "Games are not started yet."
 
         if user_id not in self.lineups:
-            return ["User lineup not found."]
+            return "User lineup not found."
         lineup = self.lineups[user_id]
 
         message = "🏀 ***{} GAMES***\n".format(self.current_game_date)
