@@ -121,6 +121,7 @@ class LineupService(FastBreakService):
         self.player_to_team = {}
         self.lineups = {}
         self.formatted_teams = {}
+        self.formatted_fb_schedule = ""
         self.reload()
 
     def __load_players(self):
@@ -161,6 +162,7 @@ class LineupService(FastBreakService):
 
     def reload(self):
         coming_game_date = NBA_PROVIDER.get_coming_game_date()
+        FB_PROVIDER.reload()
         if self.coming_game_date != coming_game_date:
             self.coming_game_date = coming_game_date
             self.team_to_opponent = {}
@@ -171,7 +173,12 @@ class LineupService(FastBreakService):
             self.formatted_teams = {}
             self.lineups = {}
 
-        FB_PROVIDER.reload()
+            fb_schedule = "**Schedule**\n\n"
+            for d in FB_PROVIDER.fb_info:
+                fb = FastBreak(FB_PROVIDER.fb_info[d])
+                fb_schedule += f"**{d}**\n{fb.get_formatted()[2:-4]}\n"
+            self.formatted_fb_schedule = fb_schedule
+
         self.fb = FastBreak(FB_PROVIDER.get_fb(self.coming_game_date))
         self.formatted_schedule = self.__formatted_schedule()
         self.__load_players()

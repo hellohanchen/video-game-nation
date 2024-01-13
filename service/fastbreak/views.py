@@ -1,5 +1,7 @@
 import discord
 
+from provider.topshot.fb_provider import FB_PROVIDER
+from service.fastbreak.fastbreak import FastBreak
 from service.fastbreak.lineup import LineupService
 from service.fastbreak.ranking import RankingService, RANK_SERVICE
 
@@ -92,11 +94,24 @@ class LineupScoreButton(discord.ui.Button['LineupScore']):
         await interaction.response.edit_message(content=message, view=new_view)
 
 
+class LineupScheduleButton(discord.ui.Button['LineupSchedule']):
+    def __init__(self):
+        super().__init__(style=discord.ButtonStyle.success, label="Schedule", row=1)
+
+    async def callback(self, interaction: discord.Interaction):
+        assert self.view is not None
+        view: LineupView = self.view
+        message, new_view = view.get_fb_schedule()
+
+        await interaction.response.edit_message(content=message, view=new_view)
+
+
 class LineupView(FastBreakView):
     def __init__(self, lineup_service, user_id):
         super().__init__(lineup_service, user_id)
         self.add_item(LineupTeamsButton())
         self.add_item(LineupRemoveButton())
+        self.add_item(LineupScheduleButton())
         self.add_item(LineupButton(2))
         self.add_item(LineupScoreButton())
         self.lineup = self.lineup_service.get_or_create_lineup(self.user_id)
@@ -110,6 +125,9 @@ class LineupView(FastBreakView):
 
     def check_score(self):
         return RANK_SERVICE.formatted_user_score(self.user_id), self
+
+    def get_fb_schedule(self):
+        return self.lineup_service.formatted_fb_schedule, self
 
 
 class RemovePlayerButton(discord.ui.Button['RemovePlayer']):

@@ -20,6 +20,7 @@ STATS_MAP = {
     "TD3": "triple doubles",
     "PFD": "fouls drawn",
     "PIP": "points in paint",
+    "PMP": "plus minus",
 }
 BOXSCORE_MAP = {
     "PTS": "points",
