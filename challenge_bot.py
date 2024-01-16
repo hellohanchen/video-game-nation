@@ -29,7 +29,9 @@ bot = commands.Bot(command_prefix='/', intents=intents)
 
 class ChallengeProvider:
     def __init__(self):
-        self.headline, self.challenges = load_challenges()
+        self.headline = ""
+        self.challenges = []
+        self.reload()
 
     def reload(self):
         self.headline, self.challenges = load_challenges()

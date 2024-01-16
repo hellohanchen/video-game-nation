@@ -1,7 +1,6 @@
 import discord
 
 from provider.topshot.fb_provider import FB_PROVIDER
-from service.fastbreak.fastbreak import FastBreak
 from service.fastbreak.lineup import LineupService
 from service.fastbreak.ranking import RankingService, RANK_SERVICE
 

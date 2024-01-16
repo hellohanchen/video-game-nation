@@ -1,13 +1,16 @@
 import pandas as pd
 
 from repository.config import CNX_POOL
+from repository.repository import rw_db
 
 
 def insert_user(discord_id, topshot_username, flow_address):
     try:
         db_conn = CNX_POOL.get_connection()
         cursor = db_conn.cursor()
-        query = "INSERT INTO vgn.users (id, topshot_username, flow_address) VALUES({}, '{}' ,'{}')".format(discord_id, topshot_username, flow_address)
+        query = "INSERT INTO vgn.users (id, topshot_username, flow_address) VALUES({}, '{}' ,'{}')".format(discord_id,
+                                                                                                           topshot_username,
+                                                                                                           flow_address)
         cursor.execute(query)
         db_conn.commit()
         db_conn.close()
@@ -15,6 +18,19 @@ def insert_user(discord_id, topshot_username, flow_address):
         return "DB error: {}".format(err)
 
     return "Put new user id: {}, topshot username: {}.".format(discord_id, topshot_username)
+
+
+def insert_and_get_user(discord_id, topshot_username, flow_address):
+    write = f"INSERT INTO vgn.users (id, topshot_username, flow_address) " \
+            f"VALUES({discord_id}, '{topshot_username}' ,'{flow_address}') ON DUPLICATE KEY UPDATE " \
+            f"topshot_username = VALUES(topshot_username), flow_address = VALUES(flow_address)"
+    read = f"SELECT * from vgn.users WHERE id={discord_id}"
+    record, err = rw_db(CNX_POOL, write, read)
+
+    if err is not None:
+        return None, err
+
+    return record[0], None
 
 
 def get_user(discord_id):
@@ -25,7 +41,11 @@ def get_user(discord_id):
         cursor.execute(query)
         result = cursor.fetchall()
         db_conn.close()
+
+        if len(result) == 0:
+            return None
         return result[0]
+
     except Exception:
         return None
 
