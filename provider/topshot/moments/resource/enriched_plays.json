@@ -54,8 +54,484 @@
     4221,
     4234
   ],
-  "count": 5085,
+  "count": 5111,
   "plays": {
+    "4686": [
+      {
+        "id": "368c78ea-f80a-44cc-bed0-36b2b7091e5f",
+        "flowId": 4686,
+        "set": "Throwdowns",
+        "setId": "9e028335-c44a-42b6-9a19-9fca5e89f08b",
+        "setFlowId": 127,
+        "playerId": 1630175,
+        "playerName": "Cole Anthony",
+        "team": "Orlando Magic",
+        "teamAtMoment": "Orlando Magic",
+        "playType": "Dunk",
+        "date": "2023-11-30",
+        "series": 5,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4685": [
+      {
+        "id": "cbd4ecee-625b-41b6-b561-8ee93475dd53",
+        "flowId": 4685,
+        "set": "Throwdowns",
+        "setId": "9e028335-c44a-42b6-9a19-9fca5e89f08b",
+        "setFlowId": 127,
+        "playerId": 1626204,
+        "playerName": "Larry Nance Jr.",
+        "team": "New Orleans Pelicans",
+        "teamAtMoment": "New Orleans Pelicans",
+        "playType": "Dunk",
+        "date": "2023-12-29",
+        "series": 5,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4684": [
+      {
+        "id": "739a0172-40f1-4fa4-a900-d14b93d781e0",
+        "flowId": 4684,
+        "set": "Throwdowns",
+        "setId": "9e028335-c44a-42b6-9a19-9fca5e89f08b",
+        "setFlowId": 127,
+        "playerId": 203507,
+        "playerName": "Giannis Antetokounmpo",
+        "team": "Milwaukee Bucks",
+        "teamAtMoment": "Milwaukee Bucks",
+        "playType": "Dunk",
+        "date": "2023-11-11",
+        "series": 5,
+        "tier": "Rare",
+        "badges": [
+          "CR"
+        ]
+      }
+    ],
+    "4683": [
+      {
+        "id": "4dbf3722-4afe-4103-8aa9-efe53796ddf3",
+        "flowId": 4683,
+        "set": "Throwdowns",
+        "setId": "9e028335-c44a-42b6-9a19-9fca5e89f08b",
+        "setFlowId": 127,
+        "playerId": 202695,
+        "playerName": "Kawhi Leonard",
+        "team": "LA Clippers",
+        "teamAtMoment": "LA Clippers",
+        "playType": "Dunk",
+        "date": "2023-11-30",
+        "series": 5,
+        "tier": "Rare",
+        "badges": [
+          "CR"
+        ]
+      }
+    ],
+    "4682": [
+      {
+        "id": "d51f8cd4-8525-40ee-9aec-bd647224dc5a",
+        "flowId": 4682,
+        "set": "Throwdowns",
+        "setId": "9e028335-c44a-42b6-9a19-9fca5e89f08b",
+        "setFlowId": 127,
+        "playerId": 1630167,
+        "playerName": "Obi Toppin",
+        "team": "Indiana Pacers",
+        "teamAtMoment": "Indiana Pacers",
+        "playType": "Dunk",
+        "date": "2023-11-22",
+        "series": 5,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4681": [
+      {
+        "id": "bc87ce19-d1f0-433e-a2db-66ae9f07e220",
+        "flowId": 4681,
+        "set": "Throwdowns",
+        "setId": "9e028335-c44a-42b6-9a19-9fca5e89f08b",
+        "setFlowId": 127,
+        "playerId": 1630224,
+        "playerName": "Jalen Green",
+        "team": "Houston Rockets",
+        "teamAtMoment": "Houston Rockets",
+        "playType": "Dunk",
+        "date": "2023-11-23",
+        "series": 5,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4680": [
+      {
+        "id": "ddda6cc5-83b2-49f0-a345-e621e3ed89f1",
+        "flowId": 4680,
+        "set": "Throwdowns",
+        "setId": "9e028335-c44a-42b6-9a19-9fca5e89f08b",
+        "setFlowId": 127,
+        "playerId": 1630228,
+        "playerName": "Jonathan Kuminga",
+        "team": "Golden State Warriors",
+        "teamAtMoment": "Golden State Warriors",
+        "playType": "Dunk",
+        "date": "2023-12-02",
+        "series": 5,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4679": [
+      {
+        "id": "b43e9edf-06fd-4da2-a471-81d8245119b3",
+        "flowId": 4679,
+        "set": "Throwdowns",
+        "setId": "9e028335-c44a-42b6-9a19-9fca5e89f08b",
+        "setFlowId": 127,
+        "playerId": 1631128,
+        "playerName": "Christian Braun",
+        "team": "Denver Nuggets",
+        "teamAtMoment": "Denver Nuggets",
+        "playType": "Dunk",
+        "date": "2023-12-15",
+        "series": 5,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4678": [
+      {
+        "id": "3a792fb0-e3e6-4902-8047-a5355d45e1a4",
+        "flowId": 4678,
+        "set": "Throwdowns",
+        "setId": "9e028335-c44a-42b6-9a19-9fca5e89f08b",
+        "setFlowId": 127,
+        "playerId": 1630702,
+        "playerName": "Jaden Hardy",
+        "team": "Dallas Mavericks",
+        "teamAtMoment": "Dallas Mavericks",
+        "playType": "Dunk",
+        "date": "2023-11-06",
+        "series": 5,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4677": [
+      {
+        "id": "a0ef332b-1221-450a-9198-5be60e861c14",
+        "flowId": 4677,
+        "set": "Throwdowns",
+        "setId": "9e028335-c44a-42b6-9a19-9fca5e89f08b",
+        "setFlowId": 127,
+        "playerId": 1629622,
+        "playerName": "Max Strus",
+        "team": "Cleveland Cavaliers",
+        "teamAtMoment": "Cleveland Cavaliers",
+        "playType": "Dunk",
+        "date": "2023-11-18",
+        "series": 5,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4676": [
+      {
+        "id": "6e2e8dc1-5cbc-44a2-8990-8496412f56d8",
+        "flowId": 4676,
+        "set": "Throwdowns",
+        "setId": "9e028335-c44a-42b6-9a19-9fca5e89f08b",
+        "setFlowId": 127,
+        "playerId": 204001,
+        "playerName": "Kristaps Porzi\u0146\u0123is",
+        "team": "Boston Celtics",
+        "teamAtMoment": "Boston Celtics",
+        "playType": "Dunk",
+        "date": "2023-11-23",
+        "series": 5,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4675": [
+      {
+        "id": "50de66c6-6b66-4f49-b491-4b82cc38ca03",
+        "flowId": 4675,
+        "set": "Throwdowns",
+        "setId": "9e028335-c44a-42b6-9a19-9fca5e89f08b",
+        "setFlowId": 127,
+        "playerId": 1629661,
+        "playerName": "Cameron Johnson",
+        "team": "Brooklyn Nets",
+        "teamAtMoment": "Brooklyn Nets",
+        "playType": "Dunk",
+        "date": "2023-12-01",
+        "series": 5,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4674": [
+      {
+        "id": "5dc876e4-a961-46fb-a6b9-adf61b5fb93b",
+        "flowId": 4674,
+        "set": "Fresh Thread",
+        "setId": "a29e38f3-0b6d-44db-be97-26a1d8c9019e",
+        "setFlowId": 126,
+        "playerId": 1629628,
+        "playerName": "RJ Barrett",
+        "team": "Toronto Raptors",
+        "teamAtMoment": "Toronto Raptors",
+        "playType": "Layup",
+        "date": "2024-01-02",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4673": [
+      {
+        "id": "e0dba9c3-abad-4938-bb8c-51974a8752c2",
+        "flowId": 4673,
+        "set": "Fresh Thread",
+        "setId": "a29e38f3-0b6d-44db-be97-26a1d8c9019e",
+        "setFlowId": 126,
+        "playerId": 1630193,
+        "playerName": "Immanuel Quickley",
+        "team": "Toronto Raptors",
+        "teamAtMoment": "Toronto Raptors",
+        "playType": "3 Pointer",
+        "date": "2024-01-02",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4672": [
+      {
+        "id": "4528bf5e-70df-47b5-9a61-933a43cb9a17",
+        "flowId": 4672,
+        "set": "Fresh Thread",
+        "setId": "a29e38f3-0b6d-44db-be97-26a1d8c9019e",
+        "setFlowId": 126,
+        "playerId": 1628384,
+        "playerName": "OG Anunoby",
+        "team": "New York Knicks",
+        "teamAtMoment": "New York Knicks",
+        "playType": "Dunk",
+        "date": "2024-01-01",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4671": [
+      {
+        "id": "d408a695-0497-46df-87a3-114e14b69585",
+        "flowId": 4671,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 203471,
+        "playerName": "Dennis Schr\u00f6der",
+        "team": "Toronto Raptors",
+        "teamAtMoment": "Toronto Raptors",
+        "playType": "Assist",
+        "date": "2023-11-01",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4670": [
+      {
+        "id": "c9f59237-4829-409e-88c7-8050eab6d8d0",
+        "flowId": 4670,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 203926,
+        "playerName": "Doug McDermott",
+        "team": "San Antonio Spurs",
+        "teamAtMoment": "San Antonio Spurs",
+        "playType": "Dunk",
+        "date": "2023-11-13",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4669": [
+      {
+        "id": "3ca70a70-f87e-47ee-834d-a03739e75ab1",
+        "flowId": 4669,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 1629014,
+        "playerName": "Anfernee Simons",
+        "team": "Portland Trail Blazers",
+        "teamAtMoment": "Portland Trail Blazers",
+        "playType": "Jump Shot",
+        "date": "2023-12-20",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4668": [
+      {
+        "id": "82c8a1ba-320b-49e3-acf4-9276b4d30c44",
+        "flowId": 4668,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 1631119,
+        "playerName": "Jaylin Williams",
+        "team": "Oklahoma City Thunder",
+        "teamAtMoment": "Oklahoma City Thunder",
+        "playType": "Block",
+        "date": "2023-12-30",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4667": [
+      {
+        "id": "f3adcceb-941c-4791-ab33-6420b2758592",
+        "flowId": 4667,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 1628978,
+        "playerName": "Donte DiVincenzo",
+        "team": "New York Knicks",
+        "teamAtMoment": "New York Knicks",
+        "playType": "Dunk",
+        "date": "2023-12-31",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4666": [
+      {
+        "id": "9a78ff0d-868c-45be-8f4c-c3ccbf021960",
+        "flowId": 4666,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 1628997,
+        "playerName": "Caleb Martin",
+        "team": "Miami Heat",
+        "teamAtMoment": "Miami Heat",
+        "playType": "Dunk",
+        "date": "2023-12-17",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4665": [
+      {
+        "id": "06591e05-566c-417f-ab5e-e75aa619527c",
+        "flowId": 4665,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 1628971,
+        "playerName": "Bruce Brown",
+        "team": "Indiana Pacers",
+        "teamAtMoment": "Indiana Pacers",
+        "playType": "Layup",
+        "date": "2023-12-03",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4664": [
+      {
+        "id": "b8dd3e9d-dec3-4e57-ba63-bcd2e525f5d6",
+        "flowId": 4664,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 1628386,
+        "playerName": "Jarrett Allen",
+        "team": "Cleveland Cavaliers",
+        "teamAtMoment": "Cleveland Cavaliers",
+        "playType": "Layup",
+        "date": "2023-12-28",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4663": [
+      {
+        "id": "915ed438-83cf-4565-8f36-384529272c76",
+        "flowId": 4663,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 1630208,
+        "playerName": "Nick Richards",
+        "team": "Charlotte Hornets",
+        "teamAtMoment": "Charlotte Hornets",
+        "playType": "Dunk",
+        "date": "2023-11-15",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4662": [
+      {
+        "id": "ac1f55ea-f300-4eb0-b9d7-ebf2ae6054ba",
+        "flowId": 4662,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 1628401,
+        "playerName": "Derrick White",
+        "team": "Boston Celtics",
+        "teamAtMoment": "Boston Celtics",
+        "playType": "Layup",
+        "date": "2023-12-21",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4661": [
+      {
+        "id": "41355061-cd1f-4040-8058-ba66c1960d34",
+        "flowId": 4661,
+        "set": "Rookie Debut",
+        "setId": "39eb0ef6-a729-4bdb-a9ca-783e2d825ef8",
+        "setFlowId": 125,
+        "playerId": 1631200,
+        "playerName": "Kris Murray",
+        "team": "Portland Trail Blazers",
+        "teamAtMoment": "Portland Trail Blazers",
+        "playType": "Dunk",
+        "date": "2023-11-16",
+        "series": 5,
+        "tier": "Common",
+        "badges": [
+          "RY",
+          "RM",
+          "TSD"
+        ]
+      }
+    ],
     "4660": [
       {
         "id": "5dbc906c-f72d-4fed-8490-1ddd5e3fc0e0",
