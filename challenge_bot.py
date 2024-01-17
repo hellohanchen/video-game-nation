@@ -12,6 +12,9 @@ from dotenv import load_dotenv
 from constants import TZ_ET
 from provider.nba.nba_provider import NBAProvider, NBA_PROVIDER
 from provider.topshot.challenge.challenge import Challenge
+from service.fastbreak.lineup import LINEUP_SERVICE
+from service.fastbreak.ranking import RANK_SERVICE
+from service.fastbreak.views import MainPage
 from utils import update_channel_messages
 
 load_dotenv()
@@ -48,9 +51,12 @@ def load_challenges():
 
 CHALLENGE_PROVIDER = ChallengeProvider()
 CHANNEL_NAMEs = ["⚡-fc-tracker"]
-MESSAGE_CHANNELS = []
-PREVIOUS_MESSAGE_IDS = {}
 TS_CHANNEL_ID = 924447554480013343
+
+CHALLENGE_CHANNELS = []
+CHALLENGE_MESSAGE_IDS = {}
+
+FB_CHANNEL_MESSAGES = []
 
 
 @bot.event
@@ -58,18 +64,27 @@ async def on_ready():
     for guild in bot.guilds:
         ts_channel = guild.get_channel(TS_CHANNEL_ID)
         if ts_channel is not None:
-            MESSAGE_CHANNELS.append(ts_channel)
+            CHALLENGE_CHANNELS.append(ts_channel)
+
+            view = MainPage(LINEUP_SERVICE, RANK_SERVICE)
+            message = await ts_channel.send(f"Track your fastbreak here!", view=view)
+            FB_CHANNEL_MESSAGES.append(message)
 
         for channel in guild.channels:
             if channel.name in CHANNEL_NAMEs:
                 await purge_channel(channel)
-                MESSAGE_CHANNELS.append(channel)
+                CHALLENGE_CHANNELS.append(channel)
 
-    get_current_challenge.start()
+                view = MainPage(LINEUP_SERVICE, RANK_SERVICE)
+                message = await channel.send(f"Track your fastbreak here!", view=view)
+                FB_CHANNEL_MESSAGES.append(message)
+
+    update_fastbreak.start()
+    update_challenges.start()
 
 
 @tasks.loop(seconds=90)
-async def get_current_challenge():
+async def update_challenges():
     messages = [NBAProvider.get_scoreboard_message(CHALLENGE_PROVIDER.headline)]
 
     for challenge in CHALLENGE_PROVIDER.challenges:
@@ -79,14 +94,14 @@ async def get_current_challenge():
 
     messages.append("ET: **{}** , UPDATE EVERY 90 SECONDS".format(datetime.now(TZ_ET).strftime("%m/%d/%Y, %H:%M:%S")))
 
-    await update_channel_messages(messages, MESSAGE_CHANNELS, PREVIOUS_MESSAGE_IDS)
+    await update_channel_messages(messages, CHALLENGE_CHANNELS, CHALLENGE_MESSAGE_IDS)
 
 
 async def purge_channel(channel):
     await channel.purge(limit=None)
     await channel.send("Purge this channel to track new challenge.")
-    if channel.id in PREVIOUS_MESSAGE_IDS:
-        PREVIOUS_MESSAGE_IDS[channel.id] = []
+    if channel.id in CHALLENGE_MESSAGE_IDS:
+        CHALLENGE_MESSAGE_IDS[channel.id] = []
 
 
 @bot.command(name="reload")
@@ -99,6 +114,14 @@ async def reload(ctx):
         return
 
     await ctx.channel.send("Reloaded")
+
+
+@tasks.loop(minutes=2)
+async def update_fastbreak():
+    RANK_SERVICE.update()
+    for message in FB_CHANNEL_MESSAGES:
+        view = MainPage(LINEUP_SERVICE, RANK_SERVICE)
+        await message.edit(content="Track your fastbreak here!", view=view)
 
 
 bot.run(TOKEN)

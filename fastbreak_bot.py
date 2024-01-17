@@ -26,7 +26,7 @@ bot = commands.Bot(command_prefix='.', intents=intents)
 FB_CHANNEL_NAMES = ["⚡-fast-break"]
 ADMIN_CHANNEL_NAMES = ["💻-admin"]
 
-FANTASY_CHANNEL_MESSAGES = []
+FB_CHANNEL_MESSAGES = []
 
 ADMIN_CHANNEL_IDS = []
 
@@ -43,10 +43,10 @@ async def on_ready():
                 emoji = guild.get_emoji(FB_EMOJI_ID)
                 view = MainPage(LINEUP_SERVICE, RANK_SERVICE)
                 if emoji is None:
-                    message = await channel.send(f"Start your fastbreak here!", view=view)
+                    message = await channel.send(f"Track your fastbreak here!", view=view)
                 else:
-                    message = await channel.send(f"Start your fastbreak here! {emoji}", view=view)
-                FANTASY_CHANNEL_MESSAGES.append(message)
+                    message = await channel.send(f"Track your fastbreak here! {emoji}", view=view)
+                FB_CHANNEL_MESSAGES.append(message)
 
     update_stats.start()
     refresh_entry.start()
@@ -77,13 +77,13 @@ async def update_stats():
 
 @tasks.loop(minutes=2)
 async def refresh_entry():
-    for message in FANTASY_CHANNEL_MESSAGES:
+    for message in FB_CHANNEL_MESSAGES:
         emoji = message.guild.get_emoji(FB_EMOJI_ID)
         view = MainPage(LINEUP_SERVICE, RANK_SERVICE)
         if emoji is None:
-            await message.edit(content="Start your fastbreak here!", view=view)
+            await message.edit(content="Track your fastbreak here!", view=view)
         else:
-            await message.edit(content=f"Start your fastbreak here! {emoji}", view=view)
+            await message.edit(content=f"Track your fastbreak here! {emoji}", view=view)
 
 
 # start the bot
