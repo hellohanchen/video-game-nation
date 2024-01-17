@@ -1,0 +1,96 @@
+{
+  "message": "NBA 2023-24",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "MONDAY HOOPS FLASH CHALLENGE",
+      "buckets": [
+        {
+          "description": "Lock one (1) Rare+ from the player who finishes with the highest fantasy points from the Western Conference on 12/18",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "team_filter": "WC",
+          "tier_breakers": [
+            {
+              "stats": "FPT",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "12/18/2023"
+          ]
+        },
+        {
+          "description": "Lock one (1) Rare+ from the player who finishes with the highest fantasy points from the Eastern Conference on 12/18",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "team_filter": "EC",
+          "tier_breakers": [
+            {
+              "stats": "FPT",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "12/18/2023"
+          ]
+        },
+        {
+          "description": "Lock one (1) Rookie Debut Moment from the 2023-24 Rookie with the best plus/minus on 12/18",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "player_filters": [
+            "SET,125"
+          ],
+          "tier_breakers": [
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "12/18/2023"
+          ]
+        },
+        {
+          "description": "Lock one (1) Top Shot Debut badged Moment from the player who attempts the most shots on 12/18",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "FGA",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "12/18/2023"
+          ]
+        },
+        {
+          "description": "Burn one (1) Rare+ Team Reel Moment from the team who wins by the most on 12/18",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": true,
+          "tier_breakers": [
+            {
+              "stats": "WIN",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "12/18/2023"
+          ]
+        }
+      ]
+    }
+  ]
+}

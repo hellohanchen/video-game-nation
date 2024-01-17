@@ -1,0 +1,116 @@
+{
+  "message": "NBA 2023-24",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "$5000 NBA WEEKEND PREDICTIVE CHALLENGE",
+      "buckets": [
+        {
+          "description": "Predict who will have more assists across Dec 15 games? Trae Young, Tyrese Haliburton, or LeBron James?",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "player_filters": [
+            "ID,1629027,1630169,2544"
+          ],
+          "tier_breakers": [
+            {
+              "stats": "AST",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "12/15/2023"
+          ]
+        },
+        {
+          "description": "Predict a Team to win on December 15th",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 8,
+          "is_team": true,
+          "tier_breakers": [
+            {
+              "stats": "WIN",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "12/15/2023"
+          ]
+        },
+        {
+          "description": "Who will have more points across Dec 16 games? Giannis Antetokounmpo, Joel Embiid or Luka Dončić?",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "player_filters": [
+            "ID,203507,203954,1629029"
+          ],
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "12/16/2023"
+          ]
+        },
+        {
+          "description": "Predict a Team to win on December 16th",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 10,
+          "is_team": true,
+          "tier_breakers": [
+            {
+              "stats": "WIN",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "12/16/2023"
+          ]
+        },
+        {
+          "description": "Predict Who will have the most 3-pointers made across Dec 17 games? Jayson Tatum, Devin Booker, or Steph Curry?",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "player_filters": [
+            "ID,1628369,1626164,201939"
+          ],
+          "tier_breakers": [
+            {
+              "stats": "3PT",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "12/17/2023"
+          ]
+        },
+        {
+          "description": "Predict a Team to win on December 17th",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 5,
+          "is_team": true,
+          "tier_breakers": [
+            {
+              "stats": "WIN",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "12/17/2023"
+          ]
+        }
+      ]
+    }
+  ]
+}

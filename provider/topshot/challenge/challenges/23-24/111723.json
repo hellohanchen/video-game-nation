@@ -1,0 +1,66 @@
+{
+  "message": "NBA 2023-24",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "NEW DISCORD WEEKEND FLASH⚡",
+      "buckets": [
+        {
+          "description": "Common Top Shot Debut of all players this weekend who record 10 or more assists",
+          "is_wildcard": false,
+          "type": "QA",
+          "count": 30,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "AST,10",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "11/17/2023",
+            "11/18/2023",
+            "11/19/2023"
+          ]
+        },
+        {
+          "description": "Common Top Shot Debut of all players this weekend who grab 12 or more rebounds",
+          "is_wildcard": false,
+          "type": "QA",
+          "count": 30,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "REB,12",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "11/17/2023",
+            "11/18/2023",
+            "11/19/2023"
+          ]
+        },
+        {
+          "description": "Common Top Shot Debut of all players this weekend who score 30 or more points",
+          "is_wildcard": false,
+          "type": "QA",
+          "count": 30,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "PTS,30",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "11/17/2023",
+            "11/18/2023",
+            "11/19/2023"
+          ]
+        }
+      ]
+    }
+  ]
+}
+

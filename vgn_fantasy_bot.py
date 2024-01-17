@@ -8,15 +8,15 @@ from discord.ext import commands, tasks
 from dotenv import load_dotenv
 
 from constants import TZ_ET
-from discord_fantasy.views import MainPage
-from provider.nba_provider import NBA_PROVIDER
+from service.fantasy.views import MainPage
+from provider.nba.nba_provider import NBA_PROVIDER
 from repository.vgn_collections import upsert_collection as repo_upsert_collection
-from repository.vgn_users import get_user, insert_user
+from repository.vgn_users import insert_user
 from service.fantasy import LINEUP_PROVIDER
 from service.fantasy.ranking import RANK_PROVIDER
-from topshot.cadence.flow_collections import get_account_plays
-from topshot.graphql.get_address import get_flow_address
-from utils import update_channel_messages
+from provider.topshot.cadence.flow_collections import get_account_plays
+from provider.topshot.graphql.get_address import get_flow_address
+from utils import update_channel_messages, get_the_past_week, send_channel_messages
 
 # config bot
 load_dotenv()
@@ -31,12 +31,14 @@ intents.presences = False
 
 bot = commands.Bot(command_prefix='.', intents=intents)
 LB_CHANNEL_NAMES = ["📊-leaderboard"]
-GAMES_CHANNEL_NAMES = ["📅-games"]
+GAMES_CHANNEL_NAMES = ["📅-game-schedule"]
+PLAYERS_CHANNEL_NAMES = ["⛹-players"]
 FANTASY_CHANNEL_NAMES = ["🎮-fantasy"]
 ADMIN_CHANNEL_NAMES = ["💻-admin"]
 
 LB_CHANNELS = []
 GAMES_CHANNELS = []
+PLAYERS_CHANNELS = []
 FANTASY_CHANNEL_MESSAGES = []
 
 ADMIN_CHANNEL_IDS = []
@@ -57,6 +59,8 @@ async def on_ready():
                 LB_CHANNELS.append(channel)
             if channel.name in GAMES_CHANNEL_NAMES:
                 GAMES_CHANNELS.append(channel)
+            if channel.name in PLAYERS_CHANNEL_NAMES:
+                PLAYERS_CHANNELS.append(channel)
             if channel.name in ADMIN_CHANNEL_NAMES:
                 ADMIN_CHANNEL_IDS.append(channel.id)
             if channel.name in FANTASY_CHANNEL_NAMES:
@@ -68,7 +72,7 @@ async def on_ready():
                     message = await channel.send(f"Ready to start daily NBA fantasy game? {emoji}", view=view)
                 FANTASY_CHANNEL_MESSAGES.append(message)
 
-    update_scorebox.start()
+    update_leaderboard.start()
     update_games.start()
     refresh_entry.start()
 
@@ -93,10 +97,11 @@ async def reload(context):
     if context.channel.id not in ADMIN_CHANNEL_IDS:
         return
 
-    NBA_PROVIDER.fresh_schedule()
+    NBA_PROVIDER.reload()
     LINEUP_PROVIDER.reload()
     RANK_PROVIDER.reload()
-    LB_MESSAGE_IDS.clear()
+
+    await context.channel.send("reloaded")
 
 
 @bot.command(name='verify', help='[Admin] Insert a verified user record into db')
@@ -104,11 +109,13 @@ async def verify_user(context, username, topshot_username):
     if context.channel.id not in ADMIN_CHANNEL_IDS:
         return
 
+    username = username.replace("~", " ")
     guild = discord.utils.find(lambda g: g.name == GUILD, bot.guilds)
-    member = discord.utils.find(lambda m: username == "{}#{}".format(m.name, m.discriminator), guild.members)
+    member = discord.utils.find(lambda m: username == m.name, guild.members)
 
     if member is None:
         await context.channel.send("Discord user {} not found.".format(username))
+        return
 
     flow_address = await get_flow_address(topshot_username)
 
@@ -121,29 +128,36 @@ async def verify_user(context, username, topshot_username):
         await context.channel.send("Topshot user {} not found.".format(topshot_username))
 
 
-@bot.command(name='find', help='Find the snowflake id of a user')
-async def find_user_id(context, username):
-    guild = discord.utils.find(lambda g: g.name == GUILD, bot.guilds)
-    member = discord.utils.find(lambda m: username == "{}#{}".format(m.name, m.discriminator), guild.members)
-
-    if member is None:
-        await context.channel.send("User {} not found.".format(username))
-    else:
-        await context.channel.send(member.id)
-
+############
+# Commands
+############
 
 ############
 # Routines
 ############
 @tasks.loop(minutes=5)
-async def update_scorebox():
+async def update_leaderboard():
+    init_status = RANK_PROVIDER.status
     RANK_PROVIDER.update()
+    new_status = RANK_PROVIDER.status
 
-    messages = RANK_PROVIDER.formatted_leaderboard(20)
+    global LB_MESSAGE_IDS
+    if init_status == "POST_GAME" and new_status == "PRE_GAME":
+        dates = get_the_past_week(RANK_PROVIDER.current_game_date)
+        messages = RANK_PROVIDER.formatted_weekly_leaderboard(dates, 20)
+        await send_channel_messages(messages, LB_CHANNELS)
 
-    messages.append("ET: **{}** , UPDATE EVERY 5 MINS".format(datetime.now(TZ_ET).strftime("%H:%M:%S")))
+        PLAYERS_MESSAGE_IDS.clear()
+        LB_MESSAGE_IDS.clear()
+    else:
+        messages = RANK_PROVIDER.formatted_leaderboard(20)
+        messages.append("ET: **{}** , UPDATE EVERY 5 MINS".format(datetime.now(TZ_ET).strftime("%H:%M:%S")))
 
-    await update_channel_messages(messages, LB_CHANNELS, LB_MESSAGE_IDS)
+        await update_channel_messages(messages, LB_CHANNELS, LB_MESSAGE_IDS)
+
+        messages = RANK_PROVIDER.formatted_players(20)
+        messages.append("ET: **{}** , UPDATE EVERY 5 MINS".format(datetime.now(TZ_ET).strftime("%H:%M:%S")))
+        await update_channel_messages(messages, PLAYERS_CHANNELS, PLAYERS_MESSAGE_IDS)
 
 
 @tasks.loop(minutes=2)

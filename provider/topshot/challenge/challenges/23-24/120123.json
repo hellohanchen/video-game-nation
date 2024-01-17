@@ -1,0 +1,78 @@
+{
+  "message": "NBA 2023-24",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "$4,000 NBA WEEKEND FLASH CHALLENGE - 12/1 & 12/2",
+      "buckets": [
+        {
+          "description": "1x Top Shot Debut Moment of a player who accumulates a combined 45 or more points + rebounds + assists in a single game",
+          "is_wildcard": false,
+          "type": "QA",
+          "count": 0,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "PTS,REB,AST,45",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "12/01/2023",
+            "12/02/2023"
+          ]
+        },
+        {
+          "description": "2x Rare Moments from any player who achieves a double-double in a single game",
+          "is_wildcard": false,
+          "type": "QA",
+          "count": 2,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "PTS,10",
+              "order": "DESC"
+            },
+            {
+              "stats": "REB,10",
+              "order": "DESC"
+            },
+            {
+              "stats": "AST,10",
+              "order": "DESC"
+            },
+            {
+              "stats": "STL,10",
+              "order": "DESC"
+            },
+            {
+              "stats": "BLK,10",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "12/01/2023",
+            "12/02/2023"
+          ]
+        },
+        {
+          "description": "3x Top Shot Debut Moments from the three players who have the highest +/- rating",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 3,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "12/01/2023",
+            "12/02/2023"
+          ]
+        }
+      ]
+    }
+  ]
+}

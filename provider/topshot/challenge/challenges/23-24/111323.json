@@ -1,0 +1,83 @@
+{
+  "message": "NBA 2023-24",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "NEW DISCORD FLASH (NOV 13-14) ⚡️ ",
+      "buckets": [
+        {
+          "description": "x1 Common Top Shot Debut from the player who makes the most threes in a single game",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "3PT",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "11/13/2023",
+            "11/14/2023"
+          ]
+        },
+        {
+          "description": "x1 Common Top Shot Debut from the player who records the most blocks + steals in a single game",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "BLK,STL",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "11/13/2023",
+            "11/14/2023"
+          ]
+        },
+        {
+          "description": "x1 Common Top Shot Debut from the player who has the best + / - (Plus Minus)",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "11/13/2023",
+            "11/14/2023"
+          ]
+        },
+        {
+          "description": "x1 2023-24 Rookie Debut Moment from the player who leads in Points + Rebounds + Assists",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "player_filters": [
+            "TS,5,RP"
+          ],
+          "tier_breakers": [
+            {
+              "stats": "PTS,REB,AST",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "11/13/2023",
+            "11/14/2023"
+          ]
+        }
+      ]
+    }
+  ]
+}
+

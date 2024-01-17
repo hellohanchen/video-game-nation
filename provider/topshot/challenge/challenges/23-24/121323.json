@@ -1,0 +1,107 @@
+{
+  "message": "NBA 2023-24",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "$5000 NBA PREDICTIVE CHALLENGE (12/13 & 12/14)",
+      "buckets": [
+        {
+          "description": "Predict the player with the most three-pointers made in games played on 12/13",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "3PT",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "12/13/2023"
+          ]
+        },
+        {
+          "description": "Predict the player with the most rebounds in games played on 12/13",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "REB",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "12/13/2023"
+          ]
+        },
+        {
+          "description": "Predict a team that will win their game played on 12/13",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 9,
+          "is_team": true,
+          "tier_breakers": [
+            {
+              "stats": "WIN",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "12/13/2023"
+          ]
+        },
+        {
+          "description": "Predict the player with the most blocks in games played on 12/14",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "BLK",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "12/14/2023"
+          ]
+        },
+        {
+          "description": "Predict the player with the most total points scored in games played on 12/14",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "12/14/2023"
+          ]
+        },
+        {
+          "description": "Predict a team that will win their game played on 12/14",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 7,
+          "is_team": true,
+          "tier_breakers": [
+            {
+              "stats": "WIN",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "12/14/2023"
+          ]
+        }
+      ]
+    }
+  ]
+}

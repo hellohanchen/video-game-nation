@@ -1,0 +1,99 @@
+{
+  "message": "NBA 2023-24",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "Now Live: Flex The Badge Flash",
+      "buckets": [
+        {
+          "description": "Lock a Team Reel Moment from the team with the largest win tonight (point differential)",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": true,
+          "team_filter": "WIN",
+          "tier_breakers": [
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "12/11/2023"
+          ]
+        },
+        {
+          "description": "Lock a Rookie Debut from the 2023-24 Rookie with the most total points scored tonight",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "player_filters": [
+            "SET,125"
+          ],
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "12/11/2023"
+          ]
+        },
+        {
+          "description": "Lock a Top Shot Debut from the bench player with the most total points",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "BENCH_PTS",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "12/11/2023"
+          ]
+        },
+        {
+          "description": "Burn a Rare Moment from any player who leads their team in assists (only 1 moment total)",
+          "segment": "TEAM",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "AST",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "12/11/2023"
+          ]
+        },
+        {
+          "description": "Burn a NBA MVP badge Moment from any former MVP player with the most total points + rebounds tonight",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "player_filters": [
+            "ID,203954,203999,203507,2544,201939,201566,201142"
+          ],
+          "tier_breakers": [
+            {
+              "stats": "PTS,REB",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "12/11/2023"
+          ]
+        }
+      ]
+    }
+  ]
+}

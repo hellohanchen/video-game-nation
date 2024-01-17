@@ -1,0 +1,144 @@
+{
+  "sets": [
+    {
+      "id": "1435ea5e-d16f-4622-8a27-58d7f6b62c81",
+      "flowId": 134,
+      "flowName": "Metallic Gold LE",
+      "flowSeriesNumber": 5,
+      "sortID": null
+    },
+    {
+      "id": "b350a61d-28b1-4468-8f2c-2960166aeb57",
+      "flowId": 133,
+      "flowName": "Extra Spice",
+      "flowSeriesNumber": 5,
+      "sortID": null
+    },
+    {
+      "id": "fb847463-981a-49ba-8167-2f5bd595dc82",
+      "flowId": 132,
+      "flowName": "Hustle and Show",
+      "flowSeriesNumber": 5,
+      "sortID": null
+    },
+    {
+      "id": "5f422f6c-fd11-4338-91e0-b9bbcb878583",
+      "flowId": 131,
+      "flowName": "Holo Icon",
+      "flowSeriesNumber": 5,
+      "sortID": null
+    },
+    {
+      "id": "05750986-0bfe-4b6b-91c2-ac000db27f2d",
+      "flowId": 130,
+      "flowName": "Video Game Numbers",
+      "flowSeriesNumber": 5,
+      "sortID": null
+    },
+    {
+      "id": "df77ed08-fb06-4823-81fb-26bd51daf95b",
+      "flowId": 129,
+      "flowName": "Archive Set",
+      "flowSeriesNumber": 5,
+      "sortID": null
+    },
+    {
+      "id": "00ac1ba7-32f9-4d49-8603-b7456d30695d",
+      "flowId": 128,
+      "flowName": "For The Win",
+      "flowSeriesNumber": 5,
+      "sortID": null
+    },
+    {
+      "id": "9e028335-c44a-42b6-9a19-9fca5e89f08b",
+      "flowId": 127,
+      "flowName": "Throwdowns",
+      "flowSeriesNumber": 5,
+      "sortID": null
+    },
+    {
+      "id": "a29e38f3-0b6d-44db-be97-26a1d8c9019e",
+      "flowId": 126,
+      "flowName": "Fresh Thread",
+      "flowSeriesNumber": 5,
+      "sortID": null
+    },
+    {
+      "id": "39eb0ef6-a729-4bdb-a9ca-783e2d825ef8",
+      "flowId": 125,
+      "flowName": "Rookie Debut",
+      "flowSeriesNumber": 5,
+      "sortID": null
+    },
+    {
+      "id": "6eb21421-c204-45ab-8512-8f52e112e39c",
+      "flowId": 124,
+      "flowName": "Base Set",
+      "flowSeriesNumber": 5,
+      "sortID": null
+    },
+    {
+      "id": "046246c6-5614-477d-a323-916306dae024",
+      "flowId": 123,
+      "flowName": "WNBA Origins",
+      "flowSeriesNumber": 4,
+      "sortID": null
+    },
+    {
+      "id": "449c21ff-7dd0-4fde-a6f3-a6cc0a201e52",
+      "flowId": 122,
+      "flowName": "Road To Royalty",
+      "flowSeriesNumber": 4,
+      "sortID": null
+    },
+    {
+      "id": "b3ba922b-8f72-40f5-b034-438238a2487c",
+      "flowId": 120,
+      "flowName": "Run It Back: Origins 2014-19",
+      "flowSeriesNumber": 4,
+      "sortID": null
+    },
+    {
+      "id": "82747952-73e4-4922-81f1-12e96bd89e23",
+      "flowId": 119,
+      "flowName": "Archive Set 2014-19",
+      "flowSeriesNumber": 4,
+      "sortID": null
+    },
+    {
+      "id": "b32d535a-8e69-401d-a303-872b84c9f77b",
+      "flowId": 117,
+      "flowName": "The Anthology: Larry Bird",
+      "flowSeriesNumber": 4,
+      "sortID": null
+    },
+    {
+      "id": "3a880c8b-c080-4cc7-b393-b3a83dd54a35",
+      "flowId": 114,
+      "flowName": "The Anthology: Steph Curry",
+      "flowSeriesNumber": 4,
+      "sortID": null
+    },
+    {
+      "id": "5edb821c-d808-4615-a6e7-7631aa15f7b0",
+      "flowId": 109,
+      "flowName": "The Anthology: Kevin Durant",
+      "flowSeriesNumber": 4,
+      "sortID": null
+    },
+    {
+      "id": "378eca01-3f24-40d4-b108-349af607dcf2",
+      "flowId": 100,
+      "flowName": "The Anthology: LeBron James",
+      "flowSeriesNumber": 4,
+      "sortID": null
+    },
+    {
+      "id": "6d9f3306-7ced-41d7-bb87-3d2a12a0e97a",
+      "flowId": 74,
+      "flowName": "The Anthology: Magic Johnson",
+      "flowSeriesNumber": 4,
+      "sortID": null
+    }
+  ]
+}

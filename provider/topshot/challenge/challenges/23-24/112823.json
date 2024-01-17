@@ -1,0 +1,96 @@
+{
+  "message": "NBA 2023-24",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "NBA IN-SEASON FLAMES FLASH CHALLENGE",
+      "buckets": [
+        {
+          "description": "1 Rare or Legendary from the player with the most three-pointers made in a single game",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "3PT",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "11/28/2023",
+            "11/29/2023"
+          ]
+        },
+        {
+          "description": "1 Rare or Legendary from the player with the most assists in a single game",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "AST",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "11/28/2023",
+            "11/29/2023"
+          ]
+        },
+        {
+          "description": "1 Rare or Legendary from the player with the most rebounds in a single game",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "REB",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "11/28/2023",
+            "11/29/2023"
+          ]
+        },
+        {
+          "description": "1 Rare or Legendary from the player with the most blocks in a single game",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "BLK",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "11/28/2023",
+            "11/29/2023"
+          ]
+        },
+        {
+          "description": "1 Rare or Legendary from the player with the most steals in a single game",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "STL",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "11/28/2023",
+            "11/29/2023"
+          ]
+        }
+      ]
+    }
+  ]
+}

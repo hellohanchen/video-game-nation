@@ -1,4 +1,5 @@
 import datetime
+import time
 from typing import Dict, Union
 
 from constants import EMPTY_PLAYER_COLLECTION, STATS_PLAY_TYPE, STATS_SCORE
@@ -108,17 +109,18 @@ def compute_vgn_scores(player, collection=None):
     total_score = 0.0
     total_bonus = 0.0
     for stats, play_type in STATS_PLAY_TYPE.items():
-        if STATS_SCORE[stats] > 0.0:
+        bonus_rate = min(0.1, float(collection[play_type]) / 1000.0)
+        if STATS_SCORE[stats] >= 0.0:
             scores[stats] = {
                 'score': player[stats] * STATS_SCORE[stats],
-                'bonus': player[stats] * STATS_SCORE[stats] * float(collection[play_type]) / 1000.0,
+                'bonus': player[stats] * STATS_SCORE[stats] * bonus_rate,
             }
             total_score += scores[stats]['score']
             total_bonus += scores[stats]['bonus']
         else:
             scores[stats] = {
                 'score': player[stats] * STATS_SCORE[stats],
-                'bonus': - player[stats] * STATS_SCORE[stats] * float(collection[play_type]) / 1000.0,
+                'bonus': - player[stats] * STATS_SCORE[stats] * bonus_rate,
             }
             total_score += scores[stats]['score']
             total_bonus += scores[stats]['bonus']
@@ -171,6 +173,18 @@ async def update_channel_messages(msgs, channels, messages_ids):
         except Exception as err:
             print(err)
             continue
+        time.sleep(5)
+
+
+async def send_channel_messages(msgs, channels):
+    for channel in channels:
+        try:
+            for i in range(0, len(msgs)):
+                await channel.send(msgs[i])
+
+        except Exception as err:
+            print(err)
+            continue
 
 
 def parse_dash_date(dt):
@@ -183,6 +197,18 @@ def parse_slash_date(dt):
 
 def to_slash_date(dt):
     return dt.strftime('%m/%d/%Y')
+
+
+def get_the_past_week(date):
+    today = parse_slash_date(date)
+    idx = (today.weekday() + 1) % 7  # Mon = 1, ..., Sat = 6, Sun = 0
+
+    dates = []
+    for i in range(idx, -1, -1):
+        d = today - datetime.timedelta(days=i)
+        dates.append(to_slash_date(d))
+
+    return dates
 
 
 def equals(s1: list, s2: list) -> bool:

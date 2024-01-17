@@ -1,0 +1,45 @@
+{
+  "message": "NBA 2023-24",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "NBA LOCK IT DOWN FLASH CHALLENGE 12/5 & 12/6",
+      "buckets": [
+        {
+          "description": "Lock one (1) Rare or Legendary Moment from every player with four (4) or more combined steals + blocks in a single game",
+          "is_wildcard": false,
+          "type": "QA",
+          "count": 0,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "STL,BLK,4",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "12/05/2023",
+            "12/06/2023"
+          ]
+        },
+        {
+          "description": "Burn one (1) Top Shot Debut badge Moment from any player with 10 or more rebounds in a single game",
+          "is_wildcard": false,
+          "type": "QA",
+          "count": 0,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "REB,10",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "12/05/2023",
+            "12/06/2023"
+          ]
+        }
+      ]
+    }
+  ]
+}

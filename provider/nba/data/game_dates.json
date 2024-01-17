@@ -1562,139 +1562,139 @@
     }
   },
   "12/04/2023": {
-    "0022301201": {
-      "homeTeam": "",
-      "awayTeam": ""
+    "0022301202": {
+      "homeTeam": "IND",
+      "awayTeam": "BOS"
     },
-    "0022301203": {
-      "homeTeam": "",
-      "awayTeam": ""
+    "0022301204": {
+      "homeTeam": "SAC",
+      "awayTeam": "NOP"
     }
   },
   "12/05/2023": {
-    "0022301202": {
-      "homeTeam": "",
-      "awayTeam": ""
+    "0022301201": {
+      "homeTeam": "MIL",
+      "awayTeam": "NYK"
     },
-    "0022301204": {
-      "homeTeam": "",
-      "awayTeam": ""
+    "0022301203": {
+      "homeTeam": "LAL",
+      "awayTeam": "PHX"
     }
   },
   "12/06/2023": {
     "0022301205": {
-      "homeTeam": "",
-      "awayTeam": ""
+      "homeTeam": "CLE",
+      "awayTeam": "ORL"
     },
     "0022301206": {
-      "homeTeam": "",
-      "awayTeam": ""
+      "homeTeam": "DET",
+      "awayTeam": "MEM"
     },
     "0022301207": {
-      "homeTeam": "",
-      "awayTeam": ""
+      "homeTeam": "TOR",
+      "awayTeam": "MIA"
     },
     "0022301208": {
-      "homeTeam": "",
-      "awayTeam": ""
+      "homeTeam": "WAS",
+      "awayTeam": "PHI"
     },
     "0022301209": {
-      "homeTeam": "",
-      "awayTeam": ""
+      "homeTeam": "ATL",
+      "awayTeam": "BKN"
     },
     "0022301210": {
-      "homeTeam": "",
-      "awayTeam": ""
+      "homeTeam": "MIN",
+      "awayTeam": "SAS"
     },
     "0022301211": {
-      "homeTeam": "",
-      "awayTeam": ""
+      "homeTeam": "CHI",
+      "awayTeam": "CHA"
     },
     "0022301212": {
-      "homeTeam": "",
-      "awayTeam": ""
+      "homeTeam": "HOU",
+      "awayTeam": "OKC"
     },
     "0022301213": {
-      "homeTeam": "",
-      "awayTeam": ""
+      "homeTeam": "DAL",
+      "awayTeam": "UTA"
     },
     "0022301214": {
-      "homeTeam": "",
-      "awayTeam": ""
+      "homeTeam": "GSW",
+      "awayTeam": "POR"
     },
     "0022301215": {
-      "homeTeam": "",
-      "awayTeam": ""
+      "homeTeam": "LAC",
+      "awayTeam": "DEN"
     }
   },
   "12/07/2023": {
     "0022301229": {
-      "homeTeam": "",
-      "awayTeam": ""
+      "homeTeam": "MIL",
+      "awayTeam": "IND"
     },
     "0022301230": {
-      "homeTeam": "",
-      "awayTeam": ""
+      "homeTeam": "LAL",
+      "awayTeam": "NOP"
     }
   },
   "12/08/2023": {
     "0022301216": {
-      "homeTeam": "",
-      "awayTeam": ""
+      "homeTeam": "CHA",
+      "awayTeam": "TOR"
     },
     "0022301217": {
-      "homeTeam": "",
-      "awayTeam": ""
+      "homeTeam": "ORL",
+      "awayTeam": "DET"
     },
     "0022301218": {
-      "homeTeam": "",
-      "awayTeam": ""
+      "homeTeam": "PHI",
+      "awayTeam": "ATL"
     },
     "0022301219": {
-      "homeTeam": "",
-      "awayTeam": ""
+      "homeTeam": "BKN",
+      "awayTeam": "WAS"
     },
     "0022301220": {
-      "homeTeam": "",
-      "awayTeam": ""
+      "homeTeam": "MIA",
+      "awayTeam": "CLE"
     },
     "0022301221": {
-      "homeTeam": "",
-      "awayTeam": ""
+      "homeTeam": "MEM",
+      "awayTeam": "MIN"
     },
     "0022301222": {
-      "homeTeam": "",
-      "awayTeam": ""
+      "homeTeam": "OKC",
+      "awayTeam": "GSW"
     },
     "0022301223": {
-      "homeTeam": "",
-      "awayTeam": ""
+      "homeTeam": "SAS",
+      "awayTeam": "CHI"
     },
     "0022301224": {
-      "homeTeam": "",
-      "awayTeam": ""
+      "homeTeam": "DEN",
+      "awayTeam": "HOU"
     },
     "0022301225": {
-      "homeTeam": "",
-      "awayTeam": ""
+      "homeTeam": "UTA",
+      "awayTeam": "LAC"
     },
     "0022301226": {
-      "homeTeam": "",
-      "awayTeam": ""
+      "homeTeam": "POR",
+      "awayTeam": "DAL"
     },
     "0022301227": {
-      "homeTeam": "",
-      "awayTeam": ""
+      "homeTeam": "BOS",
+      "awayTeam": "NYK"
     },
     "0022301228": {
-      "homeTeam": "",
-      "awayTeam": ""
+      "homeTeam": "PHX",
+      "awayTeam": "SAC"
     }
   },
   "12/09/2023": {
     "0062300001": {
-      "homeTeam": "",
-      "awayTeam": ""
+      "homeTeam": "LAL",
+      "awayTeam": "IND"
     }
   },
   "12/11/2023": {
@@ -3829,6 +3829,26 @@
       "awayTeam": "MIN"
     }
   },
+  "02/16/2024": {
+    "0032300004": {
+      "homeTeam": "",
+      "awayTeam": ""
+    },
+    "0032300005": {
+      "homeTeam": "",
+      "awayTeam": ""
+    },
+    "0032300006": {
+      "homeTeam": "",
+      "awayTeam": ""
+    }
+  },
+  "02/18/2024": {
+    "0032300001": {
+      "homeTeam": "EST",
+      "awayTeam": "WST"
+    }
+  },
   "02/22/2024": {
     "0022300792": {
       "homeTeam": "CLE",
@@ -3983,8 +4003,8 @@
   },
   "02/26/2024": {
     "0022300828": {
-      "homeTeam": "DET",
-      "awayTeam": "NYK"
+      "homeTeam": "NYK",
+      "awayTeam": "DET"
     },
     "0022300829": {
       "homeTeam": "IND",

@@ -1,0 +1,111 @@
+{
+  "message": "NBA 2023-24",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "$2,023 NBA FLASH CHALLENGE - ALL ABOUT ROOKIES: LOCK a Rookie Debut 2023-24 Moment from the player that leads the league in each of the following categories across games on November 20th & November 21st, 2023",
+      "buckets": [
+        {
+          "description": "Points",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "player_filters": [
+            "SET,125"
+          ],
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "11/20/2023",
+            "11/21/2023"
+          ]
+        },
+        {
+          "description": "Rebounds",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "player_filters": [
+            "SET,125"
+          ],
+          "tier_breakers": [
+            {
+              "stats": "REB",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "11/20/2023",
+            "11/21/2023"
+          ]
+        },
+        {
+          "description": "Assists",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "player_filters": [
+            "SET,125"
+          ],
+          "tier_breakers": [
+            {
+              "stats": "AST",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "11/20/2023",
+            "11/21/2023"
+          ]
+        },
+        {
+          "description": "Blocks + Steals",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "player_filters": [
+            "SET,125"
+          ],
+          "tier_breakers": [
+            {
+              "stats": "BLK,STL",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "11/20/2023",
+            "11/21/2023"
+          ]
+        },
+        {
+          "description": "3 Pointers Made",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "player_filters": [
+            "SET,125"
+          ],
+          "tier_breakers": [
+            {
+              "stats": "3PT",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "11/20/2023",
+            "11/21/2023"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,9 +1,10 @@
 import json
 import os
 import pathlib
+from typing import Dict, List
 
-from nba_api.stats.endpoints import CommonPlayerInfo, PlayerDashboardByYearOverYear, LeagueDashPlayerBioStats, CommonAllPlayers
-from nba_api.stats.library.parameters import Season
+from nba_api.stats.endpoints import CommonPlayerInfo, PlayerDashboardByYearOverYear, CommonAllPlayers, \
+    LeagueDashPlayerStats
 
 
 def get_player_avg_stats(player_id):
@@ -18,13 +19,26 @@ def get_player_avg_stats(player_id):
         player_stats = PlayerDashboardByYearOverYear(player_id=str(player_id), per_mode_detailed='PerGame')
         player_avg_stats = player_stats.get_data_frames()[1].iloc[0]
     except Exception as err:
-        print(err)
+        print(f"Failed player id: {player_id}, fetch error {err}")
         return player_info, player_avg_stats
 
     return player_info, player_avg_stats
 
 
-def fresh_team_players() -> None:
+def get_player_stats_dashboard():
+    player_avg_stats = None
+    try:
+        # Create a LeagueDashPlayerStats instance to get all player's seasonal average stats
+        player_stats = LeagueDashPlayerStats(per_mode_detailed='PerGame')
+        player_avg_stats = player_stats.get_data_frames()[0].iloc
+    except Exception as err:
+        print(err)
+        return player_avg_stats
+
+    return player_avg_stats
+
+
+def fresh_team_players() -> tuple[Dict[str, List[int]], List[str]]:
     """
     Generates a JSON file containing a dictionary with team abbreviations as keys and a list of player IDs as values.
 
@@ -34,26 +48,37 @@ def fresh_team_players() -> None:
     named 'team_players.json'. If the 'data' folder or the JSON file do not exist, the function creates them. If they
     already exist, the function overwrites them with the latest data. This function does not return anything.
     """
-    season = Season.default
-    players = CommonAllPlayers(is_only_current_season=1, season=season).get_data_frames()[0]
+    players = CommonAllPlayers(is_only_current_season=1, timeout=60).get_data_frames()[0]
 
     if len(players) == 0:
         print("Team player data unavailable")
-        return
+        return {}, []
 
-    result = {}
+    team_players = {}
+    player_ids = {}
     for i in range(0, len(players)):
         player = players.iloc[i]
         team = player['TEAM_ABBREVIATION']
 
-        if team not in result:
-            result[team] = []
+        if team == "":
+            continue
+        if team not in team_players:
+            team_players[team] = []
 
-        result[team].append(int(player['PERSON_ID']))
+        player_id = str(player['PERSON_ID'])
+        team_players[team].append(int(player['PERSON_ID']))
+
+        if player_id not in player_ids:
+            player_ids[player_id] = True
 
     with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "data/team_players_23_24.json"), 'w') as file:
-        json.dump(result, file, indent=2)
+        json.dump(team_players, file, indent=2)
+
+    with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "data/current_nba_players.json"), 'w') as output:
+        json.dump(player_ids, output, indent=2)
+
+    return team_players, list(player_ids.keys())
 
 
 if __name__ == '__main__':
-    fresh_team_players()
+    get_player_stats_dashboard()

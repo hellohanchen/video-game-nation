@@ -1,0 +1,79 @@
+{
+  "message": "NBA 2023-24",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "DISCORD FLASH",
+      "buckets": [
+        {
+          "description": "1x 2023-24 Moment from a Rookie Debut who leads in PRA playing tonight (Points + Rebounds + Assist)",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "player_filters": [
+            "ID,1641705,1631096,1630703,1641708,1641709,1641706"
+          ],
+          "tier_breakers": [
+            {
+              "stats": "PTS,REB,AST",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "11/08/2023"
+          ]
+        },
+        {
+          "description": "1x Debut Moment from the player leading in Points",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "11/08/2023"
+          ]
+        },
+        {
+          "description": "1x Debut Moment from the player leading in Assists",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "AST",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "11/08/2023"
+          ]
+        },
+        {
+          "description": "1x Debut Moment from the player leading in Rebounds",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "REB",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "11/08/2023"
+          ]
+        }
+      ]
+    }
+  ]
+}
+

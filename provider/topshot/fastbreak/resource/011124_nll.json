@@ -1,0 +1,46 @@
+{
+  "01/11/2024": {
+    "count": 3,
+    "isCombine": true,
+    "buckets": [
+      {
+        "stats": "REB",
+        "target": 20,
+        "order": "DESC"
+      }
+    ]
+  },
+  "01/12/2024": {
+    "count": 3,
+    "isCombine": true,
+    "buckets": [
+      {
+        "stats": "3PT",
+        "target": 10,
+        "order": "DESC"
+      }
+    ]
+  },
+  "01/13/2024": {
+    "count": 3,
+    "isCombine": true,
+    "buckets": [
+      {
+        "stats": "PTS",
+        "target": 60,
+        "order": "DESC"
+      }
+    ]
+  },
+  "01/14/2024": {
+    "count": 3,
+    "isCombine": true,
+    "buckets": [
+      {
+        "stats": "AST",
+        "target": 25,
+        "order": "DESC"
+      }
+    ]
+  }
+}

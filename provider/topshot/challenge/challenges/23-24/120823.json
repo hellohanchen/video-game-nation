@@ -1,0 +1,93 @@
+{
+  "message": "NBA 2023-24",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "NBA IN-SEASON SHOWDOWN FLASH CHALLENGE",
+      "buckets": [
+        {
+          "description": "Lock one (1) Top Shot Debut badge Moment from the Western Conference player with the most combined points + rebs + assists across games played on 12/8",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "team_filter": "WC",
+          "tier_breakers": [
+            {
+              "stats": "PTS,REB,AST",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "12/08/2023"
+          ]
+        },
+        {
+          "description": "Lock one (1) Top Shot Debut badge Moment from the Eastern Conference player with the most combined steals + blocks + rebounds across games played on 12/8",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "team_filter": "EC",
+          "tier_breakers": [
+            {
+              "stats": "STL,BLK,REB",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "12/08/2023"
+          ]
+        },
+        {
+          "description": "Lock one (1) Rare or Legendary Moment from the leading scorer on the Western Conference team in the In-Season Tournament Championship game 12/9",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "team_filter": "WC",
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "12/09/2023"
+          ]
+        },
+        {
+          "description": "Lock one (1) Rare or Legendary Moment from the leading scorer on the Eastern Conference team in the In-Season Tournament Championship game 12/9",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "team_filter": "EC",
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "12/09/2023"
+          ]
+        },
+        {
+          "description": "Lock one (1) Top Shot Debut badge Moment from the player who’s named the In-Season Tournament Most Valuable Player (MVP)",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            }
+          ],
+          "dates": []
+        }
+      ]
+    }
+  ]
+}

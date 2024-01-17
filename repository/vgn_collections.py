@@ -2,8 +2,8 @@ import asyncio
 import pandas as pd
 
 from repository.config import CNX_POOL
-from topshot.cadence.flow_collections import get_account_plays
-from topshot.ts_info import TS_ENRICHED_PLAYS, TS_PLAYER_ID_MOMENTS
+from provider.topshot.cadence.flow_collections import get_account_plays
+from provider.topshot.ts_provider import TS_PROVIDER
 
 TIERS = {'Common': 2, 'Fandom': 5, 'Rare': 10, 'Legendary': 25}
 TYPES = {
@@ -43,17 +43,17 @@ def upsert_collection(user_id, plays):
         >>> print(result)
         "Updated successfully!"
     """
-    coll, not_found_plays = build_vgn_collection(plays)
-
-    sql_records = [
-        (user_id, player_id, coll[player_id]['dunk'], coll[player_id]['three_pointer'],
-         coll[player_id]['badge'], coll[player_id]['debut'], coll[player_id]['assist'], coll[player_id]['steal'],
-         coll[player_id]['block_shot'], coll[player_id]['jump_shot'], coll[player_id]['hook_shot'],
-         coll[player_id]['handle'], coll[player_id]['layup'], coll[player_id]['reel'], coll[player_id]['team'])
-        for player_id in coll
-    ]
-
     try:
+        coll, not_found_plays = build_vgn_collection(plays)
+
+        sql_records = [
+            (user_id, player_id, coll[player_id]['dunk'], coll[player_id]['three_pointer'],
+             coll[player_id]['badge'], coll[player_id]['debut'], coll[player_id]['assist'], coll[player_id]['steal'],
+             coll[player_id]['block_shot'], coll[player_id]['jump_shot'], coll[player_id]['hook_shot'],
+             coll[player_id]['handle'], coll[player_id]['layup'], coll[player_id]['reel'], coll[player_id]['team'])
+            for player_id in coll
+        ]
+
         db_conn = CNX_POOL.get_connection()
         cursor = db_conn.cursor()
         query = "INSERT INTO vgn.collections (user_id, player_id, dunk, three_pointer, " \
@@ -71,9 +71,10 @@ def upsert_collection(user_id, plays):
         return "DB error: {}.".format(err)
 
     if len(not_found_plays) > 0:
-        return "Updated with not found play ids: {}.".format(', '.join([str(play) for play in not_found_plays]))
+        return "Collection updated with {} players, play ids not found: {}.".format(
+            len(plays) - len(not_found_plays), ', '.join([str(play) for play in not_found_plays]))
 
-    return "Updated successfully!"
+    return f"Collection updated with {len(plays)} plays!"
 
 
 def build_vgn_collection(plays):
@@ -107,13 +108,13 @@ def build_vgn_collection(plays):
     not_found_plays = []
 
     for play_id in plays:
-        if play_id not in TS_ENRICHED_PLAYS:
+        if play_id not in TS_PROVIDER.play_info:
             not_found_plays.append(play_id)
             continue
 
         for set_id in plays[play_id]:
             play = None
-            for play_with_set_info in TS_ENRICHED_PLAYS[play_id]:
+            for play_with_set_info in TS_PROVIDER.play_info[play_id]:
                 if play_with_set_info['setFlowId'] == set_id:
                     play = play_with_set_info
                     break
@@ -125,9 +126,9 @@ def build_vgn_collection(plays):
             player_id = play['playerId']
 
             if player_id is not None and player_id != 0:
-                if player_id not in TS_PLAYER_ID_MOMENTS \
-                        or 'isNBA' not in TS_PLAYER_ID_MOMENTS[player_id] \
-                        or not TS_PLAYER_ID_MOMENTS[player_id]['isNBA']:
+                if player_id not in TS_PROVIDER.player_moments \
+                        or 'isNBA' not in TS_PROVIDER.player_moments[player_id] \
+                        or not TS_PROVIDER.player_moments[player_id]['isNBA']:
                     continue
 
                 if player_id not in player_collections:

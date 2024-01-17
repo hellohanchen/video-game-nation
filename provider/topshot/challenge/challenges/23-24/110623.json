@@ -1,0 +1,44 @@
+{
+  "message": "NBA 2023-24",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "FLASH CHALLENGE NOVEMBER 6, 2023",
+      "buckets": [
+        {
+          "description": "LOCK a Rare or Legendary Moment of the player with the most points scored",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "11/06/2023"
+          ]
+        },
+        {
+          "description": "BURN any Moment from the players that finish 2nd-10th (including ties) in points scored",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 10,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "11/06/2023"
+          ]
+        }
+      ]
+    }
+  ]
+}
+

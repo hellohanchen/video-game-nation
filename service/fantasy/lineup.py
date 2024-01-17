@@ -1,10 +1,13 @@
 import math
 
-from provider.nba_provider import NBA_PROVIDER
+from provider.nba.nba_provider import NBA_PROVIDER
 from repository.vgn_collections import get_collections
 from repository.vgn_lineups import get_lineups, upsert_lineup, submit_lineup
-from repository.vgn_players import get_players_stats
+from repository.vgn_players import get_players
 from utils import compute_vgn_score, truncate_message, compute_vgn_scores
+
+SALARY_CAP = 165.00
+SALARY_GROUPS = [5, 10, 20, 30, 45]
 
 
 class LineupProvider:
@@ -12,29 +15,51 @@ class LineupProvider:
         self.coming_game_date = ""
         self.team_to_opponent = {}
         self.team_to_players = {}
+        self.formatted_teams = {}
+
         self.player_to_team = {}
         self.players = {}
         self.player_ids = []
+
         self.lineups = {}
         self.collections = {}
+
+        self.formatted_schedule = ""
+        self.salary_pages = {
+            45: 1,
+            30: 1,
+            20: 1,
+            10: 1,
+            5: 1,
+        }
         self.reload()
 
     def __load_players(self):
-        self.player_ids = []
-        players_to_load = []
+        player_ids_to_load = []
 
         for game_id, game in NBA_PROVIDER.get_games_on_date(self.coming_game_date).items():
             for team in [game['homeTeam'], game['awayTeam']]:
                 self.team_to_opponent[team] = game['homeTeam'] if team == game['awayTeam'] else game['awayTeam']
                 self.team_to_players[team] = []
-                for player in NBA_PROVIDER.get_players_for_team(team):
-                    self.player_to_team[player] = team
-                    players_to_load.append(player)
+                for player_id in NBA_PROVIDER.get_players_for_team(team):
+                    self.player_to_team[player_id] = team
+                    player_ids_to_load.append(player_id)
 
-        loaded = get_players_stats(players_to_load, [("points_avg", "DESC")])
+        players = get_players(player_ids_to_load, [("current_salary", "DESC")])
+        group = 0
+        i = len(players) - 1
+        while i >= 0:
+            if players[i]['current_salary'] / 100.0 >= float(SALARY_GROUPS[group]):
+                self.salary_pages[SALARY_GROUPS[group]] = int(i / 10) + 1
+                i += 1
+                if group == 4:
+                    break
+                group += 1
+            i -= 1
 
         index = 0
-        for player in loaded:
+        self.player_ids = []  # ensure players have indexes assigned
+        for player in players:
             player_id = player['id']
             index += 1
 
@@ -45,9 +70,12 @@ class LineupProvider:
 
             self.team_to_players[self.player_to_team[player_id]].append(player_id)
 
-    def __load_lineups(self):
-        loaded = get_lineups(self.coming_game_date)
-        for lineup in loaded:
+        for team in self.team_to_players:
+            self.formatted_teams[team] = self.formatted_team(team)
+
+    def __load_lineups_and_collections(self):
+        lineups = get_lineups(self.coming_game_date)
+        for lineup in lineups:
             self.lineups[lineup['user_id']] = Lineup(lineup, self)
 
         if len(self.lineups) > 0:
@@ -56,17 +84,22 @@ class LineupProvider:
     def reload(self):
         coming_game_date = NBA_PROVIDER.get_coming_game_date()
         if self.coming_game_date != coming_game_date:
+            self.coming_game_date = coming_game_date
             self.team_to_opponent = {}
             self.team_to_players = {}
+            self.formatted_teams = {}
+
             self.player_to_team = {}
             self.players = {}
             self.player_ids = []
+
             self.lineups = {}
+            self.collections = {}
 
-            self.coming_game_date = coming_game_date
-            self.__load_players()
+            self.formatted_schedule = self.__formatted_schedule()
 
-        self.__load_lineups()
+        self.__load_players()
+        self.__load_lineups_and_collections()
 
     def __create_lineup(self, user_id):
         self.lineups[user_id] = Lineup(
@@ -107,17 +140,25 @@ class LineupProvider:
     def get_opponent(self, player_id):
         return self.team_to_opponent[self.player_to_team[player_id]]
 
+    @staticmethod
+    def formatted_injury(player_name):
+        injury = NBA_PROVIDER.get_player_injury(player_name)
+        if injury is None:
+            return ""
+        return f"**({injury})**"
+
     def formatted_player(self, player, collection):
         score = compute_vgn_score(player, collection)
         return \
-            "***{}.*** **{} +{:.2f}v {}#{}** vs *{}*\n" \
+            "***{}.*** **{} +{:.2f}v {}** vs *{}* **${:.2f}m** {}\n" \
             "{:.2f}p {:.2f}r {:.2f}a {:.2f}s {:.2f}b\n".format(
                 player['index'],
                 player['full_name'],
                 score,
                 self.player_to_team[player['id']],
-                player['jersey_number'],
                 self.get_opponent(player['id']),
+                player['current_salary'] / 100,
+                self.formatted_injury(player['full_name']),
                 player['points_recent'],
                 player['defensive_rebounds_recent'] + player['offensive_rebounds_recent'],
                 player['assists_recent'],
@@ -126,48 +167,30 @@ class LineupProvider:
             ), \
             score
 
-    def formatted_all_players(self):
-        messages = []
-        message = ""
-
-        for player_id in self.players:
-            new_message = self.players[player_id]['formatted']
-            message, _ = truncate_message(messages, message, new_message, 1950)
-
-        if message != "":
-            messages.append(message)
-
-        return messages
-
     def formatted_10_players(self, page):
         start = (page - 1) * 10 + 1
         end = len(self.players) if page * 10 > len(self.players) else page * 10
 
         message = ""
-        for player_id in self.player_ids[start-1:end]:
+        for player_id in self.player_ids[start - 1:end]:
             message += self.players[player_id]['formatted']
         return message
 
-    def formatted_team_players(self, team):
-        if team not in self.team_to_players:
-            return ["{} is not playing on {}.".format(team, self.coming_game_date)]
-
-        messages = []
+    def formatted_team(self, team):
         message = ""
-
         for player_id in self.team_to_players[team]:
-            new_message = self.players[player_id]['formatted']
-            message, _ = truncate_message(messages, message, new_message, 1950)
+            message += self.players[player_id]['formatted']
+        return message
 
-        if message != "":
-            messages.append(message)
-
-        return messages
+    def get_formatted_team(self, team):
+        if team not in self.formatted_teams:
+            return ["{} is not playing on {}.".format(team, self.coming_game_date)]
+        return self.formatted_teams[team]
 
     def detailed_player(self, player, collection):
         scores, total, bonus = compute_vgn_scores(player, collection)
         return \
-            "***{}. {} {}#{}*** vs *{}*\n" \
+            "**{}.** ***{} {}#{}*** *vs {}* **${:.2f}m** {}\n" \
             "**{:.2f}** points **{:.2f}v** (+{:.2f}) " \
             "bonus **{:.2f}v** (+{:.2f})\n" \
             "**{:.2f}** three-pointers **{:.2f}v** (+{:.2f})\n" \
@@ -189,7 +212,7 @@ class LineupProvider:
             "***Total: {:.2f}v (+{:.2f})***\n\n" \
             "".format(
                 player['index'], player['full_name'], self.player_to_team[player['id']], player['jersey_number'],
-                self.get_opponent(player['id']),
+                self.get_opponent(player['id']), player['current_salary'] / 100, self.formatted_injury(player['full_name']),
                 player['points'], scores['points']['score'], scores['points']['bonus'],
                 scores['pointBonus']['score'], scores['pointBonus']['bonus'],
                 player['threePointersMade'], scores['threePointersMade']['score'], scores['threePointersMade']['bonus'],
@@ -213,27 +236,6 @@ class LineupProvider:
                 total, bonus
             )
 
-    def detailed_players(self, players, user_id):
-        collection = self.get_user_collection(user_id)
-        if collection is None:
-            return ["Fail to load user collection."]
-
-        messages = []
-        message = ""
-
-        for dbPlayer in players:
-            player_id = dbPlayer['id']
-            if player_id not in self.players:
-                new_message = "Player **{}** is not playing the coming games.\n".format(dbPlayer['full_name'])
-            else:
-                new_message = self.detailed_player(self.players[player_id], collection.get(player_id))
-            message, _ = truncate_message(messages, message, new_message, 1950)
-
-        if message != "":
-            messages.append(message)
-
-        return messages
-
     def detailed_player_by_id(self, player_id, user_id):
         collection = self.get_user_collection(user_id)
         if collection is None:
@@ -243,7 +245,7 @@ class LineupProvider:
     def get_coming_games(self):
         return NBA_PROVIDER.get_games_on_date(self.coming_game_date).items()
 
-    def formatted_schedule(self):
+    def __formatted_schedule(self):
         message = "🏀 ***{} GAMES***\n".format(self.coming_game_date)
         for game_id, game in self.get_coming_games():
             message += f"{game['awayTeam']} at {game['homeTeam']}\n"
@@ -275,16 +277,21 @@ class Lineup:
         return None
 
     def formatted(self):
-        message = "Your lineup for **{}** is {}.\n"\
+        message = self.provider.formatted_schedule + "\n"
+
+        message += "Your lineup for **{}** is {}.\n" \
             .format(self.game_date, "**submitted**" if self.submitted else "**NOT** submitted")
-        message += "**🏅 a)** Captain {}\n".format(self.formatted_lineup_player(0))
-        message += "**🏀 b)** Starter {}\n".format(self.formatted_lineup_player(1))
-        message += "**🏀 c)** Starter {}\n".format(self.formatted_lineup_player(2))
-        message += "**🏀 d)** Starter {}\n".format(self.formatted_lineup_player(3))
-        message += "**🏀 e)** Starter {}\n".format(self.formatted_lineup_player(4))
-        message += "**🎽 f)** *Bench*   {}\n".format(self.formatted_lineup_player(5))
-        message += "**🎽 g)** *Bench*   {}\n".format(self.formatted_lineup_player(6))
-        message += "**🎽 h)** *Bench*   {}\n".format(self.formatted_lineup_player(7))
+        message += "🏅 {}\n".format(self.formatted_lineup_player(0))
+        message += "🏀 {}\n".format(self.formatted_lineup_player(1))
+        message += "🏀 {}\n".format(self.formatted_lineup_player(2))
+        message += "🏀 {}\n".format(self.formatted_lineup_player(3))
+        message += "🏀 {}\n".format(self.formatted_lineup_player(4))
+        message += "🎽 {}\n".format(self.formatted_lineup_player(5))
+        message += "🎽 {}\n".format(self.formatted_lineup_player(6))
+        message += "🎽 {}\n".format(self.formatted_lineup_player(7))
+
+        total_salary = self.get_total_salary()
+        message += "\nTotal salary ${:.2f}m, cap $165.00m, space ${:.2f}m".format(total_salary, SALARY_CAP - total_salary)
         return message
 
     def formatted_lineup_player(self, z_idx_pos):
@@ -294,11 +301,12 @@ class Lineup:
             return "---"
         else:
             player = self.provider.players[player_id]
-            return "**{}** ***+{:.2f}v {}*** vs *{}*".format(
+            return "**{}** ***+{:.2f}v {}*** vs *{}* **${:.2f}m**".format(
                 player['full_name'],
                 player['score'],
                 self.provider.player_to_team[player_id],
-                self.provider.get_opponent(player_id)
+                self.provider.get_opponent(player_id),
+                player['current_salary'] / 100
             )
 
     def add_player_by_idx(self, player_idx, pos_idx):
@@ -314,28 +322,32 @@ class Lineup:
 
         message = ""
 
-        player_to_place = self.player_ids[pos_idx]
-        if player_to_place is not None:
+        player_to_remove = self.player_ids[pos_idx]
+        if player_to_remove is not None:
             message += "Removed **{}. {}**. ".format(
-                self.provider.players[player_to_place]['index'],
-                self.provider.players[player_to_place]['full_name'],
+                self.provider.players[player_to_remove]['index'],
+                self.provider.players[player_to_remove]['full_name'],
             )
         self.player_ids[pos_idx] = player_id
+
+        if self.submitted and self.get_total_salary() > SALARY_CAP:
+            self.player_ids[pos_idx] = player_to_remove
+            return "Total salary exceeds cap, please adjust lineup."
 
         successful, _ = upsert_lineup(
             (self.user_id, self.game_date, self.player_ids[0], self.player_ids[1], self.player_ids[2],
              self.player_ids[3], self.player_ids[4], self.player_ids[5], self.player_ids[6], self.player_ids[7])
         )
         if successful:
-            message += "Added **{}. {}** to position {}. ".format(
+            message += "Added **{}. {}** to {}. ".format(
                 self.provider.players[self.player_ids[pos_idx]]['index'],
                 self.provider.players[self.player_ids[pos_idx]]['full_name'],
-                chr(97 + pos_idx)
+                "🏅 Captain" if pos_idx == 0 else "🏀 Starter" if pos_idx < 5 else "🎽 Bench"
             )
 
             return message
         else:
-            self.player_ids[pos_idx] = player_to_place
+            self.player_ids[pos_idx] = player_to_remove
             return "Failed to update lineup, please retry."
 
     def remove_player(self, pos_idx):
@@ -381,7 +393,11 @@ class Lineup:
 
     def submit(self):
         if None in self.player_ids:
-            return "Still have unfilled positions {}".format([chr(i+97) for i in range(0, 8) if self.player_ids[i] is None])
+            return "Still have {} unfilled positions"\
+                .format(len([i for i in range(0, 8) if self.player_ids[i] is None]))
+
+        if self.get_total_salary() > SALARY_CAP:
+            return self.formatted() + "\nTotal salary exceeds cap, please adjust lineup."
 
         successful, _ = submit_lineup(self.user_id, self.game_date)
         if successful:
@@ -389,6 +405,14 @@ class Lineup:
             return self.formatted() + "\nSubmitted."
         else:
             return self.formatted() + "\nFailed to update lineup, please retry."
+
+    def get_total_salary(self):
+        total_salary = 0
+        for player_id in self.player_ids:
+            if player_id is not None:
+                player = self.provider.players[player_id]
+                total_salary += player['current_salary'] / 100
+        return total_salary
 
 
 LINEUP_PROVIDER = LineupProvider()

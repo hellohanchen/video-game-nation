@@ -1,0 +1,135 @@
+{
+  "message": "NBA 2023-24",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "NEW DISCORD WEEKEND FLASH⚡",
+      "buckets": [
+        {
+          "description": "Common Top Shot Debut of all players this weekend who record 10 or more assists",
+          "is_wildcard": false,
+          "type": "QA",
+          "count": 30,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "AST,10",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "11/17/2023",
+            "11/18/2023",
+            "11/19/2023"
+          ]
+        },
+        {
+          "description": "Common Top Shot Debut of all players this weekend who grab 12 or more rebounds",
+          "is_wildcard": false,
+          "type": "QA",
+          "count": 30,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "REB,12",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "11/17/2023",
+            "11/18/2023",
+            "11/19/2023"
+          ]
+        },
+        {
+          "description": "Common Top Shot Debut of all players this weekend who score 30 or more points",
+          "is_wildcard": false,
+          "type": "QA",
+          "count": 30,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "PTS,30",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "11/17/2023",
+            "11/18/2023",
+            "11/19/2023"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "New Saturday & Sunday Discord Flash⚡",
+      "buckets": [
+        {
+          "description": "Top Shot Debut from the player who hits the most 3PM",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "3PM",
+              "order": "DESC"
+            },
+            {
+              "stats": "MIN",
+              "order": "ASC"
+            }
+          ],
+          "dates": [
+            "11/18/2023",
+            "11/19/2023"
+          ]
+        },
+        {
+          "description": "Top Shot Debut from the player who records the most Steals + Blocks",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "BLK,STL",
+              "order": "DESC"
+            },
+            {
+              "stats": "MIN",
+              "order": "ASC"
+            }
+          ],
+          "dates": [
+            "11/18/2023",
+            "11/19/2023"
+          ]
+        },
+        {
+          "description": "Top Shot Debut from the player who has the best +/-",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "PMP",
+              "order": "DESC"
+            },
+            {
+              "stats": "MIN",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "11/18/2023",
+            "11/19/2023"
+          ]
+        }
+      ]
+    }
+  ]
+}
+

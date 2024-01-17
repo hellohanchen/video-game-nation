@@ -1,0 +1,97 @@
+{
+  "message": "NBA 2023-24",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "FLASH CHALLENGE - NBA GAMES ON 1/8 & 1/9",
+      "buckets": [
+        {
+          "description": "Burn a Rare Moment from the player who scores the most points across all Eastern Conference Teams playing on 1/8/24",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "team_filter": "EC",
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "01/08/2024"
+          ]
+        },
+        {
+          "description": "Burn a Rare Moment from the player in a starting lineup who accumulates the most combined blocks + steals across games played on 1/8/24",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "START_BLK,START_STL",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "01/08/2024"
+          ]
+        },
+        {
+          "description": "Burn a Rare Moment from the player who scores the most points across all Western Conference Teams playing on 1/9/24",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "team_filter": "WC",
+          "tier_breakers": [
+            {
+              "stats": "PTS",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "01/09/2024"
+          ]
+        },
+        {
+          "description": "Lock a Rare or Top Shot Debut badge Moment from the player in a starting lineup who makes the most 3-point shots in games played across 1/8/24 & 1/9/24",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "tier_breakers": [
+            {
+              "stats": "START_3PT",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "01/08/2024",
+            "01/09/2024"
+          ]
+        },
+        {
+          "description": "Lock a 2023-24 Rookie Moment from the Rookie with the most combined points + rebounds + assists in games played across 1/8/24 & 1/9/24",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 1,
+          "is_team": false,
+          "player_filters": [
+            "SET,125"
+          ],
+          "tier_breakers": [
+            {
+              "stats": "PTS,REB,AST",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "01/08/2024",
+            "01/09/2024"
+          ]
+        }
+      ]
+    }
+  ]
+}
