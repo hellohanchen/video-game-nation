@@ -99,7 +99,6 @@ async def update_challenges():
 
 async def purge_channel(channel):
     await channel.purge(limit=None)
-    await channel.send("Purge this channel to track new challenge.")
     if channel.id in CHALLENGE_MESSAGE_IDS:
         CHALLENGE_MESSAGE_IDS[channel.id] = []
 
