@@ -175,7 +175,7 @@ def get_player(player_id):
         return None
 
 
-def get_players_stats(player_ids, order_by=None):
+def get_players(player_ids, order_by=None):
     try:
         db_conn = CNX_POOL.get_connection()
         query = \

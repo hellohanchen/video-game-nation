@@ -8,7 +8,7 @@ from repository.vgn_lineups import get_lineups, upsert_score, get_weekly_ranks, 
 from repository.vgn_players import get_empty_players_stats
 from repository.vgn_users import get_users
 from service.fantasy.lineup import Lineup, LINEUP_PROVIDER
-from utils import compute_vgn_score, truncate_message, compute_vgn_scores, get_game_info
+from utils import compute_vgn_score, truncate_message, compute_vgn_scores, get_game_info, to_slash_date
 
 
 class RankingProvider:
@@ -62,6 +62,8 @@ class RankingProvider:
     def reload(self):
         self.lineups = {}
         self.collections = {}
+        self.player_stats = {}
+        self.scores = {}
         self.leaderboard = {}
         self.player_leaderboard = []
         self.__load_lineups_and_collections()
@@ -78,22 +80,37 @@ class RankingProvider:
                 LINEUP_PROVIDER.reload()
 
             self.status = "PRE_GAME"
-        elif self.status == "PRE_GAME":
-            self.current_game_date = datetime.datetime.strptime(scoreboard['gameDate'], '%Y-%m-%d').strftime('%m/%d/%Y')
+        elif self.status == "PRE_GAME":  # more from PRE_GAME to IN_GAME or POST_GAME
+            self.current_game_date = to_slash_date(datetime.datetime.strptime(scoreboard['gameDate'], '%Y-%m-%d'))
             self.games = [game['gameId'] for game in scoreboard['games']]
             try:
-                self.reload()
+                self.reload()  # load collections for today
                 self.status = new_status
-                LINEUP_PROVIDER.reload()
-            except:
+                LINEUP_PROVIDER.reload()  # move lineup_provider to next day
+            except Exception as err:
                 return
         else:
             self.status = new_status
 
         self.__update_leaderboard()
 
+    def record_player_stats(self, all_player_stats, raw_stats, game_info, team_win):
+        if raw_stats['played'] == '1':
+            player_id = raw_stats['personId']
+            all_player_stats[player_id] = self.enrich_stats(raw_stats['statistics'])
+            all_player_stats[player_id]['win'] = 1 if team_win else 0
+            all_player_stats[player_id]['name'] = raw_stats['name']
+            all_player_stats[player_id]['gameInfo'] = game_info
+            if player_id in self.player_stats:
+                all_player_stats[player_id]['current_salary'] = self.player_stats[player_id]['current_salary']
+            else:
+                all_player_stats[player_id]['current_salary'] = None
+
     def __update_leaderboard(self):
-        player_stats = {}
+        if self.status == "PRE_GAME" or self.status == "NO_GAME":
+            return
+
+        all_player_stats = {}
         for game_id in self.games:
             try:
                 game_stats = boxscore.BoxScore(game_id=game_id).get_dict()['game']
@@ -106,35 +123,19 @@ class RankingProvider:
             game_info = get_game_info(game_stats)
 
             win = game_stats['homeTeam']['score'] > game_stats['awayTeam']['score']
-            for player in game_stats['homeTeam']['players']:
-                if player['status'] == 'ACTIVE':
-                    player_id = player['personId']
-                    player_stats[player_id] = self.enrich_stats(player['statistics'])
-                    player_stats[player_id]['win'] = 1 if win else 0
-                    player_stats[player_id]['name'] = player['name']
-                    player_stats[player_id]['gameInfo'] = game_info
-                    if player_id in self.player_stats:
-                        player_stats[player_id]['current_salary'] = self.player_stats[player_id]['current_salary']
-                    else:
-                        player_stats[player_id]['current_salary'] = None
+            for raw_stats in game_stats['homeTeam']['players']:
+                if raw_stats['played'] == '1':
+                    self.record_player_stats(all_player_stats, raw_stats, game_info, win)
 
             win = game_stats['awayTeam']['score'] > game_stats['homeTeam']['score']
-            for player in game_stats['awayTeam']['players']:
-                if player['status'] == 'ACTIVE':
-                    player_id = player['personId']
-                    player_stats[player_id] = self.enrich_stats(player['statistics'])
-                    player_stats[player_id]['win'] = 1 if win else 0
-                    player_stats[player_id]['name'] = player['name']
-                    player_stats[player_id]['gameInfo'] = game_info
-                    if player_id in self.player_stats:
-                        player_stats[player_id]['current_salary'] = self.player_stats[player_id]['current_salary']
-                    else:
-                        player_stats[player_id]['current_salary'] = None
+            for raw_stats in game_stats['awayTeam']['players']:
+                if raw_stats['played'] == '1':
+                    self.record_player_stats(all_player_stats, raw_stats, game_info, win)
 
         user_scores = {}
         for user_id in self.lineups:
             vgn_scores = [compute_vgn_score(
-                player_stats.get(player_id),
+                all_player_stats.get(player_id),
                 self.collections[user_id].get(player_id)
             ) for player_id in self.lineups[user_id].player_ids]
             user_scores[user_id] = {
@@ -143,7 +144,7 @@ class RankingProvider:
             }
 
         user_ids = list(user_scores.keys())
-        user_ids.sort(key=lambda user_id: user_scores[user_id]['score'], reverse=True)
+        user_ids.sort(key=lambda uid: user_scores[uid]['score'], reverse=True)
 
         leaderboard = []
         for i, user_id in enumerate(user_ids):
@@ -154,11 +155,11 @@ class RankingProvider:
         self.leaderboard = leaderboard
 
         player_scores = {}
-        for player_id in player_stats:
-            self.player_stats[player_id] = player_stats[player_id]
-            player_scores[player_id] = compute_vgn_score(player_stats[player_id])
+        for player_id in all_player_stats:
+            self.player_stats[player_id] = all_player_stats[player_id]
+            player_scores[player_id] = compute_vgn_score(all_player_stats[player_id])
         player_ids = list(player_scores.keys())
-        player_ids.sort(key=lambda player_id: player_scores[player_id], reverse=True)
+        player_ids.sort(key=lambda pid: player_scores[pid], reverse=True)
         self.player_leaderboard = player_ids
 
     def __upload_leaderboard(self):

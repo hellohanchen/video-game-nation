@@ -3,7 +3,7 @@ import math
 from provider.nba.nba_provider import NBA_PROVIDER
 from repository.vgn_collections import get_collections
 from repository.vgn_lineups import get_lineups, upsert_lineup, submit_lineup
-from repository.vgn_players import get_players_stats
+from repository.vgn_players import get_players
 from utils import compute_vgn_score, truncate_message, compute_vgn_scores
 
 SALARY_CAP = 165.00
@@ -15,14 +15,16 @@ class LineupProvider:
         self.coming_game_date = ""
         self.team_to_opponent = {}
         self.team_to_players = {}
+        self.formatted_teams = {}
+
         self.player_to_team = {}
         self.players = {}
         self.player_ids = []
+
         self.lineups = {}
         self.collections = {}
-        self.formatted_teams = {}
+
         self.formatted_schedule = ""
-        self.formatted_all_players = ""
         self.salary_pages = {
             45: 1,
             30: 1,
@@ -33,22 +35,21 @@ class LineupProvider:
         self.reload()
 
     def __load_players(self):
-        self.player_ids = []
-        players_to_load = []
+        player_ids_to_load = []
 
         for game_id, game in NBA_PROVIDER.get_games_on_date(self.coming_game_date).items():
             for team in [game['homeTeam'], game['awayTeam']]:
                 self.team_to_opponent[team] = game['homeTeam'] if team == game['awayTeam'] else game['awayTeam']
                 self.team_to_players[team] = []
-                for player in NBA_PROVIDER.get_players_for_team(team):
-                    self.player_to_team[player] = team
-                    players_to_load.append(player)
+                for player_id in NBA_PROVIDER.get_players_for_team(team):
+                    self.player_to_team[player_id] = team
+                    player_ids_to_load.append(player_id)
 
-        loaded = get_players_stats(players_to_load, [("current_salary", "DESC")])
+        players = get_players(player_ids_to_load, [("current_salary", "DESC")])
         group = 0
-        i = len(loaded) - 1
+        i = len(players) - 1
         while i >= 0:
-            if loaded[i]['current_salary'] / 100.0 >= float(SALARY_GROUPS[group]):
+            if players[i]['current_salary'] / 100.0 >= float(SALARY_GROUPS[group]):
                 self.salary_pages[SALARY_GROUPS[group]] = int(i / 10) + 1
                 i += 1
                 if group == 4:
@@ -57,7 +58,8 @@ class LineupProvider:
             i -= 1
 
         index = 0
-        for player in loaded:
+        self.player_ids = []  # ensure players have indexes assigned
+        for player in players:
             player_id = player['id']
             index += 1
 
@@ -69,14 +71,11 @@ class LineupProvider:
             self.team_to_players[self.player_to_team[player_id]].append(player_id)
 
         for team in self.team_to_players:
-            message = ""
-            for player_id in self.team_to_players[team]:
-                message += self.players[player_id]['formatted']
-            self.formatted_teams[team] = message
+            self.formatted_teams[team] = self.formatted_team(team)
 
-    def __load_lineups(self):
-        loaded = get_lineups(self.coming_game_date)
-        for lineup in loaded:
+    def __load_lineups_and_collections(self):
+        lineups = get_lineups(self.coming_game_date)
+        for lineup in lineups:
             self.lineups[lineup['user_id']] = Lineup(lineup, self)
 
         if len(self.lineups) > 0:
@@ -88,16 +87,19 @@ class LineupProvider:
             self.coming_game_date = coming_game_date
             self.team_to_opponent = {}
             self.team_to_players = {}
+            self.formatted_teams = {}
+
             self.player_to_team = {}
             self.players = {}
             self.player_ids = []
+
             self.lineups = {}
-            self.formatted_teams = {}
+            self.collections = {}
+
             self.formatted_schedule = self.__formatted_schedule()
-            self.formatted_all_players = self.__formatted_all_players()
 
         self.__load_players()
-        self.__load_lineups()
+        self.__load_lineups_and_collections()
 
     def __create_lineup(self, user_id):
         self.lineups[user_id] = Lineup(
@@ -165,24 +167,6 @@ class LineupProvider:
             ), \
             score
 
-    def __formatted_all_players(self):
-        messages = []
-        message = ""
-
-        for player_id in self.players:
-            new_message = "***{}.*** *{}* {} ${:.2f}m\n".format(
-                self.players[player_id]['index'],
-                self.player_to_team[self.players[player_id]['id']],
-                self.players[player_id]['full_name'],
-                self.players[player_id]['current_salary'] / 100,
-            )
-            message, _ = truncate_message(messages, message, new_message, 1950)
-
-        if message != "":
-            messages.append(message)
-
-        return messages
-
     def formatted_10_players(self, page):
         start = (page - 1) * 10 + 1
         end = len(self.players) if page * 10 > len(self.players) else page * 10
@@ -192,7 +176,13 @@ class LineupProvider:
             message += self.players[player_id]['formatted']
         return message
 
-    def formatted_team_players(self, team):
+    def formatted_team(self, team):
+        message = ""
+        for player_id in self.team_to_players[team]:
+            message += self.players[player_id]['formatted']
+        return message
+
+    def get_formatted_team(self, team):
         if team not in self.formatted_teams:
             return ["{} is not playing on {}.".format(team, self.coming_game_date)]
         return self.formatted_teams[team]
@@ -245,27 +235,6 @@ class LineupProvider:
                 player['fiveDouble'], scores['fiveDouble']['score'],
                 total, bonus
             )
-
-    def detailed_players(self, players, user_id):
-        collection = self.get_user_collection(user_id)
-        if collection is None:
-            return ["Fail to load user collection."]
-
-        messages = []
-        message = ""
-
-        for dbPlayer in players:
-            player_id = dbPlayer['id']
-            if player_id not in self.players:
-                new_message = "Player **{}** is not playing the coming games.\n".format(dbPlayer['full_name'])
-            else:
-                new_message = self.detailed_player(self.players[player_id], collection.get(player_id))
-            message, _ = truncate_message(messages, message, new_message, 1950)
-
-        if message != "":
-            messages.append(message)
-
-        return messages
 
     def detailed_player_by_id(self, player_id, user_id):
         collection = self.get_user_collection(user_id)

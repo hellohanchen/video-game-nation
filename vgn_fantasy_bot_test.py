@@ -87,17 +87,6 @@ async def verify_user(context, username, topshot_username):
         await context.channel.send("Topshot user {} not found.".format(topshot_username))
 
 
-@bot.command(name='players', help="Get all players for the next game date")
-async def get_players(context):
-    if not isinstance(context.channel, discord.channel.DMChannel):
-        return
-
-    messages = LINEUP_PROVIDER.formatted_all_players
-
-    for message in messages:
-        await context.channel.send(message)
-
-
 ############
 # Collection (DM only)
 ############

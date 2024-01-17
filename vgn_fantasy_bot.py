@@ -128,30 +128,9 @@ async def verify_user(context, username, topshot_username):
         await context.channel.send("Topshot user {} not found.".format(topshot_username))
 
 
-@bot.command(name='find', help='Find the snowflake id of a user')
-async def find_user_id(context, username):
-    guild = discord.utils.find(lambda g: g.name == GUILD, bot.guilds)
-    member = discord.utils.find(lambda m: username == "{}#{}".format(m.name, m.discriminator), guild.members)
-
-    if member is None:
-        await context.channel.send("User {} not found.".format(username))
-    else:
-        await context.channel.send(member.id)
-
-
 ############
 # Commands
 ############
-@bot.command(name='players', help="Get all players for the next game date")
-async def get_players(context):
-    if not isinstance(context.channel, discord.channel.DMChannel):
-        return
-
-    messages = LINEUP_PROVIDER.formatted_all_players
-
-    for message in messages:
-        await context.channel.send(message)
-
 
 ############
 # Routines

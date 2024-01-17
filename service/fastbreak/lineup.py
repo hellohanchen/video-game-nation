@@ -3,7 +3,7 @@ import math
 from provider.nba.nba_provider import NBA_PROVIDER
 from provider.topshot.fb_provider import FB_PROVIDER
 from repository.fb_lineups import get_lineups, upsert_lineup
-from repository.vgn_players import get_players_stats
+from repository.vgn_players import get_players
 from service.fastbreak.fastbreak import FastBreak
 from service.fastbreak.service import FastBreakService
 
@@ -136,7 +136,7 @@ class LineupService(FastBreakService):
                     self.player_to_team[player] = team
                     players_to_load.append(player)
 
-        loaded = get_players_stats(players_to_load, [("full_name", "ASC")])
+        loaded = get_players(players_to_load, [("full_name", "ASC")])
         index = 0
         for player in loaded:
             player_id = player['id']
