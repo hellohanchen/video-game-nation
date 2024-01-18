@@ -94,7 +94,11 @@ class LineupSubmitButton(discord.ui.Button['LineupSubmit']):
 
         message, new_view = view.submit_lineup()
         await interaction.response.edit_message(content=message, view=new_view)
-        await view.reload_collection()
+        msg, _, successful = await view.reload_collection()
+        if successful:
+            await interaction.user.send(content=f"Your collection is updated successfully: {msg}")
+        else:
+            await interaction.user.send(content=f"Your collection is not updated: {msg}")
 
 
 class LineupRemoveButton(discord.ui.Button['LineupRemove']):
