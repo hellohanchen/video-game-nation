@@ -31,15 +31,27 @@ ADMIN_CHANNEL_IDS = []
 
 PLAYERS_MESSAGE_IDS = {}
 
+GUILDS = {}
+
 
 @bot.event
 async def on_ready():
     for guild in bot.guilds:
+        gid = guild.id
+        if guild.id not in GUILDS:
+            GUILDS[gid] = {
+                "guild": guild,
+                "channels": {}
+            }
         for channel in guild.channels:
+            if channel.type != discord.ChannelType.text:
+                continue
+            GUILDS[gid]['channels'][channel.id] = channel
+
             if channel.name in ADMIN_CHANNEL_NAMES:
                 ADMIN_CHANNEL_IDS.append(channel.id)
             if channel.name in FB_CHANNEL_NAMES:
-                view = MainPage()
+                view = MainPage(GUILDS)
                 for emoji in guild.emojis:
                     if emoji.name == "vgn":
                         print(emoji)
@@ -52,7 +64,7 @@ async def on_ready():
 @tasks.loop(seconds=5)
 async def refresh_entry():
     for message in FB_CHANNEL_MESSAGES:
-        view = MainPage()
+        view = MainPage(GUILDS)
         await message.edit(content="Start your fastbreak here!", view=view)
 
 

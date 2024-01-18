@@ -36,6 +36,9 @@ PLAYERS_MESSAGE_IDS = {}
 async def on_ready():
     for guild in bot.guilds:
         for channel in guild.channels:
+            if channel.type != discord.ChannelType.text:
+                continue
+
             if channel.name in ADMIN_CHANNEL_NAMES:
                 ADMIN_CHANNEL_IDS.append(channel.id)
             if channel.name in FB_CHANNEL_NAMES:

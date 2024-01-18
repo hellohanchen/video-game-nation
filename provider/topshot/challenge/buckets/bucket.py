@@ -219,7 +219,7 @@ def fill_bucket(bucket: Bucket, dict_obj: Dict[str, any]) -> Bucket:
                 series = []
                 badges = []
                 for tag in filter_tags:
-                    if tag.isnumeric():
+                    if str(self.description):
                         series.append(tag)
                     else:
                         badges.append(tag)

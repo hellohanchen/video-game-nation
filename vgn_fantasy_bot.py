@@ -55,6 +55,9 @@ VGN_EMOJI_ID = 1166225667952758815
 async def on_ready():
     for guild in bot.guilds:
         for channel in guild.channels:
+            if channel.type != discord.ChannelType.text:
+                continue
+
             if channel.name in LB_CHANNEL_NAMES:
                 LB_CHANNELS.append(channel)
             if channel.name in GAMES_CHANNEL_NAMES:

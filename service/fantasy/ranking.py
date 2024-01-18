@@ -114,7 +114,7 @@ class RankingProvider:
         for game_id in self.games:
             try:
                 game_stats = boxscore.BoxScore(game_id=game_id).get_dict()['game']
-            except Exception:
+            except Exception as err:
                 continue
 
             if game_stats['gameStatus'] == 1:
@@ -331,7 +331,7 @@ class RankingProvider:
         for game in games:
             if game['gameStatus'] > 1:
                 started = True
-            if game['gameStatus'] < 3:
+            if 3 > game['gameStatus'] >= 1:
                 final = False
 
         if not started and not final:

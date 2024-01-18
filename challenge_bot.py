@@ -71,6 +71,9 @@ async def on_ready():
             FB_CHANNEL_MESSAGES.append(message)
 
         for channel in guild.channels:
+            if channel.type != discord.ChannelType.text:
+                continue
+
             if channel.name in CHANNEL_NAMEs:
                 await purge_channel(channel)
                 CHALLENGE_CHANNELS.append(channel)
