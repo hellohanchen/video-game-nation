@@ -329,6 +329,8 @@ class RankingProvider:
         started = False
         final = True
         for game in games:
+            if game['gameStatusText'] == 'PPD':
+                continue
             if game['gameStatus'] > 1:
                 started = True
             if 3 > game['gameStatus'] >= 1:
