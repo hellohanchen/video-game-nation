@@ -1,116 +1,9 @@
 import discord
 
 from constants import NBA_TEAMS
-from provider.topshot.graphql.get_address import get_flow_account_info
-from repository.ts_giveaways import get_user_giveaway_accesses, create_giveaway, submit_giveaway, message_giveaway
-from repository.vgn_users import insert_and_get_user, get_user_new
-
-TO_LINK_MESSAGE = "Please click 'Link' to link to a TS username & address.\n" \
-                  "Once linked, you can update your TS username,\n" \
-                  "but you can only contact admin to change your Flow address."
-
-
-class BaseView(discord.ui.View):
-    def __init__(self, user_id):
-        super().__init__()
-        self.user_id = user_id
-
-
-class MainAccountButton(discord.ui.Button['Account']):
-    def __init__(self):
-        super().__init__(style=discord.ButtonStyle.success, label="TS Account", row=0)
-
-    async def callback(self, interaction: discord.Interaction):
-        assert self.view is not None
-        view: MainPage = self.view
-        message, new_view = view.load_user_profile(interaction.user.id)
-
-        await interaction.response.send_message(content=message, view=new_view, ephemeral=True, delete_after=600.0)
-
-
-class MainGiveawayButton(discord.ui.Button['Giveaway']):
-    def __init__(self):
-        super().__init__(style=discord.ButtonStyle.success, label="Giveaways", row=0)
-
-    async def callback(self, interaction: discord.Interaction):
-        assert self.view is not None
-        view: MainPage = self.view
-        message, new_view = view.load_giveaway_accesses(interaction.user.id)
-
-        await interaction.response.send_message(content=message, view=new_view, ephemeral=True, delete_after=600.0)
-
-
-class MainPage(discord.ui.View):
-    def __init__(self, guilds):
-        super().__init__()
-        self.add_item(MainAccountButton())
-        self.add_item(MainGiveawayButton())
-        self.guilds = guilds
-
-    @staticmethod
-    def load_user_profile(user_id):
-        user, _ = get_user_new(user_id)
-        if user is None:
-            return TO_LINK_MESSAGE, ProfileView(user_id)
-
-        return f"TS username: **{user['topshot_username']}**\n" \
-               f"Address: **{user['flow_address']}**", ProfileView(user_id, user['flow_address'])
-
-    def load_giveaway_accesses(self, user_id):
-        message, view = GiveawayView.new_giveaway_view(user_id, self.guilds)
-        if view is None:
-            return message, self
-        else:
-            return message, view
-
-
-class ProfileLinkModal(discord.ui.Modal, title='Link TS Account'):
-    username = discord.ui.TextInput(
-        label='TS Username')
-
-    def __init__(self, user_id, view: discord.ui.View, existing_address=None):
-        super(ProfileLinkModal, self).__init__()
-        self.user_id = user_id
-        self.msg_view = view
-        self.existing_address = existing_address
-
-    async def on_submit(self, interaction: discord.Interaction):
-        topshot_username = str(self.username)
-        topshot_username, flow_address, _ = await get_flow_account_info(topshot_username)
-
-        if flow_address is not None:
-            if self.existing_address is not None and flow_address != self.existing_address:
-                message = "Flow address mismatched, you need to contact admin to change your Flow address."
-            else:
-                user, _ = insert_and_get_user(self.user_id, topshot_username, flow_address)
-                if user is None:
-                    message = TO_LINK_MESSAGE
-                else:
-                    message = f"TS username: **{user['topshot_username']}**\n" \
-                              f"Flow address: **{user['flow_address']}**\n\n**Linked**"
-        else:
-            message = f"**{self.username}** not found\nPlease click 'Link' to link to a TS account\n\n"
-
-        await interaction.response.edit_message(content=message, view=self.msg_view)
-
-
-class ProfileLinkButton(discord.ui.Button['Link']):
-    def __init__(self, label, existing_address=None):
-        super().__init__(style=discord.ButtonStyle.success, label=label, row=0)
-        self.existing_address = existing_address
-
-    async def callback(self, interaction: discord.Interaction):
-        assert self.view is not None
-        await interaction.response.send_modal(ProfileLinkModal(interaction.user.id, self.view, self.existing_address))
-
-
-class ProfileView(BaseView):
-    def __init__(self, user_id, existing_address=None):
-        super(ProfileView, self).__init__(user_id)
-        if existing_address is not None:
-            self.add_item(ProfileLinkButton("Update name", existing_address))
-        else:
-            self.add_item(ProfileLinkButton("Link", existing_address))
+from repository.ts_giveaways import get_user_giveaway_accesses, create_giveaway, submit_giveaway, message_giveaway, \
+    get_drafts_for_user
+from service.views import BaseView
 
 
 class GiveawayBaseView(BaseView):
@@ -133,7 +26,18 @@ class GiveawayCreateButton(discord.ui.Button['Create']):
     async def callback(self, interaction: discord.Interaction):
         assert self.view is not None
         view: GiveawayView = self.view
-        message, new_view = view.get_create_giveaway_view()
+        message, new_view = view.create()
+        await interaction.response.edit_message(content=message, view=new_view)
+
+
+class GiveawayDraftButton(discord.ui.Button['Draft']):
+    def __init__(self):
+        super(GiveawayDraftButton, self).__init__(style=discord.ButtonStyle.blurple, label='Manage drafts', row=1)
+
+    async def callback(self, interaction: discord.Interaction):
+        assert self.view is not None
+        view: GiveawayView = self.view
+        message, new_view = view.load_drafts()
         await interaction.response.edit_message(content=message, view=new_view)
 
 
@@ -141,6 +45,7 @@ class GiveawayView(GiveawayBaseView):
     def __init__(self, user_id, guilds, guild_ids, channel_ids):
         super(GiveawayView, self).__init__(user_id, guilds, guild_ids, channel_ids)
         self.add_item(GiveawayCreateButton())
+        self.add_item(GiveawayDraftButton())
 
     @staticmethod
     def new_giveaway_view(user_id, guilds):
@@ -150,20 +55,38 @@ class GiveawayView(GiveawayBaseView):
 
         return f"Manage giveaways here.", GiveawayView(user_id, guilds, guild_ids, channel_ids)
 
-    def get_create_giveaway_view(self):
+    def create(self):
         return "Select 1 discord server:", GiveawayCreateView(self)
+
+    def load_drafts(self):
+        drafts, err = get_drafts_for_user(self.user_id, self.guild_ids, self.channel_ids)
+        if err is not None:
+            return f"Failed to load drafts: {err}", self
+        if len(drafts) == 0:
+            return f"You don't have drafts in the past 24 hours.", self
+
+        message = f"Select 1 draft:\n\n"
+        for gid in drafts:
+            message += f"**{gid}**.{drafts[gid]['name']}\n"
+        return message, GiveawayDraftsView(self, drafts)
 
 
 class GiveawayGuildSelectMenu(discord.ui.Select):
     def __init__(self, guilds, guild_ids):
         super(GiveawayGuildSelectMenu, self).__init__()
+        self.append_option(discord.SelectOption(label="<-- BACK TO MENU", value="0"))
         for gid in guild_ids:
             self.append_option(discord.SelectOption(label=guilds[gid]['guild'].name, value=gid))
 
     async def callback(self, interaction: discord.Interaction):
         assert self.view is not None
         view: GiveawayCreateView = self.view
-        guild_id = int(interaction.data.get('values')[0])
+        selection = interaction.data.get('values')[0]
+        if selection == "0":
+            await interaction.response.edit_message(content="Manage giveaways here.", view=view.restart())
+            return
+
+        guild_id = int(selection)
         message, new_view = view.select_guild(guild_id)
         await interaction.response.edit_message(content=message, view=new_view)
 
@@ -171,13 +94,19 @@ class GiveawayGuildSelectMenu(discord.ui.Select):
 class GiveawayChannelSelectMenu(discord.ui.Select):
     def __init__(self, channels):
         super(GiveawayChannelSelectMenu, self).__init__()
+        self.append_option(discord.SelectOption(label="<-- BACK TO MENU", value="0"))
         for cid in channels:
             self.append_option(discord.SelectOption(label=channels[cid].name, value=cid))
 
     async def callback(self, interaction: discord.Interaction):
         assert self.view is not None
         view: GiveawayCreateView = self.view
-        channel_id = int(interaction.data.get('values')[0])
+        selection = interaction.data.get('values')[0]
+        if selection == "0":
+            await interaction.response.edit_message(content="Manage giveaways here.", view=view.restart())
+            return
+
+        channel_id = int(selection)
         await interaction.response.send_modal(view.select_channel(channel_id))
 
 
@@ -244,19 +173,17 @@ class GiveawayCreateModal(discord.ui.Modal, title='Create a giveaway'):
             await interaction.response.edit_message(content=message, view=self.view.restart())
             return
 
-        message = GiveawayDraftView.formatted_message(giveaway_id, giveaway_name, description, duration)
+        giveaway = {
+            'id': giveaway_id,
+            'name': giveaway_name,
+            'description': description,
+            'winners': winners,
+            'duration': duration,
+        }
+        message = GiveawayDraftView.formatted_giveaway(giveaway)
         await interaction.response.edit_message(
             content=message,
-            view=GiveawayDraftView(
-                self.view,
-                {
-                    'id': giveaway_id,
-                    'name': giveaway_name,
-                    'description': description,
-                    'winners': winners,
-                    'duration': duration,
-                },
-                self.view.guilds[self.guild_id]['channels'][self.channel_id]))
+            view=GiveawayDraftView(self.view, giveaway, self.view.guilds[self.guild_id]['channels'][self.channel_id]))
 
 
 class GiveawaySubmitModal(discord.ui.Modal, title='Complete details'):
@@ -319,9 +246,19 @@ class GiveawaySubmitModal(discord.ui.Modal, title='Complete details'):
         await interaction.response.edit_message(content=message, view=self.view.restart())
 
 
-class GiveawaySubmitButton(discord.ui.Button['Submit']):
+class GiveawayDraftMenuButton(discord.ui.Button['DraftMenu']):
     def __init__(self):
-        super(GiveawaySubmitButton, self).__init__(style=discord.ButtonStyle.success, label='Submit', row=0)
+        super(GiveawayDraftMenuButton, self).__init__(style=discord.ButtonStyle.success, label='Menu', row=0)
+
+    async def callback(self, interaction: discord.Interaction):
+        assert self.view is not None
+        view: GiveawayDraftView = self.view
+        await interaction.response.edit_message(content="Manage giveaways here.", view=view.view.restart())
+
+
+class GiveawayDraftSubmitButton(discord.ui.Button['DraftSubmit']):
+    def __init__(self):
+        super(GiveawayDraftSubmitButton, self).__init__(style=discord.ButtonStyle.success, label='Submit', row=0)
 
     async def callback(self, interaction: discord.Interaction):
         assert self.view is not None
@@ -332,7 +269,8 @@ class GiveawaySubmitButton(discord.ui.Button['Submit']):
 class GiveawayDraftView(BaseView):
     def __init__(self, view: GiveawayBaseView, giveaway, channel):
         super(GiveawayDraftView, self).__init__(view.user_id)
-        self.add_item(GiveawaySubmitButton())
+        self.add_item(GiveawayDraftMenuButton())
+        self.add_item(GiveawayDraftSubmitButton())
         self.view = view
         self.giveaway = giveaway
         self.channel = channel
@@ -341,11 +279,12 @@ class GiveawayDraftView(BaseView):
         return GiveawaySubmitModal(self.view, self.giveaway, self.channel)
 
     @staticmethod
-    def formatted_message(gid, name, description, duration):
-        return f"**Giveaway draft**:\n" \
-               f"ID: **{gid}**:\n" \
+    def formatted_message(gid, name, description, winners, duration):
+        return f"***GIVEAWAY DRAFT***\n\n" \
+               f"ID: **{gid}**\n" \
                f"Name: **{name}**\n" \
                f"Description: **{description} **\n" \
+               f"Winners: **{winners}**\n" \
                f"Duration: **{duration}** hours\n\n" \
                f"*Please fill in more details to start it:*\n" \
                f"**Fav Teams**: a comma separated list of team abbreviations, optional, example: ATL,BOS\n" \
@@ -356,7 +295,39 @@ class GiveawayDraftView(BaseView):
     @staticmethod
     def formatted_giveaway(giveaway):
         return GiveawayDraftView.formatted_message(
-            giveaway['id'], giveaway['name'], giveaway['description'], giveaway['duration'])
+            giveaway['id'], giveaway['name'], giveaway['description'], giveaway['winners'], giveaway['duration'])
+
+
+class GiveawayDraftSelectMenu(discord.ui.Select):
+    def __init__(self, drafts):
+        super(GiveawayDraftSelectMenu, self).__init__()
+        self.append_option(discord.SelectOption(label="<-- BACK TO MENU", value="0"))
+        for gid in drafts:
+            self.append_option(discord.SelectOption(label=f"{gid}.{drafts[gid]['name']}", value=gid))
+        self.drafts = drafts
+
+    async def callback(self, interaction: discord.Interaction):
+        assert self.view is not None
+        view: GiveawayDraftsView = self.view
+        selection = interaction.data.get('values')[0]
+        if selection == "0":
+            await interaction.response.edit_message(content="Manage giveaways here.", view=view.restart())
+            return
+
+        giveaway = self.drafts[selection]
+        message = GiveawayDraftView.formatted_giveaway(giveaway)
+        await interaction.response.edit_message(
+            content=message,
+            view=GiveawayDraftView(
+                view, giveaway, view.guilds[giveaway['guild_id']]['channels'][giveaway['channel_id']]
+            )
+        )
+
+
+class GiveawayDraftsView(GiveawayBaseView):
+    def __init__(self, view: GiveawayView, drafts):
+        super(GiveawayDraftsView, self).__init__(view.user_id, view.guilds, view.guild_ids, view.channel_ids)
+        self.add_item(GiveawayDraftSelectMenu(drafts))
 
 
 class JoinGiveawayButton(discord.ui.Button['Join']):

@@ -1,7 +1,7 @@
 import pandas as pd
 
 from repository.config import CNX_POOL
-from repository.repository import rw_db
+from repository.common import rw_db
 
 
 def insert_user(discord_id, topshot_username, flow_address):

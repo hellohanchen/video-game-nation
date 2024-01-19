@@ -1,6 +1,7 @@
 import pandas as pd
 
 from repository.config import CNX_POOL
+from utils import list_to_str
 
 
 def create_giveaway(guild_id, channel_id, creator_id, name, description, winners, duration):
@@ -80,6 +81,34 @@ def get_giveaway(gid):
         return None, err
 
 
+def get_drafts_for_user(uid, guild_ids, channel_ids):
+    if len(guild_ids) == 0 or len(channel_ids) == 0:
+        return {}, None
+
+    try:
+        db_conn = CNX_POOL.get_connection()
+        query = f"SELECT * from vgn.ts_giveaways WHERE creator_id = {uid} " \
+                f"AND is_submitted = FALSE AND is_ended = FALSE AND created_at >= SUBTIME(NOW(), '24:00:00.000000') " \
+                f"AND guild_id IN ({list_to_str(guild_ids)}) AND channel_id IN ({list_to_str(channel_ids)}) " \
+                f"ORDER BY created_at"
+        # Execute SQL query and store results in a pandas dataframe
+        df = pd.read_sql(query, db_conn)
+
+        # Convert dataframe to a dictionary with headers
+        loaded = df.to_dict('records')
+
+        db_conn.close()
+
+        giveaways = {}
+        for giveaway in loaded:
+            giveaways[str(giveaway['id'])] = giveaway
+
+        return giveaways, None
+
+    except Exception as err:
+        return None, err
+
+
 def get_user_giveaway_accesses(uid, all_guilds):
     try:
         db_conn = CNX_POOL.get_connection()
@@ -109,6 +138,7 @@ def get_user_giveaway_accesses(uid, all_guilds):
             cid = giveaway['channel_id']
             if cid == 0:
                 guilds[gid]['channels'] = all_guilds[gid]['channels']
+                channel_ids.extend(list(all_guilds[gid]['channels'].keys()))
             elif cid in all_guilds[gid]['channels']:
                 guilds[gid]['channels'].append(cid)
                 channel_ids.append(cid)

@@ -6,9 +6,7 @@ import discord
 from discord.ext import commands, tasks
 from dotenv import load_dotenv
 
-from app.views import MainPage
-from service.fastbreak.lineup import LINEUP_SERVICE
-from service.fastbreak.ranking import RANK_SERVICE
+from app import MainPage
 
 # config bot
 load_dotenv()
