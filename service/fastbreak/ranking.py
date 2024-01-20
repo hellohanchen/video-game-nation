@@ -157,9 +157,11 @@ class RankingService(FastBreakService):
         started = False
         final = True
         for game in games:
+            if game['gameStatusText'] == 'PPD':
+                continue
             if game['gameStatus'] > 1:
                 started = True
-            if game['gameStatus'] < 3:
+            if 3 > game['gameStatus'] >= 1:
                 final = False
 
         if not started and not final:
