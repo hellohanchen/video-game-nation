@@ -99,6 +99,10 @@ class FastBreak:
 
         message = ""
         for pid in player_ids:
+            if pid is None:
+                message += f"🏀 No pick\n"
+                continue
+
             player = player_stats.get(pid)
             if player is None:
                 message += f"🏀 Player stats not available\n"
@@ -132,6 +136,38 @@ class FastBreak:
         message += "**\n"
 
         if passed >= num_buckets:
-            message += "☑ **WIN**\n"
+            message += "🟢 **YOU WIN**\n"
 
         return message
+
+    def compute_score(self, player_ids, player_stats):
+        num_buckets = len(self.buckets)
+        sums = [0.0] * num_buckets
+        player_scores = {pid: [0.0] * num_buckets for pid in player_ids}
+
+        for pid in player_ids:
+            if pid is None:
+                continue
+
+            player = player_stats.get(pid)
+            if player is None:
+                continue
+
+            for i in range(0, num_buckets):
+                bucket = self.buckets[i]
+                score = bucket.load_score(player)
+                player_scores[pid][i] = score
+                sums[i] = sums[i] + score
+
+        passed = True
+        for i in range(0, num_buckets):
+            bucket = self.buckets[i]
+            s = sums[i]
+            if s < bucket.target and bucket.order == 'DESC':
+                passed = False
+                break
+            elif s > bucket.target and bucket.order == 'ASC':
+                passed = False
+                break
+
+        return sum(sums), passed

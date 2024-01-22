@@ -4,7 +4,7 @@ from nba_api.live.nba.endpoints import boxscore
 
 from provider.nba.nba_provider import NBAProvider, NBA_PROVIDER
 from provider.topshot.fb_provider import FB_PROVIDER
-from repository.fb_lineups import get_lineups
+from repository.fb_lineups import get_lineups, upsert_score
 from repository.vgn_players import get_empty_players_stats
 from service.fastbreak.fastbreak import FastBreak
 from service.fastbreak.lineup import Lineup, LINEUP_SERVICE
@@ -21,6 +21,8 @@ class RankingService(FastBreakService):
 
         self.status = "PRE_GAME"
         self.player_stats = {}
+        self.user_scores = {}
+        self.leaderboard = []
 
         self.update()
 
@@ -37,9 +39,7 @@ class RankingService(FastBreakService):
         loaded = get_lineups(self.current_game_date)
         player_ids = []
         for lineup in loaded:
-            new_lineup = Lineup(lineup, self)
-            if new_lineup.is_valid():
-                self.lineups[lineup['user_id']] = new_lineup
+            self.lineups[lineup['user_id']] = Lineup(lineup, self)
 
         if len(self.lineups) > 0:
             for user_id in self.lineups:
@@ -54,14 +54,17 @@ class RankingService(FastBreakService):
         FB_PROVIDER.reload()
         self.fb = FastBreak(FB_PROVIDER.get_fb(self.current_game_date))
         self.lineups = {}
+        self.user_scores = {}
+        self.leaderboard = []
         self.__load_lineups()
 
     def update(self):
         scoreboard = NBAProvider.get_scoreboard()
-        new_status = self.get_status(scoreboard['games'])
+        new_status = NBAProvider.get_status(scoreboard['games'])
         if new_status == "NO_GAME" or new_status == "PRE_GAME":
             if self.status == "POST_GAME":
                 self.__update_stats()
+                self.__upload_leaderboard()
 
                 NBA_PROVIDER.reload()
                 LINEUP_SERVICE.reload()
@@ -113,6 +116,38 @@ class RankingService(FastBreakService):
         for player_id in player_stats:
             self.player_stats[player_id] = player_stats[player_id]
 
+        user_scores = {}
+        for user_id in self.lineups:
+            lineup = self.lineups[user_id]
+            if not lineup.is_submitted:
+                continue
+
+            score, passed = self.fb.compute_score(lineup.player_ids[0:self.fb.count], self.player_stats)
+            user_scores[user_id] = {
+                'score': score,
+                'serial': lineup.serial,
+                'passed': passed
+            }
+
+        user_ids = list(user_scores.keys())
+        user_ids.sort(key=lambda uid: user_scores[uid]['serial'], reverse=False)
+        user_ids.sort(key=lambda uid: user_scores[uid]['score'], reverse=True)
+
+        leaderboard = []
+        for i, user_id in enumerate(user_ids):
+            user_scores[user_id]['rank'] = i + 1
+            leaderboard.append(user_id)
+
+        self.user_scores = user_scores
+        self.leaderboard = leaderboard
+
+    def __upload_leaderboard(self):
+        for user_id in self.lineups:
+            if user_id not in self.user_scores:
+                continue
+            upsert_score(user_id, self.lineups[user_id].game_date,
+                         self.user_scores[user_id]['score'], self.user_scores[user_id]['passed'])
+
     def formatted_user_score(self, user_id):
         if self.status == "NO_GAME" or self.status == "PRE_GAME":
             return "Games are not started yet."
@@ -129,6 +164,8 @@ class RankingService(FastBreakService):
             message += self.fb.get_formatted()
 
         message += self.fb.formatted_scores(lineup.player_ids[0:self.fb.count], self.player_stats)
+        if user_id in self.user_scores:
+            message += f"\nYour current rank is **{self.user_scores[user_id]['rank']}/{len(self.user_scores)}**"
 
         return message
 
@@ -149,27 +186,23 @@ class RankingService(FastBreakService):
 
         return player_stats
 
-    @staticmethod
-    def get_status(games):
-        if len(games) == 0:
-            return "NO_GAME"
+    def formatted_leaderboard(self, top):
+        if self.status != "IN_GAME" and self.status != "POST_GAME":
+            return "Games are not started yet.\n"
 
-        started = False
-        final = True
-        for game in games:
-            if game['gameStatusText'] == 'PPD':
-                continue
-            if game['gameStatus'] > 1:
-                started = True
-            if 3 > game['gameStatus'] >= 1:
-                final = False
+        message = f"***Leaderboard {self.current_game_date}***\n\n"
+        for i in range(0, min(top, len(self.leaderboard))):
+            uid = self.leaderboard[i]
+            if self.user_scores[uid]['passed']:
+                message += "🟢 "
+            else:
+                message += "🔴 "
+            message += f"**#{i + 1}.**  **{self.lineups[uid].username}** " \
+                       f"points {self.user_scores[uid]['score']}, serial {int(self.lineups[uid].serial)}\n"
 
-        if not started and not final:
-            return "PRE_GAME"
-        if started and not final:
-            return "IN_GAME"
-        if started and final:
-            return "POST_GAME"
+        message += f"\nTotal submissions: **{len(self.user_scores)}**\n"
+
+        return message
 
 
 RANK_SERVICE = RankingService()

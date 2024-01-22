@@ -1,16 +1,21 @@
 import math
 
 from provider.nba.nba_provider import NBA_PROVIDER
+from provider.topshot.cadence.flow_collections import get_account_plays_with_lowest_serial
 from provider.topshot.fb_provider import FB_PROVIDER
-from repository.fb_lineups import get_lineups, upsert_lineup
+from provider.topshot.ts_provider import TS_PROVIDER
+from repository.fb_lineups import get_lineups, upsert_lineup, submit_lineup
 from repository.vgn_players import get_players
+from repository.vgn_users import get_user_new
 from service.fastbreak.fastbreak import FastBreak
 from service.fastbreak.service import FastBreakService
+from service.fastbreak.utils import build_fb_collections
 
 
 class Lineup:
     def __init__(self, db_lineup, service: FastBreakService):
         self.user_id = db_lineup['user_id']
+        self.username = db_lineup['topshot_username']
         self.game_date = db_lineup['game_date']
         self.player_ids: [int] = [
             self.__cast_player_id(db_lineup['player_1']),
@@ -22,6 +27,8 @@ class Lineup:
             self.__cast_player_id(db_lineup['player_7']),
             self.__cast_player_id(db_lineup['player_8']),
         ]
+        self.is_submitted = db_lineup['is_ranked']
+        self.serial = db_lineup['sum_serial']
         self.service = service
 
     @staticmethod
@@ -33,7 +40,11 @@ class Lineup:
     def formatted(self):
         message = self.service.formatted_schedule + "\n"
 
-        message += "Your lineup for **{}**.\n".format(self.game_date)
+        message += "Your lineup for **{}**".format(self.game_date)
+        if self.is_submitted:
+            message += " is **SUBMITTED**.\n"
+        else:
+            message += ".\n"
         for i in range(0, self.service.fb.count):
             message += "🏀 {}\n".format(self.formatted_lineup_player(i))
 
@@ -55,19 +66,13 @@ class Lineup:
 
         player_id = self.service.player_ids[player_idx - 1]
         if player_id in self.player_ids:
-            return "Player **{}. {}** is already in the lineup.".format(
-                self.service.players[player_id]['index'],
-                self.service.players[player_id]['full_name'],
-            )
+            return f"Player **{self.service.players[player_id]['full_name']}** is already in the lineup."
 
         message = ""
 
         player_to_remove = self.player_ids[pos_idx]
         if player_to_remove is not None:
-            message += "Removed **{}. {}**. ".format(
-                self.service.players[player_to_remove]['index'],
-                self.service.players[player_to_remove]['full_name'],
-            )
+            message += f"Removed **{self.service.players[player_to_remove]['full_name']}**."
         self.player_ids[pos_idx] = player_id
 
         successful, _ = upsert_lineup(
@@ -103,13 +108,46 @@ class Lineup:
             self.player_ids[pos_idx] = player_to_remove
             return "Failed to update lineup, please retry."
 
-    def is_valid(self):
-        count = 0
-        for i in range(0, self.service.fb.count):
-            if self.player_ids[i] is not None:
-                count += 1
+    async def submit(self):
+        user, _ = get_user_new(self.user_id)
+        if user is None:
+            return "Failed to load user collection, please retry."
+        plays = await get_account_plays_with_lowest_serial(user['flow_address'])
+        collections, _ = build_fb_collections(TS_PROVIDER, plays, self.player_ids[0:5])
+        serials = []
+        serial_sum = 0
 
-        return count == self.service.fb.count
+        for pid in self.player_ids[0:5]:
+            if pid is None:
+                serials.append(None)
+            elif pid not in collections:
+                return f"You don't have any moment of {self.service.players[pid]['full_name']}, please check lineup."
+            else:
+                serial_sum += collections[pid]['serial']
+                serials.append(collections[pid]['serial'])
+
+        successful, err = submit_lineup((
+            self.user_id, user['topshot_username'], self.game_date,
+            self.player_ids[0], serials[0],
+            self.player_ids[1], serials[1], self.player_ids[2], serials[2],
+            self.player_ids[3], serials[3], self.player_ids[4], serials[4],
+            serial_sum
+        ))
+        if not successful:
+            return f"Submission failed: {err}"
+
+        self.is_submitted = True
+        self.serial = serial_sum
+        self.username = user['topshot_username']
+        message = "You've submitted lineup using the following players:\n\n"
+        for pid in self.player_ids[0:5]:
+            if pid is None:
+                continue
+            message += f"🏀 **{self.service.players[pid]['full_name']}** " \
+                       f"{collections[pid]['tier']}({collections[pid]['serial']})\n"
+        message += f"\nTotal serial **{serial_sum}**"
+
+        return message
 
 
 class LineupService(FastBreakService):
@@ -133,8 +171,9 @@ class LineupService(FastBreakService):
                 self.team_to_opponent[team] = game['homeTeam'] if team == game['awayTeam'] else game['awayTeam']
                 self.team_to_players[team] = []
                 for player in NBA_PROVIDER.get_players_for_team(team):
-                    self.player_to_team[player] = team
-                    players_to_load.append(player)
+                    if player in TS_PROVIDER.player_moments:  # only load players with TS moments
+                        self.player_to_team[player] = team
+                        players_to_load.append(player)
 
         loaded = get_players(players_to_load, [("full_name", "ASC")])
         index = 0
@@ -189,6 +228,7 @@ class LineupService(FastBreakService):
             {
                 "user_id": user_id,
                 "game_date": self.coming_game_date,
+                "topshot_username": None,
                 "player_1": None,
                 "player_2": None,
                 "player_3": None,
@@ -197,6 +237,8 @@ class LineupService(FastBreakService):
                 "player_6": None,
                 "player_7": None,
                 "player_8": None,
+                "is_ranked": False,
+                "sum_serial": 0,
             },
             self
         )

@@ -22,7 +22,7 @@ class RankingProvider:
 
         self.player_stats = {}
         self.scores = {}
-        self.leaderboard = {}
+        self.leaderboard = []
         self.player_leaderboard = []
 
         self.update()
@@ -64,13 +64,13 @@ class RankingProvider:
         self.collections = {}
         self.player_stats = {}
         self.scores = {}
-        self.leaderboard = {}
+        self.leaderboard = []
         self.player_leaderboard = []
         self.__load_lineups_and_collections()
 
     def update(self):
         scoreboard = NBAProvider.get_scoreboard()
-        new_status = self.get_status(scoreboard['games'])
+        new_status = NBAProvider.get_status(scoreboard['games'])
         if new_status == "NO_GAME" or new_status == "PRE_GAME":
             if self.status == "POST_GAME":
                 self.__update_leaderboard()
@@ -320,28 +320,6 @@ class RankingProvider:
         player_stats['fiveDouble'] = 1.0 if doubles > 4 else 0
 
         return player_stats
-
-    @staticmethod
-    def get_status(games):
-        if len(games) == 0:
-            return "NO_GAME"
-
-        started = False
-        final = True
-        for game in games:
-            if game['gameStatusText'] == 'PPD':
-                continue
-            if game['gameStatus'] > 1:
-                started = True
-            if 3 > game['gameStatus'] >= 1:
-                final = False
-
-        if not started and not final:
-            return "PRE_GAME"
-        if started and not final:
-            return "IN_GAME"
-        if started and final:
-            return "POST_GAME"
 
 
 RANK_PROVIDER = RankingProvider()

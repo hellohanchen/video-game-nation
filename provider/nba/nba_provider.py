@@ -206,6 +206,28 @@ class NBAProvider:
 
         return message
 
+    @staticmethod
+    def get_status(games):
+        if len(games) == 0:
+            return "NO_GAME"
+
+        started = False
+        final = True
+        for game in games:
+            if game['gameStatusText'] == 'PPD':
+                continue
+            if game['gameStatus'] > 1:
+                started = True
+            if 3 > game['gameStatus'] >= 1:
+                final = False
+
+        if not started and not final:
+            return "PRE_GAME"
+        if started and not final:
+            return "IN_GAME"
+        if started and final:
+            return "POST_GAME"
+
 
 NBA_PROVIDER = NBAProvider()
 

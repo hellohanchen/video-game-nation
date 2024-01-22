@@ -60,6 +60,44 @@ def upsert_lineup(lineup):
         return False, "DB error: {}".format(err)
 
 
+def submit_lineup(lineup):
+    try:
+        db_conn = CNX_POOL.get_connection()
+        cursor = db_conn.cursor()
+        query = "INSERT INTO vgn.fb_lineups (user_id, topshot_username, game_date, " \
+                "player_1, player_1_serial, player_2, player_2_serial, " \
+                "player_3, player_3_serial, player_4, player_4_serial, " \
+                "player_5, player_5_serial, is_ranked, sum_serial) " \
+                "VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, TRUE, %s) ON DUPLICATE KEY UPDATE " \
+                "topshot_username=VALUES(topshot_username), " \
+                "player_1=VALUES(player_1), player_1_serial=VALUES(player_1_serial), " \
+                "player_2=VALUES(player_2), player_2_serial=VALUES(player_2_serial), " \
+                "player_3=VALUES(player_3), player_3_serial=VALUES(player_3_serial), " \
+                "player_4=VALUES(player_4), player_4_serial=VALUES(player_4_serial), " \
+                "player_5=VALUES(player_5), player_5_serial=VALUES(player_5_serial), " \
+                "is_ranked=TRUE, sum_serial=VALUES(sum_serial)"
+        cursor.execute(query, lineup)
+        db_conn.commit()
+        db_conn.close()
+
+        return True, "Updated"
+    except Exception as err:
+        return False, "DB error: {}".format(err)
+
+
+def upsert_score(user_id, game_date, score, passed):
+    try:
+        db_conn = CNX_POOL.get_connection()
+        cursor = db_conn.cursor()
+        query = "UPDATE vgn.fb_lineups SET score = {}, is_passed = {} " \
+                "WHERE user_id = {} AND game_date = '{}'".format(score, passed, user_id, game_date)
+        cursor.execute(query)
+        db_conn.commit()
+        db_conn.close()
+    except Exception as err:
+        print("DB error: {}".format(err))
+
+
 if __name__ == '__main__':
     # get_lineups("04/11/2023")
     get_lineup("100", "04/11/2023")

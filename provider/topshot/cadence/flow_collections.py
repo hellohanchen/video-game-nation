@@ -138,5 +138,72 @@ async def get_account_plays(address):
     return plays
 
 
+async def get_account_plays_with_lowest_serial(address):
+    script = Script(
+        code="""
+                import TopShot from 0x0b2a3299cc857e29
+
+                pub fun main(account: Address): {UInt32:{UInt32:UInt32}} {
+                    let acct = getAccount(account)
+
+                    let collectionRef = acct.getCapability(/public/MomentCollection)
+                                            .borrow<&{TopShot.MomentCollectionPublic}>()!
+
+                    let res: {UInt32:{UInt32:UInt32}} = {}                        
+
+                    for id in collectionRef.getIDs() {
+                        // Borrow a reference to the specified moment
+                        let token = collectionRef.borrowMoment(id: id)
+                            ?? panic("Could not borrow a reference to the specified moment")
+
+                        // Get the moment's metadata to access its play and Set IDs
+                        let data = token.data
+                        
+                        if res.containsKey(data.playID) == false {
+                            let playLowestSerial: {UInt32:UInt32} = {}
+                            playLowestSerial.insert(key: data.setID, data.serialNumber)
+                            res.insert(key: data.playID, playLowestSerial)
+                        } else {
+                            let playLowestSerial: {UInt32:UInt32} = res[data.playID]!
+                            if playLowestSerial.containsKey(data.setID) == false {
+                                playLowestSerial.insert(key: data.setID, data.serialNumber)
+                            } else {
+                                var low: UInt32 = playLowestSerial[data.setID]!
+                                if data.serialNumber < low {
+                                    playLowestSerial.insert(key: data.setID, data.serialNumber)
+                                }
+                            }
+                            
+                            res.insert(key: data.playID, playLowestSerial)
+                        }
+                    }
+
+                    return res
+                }
+            """,
+        arguments=[cadence.Address.from_hex(address)],
+    )
+
+    async with flow_client(
+            host="access.mainnet.nodes.onflow.org", port=9000
+    ) as client:
+        complex_script = await client.execute_script(
+            script=script
+            # , block_id
+            # , block_height
+        )
+        plays = {}
+
+        for play in complex_script.value:
+            play_lowest_serial_per_set = {}
+            for set_info in play.value.value:
+                play_lowest_serial_per_set[set_info.key.value] = set_info.value.value
+
+            plays[play.key.value] = play_lowest_serial_per_set
+
+    return plays
+
+
 if __name__ == '__main__':
-    asyncio.run(get_account_plays("0xad955e5d8047ef82"))
+    result = asyncio.run(get_account_plays_with_lowest_serial("0xad955e5d8047ef82"))
+    print(result)
