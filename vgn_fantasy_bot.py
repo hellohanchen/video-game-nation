@@ -16,7 +16,7 @@ from service.fantasy import LINEUP_PROVIDER
 from service.fantasy.ranking import RANK_PROVIDER
 from provider.topshot.cadence.flow_collections import get_account_plays
 from provider.topshot.graphql.get_address import get_flow_address
-from utils import update_channel_messages, get_the_past_week, send_channel_messages
+from utils import update_channel_messages, get_the_past_week_from_sunday, send_channel_messages
 
 # config bot
 load_dotenv()
@@ -146,7 +146,7 @@ async def update_leaderboard():
 
     global LB_MESSAGE_IDS
     if init_status == "POST_GAME" and new_status == "PRE_GAME":
-        dates = get_the_past_week(RANK_PROVIDER.current_game_date)
+        dates = get_the_past_week_from_sunday(RANK_PROVIDER.current_game_date)
         messages = RANK_PROVIDER.formatted_weekly_leaderboard(dates, 20)
         await send_channel_messages(messages, LB_CHANNELS)
 

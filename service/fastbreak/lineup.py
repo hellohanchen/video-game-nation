@@ -80,8 +80,11 @@ class Lineup:
              self.player_ids[3], self.player_ids[4], self.player_ids[5], self.player_ids[6], self.player_ids[7])
         )
         if successful:
-            message += "Added **{}**".format(self.service.players[self.player_ids[pos_idx]]['full_name'])
+            message += f"Added **{self.service.players[self.player_ids[pos_idx]]['full_name']}**"
 
+            if self.is_submitted:
+                self.is_submitted = False
+                message += "\nClick 'Submit' to save your changes"
             return message
         else:
             self.player_ids[pos_idx] = player_to_remove
@@ -100,10 +103,11 @@ class Lineup:
         )
 
         if successful:
-            return "Removed **{}. {}**. ".format(
-                self.service.players[player_to_remove]['index'],
-                self.service.players[player_to_remove]['full_name'],
-            )
+            message = f"Removed **{self.service.players[player_to_remove]['full_name']}**."
+            if self.is_submitted:
+                self.is_submitted = False
+                message += "\nClick 'Submit' to save your changes"
+            return message
         else:
             self.player_ids[pos_idx] = player_to_remove
             return "Failed to update lineup, please retry."

@@ -4,7 +4,7 @@ from nba_api.live.nba.endpoints import boxscore
 
 from provider.nba.nba_provider import NBAProvider, NBA_PROVIDER
 from provider.topshot.fb_provider import FB_PROVIDER
-from repository.fb_lineups import get_lineups, upsert_score
+from repository.fb_lineups import get_lineups, upsert_score, get_weekly_ranks
 from repository.vgn_players import get_empty_players_stats
 from service.fastbreak.fastbreak import FastBreak
 from service.fastbreak.lineup import Lineup, LINEUP_SERVICE
@@ -201,6 +201,19 @@ class RankingService(FastBreakService):
                        f"points {self.user_scores[uid]['score']}, serial {int(self.lineups[uid].serial)}\n"
 
         message += f"\nTotal submissions: **{len(self.user_scores)}**\n"
+
+        return message
+
+    @staticmethod
+    def formatted_weekly_leaderboard(dates, top):
+        message = "***Weekly Leaderboard {}~{}***\n\n".format(dates[0], dates[-1])
+        loaded = get_weekly_ranks(dates, top)
+        for i in range(0, min(top, len(loaded))):
+            message += f"**#{i+1}.** **{loaded[i]['username']}** *{loaded[i]['total_score']}*"
+            if loaded[i].get('all_checked_in'):
+                message += " (100% participation)\n"
+            else:
+                message += "\n"
 
         return message
 

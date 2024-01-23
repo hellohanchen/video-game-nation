@@ -199,9 +199,21 @@ def to_slash_date(dt):
     return dt.strftime('%m/%d/%Y')
 
 
-def get_the_past_week(date):
+def get_the_past_week_from_sunday(date):
     today = parse_slash_date(date)
     idx = (today.weekday() + 1) % 7  # Mon = 1, ..., Sat = 6, Sun = 0
+
+    dates = []
+    for i in range(idx, -1, -1):
+        d = today - datetime.timedelta(days=i)
+        dates.append(to_slash_date(d))
+
+    return dates
+
+
+def get_the_past_week_from_monday(date):
+    today = parse_slash_date(date)
+    idx = today.weekday() % 7  # Mon = 0, ..., Sat = 5, Sun = 6
 
     dates = []
     for i in range(idx, -1, -1):

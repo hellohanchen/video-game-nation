@@ -192,7 +192,7 @@ class LineupView(FantasyView):
         else:
             date = RANK_PROVIDER.current_game_date
 
-        dates = utils.get_the_past_week(date)
+        dates = utils.get_the_past_week_from_sunday(date)
         score = get_weekly_score(dates, self.user_id)
         return f"Total score {dates[0]}~{dates[-1]}: **{score}**", self
 

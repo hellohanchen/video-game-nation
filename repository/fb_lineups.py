@@ -46,11 +46,11 @@ def upsert_lineup(lineup):
         db_conn = CNX_POOL.get_connection()
         cursor = db_conn.cursor()
         query = "INSERT INTO vgn.fb_lineups (user_id, game_date, player_1, player_2, player_3, " \
-                "player_4, player_5, player_6, player_7, player_8) " \
-                "VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s) ON DUPLICATE KEY UPDATE " \
+                "player_4, player_5, player_6, player_7, player_8, is_ranked) " \
+                "VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, FALSE) ON DUPLICATE KEY UPDATE " \
                 "player_1=VALUES(player_1), player_2=VALUES(player_2), player_3=VALUES(player_3), " \
                 "player_4=VALUES(player_4), player_5=VALUES(player_5), player_6=VALUES(player_6), " \
-                "player_7=VALUES(player_7), player_8=VALUES(player_8)"
+                "player_7=VALUES(player_7), player_8=VALUES(player_8), is_ranked=FALSE"
         cursor.execute(query, lineup)
         db_conn.commit()
         db_conn.close()
@@ -96,6 +96,34 @@ def upsert_score(user_id, game_date, score, passed):
         db_conn.close()
     except Exception as err:
         print("DB error: {}".format(err))
+
+
+def get_weekly_ranks(game_dates, count):
+    try:
+        db_conn = CNX_POOL.get_connection()
+        query = "SELECT u.topshot_username as username, SUM(l.score) * IF(COUNT(*) = {}, 1.1, 1) as total_score, " \
+                "COUNT(*) = {} AS all_checked_in FROM " \
+                "(SELECT * FROM vgn.fb_lineups WHERE game_date IN ({}) AND is_ranked = TRUE) l " \
+                "JOIN vgn.users u ON l.user_id = u.id " \
+                "GROUP BY u.id ORDER BY total_score DESC LIMIT {}"\
+            .format(len(game_dates), len(game_dates), ', '.join("'" + date + "'" for date in game_dates), count)
+
+        # Execute SQL query and store results in a pandas dataframe
+        df = pd.read_sql(query, db_conn)
+
+        # Convert dataframe to a dictionary with headers
+        leaderboard = df.to_dict('records')
+
+        db_conn.commit()
+        db_conn.close()
+    except Exception as err:
+        print("DB error: {}".format(err))
+
+        if db_conn is not None:
+            db_conn.close()
+        return {}
+
+    return leaderboard
 
 
 if __name__ == '__main__':
