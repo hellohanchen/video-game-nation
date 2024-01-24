@@ -1,8 +1,8 @@
 import discord
 
 from constants import NBA_TEAMS
-from repository.ts_giveaways import get_user_giveaway_accesses, create_giveaway, submit_giveaway, message_giveaway, \
-    get_drafts_for_user
+from repository.ts_giveaways import get_user_giveaway_accesses, create_giveaway, submit_giveaway, get_drafts_for_user
+from service.giveaways.giveaway import Giveaway, GIVEAWAY_SERVICE
 from service.views import BaseView
 
 
@@ -188,7 +188,6 @@ class GiveawayCreateModal(discord.ui.Modal, title='Create a giveaway'):
 
 class GiveawaySubmitModal(discord.ui.Modal, title='Complete details'):
     fav_teams = discord.ui.TextInput(label="Fav teams, optional, e.g. 'ATL,BOS'", required=False)
-    team_set_weights = discord.ui.TextInput(label="Team set weights, optional", required=False)
 
     def __init__(self, view: GiveawayBaseView, giveaway, channel):
         super(GiveawaySubmitModal, self).__init__()
@@ -207,43 +206,37 @@ class GiveawaySubmitModal(discord.ui.Modal, title='Complete details'):
                 await interaction.response.edit_message(content=message, view=self.view.restart())
                 return
 
-        team_set_weights_input = str(self.team_set_weights).strip()
-        weights = []
+        team_set_weights_input = ""
         if len(team_set_weights_input) > 0:
             weights = team_set_weights_input.split(',')
-        for weight in weights:
-            if not weight.isnumeric():
-                message = f"Invalid weight: {weight}"
-                await interaction.response.edit_message(content=message, view=self.view.restart())
-                return
-            w = int(weight)
-            if w < 1 or w > 4:
-                message = f"Invalid weight: {weight}"
-                await interaction.response.edit_message(content=message, view=self.view.restart())
-                return
+            for weight in weights:
+                if not weight.isnumeric():
+                    message = f"Invalid weight: {weight}"
+                    await interaction.response.edit_message(content=message, view=self.view.restart())
+                    return
+                w = int(weight)
+                if w < 1 or w > 4:
+                    message = f"Invalid weight: {weight}"
+                    await interaction.response.edit_message(content=message, view=self.view.restart())
+                    return
 
-        success, err = submit_giveaway(self.giveaway['id'], self.giveaway['duration'], fav_teams_input,
-                                       team_set_weights_input)
+        db_record, err = submit_giveaway(
+            self.giveaway['id'], self.giveaway['duration'], fav_teams_input, team_set_weights_input)
 
-        if not success:
+        if db_record is None:
             message = f"Submit giveaway failed: {err}"
             await interaction.response.edit_message(content=message, view=self.view.restart())
             return
 
-        embed = JoinGiveawayView.formatted_embed(
-            self.giveaway['name'], self.giveaway['description'], self.giveaway['winners'])
-        try:
-            join_view = JoinGiveawayView(embed, 0)
-            message = await self.channel.send(embed=embed, view=join_view)
-            join_view.set_message(message)
-            message_giveaway(self.giveaway['id'], message.id)
-        except Exception as err:
-            message = f"Failed sending message to {self.channel.name}: {err}"
-            await interaction.response.edit_message(content=message, view=self.view.restart())
-            return
-
-        message = f"Successfully created giveaway in {self.channel.name}"
-        await interaction.response.edit_message(content=message, view=self.view.restart())
+        giveaway = await Giveaway.from_db(db_record, self.channel)
+        successful, err = await giveaway.send_message()
+        if successful:
+            GIVEAWAY_SERVICE.add(giveaway)
+            await interaction.response.edit_message(
+                content=f"Successfully created giveaway in {self.channel.name}", view=self.view.restart())
+        else:
+            await interaction.response.edit_message(
+                content=f"Failed sending message to {self.channel.name}: {err}", view=self.view.restart())
 
 
 class GiveawayDraftMenuButton(discord.ui.Button['DraftMenu']):
@@ -287,10 +280,7 @@ class GiveawayDraftView(BaseView):
                f"Winners: **{winners}**\n" \
                f"Duration: **{duration}** hours\n\n" \
                f"*Please fill in more details to start it:*\n" \
-               f"**Fav Teams**: a comma separated list of team abbreviations, optional, example: ATL,BOS\n" \
-               f"**Team Set Weights**: a common separated list of weights of each team set, optional, " \
-               f"starting from All to S4, each weight not exceeding 4, for example: " \
-               f"**4,2,1,1,1,1** representing 4 for All, 2 for Contemporary, 1 for Series 1~4 sets."
+               f"**Fav Teams**: a comma separated list of team abbreviations, optional, example: ATL,BOS\n"
 
     @staticmethod
     def formatted_giveaway(giveaway):
@@ -328,38 +318,3 @@ class GiveawayDraftsView(GiveawayBaseView):
     def __init__(self, view: GiveawayView, drafts):
         super(GiveawayDraftsView, self).__init__(view.user_id, view.guilds, view.guild_ids, view.channel_ids)
         self.add_item(GiveawayDraftSelectMenu(drafts))
-
-
-class JoinGiveawayButton(discord.ui.Button['Join']):
-    def __init__(self, count):
-        super(JoinGiveawayButton, self).__init__(style=discord.ButtonStyle.success, label=f"Join", row=0)
-
-    async def callback(self, interaction: discord.Interaction):
-        assert self.view is not None
-        view: JoinGiveawayView = self.view
-        view.join(interaction.user.id)
-        self.label = f"Joined: {view.count}"
-        await interaction.response.send_message(content="Joined!", ephemeral=True, delete_after=30.0)
-        await view.refresh()
-
-
-class JoinGiveawayView(discord.ui.View):
-    def __init__(self, embed, count):
-        super(JoinGiveawayView, self).__init__()
-        self.add_item(JoinGiveawayButton(count))
-        self.embed = embed
-        self.count = count
-        self.message = None
-
-    def set_message(self, message):
-        self.message = message
-
-    def join(self, user_id):
-        self.count += 1
-
-    async def refresh(self):
-        await self.message.edit(embed=self.embed, view=self)
-
-    @staticmethod
-    def formatted_embed(giveaway_name, description, winners):
-        return discord.Embed(title=giveaway_name, description=f"{description}\n\nWinners:{winners}\n\nEnds at: ...")

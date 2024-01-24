@@ -1,3 +1,5 @@
+import asyncio
+
 from gql import gql, Client
 from gql.transport.aiohttp import AIOHTTPTransport
 from gql.transport.exceptions import TransportQueryError
@@ -73,4 +75,4 @@ async def get_flow_account_info(topshot_username):
 
 
 if __name__ == '__main__':
-    print(get_flow_address('MingDynastyVase'))
+    print(asyncio.run(get_flow_account_info('MingDynastyVase')))

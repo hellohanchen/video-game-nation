@@ -2,7 +2,7 @@ import discord
 
 from provider.topshot.fb_provider import FB_PROVIDER
 from repository.vgn_users import get_user_new
-from service.common.profile.views import ProfileView, TO_LINK_MESSAGE
+from service.common.profile.views import ProfileView, LINK_TS_ACCOUNT_MESSAGE
 from service.fastbreak.lineup import LineupService
 from service.fastbreak.ranking import RankingService, RANK_SERVICE
 
@@ -53,7 +53,7 @@ class MainPage(discord.ui.View):
     def launch_fb(self, user_id):
         user, _ = get_user_new(user_id)
         if user is None:
-            return TO_LINK_MESSAGE, ProfileView(user_id)
+            return LINK_TS_ACCOUNT_MESSAGE, ProfileView(user_id)
 
         if self.rank_service.status != "IN_GAME" or self.rank_service.current_game_date not in FB_PROVIDER.fb_info:
             message = self.lineup_service.get_or_create_lineup(user_id).formatted()

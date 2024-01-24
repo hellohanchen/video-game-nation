@@ -7,11 +7,11 @@ from discord.ext import commands, tasks
 from dotenv import load_dotenv
 
 from app import MainPage
+from service.giveaways.giveaway import GIVEAWAY_SERVICE
 
 # config bot
 load_dotenv()
-TOKEN = os.getenv('DISCORD_TOKEN_FASTBREAK')
-GUILD = os.getenv('DISCORD_GUILD')
+TOKEN = os.getenv('DISCORD_TOKEN_VGN')
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -30,6 +30,12 @@ ADMIN_CHANNEL_IDS = []
 PLAYERS_MESSAGE_IDS = {}
 
 GUILDS = {}
+
+WELCOME_MESSAGE = "**Video Game Nation Discord Portal**\n\n" \
+                  "Explore the Discord communities of NBA Topshot.\n" \
+                  "Link your discord account with your Topshot collection.\n" \
+                  "Play games with fans from all communities.\n" \
+                  "Win moments and other prizes from activities."
 
 
 @bot.event
@@ -53,17 +59,24 @@ async def on_ready():
                 for emoji in guild.emojis:
                     if emoji.name == "vgn":
                         print(emoji)
-                message = await channel.send("Ready to start daily NBA fantasy game?", view=view)
+                message = await channel.send(WELCOME_MESSAGE, view=view)
                 FB_CHANNEL_MESSAGES.append(message)
 
+    await GIVEAWAY_SERVICE.load_from_guilds(GUILDS)
     refresh_entry.start()
+    refresh_giveaways.start()
 
 
-@tasks.loop(seconds=5)
+@tasks.loop(seconds=120)
 async def refresh_entry():
     for message in FB_CHANNEL_MESSAGES:
         view = MainPage(GUILDS)
-        await message.edit(content="Start your fastbreak here!", view=view)
+        await message.edit(content=WELCOME_MESSAGE, view=view)
+
+
+@tasks.loop(seconds=60)
+async def refresh_giveaways():
+    await GIVEAWAY_SERVICE.refresh()
 
 
 # start the bot

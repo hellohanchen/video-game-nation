@@ -6,7 +6,7 @@ from service.giveaways.views import GiveawayView
 
 class MainAccountButton(discord.ui.Button['Account']):
     def __init__(self):
-        super().__init__(style=discord.ButtonStyle.success, label="TS Account", row=0)
+        super().__init__(style=discord.ButtonStyle.success, label="Link NBA Topshot Account", row=1)
 
     async def callback(self, interaction: discord.Interaction):
         assert self.view is not None
@@ -17,7 +17,7 @@ class MainAccountButton(discord.ui.Button['Account']):
 
 class MainGiveawayButton(discord.ui.Button['Giveaway']):
     def __init__(self):
-        super().__init__(style=discord.ButtonStyle.success, label="Giveaways", row=0)
+        super().__init__(style=discord.ButtonStyle.blurple, label="Manage Giveaways (ADMIN ONLY)", row=0)
 
     async def callback(self, interaction: discord.Interaction):
         assert self.view is not None

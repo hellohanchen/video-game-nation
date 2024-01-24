@@ -4,9 +4,9 @@ from provider.topshot.graphql.get_address import get_flow_account_info
 from repository.vgn_users import insert_and_get_user, get_user_new
 from service.views import BaseView
 
-TO_LINK_MESSAGE = "Please click 'Link' to link to a TS username & address.\n" \
-                  "Once linked, you can update your TS username,\n" \
-                  "but you can only contact admin to change your Flow address."
+LINK_TS_ACCOUNT_MESSAGE = "Please click 'Link' to link to a TS username & address.\n" \
+                          "Once linked, you can update your TS username,\n" \
+                          "but you can only contact admin to change your Flow address."
 
 
 class ProfileLinkModal(discord.ui.Modal, title='Link TS Account'):
@@ -29,7 +29,7 @@ class ProfileLinkModal(discord.ui.Modal, title='Link TS Account'):
             else:
                 user, _ = insert_and_get_user(self.user_id, topshot_username, flow_address)
                 if user is None:
-                    message = TO_LINK_MESSAGE
+                    message = LINK_TS_ACCOUNT_MESSAGE
                 else:
                     message = f"TS username: **{user['topshot_username']}**\n" \
                               f"Flow address: **{user['flow_address']}**\n\n**Linked**"
@@ -61,7 +61,7 @@ class ProfileView(BaseView):
     def load_profile_view(user_id):
         user, _ = get_user_new(user_id)
         if user is None:
-            return TO_LINK_MESSAGE, ProfileView(user_id)
+            return LINK_TS_ACCOUNT_MESSAGE, ProfileView(user_id)
 
         return f"TS username: **{user['topshot_username']}**\n" \
                f"Address: **{user['flow_address']}**", ProfileView(user_id, user['flow_address'])

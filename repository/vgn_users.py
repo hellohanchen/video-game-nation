@@ -15,9 +15,9 @@ def insert_user(discord_id, topshot_username, flow_address):
         db_conn.commit()
         db_conn.close()
     except Exception as err:
-        return "DB error: {}".format(err)
+        return f"insertUser:{err}"
 
-    return "Put new user id: {}, topshot username: {}.".format(discord_id, topshot_username)
+    return f"Put new user id: {discord_id}, topshot username: {topshot_username}."
 
 
 def insert_and_get_user(discord_id, topshot_username, flow_address):
