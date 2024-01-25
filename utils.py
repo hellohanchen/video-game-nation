@@ -211,9 +211,9 @@ def get_the_past_week_from_sunday(date):
     return dates
 
 
-def get_the_past_week_from_monday(date):
+def get_the_past_week_with_offset(date, offset=0):
     today = parse_slash_date(date)
-    idx = today.weekday() % 7  # Mon = 0, ..., Sat = 5, Sun = 6
+    idx = (today.weekday() + offset) % 7  # Mon = offset, ..., Sat = offset - 2, Sun = offset - 1
 
     dates = []
     for i in range(idx, -1, -1):

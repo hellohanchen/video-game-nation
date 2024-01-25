@@ -186,10 +186,10 @@ def get_submission_count(gid):
         return None, err
 
 
-def get_submission(gid, uid):
+def get_submission(gid, address):
     try:
         db_conn = CNX_POOL.get_connection()
-        query = f"SELECT * from vgn.ts_giveaway_submissions WHERE giveaway_id = {gid} AND user_id = {uid}"
+        query = f"SELECT * from vgn.ts_giveaway_submissions WHERE giveaway_id = {gid} AND flow_address = '{address}'"
         # Execute SQL query and store results in a pandas dataframe
         df = pd.read_sql(query, db_conn)
 
@@ -200,6 +200,48 @@ def get_submission(gid, uid):
 
         if len(loaded) > 0:
             return loaded[0], None
+        return None, None
+
+    except Exception as err:
+        return None, err
+
+
+def get_unbanned_submissions(gid):
+    try:
+        db_conn = CNX_POOL.get_connection()
+        query = f"SELECT u.id AS user_id, u.topshot_username AS topshot_username, u.flow_address AS flow_address, " \
+                f"s.fav_team AS fav_team " \
+                f"FROM vgn.ts_giveaway_submissions s JOIN vgn.users u ON s.user_id = u.id " \
+                f"WHERE s.giveaway_id = {gid} AND u.banned_reason IS NULL"
+        # Execute SQL query and store results in a pandas dataframe
+        df = pd.read_sql(query, db_conn)
+
+        # Convert dataframe to a dictionary with headers
+        loaded = df.to_dict('records')
+
+        db_conn.close()
+        return loaded, None
+
+    except Exception as err:
+        return None, err
+
+
+def get_submitted_fav_team(uid):
+    try:
+        db_conn = CNX_POOL.get_connection()
+        query = f"SELECT fav_team FROM vgn.ts_giveaway_submissions WHERE user_id = {uid} AND giveaway_id IN " \
+                f"(SELECT id FROM vgn.ts_giveaways WHERE is_submitted = TRUE AND is_ended = FALSE AND end_at > NOW()) " \
+                f"AND fav_team IS NOT NULL LIMIT 1 "
+        # Execute SQL query and store results in a pandas dataframe
+        df = pd.read_sql(query, db_conn)
+
+        # Convert dataframe to a dictionary with headers
+        loaded = df.to_dict('records')
+
+        db_conn.close()
+
+        if len(loaded) > 0:
+            return loaded[0]['fav_team'], None
         return None, None
 
     except Exception as err:
@@ -227,3 +269,36 @@ def join_giveaway(gid, user, fav_team):
         return False, err
 
     return True, None
+
+
+def close_giveaway(gid):
+    try:
+        db_conn = CNX_POOL.get_connection()
+        cursor = db_conn.cursor()
+
+        query = f"UPDATE vgn.ts_giveaways SET is_ended = TRUE WHERE id = {gid}"
+        cursor.execute(query)
+
+        db_conn.commit()
+        db_conn.close()
+    except Exception as err:
+        return False, err
+
+    return True, None
+
+
+def ban_user(uid, reason):
+    try:
+        db_conn = CNX_POOL.get_connection()
+        cursor = db_conn.cursor()
+
+        query = f"UPDATE vgn.users SET banned_reason = {reason} WHERE id = {uid}"
+        cursor.execute(query)
+
+        db_conn.commit()
+        db_conn.close()
+    except Exception as err:
+        return False, err
+
+    return True, None
+

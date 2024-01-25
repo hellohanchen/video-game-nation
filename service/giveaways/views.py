@@ -6,6 +6,12 @@ from service.giveaways.giveaway import Giveaway, GIVEAWAY_SERVICE
 from service.views import BaseView
 
 
+GIVEAWAY_INTRO_MESSAGE = "**Giveaway Portal**\n\n" \
+                         "Create a new giveaway for a server channel that you have access.\n" \
+                         "Manage un-submitted giveaway drafts created in the past 24 hours.\n" \
+                         "To request channel accesses or ask questions, please contact <@723723650909601833>"
+
+
 class GiveawayBaseView(BaseView):
     def __init__(self, user_id, guilds, guild_ids, channel_ids):
         super(GiveawayBaseView, self).__init__(user_id)
@@ -20,7 +26,7 @@ class GiveawayBaseView(BaseView):
 
 class GiveawayCreateButton(discord.ui.Button['Create']):
     def __init__(self):
-        super(GiveawayCreateButton, self).__init__(style=discord.ButtonStyle.success, label='Create a new giveaway',
+        super(GiveawayCreateButton, self).__init__(style=discord.ButtonStyle.success, label='Create Giveaway',
                                                    row=0)
 
     async def callback(self, interaction: discord.Interaction):
@@ -32,7 +38,7 @@ class GiveawayCreateButton(discord.ui.Button['Create']):
 
 class GiveawayDraftButton(discord.ui.Button['Draft']):
     def __init__(self):
-        super(GiveawayDraftButton, self).__init__(style=discord.ButtonStyle.blurple, label='Manage drafts', row=1)
+        super(GiveawayDraftButton, self).__init__(style=discord.ButtonStyle.blurple, label='Manage Drafts', row=1)
 
     async def callback(self, interaction: discord.Interaction):
         assert self.view is not None
@@ -53,10 +59,10 @@ class GiveawayView(GiveawayBaseView):
         if guilds is None or len(guilds) == 0:
             return "You don't have access to manage giveaways", None
 
-        return f"Manage giveaways here.", GiveawayView(user_id, guilds, guild_ids, channel_ids)
+        return GIVEAWAY_INTRO_MESSAGE, GiveawayView(user_id, guilds, guild_ids, channel_ids)
 
     def create(self):
-        return "Select 1 discord server:", GiveawayCreateView(self)
+        return "**SELECT DISCORD SERVER**", GiveawayCreateView(self)
 
     def load_drafts(self):
         drafts, err = get_drafts_for_user(self.user_id, self.guild_ids, self.channel_ids)
@@ -65,7 +71,7 @@ class GiveawayView(GiveawayBaseView):
         if len(drafts) == 0:
             return f"You don't have drafts in the past 24 hours.", self
 
-        message = f"Select 1 draft:\n\n"
+        message = f"**SELECT DRAFT**\n\n"
         for gid in drafts:
             message += f"**{gid}**.{drafts[gid]['name']}\n"
         return message, GiveawayDraftsView(self, drafts)
@@ -83,7 +89,7 @@ class GiveawayGuildSelectMenu(discord.ui.Select):
         view: GiveawayCreateView = self.view
         selection = interaction.data.get('values')[0]
         if selection == "0":
-            await interaction.response.edit_message(content="Manage giveaways here.", view=view.restart())
+            await interaction.response.edit_message(content=GIVEAWAY_INTRO_MESSAGE, view=view.restart())
             return
 
         guild_id = int(selection)
@@ -103,7 +109,7 @@ class GiveawayChannelSelectMenu(discord.ui.Select):
         view: GiveawayCreateView = self.view
         selection = interaction.data.get('values')[0]
         if selection == "0":
-            await interaction.response.edit_message(content="Manage giveaways here.", view=view.restart())
+            await interaction.response.edit_message(content=GIVEAWAY_INTRO_MESSAGE, view=view.restart())
             return
 
         channel_id = int(selection)
@@ -122,7 +128,7 @@ class GiveawayCreateView(GiveawayBaseView):
         self.remove_item(self.menu)
         self.menu = GiveawayChannelSelectMenu(self.guilds[guild_id]['channels'])
         self.add_item(self.menu)
-        return "Select 1 channel", self
+        return "**SELECT CHANNEL**", self
 
     def select_channel(self, channel_id):
         return GiveawayCreateModal(self, self.guild_id, channel_id)
@@ -142,7 +148,15 @@ class GiveawayCreateModal(discord.ui.Modal, title='Create a giveaway'):
 
     async def on_submit(self, interaction: discord.Interaction):
         giveaway_name = str(self.giveaway_name).strip().replace('*', '')
-        description = str(self.description).strip().replace('*', '')
+        if len(giveaway_name) > 64 or len(giveaway_name) == 0:
+            message = f"Invalid name: {giveaway_name}"
+            await interaction.response.edit_message(content=message, view=self.view.restart())
+            return
+        description = str(self.description).strip().replace('*', '').replace("'", "").replace('"', "")
+        if len(description) > 256:
+            message = f"Description too long: {description}"
+            await interaction.response.edit_message(content=message, view=self.view.restart())
+            return
 
         winners_input = str(self.winners)
         if not winners_input.isnumeric():
@@ -246,7 +260,7 @@ class GiveawayDraftMenuButton(discord.ui.Button['DraftMenu']):
     async def callback(self, interaction: discord.Interaction):
         assert self.view is not None
         view: GiveawayDraftView = self.view
-        await interaction.response.edit_message(content="Manage giveaways here.", view=view.view.restart())
+        await interaction.response.edit_message(content=GIVEAWAY_INTRO_MESSAGE, view=view.view.restart())
 
 
 class GiveawayDraftSubmitButton(discord.ui.Button['DraftSubmit']):
@@ -301,7 +315,7 @@ class GiveawayDraftSelectMenu(discord.ui.Select):
         view: GiveawayDraftsView = self.view
         selection = interaction.data.get('values')[0]
         if selection == "0":
-            await interaction.response.edit_message(content="Manage giveaways here.", view=view.restart())
+            await interaction.response.edit_message(content=GIVEAWAY_INTRO_MESSAGE, view=view.restart())
             return
 
         giveaway = self.drafts[selection]

@@ -11,7 +11,7 @@ from provider.topshot.fb_provider import FB_PROVIDER
 from service.fastbreak.lineup import LINEUP_SERVICE
 from service.fastbreak.ranked.views import MainPage
 from service.fastbreak.ranking import RANK_SERVICE
-from utils import get_the_past_week_from_sunday, get_the_past_week_from_monday
+from utils import get_the_past_week_from_sunday, get_the_past_week_with_offset
 
 # config bot
 load_dotenv()
@@ -90,7 +90,7 @@ async def update_stats():
     new_status = RANK_SERVICE.status
 
     if init_status == "POST_GAME" and new_status == "PRE_GAME":
-        dates = get_the_past_week_from_monday(RANK_SERVICE.current_game_date)
+        dates = get_the_past_week_with_offset(RANK_SERVICE.current_game_date, 4)
         dates = list(filter(lambda d: FB_PROVIDER.fb_info.get(d) is not None, dates))
         weekly_lb = RANK_SERVICE.formatted_weekly_leaderboard(dates, 20)
 

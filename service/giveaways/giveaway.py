@@ -1,4 +1,6 @@
 import datetime
+import random
+import time
 from typing import Dict
 
 import discord
@@ -6,7 +8,7 @@ import discord
 from constants import NBA_TEAM_IDS
 from provider.topshot.graphql.get_address import get_flow_account_info
 from repository.ts_giveaways import message_giveaway, get_ongoing_giveaways, get_submission, get_submission_count, \
-    join_giveaway
+    join_giveaway, get_submitted_fav_team, ban_user, get_unbanned_submissions, close_giveaway
 from repository.vgn_users import get_user_new
 from service.common.profile.views import ProfileView
 
@@ -82,28 +84,73 @@ class Giveaway:
             self.submissions = s
 
     async def close(self):
-        return False
+        try:
+            await self.refresh()
+
+            submitted_users, err = get_unbanned_submissions(self.id)
+            if err is not None:
+                raise err
+            random.shuffle(submitted_users)
+
+            winners = []
+            if len(self.fav_teams) > 0:
+                i = 0
+
+                while i < len(submitted_users) and len(winners) < self.winners:
+                    winner = submitted_users[i]
+                    i += 1
+
+                    # try to validate winner's favorite team
+                    retry = 1
+                    fav_team_id = None
+                    while retry >= 0 and fav_team_id is None:
+                        try:
+                            _, _, fav_team_id = await get_flow_account_info(winner['topshot_username'])
+                        except Exception as err:
+                            retry -= 1
+                        time.sleep(0.3)
+
+                    if fav_team_id is not None:
+                        fav_team = NBA_TEAM_IDS.get(int(fav_team_id))
+                        if winner['fav_team'] != fav_team:
+                            _, _ = ban_user(winner['user_id'], f"FavTeam: {winner['fav_team']}, {fav_team}")
+                            continue
+
+                    winners.append(winner)
+            else:
+                winners = submitted_users[:min(len(submitted_users), self.winners)]
+
+            # close giveaway in db
+            closed, err = close_giveaway(self.id)
+            if not closed:
+                return False
+
+            # send out winner messages
+            mentions = [f"<@{w['user_id']}>({w['topshot_username']})" for w in winners]
+            await self.channel.send(f"Congratulations to the winners: {','.join(mentions)} 🎉\n"
+                                    f"Winning the giveaway of **{self.name}**")
+
+            if self.message is not None:
+                await self.message.edit(content=f"**GIVEAWAY END**\nWinners: {mentions}", view=None)
+
+        except Exception as err:
+            return False
+
+        return True
 
     async def join(self, user):
+        if user['banned_reason'] is not None and len(user['banned_reason']) > 0:
+            return False, f"You are banned from entering giveaways: {user['banned_reason']}"
+
         epoch = datetime.datetime.utcnow()
         if self.end_at <= epoch:
             return False, "Submission is already closed."
 
-        submission, err = get_submission(self.id, user['id'])
+        submission, err = get_submission(self.id, user['flow_address'])
         if err is not None:
             return False, f"Join-GetSubmission:{err}"
         if submission is not None:
-            if submission['fav_team'] is not None:
-                try:
-                    _, _, fav_team_id = await get_flow_account_info(user['topshot_username'])
-                except Exception as err:
-                    return False, f"Submit-GetFavTeam:{err}"
-                fav_team = NBA_TEAM_IDS.get(int(fav_team_id))
-                if fav_team is not None and len(fav_team) > 0:
-                    if fav_team != submission['fav_team']:
-                        # TODO: ban user
-                        pass
-            return False, "Already joined."
+            return False, f"Flow account *{user['flow_address']}* has already joined this giveaway."
 
         fav_team = None
         if len(self.fav_teams) > 0:
@@ -114,6 +161,11 @@ class Giveaway:
             fav_team = NBA_TEAM_IDS.get(int(fav_team_id))
             if fav_team not in self.fav_teams:
                 return False, f"Favourite team requirement: {self.fav_teams}"
+
+            submitted_fav_team, _ = get_submitted_fav_team(user['id'])
+            if submitted_fav_team is not None and fav_team != submitted_fav_team:
+                _, _ = ban_user(user['id'], f"FavTeam: {submitted_fav_team}, {fav_team}")
+                return False, f"Favorite team rule violation."
 
         successful, err = join_giveaway(self.id, user, fav_team)
         if successful:

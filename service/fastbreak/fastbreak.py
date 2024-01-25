@@ -160,14 +160,17 @@ class FastBreak:
                 sums[i] = sums[i] + score
 
         passed = True
+        rate = 0.0
         for i in range(0, num_buckets):
             bucket = self.buckets[i]
             s = sums[i]
-            if s < bucket.target and bucket.order == 'DESC':
-                passed = False
-                break
-            elif s > bucket.target and bucket.order == 'ASC':
-                passed = False
-                break
+            if bucket.order == 'DESC':
+                if s < bucket.target:
+                    passed = False
+                rate += s / bucket.target
+            elif bucket.order == 'ASC':
+                if s > bucket.target:
+                    passed = False
+                rate += 2.0 - s / bucket.target
 
-        return sum(sums), passed
+        return sum(sums), passed, round(rate / num_buckets, 2)

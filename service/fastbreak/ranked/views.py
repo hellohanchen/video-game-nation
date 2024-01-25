@@ -87,6 +87,31 @@ class LineupTeamsButton(discord.ui.Button['LineupTeams']):
         await interaction.response.edit_message(content=message, view=new_view)
 
 
+class LineupRulesButton(discord.ui.Button['LineupRules']):
+    def __init__(self):
+        super().__init__(style=discord.ButtonStyle.secondary, label="Rules", row=0)
+
+    async def callback(self, interaction: discord.Interaction):
+        assert self.view is not None
+        view: LineupView = self.view
+        message = f"***FASTBREAK RULES***\n\n" \
+                  f"**Rule 0.** The gameplay is the same as the Topshot Fastbreak: " \
+                  f"users will select 3 to 5 players. Each game night has different stats and different scores " \
+                  f"that the lineup must beat in order to get a win.\n" \
+                  f"**Rule 1.** Users must link their own Topshot accounts with Discord account to join the game, and " \
+                  f"submit the same lineup as Topshot Fastbreak for every night.\n" \
+                  f"**Rule 2.** The DAILY leaderboard will be determined by score of the lineup. Tierbreaker is \n" \
+                  f"*sum of lowest serials of the highest tier moments of each player*.\n" \
+                  f"**Rule 3.** The WEEKLY leaderboard will be determined by the number of wins. Tierbreaker is sum " \
+                  f"of the completion rate of each night.\n" \
+                  f"**completion rate** = sum of (score of each stat / target of each stat) / number of stats.\n" \
+                  f"For example, if the targets are 50 rebounds and 25 assists, the user's lineup scores are " \
+                  f"60 rebounds and 15 assists, then: \n" \
+                  f"completion rate = (60 / 50 + 15 / 25) / 2 = 0.9\n" \
+                  f"**bonus:** if a user submits lineup every night in a week, a 10% bonus will be given.\n"
+        await interaction.response.edit_message(content=message, view=view)
+
+
 class LineupScheduleButton(discord.ui.Button['LineupSchedule']):
     def __init__(self):
         super().__init__(style=discord.ButtonStyle.secondary, label="Schedule", row=0)
@@ -153,9 +178,10 @@ class LineupView(FastBreakView):
     def __init__(self, lineup_service, user_id):
         super().__init__(lineup_service, user_id)
         self.add_item(LineupTeamsButton())
+        self.add_item(LineupScheduleButton())
+        self.add_item(LineupRulesButton())
         self.add_item(LineupRemoveButton())
         self.add_item(LineupSubmitButton())
-        self.add_item(LineupScheduleButton())
         self.add_item(LineupButton(2))
         self.add_item(LineupScoreButton())
         self.add_item(LineupLeaderboardButton())

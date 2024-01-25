@@ -101,11 +101,11 @@ def upsert_score(user_id, game_date, score, passed):
 def get_weekly_ranks(game_dates, count):
     try:
         db_conn = CNX_POOL.get_connection()
-        query = "SELECT u.topshot_username as username, SUM(l.score) * IF(COUNT(*) = {}, 1.1, 1) as total_score, " \
-                "COUNT(*) = {} AS all_checked_in FROM " \
+        query = "SELECT u.topshot_username as username, SUM(IF(l.is_passed, 1, 0)) as wins, " \
+                "SUM(l.score) * IF(COUNT(*) = {}, 1.1, 1) as total_score, COUNT(*) = {} AS all_checked_in FROM " \
                 "(SELECT * FROM vgn.fb_lineups WHERE game_date IN ({}) AND is_ranked = TRUE) l " \
                 "JOIN vgn.users u ON l.user_id = u.id " \
-                "GROUP BY u.id ORDER BY total_score DESC LIMIT {}"\
+                "GROUP BY u.id ORDER BY wins DESC, total_score DESC LIMIT {}"\
             .format(len(game_dates), len(game_dates), ', '.join("'" + date + "'" for date in game_dates), count)
 
         # Execute SQL query and store results in a pandas dataframe

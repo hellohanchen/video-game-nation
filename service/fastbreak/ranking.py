@@ -122,11 +122,12 @@ class RankingService(FastBreakService):
             if not lineup.is_submitted:
                 continue
 
-            score, passed = self.fb.compute_score(lineup.player_ids[0:self.fb.count], self.player_stats)
+            score, passed, rate = self.fb.compute_score(lineup.player_ids[0:self.fb.count], self.player_stats)
             user_scores[user_id] = {
                 'score': score,
                 'serial': lineup.serial,
-                'passed': passed
+                'passed': passed,
+                'rate': rate,
             }
 
         user_ids = list(user_scores.keys())
@@ -146,7 +147,7 @@ class RankingService(FastBreakService):
             if user_id not in self.user_scores:
                 continue
             upsert_score(user_id, self.lineups[user_id].game_date,
-                         self.user_scores[user_id]['score'], self.user_scores[user_id]['passed'])
+                         self.user_scores[user_id]['rate'], self.user_scores[user_id]['passed'])
 
     def formatted_user_score(self, user_id):
         if self.status == "NO_GAME" or self.status == "PRE_GAME":
@@ -209,9 +210,10 @@ class RankingService(FastBreakService):
         message = "***Weekly Leaderboard {}~{}***\n\n".format(dates[0], dates[-1])
         loaded = get_weekly_ranks(dates, top)
         for i in range(0, min(top, len(loaded))):
-            message += f"**#{i+1}.** **{loaded[i]['username']}** *{loaded[i]['total_score']}*"
+            message += f"**#{i+1}.** **{loaded[i]['username']}** *{loaded[i]['wins']}* wins, " \
+                       f"*{loaded[i]['total_score']}* CR"
             if loaded[i].get('all_checked_in'):
-                message += " (100% participation)\n"
+                message += " (with +10% bonus)\n"
             else:
                 message += "\n"
 
