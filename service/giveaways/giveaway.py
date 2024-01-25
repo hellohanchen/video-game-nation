@@ -214,6 +214,22 @@ class GiveawayService:
 GIVEAWAY_SERVICE = GiveawayService()
 
 
+class JoinRulesButton(discord.ui.Button['JoinRules']):
+    def __init__(self):
+        super(JoinRulesButton).__init__(style=discord.ButtonStyle.secondary, label="Rules", row=0)
+
+    async def callback(self, interaction: discord.Interaction):
+        assert self.view is not None
+        message = f"***GIVEAWAY RULES***\n\n" \
+                  f"**Rule 0.** The rewards will be sent to the linked Topshot accounts of winners. Make sure your " \
+                  f"Discord is linked to your own Topshot account.\n" \
+                  f"**Rule 1.** If you join a **fav-team-gated** giveaway, don't change your fav-team before the " \
+                  f"giveaway ends, otherwise your will be banned from all giveaways.\n" \
+                  f"**Rule 2.** If you are in **an ongoing fav-team-gated** giveaway, don't change your fav-team " \
+                  f"to join another gated giveaway with a different team, you will be banned.\n"
+        await interaction.response.send_message(content=message, ephemeral=True, delete_after=120.0)
+
+
 class JoinGiveawayButton(discord.ui.Button['Join']):
     def __init__(self, count):
         super(JoinGiveawayButton, self).__init__(style=discord.ButtonStyle.success, label=f"Joined: {count}", row=0)
@@ -250,3 +266,4 @@ class JoinGiveawayView(discord.ui.View):
         giveaway.refresh_submission()
         self.add_item(JoinGiveawayButton(giveaway.submissions))
         self.giveaway: Giveaway = giveaway
+        self.add_item(JoinRulesButton())

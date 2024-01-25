@@ -211,7 +211,7 @@ class RankingService(FastBreakService):
         loaded = get_weekly_ranks(dates, top)
         for i in range(0, min(top, len(loaded))):
             message += f"**#{i+1}.** **{loaded[i]['username']}** *{loaded[i]['wins']}* wins, " \
-                       f"*{loaded[i]['total_score']}* CR"
+                       f"*{round(loaded[i]['total_score'], 2)}* CR"
             if loaded[i].get('all_checked_in'):
                 message += " (with +10% bonus)\n"
             else:
