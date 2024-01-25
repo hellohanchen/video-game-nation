@@ -292,7 +292,7 @@ def ban_user(uid, reason):
         db_conn = CNX_POOL.get_connection()
         cursor = db_conn.cursor()
 
-        query = f"UPDATE vgn.users SET banned_reason = {reason} WHERE id = {uid}"
+        query = f"UPDATE vgn.users SET banned_reason = '{reason}' WHERE id = {uid}"
         cursor.execute(query)
 
         db_conn.commit()
