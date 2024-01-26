@@ -145,7 +145,7 @@
         "order": "DESC"
       },
       {
-        "stats": "FGM",
+        "stats": "3PT",
         "target": 15,
         "order": "DESC"
       }
