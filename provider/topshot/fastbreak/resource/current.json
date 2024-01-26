@@ -145,7 +145,7 @@
         "order": "DESC"
       },
       {
-        "stats": "FTM",
+        "stats": "FGM",
         "target": 15,
         "order": "DESC"
       }
