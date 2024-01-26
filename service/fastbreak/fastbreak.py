@@ -68,7 +68,11 @@ class FBBucket:
         if player_stat is None:
             return 0
 
-        return float(player_stat[BOXSCORE_MAP[self.stats]])
+        key = BOXSCORE_MAP[self.stats]
+        if key not in player_stat:
+            return 0
+
+        return float(player_stat[key])
 
 
 class FastBreak:
