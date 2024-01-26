@@ -1,10 +1,10 @@
 import discord
 
 from constants import NBA_TEAMS
+from vgnlog.channel_logger import ADMIN_LOGGER
 from repository.ts_giveaways import get_user_giveaway_accesses, create_giveaway, submit_giveaway, get_drafts_for_user
 from service.giveaways.giveaway import Giveaway, GIVEAWAY_SERVICE
 from service.views import BaseView
-
 
 GIVEAWAY_INTRO_MESSAGE = "**Giveaway Portal**\n\n" \
                          "Create a new giveaway for a server channel that you have access.\n" \
@@ -183,6 +183,7 @@ class GiveawayCreateModal(discord.ui.Modal, title='Create a giveaway'):
         giveaway_id, err = create_giveaway(
             self.guild_id, self.channel_id, self.view.user_id, giveaway_name, description, winners, duration)
         if giveaway_id is None:
+            await ADMIN_LOGGER.error(f"Giveaway:Create:{err}")
             message = f"Create giveaway failed: {err}"
             await interaction.response.edit_message(content=message, view=self.view.restart())
             return
@@ -238,6 +239,7 @@ class GiveawaySubmitModal(discord.ui.Modal, title='Complete details'):
             self.giveaway['id'], self.giveaway['duration'], fav_teams_input, team_set_weights_input)
 
         if db_record is None:
+            await ADMIN_LOGGER.error(f"Giveaway:Submit:{err}")
             message = f"Submit giveaway failed: {err}"
             await interaction.response.edit_message(content=message, view=self.view.restart())
             return

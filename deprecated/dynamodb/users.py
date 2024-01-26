@@ -1,11 +1,11 @@
-import logging
+import vgnlog
 
 import boto3
 from botocore.exceptions import ClientError
 
 from deprecated.dynamodb.table import Table
 
-logger = logging.getLogger(__name__)
+logger = vgnlog.getLogger(__name__)
 
 
 class Users(Table):
@@ -38,7 +38,7 @@ class Users(Table):
 
 
 def run_scenario(dyn_resource):
-    logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
+    vgnlog.basicConfig(level=vgnlog.INFO, format='%(levelname)s: %(message)s')
 
     print('-'*88)
     print("Welcome to the Amazon DynamoDB getting started demo.")

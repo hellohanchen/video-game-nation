@@ -95,7 +95,9 @@ def upsert_score(user_id, game_date, score, passed):
         db_conn.commit()
         db_conn.close()
     except Exception as err:
-        print("DB error: {}".format(err))
+        return err
+
+    return None
 
 
 def get_weekly_ranks(game_dates, count):

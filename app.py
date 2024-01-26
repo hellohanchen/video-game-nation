@@ -22,7 +22,7 @@ class MainGiveawayButton(discord.ui.Button['Giveaway']):
     async def callback(self, interaction: discord.Interaction):
         assert self.view is not None
         view: MainPage = self.view
-        message, new_view = view.load_giveaway_accesses(interaction.user.id)
+        message, new_view = view.manage_giveaway(interaction.user.id)
 
         await interaction.response.send_message(content=message, view=new_view, ephemeral=True, delete_after=600.0)
 
@@ -34,7 +34,7 @@ class MainPage(discord.ui.View):
         self.add_item(MainGiveawayButton())
         self.guilds = guilds
 
-    def load_giveaway_accesses(self, user_id):
+    def manage_giveaway(self, user_id):
         message, view = GiveawayView.new_giveaway_view(user_id, self.guilds)
         if view is None:
             return message, self

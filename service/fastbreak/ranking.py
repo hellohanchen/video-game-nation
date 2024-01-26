@@ -1,7 +1,9 @@
+import asyncio
 import datetime
 
 from nba_api.live.nba.endpoints import boxscore
 
+from vgnlog.channel_logger import ADMIN_LOGGER
 from provider.nba.nba_provider import NBAProvider, NBA_PROVIDER
 from provider.topshot.fb_provider import FB_PROVIDER
 from repository.fb_lineups import get_lineups, upsert_score, get_weekly_ranks
@@ -24,7 +26,7 @@ class RankingService(FastBreakService):
         self.user_scores = {}
         self.leaderboard = []
 
-        self.update()
+        asyncio.run(self.update())
 
     def __load_lineups(self):
         if self.fb is None:
@@ -58,13 +60,13 @@ class RankingService(FastBreakService):
         self.leaderboard = []
         self.__load_lineups()
 
-    def update(self):
+    async def update(self):
         scoreboard = NBAProvider.get_scoreboard()
         new_status = NBAProvider.get_status(scoreboard['games'])
         if new_status == "NO_GAME" or new_status == "PRE_GAME":
             if self.status == "POST_GAME":
-                self.__update_stats()
-                self.__upload_leaderboard()
+                await self.__update_stats()
+                await self.__upload_leaderboard()
 
                 NBA_PROVIDER.reload()
                 LINEUP_SERVICE.reload()
@@ -78,20 +80,22 @@ class RankingService(FastBreakService):
                 self.reload()
                 self.status = new_status
                 LINEUP_SERVICE.reload()
-            except Exception:
+            except Exception as err:
+                await ADMIN_LOGGER.error(f"FBRanking:Update:{err}")
                 return
         else:
             self.status = new_status
 
-        self.__update_stats()
+        await self.__update_stats()
 
-    def __update_stats(self):
+    async def __update_stats(self):
         player_stats = {}
         for game_id in self.games:
             # noinspection PyBroadException
             try:
                 game_stats = boxscore.BoxScore(game_id=game_id).get_dict()['game']
-            except Exception:
+            except Exception as err:
+                await ADMIN_LOGGER.error(f"FBRanking:BoxScore:{err}")
                 continue
 
             if game_stats['gameStatus'] == 1:
@@ -142,12 +146,14 @@ class RankingService(FastBreakService):
         self.user_scores = user_scores
         self.leaderboard = leaderboard
 
-    def __upload_leaderboard(self):
+    async def __upload_leaderboard(self):
         for user_id in self.lineups:
             if user_id not in self.user_scores:
                 continue
-            upsert_score(user_id, self.lineups[user_id].game_date,
-                         self.user_scores[user_id]['rate'], self.user_scores[user_id]['passed'])
+            err = upsert_score(user_id, self.lineups[user_id].game_date,
+                               self.user_scores[user_id]['rate'], self.user_scores[user_id]['passed'])
+            if err is not None:
+                await ADMIN_LOGGER.error(f"FBRanking:Upload:{err}")
 
     def formatted_user_score(self, user_id):
         if self.status == "NO_GAME" or self.status == "PRE_GAME":

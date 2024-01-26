@@ -12,6 +12,7 @@ from service.fastbreak.lineup import LINEUP_SERVICE
 from service.fastbreak.ranked.views import MainPage
 from service.fastbreak.ranking import RANK_SERVICE
 from utils import get_the_past_week_from_sunday, get_the_past_week_with_offset
+from vgnlog.channel_logger import ADMIN_LOGGER
 
 # config bot
 load_dotenv()
@@ -25,14 +26,10 @@ intents.typing = False
 intents.presences = False
 
 bot = commands.Bot(command_prefix='.', intents=intents)
+ADMIN_CHANNEL_ID = 1097055938441130004
+
 FB_CHANNEL_IDS = [1195804395309367469]
-ADMIN_CHANNEL_NAMES = ["💻-admin"]
-
 FB_CHANNEL_MESSAGES = []
-
-ADMIN_CHANNEL_IDS = []
-
-FB_EMOJI_ID = 1193465233054908416
 
 WELCOME_MESSAGE = "**Welcome to the B2B fastbreak contest!**\n" \
                   "Link TS account and submit your fastbreak lineup here to join the community contest.\n" \
@@ -53,8 +50,10 @@ async def on_ready():
             if channel.type != discord.ChannelType.text:
                 continue
 
-            if channel.name in ADMIN_CHANNEL_NAMES:
-                ADMIN_CHANNEL_IDS.append(channel.id)
+            if channel.id == ADMIN_CHANNEL_ID:
+                ADMIN_LOGGER.init("FBRanked", channel)
+                continue
+
             if channel.id in FB_CHANNEL_IDS:
                 view = MainPage(LINEUP_SERVICE, RANK_SERVICE)
                 message = await channel.send(WELCOME_MESSAGE, view=view)
@@ -69,7 +68,7 @@ async def on_ready():
 ############
 @bot.command(name='reload', help="[Admin] Reload game schedules, lineups and ranking")
 async def reload(context):
-    if context.channel.id not in ADMIN_CHANNEL_IDS:
+    if context.channel.id != ADMIN_CHANNEL_ID:
         return
 
     NBA_PROVIDER.reload()
@@ -86,7 +85,7 @@ async def reload(context):
 async def update_stats():
     init_status = RANK_SERVICE.status
     daily_lb = RANK_SERVICE.formatted_leaderboard(20)
-    RANK_SERVICE.update()
+    await RANK_SERVICE.update()
     new_status = RANK_SERVICE.status
 
     if init_status == "POST_GAME" and new_status == "PRE_GAME":

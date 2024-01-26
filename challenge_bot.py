@@ -10,6 +10,7 @@ from discord.ext import commands, tasks
 from dotenv import load_dotenv
 
 from constants import TZ_ET
+from vgnlog.channel_logger import ADMIN_LOGGER
 from provider.nba.nba_provider import NBAProvider, NBA_PROVIDER
 from provider.topshot.challenge.challenge import Challenge
 from service.fastbreak.lineup import LINEUP_SERVICE
@@ -52,6 +53,7 @@ def load_challenges():
 CHALLENGE_PROVIDER = ChallengeProvider()
 CHANNEL_NAMEs = ["⚡-fc-tracker"]
 TS_CHANNEL_ID = 924447554480013343
+ADMIN_CHANNEL_ID = 1097055938441130004
 
 CHALLENGE_CHANNELS = []
 CHALLENGE_MESSAGE_IDS = {}
@@ -62,16 +64,20 @@ FB_CHANNEL_MESSAGES = []
 @bot.event
 async def on_ready():
     for guild in bot.guilds:
-        ts_channel = guild.get_channel(TS_CHANNEL_ID)
-        if ts_channel is not None:
-            CHALLENGE_CHANNELS.append(ts_channel)
-
-            view = MainPage(LINEUP_SERVICE, RANK_SERVICE)
-            message = await ts_channel.send(f"Track your fastbreak here!", view=view)
-            FB_CHANNEL_MESSAGES.append(message)
-
         for channel in guild.channels:
             if channel.type != discord.ChannelType.text:
+                continue
+
+            if channel.id == TS_CHANNEL_ID:
+                CHALLENGE_CHANNELS.append(channel)
+
+                view = MainPage(LINEUP_SERVICE, RANK_SERVICE)
+                message = await channel.send(f"Track your fastbreak here!", view=view)
+                FB_CHANNEL_MESSAGES.append(message)
+                continue
+
+            if channel.id == ADMIN_CHANNEL_ID:
+                ADMIN_LOGGER.init("Challenge", channel)
                 continue
 
             if channel.name in CHANNEL_NAMEs:
@@ -120,7 +126,7 @@ async def reload(ctx):
 
 @tasks.loop(minutes=2)
 async def update_fastbreak():
-    RANK_SERVICE.update()
+    await RANK_SERVICE.update()
     for message in FB_CHANNEL_MESSAGES:
         view = MainPage(LINEUP_SERVICE, RANK_SERVICE)
         await message.edit(content="Track your fastbreak here!", view=view)

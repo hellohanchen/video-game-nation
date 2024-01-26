@@ -23,7 +23,7 @@ intents.presences = False
 bot = commands.Bot(command_prefix='.vgn.', intents=intents)
 ADMIN_CHANNEL_ID = 1097055938441130004
 
-MAIN_CHANNELS = ["🎮-fantasy-test"]
+MAIN_CHANNELS = ["giveaway-admin"]
 MAIN_CHANNEL_MESSAGES = []
 
 GUILDS = {}

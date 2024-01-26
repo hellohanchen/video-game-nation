@@ -6,6 +6,7 @@ from typing import Dict
 import discord
 
 from constants import NBA_TEAM_IDS
+from vgnlog.channel_logger import ADMIN_LOGGER
 from provider.topshot.graphql.get_address import get_flow_account_info
 from repository.ts_giveaways import message_giveaway, get_ongoing_giveaways, get_submission, get_submission_count, \
     join_giveaway, get_submitted_fav_team, ban_user, get_unbanned_submissions, close_giveaway
@@ -63,6 +64,7 @@ class Giveaway:
             try:
                 message = await c.fetch_message(g['message_id'])
             except Exception as err:
+                await ADMIN_LOGGER.warn(f"Giveaway:FromDb:FetchMsg:{err}")
                 message = None
 
         return Giveaway(g['id'], c, message, g['name'], g['description'], g['winners'], g['duration'],
@@ -131,9 +133,10 @@ class Giveaway:
                                     f"Winning the giveaway of **{self.name}**")
 
             if self.message is not None:
-                await self.message.edit(content=f"**GIVEAWAY END**\nWinners: {mentions}", view=None)
+                await self.message.edit(content=f"**GIVEAWAY END**\nWinners: {','.join(mentions)}", view=None)
 
         except Exception as err:
+            await ADMIN_LOGGER.error(f"Giveaway:Close:{err}")
             return False
 
         return True
@@ -148,6 +151,7 @@ class Giveaway:
 
         submission, err = get_submission(self.id, user['flow_address'])
         if err is not None:
+            await ADMIN_LOGGER.error(f"Giveaway:GetSubmission:{err}")
             return False, f"Join-GetSubmission:{err}"
         if submission is not None:
             return False, f"Flow account *{user['flow_address']}* has already joined this giveaway."
@@ -157,6 +161,7 @@ class Giveaway:
             try:
                 _, _, fav_team_id = await get_flow_account_info(user['topshot_username'])
             except Exception as err:
+                await ADMIN_LOGGER.warn(f"Giveaway:GetAccess:{err}")
                 return False, f"Join-GetFavTeam:{err}"
             fav_team = NBA_TEAM_IDS.get(int(fav_team_id))
             if fav_team not in self.fav_teams:
@@ -171,6 +176,7 @@ class Giveaway:
         if successful:
             return True, f"Joined!"
         else:
+            await ADMIN_LOGGER.error(f"Giveaway:Join:{err}")
             return False, f"ERROR: Join:{err}"
 
 
@@ -205,6 +211,7 @@ class GiveawayService:
                 try:
                     await self.giveaways[gid].refresh()
                 except Exception as err:
+                    await ADMIN_LOGGER.error(f"Giveaway:Refresh:{err}")
                     pass
 
         for gid in expired:
@@ -216,7 +223,7 @@ GIVEAWAY_SERVICE = GiveawayService()
 
 class JoinRulesButton(discord.ui.Button['JoinRules']):
     def __init__(self):
-        super(JoinRulesButton).__init__(style=discord.ButtonStyle.secondary, label="Rules", row=0)
+        super(JoinRulesButton, self).__init__(style=discord.ButtonStyle.secondary, label="Rules", row=0)
 
     async def callback(self, interaction: discord.Interaction):
         assert self.view is not None
@@ -241,6 +248,7 @@ class JoinGiveawayButton(discord.ui.Button['Join']):
         user_id = interaction.user.id
         user, err = get_user_new(user_id)
         if err is not None:
+            await ADMIN_LOGGER.error(f"Giveaway:Join:GetUser:{err}")
             await interaction.response.send_message(
                 content=f"ERROR: Join-GetUser:{err}", ephemeral=True, delete_after=30.0)
             return

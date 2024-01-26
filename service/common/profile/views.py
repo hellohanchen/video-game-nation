@@ -1,5 +1,6 @@
 import discord
 
+from vgnlog.channel_logger import ADMIN_LOGGER
 from provider.topshot.graphql.get_address import get_flow_account_info
 from repository.vgn_users import insert_and_get_user, get_user_new
 from service.views import BaseView
@@ -21,13 +22,17 @@ class ProfileLinkModal(discord.ui.Modal, title='Link TS Account'):
 
     async def on_submit(self, interaction: discord.Interaction):
         topshot_username = str(self.username)
-        topshot_username, flow_address, _ = await get_flow_account_info(topshot_username)
+        topshot_username, flow_address, err = await get_flow_account_info(topshot_username)
+        if err is not None:
+            await ADMIN_LOGGER.error(f"Profile:Link:GetFlow:{err}")
 
         if flow_address is not None:
             if self.existing_address is not None and flow_address != self.existing_address:
                 message = "Flow address mismatched, you need to contact admin to change your Flow address."
             else:
-                user, _ = insert_and_get_user(self.user_id, topshot_username, flow_address)
+                user, err = insert_and_get_user(self.user_id, topshot_username, flow_address)
+                if err is not None:
+                    await ADMIN_LOGGER.error(f"Profile:Link:InsertUser:{err}")
                 if user is None:
                     message = LINK_TS_ACCOUNT_MESSAGE
                 else:

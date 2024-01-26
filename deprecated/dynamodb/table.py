@@ -1,8 +1,8 @@
-import logging
+import vgnlog
 
 from botocore.exceptions import ClientError
 
-logger = logging.getLogger(__name__)
+logger = vgnlog.getLogger(__name__)
 
 
 class Table:

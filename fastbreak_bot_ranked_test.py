@@ -9,6 +9,7 @@ from dotenv import load_dotenv
 from service.fastbreak.lineup import LINEUP_SERVICE
 from service.fastbreak.ranked.views import MainPage
 from service.fastbreak.ranking import RANK_SERVICE
+from vgnlog.channel_logger import ADMIN_LOGGER
 
 # config bot
 load_dotenv()
@@ -22,14 +23,10 @@ intents.typing = False
 intents.presences = False
 
 bot = commands.Bot(command_prefix='.', intents=intents)
+ADMIN_CHANNEL_ID = 1097055938441130004
+
 FB_CHANNEL_NAMES = ["🎮-fantasy-test"]
-ADMIN_CHANNEL_NAMES = ["💻-admin"]
-
 FB_CHANNEL_MESSAGES = []
-
-ADMIN_CHANNEL_IDS = []
-
-PLAYERS_MESSAGE_IDS = {}
 
 WELCOME_MESSAGE = "**Welcome to the B2B fastbreak contest!**\n" \
                   "Link TS account and submit your fastbreak lineup here to join the community contest.\n" \
@@ -47,8 +44,10 @@ async def on_ready():
             if channel.type != discord.ChannelType.text:
                 continue
 
-            if channel.name in ADMIN_CHANNEL_NAMES:
-                ADMIN_CHANNEL_IDS.append(channel.id)
+            if channel.id == ADMIN_CHANNEL_ID:
+                ADMIN_LOGGER.init("FBRanked", channel)
+                continue
+
             if channel.name in FB_CHANNEL_NAMES:
                 view = MainPage(LINEUP_SERVICE, RANK_SERVICE)
                 message = await channel.send(WELCOME_MESSAGE, view=view)
