@@ -39,39 +39,40 @@ async def get_flow_address(topshot_username):
 
 
 async def get_flow_account_info(topshot_username):
-    # Select your transport with a defined url endpoint
-    transport = AIOHTTPTransport(url="https://public-api.nbatopshot.com/graphql")
+    try:
+        # Select your transport with a defined url endpoint
+        transport = AIOHTTPTransport(url="https://public-api.nbatopshot.com/graphql")
 
-    # Create a GraphQL client using the defined transport
-    client = Client(transport=transport, fetch_schema_from_transport=False)
+        # Create a GraphQL client using the defined transport
+        client = Client(transport=transport, fetch_schema_from_transport=False)
 
-    query = gql(
-        """
-        query ProfilePage_getUserProfileByUsername($input: getUserProfileByUsernameInput!) {
-            getUserProfileByUsername(input: $input) {
-                publicInfo {
-                  ...UserFragment
+        query = gql(
+            """
+            query ProfilePage_getUserProfileByUsername($input: getUserProfileByUsernameInput!) {
+                getUserProfileByUsername(input: $input) {
+                    publicInfo {
+                      ...UserFragment
+                    }
                 }
             }
-        }
-    
-        fragment UserFragment on UserPublicInfo {
-            username
-            flowAddress
-            favoriteTeamID
-        }
-    """
-    )
+        
+            fragment UserFragment on UserPublicInfo {
+                username
+                flowAddress
+                favoriteTeamID
+            }
+        """
+        )
 
     # Execute the query on the transport
-    try:
         result = await client.execute_async(query, variable_values={"input": {"username": topshot_username}})
-    except TransportQueryError:
-        return None, None, None
+    except Exception as err:
+        return None, None, None, err
 
     return result['getUserProfileByUsername']['publicInfo']['username'], \
            result['getUserProfileByUsername']['publicInfo']['flowAddress'], \
-           result['getUserProfileByUsername']['publicInfo']['favoriteTeamID']
+           result['getUserProfileByUsername']['publicInfo']['favoriteTeamID'], \
+           None
 
 
 if __name__ == '__main__':

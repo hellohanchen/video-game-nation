@@ -22,7 +22,7 @@ class ProfileLinkModal(discord.ui.Modal, title='Link TS Account'):
 
     async def on_submit(self, interaction: discord.Interaction):
         topshot_username = str(self.username)
-        topshot_username, flow_address, err = await get_flow_account_info(topshot_username)
+        topshot_username, flow_address, _, err = await get_flow_account_info(topshot_username)
         if err is not None:
             await ADMIN_LOGGER.error(f"Profile:Link:GetFlow:{err}")
 

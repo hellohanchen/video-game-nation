@@ -106,9 +106,9 @@ class Giveaway:
                     retry = 1
                     fav_team_id = None
                     while retry >= 0 and fav_team_id is None:
-                        try:
-                            _, _, fav_team_id = await get_flow_account_info(winner['topshot_username'])
-                        except Exception as err:
+                        _, _, fav_team_id, err = await get_flow_account_info(winner['topshot_username'])
+                        if err is not None:
+                            await ADMIN_LOGGER.warn(f"Giveaway:Close:GetFavTeam:{err}")
                             retry -= 1
                         time.sleep(0.3)
 
@@ -158,9 +158,8 @@ class Giveaway:
 
         fav_team = None
         if len(self.fav_teams) > 0:
-            try:
-                _, _, fav_team_id = await get_flow_account_info(user['topshot_username'])
-            except Exception as err:
+            _, _, fav_team_id, err = await get_flow_account_info(user['topshot_username'])
+            if err is not None:
                 await ADMIN_LOGGER.warn(f"Giveaway:GetAccess:{err}")
                 return False, f"Join-GetFavTeam:{err}"
             fav_team = NBA_TEAM_IDS.get(int(fav_team_id))
