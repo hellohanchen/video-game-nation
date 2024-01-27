@@ -94,8 +94,7 @@ class RankingService(FastBreakService):
             # noinspection PyBroadException
             try:
                 game_stats = boxscore.BoxScore(game_id=game_id).get_dict()['game']
-            except Exception as err:
-                await ADMIN_LOGGER.error(f"FBRanking:BoxScore:{err}")
+            except Exception:
                 continue
 
             if game_stats['gameStatus'] == 1:
