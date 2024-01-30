@@ -1,10 +1,10 @@
 import discord
 
 from constants import NBA_TEAMS
-from vgnlog.channel_logger import ADMIN_LOGGER
 from repository.ts_giveaways import get_user_giveaway_accesses, create_giveaway, submit_giveaway, get_drafts_for_user
 from service.giveaways.giveaway import Giveaway, GIVEAWAY_SERVICE
 from service.views import BaseView
+from vgnlog.channel_logger import ADMIN_LOGGER
 
 GIVEAWAY_INTRO_MESSAGE = "**Giveaway Portal**\n\n" \
                          "Create a new giveaway for a server channel that you have access.\n" \
@@ -80,7 +80,7 @@ class GiveawayView(GiveawayBaseView):
 class GiveawayGuildSelectMenu(discord.ui.Select):
     def __init__(self, guilds, guild_ids):
         super(GiveawayGuildSelectMenu, self).__init__()
-        self.append_option(discord.SelectOption(label="<-- BACK TO MENU", value="0"))
+        self.append_option(discord.SelectOption(label="<-- BACK TO MENU", value="menu"))
         for gid in guild_ids:
             self.append_option(discord.SelectOption(label=guilds[gid]['guild'].name, value=gid))
 
@@ -88,7 +88,7 @@ class GiveawayGuildSelectMenu(discord.ui.Select):
         assert self.view is not None
         view: GiveawayCreateView = self.view
         selection = interaction.data.get('values')[0]
-        if selection == "0":
+        if selection == "menu":
             await interaction.response.edit_message(content=GIVEAWAY_INTRO_MESSAGE, view=view.restart())
             return
 
@@ -98,18 +98,39 @@ class GiveawayGuildSelectMenu(discord.ui.Select):
 
 
 class GiveawayChannelSelectMenu(discord.ui.Select):
-    def __init__(self, channels):
+    __page_size = 15
+
+    def __init__(self, channels, page):
         super(GiveawayChannelSelectMenu, self).__init__()
-        self.append_option(discord.SelectOption(label="<-- BACK TO MENU", value="0"))
-        for cid in channels:
-            self.append_option(discord.SelectOption(label=channels[cid].name, value=cid))
+        self.append_option(discord.SelectOption(label="<-- BACK TO MENU", value="menu"))
+        self.channels = channels
+        self.page = page
+        if page > 1:
+            self.append_option(discord.SelectOption(label="<- PREV PAGE", value="prev"))
+
+        channel_ids = list(channels.keys())
+        if (page - 1) * self.__page_size < len(channel_ids):
+            for cid in channel_ids[(page - 1) * self.__page_size:min(page * self.__page_size, len(channel_ids))]:
+                self.append_option(discord.SelectOption(label=channels[cid].name, value=cid))
+
+        if page * self.__page_size < len(channels):
+            self.append_option(discord.SelectOption(label="NEXT PAGE ->", value="next"))
 
     async def callback(self, interaction: discord.Interaction):
         assert self.view is not None
         view: GiveawayCreateView = self.view
         selection = interaction.data.get('values')[0]
-        if selection == "0":
+        if selection == "menu":
             await interaction.response.edit_message(content=GIVEAWAY_INTRO_MESSAGE, view=view.restart())
+            return
+        if selection == "prev":
+            message, new_view = view.go_to_page(self.channels, max(self.page - 1, 1))
+            await interaction.response.edit_message(content=message, view=new_view)
+            return
+        if selection == "next":
+            message, new_view = view.go_to_page(
+                self.channels, min(self.page + 1, int(len(self.channels) / self.__page_size)))
+            await interaction.response.edit_message(content=message, view=new_view)
             return
 
         channel_id = int(selection)
@@ -126,7 +147,13 @@ class GiveawayCreateView(GiveawayBaseView):
     def select_guild(self, guild_id):
         self.guild_id = guild_id
         self.remove_item(self.menu)
-        self.menu = GiveawayChannelSelectMenu(self.guilds[guild_id]['channels'])
+        self.menu = GiveawayChannelSelectMenu(self.guilds[guild_id]['channels'], 1)
+        self.add_item(self.menu)
+        return "**SELECT CHANNEL**", self
+
+    def go_to_page(self, channels, page):
+        self.remove_item(self.menu)
+        self.menu = GiveawayChannelSelectMenu(channels, page)
         self.add_item(self.menu)
         return "**SELECT CHANNEL**", self
 
@@ -295,7 +322,7 @@ class GiveawayDraftView(BaseView):
                f"Description: **{description} **\n" \
                f"Winners: **{winners}**\n" \
                f"Duration: **{duration}** hours\n\n" \
-               f"*Please fill in more details to start it:*\n" \
+               f"*Please click 'Submit' to fill in more details and start the giveaway:*\n" \
                f"**Fav Teams**: a comma separated list of team abbreviations, optional, example: ATL,BOS\n"
 
     @staticmethod

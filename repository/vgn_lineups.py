@@ -122,6 +122,7 @@ def get_weekly_score(game_dates, user_id):
 
 
 def upsert_lineup(lineup):
+    db_conn = None
     try:
         db_conn = CNX_POOL.get_connection()
         cursor = db_conn.cursor()
@@ -137,10 +138,14 @@ def upsert_lineup(lineup):
 
         return True, "Updated"
     except Exception as err:
+        if db_conn is not None:
+            db_conn.close()
+
         return False, "DB error: {}".format(err)
 
 
 def upsert_score(user_id, game_date, score):
+    db_conn = None
     try:
         db_conn = CNX_POOL.get_connection()
         cursor = db_conn.cursor()
@@ -150,10 +155,14 @@ def upsert_score(user_id, game_date, score):
         db_conn.commit()
         db_conn.close()
     except Exception as err:
+        if db_conn is not None:
+            db_conn.close()
+
         print("DB error: {}".format(err))
 
 
 def submit_lineup(user_id, game_date):
+    db_conn = None
     try:
         db_conn = CNX_POOL.get_connection()
         cursor = db_conn.cursor()
@@ -165,6 +174,9 @@ def submit_lineup(user_id, game_date):
 
         return True, "Updated"
     except Exception as err:
+        if db_conn is not None:
+            db_conn.close()
+
         return False, "DB error: {}".format(err)
 
 

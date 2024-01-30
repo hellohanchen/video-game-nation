@@ -5,6 +5,7 @@ from repository.common import rw_db
 
 
 def insert_user(discord_id, topshot_username, flow_address):
+    db_conn = None
     try:
         db_conn = CNX_POOL.get_connection()
         cursor = db_conn.cursor()
@@ -15,6 +16,9 @@ def insert_user(discord_id, topshot_username, flow_address):
         db_conn.commit()
         db_conn.close()
     except Exception as err:
+        if db_conn is not None:
+            db_conn.close()
+
         return f"insertUser:{err}"
 
     return f"Put new user id: {discord_id}, topshot username: {topshot_username}."

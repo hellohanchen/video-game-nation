@@ -6,6 +6,7 @@ from utils import list_to_str
 
 
 def create_giveaway(guild_id, channel_id, creator_id, name, description, winners, duration):
+    db_conn = None
     try:
         db_conn = CNX_POOL.get_connection()
         cursor = db_conn.cursor()
@@ -17,6 +18,8 @@ def create_giveaway(guild_id, channel_id, creator_id, name, description, winners
         db_conn.commit()
         db_conn.close()
     except Exception as err:
+        if db_conn is not None:
+            db_conn.close()
         return None, err
 
     return giveaway_id, None
@@ -46,6 +49,7 @@ def submit_giveaway(gid, duration, fav_teams, team_set_weights):
 
 
 def message_giveaway(gid, mid):
+    db_conn = None
     try:
         db_conn = CNX_POOL.get_connection()
         cursor = db_conn.cursor()
@@ -55,6 +59,9 @@ def message_giveaway(gid, mid):
         db_conn.commit()
         db_conn.close()
     except Exception as err:
+        if db_conn is not None:
+            db_conn.close()
+
         return False, err
 
     return True, None
@@ -168,6 +175,25 @@ def get_user_giveaway_accesses(uid, all_guilds):
         return None, None, None, err
 
 
+def add_giveaway_access(uid, gid, cid):
+    db_conn = None
+    try:
+        db_conn = CNX_POOL.get_connection()
+        cursor = db_conn.cursor()
+        query = "INSERT INTO vgn.ts_giveaway_creators (user_id, guild_id, channel_id) " \
+                f"VALUES({uid}, {gid}, {cid})"
+        cursor.execute(query)
+        db_conn.commit()
+        db_conn.close()
+    except Exception as err:
+        if db_conn is not None:
+            db_conn.close()
+
+        return False, err
+
+    return True, None
+
+
 def get_submission_count(gid):
     try:
         db_conn = CNX_POOL.get_connection()
@@ -249,6 +275,7 @@ def get_submitted_fav_team(uid):
 
 
 def join_giveaway(gid, user, fav_team):
+    db_conn = None
     try:
         db_conn = CNX_POOL.get_connection()
         cursor = db_conn.cursor()
@@ -266,12 +293,16 @@ def join_giveaway(gid, user, fav_team):
         db_conn.commit()
         db_conn.close()
     except Exception as err:
+        if db_conn is not None:
+            db_conn.close()
+
         return False, err
 
     return True, None
 
 
 def close_giveaway(gid):
+    db_conn = None
     try:
         db_conn = CNX_POOL.get_connection()
         cursor = db_conn.cursor()
@@ -282,12 +313,16 @@ def close_giveaway(gid):
         db_conn.commit()
         db_conn.close()
     except Exception as err:
+        if db_conn is not None:
+            db_conn.close()
+
         return False, err
 
     return True, None
 
 
 def ban_user(uid, reason):
+    db_conn = None
     try:
         db_conn = CNX_POOL.get_connection()
         cursor = db_conn.cursor()
@@ -298,6 +333,9 @@ def ban_user(uid, reason):
         db_conn.commit()
         db_conn.close()
     except Exception as err:
+        if db_conn is not None:
+            db_conn.close()
+
         return False, err
 
     return True, None

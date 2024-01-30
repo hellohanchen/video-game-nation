@@ -42,6 +42,7 @@ def get_lineups(game_date):
 
 
 def upsert_lineup(lineup):
+    db_conn = None
     try:
         db_conn = CNX_POOL.get_connection()
         cursor = db_conn.cursor()
@@ -57,10 +58,14 @@ def upsert_lineup(lineup):
 
         return True, "Updated"
     except Exception as err:
+        if db_conn is not None:
+            db_conn.close()
+
         return False, "DB error: {}".format(err)
 
 
 def submit_lineup(lineup):
+    db_conn = None
     try:
         db_conn = CNX_POOL.get_connection()
         cursor = db_conn.cursor()
@@ -82,10 +87,14 @@ def submit_lineup(lineup):
 
         return True, "Updated"
     except Exception as err:
+        if db_conn is not None:
+            db_conn.close()
+
         return False, "DB error: {}".format(err)
 
 
 def upsert_score(user_id, game_date, score, passed):
+    db_conn = None
     try:
         db_conn = CNX_POOL.get_connection()
         cursor = db_conn.cursor()
@@ -95,6 +104,9 @@ def upsert_score(user_id, game_date, score, passed):
         db_conn.commit()
         db_conn.close()
     except Exception as err:
+        if db_conn is not None:
+            db_conn.close()
+
         return err
 
     return None

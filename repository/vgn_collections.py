@@ -43,6 +43,7 @@ def upsert_collection(user_id, plays):
         >>> print(result)
         "Updated successfully!"
     """
+    db_conn = None
     try:
         coll, not_found_plays = build_vgn_collection(plays)
 
@@ -68,6 +69,9 @@ def upsert_collection(user_id, plays):
         db_conn.commit()
         db_conn.close()
     except Exception as err:
+        if db_conn is not None:
+            db_conn.close()
+
         return "DB error: {}.".format(err)
 
     if len(not_found_plays) > 0:

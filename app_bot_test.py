@@ -7,8 +7,10 @@ from discord.ext import commands, tasks
 from dotenv import load_dotenv
 
 from app import MainPage
-from vgnlog.channel_logger import ADMIN_LOGGER
+from repository.ts_giveaways import add_giveaway_access
 from service.giveaways.giveaway import GIVEAWAY_SERVICE
+from utils import has_giveaway_permissions
+from vgnlog.channel_logger import ADMIN_LOGGER
 
 # config bot
 load_dotenv()
@@ -44,9 +46,15 @@ async def on_ready():
                 "guild": guild,
                 "channels": {}
             }
+
+        bot_member = guild.me
         for channel in guild.channels:
             if channel.type != discord.ChannelType.text:
                 continue
+            permissions = channel.permissions_for(bot_member)
+            if not has_giveaway_permissions(permissions):
+                continue
+
             GUILDS[gid]['channels'][channel.id] = channel
 
             if channel.id == ADMIN_CHANNEL_ID:
@@ -59,14 +67,6 @@ async def on_ready():
     await GIVEAWAY_SERVICE.load_from_guilds(GUILDS)
     refresh_entry.start()
     refresh_giveaways.start()
-
-
-@bot.command(name='menu', help='Get video game nation portal menu')
-async def menu(context):
-    if not isinstance(context.channel, discord.channel.DMChannel):
-        return
-
-    await context.channel.send(WELCOME_MESSAGE, view=MainPage(GUILDS))
 
 
 @tasks.loop(seconds=120)

@@ -83,6 +83,7 @@ def upsert_player_with_stats(id):
         print(f"Failed player id: {id}, parse error {err}, {info}")
         return
 
+    db_conn = None
     try:
         db_conn = CNX_POOL.get_connection()
         cursor = db_conn.cursor()
@@ -136,6 +137,9 @@ def upsert_player_with_stats(id):
         db_conn.commit()
         db_conn.close()
     except Exception as err:
+        if db_conn is not None:
+            db_conn.close()
+
         print(f"Failed player id: {id}, db error {err}")
 
         if db_conn is not None:

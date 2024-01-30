@@ -35,7 +35,7 @@ class Giveaway:
             content += f"Description: {d}\n\n"
         else:
             content += f"No description\n\n"
-        content += f"Winners:{w}\n\n"
+        content += f"Winners: {w}\n\n"
         if len(self.fav_teams) > 0:
             content += f"Favorite Teams: **{f}**\n\n"
         content += f"Ends at: **<t:{int(e.timestamp())}:R>**"
@@ -129,11 +129,11 @@ class Giveaway:
 
             # send out winner messages
             mentions = [f"<@{w['user_id']}>({w['topshot_username']})" for w in winners]
-            await self.channel.send(f"Congratulations to the winners: {','.join(mentions)} 🎉\n"
+            await self.channel.send(f"Congratulations to the winners: {', '.join(mentions)} 🎉\n"
                                     f"Winning the giveaway of **{self.name}**")
 
             if self.message is not None:
-                await self.message.edit(content=f"**GIVEAWAY END**\nWinners: {','.join(mentions)}", view=None)
+                await self.message.edit(content=f"**GIVEAWAY END**\nWinners: {', '.join(mentions)}", view=None)
 
         except Exception as err:
             await ADMIN_LOGGER.error(f"Giveaway:Close:{err}")
@@ -164,7 +164,7 @@ class Giveaway:
                 return False, f"Join-GetFavTeam:{err}"
             fav_team = NBA_TEAM_IDS.get(int(fav_team_id))
             if fav_team not in self.fav_teams:
-                return False, f"Favourite team requirement: {self.fav_teams}"
+                return False, f"Favorite team requirement: {', '.join(self.fav_teams)}"
 
             submitted_fav_team, _ = get_submitted_fav_team(user['id'])
             if submitted_fav_team is not None and fav_team != submitted_fav_team:
