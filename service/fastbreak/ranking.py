@@ -188,7 +188,9 @@ class RankingService(FastBreakService):
         wins = 0
         message = "***FASTBREAK SCHEDULE***\n\n"
         for d in dates:
-            if user_results[d] == 1:
+            if d > self.current_game_date:
+                message += "🟡 "
+            elif user_results[d] == 1:
                 message += "🟢 "
                 wins += 1
             elif user_results[d] == 0:
