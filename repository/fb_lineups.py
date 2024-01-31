@@ -140,6 +140,37 @@ def get_weekly_ranks(game_dates, count):
     return leaderboard
 
 
+def get_user_results(uid, game_dates):
+    db_conn = None
+    try:
+        db_conn = CNX_POOL.get_connection()
+        query = "SELECT game_date, is_passed FROM vgn.fb_lineups WHERE game_date IN ({}) AND user_id = {}" \
+            .format(', '.join("'" + date + "'" for date in game_dates), uid)
+
+        # Execute SQL query and store results in a pandas dataframe
+        df = pd.read_sql(query, db_conn)
+
+        # Convert dataframe to a dictionary with headers
+        loaded = df.to_dict('records')
+
+        db_conn.commit()
+        db_conn.close()
+    except Exception as err:
+        if db_conn is not None:
+            db_conn.close()
+
+        return {}, err
+
+    results = {}
+    for row in loaded:
+        results[row['game_date']] = 1 if row['is_passed'] else 0
+    for d in game_dates:
+        if d not in results:
+            results[d] = -1
+
+    return results, None
+
+
 if __name__ == '__main__':
     # get_lineups("04/11/2023")
     get_lineup("100", "04/11/2023")

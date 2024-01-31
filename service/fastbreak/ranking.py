@@ -6,7 +6,7 @@ from nba_api.live.nba.endpoints import boxscore
 from vgnlog.channel_logger import ADMIN_LOGGER
 from provider.nba.nba_provider import NBAProvider, NBA_PROVIDER
 from provider.topshot.fb_provider import FB_PROVIDER
-from repository.fb_lineups import get_lineups, upsert_score, get_weekly_ranks
+from repository.fb_lineups import get_lineups, upsert_score, get_weekly_ranks, get_user_results
 from repository.vgn_players import get_empty_players_stats
 from service.fastbreak.fastbreak import FastBreak
 from service.fastbreak.lineup import Lineup, LINEUP_SERVICE
@@ -172,6 +172,33 @@ class RankingService(FastBreakService):
         message += self.fb.formatted_scores(lineup.player_ids[0:self.fb.count], self.player_stats)
         if user_id in self.user_scores:
             message += f"\nYour current rank is **{self.user_scores[user_id]['rank']}/{len(self.user_scores)}**"
+
+        return message
+
+    async def schedule_with_scores(self, user_id):
+        dates = FB_PROVIDER.get_dates()
+        user_results, err = get_user_results(user_id, dates)
+        if err is not None:
+            await ADMIN_LOGGER.error(f"FBRanking:UserProgress:{err}")
+            return f"Error loading progress: {err}"
+        if user_id in self.user_scores:
+            user_results[self.current_game_date] = 1 if self.user_scores[user_id]['passed'] else -1
+
+        dates.sort()
+        wins = 0
+        message = "***FASTBREAK SCHEDULE***\n\n"
+        for d in dates:
+            if user_results[d] == 1:
+                message += "🟢 "
+                wins += 1
+            elif user_results[d] == 0:
+                message += "🔴 "
+            else:
+                message += "🟡 "
+            fb = FastBreak(FB_PROVIDER.fb_info[d])
+            message += f"**{d}**\n{fb.get_formatted()[2:-4]}\n"
+
+        message += f"\n🟢 **{wins} WINS**"
 
         return message
 

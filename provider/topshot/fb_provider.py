@@ -43,6 +43,9 @@ class FastBreakProvider:
             }
         return fb
 
+    def get_dates(self):
+        return list(self.fb_info.keys())
+
 
 def load_fb_data():
     with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "fastbreak/resource/current.json"), 'r') as set_file:

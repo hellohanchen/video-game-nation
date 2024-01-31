@@ -1,4 +1,5 @@
 import datetime
+import re
 import time
 from typing import Dict, Union
 
@@ -254,3 +255,10 @@ def list_to_str(items):
 def has_giveaway_permissions(permissions):
     return permissions.view_channel and permissions.send_messages and \
            permissions.embed_links and permissions.manage_messages and permissions.read_message_history
+
+
+def parse_boxscore_minutes(minutes):
+    match = re.match('^PT(.+)M(.+)S', minutes)
+    minutes = float(match.group(1))
+    seconds = round(float(match.group(2)) / 60.0, 2)
+    return minutes + seconds

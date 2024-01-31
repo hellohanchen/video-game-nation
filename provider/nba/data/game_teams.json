@@ -47,14 +47,6 @@
     "homeTeam": "LAL",
     "awayTeam": "BKN"
   },
-  "0012300013": {
-    "homeTeam": "RMD",
-    "awayTeam": "DAL"
-  },
-  "0012300014": {
-    "homeTeam": "WAS",
-    "awayTeam": "CNS"
-  },
   "0012300015": {
     "homeTeam": "ATL",
     "awayTeam": "CLE"
@@ -83,10 +75,6 @@
     "homeTeam": "PHX",
     "awayTeam": "DEN"
   },
-  "0012300022": {
-    "homeTeam": "POR",
-    "awayTeam": "NZB"
-  },
   "0012300023": {
     "homeTeam": "PHI",
     "awayTeam": "BOS"
@@ -110,10 +98,6 @@
   "0012300028": {
     "homeTeam": "ATL",
     "awayTeam": "MEM"
-  },
-  "0012300029": {
-    "homeTeam": "BKN",
-    "awayTeam": "MRA"
   },
   "0012300030": {
     "homeTeam": "CHI",
@@ -155,10 +139,6 @@
     "homeTeam": "MIA",
     "awayTeam": "MEM"
   },
-  "0012300040": {
-    "homeTeam": "TOR",
-    "awayTeam": "CNS"
-  },
   "0012300041": {
     "homeTeam": "LAL",
     "awayTeam": "MIL"
@@ -175,10 +155,6 @@
     "homeTeam": "IND",
     "awayTeam": "ATL"
   },
-  "0012300045": {
-    "homeTeam": "CLE",
-    "awayTeam": "MRA"
-  },
   "0012300046": {
     "homeTeam": "BKN",
     "awayTeam": "PHI"
@@ -186,10 +162,6 @@
   "0012300047": {
     "homeTeam": "SAS",
     "awayTeam": "HOU"
-  },
-  "0012300048": {
-    "homeTeam": "UTA",
-    "awayTeam": "NZB"
   },
   "0012300049": {
     "homeTeam": "PHX",
@@ -210,10 +182,6 @@
   "0012300053": {
     "homeTeam": "OKC",
     "awayTeam": "MIL"
-  },
-  "0012300054": {
-    "homeTeam": "MIN",
-    "awayTeam": "MRA"
   },
   "0012300055": {
     "homeTeam": "LAC",
@@ -262,10 +230,6 @@
   "0012300066": {
     "homeTeam": "IND",
     "awayTeam": "CLE"
-  },
-  "0012300067": {
-    "homeTeam": "ORL",
-    "awayTeam": "FLA"
   },
   "0012300068": {
     "homeTeam": "PHI",
@@ -3574,22 +3538,6 @@
   "0022300791": {
     "homeTeam": "POR",
     "awayTeam": "MIN"
-  },
-  "0032300004": {
-    "homeTeam": "",
-    "awayTeam": ""
-  },
-  "0032300005": {
-    "homeTeam": "",
-    "awayTeam": ""
-  },
-  "0032300006": {
-    "homeTeam": "",
-    "awayTeam": ""
-  },
-  "0032300001": {
-    "homeTeam": "EST",
-    "awayTeam": "WST"
   },
   "0022300792": {
     "homeTeam": "CLE",

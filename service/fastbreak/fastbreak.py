@@ -1,5 +1,7 @@
 from typing import List
 
+from utils import parse_boxscore_minutes
+
 STATS_MAP = {
     "PTS": "points",
     "FGA": "field goal attempts",
@@ -21,6 +23,7 @@ STATS_MAP = {
     "PFD": "fouls drawn",
     "PIP": "points in paint",
     "PMP": "plus minus",
+    "AMT": "assists minus turnovers",
 }
 BOXSCORE_MAP = {
     "PTS": "points",
@@ -55,24 +58,52 @@ BOXSCORE_MAP = {
 class FBBucket:
     def __init__(self, bucket_json):
         self.stats = bucket_json['stats']
-        self.target = float(bucket_json['target'])
         self.order = bucket_json['order']
+        if bucket_json.get('each'):
+            self.each = True
+            self.each_target = float(bucket_json['target'])
+            self.target = 5.0
+        else:
+            self.each = False
+            self.each_target = 0.0
+            self.target = float(bucket_json['target'])
 
     def get_formatted(self):
+        if self.each:
+            if self.order == 'DESC':
+                return f"{int(self.each_target)} {STATS_MAP[self.stats]} each"
+            else:
+                return f"at most {int(self.each_target)} {STATS_MAP[self.stats]} each"
+
         if self.order == 'DESC':
-            return f"at least {self.target} {STATS_MAP[self.stats]}"
+            return f"{int(self.target)} {STATS_MAP[self.stats]}"
         else:
-            return f"at most {self.target} {STATS_MAP[self.stats]}"
+            return f"at most {int(self.target)} {STATS_MAP[self.stats]}"
 
     def load_score(self, player_stat) -> float:
         if player_stat is None:
-            return 0
+            return 0.0
 
-        key = BOXSCORE_MAP[self.stats]
-        if key not in player_stat:
-            return 0
+        if self.stats == 'AMT':
+            assists = float(player_stat.get(BOXSCORE_MAP['AST'], default=0.0))
+            turnovers = float(player_stat.get(BOXSCORE_MAP['TOV'], default=0.0))
+            raw_score = assists - turnovers
+        else:
+            key = BOXSCORE_MAP[self.stats]
+            if key not in player_stat:
+                return 0.0
+            if self.stats == 'MIN':
+                raw_score = parse_boxscore_minutes(player_stat[key])
+            else:
+                raw_score = float(player_stat[key])
 
-        return float(player_stat[key])
+        if self.each:
+            if self.order == 'DESC':
+                return 1.0 if raw_score >= self.each_target else 0.0
+            else:
+                return 0.0 if raw_score >= self.each_target else 1.0
+
+        return raw_score
 
 
 class FastBreak:
@@ -87,8 +118,8 @@ class FastBreak:
 
     def get_formatted(self) -> str:
         if self.is_combine:
-            return f"**Pick {self.count} Players who will combine for " \
-                f"{' and '.join(self.format_buckets(self.buckets))}\n\n**"
+            return f"**{self.count} Players, " \
+                   f"{', '.join(self.format_buckets(self.buckets))}\n\n**"
         else:
             raise NotImplementedError
 
@@ -118,7 +149,10 @@ class FastBreak:
                 score = bucket.load_score(player)
                 player_scores[pid][i] = score
                 sums[i] = sums[i] + score
-                message += " {:.1f} {}".format(score, bucket.stats)
+                if bucket.each:
+                    message += " {:.0f} PASS".format(score)
+                else:
+                    message += " {:.1f} {}".format(score, bucket.stats)
 
             message += "\n{} {}-{} {} {}\n".format(
                 player['gameInfo']['awayTeam'], player['gameInfo']['awayScore'],
@@ -177,4 +211,4 @@ class FastBreak:
                     passed = False
                 rate += 2.0 - s / bucket.target
 
-        return sum(sums), passed, round(rate / num_buckets, 2)
+        return sum(sums), passed, 0.0 if num_buckets == 0 else round(rate / num_buckets, 2)

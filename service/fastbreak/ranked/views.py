@@ -119,7 +119,7 @@ class LineupScheduleButton(discord.ui.Button['LineupSchedule']):
     async def callback(self, interaction: discord.Interaction):
         assert self.view is not None
         view: LineupView = self.view
-        message, new_view = view.get_fb_schedule()
+        message, new_view = await view.get_fb_schedule()
 
         await interaction.response.edit_message(content=message, view=new_view)
 
@@ -197,8 +197,9 @@ class LineupView(FastBreakView):
     def check_score(self):
         return RANK_SERVICE.formatted_user_score(self.user_id), self
 
-    def get_fb_schedule(self):
-        return self.lineup_service.formatted_fb_schedule, self
+    async def get_fb_schedule(self):
+        message = await RANK_SERVICE.schedule_with_scores(self.user_id)
+        return message, self
 
     def check_leaderboard(self):
         return RANK_SERVICE.formatted_leaderboard(20), self

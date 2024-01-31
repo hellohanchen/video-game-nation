@@ -1,5 +1,6 @@
-import re
 from typing import Dict, List, Any, Optional, Set, Tuple
+
+from utils import parse_boxscore_minutes
 
 STATS_MAP = {
     "PTS": "points",
@@ -94,10 +95,7 @@ class TierBreaker:
                     start_stat = stat[6:]
                     result += int(float(player_stats[STATS_MAP[start_stat]]))
             elif stat == 'MIN':
-                match = re.match('^PT(.+)M(.+)S', player_stats[STATS_MAP[stat]])
-                minutes = float(match.group(1))
-                seconds = round(float(match.group(2)) / 60.0, 2)
-                result = float(result) + minutes + seconds
+                result = float(result) + parse_boxscore_minutes(player_stats[STATS_MAP[stat]])
             else:
                 result += int(float(player_stats[STATS_MAP[stat]]))
 
