@@ -33,15 +33,26 @@ class FastBreakProvider:
 
         self.coming_date = "N/A"
 
+    def get_next_game_date(self, start_date):
+        max_date = parse_slash_date(NBA_PROVIDER.latest_date)
+
+        while start_date <= max_date:
+            start_date = start_date + datetime.timedelta(days=1)
+
+            if to_slash_date(start_date) in self.fb_info:
+                return to_slash_date(start_date)
+
+        return to_slash_date(start_date)
+
     def get_fb(self, game_date):
-        fb = self.fb_info.get(game_date)
-        if fb is None:
+        f = self.fb_info.get(game_date)
+        if f is None:
             return {
                 "count": 8,
                 "isCombine": True,
                 "buckets": []
             }
-        return fb
+        return f
 
     def get_dates(self):
         return list(self.fb_info.keys())

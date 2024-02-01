@@ -3,8 +3,8 @@ import discord
 from provider.topshot.fb_provider import FB_PROVIDER
 from repository.vgn_users import get_user_new
 from service.common.profile.views import ProfileView, LINK_TS_ACCOUNT_MESSAGE
-from service.fastbreak.lineup import LineupService
-from service.fastbreak.ranking import RankingService, RANK_SERVICE
+from service.fastbreak.dynamic_lineup import DynamicLineupService as LineupService, DYNAMIC_LINEUP_SERVICE
+from service.fastbreak.dynamic_lineup import DynamicLineupService as RankingService
 
 
 class FastBreakView(discord.ui.View):
@@ -195,14 +195,14 @@ class LineupView(FastBreakView):
         return self.lineup.formatted() + "\nRemove a player from your lineup", RemoveView(self.lineup_service, self.user_id)
 
     def check_score(self):
-        return RANK_SERVICE.formatted_user_score(self.user_id), self
+        return DYNAMIC_LINEUP_SERVICE.formatted_user_score(self.user_id), self
 
     async def get_fb_schedule(self):
-        message = await RANK_SERVICE.schedule_with_scores(self.user_id)
+        message = await DYNAMIC_LINEUP_SERVICE.schedule_with_scores(self.user_id)
         return message, self
 
     def check_leaderboard(self):
-        return RANK_SERVICE.formatted_leaderboard(20), self
+        return DYNAMIC_LINEUP_SERVICE.formatted_leaderboard(20), self
 
 
 class RemovePlayerButton(discord.ui.Button['RemovePlayer']):
