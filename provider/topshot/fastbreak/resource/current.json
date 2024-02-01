@@ -1,84 +1,67 @@
 {
-  "01/15/2024": {
+  "02/01/2024": {
     "count": 5,
     "isCombine": true,
     "buckets": [
       {
         "stats": "PTS",
-        "target": 130,
+        "target": 120,
         "order": "DESC"
       }
     ]
   },
-  "01/16/2024": {
-    "count": 5,
-    "isCombine": true,
-    "buckets": [
-      {
-        "stats": "PFD",
-        "target": 20,
-        "order": "DESC"
-      }
-    ]
-  },
-  "01/17/2024": {
-    "count": 5,
-    "isCombine": true,
-    "buckets": [
-      {
-        "stats": "3PT",
-        "target": 25,
-        "order": "DESC"
-      }
-    ]
-  },
-  "01/18/2024": {
-    "count": 5,
-    "isCombine": true,
-    "buckets": [
-      {
-        "stats": "FTM",
-        "target": 25,
-        "order": "DESC"
-      }
-    ]
-  },
-  "01/19/2024": {
-    "count": 5,
-    "isCombine": true,
-    "buckets": [
-      {
-        "stats": "REB",
-        "target": 50,
-        "order": "DESC"
-      },
-      {
-        "stats": "AST",
-        "target": 25,
-        "order": "DESC"
-      }
-    ]
-  },
-  "01/20/2024": {
+  "02/02/2024": {
     "count": 5,
     "isCombine": true,
     "buckets": [
       {
         "stats": "BLK",
-        "target": 9,
+        "target": 10,
         "order": "DESC"
       },
       {
-        "stats": "STL",
-        "target": 7,
+        "stats": "REB",
+        "target": 35,
         "order": "DESC"
       }
     ]
   },
-  "01/21/2024": {
+  "02/03/2024": {
     "count": 5,
     "isCombine": true,
     "buckets": [
+      {
+        "stats": "FTM",
+        "target": 25,
+        "order": "DESC"
+      },
+      {
+        "stats": "FTA",
+        "target": 30,
+        "order": "DESC"
+      }
+    ]
+  },
+  "02/04/2024": {
+    "count": 5,
+    "isCombine": true,
+    "buckets": [
+      {
+        "stats": "AMT",
+        "target": 25,
+        "order": "DESC"
+      }
+    ]
+  },
+  "02/05/2024": {
+    "count": 5,
+    "isCombine": true,
+    "buckets": [
+      {
+        "stats": "REB",
+        "target": 45,
+        "order": "DESC"
+      },
       {
         "stats": "AST",
         "target": 25,
@@ -86,83 +69,51 @@
       }
     ]
   },
-  "01/22/2024": {
+  "02/06/2024": {
     "count": 5,
     "isCombine": true,
     "buckets": [
       {
-        "stats": "FTA",
-        "target": 35,
-        "order": "DESC"
-      },
-      {
-        "stats": "FTM",
-        "target": 30,
-        "order": "DESC"
+        "stats": "PTS",
+        "target": 25,
+        "order": "DESC",
+        "each": true
       }
     ]
   },
-  "01/23/2024": {
+  "02/07/2024": {
     "count": 5,
     "isCombine": true,
     "buckets": [
-      {
-        "stats": "FGM",
-        "target": 45,
-        "order": "DESC"
-      }
-    ]
-  },
-  "01/24/2024": {
-    "count": 5,
-    "isCombine": true,
-    "buckets": [
-      {
-        "stats": "REB",
-        "target": 55,
-        "order": "DESC"
-      }
-    ]
-  },
-  "01/25/2024": {
-    "count": 5,
-    "isCombine": true,
-    "buckets": [
-      {
-        "stats": "PIP",
-        "target": 60,
-        "order": "DESC"
-      }
-    ]
-  },
-  "01/26/2024": {
-    "count": 5,
-    "isCombine": true,
-    "buckets": [
-      {
-        "stats": "3PA",
-        "target": 30,
-        "order": "DESC"
-      },
       {
         "stats": "3PT",
         "target": 15,
         "order": "DESC"
+      },
+      {
+        "stats": "3PA",
+        "target": 30,
+        "order": "DESC"
       }
     ]
   },
-  "01/27/2024": {
+  "02/08/2024": {
     "count": 5,
     "isCombine": true,
     "buckets": [
       {
         "stats": "PMP",
-        "target": 35,
+        "target": 30,
+        "order": "DESC"
+      },
+      {
+        "stats": "MIN",
+        "target": 125,
         "order": "DESC"
       }
     ]
   },
-  "01/28/2024": {
+  "02/09/2024": {
     "count": 5,
     "isCombine": true,
     "buckets": [
@@ -173,7 +124,62 @@
       }
     ]
   },
-  "01/29/2024": {
+  "02/10/2024": {
+    "count": 5,
+    "isCombine": true,
+    "buckets": [
+      {
+        "stats": "FGM",
+        "target": 40,
+        "order": "DESC"
+      },
+      {
+        "stats": "FGA",
+        "target": 75,
+        "order": "DESC"
+      }
+    ]
+  },
+  "02/11/2024": {
+    "count": 5,
+    "isCombine": true,
+    "buckets": [
+      {
+        "stats": "FTM",
+        "target": 2,
+        "order": "DESC",
+        "each": true
+      }
+    ]
+  },
+  "02/12/2024": {
+    "count": 5,
+    "isCombine": true,
+    "buckets": [
+      {
+        "stats": "STL",
+        "target": 5,
+        "order": "DESC"
+      },
+      {
+        "stats": "AST",
+        "target": 35,
+        "order": "DESC"
+      }
+    ]
+  },
+  "02/13/2024": {
+    "count": 5,
+    "isCombine": true,
+    "buckets": [
+      {
+        "stats": "DD2",
+        "target": 4,
+        "order": "DESC"
+      }
+    ]
+  },
+  "02/14/2024": {
     "count": 5,
     "isCombine": true,
     "buckets": [
@@ -184,45 +190,18 @@
       }
     ]
   },
-  "01/30/2024": {
+  "02/15/2024": {
     "count": 5,
     "isCombine": true,
     "buckets": [
       {
-        "stats": "AST",
-        "target": 25,
-        "order": "DESC"
-      },
-      {
-        "stats": "STL",
-        "target": 5,
-        "order": "DESC"
-      }
-    ]
-  },
-  "01/31/2024": {
-    "count": 5,
-    "isCombine": true,
-    "buckets": [
-      {
-        "stats": "REB",
-        "target": 50,
-        "order": "DESC"
-      },
-      {
-        "stats": "BLK",
+        "stats": "3PT",
         "target": 10,
         "order": "DESC"
-      }
-    ]
-  },
-  "02/01/2024": {
-    "count": 5,
-    "isCombine": true,
-    "buckets": [
+      },
       {
-        "stats": "PTS",
-        "target": 120,
+        "stats": "REB",
+        "target": 25,
         "order": "DESC"
       }
     ]

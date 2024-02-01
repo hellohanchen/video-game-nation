@@ -53,19 +53,155 @@
     4165,
     4221,
     4234,
-    4690,
-    4691,
-    4692,
-    4693,
-    4694,
-    4695,
-    4696,
-    4697,
-    4698,
-    4699
+    4732,
+    4735
   ],
-  "count": 5144,
+  "count": 5162,
   "plays": {
+    "4739": [
+      {
+        "id": "2c219187-4cb9-4e3b-95c8-3b874a7c0934",
+        "flowId": 4739,
+        "set": "Extra Spice",
+        "setId": "b350a61d-28b1-4468-8f2c-2960166aeb57",
+        "setFlowId": 133,
+        "playerId": 1630178,
+        "playerName": "Tyrese Maxey",
+        "team": "Philadelphia 76ers",
+        "teamAtMoment": "Philadelphia 76ers",
+        "playType": "Jump Shot",
+        "date": "2023-12-14",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4738": [
+      {
+        "id": "52514725-870c-4c4e-b623-04669d537762",
+        "flowId": 4738,
+        "set": "Extra Spice",
+        "setId": "b350a61d-28b1-4468-8f2c-2960166aeb57",
+        "setFlowId": 133,
+        "playerId": 203935,
+        "playerName": "Marcus Smart",
+        "team": "Memphis Grizzlies",
+        "teamAtMoment": "Memphis Grizzlies",
+        "playType": "Assist",
+        "date": "2023-11-06",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4737": [
+      {
+        "id": "c06d5e83-555f-4ba1-b8eb-f22c03cbf16a",
+        "flowId": 4737,
+        "set": "Extra Spice",
+        "setId": "b350a61d-28b1-4468-8f2c-2960166aeb57",
+        "setFlowId": 133,
+        "playerId": 1630559,
+        "playerName": "Austin Reaves",
+        "team": "Los Angeles Lakers",
+        "teamAtMoment": "Los Angeles Lakers",
+        "playType": "3 Pointer",
+        "date": "2023-12-06",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4736": [
+      {
+        "id": "901de726-e468-4408-a909-644f6824b50b",
+        "flowId": 4736,
+        "set": "Extra Spice",
+        "setId": "b350a61d-28b1-4468-8f2c-2960166aeb57",
+        "setFlowId": 133,
+        "playerId": 203932,
+        "playerName": "Aaron Gordon",
+        "team": "Denver Nuggets",
+        "teamAtMoment": "Denver Nuggets",
+        "playType": "Layup",
+        "date": "2023-11-05",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4734": [
+      {
+        "id": "658c90a7-4408-462c-afcd-db990bf895e2",
+        "flowId": 4734,
+        "set": "Hustle and Show",
+        "setId": "fb847463-981a-49ba-8167-2f5bd595dc82",
+        "setFlowId": 132,
+        "playerId": 1629012,
+        "playerName": "Collin Sexton",
+        "team": "Utah Jazz",
+        "teamAtMoment": "Utah Jazz",
+        "playType": "Dunk",
+        "date": "2023-12-27",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4733": [
+      {
+        "id": "e6b399f2-7ec2-4e99-8854-ac17da9b58d4",
+        "flowId": 4733,
+        "set": "Hustle and Show",
+        "setId": "fb847463-981a-49ba-8167-2f5bd595dc82",
+        "setFlowId": 132,
+        "playerId": 200768,
+        "playerName": "Kyle Lowry",
+        "team": "Miami Heat",
+        "teamAtMoment": "Miami Heat",
+        "playType": "Assist",
+        "date": "2023-11-09",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4731": [
+      {
+        "id": "9682ade9-bb79-42e1-8fcc-2fc1f0882754",
+        "flowId": 4731,
+        "set": "Hustle and Show",
+        "setId": "fb847463-981a-49ba-8167-2f5bd595dc82",
+        "setFlowId": 132,
+        "playerId": 204456,
+        "playerName": "T.J. McConnell",
+        "team": "Indiana Pacers",
+        "teamAtMoment": "Indiana Pacers",
+        "playType": "Steal",
+        "date": "2024-01-07",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4730": [
+      {
+        "id": "12190ce8-bef5-416c-aac4-fec9fa48ce2c",
+        "flowId": 4730,
+        "set": "Hustle and Show",
+        "setId": "fb847463-981a-49ba-8167-2f5bd595dc82",
+        "setFlowId": 132,
+        "playerId": 1630552,
+        "playerName": "Jalen Johnson",
+        "team": "Atlanta Hawks",
+        "teamAtMoment": "Atlanta Hawks",
+        "playType": "Dunk",
+        "date": "2023-10-30",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
     "4729": [
       {
         "id": "af1fa033-1671-4c32-99bb-b204caad0194",
@@ -694,6 +830,188 @@
           "RM",
           "RY"
         ]
+      }
+    ],
+    "4699": [
+      {
+        "id": "5f6cce90-73b6-4d5d-a9a9-9856a9743e73",
+        "flowId": 4699,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 1629673,
+        "playerName": "Jordan Poole",
+        "team": "Washington Wizards",
+        "teamAtMoment": "Washington Wizards",
+        "playType": "3 Pointer",
+        "date": "2023-12-19",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4698": [
+      {
+        "id": "8507c7f7-8901-4989-a618-17b865d4a78a",
+        "flowId": 4698,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 1631165,
+        "playerName": "Keon Ellis",
+        "team": "Sacramento Kings",
+        "teamAtMoment": "Sacramento Kings",
+        "playType": "Block",
+        "date": "2023-12-15",
+        "series": 5,
+        "tier": "Common",
+        "badges": [
+          "TSD"
+        ]
+      }
+    ],
+    "4697": [
+      {
+        "id": "a62ab8a9-d7ae-4312-b961-4253b2e466b5",
+        "flowId": 4697,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 203078,
+        "playerName": "Bradley Beal",
+        "team": "Phoenix Suns",
+        "teamAtMoment": "Phoenix Suns",
+        "playType": "Dunk",
+        "date": "2024-01-01",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4696": [
+      {
+        "id": "3dfa7ed4-7294-4a78-bc41-816671d6da5e",
+        "flowId": 4696,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 1630162,
+        "playerName": "Anthony Edwards",
+        "team": "Minnesota Timberwolves",
+        "teamAtMoment": "Minnesota Timberwolves",
+        "playType": "Jump Shot",
+        "date": "2023-12-29",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4695": [
+      {
+        "id": "1fd4993c-12f4-478a-b3ee-3e83a9ff6181",
+        "flowId": 4695,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 1630583,
+        "playerName": "Santi Aldama",
+        "team": "Memphis Grizzlies",
+        "teamAtMoment": "Memphis Grizzlies",
+        "playType": "Dunk",
+        "date": "2024-01-03",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4694": [
+      {
+        "id": "1f5be7fc-19cf-468b-8ced-0810e8b98732",
+        "flowId": 4694,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 1629060,
+        "playerName": "Rui Hachimura",
+        "team": "Los Angeles Lakers",
+        "teamAtMoment": "Los Angeles Lakers",
+        "playType": "Dunk",
+        "date": "2023-12-24",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4693": [
+      {
+        "id": "db4ef28b-d6cd-4af5-a626-3d159e13bcdb",
+        "flowId": 4693,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 1631106,
+        "playerName": "Tari Eason",
+        "team": "Houston Rockets",
+        "teamAtMoment": "Houston Rockets",
+        "playType": "Steal",
+        "date": "2023-12-14",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4692": [
+      {
+        "id": "41060143-0c78-4caa-b403-bcd80e15c532",
+        "flowId": 4692,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 1628995,
+        "playerName": "Kevin Knox II",
+        "team": "Detroit Pistons",
+        "teamAtMoment": "Detroit Pistons",
+        "playType": "Dunk",
+        "date": "2023-12-30",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4691": [
+      {
+        "id": "5e205e5e-eefe-4f27-992c-4a5343aaf801",
+        "flowId": 4691,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 1630192,
+        "playerName": "Zeke Nnaji",
+        "team": "Denver Nuggets",
+        "teamAtMoment": "Denver Nuggets",
+        "playType": "Dunk",
+        "date": "2023-12-19",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4690": [
+      {
+        "id": "2fcb0fbb-7d1d-424a-b5cd-8d5345a68bc1",
+        "flowId": 4690,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 1630172,
+        "playerName": "Patrick Williams",
+        "team": "Chicago Bulls",
+        "teamAtMoment": "Chicago Bulls",
+        "playType": "Assist",
+        "date": "2023-12-29",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
       }
     ],
     "4689": [
@@ -2097,7 +2415,9 @@
         "date": "2023-11-05",
         "series": 5,
         "tier": "Common",
-        "badges": []
+        "badges": [
+          "TSD"
+        ]
       }
     ],
     "4613": [
@@ -4196,7 +4516,9 @@
         "date": "2023-11-24",
         "series": 5,
         "tier": "Common",
-        "badges": [],
+        "badges": [
+          "TSD"
+        ],
         "teamAtMoment": "Phoenix Suns"
       }
     ],
