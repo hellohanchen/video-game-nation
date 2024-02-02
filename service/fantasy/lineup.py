@@ -393,11 +393,11 @@ class Lineup:
 
     def submit(self):
         if None in self.player_ids:
-            return "Still have {} unfilled positions"\
+            return False, "Still have {} unfilled positions"\
                 .format(len([i for i in range(0, 8) if self.player_ids[i] is None]))
 
         if self.get_total_salary() > SALARY_CAP:
-            return self.formatted() + "\nTotal salary exceeds cap, please adjust lineup."
+            return False, self.formatted() + "\nTotal salary exceeds cap, please adjust lineup."
 
         successful, _ = submit_lineup(self.user_id, self.game_date)
         if successful:
