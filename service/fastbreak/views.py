@@ -37,7 +37,7 @@ class MainPage(discord.ui.View):
 
     def launch_fb(self, user_id):
         if self.rank_service.status != "IN_GAME" or self.rank_service.current_game_date not in FB_PROVIDER.fb_info:
-            message = self.lineup_service.get_or_create_lineup(user_id).formatted()
+            message = self.lineup_service.load_or_create_lineup(user_id).formatted()
         else:
             message = self.rank_service.formatted_user_score(user_id)
 
@@ -99,7 +99,7 @@ class LineupView(FastBreakView):
         self.add_item(LineupRemoveButton())
         self.add_item(LineupButton(1))
         self.add_item(LineupScheduleButton())
-        self.lineup = self.lineup_service.get_or_create_lineup(self.user_id)
+        self.lineup = self.lineup_service.load_or_create_lineup(self.user_id)
 
     def jump_to_teams(self):
         message = self.lineup_service.formatted_schedule
