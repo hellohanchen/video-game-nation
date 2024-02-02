@@ -228,6 +228,30 @@ class NBAProvider:
         if started and final:
             return "POST_GAME"
 
+    def update_injury(self):
+        new_injuries = load_injuries()
+        changes = {}
+        for player_name in new_injuries:
+            if player_name not in self.injuries:
+                changes[player_name] = {
+                    'from': 'none',
+                    'to': new_injuries[player_name]
+                }
+            elif self.injuries[player_name] != new_injuries[player_name]:
+                changes[player_name] = {
+                    'from': self.injuries[player_name],
+                    'to': new_injuries[player_name]
+                }
+        for player_name in self.injuries:
+            if player_name not in new_injuries:
+                changes[player_name] = {
+                    'from': self.injuries[player_name],
+                    'to': 'none'
+                }
+
+        self.injuries = new_injuries
+        return changes
+
 
 NBA_PROVIDER = NBAProvider()
 

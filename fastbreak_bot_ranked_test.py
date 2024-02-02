@@ -64,6 +64,15 @@ async def refresh_entry():
         view = MainPage(DYNAMIC_LINEUP_SERVICE, DYNAMIC_LINEUP_SERVICE)
         await message.edit(content=WELCOME_MESSAGE, view=view)
 
+    injury_changes = NBA_PROVIDER.update_injury()
+    injury_updates = "injury report:\n"
+    for player_name in injury_changes:
+        injury_updates += f"Injury Update: **{player_name}** " \
+                   f"changed from **[{injury_changes[player_name]['from']}]** to " \
+                   f"**[{injury_changes[player_name]['to']}]**\n"
+
+    for message in FB_CHANNEL_MESSAGES:
+        await message.channel.send(injury_updates)
 
 # start the bot
 bot.run(TOKEN)
