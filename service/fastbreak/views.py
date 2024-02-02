@@ -1,14 +1,13 @@
 import discord
 
 from provider.topshot.fb_provider import FB_PROVIDER
-from service.fastbreak.lineup import LineupService
-from service.fastbreak.ranking import RankingService, RANK_SERVICE
+from service.fastbreak.dynamic_lineup import DynamicLineupService, DYNAMIC_LINEUP_SERVICE
 
 
 class FastBreakView(discord.ui.View):
     def __init__(self, lineup_service, user_id):
         super().__init__()
-        self.lineup_service: LineupService = lineup_service
+        self.lineup_service: DynamicLineupService = lineup_service
         self.user_id = user_id
 
     def back_to_lineup(self):
@@ -30,7 +29,7 @@ class MainStartButton(discord.ui.Button['Start']):
 
 
 class MainPage(discord.ui.View):
-    def __init__(self, lineup_service: LineupService, rank_service: RankingService):
+    def __init__(self, lineup_service: DynamicLineupService, rank_service: DynamicLineupService):
         super().__init__()
         self.add_item(MainStartButton())
         self.lineup_service = lineup_service
@@ -59,7 +58,7 @@ class LineupButton(discord.ui.Button['Lineup']):
 
 class LineupTeamsButton(discord.ui.Button['LineupTeams']):
     def __init__(self):
-        super().__init__(style=discord.ButtonStyle.blurple, label="Teams", row=1)
+        super().__init__(style=discord.ButtonStyle.blurple, label="Add Player", row=0)
 
     async def callback(self, interaction: discord.Interaction):
         assert self.view is not None
@@ -71,7 +70,7 @@ class LineupTeamsButton(discord.ui.Button['LineupTeams']):
 
 class LineupRemoveButton(discord.ui.Button['LineupRemove']):
     def __init__(self):
-        super().__init__(style=discord.ButtonStyle.danger, label="Remove", row=1)
+        super().__init__(style=discord.ButtonStyle.danger, label="Remove Player", row=0)
 
     async def callback(self, interaction: discord.Interaction):
         assert self.view is not None
@@ -81,26 +80,14 @@ class LineupRemoveButton(discord.ui.Button['LineupRemove']):
         await interaction.response.edit_message(content=message, view=new_view)
 
 
-class LineupScoreButton(discord.ui.Button['LineupScore']):
-    def __init__(self):
-        super().__init__(style=discord.ButtonStyle.success, label="My Score", row=2)
-
-    async def callback(self, interaction: discord.Interaction):
-        assert self.view is not None
-        view: LineupView = self.view
-        message, new_view = view.check_score()
-
-        await interaction.response.edit_message(content=message, view=new_view)
-
-
 class LineupScheduleButton(discord.ui.Button['LineupSchedule']):
     def __init__(self):
-        super().__init__(style=discord.ButtonStyle.success, label="Schedule", row=1)
+        super().__init__(style=discord.ButtonStyle.secondary, label="Schedule", row=1)
 
     async def callback(self, interaction: discord.Interaction):
         assert self.view is not None
         view: LineupView = self.view
-        message, new_view = view.get_fb_schedule()
+        message, new_view = await view.get_fb_schedule()
 
         await interaction.response.edit_message(content=message, view=new_view)
 
@@ -110,9 +97,8 @@ class LineupView(FastBreakView):
         super().__init__(lineup_service, user_id)
         self.add_item(LineupTeamsButton())
         self.add_item(LineupRemoveButton())
+        self.add_item(LineupButton(1))
         self.add_item(LineupScheduleButton())
-        self.add_item(LineupButton(2))
-        self.add_item(LineupScoreButton())
         self.lineup = self.lineup_service.get_or_create_lineup(self.user_id)
 
     def jump_to_teams(self):
@@ -123,10 +109,11 @@ class LineupView(FastBreakView):
         return self.lineup.formatted() + "\nRemove a player from your lineup", RemoveView(self.lineup_service, self.user_id)
 
     def check_score(self):
-        return RANK_SERVICE.formatted_user_score(self.user_id), self
+        return DYNAMIC_LINEUP_SERVICE.formatted_user_score(self.user_id), self
 
-    def get_fb_schedule(self):
-        return self.lineup_service.formatted_fb_schedule, self
+    async def get_fb_schedule(self):
+        schedule = await self.lineup_service.schedule_with_scores(self.user_id)
+        return schedule, self
 
 
 class RemovePlayerButton(discord.ui.Button['RemovePlayer']):

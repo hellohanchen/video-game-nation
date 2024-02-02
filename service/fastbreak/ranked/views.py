@@ -89,7 +89,7 @@ class LineupTeamsButton(discord.ui.Button['LineupTeams']):
 
 class LineupRulesButton(discord.ui.Button['LineupRules']):
     def __init__(self):
-        super().__init__(style=discord.ButtonStyle.secondary, label="Rules", row=0)
+        super().__init__(style=discord.ButtonStyle.secondary, label="Rules", row=1)
 
     async def callback(self, interaction: discord.Interaction):
         assert self.view is not None
@@ -114,7 +114,7 @@ class LineupRulesButton(discord.ui.Button['LineupRules']):
 
 class LineupScheduleButton(discord.ui.Button['LineupSchedule']):
     def __init__(self):
-        super().__init__(style=discord.ButtonStyle.secondary, label="Schedule", row=0)
+        super().__init__(style=discord.ButtonStyle.secondary, label="Schedule", row=1)
 
     async def callback(self, interaction: discord.Interaction):
         assert self.view is not None
@@ -126,7 +126,7 @@ class LineupScheduleButton(discord.ui.Button['LineupSchedule']):
 
 class LineupRemoveButton(discord.ui.Button['LineupRemove']):
     def __init__(self):
-        super().__init__(style=discord.ButtonStyle.danger, label="Remove", row=1)
+        super().__init__(style=discord.ButtonStyle.danger, label="Remove Player", row=0)
 
     async def callback(self, interaction: discord.Interaction):
         assert self.view is not None
@@ -150,21 +150,9 @@ class LineupSubmitButton(discord.ui.Button['LineupSubmit']):
         await interaction.user.send(content=message)
 
 
-class LineupScoreButton(discord.ui.Button['LineupScore']):
-    def __init__(self):
-        super().__init__(style=discord.ButtonStyle.green, label="My Score", row=2)
-
-    async def callback(self, interaction: discord.Interaction):
-        assert self.view is not None
-        view: LineupView = self.view
-        message, new_view = view.check_score()
-
-        await interaction.response.edit_message(content=message, view=new_view)
-
-
 class LineupLeaderboardButton(discord.ui.Button['LineupLeaderboard']):
     def __init__(self):
-        super().__init__(style=discord.ButtonStyle.secondary, label="Check daily leaderboard", row=3)
+        super().__init__(style=discord.ButtonStyle.secondary, label="Leaderboard", row=2)
 
     async def callback(self, interaction: discord.Interaction):
         assert self.view is not None
@@ -178,12 +166,11 @@ class LineupView(FastBreakView):
     def __init__(self, lineup_service, user_id):
         super().__init__(lineup_service, user_id)
         self.add_item(LineupTeamsButton())
-        self.add_item(LineupScheduleButton())
-        self.add_item(LineupRulesButton())
         self.add_item(LineupRemoveButton())
         self.add_item(LineupSubmitButton())
+        self.add_item(LineupScheduleButton())
+        self.add_item(LineupRulesButton())
         self.add_item(LineupButton(2))
-        self.add_item(LineupScoreButton())
         self.add_item(LineupLeaderboardButton())
         self.lineup = self.lineup_service.get_or_create_lineup(self.user_id)
 
@@ -193,9 +180,6 @@ class LineupView(FastBreakView):
 
     def remove_player(self):
         return self.lineup.formatted() + "\nRemove a player from your lineup", RemoveView(self.lineup_service, self.user_id)
-
-    def check_score(self):
-        return DYNAMIC_LINEUP_SERVICE.formatted_user_score(self.user_id), self
 
     async def get_fb_schedule(self):
         message = await DYNAMIC_LINEUP_SERVICE.schedule_with_scores(self.user_id)
@@ -237,7 +221,7 @@ class RemoveView(FastBreakView):
 
     # This method update current player info
     def remove_player(self, pos_idx):
-        message = self.lineup.remove_player(pos_idx)
+        message = self.lineup.remove_player(pos_idx, True)
 
         return self.lineup.formatted() + "\n" + message, self
 
@@ -378,7 +362,7 @@ class TeamView(FastBreakView):
         if pos_idx == self.lineup_service.fb.count:
             return "Lineup is already full, please remove a player.", self
 
-        return lineup.add_player_by_idx(player_idx, pos_idx), self
+        return lineup.add_player_by_idx(player_idx, pos_idx, True), self
 
     def back_to_teams(self):
         return self.lineup_service.formatted_schedule, TeamsView(self.lineup_service, self.user_id)

@@ -55,46 +55,10 @@ async def on_ready():
                 message = await channel.send(WELCOME_MESSAGE, view=view)
                 FB_CHANNEL_MESSAGES.append(message)
 
-    update_stats.start()
     refresh_entry.start()
 
 
-############
-# Admin
-############
-@bot.command(name='test_reload', help="[Admin] Reload game schedules, lineups and ranking")
-async def reload(context):
-    if context.channel.id != ADMIN_CHANNEL_ID:
-        return
-
-    NBA_PROVIDER.reload()
-    DYNAMIC_LINEUP_SERVICE.reload()
-
-    await context.channel.send("reloaded")
-
-
-############
-# Routines
-############
-@tasks.loop(minutes=2)
-async def update_stats():
-    init_status = DYNAMIC_LINEUP_SERVICE.status
-    dates = get_the_past_week_with_offset(DYNAMIC_LINEUP_SERVICE.current_game_date, 4)
-    daily_lb = DYNAMIC_LINEUP_SERVICE.formatted_leaderboard(20)
-    await DYNAMIC_LINEUP_SERVICE.update()
-    new_status = DYNAMIC_LINEUP_SERVICE.status
-
-    if init_status == "POST_GAME" and new_status == "PRE_GAME":
-        dates = get_the_past_week_with_offset(DYNAMIC_LINEUP_SERVICE.current_game_date, 4)
-        dates = list(filter(lambda d: FB_PROVIDER.fb_info.get(d) is not None, dates))
-        weekly_lb = DYNAMIC_LINEUP_SERVICE.formatted_weekly_leaderboard(dates, 20)
-
-        for message in FB_CHANNEL_MESSAGES:
-            await message.channel.send(daily_lb)
-            await message.channel.send(weekly_lb)
-
-
-@tasks.loop(seconds=5)
+@tasks.loop(seconds=60)
 async def refresh_entry():
     for message in FB_CHANNEL_MESSAGES:
         view = MainPage(DYNAMIC_LINEUP_SERVICE, DYNAMIC_LINEUP_SERVICE)

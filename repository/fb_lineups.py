@@ -6,16 +6,17 @@ from repository.config import CNX_POOL
 def get_lineup(user_id, game_date):
     try:
         db_conn = CNX_POOL.get_connection()
-        cursor = db_conn.cursor()
         query = "SELECT * FROM vgn.fb_lineups WHERE user_id = {} AND game_date = '{}'".format(user_id, game_date)
-        cursor.execute(query)
-        result = cursor.fetchone()
+        df = pd.read_sql(query, db_conn)
+        lineups = df.to_dict('records')
         db_conn.commit()
         db_conn.close()
 
-        return result
+        if len(lineups) == 0:
+            return {}, None
+        return lineups[0], None
     except Exception as err:
-        return "DB error: {}".format(err)
+        return None, err
 
 
 def get_lineups(game_date):

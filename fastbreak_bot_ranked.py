@@ -7,11 +7,9 @@ from discord.ext import commands, tasks
 from dotenv import load_dotenv
 
 from provider.nba.nba_provider import NBA_PROVIDER
-from provider.topshot.fb_provider import FB_PROVIDER
-from service.fastbreak.lineup import LINEUP_SERVICE
+from service.fastbreak.dynamic_lineup import DYNAMIC_LINEUP_SERVICE
 from service.fastbreak.ranked.views import MainPage
-from service.fastbreak.ranking import RANK_SERVICE
-from utils import get_the_past_week_from_sunday, get_the_past_week_with_offset
+from utils import get_the_past_week_with_offset
 from vgnlog.channel_logger import ADMIN_LOGGER
 
 # config bot
@@ -55,7 +53,7 @@ async def on_ready():
                 continue
 
             if channel.id in FB_CHANNEL_IDS:
-                view = MainPage(LINEUP_SERVICE, RANK_SERVICE)
+                view = MainPage(DYNAMIC_LINEUP_SERVICE, DYNAMIC_LINEUP_SERVICE)
                 message = await channel.send(WELCOME_MESSAGE, view=view)
                 FB_CHANNEL_MESSAGES.append(message)
 
@@ -72,8 +70,7 @@ async def reload(context):
         return
 
     NBA_PROVIDER.reload()
-    LINEUP_SERVICE.reload()
-    RANK_SERVICE.reload()
+    DYNAMIC_LINEUP_SERVICE.reload()
 
     await context.channel.send("reloaded")
 
@@ -83,31 +80,31 @@ async def reload(context):
 ############
 @tasks.loop(minutes=2)
 async def update_stats():
-    init_status = RANK_SERVICE.status
-    daily_lb = RANK_SERVICE.formatted_leaderboard(20)
-    await RANK_SERVICE.update()
-    new_status = RANK_SERVICE.status
+    init_status = DYNAMIC_LINEUP_SERVICE.status
+    init_date = DYNAMIC_LINEUP_SERVICE.current_game_date
+    init_lb = DYNAMIC_LINEUP_SERVICE.formatted_leaderboard(20)
+    await DYNAMIC_LINEUP_SERVICE.update()
+    new_status = DYNAMIC_LINEUP_SERVICE.status
 
     if init_status == "POST_GAME" and new_status == "PRE_GAME":
-        dates = get_the_past_week_with_offset(RANK_SERVICE.current_game_date, 4)
-        dates = list(filter(lambda d: FB_PROVIDER.fb_info.get(d) is not None, dates))
-        weekly_lb = RANK_SERVICE.formatted_weekly_leaderboard(dates, 20)
+        dates = get_the_past_week_with_offset(init_date, 4)
+        weekly_lb = DYNAMIC_LINEUP_SERVICE.formatted_weekly_leaderboard(dates, 20)
 
         for message in FB_CHANNEL_MESSAGES:
-            await message.channel.send(daily_lb)
+            await message.channel.send(init_lb)
             await message.channel.send(weekly_lb)
 
 
 @tasks.loop(minutes=2)
 async def refresh_entry():
     global REFRESH_COUNT, FB_CHANNEL_MESSAGES
-    if RANK_SERVICE.status != "IN_GAME":
+    if DYNAMIC_LINEUP_SERVICE.status != "IN_GAME":
         REFRESH_COUNT += 1
 
     if REFRESH_COUNT == 60:
         new_messages = []
         for old_message in FB_CHANNEL_MESSAGES:
-            view = MainPage(LINEUP_SERVICE, RANK_SERVICE)
+            view = MainPage(DYNAMIC_LINEUP_SERVICE, DYNAMIC_LINEUP_SERVICE)
             try:
                 new_message = await old_message.channel.send(WELCOME_MESSAGE, view=view)
             except Exception as err:
@@ -121,7 +118,7 @@ async def refresh_entry():
         REFRESH_COUNT = 0
     else:
         for message in FB_CHANNEL_MESSAGES:
-            view = MainPage(LINEUP_SERVICE, RANK_SERVICE)
+            view = MainPage(DYNAMIC_LINEUP_SERVICE, DYNAMIC_LINEUP_SERVICE)
             await message.edit(content=WELCOME_MESSAGE, view=view)
 
 

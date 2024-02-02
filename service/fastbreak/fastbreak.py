@@ -127,6 +127,30 @@ class FastBreak:
     def format_buckets(fb_buckets: List[FBBucket]) -> List[str]:
         return [b.get_formatted() for b in fb_buckets]
 
+    def formatted_score(self, player_id, player_stats):
+        num_buckets = len(self.buckets)
+
+        player = player_stats.get(player_id)
+        if player is not None:
+            message = f"**{player['name']}**"
+            for i in range(0, num_buckets):
+                bucket = self.buckets[i]
+                score = bucket.load_score(player)
+                if bucket.each:
+                    message += " {:.0f} PASS".format(score)
+                else:
+                    message += " {:.1f} {}".format(score, bucket.stats)
+
+            message += "\n{} {}-{} {} {}".format(
+                player['gameInfo']['awayTeam'], player['gameInfo']['awayScore'],
+                player['gameInfo']['homeScore'], player['gameInfo']['homeTeam'],
+                player['gameInfo']['statusText']
+            )
+
+            return message
+
+        return f"🏀 Player stats not available\n"
+
     def formatted_scores(self, player_ids, player_stats):
         num_buckets = len(self.buckets)
         sums = [0.0] * num_buckets
