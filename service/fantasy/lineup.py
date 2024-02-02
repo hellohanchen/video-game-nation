@@ -402,9 +402,9 @@ class Lineup:
         successful, _ = submit_lineup(self.user_id, self.game_date)
         if successful:
             self.submitted = True
-            return self.formatted() + "\nSubmitted."
+            return True, self.formatted() + "\nSubmitted."
         else:
-            return self.formatted() + "\nFailed to update lineup, please retry."
+            return False, self.formatted() + "\nFailed to update lineup, please retry."
 
     def get_total_salary(self):
         total_salary = 0

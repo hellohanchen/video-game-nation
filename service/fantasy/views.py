@@ -92,13 +92,15 @@ class LineupSubmitButton(discord.ui.Button['LineupSubmit']):
         assert self.view is not None
         view: LineupView = self.view
 
-        message, new_view = view.submit_lineup()
+        is_submitted, message, new_view = view.submit_lineup()
         await interaction.response.edit_message(content=message, view=new_view)
-        msg, _, successful = await view.reload_collection()
-        if successful:
-            await interaction.user.send(content=f"Your collection is updated successfully: {msg}")
-        else:
-            await interaction.user.send(content=f"Your collection is not updated: {msg}")
+        if is_submitted:
+            content = f"Your submission is successfully submitted, please review snapshot\n\n{message}\n"
+            msg, _, is_reloaded = await view.reload_collection()
+            if is_reloaded:
+                await interaction.user.send(content=content + f"Your collection is also updated successfully: {msg}")
+            else:
+                await interaction.user.send(content=content + f"Your collection is not updated: {msg}")
 
 
 class LineupRemoveButton(discord.ui.Button['LineupRemove']):
@@ -173,9 +175,9 @@ class LineupView(FantasyView):
         return message, TeamsView(self.lineup_provider, self.user_id)
 
     def submit_lineup(self):
-        message = self.lineup.submit()
+        successful, message = self.lineup.submit()
 
-        return message, self
+        return successful, message, self
 
     def remove_player(self):
         return self.lineup.formatted() + "\nRemove a player from your lineup", RemoveView(self.lineup_provider, self.user_id)
