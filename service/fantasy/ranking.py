@@ -243,11 +243,11 @@ class RankingProvider:
         player_id = self.lineups[user_id].player_ids[idx]
         if player_id is None:
             if idx == 0:
-                message = "🏅 No player"
+                message = "🏅 No player\n\n"
             elif idx < 5:
-                message = "🏀 No player"
+                message = "🏀 No player\n\n"
             else:
-                message = "🎽 No player"
+                message = "🎽 No player\n\n"
             return message
 
         player = self.player_stats.get(player_id)

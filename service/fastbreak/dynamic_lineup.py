@@ -357,7 +357,7 @@ class DynamicLineupService(FastBreakService):
                 await self.__upload_leaderboard()
 
                 # start a new date
-                self.current_game_date = current_game_date.strftime('%m/%d/%Y')
+                self.current_game_date = current_game_date
                 self.reload()  # the reloaded lineups should be empty
 
         self.status = new_status
