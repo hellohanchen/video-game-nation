@@ -150,8 +150,8 @@ class LineupProvider:
     def formatted_player(self, player, collection):
         score = compute_vgn_score(player, collection)
         return \
-            "***{}.*** **{} +{:.2f}v {}** vs *{}* **${:.2f}m** {}\n" \
-            "{:.2f}p {:.2f}r {:.2f}a {:.2f}s {:.2f}b\n".format(
+            "{}) **{} +{:.2f}v {}** vs *{}* **${:.1f}m** {}\n" \
+            "{:.1f}p {:.1f}r {:.1f}a {:.1f}s {:.1f}b\n".format(
                 player['index'],
                 player['full_name'],
                 score,
