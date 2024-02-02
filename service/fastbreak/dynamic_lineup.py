@@ -556,15 +556,6 @@ class DynamicLineupService(FastBreakService):
 
         return self.lineups[user_id]
 
-    def load_or_create_lineup(self, user_id) -> Lineup:
-        lineup, err = get_lineup(user_id, self.current_game_date)
-        if len(lineup) > 0:
-            self.lineups[user_id] = lineup
-        else:
-            self.__create_lineup(user_id)
-
-        return self.lineups[user_id]
-
     def get_opponent(self, player_id):
         return self.team_to_opponent[self.player_to_team[player_id]]
 
