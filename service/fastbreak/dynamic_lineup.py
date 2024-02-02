@@ -101,8 +101,8 @@ class Lineup:
             if self.is_submitted:
                 self.is_submitted = False
                 message += "\nClick **Submit** to save your changes"
-
-            del self.service.user_scores[self.user_id]
+            if self.user_id in self.service.user_scores:
+                del self.service.user_scores[self.user_id]
 
             return message
         else:
@@ -132,7 +132,8 @@ class Lineup:
                 self.is_submitted = False
                 message += "\nClick **Submit** to save your changes"
 
-            del self.service.user_scores[self.user_id]
+            if self.user_id in self.service.user_scores:
+                del self.service.user_scores[self.user_id]
 
             return message
         else:
