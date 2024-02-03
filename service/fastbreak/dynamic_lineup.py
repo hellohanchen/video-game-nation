@@ -102,6 +102,7 @@ class Lineup:
                 self.is_submitted = False
                 message += "\nClick **Submit** to save your changes"
             if self.user_id in self.service.user_scores:
+                self.service.leaderboard.remove(self.user_id)
                 del self.service.user_scores[self.user_id]
 
             return message
@@ -133,6 +134,7 @@ class Lineup:
                 message += "\nClick **Submit** to save your changes"
 
             if self.user_id in self.service.user_scores:
+                self.service.leaderboard.remove(self.user_id)
                 del self.service.user_scores[self.user_id]
 
             return message
