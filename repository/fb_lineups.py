@@ -1,5 +1,6 @@
 import pandas as pd
 
+from repository.common import rw_db
 from repository.config import CNX_POOL
 
 
@@ -43,26 +44,15 @@ def get_lineups(game_date):
 
 
 def upsert_lineup(lineup):
-    db_conn = None
-    try:
-        db_conn = CNX_POOL.get_connection()
-        cursor = db_conn.cursor()
-        query = "INSERT INTO vgn.fb_lineups (user_id, game_date, player_1, player_2, player_3, " \
-                "player_4, player_5, player_6, player_7, player_8, is_ranked) " \
-                "VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, FALSE) ON DUPLICATE KEY UPDATE " \
-                "player_1=VALUES(player_1), player_2=VALUES(player_2), player_3=VALUES(player_3), " \
-                "player_4=VALUES(player_4), player_5=VALUES(player_5), player_6=VALUES(player_6), " \
-                "player_7=VALUES(player_7), player_8=VALUES(player_8), is_ranked=FALSE"
-        cursor.execute(query, lineup)
-        db_conn.commit()
-        db_conn.close()
+    write = "INSERT INTO vgn.fb_lineups (user_id, game_date, player_1, player_2, player_3, " \
+            "player_4, player_5, player_6, player_7, player_8, is_ranked) " \
+            "VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, FALSE) ON DUPLICATE KEY UPDATE " \
+            "player_1=VALUES(player_1), player_2=VALUES(player_2), player_3=VALUES(player_3), " \
+            "player_4=VALUES(player_4), player_5=VALUES(player_5), player_6=VALUES(player_6), " \
+            "player_7=VALUES(player_7), player_8=VALUES(player_8), is_ranked=FALSE"
+    read = "SELECT * FROM vgn.fb_lineups WHERE user_id = {} AND game_date = '{}'".format(lineup[0], lineup[1])
 
-        return True, "Updated"
-    except Exception as err:
-        if db_conn is not None:
-            db_conn.close()
-
-        return False, "DB error: {}".format(err)
+    return rw_db(CNX_POOL, write, read, lineup)
 
 
 def submit_lineup(lineup):

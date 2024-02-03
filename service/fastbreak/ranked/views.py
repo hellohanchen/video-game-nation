@@ -14,7 +14,7 @@ class FastBreakView(discord.ui.View):
         self.user_id = user_id
 
     def back_to_lineup(self):
-        message = self.lineup_service.get_or_create_lineup(self.user_id).formatted()
+        message = self.lineup_service.load_or_create_lineup(self.user_id).formatted()
 
         return message, LineupView(self.lineup_service, self.user_id)
 
@@ -55,7 +55,7 @@ class MainPage(discord.ui.View):
         if user is None:
             return LINK_TS_ACCOUNT_MESSAGE, ProfileView(user_id)
 
-        message = self.lineup_service.get_or_create_lineup(user_id).formatted()
+        message = self.lineup_service.load_or_create_lineup(user_id).formatted()
         return message, LineupView(self.lineup_service, user_id)
 
 
@@ -168,7 +168,7 @@ class LineupView(FastBreakView):
         self.add_item(LineupRulesButton())
         self.add_item(LineupButton(2))
         self.add_item(LineupLeaderboardButton())
-        self.lineup = self.lineup_service.get_or_create_lineup(self.user_id)
+        self.lineup = self.lineup_service.load_or_create_lineup(self.user_id)
 
     def jump_to_teams(self):
         message = self.lineup_service.formatted_schedule
@@ -345,20 +345,19 @@ class TeamView(FastBreakView):
         self.add_item(TeamTeamsButton(last_row))
 
     def add_to_lineup(self, player_idx):
-        lineup = self.lineup_service.get_or_create_lineup(self.user_id)
-        if lineup is None:
+        if self.lineup is None:
             return "Fail to load lineup.", self
 
         pos_idx = self.lineup_service.fb.count
         for i in range(0, self.lineup_service.fb.count):
-            if lineup.player_ids[i] is None:
+            if self.lineup.player_ids[i] is None:
                 pos_idx = i
                 break
 
         if pos_idx == self.lineup_service.fb.count:
             return "Lineup is already full, please remove a player.", self
 
-        return lineup.add_player_by_idx(player_idx, pos_idx, True), self
+        return self.lineup.add_player_by_idx(player_idx, pos_idx, True), self
 
     def back_to_teams(self):
         return self.lineup_service.formatted_schedule, TeamsView(self.lineup_service, self.user_id)

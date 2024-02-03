@@ -39,6 +39,23 @@ class Lineup:
         self.serial = db_lineup['sum_serial']
         self.service = service
 
+    def reload(self, db_lineup):
+        self.user_id = db_lineup['user_id']
+        self.username = db_lineup['topshot_username']
+        self.game_date = db_lineup['game_date']
+        self.player_ids: [int] = [
+            self.__cast_player_id(db_lineup['player_1']),
+            self.__cast_player_id(db_lineup['player_2']),
+            self.__cast_player_id(db_lineup['player_3']),
+            self.__cast_player_id(db_lineup['player_4']),
+            self.__cast_player_id(db_lineup['player_5']),
+            self.__cast_player_id(db_lineup['player_6']),
+            self.__cast_player_id(db_lineup['player_7']),
+            self.__cast_player_id(db_lineup['player_8']),
+        ]
+        self.is_submitted = db_lineup['is_ranked']
+        self.serial = db_lineup['sum_serial']
+
     @staticmethod
     def __cast_player_id(db_player_id):
         if db_player_id is not None and not math.isnan(float(db_player_id)):
@@ -47,6 +64,8 @@ class Lineup:
 
     def formatted(self):
         message = self.service.formatted_schedule + "\n"
+        if self.service.fb is not None:
+            message += self.service.fb.get_formatted()
 
         message += "Your lineup for **{}**".format(self.game_date)
         if self.is_submitted:
@@ -91,20 +110,20 @@ class Lineup:
             message += f"Removed **{self.service.players[player_to_remove]['full_name']}**."
         self.player_ids[pos_idx] = player_id
 
-        successful, _ = upsert_lineup(
+        updated_lineup, err = upsert_lineup(
             (self.user_id, self.game_date, self.player_ids[0], self.player_ids[1], self.player_ids[2],
              self.player_ids[3], self.player_ids[4], self.player_ids[5], self.player_ids[6], self.player_ids[7])
         )
-        if successful:
+        if err is None:
             message += f"Added **{self.service.players[self.player_ids[pos_idx]]['full_name']}**"
-
             if self.is_submitted:
-                self.is_submitted = False
                 message += "\nClick **Submit** to save your changes"
+
             if self.user_id in self.service.user_scores:
                 self.service.leaderboard.remove(self.user_id)
                 del self.service.user_scores[self.user_id]
 
+            self.reload(updated_lineup[0])
             return message
         else:
             self.player_ids[pos_idx] = player_to_remove
@@ -126,17 +145,20 @@ class Lineup:
             (self.user_id, self.game_date, self.player_ids[0], self.player_ids[1], self.player_ids[2],
              self.player_ids[3], self.player_ids[4], self.player_ids[5], self.player_ids[6], self.player_ids[7])
         )
-
-        if successful:
+        updated_lineup, err = upsert_lineup(
+            (self.user_id, self.game_date, self.player_ids[0], self.player_ids[1], self.player_ids[2],
+             self.player_ids[3], self.player_ids[4], self.player_ids[5], self.player_ids[6], self.player_ids[7])
+        )
+        if err is None:
             message = f"Removed **{self.service.players[player_to_remove]['full_name']}**."
             if self.is_submitted:
-                self.is_submitted = False
                 message += "\nClick **Submit** to save your changes"
 
             if self.user_id in self.service.user_scores:
                 self.service.leaderboard.remove(self.user_id)
                 del self.service.user_scores[self.user_id]
 
+            self.reload(updated_lineup[0])
             return message
         else:
             self.player_ids[pos_idx] = player_to_remove
@@ -351,6 +373,7 @@ class DynamicLineupService(FastBreakService):
                 self.active_game_status = {game['gameId']: game['gameStatus'] for game in active_games}
                 await self.__update_stats()
         elif self.status == "IN_GAME":
+            self.active_game_status = {game['gameId']: game['gameStatus'] for game in active_games}
             await self.__update_stats()
             self.formatted_schedule = self.__formatted_schedule(active_games)
         else:  # POST_GAME
@@ -462,6 +485,8 @@ class DynamicLineupService(FastBreakService):
             return f"Error loading progress: {err}"
         if user_id in self.user_scores:
             user_results[self.current_game_date] = 1 if self.user_scores[user_id]['passed'] else -1
+        else:
+            user_results[self.current_game_date] = 0
 
         dates.sort()
         wins = 0
@@ -555,6 +580,15 @@ class DynamicLineupService(FastBreakService):
     def get_or_create_lineup(self, user_id) -> Lineup:
         if user_id not in self.lineups:
             self.__create_lineup(user_id)
+
+        return self.lineups[user_id]
+
+    def load_or_create_lineup(self, user_id) -> Lineup:
+        lineup, err = get_lineup(user_id, self.current_game_date)
+        if len(lineup) == 0:
+            self.__create_lineup(user_id)
+        else:
+            self.lineups[user_id] = Lineup(lineup, self)
 
         return self.lineups[user_id]
 
