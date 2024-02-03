@@ -55,11 +55,7 @@ class MainPage(discord.ui.View):
         if user is None:
             return LINK_TS_ACCOUNT_MESSAGE, ProfileView(user_id)
 
-        if self.rank_service.status != "IN_GAME" or self.rank_service.current_game_date not in FB_PROVIDER.fb_info:
-            message = self.lineup_service.get_or_create_lineup(user_id).formatted()
-        else:
-            message = self.rank_service.formatted_user_score(user_id)
-
+        message = self.lineup_service.get_or_create_lineup(user_id).formatted()
         return message, LineupView(self.lineup_service, user_id)
 
 
