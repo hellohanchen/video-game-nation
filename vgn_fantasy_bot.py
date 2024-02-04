@@ -172,8 +172,9 @@ async def update_leaderboard():
                                   f"**[{NBA_PROVIDER.format_injury(change['from'])}]** to " \
                                   f"**[{NBA_PROVIDER.format_injury(change['to'])}]**\n"
 
-            for channel in PLAYERS_CHANNELS:
-                await channel.send(injury_updates)
+            if len(injury_updates) > 0:
+                for channel in PLAYERS_CHANNELS:
+                    await channel.send(injury_updates)
 
 
 @tasks.loop(minutes=2)
