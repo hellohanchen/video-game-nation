@@ -24,6 +24,7 @@ STATS_MAP = {
     "PIP": "points in paint",
     "PMP": "plus minus",
     "AMT": "assists minus turnovers",
+    "TOV": "turnovers",
 }
 BOXSCORE_MAP = {
     "PTS": "points",
@@ -52,6 +53,7 @@ BOXSCORE_MAP = {
     "TD3": "tripleDouble",
     "QD4": "quadrupleDouble",
     "FD5": "fiveDouble",
+    "TOV": "turnovers",
 }
 
 
@@ -85,8 +87,8 @@ class FBBucket:
             return 0.0
 
         if self.stats == 'AMT':
-            assists = float(player_stat.get(BOXSCORE_MAP['AST'], default=0.0))
-            turnovers = float(player_stat.get(BOXSCORE_MAP['TOV'], default=0.0))
+            assists = 0.0 if BOXSCORE_MAP['AST'] not in player_stat else player_stat[BOXSCORE_MAP['AST']]
+            turnovers = 0.0 if BOXSCORE_MAP['TOV'] not in player_stat else player_stat[BOXSCORE_MAP['TOV']]
             raw_score = assists - turnovers
         else:
             key = BOXSCORE_MAP[self.stats]
