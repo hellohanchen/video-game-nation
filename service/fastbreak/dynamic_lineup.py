@@ -371,7 +371,7 @@ class DynamicLineupService(AbstractDynamicLineupService):
             return
 
         # service state machine
-        if self.status == GameDateStatus.POST_GAME:
+        if self.status == GameDateStatus.PRE_GAME:
             if new_status == GameDateStatus.IN_GAME:
                 await self.__update_stats()
         elif self.status == GameDateStatus.IN_GAME:
