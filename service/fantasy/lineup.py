@@ -140,17 +140,10 @@ class LineupProvider:
     def get_opponent(self, player_id):
         return self.team_to_opponent[self.player_to_team[player_id]]
 
-    @staticmethod
-    def formatted_injury(player_name):
-        injury = NBA_PROVIDER.get_player_injury(player_name)
-        if injury is None:
-            return ""
-        return f"**({injury})**"
-
     def formatted_player(self, player, collection):
         score = compute_vgn_score(player, collection)
         return \
-            "{}) **{} +{:.2f}v {}** vs *{}* **${:.2f}m** {}\n" \
+            "{}) **{} +{:.2f}v {}** vs *{}* **${:.2f}m** **{}**\n" \
             "{:.1f}p {:.1f}r {:.1f}a {:.1f}s {:.1f}b\n".format(
                 player['index'],
                 player['full_name'],
@@ -158,7 +151,7 @@ class LineupProvider:
                 self.player_to_team[player['id']],
                 self.get_opponent(player['id']),
                 player['current_salary'] / 100,
-                self.formatted_injury(player['full_name']),
+                NBA_PROVIDER.get_player_injury(player['full_name']),
                 player['points_recent'],
                 player['defensive_rebounds_recent'] + player['offensive_rebounds_recent'],
                 player['assists_recent'],
@@ -190,7 +183,7 @@ class LineupProvider:
     def detailed_player(self, player, collection):
         scores, total, bonus = compute_vgn_scores(player, collection)
         return \
-            "**{}.** ***{} {}#{}*** *vs {}* **${:.2f}m** {}\n" \
+            "**{}.** ***{} {}#{}*** *vs {}* **${:.2f}m** **{}**\n" \
             "**{:.2f}** points **{:.2f}v** (+{:.2f}) " \
             "bonus **{:.2f}v** (+{:.2f})\n" \
             "**{:.2f}** three-pointers **{:.2f}v** (+{:.2f})\n" \
@@ -212,7 +205,8 @@ class LineupProvider:
             "***Total: {:.2f}v (+{:.2f})***\n\n" \
             "".format(
                 player['index'], player['full_name'], self.player_to_team[player['id']], player['jersey_number'],
-                self.get_opponent(player['id']), player['current_salary'] / 100, self.formatted_injury(player['full_name']),
+                self.get_opponent(player['id']), player['current_salary'] / 100,
+                NBA_PROVIDER.get_player_injury(player['full_name']),
                 player['points'], scores['points']['score'], scores['points']['bonus'],
                 scores['pointBonus']['score'], scores['pointBonus']['bonus'],
                 player['threePointersMade'], scores['threePointersMade']['score'], scores['threePointersMade']['bonus'],

@@ -154,19 +154,32 @@ async def update_leaderboard():
         LB_MESSAGE_IDS.clear()
     else:
         messages = RANK_PROVIDER.formatted_leaderboard(20)
-        messages.append("ET: **{}** , UPDATE EVERY 5 MINS".format(datetime.now(TZ_ET).strftime("%H:%M:%S")))
+        messages.append("ET: **{}** , UPDATE EVERY 5 MINs".format(datetime.now(TZ_ET).strftime("%H:%M:%S")))
 
         await update_channel_messages(messages, LB_CHANNELS, LB_MESSAGE_IDS)
 
-        messages = RANK_PROVIDER.formatted_players(20)
-        messages.append("ET: **{}** , UPDATE EVERY 5 MINS".format(datetime.now(TZ_ET).strftime("%H:%M:%S")))
-        await update_channel_messages(messages, PLAYERS_CHANNELS, PLAYERS_MESSAGE_IDS)
+        if new_status == "IN_GAME" or new_status == "POST_GAME":
+            messages = RANK_PROVIDER.formatted_players(20)
+            messages.append("ET: **{}** , UPDATE EVERY 5 MINs".format(datetime.now(TZ_ET).strftime("%H:%M:%S")))
+            await update_channel_messages(messages, PLAYERS_CHANNELS, PLAYERS_MESSAGE_IDS)
+
+        if new_status != "IN_GAME":
+            injury_changes = NBA_PROVIDER.update_injury()
+            injury_updates = ""
+            for player_name in injury_changes:
+                change = injury_changes[player_name]
+                injury_updates += f"Injury Update: **{player_name}** changed from " \
+                                  f"**[{NBA_PROVIDER.format_injury(change['from'])}]** to " \
+                                  f"**[{NBA_PROVIDER.format_injury(change['to'])}]**\n"
+
+            for channel in PLAYERS_CHANNELS:
+                await channel.send(injury_updates)
 
 
 @tasks.loop(minutes=2)
 async def update_games():
     messages = [NBA_PROVIDER.get_scoreboard_message("VIDEO GAME NATION DAILY FANTASY"),
-                "ET: **{}** , UPDATE EVERY 2 MINS".format(datetime.now(TZ_ET).strftime("%H:%M:%S"))]
+                "ET: **{}** , UPDATE EVERY 2 MINs".format(datetime.now(TZ_ET).strftime("%H:%M:%S"))]
 
     await update_channel_messages(messages, GAMES_CHANNELS, GAMES_MESSAGE_IDS)
 

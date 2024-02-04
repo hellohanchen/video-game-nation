@@ -20,9 +20,9 @@ def load_injuries():
             player_name = player.contents[0].contents[1].contents[0].contents[0].contents[0]
             status = player.contents[4].contents[0].strip()
             if status.startswith('Expected to be out until'):
-                status = f"OUT until {status[34:]}"
+                status = f"OUT"
             elif status.startswith('Out for the season'):
-                status = f"OUT season"
+                status = f"OUT"
             result[player_name] = status
 
     response = requests.get(espn_url, headers={"Connection": "keep-alive", "Accept": "*/*", "User-Agent": "PostmanRuntime/7.34.0"})

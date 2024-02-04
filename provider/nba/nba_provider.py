@@ -17,10 +17,11 @@ EAST_CONFERENCE = {"MIL", "BOS", "PHI", "CLE", "NYK", "BKN", "MIA", "ATL",
 WEST_CONFERENCE = {"DEN", "MEM", "SAC", "PHX", "LAC", "GSW", "MIN", "NOP",
                    "LAL", "OKC", "DAL", "UTA", "POR", "SAS", "HOU"}
 INJURIES = {
-    "Day-To-Day": "DTD",
-    "Game-Time-Decision": "GTD",
-    "Game Time Decision": "GTD",
-    "Out": "OUT",
+    "Day-To-Day": "🟠 DTD",
+    "Game-Time-Decision": "🟡 GTD",
+    "Game Time Decision": "🟡 GTD",
+    "Out": "🔴 OUT",
+    "OUT": "🔴 OUT",
 }
 
 
@@ -135,14 +136,17 @@ class NBAProvider:
     def get_all_player_ids(self):
         return self.players
 
-    def get_player_injury(self, player_name):
-        injury = self.injuries.get(player_name)
+    def get_player_injury(self, player_name) -> str:
+        return self.format_injury(self.injuries.get(player_name))
+
+    @staticmethod
+    def format_injury(injury) -> str:
         if injury is None:
-            return None
+            return "🟢"
 
         short_injury = INJURIES.get(injury)
         if short_injury is None:
-            return injury
+            return f"⚪ {injury}"
 
         return short_injury
 
