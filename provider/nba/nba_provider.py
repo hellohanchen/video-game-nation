@@ -261,7 +261,7 @@ class NBAProvider:
         for player_name in new_injuries:
             if player_name not in self.injuries:
                 changes[player_name] = {
-                    'from': 'none',
+                    'from': None,
                     'to': new_injuries[player_name]
                 }
             elif self.injuries[player_name] != new_injuries[player_name]:
@@ -273,7 +273,7 @@ class NBAProvider:
             if player_name not in new_injuries:
                 changes[player_name] = {
                     'from': self.injuries[player_name],
-                    'to': 'none'
+                    'to': None
                 }
 
         self.injuries = new_injuries

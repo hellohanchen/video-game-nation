@@ -118,7 +118,7 @@ EMPTY_PLAYER_COLLECTION = {
 # Get the timezone object for New York
 TZ_ET = pytz.timezone('America/New_York')
 # Get the timezone object for Los_angeles
-TZ_PT = pytz.timezone('US/Alaska')
+TZ_PT = pytz.timezone('US/Los_Angeles')
 
 STATS_SCORE = {
     'points': 1.0,
