@@ -2,6 +2,8 @@ import datetime
 import json
 import os
 import pathlib
+from typing import Dict
+
 from provider.nba.nba_provider import NBA_PROVIDER
 from utils import parse_slash_date, to_slash_date
 
@@ -44,7 +46,7 @@ class FastBreakProvider:
 
         return to_slash_date(start_date)
 
-    def get_fb(self, game_date):
+    def get_fb(self, game_date) -> Dict[str, any]:
         f = self.fb_info.get(game_date)
         if f is None:
             return {

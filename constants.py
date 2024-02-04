@@ -1,3 +1,5 @@
+from enum import Enum
+
 import pytz
 
 TEAM_TRICODES = {
@@ -216,3 +218,14 @@ NBA_TEAM_IDS = {
     1610612762: "UTA",
     1610612764: "WAS",
 }
+
+
+class GameDateStatus(Enum):
+    INIT = 0
+    PRE_GAME = 1
+    IN_GAME = 2
+    POST_GAME = 3
+    NO_GAME = 4
+
+
+INVALID_ID: int = 0

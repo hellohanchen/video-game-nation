@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Dict
 
 from utils import parse_boxscore_minutes
 
@@ -107,7 +107,7 @@ class FBBucket:
 
 
 class FastBreak:
-    def __init__(self, fb_json):
+    def __init__(self, fb_json: Dict[str, any]):
         self.count: int = fb_json['count']
         self.is_combine: bool = fb_json['isCombine']
         self.buckets: List[FBBucket] = self.load_buckets(fb_json['buckets'])
@@ -127,78 +127,15 @@ class FastBreak:
     def format_buckets(fb_buckets: List[FBBucket]) -> List[str]:
         return [b.get_formatted() for b in fb_buckets]
 
-    def formatted_score(self, player_id, player_stats):
-        num_buckets = len(self.buckets)
-
-        player = player_stats.get(player_id)
-        if player is not None:
-            message = f"**{player['name']}**"
-            for i in range(0, num_buckets):
-                bucket = self.buckets[i]
-                score = bucket.load_score(player)
-                if bucket.each:
-                    message += " {:.0f} PASS".format(score)
-                else:
-                    message += " {:.1f} {}".format(score, bucket.stats)
-
-            message += "\n{} {}-{} {} {}".format(
-                player['gameInfo']['awayTeam'], player['gameInfo']['awayScore'],
-                player['gameInfo']['homeScore'], player['gameInfo']['homeTeam'],
-                player['gameInfo']['statusText']
-            )
-
-            return message
-
-        return f"🏀 Player stats not available\n"
-
-    def formatted_scores(self, player_ids, player_stats):
-        num_buckets = len(self.buckets)
-        sums = [0.0] * num_buckets
-        player_scores = {pid: [0.0] * num_buckets for pid in player_ids}
-
-        message = ""
-        for pid in player_ids:
-            if pid is None:
-                message += f"🏀 No pick\n"
-                continue
-
-            player = player_stats.get(pid)
-            if player is None:
-                message += f"🏀 Player stats not available\n"
-                continue
-
-            message += f"🏀 **{player['name']}**"
-            for i in range(0, num_buckets):
-                bucket = self.buckets[i]
-                score = bucket.load_score(player)
-                player_scores[pid][i] = score
-                sums[i] = sums[i] + score
-                if bucket.each:
-                    message += " {:.0f} PASS".format(score)
-                else:
-                    message += " {:.1f} {}".format(score, bucket.stats)
-
-            message += "\n{} {}-{} {} {}\n".format(
-                player['gameInfo']['awayTeam'], player['gameInfo']['awayScore'],
-                player['gameInfo']['homeScore'], player['gameInfo']['homeTeam'],
-                player['gameInfo']['statusText']
-            )
-
-        message += "\n**Total"
-        passed = 0
-        for i in range(0, num_buckets):
+    def formatted_score(self, player_stats: Dict[str, any]):
+        message = f"**{player_stats['name']}**"
+        for i in range(0, len(self.buckets)):
             bucket = self.buckets[i]
-            s = sums[i]
-            if s >= bucket.target and bucket.order == 'DESC':
-                passed += 1
-            elif s <= bucket.target and bucket.order == 'ASC':
-                passed += 1
-
-            message += " {:.1f} {}".format(s, bucket.stats)
-        message += "**\n"
-
-        if passed >= num_buckets:
-            message += "🟢 **YOU WIN**\n"
+            score = bucket.load_score(player_stats)
+            if bucket.each:
+                message += " {:.0f} PASS".format(score)
+            else:
+                message += " {:.1f} {}".format(score, bucket.stats)
 
         return message
 
@@ -221,6 +158,7 @@ class FastBreak:
                 player_scores[pid][i] = score
                 sums[i] = sums[i] + score
 
+        message = "Total"
         passed = True
         rate = 0.0
         for i in range(0, num_buckets):
@@ -235,4 +173,9 @@ class FastBreak:
                     passed = False
                 rate += 2.0 - s / bucket.target
 
-        return sum(sums), passed, 0.0 if num_buckets == 0 else round(rate / num_buckets, 2)
+            message += f" **{round(s, 1)}/{bucket.target}** {bucket.stats if not bucket.each else 'PASSED'}"
+
+        if passed:
+            message += "\n🟢 **YOU WIN**"
+
+        return sum(sums), passed, 0.0 if num_buckets == 0 else round(rate / num_buckets, 2), message

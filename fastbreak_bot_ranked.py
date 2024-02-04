@@ -6,9 +6,10 @@ import discord
 from discord.ext import commands, tasks
 from dotenv import load_dotenv
 
+from constants import GameDateStatus
 from provider.nba.nba_provider import NBA_PROVIDER
 from service.fastbreak.dynamic_lineup import DYNAMIC_LINEUP_SERVICE
-from service.fastbreak.ranked.views import MainPage
+from service.fastbreak.ranked.views import RankedMainPage
 from utils import get_the_past_week_with_offset
 from vgnlog.channel_logger import ADMIN_LOGGER
 
@@ -53,7 +54,7 @@ async def on_ready():
                 continue
 
             if channel.id in FB_CHANNEL_IDS:
-                view = MainPage(DYNAMIC_LINEUP_SERVICE, DYNAMIC_LINEUP_SERVICE)
+                view = RankedMainPage(DYNAMIC_LINEUP_SERVICE)
                 message = await channel.send(WELCOME_MESSAGE, view=view)
                 FB_CHANNEL_MESSAGES.append(message)
 
@@ -86,7 +87,7 @@ async def update_stats():
     await DYNAMIC_LINEUP_SERVICE.update()
     new_status = DYNAMIC_LINEUP_SERVICE.status
 
-    if init_status == "POST_GAME" and new_status == "PRE_GAME":
+    if init_status == GameDateStatus.POST_GAME and new_status != init_status:
         dates = get_the_past_week_with_offset(init_date, 4)
         weekly_lb = DYNAMIC_LINEUP_SERVICE.formatted_weekly_leaderboard(dates, 20)
 
@@ -98,13 +99,13 @@ async def update_stats():
 @tasks.loop(minutes=2)
 async def refresh_entry():
     global REFRESH_COUNT, FB_CHANNEL_MESSAGES
-    if DYNAMIC_LINEUP_SERVICE.status != "IN_GAME":
+    if DYNAMIC_LINEUP_SERVICE.status != GameDateStatus.IN_GAME:
         REFRESH_COUNT += 1
 
     if REFRESH_COUNT == 60:
         new_messages = []
         for old_message in FB_CHANNEL_MESSAGES:
-            view = MainPage(DYNAMIC_LINEUP_SERVICE, DYNAMIC_LINEUP_SERVICE)
+            view = RankedMainPage(DYNAMIC_LINEUP_SERVICE)
             try:
                 new_message = await old_message.channel.send(WELCOME_MESSAGE, view=view)
             except Exception as err:
@@ -118,7 +119,7 @@ async def refresh_entry():
         REFRESH_COUNT = 0
     else:
         for message in FB_CHANNEL_MESSAGES:
-            view = MainPage(DYNAMIC_LINEUP_SERVICE, DYNAMIC_LINEUP_SERVICE)
+            view = RankedMainPage(DYNAMIC_LINEUP_SERVICE)
             await message.edit(content=WELCOME_MESSAGE, view=view)
 
 

@@ -2,10 +2,11 @@ import datetime
 import json
 import os.path
 import pathlib
-from typing import Optional
+from typing import Optional, Dict
 
 from nba_api.live.nba.endpoints import scoreboard, boxscore
 
+from constants import GameDateStatus
 from provider.nba.injuries import load_injuries
 from provider.nba.schedule import download_schedule
 from repository.vgn_players import get_all_team_players
@@ -61,7 +62,7 @@ class NBAProvider:
         """
         return scoreboard.ScoreBoard().get_dict()['scoreboard']
 
-    def get_games_on_date(self, date):
+    def get_games_on_date(self, date) -> Dict[str, str]:
         """
         Get all game ids for a provided date.
 
@@ -227,6 +228,28 @@ class NBAProvider:
             return "IN_GAME"
         if started and final:
             return "POST_GAME"
+
+    @staticmethod
+    def get_status_enum(games) -> GameDateStatus:
+        if len(games) == 0:
+            return GameDateStatus.NO_GAME
+
+        started = False
+        final = True
+        for game in games:
+            if game['gameStatusText'] == 'PPD':
+                continue
+            if game['gameStatus'] > 1:
+                started = True
+            if 3 > game['gameStatus'] >= 1:
+                final = False
+
+        if not started and not final:
+            return GameDateStatus.PRE_GAME
+        if started and not final:
+            return GameDateStatus.IN_GAME
+        if started and final:
+            return GameDateStatus.POST_GAME
 
     def update_injury(self):
         new_injuries = load_injuries()

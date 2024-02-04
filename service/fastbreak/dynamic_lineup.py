@@ -1,10 +1,11 @@
 import asyncio
 import datetime
 import math
+from typing import Dict, List
 
 from nba_api.live.nba.endpoints import boxscore
 
-from constants import TZ_PT
+from constants import TZ_PT, GameDateStatus, INVALID_ID
 from provider.nba.nba_provider import NBAProvider, NBA_PROVIDER
 from provider.topshot.cadence.flow_collections import get_account_plays_with_lowest_serial
 from provider.topshot.fb_provider import FB_PROVIDER
@@ -14,35 +15,44 @@ from repository.fb_lineups import get_lineups, upsert_score, get_weekly_ranks, g
 from repository.vgn_players import get_empty_players_stats, get_players
 from repository.vgn_users import get_user_new
 from service.fastbreak.fastbreak import FastBreak
-from service.fastbreak.service import FastBreakService
 from service.fastbreak.utils import build_fb_collections
 from utils import get_game_info
 from vgnlog.channel_logger import ADMIN_LOGGER
 
 
-class Lineup:
-    def __init__(self, db_lineup, service):
-        self.user_id = db_lineup['user_id']
-        self.username = db_lineup['topshot_username']
-        self.game_date = db_lineup['game_date']
-        self.player_ids: [int] = [
-            self.__cast_player_id(db_lineup['player_1']),
-            self.__cast_player_id(db_lineup['player_2']),
-            self.__cast_player_id(db_lineup['player_3']),
-            self.__cast_player_id(db_lineup['player_4']),
-            self.__cast_player_id(db_lineup['player_5']),
-            self.__cast_player_id(db_lineup['player_6']),
-            self.__cast_player_id(db_lineup['player_7']),
-            self.__cast_player_id(db_lineup['player_8']),
-        ]
-        self.is_submitted = db_lineup['is_ranked']
-        self.serial = db_lineup['sum_serial']
-        self.service = service
+class AbstractDynamicLineupService:
+    def __init__(self):
+        self.current_game_date: str = ""
+        self.status: GameDateStatus = GameDateStatus.INIT
+        self.fb: FastBreak | None = None
 
-    def reload(self, db_lineup):
+        self.players: Dict[int, Dict[str, any]] = {}
+        self.player_ids: List[int] = []
+        self.player_games: Dict[int, Dict[str, str]] = {}
+
+        self.user_scores: Dict[int, Dict[str, any]] = {}
+        self.leaderboard: List[int] = []
+
+        self.games: Dict[str, any] = {}
+        self.formatted_games: str = ""
+
+    def formatted_player(self, player_id: int) -> str:
+        pass
+
+
+class Lineup:
+    def __init__(self, db_lineup: Dict[str, int | bool | str], service: AbstractDynamicLineupService):
+        self.user_id: int = INVALID_ID
+        self.username: str = ""
+        self.player_ids: [int] = []
+        self.is_ranked: bool = False
+        self.serial: int = 0
+        self.service: AbstractDynamicLineupService = service
+        self.reload(db_lineup)
+
+    def reload(self, db_lineup: Dict[str, int | bool | str]):
         self.user_id = db_lineup['user_id']
         self.username = db_lineup['topshot_username']
-        self.game_date = db_lineup['game_date']
         self.player_ids: [int] = [
             self.__cast_player_id(db_lineup['player_1']),
             self.__cast_player_id(db_lineup['player_2']),
@@ -53,44 +63,41 @@ class Lineup:
             self.__cast_player_id(db_lineup['player_7']),
             self.__cast_player_id(db_lineup['player_8']),
         ]
-        self.is_submitted = db_lineup['is_ranked']
+        self.is_ranked = db_lineup['is_ranked']
         self.serial = db_lineup['sum_serial']
 
     @staticmethod
-    def __cast_player_id(db_player_id):
+    def __cast_player_id(db_player_id) -> int:
         if db_player_id is not None and not math.isnan(float(db_player_id)):
-            return db_player_id
-        return None
+            return int(db_player_id)
+        return INVALID_ID
 
-    def formatted(self):
-        message = self.service.formatted_schedule + "\n"
+    def formatted(self) -> str:
+        message = self.service.formatted_games + "\n"
         if self.service.fb is not None:
             message += self.service.fb.get_formatted()
 
-        message += "Your lineup for **{}**".format(self.game_date)
-        if self.is_submitted:
+        message += f"Your lineup for **{self.service.current_game_date}**"
+        if self.is_ranked:
             message += " is **SUBMITTED**.\n"
         else:
             message += ".\n"
 
-        if self.service.status == "PRE_GAME":
-            for i in range(0, self.service.fb.count):
-                message += "🏀 {}\n".format(self.formatted_player_pre_game(i))
-        else:
-            message += self.service.formatted_user_score(self.user_id)
+        for player_id in self.player_ids[0: self.service.fb.count]:
+            message += self.service.formatted_player(player_id)
+
+        if self.user_id in self.service.user_scores:
+            score = self.service.user_scores[self.user_id]
+            message += f"\n{score['message']}\n\n" \
+                       f"Your current rank is **{score['rank']}/{len(self.service.user_scores)}**"
+
+        if self.service.status == GameDateStatus.PRE_GAME:
+            message += f"\nGames are not started yet."
 
         return message
 
-    def formatted_player_pre_game(self, pos_idx):
-        player_id = self.player_ids[pos_idx]
-
-        if player_id is None:
-            return "---"
-        else:
-            return self.service.players[player_id]['formatted']
-
-    def add_player_by_idx(self, player_idx, pos_idx, is_ranked=False):
-        if self.is_submitted and not is_ranked:
+    def add_player_by_idx(self, player_idx: int, pos_idx: int, is_ranked: bool = False) -> str:
+        if self.is_ranked and not is_ranked:
             return f"B2B contest lineup can only be updated in B2B server."
         if pos_idx < 0 or pos_idx > self.service.fb.count:
             return "Player index should be between [0, {}]".format(self.service.fb.count - 1)
@@ -106,18 +113,21 @@ class Lineup:
         message = ""
 
         player_to_remove = self.player_ids[pos_idx]
-        if player_to_remove is not None:
+        if player_to_remove != INVALID_ID:
             message += f"Removed **{self.service.players[player_to_remove]['full_name']}**."
         self.player_ids[pos_idx] = player_id
 
         updated_lineup, err = upsert_lineup(
-            (self.user_id, self.game_date, self.player_ids[0], self.player_ids[1], self.player_ids[2],
+            (self.user_id, self.service.current_game_date, self.player_ids[0], self.player_ids[1], self.player_ids[2],
              self.player_ids[3], self.player_ids[4], self.player_ids[5], self.player_ids[6], self.player_ids[7])
         )
         if err is None:
             message += f"Added **{self.service.players[self.player_ids[pos_idx]]['full_name']}**"
-            if self.is_submitted:
-                message += "\nClick **Submit** to save your changes"
+            if self.is_ranked:
+                if is_ranked:
+                    message += "\nClick **Submit** to save your changes."
+                else:
+                    message += "\nPlease **Submit** to save your changes in B2B server."
 
             if self.user_id in self.service.user_scores:
                 self.service.leaderboard.remove(self.user_id)
@@ -129,30 +139,29 @@ class Lineup:
             self.player_ids[pos_idx] = player_to_remove
             return "Failed to update lineup, please retry."
 
-    def remove_player(self, pos_idx, is_ranked=False):
-        if self.is_submitted and not is_ranked:
+    def remove_player(self, pos_idx: int, is_ranked: bool = False) -> str:
+        if self.is_ranked and not is_ranked:
             return f"B2B contest lineup can only be updated in B2B server."
-        if self.player_ids[pos_idx] is None:
+        if self.player_ids[pos_idx] is INVALID_ID:
             return "No player at this position."
 
         player_to_remove = self.player_ids[pos_idx]
         if self.is_player_game_started(player_to_remove):
             return f"Player **{self.service.players[player_to_remove]['full_name']}** is in a started game."
 
-        self.player_ids[pos_idx] = None
-
-        successful, _ = upsert_lineup(
-            (self.user_id, self.game_date, self.player_ids[0], self.player_ids[1], self.player_ids[2],
-             self.player_ids[3], self.player_ids[4], self.player_ids[5], self.player_ids[6], self.player_ids[7])
-        )
+        # remove player
+        self.player_ids[pos_idx] = INVALID_ID
         updated_lineup, err = upsert_lineup(
-            (self.user_id, self.game_date, self.player_ids[0], self.player_ids[1], self.player_ids[2],
+            (self.user_id, self.service.current_game_date, self.player_ids[0], self.player_ids[1], self.player_ids[2],
              self.player_ids[3], self.player_ids[4], self.player_ids[5], self.player_ids[6], self.player_ids[7])
         )
         if err is None:
             message = f"Removed **{self.service.players[player_to_remove]['full_name']}**."
-            if self.is_submitted:
-                message += "\nClick **Submit** to save your changes"
+            if self.is_ranked:
+                if is_ranked:
+                    message += "\nClick **Submit** to save your changes."
+                else:
+                    message += "\nPlease **Submit** to save your changes in B2B server."
 
             if self.user_id in self.service.user_scores:
                 self.service.leaderboard.remove(self.user_id)
@@ -164,7 +173,7 @@ class Lineup:
             self.player_ids[pos_idx] = player_to_remove
             return "Failed to update lineup, please retry."
 
-    async def submit(self):
+    async def submit(self) -> str:
         user, err = get_user_new(self.user_id)
         if user is None:
             await ADMIN_LOGGER.error(f"DynamicLineup:Submit:{err}")
@@ -172,20 +181,20 @@ class Lineup:
 
         # load submitted serials if the lineup is already submitted
         submitted_serials = {}
-        if self.is_submitted:
-            submitted, err = get_lineup(self.user_id, self.game_date)
+        if self.is_ranked:
+            submitted, err = get_lineup(self.user_id, self.service.current_game_date)
             if err is not None:
                 await ADMIN_LOGGER.error(f"DynamicLineup:Submit:GetLineup:{err}")
             else:
-                if submitted['player_1'] is not None:
+                if submitted['player_1'] != INVALID_ID:
                     submitted_serials[submitted['player_1']] = submitted['player_1_serial']
-                if submitted['player_2'] is not None:
+                if submitted['player_2'] != INVALID_ID:
                     submitted_serials[submitted['player_2']] = submitted['player_2_serial']
-                if submitted['player_3'] is not None:
+                if submitted['player_3'] != INVALID_ID:
                     submitted_serials[submitted['player_3']] = submitted['player_3_serial']
-                if submitted['player_4'] is not None:
+                if submitted['player_4'] != INVALID_ID:
                     submitted_serials[submitted['player_4']] = submitted['player_4_serial']
-                if submitted['player_5'] is not None:
+                if submitted['player_5'] != INVALID_ID:
                     submitted_serials[submitted['player_5']] = submitted['player_5_serial']
 
         plays = await get_account_plays_with_lowest_serial(user['flow_address'])
@@ -194,7 +203,7 @@ class Lineup:
         serial_sum = 0
 
         for pid in self.player_ids[0:5]:
-            if pid is None:
+            if pid == INVALID_ID:
                 serials.append(None)
             elif pid not in collections:
                 return f"You don't have any moment of {self.service.players[pid]['full_name']}, please check lineup."
@@ -206,7 +215,7 @@ class Lineup:
                 serials.append(collections[pid]['serial'])
 
         successful, err = submit_lineup((
-            self.user_id, user['topshot_username'], self.game_date,
+            self.user_id, user['topshot_username'], self.service.current_game_date,
             self.player_ids[0], serials[0],
             self.player_ids[1], serials[1], self.player_ids[2], serials[2],
             self.player_ids[3], serials[3], self.player_ids[4], serials[4],
@@ -215,12 +224,12 @@ class Lineup:
         if not successful:
             return f"Submission failed: {err}"
 
-        self.is_submitted = True
+        self.is_ranked = True
         self.serial = serial_sum
         self.username = user['topshot_username']
         message = "You've submitted lineup using the following players:\n\n"
         for pid in self.player_ids[0:5]:
-            if pid is None:
+            if pid == INVALID_ID:
                 continue
             message += f"🏀 **{self.service.players[pid]['full_name']}** " \
                        f"{collections[pid]['tier']}({collections[pid]['serial']})\n"
@@ -229,28 +238,21 @@ class Lineup:
         return message
 
     def is_player_game_started(self, player_id):
-        game_id = self.service.player_to_game[player_id]
-        return self.service.active_game_status.get(game_id) in [2, 3]
+        game: Dict[str, any] = self.service.games.get(self.service.player_games[player_id]['id'], {})
+        return game.get('status', 1) in [2, 3]
 
 
-class DynamicLineupService(FastBreakService):
+class DynamicLineupService(AbstractDynamicLineupService):
     def __init__(self):
         super(DynamicLineupService, self).__init__()
-        self.current_game_date = ""
-        self.team_to_opponent = {}
-        self.team_to_players = {}
-        self.player_to_team = {}
-        self.player_to_game = {}
-        self.formatted_teams = {}
 
-        self.player_ids = []
-        self.lineups = {}
-        self.active_game_status = {}
+        self.team_players: Dict[str, List[int]] = {}
+        self.formatted_teams: Dict[str, str] = {}
 
-        self.status = "INIT"
-        self.player_stats = {}
-        self.user_scores = {}
-        self.leaderboard = []
+        self.lineups: Dict[int, Lineup] = {}
+
+        # live status
+        self.player_stats: Dict[int, Dict[str: any]] = {}
 
         asyncio.run(self.update())
 
@@ -259,14 +261,28 @@ class DynamicLineupService(FastBreakService):
         players_to_load = []
 
         for game_id, game in NBA_PROVIDER.get_games_on_date(self.current_game_date).items():
+            # create placeholder for games if not live data cached
+            if game_id not in self.games:
+                self.games[game_id] = {
+                    'awayTeam': game['awayTeam'],
+                    'awayScore': 0,
+                    'homeTeam': game['homeTeam'],
+                    'homeScore': 0,
+                    'statusText': '',
+                    'status': 1
+                }
+
             for team in [game['homeTeam'], game['awayTeam']]:
-                self.team_to_opponent[team] = game['homeTeam'] if team == game['awayTeam'] else game['awayTeam']
-                self.team_to_players[team] = []
-                for player in NBA_PROVIDER.get_players_for_team(team):
-                    if player in TS_PROVIDER.player_moments:  # only load players with TS moments
-                        self.player_to_team[player] = team
-                        self.player_to_game[player] = game_id
-                        players_to_load.append(player)
+                self.team_players[team] = []
+                self.formatted_teams[team] = ""
+                for player_id in NBA_PROVIDER.get_players_for_team(team):
+                    if player_id in TS_PROVIDER.player_moments:  # only load players with TS moments
+                        self.player_games[player_id] = {
+                            'id': game_id,
+                            'team': team,
+                            'opponent': game['homeTeam'] if team == game['awayTeam'] else game['awayTeam']
+                        }
+                        players_to_load.append(player_id)
 
         loaded = get_players(players_to_load, [("full_name", "ASC")])
         index = 0
@@ -276,16 +292,17 @@ class DynamicLineupService(FastBreakService):
 
             self.players[player_id] = player
             self.players[player_id]['index'] = index
-            self.players[player_id]['formatted'] = self.formatted_player(player)
             self.player_ids.append(player_id)
 
-            self.team_to_players[self.player_to_team[player_id]].append(player_id)
+            game = self.player_games[player_id]
+            team = game['team']
+            self.team_players[team].append(player_id)
+            self.formatted_teams[team] += f"**{player['full_name']}**  **{game['team']}** vs {game['opponent']}\n"
 
-        for team in self.team_to_players:
-            message = ""
-            for player_id in self.team_to_players[team]:
-                message += self.players[player_id]['formatted'] + "\n"
-            self.formatted_teams[team] = message
+        player_stats = get_empty_players_stats(self.player_ids)
+        for player_id in player_stats:
+            if player_id not in self.player_stats:
+                self.player_stats[player_id] = player_stats[player_id]
 
     def __load_lineups(self):
         if self.fb is None:
@@ -298,100 +315,86 @@ class DynamicLineupService(FastBreakService):
                     game_day_players.append(player)
 
         loaded = get_lineups(self.current_game_date)
-        player_ids = []
         for lineup in loaded:
             self.lineups[lineup['user_id']] = Lineup(lineup, self)
-
-        if len(self.lineups) > 0:
-            for user_id in self.lineups:
-                player_ids.extend(self.lineups[user_id].player_ids)
-
-            player_ids = list(set(player_ids))
-            if None in player_ids:
-                player_ids.remove(None)
-            self.player_stats = get_empty_players_stats(player_ids)
 
     def reload(self):
         FB_PROVIDER.reload()
         self.fb = FastBreak(FB_PROVIDER.get_fb(self.current_game_date))
 
-        self.team_to_opponent = {}
-        self.team_to_players = {}
-        self.player_to_team = {}
-        self.player_to_game = {}
         self.players = {}
         self.player_ids = []
+        self.player_games = {}
+        self.team_players = {}
         self.formatted_teams = {}
-        self.formatted_schedule = self.__formatted_schedule([])
+        self.__load_players()
+
         self.lineups = {}
+        self.__load_lineups()
+
         self.user_scores = {}
         self.leaderboard = []
-        self.__load_players()
-        self.__load_lineups()
 
     async def update(self):
         scoreboard = NBAProvider.get_scoreboard()
         scoreboard_date = datetime.datetime.strptime(scoreboard['gameDate'], '%Y-%m-%d')
         active_games = list(filter(lambda g: g['gameStatusText'] != "PPD", scoreboard['games']))
-        new_status = NBAProvider.get_status(scoreboard['games'])
+        new_status = NBAProvider.get_status_enum(scoreboard['games'])
 
-        if new_status == "POST_GAME":
+        if new_status == GameDateStatus.POST_GAME:
             pst_time = datetime.datetime.now(TZ_PT).replace(tzinfo=None)
             diff = pst_time - scoreboard_date
             if diff.days >= 1:
-                new_status = "PRE_GAME"
+                new_status = GameDateStatus.PRE_GAME
                 current_game_date = FB_PROVIDER.get_next_game_date(scoreboard_date)
             else:
                 current_game_date = scoreboard_date.strftime('%m/%d/%Y')
-        elif new_status == "NO_GAME":
+        elif new_status == GameDateStatus.NO_GAME:
             current_game_date = FB_PROVIDER.get_next_game_date(scoreboard_date)
-            new_status = "PRE_GAME"  # skip dates with no game
+            new_status = GameDateStatus.PRE_GAME  # skip dates with no game
         else:
             current_game_date = scoreboard_date.strftime('%m/%d/%Y')
 
         # reboot the service with loading all info for current date
-        if self.status == "INIT":
+        if self.status == GameDateStatus.INIT:
             self.current_game_date = current_game_date
             self.status = new_status
             self.reload()
             if current_game_date == scoreboard_date.strftime('%m/%d/%Y'):
                 # the current game date is still ongoing, we need to load current games and lineups
-                self.active_game_status = {game['gameId']: game['gameStatus'] for game in active_games}
-                self.formatted_schedule = self.__formatted_schedule(active_games)
-
-                if new_status == "IN_GAME" or new_status == "POST_GAME":
+                if new_status == GameDateStatus.IN_GAME or new_status == GameDateStatus.POST_GAME:
                     await self.__update_stats()
+                self.formatted_games = self.__formatted_games(active_games)
             else:
-                # the current game date is not started yet, no need to load game stats
-                self.active_game_status = {}
+                self.formatted_games = self.__formatted_games([])
 
             return
 
         # service state machine
-        if self.status == "PRE_GAME":
-            if new_status == "IN_GAME":
-                self.active_game_status = {game['gameId']: game['gameStatus'] for game in active_games}
+        if self.status == GameDateStatus.POST_GAME:
+            if new_status == GameDateStatus.IN_GAME:
                 await self.__update_stats()
-        elif self.status == "IN_GAME":
-            self.active_game_status = {game['gameId']: game['gameStatus'] for game in active_games}
+        elif self.status == GameDateStatus.IN_GAME:
             await self.__update_stats()
-            self.formatted_schedule = self.__formatted_schedule(active_games)
+            self.formatted_games = self.__formatted_games(active_games)
         else:  # POST_GAME
             await self.__update_stats()
-            if new_status == "PRE_GAME":
+            if new_status == GameDateStatus.PRE_GAME:
                 # upload leader board if move to a new game date
                 await self.__upload_leaderboard()
 
                 # start a new date
                 self.current_game_date = current_game_date
+                self.games = {}
                 self.reload()  # the reloaded lineups should be empty
 
         self.status = new_status
 
     async def __update_stats(self):
-        player_stats = {}
-        for game_id in self.active_game_status:
-            if self.active_game_status[game_id] == 1:
+        player_stats: Dict[int, Dict[str, any]] = {}
+        games: Dict[str, Dict[str, any]] = {}
+        for game_id in self.games:
+            if self.games[game_id] == 1:
                 continue  # game not started yet
 
             try:
@@ -403,37 +406,39 @@ class DynamicLineupService(FastBreakService):
             if game_stats['gameStatus'] == 1:
                 continue
 
-            game_info = get_game_info(game_stats)
+            games[game_id] = get_game_info(game_stats)
 
             for player in game_stats['homeTeam']['players']:
                 if player['status'] == 'ACTIVE':
                     player_id = player['personId']
                     player_stats[player_id] = self.enrich_stats(player['statistics'])
                     player_stats[player_id]['name'] = player['name']
-                    player_stats[player_id]['gameInfo'] = game_info
 
             for player in game_stats['awayTeam']['players']:
                 if player['status'] == 'ACTIVE':
                     player_id = player['personId']
                     player_stats[player_id] = self.enrich_stats(player['statistics'])
                     player_stats[player_id]['name'] = player['name']
-                    player_stats[player_id]['gameInfo'] = game_info
 
+        # store new stats
         for player_id in player_stats:
             self.player_stats[player_id] = player_stats[player_id]
+        for game_id in games:
+            self.games[game_id] = games[game_id]
 
         user_scores = {}
         for user_id in self.lineups:
             lineup = self.lineups[user_id]
-            if not lineup.is_submitted:
+            if not lineup.is_ranked:
                 continue
 
-            score, passed, rate = self.fb.compute_score(lineup.player_ids[0:self.fb.count], self.player_stats)
+            score, passed, rate, message = self.fb.compute_score(lineup.player_ids[0:self.fb.count], self.player_stats)
             user_scores[user_id] = {
                 'score': score,
                 'serial': lineup.serial,
                 'passed': passed,
                 'rate': rate,
+                'message': message
             }
 
         user_ids = list(user_scores.keys())
@@ -452,30 +457,39 @@ class DynamicLineupService(FastBreakService):
         for user_id in self.lineups:
             if user_id not in self.user_scores:
                 continue
-            err = upsert_score(user_id, self.lineups[user_id].game_date,
+            err = upsert_score(user_id, self.current_game_date,
                                self.user_scores[user_id]['rate'], self.user_scores[user_id]['passed'])
             if err is not None:
                 await ADMIN_LOGGER.error(f"FBRanking:Upload:{err}")
 
-    def formatted_user_score(self, user_id):
-        if user_id not in self.lineups:
-            return "User lineup not found."
+    def formatted_player(self, player_id: int) -> str:
+        if player_id == INVALID_ID:
+            return "🏀 ---\n\n"
 
-        return self.formatted_lineup_score(user_id, self.lineups[user_id].player_ids)
+        player_stats = self.player_stats.get(player_id)
+        if player_stats is None:
+            player = self.players.get(player_id)
+            if player is None:
+                return f"🏀 invalid player id: **{player_id}**\n\n"
+            message = f"🏀 **{player['full_name']}**\n"
+        else:
+            if self.fb is None:
+                message = f"🏀 **{player_stats['full_name']}**\n"
+            else:
+                message = f"🏀 {self.fb.formatted_score(player_stats)}\n"
 
-    def formatted_lineup_score(self, user_id, player_ids):
-        if self.status == "PRE_GAME":
-            return "Games are not started yet."
-
-        if self.current_game_date not in FB_PROVIDER.fb_info:
-            return "Games are not started yet."
-
-        message = ""
-        message += self.fb.formatted_scores(player_ids[0:self.fb.count], self.player_stats)
-        if user_id in self.user_scores:
-            message += f"\nYour current rank is **{self.user_scores[user_id]['rank']}/{len(self.user_scores)}**"
-
-        return message
+        player_game = self.player_games[player_id]
+        game = self.games[player_game['id']]
+        if player_game['team'] == game['homeTeam']:
+            return f"{message}" \
+                   f"{game['awayTeam']} {game['awayScore']}-" \
+                   f"**{game['homeScore']} {game['homeTeam']}** " \
+                   f"{game['statusText']}\n"
+        else:
+            return f"{message}" \
+                   f"**{game['awayTeam']} {game['awayScore']}**-" \
+                   f"{game['homeScore']} {game['homeTeam']} " \
+                   f"{game['statusText']}\n"
 
     async def schedule_with_scores(self, user_id):
         dates = FB_PROVIDER.get_dates()
@@ -484,9 +498,15 @@ class DynamicLineupService(FastBreakService):
             await ADMIN_LOGGER.error(f"FBRanking:UserProgress:{err}")
             return f"Error loading progress: {err}"
         if user_id in self.user_scores:
-            user_results[self.current_game_date] = 1 if self.user_scores[user_id]['passed'] else -1
+            score = self.user_scores[user_id]
+            if score['passed']:
+                user_results[self.current_game_date] = 1
+            elif self.status != GameDateStatus.POST_GAME:
+                user_results[self.current_game_date] = -1
+            else:
+                user_results[self.current_game_date] = 0
         else:
-            user_results[self.current_game_date] = 0
+            user_results[self.current_game_date] = -1
 
         dates.sort()
         wins = 0
@@ -509,7 +529,7 @@ class DynamicLineupService(FastBreakService):
         return message
 
     def formatted_leaderboard(self, top):
-        if self.status != "IN_GAME" and self.status != "POST_GAME":
+        if self.status == GameDateStatus.PRE_GAME:
             return "Games are not started yet.\n"
 
         message = f"***Leaderboard {self.current_game_date}***\n\n"
@@ -540,6 +560,36 @@ class DynamicLineupService(FastBreakService):
 
         return message
 
+    def formatted_team_players(self, team) -> str:
+        if team not in self.formatted_teams:
+            return "{} is not playing on {}.".format(team, self.current_game_date)
+        return self.formatted_teams[team]
+
+    def get_coming_games(self):
+        return NBA_PROVIDER.get_games_on_date(self.current_game_date).items()
+
+    def __formatted_games(self, games):
+        message = "🏀 ***{} GAMES***\n".format(self.current_game_date)
+
+        if self.status == GameDateStatus.PRE_GAME or len(games) == 0:
+            for game_id, game in self.get_coming_games():
+                message += f"{game['awayTeam']} at {game['homeTeam']}\n"
+
+            return message
+        else:
+            message = "🏀 ***{} GAMES***\n".format(self.current_game_date)
+
+            for game in games:
+                message += "**{}** {} : {} **{}** {}\n".format(
+                    game['awayTeam']['teamTricode'],
+                    game['awayTeam']['score'],
+                    game['homeTeam']['score'],
+                    game['homeTeam']['teamTricode'],
+                    game['gameStatusText']
+                )
+
+        return message
+
     @staticmethod
     def enrich_stats(player_stats):
         player_stats['fieldGoalsMissed'] = player_stats['fieldGoalsAttempted'] - player_stats['fieldGoalsMade']
@@ -562,15 +612,15 @@ class DynamicLineupService(FastBreakService):
             {
                 "user_id": user_id,
                 "game_date": self.current_game_date,
-                "topshot_username": None,
-                "player_1": None,
-                "player_2": None,
-                "player_3": None,
-                "player_4": None,
-                "player_5": None,
-                "player_6": None,
-                "player_7": None,
-                "player_8": None,
+                "topshot_username": "",
+                "player_1": INVALID_ID,
+                "player_2": INVALID_ID,
+                "player_3": INVALID_ID,
+                "player_4": INVALID_ID,
+                "player_5": INVALID_ID,
+                "player_6": INVALID_ID,
+                "player_7": INVALID_ID,
+                "player_8": INVALID_ID,
                 "is_ranked": False,
                 "sum_serial": 0,
             },
@@ -583,7 +633,7 @@ class DynamicLineupService(FastBreakService):
 
         return self.lineups[user_id]
 
-    def load_or_create_lineup(self, user_id) -> Lineup:
+    def load_or_create_lineup(self, user_id: int) -> Lineup:
         lineup, err = get_lineup(user_id, self.current_game_date)
         if len(lineup) == 0:
             self.__create_lineup(user_id)
@@ -591,49 +641,6 @@ class DynamicLineupService(FastBreakService):
             self.lineups[user_id] = Lineup(lineup, self)
 
         return self.lineups[user_id]
-
-    def get_opponent(self, player_id):
-        return self.team_to_opponent[self.player_to_team[player_id]]
-
-    def formatted_player(self, player):
-        return \
-            "**{} {}** vs *{}*".format(
-                player['full_name'],
-                self.player_to_team[player['id']],
-                self.get_opponent(player['id']),
-            )
-
-    def formatted_team_players(self, team):
-        if team not in self.formatted_teams:
-            return ["{} is not playing on {}.".format(team, self.current_game_date)]
-        return self.formatted_teams[team]
-
-    def get_coming_games(self):
-        return NBA_PROVIDER.get_games_on_date(self.current_game_date).items()
-
-    def __formatted_schedule(self, games):
-        message = "🏀 ***{} GAMES***\n".format(self.current_game_date)
-        if self.fb is not None:
-            message += self.fb.get_formatted()
-
-        if self.status == "PRE_GAME" or len(games) == 0:
-            for game_id, game in self.get_coming_games():
-                message += f"{game['awayTeam']} at {game['homeTeam']}\n"
-
-            return message
-        else:
-            message = "🏀 ***{} GAMES***\n".format(self.current_game_date)
-
-            for game in games:
-                message += "**{}** {} : {} **{}** {}\n".format(
-                    game['awayTeam']['teamTricode'],
-                    game['awayTeam']['score'],
-                    game['homeTeam']['score'],
-                    game['homeTeam']['teamTricode'],
-                    game['gameStatusText']
-                )
-
-        return message
 
 
 DYNAMIC_LINEUP_SERVICE = DynamicLineupService()
