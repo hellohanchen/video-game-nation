@@ -8,15 +8,15 @@ from discord.ext import commands, tasks
 from dotenv import load_dotenv
 
 from constants import TZ_ET
-from service.fantasy.views import MainPage
 from provider.nba.nba_provider import NBA_PROVIDER
+from provider.topshot.cadence.flow_collections import get_account_plays
+from provider.topshot.graphql.get_address import get_flow_address
 from repository.vgn_collections import upsert_collection as repo_upsert_collection
 from repository.vgn_users import insert_user
 from service.fantasy import LINEUP_PROVIDER
 from service.fantasy.ranking import RANK_PROVIDER
-from provider.topshot.cadence.flow_collections import get_account_plays
-from provider.topshot.graphql.get_address import get_flow_address
-from utils import update_channel_messages, get_the_past_week_from_sunday, send_channel_messages
+from service.fantasy.views import MainPage
+from utils import update_channel_messages, get_the_past_week_from_sunday, send_channel_messages, truncate_message
 
 # config bot
 load_dotenv()
@@ -46,7 +46,6 @@ ADMIN_CHANNEL_IDS = []
 LB_MESSAGE_IDS = {}
 GAMES_MESSAGE_IDS = {}
 PLAYERS_MESSAGE_IDS = {}
-
 
 VGN_EMOJI_ID = 1166225667952758815
 
@@ -166,15 +165,21 @@ async def update_leaderboard():
         if new_status != "IN_GAME":
             injury_changes = NBA_PROVIDER.update_injury()
             injury_updates = ""
+            messages = []
             for player_name in injury_changes:
                 change = injury_changes[player_name]
-                injury_updates += f"Injury Update: **{player_name}** changed from " \
-                                  f"**[{NBA_PROVIDER.format_injury(change['from'])}]** to " \
-                                  f"**[{NBA_PROVIDER.format_injury(change['to'])}]**\n"
+                new_message = f"Injury Update: **{player_name}** changed from " \
+                              f"**[{NBA_PROVIDER.format_injury(change['from'])}]** to " \
+                              f"**[{NBA_PROVIDER.format_injury(change['to'])}]**\n"
+                injury_updates, _ = truncate_message(messages, injury_updates, new_message, 1950)
 
-            if len(injury_updates) > 0:
+            if injury_updates != "":
+                messages.append(injury_updates)
+
+            if len(messages) > 0:
                 for channel in PLAYERS_CHANNELS:
-                    await channel.send(injury_updates)
+                    for msg in messages:
+                        await channel.send(msg)
 
 
 @tasks.loop(minutes=2)
