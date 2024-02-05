@@ -1,9 +1,10 @@
 import datetime
+import math
 import re
 import time
 from typing import Dict, Union
 
-from constants import EMPTY_PLAYER_COLLECTION, STATS_PLAY_TYPE, STATS_SCORE
+from constants import EMPTY_PLAYER_COLLECTION, STATS_PLAY_TYPE, STATS_SCORE, INVALID_ID
 
 
 def truncate_message(msgs: list, msg: str, add: str, limit: int) -> tuple:
@@ -262,3 +263,9 @@ def parse_boxscore_minutes(minutes):
     minutes = float(match.group(1))
     seconds = round(float(match.group(2)) / 60.0, 2)
     return minutes + seconds
+
+
+def cast_player_id(player_id) -> int:
+    if player_id is not None and not math.isnan(float(player_id)):
+        return int(player_id)
+    return INVALID_ID

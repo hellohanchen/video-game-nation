@@ -16,7 +16,7 @@ from repository.vgn_players import get_empty_players_stats, get_players
 from repository.vgn_users import get_user_new
 from service.fastbreak.fastbreak import FastBreak
 from service.fastbreak.utils import build_fb_collections
-from utils import get_game_info
+from utils import get_game_info, cast_player_id
 from vgnlog.channel_logger import ADMIN_LOGGER
 
 
@@ -54,23 +54,17 @@ class Lineup:
         self.user_id = db_lineup['user_id']
         self.username = db_lineup['topshot_username']
         self.player_ids: [int] = [
-            self.__cast_player_id(db_lineup['player_1']),
-            self.__cast_player_id(db_lineup['player_2']),
-            self.__cast_player_id(db_lineup['player_3']),
-            self.__cast_player_id(db_lineup['player_4']),
-            self.__cast_player_id(db_lineup['player_5']),
-            self.__cast_player_id(db_lineup['player_6']),
-            self.__cast_player_id(db_lineup['player_7']),
-            self.__cast_player_id(db_lineup['player_8']),
+            cast_player_id(db_lineup['player_1']),
+            cast_player_id(db_lineup['player_2']),
+            cast_player_id(db_lineup['player_3']),
+            cast_player_id(db_lineup['player_4']),
+            cast_player_id(db_lineup['player_5']),
+            cast_player_id(db_lineup['player_6']),
+            cast_player_id(db_lineup['player_7']),
+            cast_player_id(db_lineup['player_8']),
         ]
         self.is_ranked = db_lineup['is_ranked']
         self.serial = db_lineup['sum_serial']
-
-    @staticmethod
-    def __cast_player_id(db_player_id) -> int:
-        if db_player_id is not None and not math.isnan(float(db_player_id)):
-            return int(db_player_id)
-        return INVALID_ID
 
     def formatted(self) -> str:
         message = self.service.formatted_games + "\n"
@@ -400,7 +394,7 @@ class DynamicLineupService(AbstractDynamicLineupService):
             try:
                 game_stats = boxscore.BoxScore(game_id=game_id).get_dict()['game']
             except Exception as err:
-                ADMIN_LOGGER.error(f"Ranking:UpdateStats:{err}")
+                await ADMIN_LOGGER.error(f"Ranking:UpdateStats:{err}")
                 continue
 
             if game_stats['gameStatus'] == 1:

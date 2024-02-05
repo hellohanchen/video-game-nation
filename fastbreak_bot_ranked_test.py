@@ -44,7 +44,7 @@ async def on_ready():
                 continue
 
             if channel.id == ADMIN_CHANNEL_ID:
-                ADMIN_LOGGER.init("FBRanked", channel)
+                ADMIN_LOGGER.init("FBRankedTest", channel)
                 continue
 
             if channel.name in FB_CHANNEL_NAMES:

@@ -311,6 +311,7 @@ def update_player_stats_from_dashboard(player_ids):
     err_ids = []
 
     for player in player_stats:
+        db_conn = None
         try:
             db_conn = CNX_POOL.get_connection()
             cursor = db_conn.cursor()

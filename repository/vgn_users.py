@@ -57,7 +57,6 @@ def get_user(discord_id):
 def get_user_new(discord_id):
     try:
         db_conn = CNX_POOL.get_connection()
-        cursor = db_conn.cursor()
         query = f"SELECT * from vgn.users WHERE id={discord_id}"
 
         # Execute SQL query and store results in a pandas dataframe

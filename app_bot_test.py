@@ -7,6 +7,7 @@ from discord.ext import commands, tasks
 from dotenv import load_dotenv
 
 from app import MainPage
+from repository.discord_roles import get_role_validations
 from repository.ts_giveaways import add_giveaway_access
 from service.giveaways.giveaway import GIVEAWAY_SERVICE
 from utils import has_giveaway_permissions
@@ -63,6 +64,11 @@ async def on_ready():
                 view = MainPage(GUILDS)
                 message = await channel.send(WELCOME_MESSAGE, view=view)
                 MAIN_CHANNEL_MESSAGES.append(message)
+
+    validation_rules = get_role_validations(list(GUILDS.keys()))
+    for gid in GUILDS:
+        if gid in validation_rules:
+            GUILDS[gid]['roles'] = validation_rules[gid]
 
     await GIVEAWAY_SERVICE.load_from_guilds(GUILDS)
     refresh_entry.start()
