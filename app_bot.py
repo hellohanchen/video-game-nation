@@ -95,7 +95,7 @@ async def menu(context):
     if not isinstance(context.channel, discord.channel.DMChannel):
         return
 
-    await context.channel.send(WELCOME_MESSAGE, view=MainPage(GUILDS))
+    await context.channel.send(WELCOME_MESSAGE, view=MainPage(GUILDS, False))
 
 
 @bot.command(name='admin', help='[Admin] Give user admin access to a channel')

@@ -47,11 +47,12 @@ class MainVerifyButton(discord.ui.Button['Verify']):
 
 
 class MainPage(discord.ui.View):
-    def __init__(self, guilds):
+    def __init__(self, guilds, verify_on=True):
         super().__init__()
         self.add_item(MainAccountButton())
         self.add_item(MainGiveawayButton())
-        self.add_item(MainVerifyButton())
+        if verify_on:
+            self.add_item(MainVerifyButton())
         self.guilds = guilds
 
     def manage_giveaway(self, user_id):
