@@ -380,6 +380,7 @@ class DynamicLineupService(AbstractDynamicLineupService):
                 # start a new date
                 self.current_game_date = current_game_date
                 self.games = {}
+                self.formatted_games = self.__formatted_games([])
                 self.reload()  # the reloaded lineups should be empty
 
         self.status = new_status
