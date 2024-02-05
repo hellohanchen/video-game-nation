@@ -2,7 +2,7 @@ import discord
 
 from constants import NBA_TEAMS
 from repository.ts_giveaways import get_user_giveaway_accesses, create_giveaway, submit_giveaway, get_drafts_for_user
-from service.giveaways.giveaway import Giveaway, GIVEAWAY_SERVICE
+from service.giveaway.giveaway import Giveaway, GIVEAWAY_SERVICE
 from service.views import BaseView
 from vgnlog.channel_logger import ADMIN_LOGGER
 

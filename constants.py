@@ -264,7 +264,7 @@ class GameDateStatus(Enum):
 INVALID_ID: int = 0
 
 
-class RoleValidationType(Enum):
-    SET = 0
-    TEAM = 1
-    FAV_TEAM = 2
+class RoleVerificationType(Enum):
+    LINKED = 0
+    SET = 1
+    TEAM = 2

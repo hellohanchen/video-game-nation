@@ -7,10 +7,11 @@ from discord.ext import commands, tasks
 from dotenv import load_dotenv
 
 from app import MainPage
+from repository.discord_roles import get_role_verifications
 from repository.ts_giveaways import add_giveaway_access
 from utils import has_giveaway_permissions
 from vgnlog.channel_logger import ADMIN_LOGGER
-from service.giveaways.giveaway import GIVEAWAY_SERVICE
+from service.giveaway.giveaway import GIVEAWAY_SERVICE
 
 # config bot
 load_dotenv()
@@ -25,16 +26,17 @@ intents.presences = False
 bot = commands.Bot(command_prefix='.vgn.', intents=intents)
 ADMIN_CHANNEL_ID = 1097055938441130004
 
-MAIN_CHANNELS = ["giveaway-admin"]
+MAIN_CHANNELS = ["👋-verify"]
 MAIN_CHANNEL_MESSAGES = []
 
 GUILDS = {}
 
-WELCOME_MESSAGE = "**Video Game Nation Discord Portal**\n\n" \
-                  "Explore the Discord communities of NBA Topshot.\n" \
-                  "Link your discord account with your Topshot collection.\n" \
-                  "Play games with fans from all communities.\n" \
-                  "Win moments and other prizes from activities."
+WELCOME_MESSAGE = "**Video Game Nation Portal**\n\n" \
+                  "Welcome! Video Game Nation is a sub-community of NBA Top Shot that has been dedicated to " \
+                  "connect Web3 communities with gamification and automation services.\n\n" \
+                  "**Link NBA Top Shot Account** to connect your discord account with ts account.\n" \
+                  "**Verify NBA Top Shot Collection** to get roles and access to games, giveaways and other events." \
+
 
 
 @bot.event
@@ -47,22 +49,41 @@ async def on_ready():
                 "channels": {}
             }
 
+    verify_rules, _ = get_role_verifications(list(GUILDS.keys()))
+    for gid in GUILDS:
+        guild = GUILDS[gid]['guild']
         bot_member = guild.me
+
+        if gid in verify_rules:
+            roles = await guild.fetch_roles()
+            role_map = {r.id: r for r in roles}
+
+            for rule in verify_rules[gid]:
+                if rule['role_id'] in role_map:
+                    rule['role'] = role_map[rule['role_id']]
+                else:
+                    rule['role'] = None
+
+            guild_rules = list(filter(lambda r: r['role'] is not None, verify_rules[gid]))
+            if len(guild_rules) > 0:
+                GUILDS[gid]['roles'] = guild_rules
+
         for channel in guild.channels:
             if channel.type != discord.ChannelType.text:
                 continue
+            if channel.id == ADMIN_CHANNEL_ID:
+                ADMIN_LOGGER.init("App", channel)
+                continue
+            if channel.name in MAIN_CHANNELS:
+                view = MainPage(GUILDS)
+                message = await channel.send(WELCOME_MESSAGE, view=view)
+                MAIN_CHANNEL_MESSAGES.append(message)
+
             permissions = channel.permissions_for(bot_member)
             if not has_giveaway_permissions(permissions):
                 continue
 
             GUILDS[gid]['channels'][channel.id] = channel
-
-            if channel.id == ADMIN_CHANNEL_ID:
-                ADMIN_LOGGER.init("App", channel)
-            if channel.name in MAIN_CHANNELS:
-                view = MainPage(GUILDS)
-                message = await channel.send(WELCOME_MESSAGE, view=view)
-                MAIN_CHANNEL_MESSAGES.append(message)
 
     await GIVEAWAY_SERVICE.load_from_guilds(GUILDS)
     refresh_entry.start()
@@ -95,7 +116,7 @@ async def give_admin_access(context, username, guild_id, channel_id):
         return
 
     guild = GUILDS[guild_id]['guild']
-    member = discord.utils.find(lambda m: username == m.name, guild.members)
+    member = await discord.utils.find(lambda m: username == m.name, guild.members)
     if member is None:
         await context.channel.send(f"Discord user {username} not found in server {guild.name}.")
         return
