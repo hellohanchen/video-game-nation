@@ -395,7 +395,7 @@ class DynamicLineupService(AbstractDynamicLineupService):
             try:
                 game_stats = boxscore.BoxScore(game_id=game_id).get_dict()['game']
             except Exception as err:
-                await ADMIN_LOGGER.error(f"Ranking:UpdateStats:{err}")
+                #  await ADMIN_LOGGER.error(f"Ranking:UpdateStats:{err}")  TODO: look into this noisy error
                 continue
 
             if game_stats['gameStatus'] == 1:

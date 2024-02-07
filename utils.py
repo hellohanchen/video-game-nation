@@ -255,7 +255,7 @@ def list_to_str(items):
 
 def has_giveaway_permissions(permissions):
     return permissions.view_channel and permissions.send_messages and \
-           permissions.embed_links and permissions.manage_messages and permissions.read_message_history
+           permissions.embed_links and permissions.read_message_history
 
 
 def parse_boxscore_minutes(minutes):

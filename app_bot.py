@@ -116,7 +116,7 @@ async def give_admin_access(context, username, guild_id, channel_id):
         return
 
     guild = GUILDS[guild_id]['guild']
-    member = await discord.utils.find(lambda m: username == m.name, guild.members)
+    member = discord.utils.find(lambda m: username == m.name, guild.members)
     if member is None:
         await context.channel.send(f"Discord user {username} not found in server {guild.name}.")
         return

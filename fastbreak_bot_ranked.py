@@ -24,7 +24,7 @@ intents.members = True
 intents.typing = False
 intents.presences = False
 
-bot = commands.Bot(command_prefix='.', intents=intents)
+bot = commands.Bot(command_prefix='.fb.', intents=intents)
 ADMIN_CHANNEL_ID = 1097055938441130004
 
 FB_CHANNEL_IDS = [1195804395309367469]

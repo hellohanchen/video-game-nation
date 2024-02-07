@@ -168,7 +168,7 @@ async def update_leaderboard():
             messages = []
             for player_name in injury_changes:
                 change = injury_changes[player_name]
-                new_message = f"Injury Update: **{player_name}** changed from " \
+                new_message = f"**{player_name}** updated from " \
                               f"**[{NBA_PROVIDER.format_injury(change['from'])}]** to " \
                               f"**[{NBA_PROVIDER.format_injury(change['to'])}]**\n"
                 injury_updates, _ = truncate_message(messages, injury_updates, new_message, 1950)
