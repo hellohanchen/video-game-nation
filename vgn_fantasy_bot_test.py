@@ -57,9 +57,6 @@ async def on_ready():
                 ADMIN_CHANNEL_IDS.append(channel.id)
             if channel.name in FANTASY_CHANNEL_NAMES:
                 view = MainPage(LINEUP_PROVIDER, RANK_PROVIDER)
-                for emoji in guild.emojis:
-                    if emoji.name == "vgn":
-                        print(emoji)
                 message = await channel.send("Ready to start daily NBA fantasy game?", view=view)
                 FANTASY_CHANNEL_MESSAGES.append(message)
 

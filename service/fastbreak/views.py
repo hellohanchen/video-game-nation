@@ -2,6 +2,7 @@ import discord
 
 from constants import INVALID_ID
 from service.fastbreak.dynamic_lineup import DynamicLineupService, Lineup
+from vgnlog.channel_logger import ADMIN_LOGGER
 
 
 class FastBreakView(discord.ui.View):
@@ -144,11 +145,14 @@ class LineupSubmitButton(discord.ui.Button['LineupSubmit']):
     async def callback(self, interaction: discord.Interaction):
         assert self.view is not None
         view: RankedLineupView = self.view
-        message = f"Submission in progress...\n" \
-                  f"Unblock bot DM to receive the result or click 'My Lineup' to check if is submitted."
-        await interaction.response.edit_message(content=message, view=view)
-        message = await view.lineup.submit()
-        await interaction.user.send(content=message)
+        await interaction.response.edit_message(content=f"Submission in progress...\n", view=view)
+        followup = interaction.followup
+        try:
+            message = await view.lineup.submit()
+            await followup.send(message, ephemeral=True)
+        except Exception as err:
+            await ADMIN_LOGGER.error(f"FB:Submit:{err}")
+            await followup.send(f"Submission failed, please rey", ephemeral=True)
 
 
 class LineupLeaderboardButton(discord.ui.Button['LineupLeaderboard']):

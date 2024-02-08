@@ -1,11 +1,12 @@
 import discord
 
 import utils
+from provider.topshot.cadence.flow_collections import get_account_plays
 from repository.vgn_collections import upsert_collection as repo_upsert_collection
 from repository.vgn_lineups import get_weekly_score
 from repository.vgn_users import get_user
 from service.fantasy.ranking import RANK_PROVIDER
-from provider.topshot.cadence.flow_collections import get_account_plays
+from vgnlog.channel_logger import ADMIN_LOGGER
 
 
 class FantasyView(discord.ui.View):
@@ -92,15 +93,23 @@ class LineupSubmitButton(discord.ui.Button['LineupSubmit']):
         assert self.view is not None
         view: LineupView = self.view
 
-        is_submitted, message, new_view = view.submit_lineup()
-        await interaction.response.edit_message(content=message, view=new_view)
-        if is_submitted:
-            content = f"Your submission is successfully submitted, please review snapshot\n\n{message}\n"
-            msg, _, is_reloaded = await view.reload_collection()
-            if is_reloaded:
-                await interaction.user.send(content=content + f"Your collection is also updated successfully: {msg}")
+        await interaction.response.edit_message(content=f"Submission in progress...\n", view=view)
+        followup = interaction.followup
+        try:
+            is_submitted, message, new_view = view.submit_lineup()
+
+            if is_submitted:
+                content = f"Your submission is successfully submitted, please review snapshot\n\n{message}\n"
+                msg, _, is_reloaded = await view.reload_collection()
+                if is_reloaded:
+                    await followup.send(
+                        content=content + f"Your collection is also updated successfully: {msg}", ephemeral=True)
+                else:
+                    await followup.send(content=content + f"Your collection is not updated: {msg}", ephemeral=True)
             else:
-                await interaction.user.send(content=content + f"Your collection is not updated: {msg}")
+                await followup.send(message, ephemeral=True)
+        except Exception as err:
+            await followup.send(content=f"Submission failed, please retry or contact admin: {err}", ephemeral=True)
 
 
 class LineupRemoveButton(discord.ui.Button['LineupRemove']):
@@ -180,7 +189,8 @@ class LineupView(FantasyView):
         return successful, message, self
 
     def remove_player(self):
-        return self.lineup.formatted() + "\nRemove a player from your lineup", RemoveView(self.lineup_provider, self.user_id)
+        return self.lineup.formatted() + "\nRemove a player from your lineup", RemoveView(self.lineup_provider,
+                                                                                          self.user_id)
 
     def swap_player(self):
         return self.lineup.formatted() + "\nSwap 2 players in your lineup", SwapView(self.lineup_provider, self.user_id)
@@ -247,7 +257,8 @@ class RemoveView(FantasyView):
         i = 0
         for j in range(0, 8):
             if player_ids[j] is not None:
-                self.add_item(RemovePlayerButton(int(i / 4), self.lineup_provider.players[player_ids[j]]['full_name'], j))
+                self.add_item(
+                    RemovePlayerButton(int(i / 4), self.lineup_provider.players[player_ids[j]]['full_name'], j))
                 i += 1
         self.add_item(LineupButton(int((i + 3) / 4) + 1))
 
@@ -506,7 +517,8 @@ class PlayersView(FantasyView):
         if player_idx > len(self.lineup_provider.player_ids):
             player_idx = len(self.lineup_provider.player_ids)
 
-        message = self.lineup_provider.detailed_player_by_id(self.lineup_provider.player_ids[player_idx - 1], self.user_id)
+        message = self.lineup_provider.detailed_player_by_id(self.lineup_provider.player_ids[player_idx - 1],
+                                                             self.user_id)
 
         return message, PlayerView(player_idx, self.lineup_provider, self.user_id)
 

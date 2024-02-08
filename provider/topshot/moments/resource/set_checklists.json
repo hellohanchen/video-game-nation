@@ -1368,6 +1368,12 @@
         "playerId": 203932,
         "date": "2023-11-05"
       },
+      "4735": {
+        "player": "Trae Young",
+        "team": "Atlanta Hawks",
+        "playerId": 1629027,
+        "date": "2023-12-31"
+      },
       "4660": {
         "player": "Josh Hart",
         "team": "New York Knicks",
@@ -1399,7 +1405,7 @@
         "date": "2023-12-03"
       }
     },
-    "count": 9
+    "count": 10
   },
   "132": {
     "name": "Hustle and Show 5",
@@ -1416,6 +1422,12 @@
         "team": "Miami Heat",
         "playerId": 200768,
         "date": "2023-11-09"
+      },
+      "4732": {
+        "player": "LeBron James",
+        "team": "Los Angeles Lakers",
+        "playerId": 2544,
+        "date": "2023-11-02"
       },
       "4731": {
         "player": "T.J. McConnell",
@@ -1460,7 +1472,7 @@
         "date": "2023-10-27"
       }
     },
-    "count": 9
+    "count": 10
   },
   "135": {
     "name": "Freshman Gems 5",
