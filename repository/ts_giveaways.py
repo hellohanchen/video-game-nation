@@ -158,7 +158,7 @@ def get_user_giveaway_accesses(uid, all_guilds):
             if gid not in guilds:
                 guilds[gid] = {}
                 guilds[gid]['guild'] = all_guilds[gid]['guild']
-                guilds[gid]['channels'] = []
+                guilds[gid]['channels'] = {}
                 guild_ids.append(gid)
 
             cid = giveaway['channel_id']
@@ -166,7 +166,7 @@ def get_user_giveaway_accesses(uid, all_guilds):
                 guilds[gid]['channels'] = all_guilds[gid]['channels']
                 channel_ids.extend(list(all_guilds[gid]['channels'].keys()))
             elif cid in all_guilds[gid]['channels']:
-                guilds[gid]['channels'].append(cid)
+                guilds[gid]['channels'][cid] = all_guilds[gid]['channels'][cid]
                 channel_ids.append(cid)
 
         return guilds, guild_ids, channel_ids, None

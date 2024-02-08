@@ -135,7 +135,7 @@ class FastBreak:
             bucket = self.buckets[i]
             score = bucket.load_score(player_stats)
             if bucket.each:
-                message += " {:.0f} PASS".format(score)
+                message += " {:.0f}/{:.0f} {}".format(score, bucket.each_target, bucket.stats)
             else:
                 message += " {:.1f} {}".format(score, bucket.stats)
 
