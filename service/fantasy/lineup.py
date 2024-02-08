@@ -143,7 +143,7 @@ class LineupProvider:
     def formatted_player(self, player, collection):
         score = compute_vgn_score(player, collection)
         return \
-            "{}) **{} +{:.2f}v {}** vs *{}* **${:.2f}m** **{}**\n" \
+            "**{})** **{} +{:.2f}v {}** vs *{}* **${:.2f}m** **{}**\n" \
             "{:.1f}p {:.1f}r {:.1f}a {:.1f}s {:.1f}b\n".format(
                 player['index'],
                 player['full_name'],
@@ -172,7 +172,9 @@ class LineupProvider:
     def formatted_team(self, team):
         message = ""
         for player_id in self.team_to_players[team]:
-            message += self.players[player_id]['formatted']
+            player_msg = self.players[player_id]['formatted']
+            parenthesis = player_msg.find(')')
+            message += player_msg[parenthesis+4:]
         return message
 
     def get_formatted_team(self, team):
