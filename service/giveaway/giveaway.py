@@ -9,7 +9,7 @@ from constants import NBA_TEAM_IDS
 from vgnlog.channel_logger import ADMIN_LOGGER
 from provider.topshot.graphql.get_address import get_flow_account_info
 from repository.ts_giveaways import message_giveaway, get_ongoing_giveaways, get_submission, get_submission_count, \
-    join_giveaway, get_submitted_fav_team, ban_user, get_unbanned_submissions, close_giveaway
+    join_giveaway, get_submitted_fav_team, ban_user, get_submissions_with_flow_info, close_giveaway
 from repository.vgn_users import get_user_new
 from service.common.profile.views import ProfileView
 
@@ -89,7 +89,7 @@ class Giveaway:
         try:
             await self.refresh()
 
-            submitted_users, err = get_unbanned_submissions(self.id)
+            submitted_users, err = get_submissions_with_flow_info(self.id)
             if err is not None:
                 raise err
             random.shuffle(submitted_users)
@@ -115,7 +115,9 @@ class Giveaway:
                     if fav_team_id is not None:
                         fav_team = NBA_TEAM_IDS.get(int(fav_team_id))
                         if winner['fav_team'] != fav_team:
-                            _, _ = ban_user(winner['user_id'], f"FavTeam: {winner['fav_team']}, {fav_team}")
+                            _, err = ban_user(winner['user_id'])
+                            if err is not None:
+                                await ADMIN_LOGGER.warn(f"Giveaway:Close:BanUser:{err}")
                             continue
 
                     winners.append(winner)
@@ -142,9 +144,6 @@ class Giveaway:
         return True
 
     async def join(self, user):
-        if user['banned_reason'] is not None and len(user['banned_reason']) > 0:
-            return False, f"You are banned from entering giveaways: {user['banned_reason']}"
-
         epoch = datetime.datetime.utcnow()
         if self.end_at <= epoch:
             return False, "Submission is already closed."
@@ -160,7 +159,7 @@ class Giveaway:
         if len(self.fav_teams) > 0:
             _, _, fav_team_id, err = await get_flow_account_info(user['topshot_username'])
             if err is not None:
-                await ADMIN_LOGGER.warn(f"Giveaway:GetAccess:{err}")
+                await ADMIN_LOGGER.warn(f"Giveaway:Join:GetFlow:{err}")
                 return False, f"Join-GetFavTeam:{err}"
             fav_team = NBA_TEAM_IDS.get(int(fav_team_id))
             if fav_team not in self.fav_teams:
@@ -168,7 +167,9 @@ class Giveaway:
 
             submitted_fav_team, _ = get_submitted_fav_team(user['id'])
             if submitted_fav_team is not None and fav_team != submitted_fav_team:
-                _, _ = ban_user(user['id'], f"FavTeam: {submitted_fav_team}, {fav_team}")
+                _, err = ban_user(user['id'])
+                if err is not None:
+                    await ADMIN_LOGGER.warn(f"Giveaway:Join:BanUser:{err}")
                 return False, f"Favorite team rule violation."
 
         successful, err = join_giveaway(self.id, user, fav_team)

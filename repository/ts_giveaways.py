@@ -232,13 +232,13 @@ def get_submission(gid, address):
         return None, err
 
 
-def get_unbanned_submissions(gid):
+def get_submissions_with_flow_info(gid):
     try:
         db_conn = CNX_POOL.get_connection()
         query = f"SELECT u.id AS user_id, u.topshot_username AS topshot_username, u.flow_address AS flow_address, " \
                 f"s.fav_team AS fav_team " \
                 f"FROM vgn.ts_giveaway_submissions s JOIN vgn.users u ON s.user_id = u.id " \
-                f"WHERE s.giveaway_id = {gid} AND u.banned_reason IS NULL"
+                f"WHERE s.giveaway_id = {gid}"
         # Execute SQL query and store results in a pandas dataframe
         df = pd.read_sql(query, db_conn)
 
@@ -321,13 +321,13 @@ def close_giveaway(gid):
     return True, None
 
 
-def ban_user(uid, reason):
+def ban_user(uid):
     db_conn = None
     try:
         db_conn = CNX_POOL.get_connection()
         cursor = db_conn.cursor()
 
-        query = f"UPDATE vgn.users SET banned_reason = '{reason}' WHERE id = {uid}"
+        query = f"DELETE FROM vgn.ts_giveaway_submissions WHERE user_id = {uid}"
         cursor.execute(query)
 
         db_conn.commit()

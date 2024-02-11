@@ -82,7 +82,7 @@ class FBBucket:
         else:
             return f"at most {int(self.target)} {STATS_MAP[self.stats]}"
 
-    def load_score(self, player_stat) -> float:
+    def load_score(self, player_stat) -> [float, float]:
         if player_stat is None:
             return 0.0
 
@@ -93,7 +93,7 @@ class FBBucket:
         else:
             key = BOXSCORE_MAP[self.stats]
             if key not in player_stat:
-                return 0.0
+                return 0.0, 0.0
             if self.stats == 'MIN':
                 raw_score = parse_boxscore_minutes(player_stat[key])
             else:
@@ -101,11 +101,11 @@ class FBBucket:
 
         if self.each:
             if self.order == 'DESC':
-                return 1.0 if raw_score >= self.each_target else 0.0
+                return 1.0 if raw_score >= self.each_target else 0.0, raw_score
             else:
-                return 0.0 if raw_score >= self.each_target else 1.0
+                return 0.0 if raw_score >= self.each_target else 1.0, raw_score
 
-        return raw_score
+        return raw_score, raw_score
 
 
 class FastBreak:
@@ -133,9 +133,9 @@ class FastBreak:
         message = f"**{player_stats['name']}**"
         for i in range(0, len(self.buckets)):
             bucket = self.buckets[i]
-            score = bucket.load_score(player_stats)
+            score, raw_score = bucket.load_score(player_stats)
             if bucket.each:
-                message += " {:.0f}/{:.0f} {}".format(score, bucket.each_target, bucket.stats)
+                message += " {:.0f}/{:.0f} {}".format(raw_score, bucket.each_target, bucket.stats)
             else:
                 message += " {:.1f} {}".format(score, bucket.stats)
 
@@ -156,7 +156,7 @@ class FastBreak:
 
             for i in range(0, num_buckets):
                 bucket = self.buckets[i]
-                score = bucket.load_score(player)
+                score, _ = bucket.load_score(player)
                 player_scores[pid][i] = score
                 sums[i] = sums[i] + score
 

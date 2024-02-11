@@ -1,0 +1,229 @@
+{
+  "NBA": {
+    "Series 1": {
+      "count": 23,
+      "tiers": {
+        "Common": {
+          "2": "Base Set",
+          "6": "Early Adopters",
+          "14": "Hometown Showdown: Cali vs. NY",
+          "22": "Got Game"
+        },
+        "Rare": {
+          "5": "Metallic Gold LE",
+          "7": "Rookie Debut",
+          "9": "For the Win",
+          "10": "Denied!",
+          "11": "Throwdowns",
+          "13": "With the Strip",
+          "15": "So Fresh",
+          "16": "First Round",
+          "17": "Conference Semifinals",
+          "18": "Western Conference Finals",
+          "19": "Eastern Conference Finals",
+          "21": "The Finals",
+          "24": "MVP Moves",
+          "25": "Run It Back"
+        },
+        "Legendary": {
+          "4": "Holo MMXX",
+          "8": "Cosmic",
+          "12": "From the Top",
+          "20": "2020 NBA Finals",
+          "23": "Lace 'Em Up"
+        }
+      }
+    },
+    "Series 2": {
+      "count": 15,
+      "tiers": {
+        "Common": {
+          "26": "Base Set",
+          "32": "Cool Cats",
+          "33": "The Gift",
+          "34": "Seeing Stars",
+          "37": "Hustle and Show",
+          "39": "2021 NBA Playoffs"
+        },
+        "Rare": {
+          "29": "Metallic Gold LE",
+          "30": "Season Tip-off",
+          "35": "Rising Stars",
+          "36": "2021 All-Star Game",
+          "38": "Throwdowns",
+          "40": "And Then There Were Four"
+        },
+        "Legendary": {
+          "28": "Holo Icon",
+          "31": "Deck the Hoops",
+          "41": "2021 NBA Finals"
+        }
+      }
+    },
+    "Series 3": {
+      "count": 21,
+      "tiers": {
+        "Common": {
+          "48": "Archive Set",
+          "51": "Base Set",
+          "55": "Fresh Threads",
+          "58": "Hustle and Show",
+          "59": "Game Recognize Game",
+          "60": "Rising Stars",
+          "65": "Extra Spice",
+          "67": "2022 NBA Playoffs"
+        },
+        "Fandom": {
+          "43": "Summer of '21",
+          "49": "Vintage Vibes",
+          "56": "Metallic Silver FE",
+          "62": "Rim Shakers"
+        },
+        "Rare": {
+          "47": "Run It Back 2005-06",
+          "54": "Metallic Gold LE",
+          "63": "2022 All-Star Game",
+          "64": "Throwdowns",
+          "68": "And Then There Were Four"
+        },
+        "Legendary": {
+          "53": "Holo Icon",
+          "57": "Deck the Hoops",
+          "61": "NBA All-Star Classics",
+          "69": "2022 NBA Finals"
+        }
+      }
+    },
+    "Series 4": {
+      "count": 33,
+      "tiers": {
+        "Common": {
+          "84": "Archive Set 1986-87",
+          "90": "Base Set",
+          "91": "Rookie Debut",
+          "92": "Spotlight Series",
+          "98": "Clamps",
+          "104": "The Champion's Path",
+          "105": "2023 NBA Playoffs",
+          "108": "Hustle and Show",
+          "113": "Extra Spice",
+          "119": "Archive Set 2014-19"
+        },
+        "Fandom": {
+          "76": "The Tour",
+          "86": "The Challenge: Pro",
+          "87": "The Challenge: Icon",
+          "88": "The Challenge: Champion",
+          "101": "2023 NBA All-Star"
+        },
+        "Rare": {
+          "75": "Squad Goals",
+          "83": "Run It Back 1986-87",
+          "85": "Dynamic Duos",
+          "93": "Fresh Threads",
+          "94": "Throwdowns",
+          "95": "For the Win",
+          "97": "Video Game Numbers",
+          "99": "Metallic Gold LE",
+          "102": "Fit Check",
+          "115": "2023-23 Honors",
+          "120": "Run It Back: Origins 2014-19"
+        },
+        "Legendary": {
+          "82": "Run It Back: Legacies 1986-87",
+          "103": "Top Shot 50",
+          "106": "Rookie Revelation",
+          "110": "2023 NBA Finals",
+          "116": "2023-23 Hardware",
+          "118": "2022-23 Season Rewind",
+          "121": "Run It Back: Legacies 2014-19"
+        }
+      }
+    },
+    "Series 23-24": {
+      "count": 12,
+      "tiers": {
+        "Common": {
+          "124": "Base Set",
+          "125": "Rookie Debut",
+          "126": "Fresh Thread",
+          "129": "Archive Set",
+          "132": "Hustle and Show",
+          "133": "Extra Spice"
+        },
+        "Fandom": {
+        },
+        "Rare": {
+          "127": "Throwdowns",
+          "128": "For The Win",
+          "130": "Video Game Numbers",
+          "134": "Metallic Gold LE",
+          "135": "Freshman Gems"
+        },
+        "Legendary": {
+          "131": "Holo Icon"
+        }
+      }
+    },
+    "Anthology": {
+      "count": 5,
+      "Anthology": {
+        "74": "The Anthology: Magic Johnson",
+        "100": "The Anthology: LeBron James",
+        "109": "The Anthology: Kevin Durant",
+        "114": "The Anthology: Steph Curry",
+        "117": "The Anthology: Larry Bird"
+      }
+    }
+  },
+  "WNBA": {
+    "Series 3": {
+      "count": 5,
+      "tiers": {
+        "Common": {
+          "44": "WNBA: Best of 2021"
+        },
+        "Fandom": {
+          "45": "WNBA 2021",
+          "66": "WNBA Player's Choice 2021"
+        },
+        "Rare": {
+          "46": "WNBA Run It Back"
+        },
+        "Legendary": {
+          "50": "In Her Bag"
+        }
+      }
+    }
+  },
+  "Series 4": {
+    "count": 16,
+    "tiers": {
+      "Common": {
+        "72": "WNBA Archive Set 2008",
+        "73": "WNBA Base Set",
+        "111": "WNBA 2023"
+      },
+      "Fandom": {
+        "70": "Rise With Us",
+        "77": "Shining Stars",
+        "78": "For the Cup",
+        "80": "Chasing the Trophy",
+        "107": "Rise With Us 2023"
+      },
+      "Rare": {
+        "71": "WNBA Run It Back 2008",
+        "79": "WNBA Metallic Gold LE",
+        "81": "WNBA Game Recognize Game",
+        "89": "WNBA Squad Goals",
+        "112": "WNBA Metallic Gold LE 2023"
+      },
+      "Legendary": {
+        "96": "In Their Bag",
+        "122": "Road To Royalty",
+        "123": "WNBA Origins"
+      }
+    }
+  }
+}
+}

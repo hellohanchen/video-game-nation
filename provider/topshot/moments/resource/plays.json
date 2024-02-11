@@ -1,4 +1,850 @@
 {
+  "4803": [
+    {
+      "id": "ee9bedc9-4709-4bf9-b069-8e62143c5aea",
+      "flowId": 4803,
+      "set": "Extra Spice",
+      "setId": "b350a61d-28b1-4468-8f2c-2960166aeb57",
+      "setFlowId": 133,
+      "playerId": 1630567,
+      "playerName": "Scottie Barnes",
+      "team": "Toronto Raptors",
+      "teamAtMoment": "Toronto Raptors",
+      "playType": "Layup",
+      "date": "2024-01-19",
+      "series": 5,
+      "tier": "C",
+      "badges": []
+    }
+  ],
+  "4802": [
+    {
+      "id": "7203bfe2-3a0c-458e-86ae-8e4110baae3c",
+      "flowId": 4802,
+      "set": "Extra Spice",
+      "setId": "b350a61d-28b1-4468-8f2c-2960166aeb57",
+      "setFlowId": 133,
+      "playerId": 1628370,
+      "playerName": "Malik Monk",
+      "team": "Sacramento Kings",
+      "teamAtMoment": "Sacramento Kings",
+      "playType": "Dunk",
+      "date": "2023-11-18",
+      "series": 5,
+      "tier": "C",
+      "badges": []
+    }
+  ],
+  "4801": [
+    {
+      "id": "e7ce1a1a-fade-41f5-8ab9-0859f0de92a1",
+      "flowId": 4801,
+      "set": "Extra Spice",
+      "setId": "b350a61d-28b1-4468-8f2c-2960166aeb57",
+      "setFlowId": 133,
+      "playerId": 201566,
+      "playerName": "Russell Westbrook",
+      "team": "LA Clippers",
+      "teamAtMoment": "LA Clippers",
+      "playType": "3 Pointer",
+      "date": "2024-01-24",
+      "series": 5,
+      "tier": "C",
+      "badges": []
+    }
+  ],
+  "4800": [
+    {
+      "id": "79abb7b4-9ccd-4df6-b356-d765a789ba07",
+      "flowId": 4800,
+      "set": "Extra Spice",
+      "setId": "b350a61d-28b1-4468-8f2c-2960166aeb57",
+      "setFlowId": 133,
+      "playerId": 202704,
+      "playerName": "Reggie Jackson",
+      "team": "Denver Nuggets",
+      "teamAtMoment": "Denver Nuggets",
+      "playType": "Assist",
+      "date": "2024-01-08",
+      "series": 5,
+      "tier": "C",
+      "badges": []
+    }
+  ],
+  "4799": [
+    {
+      "id": "de78eee0-006a-4200-83f3-971a32549a21",
+      "flowId": 4799,
+      "set": "Extra Spice",
+      "setId": "b350a61d-28b1-4468-8f2c-2960166aeb57",
+      "setFlowId": 133,
+      "playerId": 1629029,
+      "playerName": "Luka Don\u010di\u0107",
+      "team": "Dallas Mavericks",
+      "teamAtMoment": "Dallas Mavericks",
+      "playType": "Assist",
+      "date": "2023-12-13",
+      "series": 5,
+      "tier": "C",
+      "badges": []
+    }
+  ],
+  "4798": [
+    {
+      "id": "913b89ed-2288-4253-903a-779909cd16ff",
+      "flowId": 4798,
+      "set": "Hustle and Show",
+      "setId": "fb847463-981a-49ba-8167-2f5bd595dc82",
+      "setFlowId": 132,
+      "playerId": 1630558,
+      "playerName": "Davion Mitchell",
+      "team": "Sacramento Kings",
+      "teamAtMoment": "Sacramento Kings",
+      "playType": "Steal",
+      "date": "2023-11-09",
+      "series": 5,
+      "tier": "C",
+      "badges": []
+    }
+  ],
+  "4797": [
+    {
+      "id": "0f11cd71-63e1-4078-8147-10d880be5d0f",
+      "flowId": 4797,
+      "set": "Hustle and Show",
+      "setId": "fb847463-981a-49ba-8167-2f5bd595dc82",
+      "setFlowId": 132,
+      "playerId": 1630591,
+      "playerName": "Jalen Suggs",
+      "team": "Orlando Magic",
+      "teamAtMoment": "Orlando Magic",
+      "playType": "Dunk",
+      "date": "2023-11-30",
+      "series": 5,
+      "tier": "C",
+      "badges": []
+    }
+  ],
+  "4796": [
+    {
+      "id": "5ef19957-4c88-490e-b81b-15445297c04b",
+      "flowId": 4796,
+      "set": "Hustle and Show",
+      "setId": "fb847463-981a-49ba-8167-2f5bd595dc82",
+      "setFlowId": 132,
+      "playerId": 1629674,
+      "playerName": "Neemias Queta",
+      "team": "Boston Celtics",
+      "teamAtMoment": "Boston Celtics",
+      "playType": "Dunk",
+      "date": "2024-01-18",
+      "series": 5,
+      "tier": "C",
+      "badges": []
+    }
+  ],
+  "4795": [
+    {
+      "id": "3cf46629-7aa4-4233-be17-280092513eb3",
+      "flowId": 4795,
+      "set": "Hustle and Show",
+      "setId": "fb847463-981a-49ba-8167-2f5bd595dc82",
+      "setFlowId": 132,
+      "playerId": 1628969,
+      "playerName": "Mikal Bridges",
+      "team": "Brooklyn Nets",
+      "teamAtMoment": "Brooklyn Nets",
+      "playType": "Dunk",
+      "date": "2023-12-23",
+      "series": 5,
+      "tier": "C",
+      "badges": []
+    }
+  ],
+  "4794": [
+    {
+      "id": "92888b2a-c9e4-4a92-9750-4c9d84e5f31f",
+      "flowId": 4794,
+      "set": "Hustle and Show",
+      "setId": "fb847463-981a-49ba-8167-2f5bd595dc82",
+      "setFlowId": 132,
+      "playerId": 1627749,
+      "playerName": "Dejounte Murray",
+      "team": "Atlanta Hawks",
+      "teamAtMoment": "Atlanta Hawks",
+      "playType": "Dunk",
+      "date": "2023-11-01",
+      "series": 5,
+      "tier": "C",
+      "badges": []
+    }
+  ],
+  "4793": [
+    {
+      "id": "757c6b98-2a60-47a5-82a4-d179bf56b8fb",
+      "flowId": 4793,
+      "set": "Metallic Gold LE",
+      "setId": "1435ea5e-d16f-4622-8a27-58d7f6b62c81",
+      "setFlowId": 134,
+      "playerId": 1629673,
+      "playerName": "Jordan Poole",
+      "team": "Washington Wizards",
+      "teamAtMoment": "Washington Wizards",
+      "playType": "Handles",
+      "date": "2023-11-11",
+      "series": 5,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "4792": [
+    {
+      "id": "004e5d57-24cc-4322-bfcb-77198b706991",
+      "flowId": 4792,
+      "set": "Metallic Gold LE",
+      "setId": "1435ea5e-d16f-4622-8a27-58d7f6b62c81",
+      "setFlowId": 134,
+      "playerId": 203903,
+      "playerName": "Jordan Clarkson",
+      "team": "Utah Jazz",
+      "teamAtMoment": "Utah Jazz",
+      "playType": "Reel",
+      "date": "2024-01-02",
+      "series": 5,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "4791": [
+    {
+      "id": "d286172c-2ed3-4d62-8f6c-397988c0b674",
+      "flowId": 4791,
+      "set": "Metallic Gold LE",
+      "setId": "1435ea5e-d16f-4622-8a27-58d7f6b62c81",
+      "setFlowId": 134,
+      "playerId": 1629628,
+      "playerName": "RJ Barrett",
+      "team": "Toronto Raptors",
+      "teamAtMoment": "Toronto Raptors",
+      "playType": "Dunk",
+      "date": "2024-01-18",
+      "series": 5,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "4790": [
+    {
+      "id": "2487ea1c-d38d-487e-9d91-f76dbfad8be0",
+      "flowId": 4790,
+      "set": "Metallic Gold LE",
+      "setId": "1435ea5e-d16f-4622-8a27-58d7f6b62c81",
+      "setFlowId": 134,
+      "playerId": 1628368,
+      "playerName": "De'Aaron Fox",
+      "team": "Sacramento Kings",
+      "teamAtMoment": "Sacramento Kings",
+      "playType": "3 Pointer",
+      "date": "2023-11-16",
+      "series": 5,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "4789": [
+    {
+      "id": "8bc9ea03-29a8-46e1-8110-aca989c2c196",
+      "flowId": 4789,
+      "set": "Metallic Gold LE",
+      "setId": "1435ea5e-d16f-4622-8a27-58d7f6b62c81",
+      "setFlowId": 134,
+      "playerId": 1630703,
+      "playerName": "Scoot Henderson",
+      "team": "Portland Trail Blazers",
+      "teamAtMoment": "Portland Trail Blazers",
+      "playType": "Layup",
+      "date": "2023-12-27",
+      "series": 5,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "4788": [
+    {
+      "id": "41db7ed6-aec2-4d77-a86e-4a5cfca480f8",
+      "flowId": 4788,
+      "set": "Metallic Gold LE",
+      "setId": "1435ea5e-d16f-4622-8a27-58d7f6b62c81",
+      "setFlowId": 134,
+      "playerId": 203078,
+      "playerName": "Bradley Beal",
+      "team": "Phoenix Suns",
+      "teamAtMoment": "Phoenix Suns",
+      "playType": "Handles",
+      "date": "2024-01-12",
+      "series": 5,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "4787": [
+    {
+      "id": "8cc76db1-003f-41a3-bd90-7807cc54f950",
+      "flowId": 4787,
+      "set": "Metallic Gold LE",
+      "setId": "1435ea5e-d16f-4622-8a27-58d7f6b62c81",
+      "setFlowId": 134,
+      "playerId": 203954,
+      "playerName": "Joel Embiid",
+      "team": "Philadelphia 76ers",
+      "teamAtMoment": "Philadelphia 76ers",
+      "playType": "Dunk",
+      "date": "2023-12-21",
+      "series": 5,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "4786": [
+    {
+      "id": "9338f4b0-aa09-4a0c-86a1-fd7867606a08",
+      "flowId": 4786,
+      "set": "Metallic Gold LE",
+      "setId": "1435ea5e-d16f-4622-8a27-58d7f6b62c81",
+      "setFlowId": 134,
+      "playerId": 1630532,
+      "playerName": "Franz Wagner",
+      "team": "Orlando Magic",
+      "teamAtMoment": "Orlando Magic",
+      "playType": "Layup",
+      "date": "2023-11-18",
+      "series": 5,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "4785": [
+    {
+      "id": "98c82ee9-bcf8-4442-9466-90285e907e0f",
+      "flowId": 4785,
+      "set": "Metallic Gold LE",
+      "setId": "1435ea5e-d16f-4622-8a27-58d7f6b62c81",
+      "setFlowId": 134,
+      "playerId": 1631114,
+      "playerName": "Jalen Williams",
+      "team": "Oklahoma City Thunder",
+      "teamAtMoment": "Oklahoma City Thunder",
+      "playType": "Jump Shot",
+      "date": "2024-01-03",
+      "series": 5,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "4784": [
+    {
+      "id": "ecbc4fb6-d329-4c34-b807-22f5a83b2306",
+      "flowId": 4784,
+      "set": "Metallic Gold LE",
+      "setId": "1435ea5e-d16f-4622-8a27-58d7f6b62c81",
+      "setFlowId": 134,
+      "playerId": 1630529,
+      "playerName": "Herbert Jones",
+      "team": "New Orleans Pelicans",
+      "teamAtMoment": "New Orleans Pelicans",
+      "playType": "Assist",
+      "date": "2024-01-24",
+      "series": 5,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "4783": [
+    {
+      "id": "1d381a95-2fb1-45d0-a9de-4391a74e0b03",
+      "flowId": 4783,
+      "set": "Metallic Gold LE",
+      "setId": "1435ea5e-d16f-4622-8a27-58d7f6b62c81",
+      "setFlowId": 134,
+      "playerId": 1628973,
+      "playerName": "Jalen Brunson",
+      "team": "New York Knicks",
+      "teamAtMoment": "New York Knicks",
+      "playType": "Jump Shot",
+      "date": "2024-01-18",
+      "series": 5,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "4782": [
+    {
+      "id": "c0090303-8065-4c09-948b-f9dafd9d46bf",
+      "flowId": 4782,
+      "set": "Metallic Gold LE",
+      "setId": "1435ea5e-d16f-4622-8a27-58d7f6b62c81",
+      "setFlowId": 134,
+      "playerId": 1626157,
+      "playerName": "Karl-Anthony Towns",
+      "team": "Minnesota Timberwolves",
+      "teamAtMoment": "Minnesota Timberwolves",
+      "playType": "Assist",
+      "date": "2023-12-17",
+      "series": 5,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "4781": [
+    {
+      "id": "af39fc02-277b-40c1-802f-03d03c554231",
+      "flowId": 4781,
+      "set": "Metallic Gold LE",
+      "setId": "1435ea5e-d16f-4622-8a27-58d7f6b62c81",
+      "setFlowId": 134,
+      "playerId": 203507,
+      "playerName": "Giannis Antetokounmpo",
+      "team": "Milwaukee Bucks",
+      "teamAtMoment": "Milwaukee Bucks",
+      "playType": "Dunk",
+      "date": "2024-01-05",
+      "series": 5,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "4780": [
+    {
+      "id": "b7f8ecf8-1803-43b3-8df8-851983484f0e",
+      "flowId": 4780,
+      "set": "Metallic Gold LE",
+      "setId": "1435ea5e-d16f-4622-8a27-58d7f6b62c81",
+      "setFlowId": 134,
+      "playerId": 202710,
+      "playerName": "Jimmy Butler",
+      "team": "Miami Heat",
+      "teamAtMoment": "Miami Heat",
+      "playType": "Dunk",
+      "date": "2023-11-17",
+      "series": 5,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "4779": [
+    {
+      "id": "dde6ad67-a591-4bfb-a9af-de4492bdc449",
+      "flowId": 4779,
+      "set": "Metallic Gold LE",
+      "setId": "1435ea5e-d16f-4622-8a27-58d7f6b62c81",
+      "setFlowId": 134,
+      "playerId": 203076,
+      "playerName": "Anthony Davis",
+      "team": "Los Angeles Lakers",
+      "teamAtMoment": "Los Angeles Lakers",
+      "playType": "Dunk",
+      "date": "2023-12-14",
+      "series": 5,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "4778": [
+    {
+      "id": "3dc45fdd-4d15-4c5e-af66-863450376ba5",
+      "flowId": 4778,
+      "set": "Metallic Gold LE",
+      "setId": "1435ea5e-d16f-4622-8a27-58d7f6b62c81",
+      "setFlowId": 134,
+      "playerId": 202695,
+      "playerName": "Kawhi Leonard",
+      "team": "LA Clippers",
+      "teamAtMoment": "LA Clippers",
+      "playType": "Layup",
+      "date": "2023-12-21",
+      "series": 5,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "4777": [
+    {
+      "id": "d347be3b-6766-42a5-afe9-b19518d96689",
+      "flowId": 4777,
+      "set": "Metallic Gold LE",
+      "setId": "1435ea5e-d16f-4622-8a27-58d7f6b62c81",
+      "setFlowId": 134,
+      "playerId": 1630169,
+      "playerName": "Tyrese Haliburton",
+      "team": "Indiana Pacers",
+      "teamAtMoment": "Indiana Pacers",
+      "playType": "Layup",
+      "date": "2023-12-31",
+      "series": 5,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "4776": [
+    {
+      "id": "6f7127df-a6b8-49b3-b654-6b8337088a07",
+      "flowId": 4776,
+      "set": "Metallic Gold LE",
+      "setId": "1435ea5e-d16f-4622-8a27-58d7f6b62c81",
+      "setFlowId": 134,
+      "playerId": 1631095,
+      "playerName": "Jabari Smith Jr.",
+      "team": "Houston Rockets",
+      "teamAtMoment": "Houston Rockets",
+      "playType": "Dunk",
+      "date": "2024-01-18",
+      "series": 5,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "4775": [
+    {
+      "id": "0d969428-10da-4c73-bf89-69313d5d329d",
+      "flowId": 4775,
+      "set": "Metallic Gold LE",
+      "setId": "1435ea5e-d16f-4622-8a27-58d7f6b62c81",
+      "setFlowId": 134,
+      "playerId": 1630228,
+      "playerName": "Jonathan Kuminga",
+      "team": "Golden State Warriors",
+      "teamAtMoment": "Golden State Warriors",
+      "playType": "Dunk",
+      "date": "2024-02-06",
+      "series": 5,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "4774": [
+    {
+      "id": "739d1a3c-a861-4de7-8cc3-4eb4033eb8f2",
+      "flowId": 4774,
+      "set": "Metallic Gold LE",
+      "setId": "1435ea5e-d16f-4622-8a27-58d7f6b62c81",
+      "setFlowId": 134,
+      "playerId": 1631093,
+      "playerName": "Jaden Ivey",
+      "team": "Detroit Pistons",
+      "teamAtMoment": "Detroit Pistons",
+      "playType": "Dunk",
+      "date": "2024-01-13",
+      "series": 5,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "4773": [
+    {
+      "id": "9368d79a-d432-4137-a4e7-7a95d4c63b01",
+      "flowId": 4773,
+      "set": "Metallic Gold LE",
+      "setId": "1435ea5e-d16f-4622-8a27-58d7f6b62c81",
+      "setFlowId": 134,
+      "playerId": 203999,
+      "playerName": "Nikola Joki\u0107",
+      "team": "Denver Nuggets",
+      "teamAtMoment": "Denver Nuggets",
+      "playType": "Assist",
+      "date": "2024-01-13",
+      "series": 5,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "4772": [
+    {
+      "id": "59a55adc-8c06-4dcf-b44c-a98fd3a3edb3",
+      "flowId": 4772,
+      "set": "Metallic Gold LE",
+      "setId": "1435ea5e-d16f-4622-8a27-58d7f6b62c81",
+      "setFlowId": 134,
+      "playerId": 203501,
+      "playerName": "Tim Hardaway Jr.",
+      "team": "Dallas Mavericks",
+      "teamAtMoment": "Dallas Mavericks",
+      "playType": "3 Pointer",
+      "date": "2024-01-15",
+      "series": 5,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "4771": [
+    {
+      "id": "82d87a2c-e2f4-4c33-af98-a673ec582590",
+      "flowId": 4771,
+      "set": "Metallic Gold LE",
+      "setId": "1435ea5e-d16f-4622-8a27-58d7f6b62c81",
+      "setFlowId": 134,
+      "playerId": 1629632,
+      "playerName": "Coby White",
+      "team": "Chicago Bulls",
+      "teamAtMoment": "Chicago Bulls",
+      "playType": "3 Pointer",
+      "date": "2023-12-01",
+      "series": 5,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "4770": [
+    {
+      "id": "d440bb57-3dbf-46da-89cd-698f9f955d18",
+      "flowId": 4770,
+      "set": "Metallic Gold LE",
+      "setId": "1435ea5e-d16f-4622-8a27-58d7f6b62c81",
+      "setFlowId": 134,
+      "playerId": 1630163,
+      "playerName": "LaMelo Ball",
+      "team": "Charlotte Hornets",
+      "teamAtMoment": "Charlotte Hornets",
+      "playType": "Assist",
+      "date": "2023-11-23",
+      "series": 5,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "4769": [
+    {
+      "id": "11c2b4f6-f8c0-42f6-9f5b-8d837f24c88e",
+      "flowId": 4769,
+      "set": "Metallic Gold LE",
+      "setId": "1435ea5e-d16f-4622-8a27-58d7f6b62c81",
+      "setFlowId": 134,
+      "playerId": 1627759,
+      "playerName": "Jaylen Brown",
+      "team": "Boston Celtics",
+      "teamAtMoment": "Boston Celtics",
+      "playType": "Block",
+      "date": "2024-01-14",
+      "series": 5,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "4768": [
+    {
+      "id": "9f825677-c046-42f6-896d-bb2bc86a5e6d",
+      "flowId": 4768,
+      "set": "Metallic Gold LE",
+      "setId": "1435ea5e-d16f-4622-8a27-58d7f6b62c81",
+      "setFlowId": 134,
+      "playerId": 1630560,
+      "playerName": "Cam Thomas",
+      "team": "Brooklyn Nets",
+      "teamAtMoment": "Brooklyn Nets",
+      "playType": "3 Pointer",
+      "date": "2023-11-07",
+      "series": 5,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "4767": [
+    {
+      "id": "ff8314a5-dc18-4d52-9d97-7ee15a235550",
+      "flowId": 4767,
+      "set": "Metallic Gold LE",
+      "setId": "1435ea5e-d16f-4622-8a27-58d7f6b62c81",
+      "setFlowId": 134,
+      "playerId": 1630552,
+      "playerName": "Jalen Johnson",
+      "team": "Atlanta Hawks",
+      "teamAtMoment": "Atlanta Hawks",
+      "playType": "Dunk",
+      "date": "2024-01-04",
+      "series": 5,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "4766": [
+    {
+      "id": "9732ff72-3184-4e2d-b203-cdcdedc7128e",
+      "flowId": 4766,
+      "set": "Base Set",
+      "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+      "setFlowId": 124,
+      "playerId": 1629018,
+      "playerName": "Gary Trent Jr.",
+      "team": "Toronto Raptors",
+      "teamAtMoment": "Toronto Raptors",
+      "playType": "3 Pointer",
+      "date": "2024-01-18",
+      "series": 5,
+      "tier": "C",
+      "badges": []
+    }
+  ],
+  "4765": [
+    {
+      "id": "4e83b844-f048-4de2-ba20-2be2f10e7186",
+      "flowId": 4765,
+      "set": "Base Set",
+      "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+      "setFlowId": 124,
+      "playerId": 202694,
+      "playerName": "Marcus Morris Sr.",
+      "team": "Philadelphia 76ers",
+      "teamAtMoment": "Philadelphia 76ers",
+      "playType": "3 Pointer",
+      "date": "2023-12-30",
+      "series": 5,
+      "tier": "C",
+      "badges": []
+    }
+  ],
+  "4764": [
+    {
+      "id": "36519336-6b3f-47d4-a59e-00976e3428b5",
+      "flowId": 4764,
+      "set": "Base Set",
+      "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+      "setFlowId": 124,
+      "playerId": 1631216,
+      "playerName": "Caleb Houstan",
+      "team": "Orlando Magic",
+      "teamAtMoment": "Orlando Magic",
+      "playType": "3 Pointer",
+      "date": "2024-01-07",
+      "series": 5,
+      "tier": "C",
+      "badges": []
+    }
+  ],
+  "4763": [
+    {
+      "id": "b1fe317b-53f9-4c87-bdc3-02a59322c919",
+      "flowId": 4763,
+      "set": "Base Set",
+      "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+      "setFlowId": 124,
+      "playerId": 1628983,
+      "playerName": "Shai Gilgeous-Alexander",
+      "team": "Oklahoma City Thunder",
+      "teamAtMoment": "Oklahoma City Thunder",
+      "playType": "3 Pointer",
+      "date": "2024-01-21",
+      "series": 5,
+      "tier": "C",
+      "badges": []
+    }
+  ],
+  "4762": [
+    {
+      "id": "f4869f6d-00a0-4c03-bc03-21060c9cb54b",
+      "flowId": 4762,
+      "set": "Base Set",
+      "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+      "setFlowId": 124,
+      "playerId": 1630540,
+      "playerName": "Miles McBride",
+      "team": "New York Knicks",
+      "teamAtMoment": "New York Knicks",
+      "playType": "Dunk",
+      "date": "2024-01-07",
+      "series": 5,
+      "tier": "C",
+      "badges": []
+    }
+  ],
+  "4761": [
+    {
+      "id": "a39d862f-9c24-413a-ac8b-d408a167570d",
+      "flowId": 4761,
+      "set": "Base Set",
+      "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+      "setFlowId": 124,
+      "playerId": 203081,
+      "playerName": "Damian Lillard",
+      "team": "Milwaukee Bucks",
+      "teamAtMoment": "Milwaukee Bucks",
+      "playType": "Handles",
+      "date": "2023-12-18",
+      "series": 5,
+      "tier": "C",
+      "badges": []
+    }
+  ],
+  "4760": [
+    {
+      "id": "d4ba7fd5-4922-4b86-8f21-7bbe083eb2a3",
+      "flowId": 4760,
+      "set": "Base Set",
+      "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+      "setFlowId": 124,
+      "playerId": 1628389,
+      "playerName": "Bam Adebayo",
+      "team": "Miami Heat",
+      "teamAtMoment": "Miami Heat",
+      "playType": "Block",
+      "date": "2023-11-12",
+      "series": 5,
+      "tier": "C",
+      "badges": []
+    }
+  ],
+  "4759": [
+    {
+      "id": "8a119311-2a1e-4923-b29a-0979d042ba0b",
+      "flowId": 4759,
+      "set": "Base Set",
+      "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+      "setFlowId": 124,
+      "playerId": 1629611,
+      "playerName": "Terance Mann",
+      "team": "LA Clippers",
+      "teamAtMoment": "LA Clippers",
+      "playType": "Block",
+      "date": "2024-01-17",
+      "series": 5,
+      "tier": "C",
+      "badges": []
+    }
+  ],
+  "4758": [
+    {
+      "id": "a746dbaa-b873-4b54-aed7-a354c5566737",
+      "flowId": 4758,
+      "set": "Base Set",
+      "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+      "setFlowId": 124,
+      "playerId": 1629684,
+      "playerName": "Grant Williams",
+      "team": "Dallas Mavericks",
+      "teamAtMoment": "Dallas Mavericks",
+      "playType": "3 Pointer",
+      "date": "2023-11-06",
+      "series": 5,
+      "tier": "C",
+      "badges": []
+    }
+  ],
+  "4757": [
+    {
+      "id": "d83a1875-2ce6-41e7-b9d5-cb0edd76d557",
+      "flowId": 4757,
+      "set": "Rookie Debut",
+      "setId": "39eb0ef6-a729-4bdb-a9ca-783e2d825ef8",
+      "setFlowId": 125,
+      "playerId": 1641723,
+      "playerName": "Kobe Bufkin",
+      "team": "Atlanta Hawks",
+      "teamAtMoment": "Atlanta Hawks",
+      "playType": "3 Pointer",
+      "date": "2024-01-31",
+      "series": 5,
+      "tier": "C",
+      "badges": []
+    }
+  ],
   "4756": [
     {
       "id": "ac23c411-e730-4674-9298-88bf4232bd96",
