@@ -37,12 +37,17 @@ class FastBreakProvider:
 
     def get_next_game_date(self, start_date):
         max_date = parse_slash_date(NBA_PROVIDER.latest_date)
+        last_date_with_fb = parse_slash_date(max(list(self.fb_info.keys())))
 
         while start_date <= max_date:
             start_date = start_date + datetime.timedelta(days=1)
 
-            if to_slash_date(start_date) in self.fb_info:
-                return to_slash_date(start_date)
+            slash_start_date = to_slash_date(start_date)
+            if slash_start_date in self.fb_info:
+                return slash_start_date
+
+            if slash_start_date in NBA_PROVIDER.game_schedule and start_date > last_date_with_fb:
+                return slash_start_date
 
         return to_slash_date(start_date)
 
@@ -71,5 +76,4 @@ FB_PROVIDER = FastBreakProvider()
 
 
 if __name__ == '__main__':
-    fb = load_fb_data()
-    print(fb)
+    print(FB_PROVIDER.get_next_game_date(parse_slash_date("02/15/2024")))
