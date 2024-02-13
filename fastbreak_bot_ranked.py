@@ -37,9 +37,9 @@ WELCOME_MESSAGE = "**Welcome to the B2B fastbreak contest!**\n" \
                   "screenshot of your lineup in this channel that exactly matches your submission.\n" \
                   "3️⃣ *Watch NBA games LIVE with the community to help out with your late swaps, celebrate your W's*" \
                   ", and **WIN MORE GIVEAWAYS!**\n" \
-                  "<:B2B:937061152897249300> <https://playback.tv/b2b>\n\n" \
+                  "<:boards:1091858916335435837> <https://playback.tv/b2b>\n\n" \
                   "**Don't forget to enter NBA Pick em!**\n" \
-                  "FREE to Enter!\n" \
+                  "*FREE to Enter!*\n" \
                   "https://www.krausepicks.com/auth/signup?community=2"
 
 
