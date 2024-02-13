@@ -28,11 +28,15 @@ FB_CHANNEL_NAMES = ["🎮-fantasy-test"]
 FB_CHANNEL_MESSAGES = []
 
 WELCOME_MESSAGE = "**Welcome to the B2B fastbreak contest!**\n" \
-                  "Link TS account and submit your fastbreak lineup here to join the community contest.\n" \
-                  "To be eligible to win rewards, please make sure use your own account and " \
-                  "submit the same lineup matching the one submitted to Topshot Fastbreak.\n\n" \
-                  "**Don't forget to enter our NBA Pick em game with Krause House DAO!**\n" \
-                  "FREE to Enter! Daily Prizes! Make sure to join B2B for community specific prizes.\n" \
+                  "1️⃣ *Link TS account.*\n" \
+                  "2️⃣ *Submit your fastbreak lineup.*\n" \
+                  "To be eligible to win prizes, please make sure to confirm your submission by providing a " \
+                  "screenshot of your lineup in this channel that exactly matches your submission.\n" \
+                  "3️⃣ *Watch NBA games LIVE with the community to help out with your late swaps, celebrate your W's*" \
+                  ", and **WIN MORE GIVEAWAYS!**\n" \
+                  "🔻 <https://playback.tv/b2b>\n\n" \
+                  "**Don't forget to enter NBA Pick em!**\n" \
+                  "FREE to Enter!\n" \
                   "➡ https://www.krausepicks.com/auth/signup?community=2"
 
 
