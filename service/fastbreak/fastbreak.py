@@ -136,6 +136,11 @@ class FastBreak:
             score, raw_score = bucket.load_score(player_stats)
             if bucket.each:
                 message += " {:.0f}/{:.0f} {}".format(raw_score, bucket.each_target, bucket.stats)
+            if bucket.stats in ['DD2', 'TD3', 'QD4', 'FD5']:
+                message += " {:.0f}p {:.0f}r {:.0f}a {:.0f}s {:.0f}b".format(
+                    player_stats['points'], player_stats['reboundsTotal'], player_stats['assists'],
+                    player_stats['steals'], player_stats['blocks'],
+                )
             else:
                 message += " {:.1f} {}".format(score, bucket.stats)
 
