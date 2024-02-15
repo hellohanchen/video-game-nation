@@ -213,7 +213,7 @@ class ListingService:
             self.remove_from_sets(old_listing)
             self.add_to_sets(listing)
 
-            diff = listing.updated_at - old_listing.updated_at
+            diff = datetime.datetime.utcnow() - old_listing.updated_at
             if diff.seconds > 1800:  # allow repost every half hour
                 listing.updated_at = datetime.datetime.utcnow()
                 for channel in self.channels:
