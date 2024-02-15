@@ -457,7 +457,7 @@ class SelectListingMenu(discord.ui.Select):
         if has_prev:
             self.append_option(discord.SelectOption(label="<- PREV PAGE", value="prev"))
         for li in listings:
-            self.append_option(discord.SelectOption(label=f"#{li.id}", value=li.id))
+            self.append_option(discord.SelectOption(label=f"#{li.id} {li.d_username}", value=li.id))
         if has_next:
             self.append_option(discord.SelectOption(label="NEXT PAGE ->", value="next"))
 

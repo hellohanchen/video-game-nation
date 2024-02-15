@@ -27,10 +27,16 @@ intents.presences = False
 bot = commands.Bot(command_prefix='.vgn.', intents=intents)
 ADMIN_CHANNEL_ID = 1097055938441130004
 
-MAIN_CHANNELS = ["👋-verify"]
+MAIN_CHANNEL_IDS = [
+    1203921985898291260,  # VGN
+    1207734770726080532   # TSE
+]
 MAIN_CHANNEL_MESSAGES = []
 
-TRADE_CHANNEL_IDS = [1207541055243816960]
+TRADE_CHANNEL_IDS = [
+    1207541055243816960,  # VGN
+    958390692734963763    # TSE
+]
 
 GUILDS = {}
 
@@ -79,7 +85,7 @@ async def on_ready():
             if channel.id == ADMIN_CHANNEL_ID:
                 ADMIN_LOGGER.init("App", channel)
                 continue
-            if channel.name in MAIN_CHANNELS:
+            if channel.id in MAIN_CHANNEL_IDS:
                 view = MainPage(GUILDS)
                 message = await channel.send(WELCOME_MESSAGE, view=view)
                 MAIN_CHANNEL_MESSAGES.append(message)
