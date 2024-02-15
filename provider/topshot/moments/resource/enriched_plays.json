@@ -52,10 +52,9 @@
     4038,
     4165,
     4221,
-    4234,
-    4754
+    4234
   ],
-  "count": 5227,
+  "count": 5228,
   "plays": {
     "4803": [
       {
@@ -950,6 +949,26 @@
         "series": 5,
         "tier": "Rare",
         "badges": []
+      }
+    ],
+    "4754": [
+      {
+        "id": "2313d0e6-4c06-4dd0-afb0-4b4f9a9ba0ee",
+        "flowId": 4754,
+        "set": "For The Win",
+        "setId": "00ac1ba7-32f9-4d49-8603-b7456d30695d",
+        "setFlowId": 128,
+        "playerId": 1629630,
+        "playerName": "Ja Morant",
+        "team": "Memphis Grizzlies",
+        "teamAtMoment": "Memphis Grizzlies",
+        "playType": "Layup",
+        "date": "2023-12-20",
+        "series": 5,
+        "tier": "Rare",
+        "badges": [
+          "CR"
+        ]
       }
     ],
     "4753": [

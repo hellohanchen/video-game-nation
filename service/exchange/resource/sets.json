@@ -167,12 +167,14 @@
     },
     "Anthology": {
       "count": 5,
-      "Anthology": {
-        "74": "The Anthology: Magic Johnson",
-        "100": "The Anthology: LeBron James",
-        "109": "The Anthology: Kevin Durant",
-        "114": "The Anthology: Steph Curry",
-        "117": "The Anthology: Larry Bird"
+      "tiers": {
+        "Anthology": {
+          "74": "The Anthology: Magic Johnson",
+          "100": "The Anthology: LeBron James",
+          "109": "The Anthology: Kevin Durant",
+          "114": "The Anthology: Steph Curry",
+          "117": "The Anthology: Larry Bird"
+        }
       }
     }
   },
@@ -194,36 +196,35 @@
           "50": "In Her Bag"
         }
       }
-    }
-  },
-  "Series 4": {
-    "count": 16,
-    "tiers": {
-      "Common": {
-        "72": "WNBA Archive Set 2008",
-        "73": "WNBA Base Set",
-        "111": "WNBA 2023"
-      },
-      "Fandom": {
-        "70": "Rise With Us",
-        "77": "Shining Stars",
-        "78": "For the Cup",
-        "80": "Chasing the Trophy",
-        "107": "Rise With Us 2023"
-      },
-      "Rare": {
-        "71": "WNBA Run It Back 2008",
-        "79": "WNBA Metallic Gold LE",
-        "81": "WNBA Game Recognize Game",
-        "89": "WNBA Squad Goals",
-        "112": "WNBA Metallic Gold LE 2023"
-      },
-      "Legendary": {
-        "96": "In Their Bag",
-        "122": "Road To Royalty",
-        "123": "WNBA Origins"
+    },
+    "Series 4": {
+      "count": 16,
+      "tiers": {
+        "Common": {
+          "72": "WNBA Archive Set 2008",
+          "73": "WNBA Base Set",
+          "111": "WNBA 2023"
+        },
+        "Fandom": {
+          "70": "Rise With Us",
+          "77": "Shining Stars",
+          "78": "For the Cup",
+          "80": "Chasing the Trophy",
+          "107": "Rise With Us 2023"
+        },
+        "Rare": {
+          "71": "WNBA Run It Back 2008",
+          "79": "WNBA Metallic Gold LE",
+          "81": "WNBA Game Recognize Game",
+          "89": "WNBA Squad Goals",
+          "112": "WNBA Metallic Gold LE 2023"
+        },
+        "Legendary": {
+          "96": "In Their Bag",
+          "122": "Road To Royalty",
+          "123": "WNBA Origins"
+        }
       }
     }
   }
-}
 }

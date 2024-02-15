@@ -3,6 +3,7 @@ import discord
 from provider.topshot.cadence.flow_collections import get_account_plays
 from repository.vgn_users import get_user_new
 from service.common.profile.views import ProfileView, LINK_TS_ACCOUNT_MESSAGE
+from service.exchange.views import EXCHANGE_MESSAGE, ExchangeMainView
 from service.giveaway.views import GiveawayView
 from service.role.verify import verify_roles
 from vgnlog.channel_logger import ADMIN_LOGGER
@@ -31,9 +32,21 @@ class MainAccountButton(discord.ui.Button['Account']):
         await interaction.response.send_message(content=message, view=new_view, ephemeral=True, delete_after=600.0)
 
 
+class MainExchangeButton(discord.ui.Button['Exchange']):
+    def __init__(self):
+        super().__init__(style=discord.ButtonStyle.red, label="Enter NBA Top Shot Exchange", row=2)
+
+    async def callback(self, interaction: discord.Interaction):
+        assert self.view is not None
+        view: MainPage = self.view
+        message, new_view = view.enter_exchange(interaction.user)
+
+        await interaction.response.send_message(content=message, view=new_view, ephemeral=True, delete_after=600.0)
+
+
 class MainVerifyButton(discord.ui.Button['Verify']):
     def __init__(self):
-        super().__init__(style=discord.ButtonStyle.red, label="Verify NBA Top Shot Collection", row=2)
+        super().__init__(style=discord.ButtonStyle.gray, label="Verify NBA Top Shot Collection", row=4)
 
     async def callback(self, interaction: discord.Interaction):
         assert self.view is not None
@@ -53,6 +66,7 @@ class MainPage(discord.ui.View):
         self.add_item(MainGiveawayButton())
         if verify_on:
             self.add_item(MainVerifyButton())
+        self.add_item(MainExchangeButton())
         self.guilds = guilds
 
     def manage_giveaway(self, user_id):
@@ -61,6 +75,14 @@ class MainPage(discord.ui.View):
             return message, self
         else:
             return message, view
+
+    @staticmethod
+    def enter_exchange(d_user):
+        user, _ = get_user_new(d_user.id)
+        if user is None:
+            return LINK_TS_ACCOUNT_MESSAGE, ProfileView(d_user.id)
+
+        return EXCHANGE_MESSAGE, ExchangeMainView(user, d_user.name)
 
     async def verify_member(self, member: discord.Member):
         guild_id = member.guild.id

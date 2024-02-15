@@ -10,7 +10,7 @@ from constants import GameDateStatus
 from provider.nba.nba_provider import NBA_PROVIDER
 from service.fastbreak.dynamic_lineup import DYNAMIC_LINEUP_SERVICE
 from service.fastbreak.ranked.views import RankedMainPage
-from utils import get_the_past_week_with_offset
+from utils import get_the_past_week_with_offset, truncate_message
 from vgnlog.channel_logger import ADMIN_LOGGER
 
 # config bot
@@ -28,7 +28,9 @@ bot = commands.Bot(command_prefix='.fb.', intents=intents)
 ADMIN_CHANNEL_ID = 1097055938441130004
 
 FB_CHANNEL_IDS = [1195804395309367469]
+INJURY_THREAD_IDS = [1207292397927800852]
 FB_CHANNEL_MESSAGES = []
+INJURY_THREADS = []
 
 WELCOME_MESSAGE = "**Welcome to the B2B fastbreak contest!**\n" \
                   "1️⃣ *Link TS account.*\n" \
@@ -58,12 +60,16 @@ async def on_ready():
                 continue
 
             if channel.id in FB_CHANNEL_IDS:
+                for t in channel.threads:
+                    if t.id in INJURY_THREAD_IDS:
+                        INJURY_THREADS.append(t)
                 view = RankedMainPage(DYNAMIC_LINEUP_SERVICE)
                 message = await channel.send(WELCOME_MESSAGE, view=view)
                 FB_CHANNEL_MESSAGES.append(message)
 
     update_stats.start()
     refresh_entry.start()
+    injury_update.start()
 
 
 ############
@@ -125,6 +131,28 @@ async def refresh_entry():
         for message in FB_CHANNEL_MESSAGES:
             view = RankedMainPage(DYNAMIC_LINEUP_SERVICE)
             await message.edit(content=WELCOME_MESSAGE, view=view)
+
+
+@tasks.loop(minutes=5)
+async def injury_update():
+    global INJURY_THREADS
+    injury_changes = NBA_PROVIDER.update_injury()
+    injury_updates = ""
+    messages = []
+    for player_name in injury_changes:
+        change = injury_changes[player_name]
+        new_message = f"**{player_name}** updated from " \
+                      f"**[{NBA_PROVIDER.format_injury(change['from'])}]** to " \
+                      f"**[{NBA_PROVIDER.format_injury(change['to'])}]**\n"
+        injury_updates, _ = truncate_message(messages, injury_updates, new_message, 1950)
+
+    if injury_updates != "":
+        messages.append(injury_updates)
+
+    if len(messages) > 0:
+        for thread in INJURY_THREADS:
+            for msg in messages:
+                await thread.send(msg)
 
 
 # start the bot

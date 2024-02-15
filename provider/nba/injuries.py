@@ -10,7 +10,7 @@ cbs_url = "https://www.cbssports.com/nba/injuries/"
 def load_injuries():
     response = requests.get(cbs_url, headers={"Connection": "keep-alive", "Accept": "*/*", "User-Agent": "PostmanRuntime/7.34.0"})
     time.sleep(1)
-    soup = BeautifulSoup(response.content)
+    soup = BeautifulSoup(response.content, features="html.parser")
     # cbs teams
     teams = soup.find_all(class_='TableBase')
 
@@ -26,7 +26,7 @@ def load_injuries():
             result[player_name] = status
 
     response = requests.get(espn_url, headers={"Connection": "keep-alive", "Accept": "*/*", "User-Agent": "PostmanRuntime/7.34.0"})
-    soup = BeautifulSoup(response.content)
+    soup = BeautifulSoup(response.content, features="html.parser")
     # espn teams
     records = soup.find_all(class_='Table__TBODY')
     for team in records:
