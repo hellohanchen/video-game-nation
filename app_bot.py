@@ -9,6 +9,7 @@ from dotenv import load_dotenv
 from app import MainPage
 from repository.discord_roles import get_role_verifications
 from repository.ts_giveaways import add_giveaway_access
+from service.exchange.listing import LISTING_SERVICE
 from utils import has_giveaway_permissions
 from vgnlog.channel_logger import ADMIN_LOGGER
 from service.giveaway.giveaway import GIVEAWAY_SERVICE
@@ -29,12 +30,15 @@ ADMIN_CHANNEL_ID = 1097055938441130004
 MAIN_CHANNELS = ["👋-verify"]
 MAIN_CHANNEL_MESSAGES = []
 
+TRADE_CHANNEL_IDS = [1207541055243816960]
+
 GUILDS = {}
 
-WELCOME_MESSAGE = "**Video Game Nation Portal**\n\n" \
+WELCOME_MESSAGE = "**Video Game Nation Portal (ALPHA)**\n\n" \
                   "Welcome! Video Game Nation is a sub-community of NBA Top Shot that has been dedicated to " \
                   "connect Web3 communities with gamification and automation services.\n\n" \
                   "**Link NBA Top Shot Account** to connect your discord account with ts account.\n" \
+                  "**Enter NBA Top Shot Exchange** to post listings for exchange/trade.\n" \
                   "**Verify NBA Top Shot Collection** to get roles and access to games, giveaways and other events." \
 
 
@@ -50,6 +54,7 @@ async def on_ready():
             }
 
     verify_rules, _ = get_role_verifications(list(GUILDS.keys()))
+    trade_channels = []
     for gid in GUILDS:
         guild = GUILDS[gid]['guild']
         bot_member = guild.me
@@ -78,6 +83,8 @@ async def on_ready():
                 view = MainPage(GUILDS)
                 message = await channel.send(WELCOME_MESSAGE, view=view)
                 MAIN_CHANNEL_MESSAGES.append(message)
+            if channel.id in TRADE_CHANNEL_IDS:
+                trade_channels.append(channel)
 
             permissions = channel.permissions_for(bot_member)
             if not has_giveaway_permissions(permissions):
@@ -86,6 +93,7 @@ async def on_ready():
             GUILDS[gid]['channels'][channel.id] = channel
 
     await GIVEAWAY_SERVICE.load_from_guilds(GUILDS)
+    LISTING_SERVICE.set_channels(trade_channels)
     refresh_entry.start()
     refresh_giveaways.start()
 

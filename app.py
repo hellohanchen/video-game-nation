@@ -3,6 +3,7 @@ import discord
 from provider.topshot.cadence.flow_collections import get_account_plays
 from repository.vgn_users import get_user_new
 from service.common.profile.views import ProfileView, LINK_TS_ACCOUNT_MESSAGE
+from service.exchange.listing import LISTING_SERVICE
 from service.exchange.views import EXCHANGE_MESSAGE, ExchangeMainView
 from service.giveaway.views import GiveawayView
 from service.role.verify import verify_roles
@@ -82,7 +83,7 @@ class MainPage(discord.ui.View):
         if user is None:
             return LINK_TS_ACCOUNT_MESSAGE, ProfileView(d_user.id)
 
-        return EXCHANGE_MESSAGE, ExchangeMainView(user, d_user.name)
+        return EXCHANGE_MESSAGE, ExchangeMainView(LISTING_SERVICE, user, d_user.name)
 
     async def verify_member(self, member: discord.Member):
         guild_id = member.guild.id
