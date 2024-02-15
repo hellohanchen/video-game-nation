@@ -200,6 +200,7 @@ class ListingService:
             if err is not None:
                 await ADMIN_LOGGER.error(f"Listing:Update:{err}")
                 return False, f"Failed to post listing: {err}"
+            listing.updated_at = datetime.datetime.utcnow()
 
             i = 0
             old_listing = listing
@@ -213,7 +214,7 @@ class ListingService:
             self.remove_from_sets(old_listing)
             self.add_to_sets(listing)
 
-            diff = datetime.datetime.utcnow() - old_listing.updated_at
+            diff = listing.updated_at - old_listing.updated_at
             if diff.seconds > 1800:  # allow repost every half hour
                 for channel in self.channels:
                     try:
