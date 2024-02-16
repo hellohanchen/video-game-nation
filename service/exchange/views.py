@@ -207,14 +207,8 @@ class SearchLookingForView(AbstractExchangeSelectSetView):
 
     async def select_set(self, sid, interaction):
         self.set_id = int(sid)
-        listings = []
-        if self.set_id in self.service.lf_sets:
-            for lid in self.service.lf_sets[self.set_id]:
-                li = self.service.lf_sets[self.set_id][lid]
-                if li.user_id != self.user_id:
-                    listings.append(li)
-
-        new_view = ListingsView(self.service, self.user, self.d_username, listings)
+        new_view = ListingsView(
+            self.service, self.user, self.d_username, self.service.search_lf_set(self.user_id, self.set_id))
         await interaction.response.edit_message(content=new_view.message, view=new_view)
 
 
@@ -224,14 +218,8 @@ class SearchForTradeView(AbstractExchangeSelectSetView):
 
     async def select_set(self, sid, interaction):
         self.set_id = int(sid)
-        listings = []
-        if self.set_id in self.service.ft_sets:
-            for lid in self.service.ft_sets[self.set_id]:
-                li = self.service.ft_sets[self.set_id][lid]
-                if li.user_id != self.user_id:
-                    listings.append(li)
-
-        new_view = ListingsView(self.service, self.user, self.d_username, listings)
+        new_view = ListingsView(
+            self.service, self.user, self.d_username, self.service.search_ft_set(self.user_id, self.set_id))
         await interaction.response.edit_message(content=new_view.message, view=new_view)
 
 
@@ -334,9 +322,9 @@ class ExchangeMainView(BaseExchangeView):
         return view.message, view
 
 
-class ExchangeListingLookingForButton(discord.ui.Button['ListingLF']):
+class DetailEditLFButton(discord.ui.Button['EditLF']):
     def __init__(self):
-        super().__init__(style=discord.ButtonStyle.blurple, label="Edit Looking For (LF)", row=0)
+        super().__init__(style=discord.ButtonStyle.blurple, label="Edit LF", row=0)
 
     async def callback(self, interaction: discord.Interaction):
         assert self.view is not None
@@ -346,9 +334,9 @@ class ExchangeListingLookingForButton(discord.ui.Button['ListingLF']):
         await interaction.response.edit_message(content=message, view=new_view)
 
 
-class ExchangeListingForTradeButton(discord.ui.Button['ListingFT']):
+class DetailEditFTButton(discord.ui.Button['EditFT']):
     def __init__(self):
-        super().__init__(style=discord.ButtonStyle.blurple, label="Edit For Trade (FT)", row=1)
+        super().__init__(style=discord.ButtonStyle.blurple, label="Edit FT", row=0)
 
     async def callback(self, interaction: discord.Interaction):
         assert self.view is not None
@@ -358,9 +346,9 @@ class ExchangeListingForTradeButton(discord.ui.Button['ListingFT']):
         await interaction.response.edit_message(content=message, view=new_view)
 
 
-class ExchangeListingInfoButton(discord.ui.Button['ListingInfo']):
+class DetailEditNoteButton(discord.ui.Button['EditNote']):
     def __init__(self):
-        super().__init__(style=discord.ButtonStyle.blurple, label="Edit Note", row=2)
+        super().__init__(style=discord.ButtonStyle.blurple, label="Edit Note", row=0)
 
     async def callback(self, interaction: discord.Interaction):
         assert self.view is not None
@@ -368,7 +356,7 @@ class ExchangeListingInfoButton(discord.ui.Button['ListingInfo']):
         await interaction.response.send_modal(view.edit_info())
 
 
-class ExchangeListingPostButton(discord.ui.Button['ListingPost']):
+class DetailPostButton(discord.ui.Button['DetailPost']):
     def __init__(self):
         super().__init__(style=discord.ButtonStyle.green, label="Post", row=4)
 
@@ -379,13 +367,36 @@ class ExchangeListingPostButton(discord.ui.Button['ListingPost']):
         await interaction.response.edit_message(content=f"{view.message}\nPosting in progress...\n", view=view)
         followup = interaction.followup
 
-        message, new_view = await view.post()
+        message, new_view = await view.post(
+            "DM" if isinstance(interaction.channel, discord.channel.DMChannel) else interaction.guild.name)
         await followup.edit_message(interaction.message.id, content=message, view=new_view)
 
 
-class ExchangeListingCheckListingsButton(discord.ui.Button['ListingCheckListings']):
+class DetailSearchLFButton(discord.ui.Button['SearchLF']):
     def __init__(self):
-        super().__init__(style=discord.ButtonStyle.gray, label="User's All Listings", row=3)
+        super().__init__(style=discord.ButtonStyle.green, label="Search LF", row=2)
+
+    async def callback(self, interaction: discord.Interaction):
+        assert self.view is not None
+        view: ListingDetailView = self.view
+        message, new_view = view.search_lf()
+        await interaction.response.edit_message(content=message, view=new_view)
+
+
+class DetailSearchFTButton(discord.ui.Button['SearchFT']):
+    def __init__(self):
+        super().__init__(style=discord.ButtonStyle.green, label="Search FT", row=2)
+
+    async def callback(self, interaction: discord.Interaction):
+        assert self.view is not None
+        view: ListingDetailView = self.view
+        message, new_view = view.search_ft()
+        await interaction.response.edit_message(content=message, view=new_view)
+
+
+class DetailGetAllListingsButton(discord.ui.Button['GetAllListings']):
+    def __init__(self, username):
+        super().__init__(style=discord.ButtonStyle.gray, label=f"{username} listings", row=3)
 
     async def callback(self, interaction: discord.Interaction):
         assert self.view is not None
@@ -402,16 +413,20 @@ class ListingDetailView(BaseExchangeView):
         self.__update_message()
 
         if user['id'] == listing.user_id:
-            self.add_item(ExchangeListingLookingForButton())
-            self.add_item(ExchangeListingForTradeButton())
-            self.add_item(ExchangeListingInfoButton())
-            self.add_item(ExchangeListingPostButton())
+            self.add_item(DetailEditLFButton())
+            self.add_item(DetailEditFTButton())
+            self.add_item(DetailEditNoteButton())
+            self.add_item(DetailPostButton())
             if listing.id != INVALID_ID:
-                self.add_item(ExchangeListingCheckListingsButton())
+                self.add_item(DetailGetAllListingsButton(self.listing.d_username))
+                if listing.lf_set_id != INVALID_ID:
+                    self.add_item(DetailSearchLFButton())
+                if listing.ft_set_id != INVALID_ID:
+                    self.add_item(DetailSearchFTButton())
         else:
             self.message += f"\nCompare: " \
                             f"<https://tsgo.app/compare/{self.user['topshot_username']}+{self.listing.ts_username}>"
-            self.add_item(ExchangeListingCheckListingsButton())
+            self.add_item(DetailGetAllListingsButton(self.listing.d_username))
 
         self.add_item(ExchangeMenuButton(4))
 
@@ -428,6 +443,16 @@ class ListingDetailView(BaseExchangeView):
         view = ForTradeSetView(self.service, self.user, self.d_username, self.listing.copy())
         return view.message, view
 
+    def search_lf(self):
+        view = ListingsView(
+            self.service, self.user, self.d_username, self.service.search_ft_set(self.user_id, self.listing.lf_set_id))
+        return view.message, view
+
+    def search_ft(self):
+        view = ListingsView(
+            self.service, self.user, self.d_username, self.service.search_lf_set(self.user_id, self.listing.ft_set_id))
+        return view.message, view
+
     def edit_info(self):
         return AddInfoModal(self)
 
@@ -436,11 +461,15 @@ class ListingDetailView(BaseExchangeView):
         self.__update_message()
         return self.message, self
 
-    async def post(self):
+    async def post(self, source):
         is_first_post = self.listing.id == INVALID_ID
-        posted, msg = await self.service.post(self.listing)
+        posted, msg = await self.service.post(self.listing, source)
         if posted and is_first_post:
-            self.add_item(ExchangeListingCheckListingsButton())
+            self.add_item(DetailGetAllListingsButton(self.listing.d_username))
+            if self.listing.lf_set_id != INVALID_ID:
+                self.add_item(DetailSearchLFButton())
+            if self.listing.ft_set_id != INVALID_ID:
+                self.add_item(DetailSearchFTButton())
 
         return self.message + f"\n{msg}", self
 

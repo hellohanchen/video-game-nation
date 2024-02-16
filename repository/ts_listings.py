@@ -47,7 +47,7 @@ def update_listing(lid, lf_sid, lf_info, ft_sid, ft_info, note):
     try:
         db_conn = CNX_POOL.get_connection()
         cursor = db_conn.cursor()
-        query = f"UPDATE vgn.ts_listings SET lf_set_id = %s, lf_info = ''%s, " \
+        query = f"UPDATE vgn.ts_listings SET lf_set_id = %s, lf_info = %s, " \
                 f"ft_set_id = %s, ft_info = %s, note = %s, updated_at = NOW() " \
                 f"WHERE id = %s"
         cursor.execute(query, (lf_sid, lf_info, ft_sid, ft_info, note, lid))

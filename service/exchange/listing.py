@@ -105,12 +105,12 @@ class Listing:
 
         return message
 
-    def to_post(self, channel):
+    def to_post(self, channel, source: str):
         member = discord.utils.find(lambda m: self.user_id == m.id, channel.members)
         if member is not None:
-            message = f"<@{self.user_id}> (ts@{self.ts_username}) posted a new exchange message:\n"
+            message = f"<@{self.user_id}> (ts@{self.ts_username}) posted from *{source}*:\n"
         else:
-            message = f"{self.d_username} (ts@{self.ts_username}) posted a new exchange message:\n"
+            message = f"{self.d_username} (ts@{self.ts_username}) posted from *{source}*:\n"
         if self.lf_set_id != INVALID_ID:
             message += f"**LF: {EXCHANGE_SET_NAMES[self.lf_set_id]}**"
             if len(self.lf_info) > 0:
@@ -164,7 +164,7 @@ class ListingService:
 
         return f"Listing:Reload:{err}"
 
-    async def post(self, listing: Listing):
+    async def post(self, listing: Listing, source: str):
         lid = listing.id
         if lid == INVALID_ID:
             uid, d_username, ts_username, lf_sid, lf_info, ft_sid, ft_info, note = listing.to_db()
@@ -188,7 +188,7 @@ class ListingService:
 
             for channel in self.channels:
                 try:
-                    await channel.send(listing.to_post(channel))
+                    await channel.send(listing.to_post(channel, source))
                 except Exception as err:
                     await ADMIN_LOGGER.error(f"Listing:PostNew:{err}")
 
@@ -255,6 +255,26 @@ class ListingService:
             if li.ft_set_id not in ft_sets:
                 ft_sets[li.ft_set_id] = {}
             ft_sets[li.ft_set_id][lid] = li
+
+    def search_lf_set(self, searcher_id, sid):
+        listings = []
+        if sid in self.lf_sets:
+            for lid in self.lf_sets[sid]:
+                li = self.lf_sets[sid][lid]
+                if li.user_id != searcher_id:
+                    listings.append(li)
+
+        return listings
+
+    def search_ft_set(self, searcher_id, sid):
+        listings = []
+        if sid in self.ft_sets:
+            for lid in self.ft_sets[sid]:
+                li = self.ft_sets[sid][lid]
+                if li.user_id != searcher_id:
+                    listings.append(li)
+
+        return listings
 
 
 LISTING_SERVICE = ListingService()
