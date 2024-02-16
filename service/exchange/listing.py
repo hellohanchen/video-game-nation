@@ -218,7 +218,7 @@ class ListingService:
                 listing.updated_at = datetime.datetime.utcnow()
                 for channel in self.channels:
                     try:
-                        await channel.send(listing.to_post(channel))
+                        await channel.send(listing.to_post(channel, source))
                     except Exception as err:
                         await ADMIN_LOGGER.error(f"Listing:RePost:{err}")
 
