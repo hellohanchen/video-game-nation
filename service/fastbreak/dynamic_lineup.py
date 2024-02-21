@@ -99,10 +99,11 @@ class Lineup:
             return "Player index should be between [1, {}]".format(len(self.service.player_ids))
 
         player_id = self.service.player_ids[player_idx - 1]
+        player_name = self.service.players[player_id]['full_name']
         if player_id in self.player_ids:
-            return f"Player **{self.service.players[player_id]['full_name']}** is already in the lineup."
+            return f"Player **{player_name}** is already in the lineup."
         if self.is_player_game_started(player_id):
-            return f"Player **{self.service.players[player_id]['full_name']}** is in a started game."
+            return f"Player **{player_name}** is in a started game."
 
         message = ""
 
@@ -116,7 +117,7 @@ class Lineup:
              self.player_ids[3], self.player_ids[4], self.player_ids[5], self.player_ids[6], self.player_ids[7])
         )
         if err is None:
-            message += f"Added **{self.service.players[self.player_ids[pos_idx]]['full_name']}**"
+            message += f"Added **{player_name}**"
             if self.is_ranked:
                 if is_ranked:
                     message += "\nClick **Submit** to save your changes."
@@ -131,7 +132,11 @@ class Lineup:
             return message
         else:
             self.player_ids[pos_idx] = player_to_remove
-            return "Failed to update lineup, please retry."
+
+            if err == "player is used":
+                return f"Each player can only be used once in B2B Fastbreak contest: {player_name}"
+
+            return f"Failed to update lineup: {err}"
 
     def remove_player(self, pos_idx: int, is_ranked: bool = False) -> str:
         if self.is_ranked and not is_ranked:
