@@ -28,7 +28,9 @@ bot = commands.Bot(command_prefix='.fb.', intents=intents)
 ADMIN_CHANNEL_ID = 1097055938441130004
 
 FB_CHANNEL_IDS = [1195804395309367469]
+B2B_GUILD_ID = 718491088142204998
 INJURY_THREAD_IDS = [1207292397927800852]
+B2B_GUILD: None | discord.Guild = None
 FB_CHANNEL_MESSAGES = []
 INJURY_THREADS = []
 
@@ -51,6 +53,9 @@ REFRESH_COUNT = 0
 @bot.event
 async def on_ready():
     for guild in bot.guilds:
+        if guild == B2B_GUILD_ID:
+            global B2B_GUILD
+            B2B_GUILD = guild
         for channel in guild.channels:
             if channel.type != discord.ChannelType.text:
                 continue
@@ -98,12 +103,30 @@ async def update_stats():
     new_status = DYNAMIC_LINEUP_SERVICE.status
 
     if init_status == GameDateStatus.POST_GAME and new_status != init_status:
-        dates = get_the_past_week_with_offset(init_date, 4)
-        weekly_lb = DYNAMIC_LINEUP_SERVICE.formatted_weekly_leaderboard(dates, 20)
+        b2b_contest_dates = ['02/22/2024', '02/23/2024', '02/24/2024', '02/25/2024', '02/26/2024', '02/27/2024', '02/28/2024', '02/29/2024']
+        if init_date in b2b_contest_dates:
+            dates = b2b_contest_dates
+        else:
+            dates = get_the_past_week_with_offset(init_date, 4)
+        winners, weekly_lb = DYNAMIC_LINEUP_SERVICE.formatted_weekly_leaderboard(dates, 20)
 
         for message in FB_CHANNEL_MESSAGES:
             await message.channel.send(init_lb)
             await message.channel.send(weekly_lb)
+
+        if init_date == '02/29/2024' or len(dates) == 7:
+            if B2B_GUILD is not None:
+                winner_role = B2B_GUILD.get_role(1194158354608697465)
+                if winner_role is None:
+                    await ADMIN_LOGGER.warn("FBR:WinnerRole:not found")
+                    return
+
+                for user in winners:
+                    member = B2B_GUILD.get_member(user['user_id'])
+                    if member is not None:
+                        await member.add_roles(winner_role)
+            else:
+                await ADMIN_LOGGER.warn("FBR:B2BGuild:not found")
 
 
 @tasks.loop(minutes=2)

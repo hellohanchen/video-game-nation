@@ -559,7 +559,7 @@ class DynamicLineupService(AbstractDynamicLineupService):
             else:
                 message += "\n"
 
-        return message
+        return loaded[:10], message
 
     def formatted_team_players(self, team) -> str:
         if team not in self.formatted_teams:

@@ -140,7 +140,7 @@ def upsert_score(user_id, game_date, score, passed):
 def get_weekly_ranks(game_dates, count):
     try:
         db_conn = CNX_POOL.get_connection()
-        query = "SELECT u.topshot_username as username, SUM(IF(l.is_passed, 1, 0)) as wins, " \
+        query = "SELECT u.topshot_username as username, u.id as user_id, SUM(IF(l.is_passed, 1, 0)) as wins, " \
                 "SUM(l.score) * IF(COUNT(*) = {}, 1.1, 1) as total_score, COUNT(*) = {} AS all_checked_in FROM " \
                 "(SELECT * FROM vgn.fb_lineups WHERE game_date IN ({}) AND is_ranked = TRUE) l " \
                 "JOIN vgn.users u ON l.user_id = u.id " \
