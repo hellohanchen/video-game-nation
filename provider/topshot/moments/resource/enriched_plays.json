@@ -54,8 +54,1582 @@
     4221,
     4234
   ],
-  "count": 5228,
+  "count": 5312,
   "plays": {
+    "4887": [
+      {
+        "id": "26235897-c2f6-4b40-838f-82418925cfae",
+        "flowId": 4887,
+        "set": "Crunch Time",
+        "setId": "e3d72423-f9ea-42d1-8ae5-775b5082b7c5",
+        "setFlowId": 137,
+        "playerId": 1630170,
+        "playerName": "Devin Vassell",
+        "team": "San Antonio Spurs",
+        "teamAtMoment": "San Antonio Spurs",
+        "playType": "Jump Shot",
+        "date": "2024-01-05",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4886": [
+      {
+        "id": "8fec4383-ed90-4ee7-9ca2-716db82c90ed",
+        "flowId": 4886,
+        "set": "Crunch Time",
+        "setId": "e3d72423-f9ea-42d1-8ae5-775b5082b7c5",
+        "setFlowId": 137,
+        "playerId": 203924,
+        "playerName": "Jerami Grant",
+        "team": "Portland Trail Blazers",
+        "teamAtMoment": "Portland Trail Blazers",
+        "playType": "3 Pointer",
+        "date": "2024-01-25",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4885": [
+      {
+        "id": "38b56ad5-c197-4819-a3ea-b2ff95154e07",
+        "flowId": 4885,
+        "set": "Crunch Time",
+        "setId": "e3d72423-f9ea-42d1-8ae5-775b5082b7c5",
+        "setFlowId": 137,
+        "playerId": 1629627,
+        "playerName": "Zion Williamson",
+        "team": "New Orleans Pelicans",
+        "teamAtMoment": "New Orleans Pelicans",
+        "playType": "Jump Shot",
+        "date": "2023-11-18",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4884": [
+      {
+        "id": "11d59acf-737f-4a3e-8e33-d83d8650d60a",
+        "flowId": 4884,
+        "set": "Crunch Time",
+        "setId": "e3d72423-f9ea-42d1-8ae5-775b5082b7c5",
+        "setFlowId": 137,
+        "playerId": 1626156,
+        "playerName": "D'Angelo Russell",
+        "team": "Los Angeles Lakers",
+        "teamAtMoment": "Los Angeles Lakers",
+        "playType": "3 Pointer",
+        "date": "2024-01-28",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4883": [
+      {
+        "id": "e18f745d-071f-45bd-aaa8-0672c4e754ca",
+        "flowId": 4883,
+        "set": "Crunch Time",
+        "setId": "e3d72423-f9ea-42d1-8ae5-775b5082b7c5",
+        "setFlowId": 137,
+        "playerId": 202695,
+        "playerName": "Kawhi Leonard",
+        "team": "LA Clippers",
+        "teamAtMoment": "LA Clippers",
+        "playType": "Block",
+        "date": "2024-01-17",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4882": [
+      {
+        "id": "9a093ad7-97c1-48b7-91ff-673261645395",
+        "flowId": 4882,
+        "set": "Crunch Time",
+        "setId": "e3d72423-f9ea-42d1-8ae5-775b5082b7c5",
+        "setFlowId": 137,
+        "playerId": 1630169,
+        "playerName": "Tyrese Haliburton",
+        "team": "Indiana Pacers",
+        "teamAtMoment": "Indiana Pacers",
+        "playType": "3 Pointer",
+        "date": "2023-12-07",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4881": [
+      {
+        "id": "1abfa240-f997-4d8b-807e-83074a108f28",
+        "flowId": 4881,
+        "set": "Crunch Time",
+        "setId": "e3d72423-f9ea-42d1-8ae5-775b5082b7c5",
+        "setFlowId": 137,
+        "playerId": 201942,
+        "playerName": "DeMar DeRozan",
+        "team": "Chicago Bulls",
+        "teamAtMoment": "Chicago Bulls",
+        "playType": "Jump Shot",
+        "date": "2023-12-12",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4880": [
+      {
+        "id": "0146d2fe-e6fa-4ba3-b279-237890265c64",
+        "flowId": 4880,
+        "set": "Crunch Time",
+        "setId": "e3d72423-f9ea-42d1-8ae5-775b5082b7c5",
+        "setFlowId": 137,
+        "playerId": 1630163,
+        "playerName": "LaMelo Ball",
+        "team": "Charlotte Hornets",
+        "teamAtMoment": "Charlotte Hornets",
+        "playType": "Layup",
+        "date": "2023-11-21",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4879": [
+      {
+        "id": "8b371bbd-bf4f-4f83-9607-81425ea978c0",
+        "flowId": 4879,
+        "set": "Crunch Time",
+        "setId": "e3d72423-f9ea-42d1-8ae5-775b5082b7c5",
+        "setFlowId": 137,
+        "playerId": 1628369,
+        "playerName": "Jayson Tatum",
+        "team": "Boston Celtics",
+        "teamAtMoment": "Boston Celtics",
+        "playType": "Block",
+        "date": "2024-01-31",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4878": [
+      {
+        "id": "122e6a45-6963-4a79-942f-aace5aa3ab29",
+        "flowId": 4878,
+        "set": "Crunch Time",
+        "setId": "e3d72423-f9ea-42d1-8ae5-775b5082b7c5",
+        "setFlowId": 137,
+        "playerId": 1630552,
+        "playerName": "Jalen Johnson",
+        "team": "Atlanta Hawks",
+        "teamAtMoment": "Atlanta Hawks",
+        "playType": "3 Pointer",
+        "date": "2024-01-11",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4877": [
+      {
+        "id": "897773f4-6f3c-4e7c-aec7-30aef22b40fa",
+        "flowId": 4877,
+        "set": "Holo Icon",
+        "setId": "5f422f6c-fd11-4338-91e0-b9bbcb878583",
+        "setFlowId": 131,
+        "playerId": 1628374,
+        "playerName": "Lauri Markkanen",
+        "team": "Utah Jazz",
+        "teamAtMoment": "Utah Jazz",
+        "playType": "3 Pointer",
+        "date": "2024-01-04",
+        "series": 5,
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "4876": [
+      {
+        "id": "c28c1a0b-e206-4f47-b7bc-38ee34d103df",
+        "flowId": 4876,
+        "set": "Holo Icon",
+        "setId": "5f422f6c-fd11-4338-91e0-b9bbcb878583",
+        "setFlowId": 131,
+        "playerId": 1630567,
+        "playerName": "Scottie Barnes",
+        "team": "Toronto Raptors",
+        "teamAtMoment": "Toronto Raptors",
+        "playType": "Layup",
+        "date": "2023-12-14",
+        "series": 5,
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "4875": [
+      {
+        "id": "f380827e-d668-4e4e-a030-4d5687cdf039",
+        "flowId": 4875,
+        "set": "Holo Icon",
+        "setId": "5f422f6c-fd11-4338-91e0-b9bbcb878583",
+        "setFlowId": 131,
+        "playerId": 201142,
+        "playerName": "Kevin Durant",
+        "team": "Phoenix Suns",
+        "teamAtMoment": "Phoenix Suns",
+        "playType": "Jump Shot",
+        "date": "2024-01-23",
+        "series": 5,
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "4874": [
+      {
+        "id": "ec8c75ed-bd21-43f4-8b83-dd7df0417cb8",
+        "flowId": 4874,
+        "set": "Holo Icon",
+        "setId": "5f422f6c-fd11-4338-91e0-b9bbcb878583",
+        "setFlowId": 131,
+        "playerId": 203954,
+        "playerName": "Joel Embiid",
+        "team": "Philadelphia 76ers",
+        "teamAtMoment": "Philadelphia 76ers",
+        "playType": "Layup",
+        "date": "2024-01-23",
+        "series": 5,
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "4873": [
+      {
+        "id": "62ef8355-08f8-4fa9-b1a0-427331a15095",
+        "flowId": 4873,
+        "set": "Holo Icon",
+        "setId": "5f422f6c-fd11-4338-91e0-b9bbcb878583",
+        "setFlowId": 131,
+        "playerId": 1631094,
+        "playerName": "Paolo Banchero",
+        "team": "Orlando Magic",
+        "teamAtMoment": "Orlando Magic",
+        "playType": "Jump Shot",
+        "date": "2023-11-16",
+        "series": 5,
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "4872": [
+      {
+        "id": "0af81556-2fd1-40af-a23d-a7287087c407",
+        "flowId": 4872,
+        "set": "Holo Icon",
+        "setId": "5f422f6c-fd11-4338-91e0-b9bbcb878583",
+        "setFlowId": 131,
+        "playerId": 1631114,
+        "playerName": "Jalen Williams",
+        "team": "Oklahoma City Thunder",
+        "teamAtMoment": "Oklahoma City Thunder",
+        "playType": "Jump Shot",
+        "date": "2024-01-24",
+        "series": 5,
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "4871": [
+      {
+        "id": "5123fc9d-7c9f-4814-bd96-fafe6e9be5a4",
+        "flowId": 4871,
+        "set": "Holo Icon",
+        "setId": "5f422f6c-fd11-4338-91e0-b9bbcb878583",
+        "setFlowId": 131,
+        "playerId": 203944,
+        "playerName": "Julius Randle",
+        "team": "New York Knicks",
+        "teamAtMoment": "New York Knicks",
+        "playType": "Dunk",
+        "date": "2024-01-24",
+        "series": 5,
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "4870": [
+      {
+        "id": "ed98bd59-8d50-48ba-9928-b59e2997c732",
+        "flowId": 4870,
+        "set": "Holo Icon",
+        "setId": "5f422f6c-fd11-4338-91e0-b9bbcb878583",
+        "setFlowId": 131,
+        "playerId": 1628973,
+        "playerName": "Jalen Brunson",
+        "team": "New York Knicks",
+        "teamAtMoment": "New York Knicks",
+        "playType": "3 Pointer",
+        "date": "2023-12-16",
+        "series": 5,
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "4869": [
+      {
+        "id": "29d62bba-b7fc-47bd-87b7-6cc3e0281d38",
+        "flowId": 4869,
+        "set": "Holo Icon",
+        "setId": "5f422f6c-fd11-4338-91e0-b9bbcb878583",
+        "setFlowId": 131,
+        "playerId": 203497,
+        "playerName": "Rudy Gobert",
+        "team": "Minnesota Timberwolves",
+        "teamAtMoment": "Minnesota Timberwolves",
+        "playType": "Dunk",
+        "date": "2024-02-13",
+        "series": 5,
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "4868": [
+      {
+        "id": "dbcad22e-5bb0-4944-b839-74ed113c34f6",
+        "flowId": 4868,
+        "set": "Holo Icon",
+        "setId": "5f422f6c-fd11-4338-91e0-b9bbcb878583",
+        "setFlowId": 131,
+        "playerId": 203081,
+        "playerName": "Damian Lillard",
+        "team": "Milwaukee Bucks",
+        "teamAtMoment": "Milwaukee Bucks",
+        "playType": "Dunk",
+        "date": "2024-02-01",
+        "series": 5,
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "4867": [
+      {
+        "id": "d1603b3f-252a-4f93-9a35-ce24e5dc05be",
+        "flowId": 4867,
+        "set": "Holo Icon",
+        "setId": "5f422f6c-fd11-4338-91e0-b9bbcb878583",
+        "setFlowId": 131,
+        "playerId": 1628389,
+        "playerName": "Bam Adebayo",
+        "team": "Miami Heat",
+        "teamAtMoment": "Miami Heat",
+        "playType": "Dunk",
+        "date": "2023-11-17",
+        "series": 5,
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "4866": [
+      {
+        "id": "3180f97d-fbb3-49dc-9d4d-20d65dd9b85d",
+        "flowId": 4866,
+        "set": "Holo Icon",
+        "setId": "5f422f6c-fd11-4338-91e0-b9bbcb878583",
+        "setFlowId": 131,
+        "playerId": 1628991,
+        "playerName": "Jaren Jackson Jr.",
+        "team": "Memphis Grizzlies",
+        "teamAtMoment": "Memphis Grizzlies",
+        "playType": "Dunk",
+        "date": "2024-01-19",
+        "series": 5,
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "4865": [
+      {
+        "id": "aed56b06-deaa-4216-a071-bfff1c68c4dc",
+        "flowId": 4865,
+        "set": "Holo Icon",
+        "setId": "5f422f6c-fd11-4338-91e0-b9bbcb878583",
+        "setFlowId": 131,
+        "playerId": 201939,
+        "playerName": "Steph Curry",
+        "team": "Golden State Warriors",
+        "teamAtMoment": "Golden State Warriors",
+        "playType": "3 Pointer",
+        "date": "2024-02-11",
+        "series": 5,
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "4864": [
+      {
+        "id": "29d6a029-bdad-4ccf-8328-8d47ab9250c3",
+        "flowId": 4864,
+        "set": "Holo Icon",
+        "setId": "5f422f6c-fd11-4338-91e0-b9bbcb878583",
+        "setFlowId": 131,
+        "playerId": 203999,
+        "playerName": "Nikola Joki\u0107",
+        "team": "Denver Nuggets",
+        "teamAtMoment": "Denver Nuggets",
+        "playType": "3 Pointer",
+        "date": "2024-01-05",
+        "series": 5,
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "4863": [
+      {
+        "id": "ddc82d85-5a5e-4f15-a656-18208407f2a8",
+        "flowId": 4863,
+        "set": "Holo Icon",
+        "setId": "5f422f6c-fd11-4338-91e0-b9bbcb878583",
+        "setFlowId": 131,
+        "playerId": 202681,
+        "playerName": "Kyrie Irving",
+        "team": "Dallas Mavericks",
+        "teamAtMoment": "Dallas Mavericks",
+        "playType": "Dunk",
+        "date": "2024-02-07",
+        "series": 5,
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "4862": [
+      {
+        "id": "7c753d03-4077-4f21-b119-5e0c5aa6e1a0",
+        "flowId": 4862,
+        "set": "Holo Icon",
+        "setId": "5f422f6c-fd11-4338-91e0-b9bbcb878583",
+        "setFlowId": 131,
+        "playerId": 1629632,
+        "playerName": "Coby White",
+        "team": "Chicago Bulls",
+        "teamAtMoment": "Chicago Bulls",
+        "playType": "Dunk",
+        "date": "2024-02-01",
+        "series": 5,
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "4861": [
+      {
+        "id": "3533eec7-c8ad-46ae-980d-f1a8a374aa35",
+        "flowId": 4861,
+        "set": "Holo Icon",
+        "setId": "5f422f6c-fd11-4338-91e0-b9bbcb878583",
+        "setFlowId": 131,
+        "playerId": 1627759,
+        "playerName": "Jaylen Brown",
+        "team": "Boston Celtics",
+        "teamAtMoment": "Boston Celtics",
+        "playType": "Dunk",
+        "date": "2023-12-16",
+        "series": 5,
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "4860": [
+      {
+        "id": "18c2ef23-b747-493c-85fe-04e1f3379e71",
+        "flowId": 4860,
+        "set": "Holo Icon",
+        "setId": "5f422f6c-fd11-4338-91e0-b9bbcb878583",
+        "setFlowId": 131,
+        "playerId": 1628401,
+        "playerName": "Derrick White",
+        "team": "Boston Celtics",
+        "teamAtMoment": "Boston Celtics",
+        "playType": "Block",
+        "date": "2023-10-27",
+        "series": 5,
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "4859": [
+      {
+        "id": "1ac8bf85-ed69-4bcc-80c9-23de6bbb410d",
+        "flowId": 4859,
+        "set": "Holo Icon",
+        "setId": "5f422f6c-fd11-4338-91e0-b9bbcb878583",
+        "setFlowId": 131,
+        "playerId": 1629027,
+        "playerName": "Trae Young",
+        "team": "Atlanta Hawks",
+        "teamAtMoment": "Atlanta Hawks",
+        "playType": "Steal",
+        "date": "2024-02-03",
+        "series": 5,
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "4858": [
+      {
+        "id": "0fdfb01b-81d2-4c9b-b1bb-39bbbddcdf7b",
+        "flowId": 4858,
+        "set": "Holo Icon",
+        "setId": "5f422f6c-fd11-4338-91e0-b9bbcb878583",
+        "setFlowId": 131,
+        "playerId": 1627749,
+        "playerName": "Dejounte Murray",
+        "team": "Atlanta Hawks",
+        "teamAtMoment": "Atlanta Hawks",
+        "playType": "Jump Shot",
+        "date": "2024-01-18",
+        "series": 5,
+        "tier": "Legendary",
+        "badges": []
+      }
+    ],
+    "4857": [
+      {
+        "id": "c4e6f204-b52b-4947-b80e-d44091fc86ea",
+        "flowId": 4857,
+        "set": "Metallic Gold LE",
+        "setId": "1435ea5e-d16f-4622-8a27-58d7f6b62c81",
+        "setFlowId": 134,
+        "playerId": 1629012,
+        "playerName": "Collin Sexton",
+        "team": "Utah Jazz",
+        "teamAtMoment": "Utah Jazz",
+        "playType": "Dunk",
+        "date": "2024-01-19",
+        "series": 5,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4856": [
+      {
+        "id": "fb978b0e-b557-4feb-9cfb-ac3463b7916c",
+        "flowId": 4856,
+        "set": "Metallic Gold LE",
+        "setId": "1435ea5e-d16f-4622-8a27-58d7f6b62c81",
+        "setFlowId": 134,
+        "playerId": 1631110,
+        "playerName": "Jeremy Sochan",
+        "team": "San Antonio Spurs",
+        "teamAtMoment": "San Antonio Spurs",
+        "playType": "Dunk",
+        "date": "2024-02-01",
+        "series": 5,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4855": [
+      {
+        "id": "bb046e59-1c85-46fe-a582-c96c75da9421",
+        "flowId": 4855,
+        "set": "Metallic Gold LE",
+        "setId": "1435ea5e-d16f-4622-8a27-58d7f6b62c81",
+        "setFlowId": 134,
+        "playerId": 202699,
+        "playerName": "Tobias Harris",
+        "team": "Philadelphia 76ers",
+        "teamAtMoment": "Philadelphia 76ers",
+        "playType": "Dunk",
+        "date": "2024-01-13",
+        "series": 5,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4854": [
+      {
+        "id": "ee2d3541-8347-4f6d-85fd-eeb8224f9c1f",
+        "flowId": 4854,
+        "set": "Metallic Gold LE",
+        "setId": "1435ea5e-d16f-4622-8a27-58d7f6b62c81",
+        "setFlowId": 134,
+        "playerId": 1630162,
+        "playerName": "Anthony Edwards",
+        "team": "Minnesota Timberwolves",
+        "teamAtMoment": "Minnesota Timberwolves",
+        "playType": "Dunk",
+        "date": "2024-01-19",
+        "series": 5,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4853": [
+      {
+        "id": "d8718847-d923-4b82-90b4-3276ea33b9e6",
+        "flowId": 4853,
+        "set": "Metallic Gold LE",
+        "setId": "1435ea5e-d16f-4622-8a27-58d7f6b62c81",
+        "setFlowId": 134,
+        "playerId": 1631246,
+        "playerName": "Vince Williams Jr.",
+        "team": "Memphis Grizzlies",
+        "teamAtMoment": "Memphis Grizzlies",
+        "playType": "Handles",
+        "date": "2024-01-23",
+        "series": 5,
+        "tier": "Rare",
+        "badges": [
+          "TSD"
+        ]
+      }
+    ],
+    "4852": [
+      {
+        "id": "839ca93d-806a-4e31-9590-98b9aab1a65e",
+        "flowId": 4852,
+        "set": "Metallic Gold LE",
+        "setId": "1435ea5e-d16f-4622-8a27-58d7f6b62c81",
+        "setFlowId": 134,
+        "playerId": 202331,
+        "playerName": "Paul George",
+        "team": "LA Clippers",
+        "teamAtMoment": "LA Clippers",
+        "playType": "Dunk",
+        "date": "2024-01-17",
+        "series": 5,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4851": [
+      {
+        "id": "affe614a-ea8a-499d-80d6-3d36f472175d",
+        "flowId": 4851,
+        "set": "Metallic Gold LE",
+        "setId": "1435ea5e-d16f-4622-8a27-58d7f6b62c81",
+        "setFlowId": 134,
+        "playerId": 1629029,
+        "playerName": "Luka Don\u010di\u0107",
+        "team": "Dallas Mavericks",
+        "teamAtMoment": "Dallas Mavericks",
+        "playType": "Reel",
+        "date": "2023-10-28",
+        "series": 5,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4850": [
+      {
+        "id": "f9dd45c9-9108-4cc6-84d1-0d863214b4dc",
+        "flowId": 4850,
+        "set": "Metallic Gold LE",
+        "setId": "1435ea5e-d16f-4622-8a27-58d7f6b62c81",
+        "setFlowId": 134,
+        "playerId": 1628386,
+        "playerName": "Jarrett Allen",
+        "team": "Cleveland Cavaliers",
+        "teamAtMoment": "Cleveland Cavaliers",
+        "playType": "Block",
+        "date": "2024-02-02",
+        "series": 5,
+        "tier": "Rare",
+        "badges": []
+      }
+    ],
+    "4849": [
+      {
+        "id": "758f4981-f927-41b2-a6a2-a1a99f44b44d",
+        "flowId": 4849,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 1627739,
+        "playerName": "Kris Dunn",
+        "team": "Utah Jazz",
+        "teamAtMoment": "Utah Jazz",
+        "playType": "Assist",
+        "date": "2024-01-11",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4848": [
+      {
+        "id": "39ae99f3-b8b6-4676-9b76-7cbc6958027f",
+        "flowId": 4848,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 1629640,
+        "playerName": "Keldon Johnson",
+        "team": "San Antonio Spurs",
+        "teamAtMoment": "San Antonio Spurs",
+        "playType": "Dunk",
+        "date": "2024-01-05",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4847": [
+      {
+        "id": "20e35a43-dc10-4177-8274-951f574f06db",
+        "flowId": 4847,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 1630194,
+        "playerName": "Paul Reed",
+        "team": "Philadelphia 76ers",
+        "teamAtMoment": "Philadelphia 76ers",
+        "playType": "Handles",
+        "date": "2023-12-28",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4846": [
+      {
+        "id": "37c78e0a-7c5a-4ffb-8e93-b0ce8ad99bc3",
+        "flowId": 4846,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 1629639,
+        "playerName": "Tyler Herro",
+        "team": "Miami Heat",
+        "teamAtMoment": "Miami Heat",
+        "playType": "Steal",
+        "date": "2023-11-04",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4845": [
+      {
+        "id": "03428fb5-66e7-42cb-929e-b7717c2cca98",
+        "flowId": 4845,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 1629630,
+        "playerName": "Ja Morant",
+        "team": "Memphis Grizzlies",
+        "teamAtMoment": "Memphis Grizzlies",
+        "playType": "Handles",
+        "date": "2024-01-03",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4844": [
+      {
+        "id": "58175c11-4104-4fc5-9896-2702e945430a",
+        "flowId": 4844,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 203076,
+        "playerName": "Anthony Davis",
+        "team": "Los Angeles Lakers",
+        "teamAtMoment": "Los Angeles Lakers",
+        "playType": "Block",
+        "date": "2023-12-31",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4843": [
+      {
+        "id": "b2022e50-8c9c-4213-84e9-71d0d7a9ea0c",
+        "flowId": 4843,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 1628415,
+        "playerName": "Dillon Brooks",
+        "team": "Houston Rockets",
+        "teamAtMoment": "Houston Rockets",
+        "playType": "Dunk",
+        "date": "2023-11-07",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4842": [
+      {
+        "id": "f4f57d39-89ad-4326-b30c-2ebccd6a97c3",
+        "flowId": 4842,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 1631105,
+        "playerName": "Jalen Duren",
+        "team": "Detroit Pistons",
+        "teamAtMoment": "Detroit Pistons",
+        "playType": "Layup",
+        "date": "2024-01-28",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4841": [
+      {
+        "id": "58041cda-5f9c-4266-abf2-f2fdbc13bd49",
+        "flowId": 4841,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 1630241,
+        "playerName": "Sam Merrill",
+        "team": "Cleveland Cavaliers",
+        "teamAtMoment": "Cleveland Cavaliers",
+        "playType": "3 Pointer",
+        "date": "2023-12-21",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4840": [
+      {
+        "id": "32012b02-e009-44a8-bd6e-f28f7de0aabe",
+        "flowId": 4840,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 202696,
+        "playerName": "Nikola Vu\u010devi\u0107",
+        "team": "Chicago Bulls",
+        "teamAtMoment": "Chicago Bulls",
+        "playType": "3 Pointer",
+        "date": "2024-01-14",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4839": [
+      {
+        "id": "7a4c8d00-9352-4f4e-a6fa-a94a9928053e",
+        "flowId": 4839,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 1631121,
+        "playerName": "Bryce McGowens",
+        "team": "Charlotte Hornets",
+        "teamAtMoment": "Charlotte Hornets",
+        "playType": "Dunk",
+        "date": "2024-02-03",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4838": [
+      {
+        "id": "d2e84a43-8019-417e-b4ef-3aa681656e82",
+        "flowId": 4838,
+        "set": "Base Set",
+        "setId": "6eb21421-c204-45ab-8512-8f52e112e39c",
+        "setFlowId": 124,
+        "playerId": 1629651,
+        "playerName": "Nic Claxton",
+        "team": "Brooklyn Nets",
+        "teamAtMoment": "Brooklyn Nets",
+        "playType": "Block",
+        "date": "2023-11-12",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4837": [
+      {
+        "id": "ead2a19b-50d5-4a3c-b53a-b6e64cb8805c",
+        "flowId": 4837,
+        "set": "Rookie Debut",
+        "setId": "39eb0ef6-a729-4bdb-a9ca-783e2d825ef8",
+        "setFlowId": 125,
+        "playerId": 1641721,
+        "playerName": "Maxwell Lewis",
+        "team": "Los Angeles Lakers",
+        "teamAtMoment": "Los Angeles Lakers",
+        "playType": "3 Pointer",
+        "date": "2023-12-08",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4836": [
+      {
+        "id": "ab5e8496-086b-4226-ba59-a8b91eb9ef4d",
+        "flowId": 4836,
+        "set": "Rookie Debut",
+        "setId": "39eb0ef6-a729-4bdb-a9ca-783e2d825ef8",
+        "setFlowId": 125,
+        "playerId": 1641816,
+        "playerName": "Hunter Tyson",
+        "team": "Denver Nuggets",
+        "teamAtMoment": "Denver Nuggets",
+        "playType": "Dunk",
+        "date": "2023-11-02",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4835": [
+      {
+        "id": "78e258d0-a66b-48da-80b4-0b9a74716090",
+        "flowId": 4835,
+        "set": "Rookie Debut",
+        "setId": "39eb0ef6-a729-4bdb-a9ca-783e2d825ef8",
+        "setFlowId": 125,
+        "playerId": 1641713,
+        "playerName": "GG Jackson",
+        "team": "Memphis Grizzlies",
+        "teamAtMoment": "Memphis Grizzlies",
+        "playType": "3 Pointer",
+        "date": "2023-12-19",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4834": [
+      {
+        "id": "1278f095-05d9-4bc1-8c1a-efdb20f48a0e",
+        "flowId": 4834,
+        "set": "Rookie Debut",
+        "setId": "39eb0ef6-a729-4bdb-a9ca-783e2d825ef8",
+        "setFlowId": 125,
+        "playerId": 1641775,
+        "playerName": "Jordan Walsh",
+        "team": "Boston Celtics",
+        "teamAtMoment": "Boston Celtics",
+        "playType": "Dunk",
+        "date": "2024-02-04",
+        "series": 5,
+        "tier": "Common",
+        "badges": []
+      }
+    ],
+    "4833": [
+      {
+        "id": "b00ab75a-acb1-4e75-a8d5-ace0491befaa",
+        "flowId": 4833,
+        "set": "Squad Goals",
+        "setId": "0c4addb6-5154-448b-8b9c-29a194487efc",
+        "setFlowId": 136,
+        "playerId": null,
+        "playerName": "Washington Wizards",
+        "team": "Washington Wizards",
+        "teamAtMoment": "Washington Wizards",
+        "playType": "Dunk",
+        "date": "2024-01-15",
+        "series": 5,
+        "tier": "Rare",
+        "badges": [
+          "TEAM"
+        ]
+      }
+    ],
+    "4832": [
+      {
+        "id": "45de9f4c-aa6b-4b5e-99e8-7bfed83d78c3",
+        "flowId": 4832,
+        "set": "Squad Goals",
+        "setId": "0c4addb6-5154-448b-8b9c-29a194487efc",
+        "setFlowId": 136,
+        "playerId": null,
+        "playerName": "Utah Jazz",
+        "team": "Utah Jazz",
+        "teamAtMoment": "Utah Jazz",
+        "playType": "Dunk",
+        "date": "2023-12-08",
+        "series": 5,
+        "tier": "Rare",
+        "badges": [
+          "TEAM"
+        ]
+      }
+    ],
+    "4831": [
+      {
+        "id": "7673536a-66b9-4ee1-aebe-db2bdf6a0fd0",
+        "flowId": 4831,
+        "set": "Squad Goals",
+        "setId": "0c4addb6-5154-448b-8b9c-29a194487efc",
+        "setFlowId": 136,
+        "playerId": null,
+        "playerName": "Toronto Raptors",
+        "team": "Toronto Raptors",
+        "teamAtMoment": "Toronto Raptors",
+        "playType": "Dunk",
+        "date": "2024-01-07",
+        "series": 5,
+        "tier": "Rare",
+        "badges": [
+          "TEAM"
+        ]
+      }
+    ],
+    "4830": [
+      {
+        "id": "9cffd435-e104-4f63-ae17-ecc64d3d3037",
+        "flowId": 4830,
+        "set": "Squad Goals",
+        "setId": "0c4addb6-5154-448b-8b9c-29a194487efc",
+        "setFlowId": 136,
+        "playerId": null,
+        "playerName": "San Antonio Spurs",
+        "team": "San Antonio Spurs",
+        "teamAtMoment": "San Antonio Spurs",
+        "playType": "Jump Shot",
+        "date": "2023-12-08",
+        "series": 5,
+        "tier": "Rare",
+        "badges": [
+          "TEAM"
+        ]
+      }
+    ],
+    "4829": [
+      {
+        "id": "66d7713b-9c52-4137-8895-447a0e592c58",
+        "flowId": 4829,
+        "set": "Squad Goals",
+        "setId": "0c4addb6-5154-448b-8b9c-29a194487efc",
+        "setFlowId": 136,
+        "playerId": null,
+        "playerName": "Sacramento Kings",
+        "team": "Sacramento Kings",
+        "teamAtMoment": "Sacramento Kings",
+        "playType": "3 Pointer",
+        "date": "2023-11-24",
+        "series": 5,
+        "tier": "Rare",
+        "badges": [
+          "TEAM"
+        ]
+      }
+    ],
+    "4828": [
+      {
+        "id": "56822992-8bc9-42ab-b0f7-e978fd0d9df4",
+        "flowId": 4828,
+        "set": "Squad Goals",
+        "setId": "0c4addb6-5154-448b-8b9c-29a194487efc",
+        "setFlowId": 136,
+        "playerId": null,
+        "playerName": "Portland Trail Blazers",
+        "team": "Portland Trail Blazers",
+        "teamAtMoment": "Portland Trail Blazers",
+        "playType": "Layup",
+        "date": "2023-12-14",
+        "series": 5,
+        "tier": "Rare",
+        "badges": [
+          "TEAM"
+        ]
+      }
+    ],
+    "4827": [
+      {
+        "id": "c604d3cf-d502-4938-a633-8605531faf70",
+        "flowId": 4827,
+        "set": "Squad Goals",
+        "setId": "0c4addb6-5154-448b-8b9c-29a194487efc",
+        "setFlowId": 136,
+        "playerId": null,
+        "playerName": "Phoenix Suns",
+        "team": "Phoenix Suns",
+        "teamAtMoment": "Phoenix Suns",
+        "playType": "3 Pointer",
+        "date": "2023-11-21",
+        "series": 5,
+        "tier": "Rare",
+        "badges": [
+          "TEAM"
+        ]
+      }
+    ],
+    "4826": [
+      {
+        "id": "82c6f756-908b-400d-98d1-59d151c3d292",
+        "flowId": 4826,
+        "set": "Squad Goals",
+        "setId": "0c4addb6-5154-448b-8b9c-29a194487efc",
+        "setFlowId": 136,
+        "playerId": null,
+        "playerName": "Philadelphia 76ers",
+        "team": "Philadelphia 76ers",
+        "teamAtMoment": "Philadelphia 76ers",
+        "playType": "Dunk",
+        "date": "2024-01-16",
+        "series": 5,
+        "tier": "Rare",
+        "badges": [
+          "TEAM"
+        ]
+      }
+    ],
+    "4825": [
+      {
+        "id": "6c3e2be2-720e-4fef-b73f-fd47d328e582",
+        "flowId": 4825,
+        "set": "Squad Goals",
+        "setId": "0c4addb6-5154-448b-8b9c-29a194487efc",
+        "setFlowId": 136,
+        "playerId": null,
+        "playerName": "Orlando Magic",
+        "team": "Orlando Magic",
+        "teamAtMoment": "Orlando Magic",
+        "playType": "3 Pointer",
+        "date": "2024-01-12",
+        "series": 5,
+        "tier": "Rare",
+        "badges": [
+          "TEAM"
+        ]
+      }
+    ],
+    "4824": [
+      {
+        "id": "d1bf5e12-082b-4a14-8756-01a85cbf0018",
+        "flowId": 4824,
+        "set": "Squad Goals",
+        "setId": "0c4addb6-5154-448b-8b9c-29a194487efc",
+        "setFlowId": 136,
+        "playerId": null,
+        "playerName": "Oklahoma City Thunder",
+        "team": "Oklahoma City Thunder",
+        "teamAtMoment": "Oklahoma City Thunder",
+        "playType": "Dunk",
+        "date": "2023-11-06",
+        "series": 5,
+        "tier": "Rare",
+        "badges": [
+          "TEAM"
+        ]
+      }
+    ],
+    "4823": [
+      {
+        "id": "b7a81445-db54-4414-8362-bfba9a09f744",
+        "flowId": 4823,
+        "set": "Squad Goals",
+        "setId": "0c4addb6-5154-448b-8b9c-29a194487efc",
+        "setFlowId": 136,
+        "playerId": null,
+        "playerName": "New York Knicks",
+        "team": "New York Knicks",
+        "teamAtMoment": "New York Knicks",
+        "playType": "Dunk",
+        "date": "2024-01-17",
+        "series": 5,
+        "tier": "Rare",
+        "badges": [
+          "TEAM"
+        ]
+      }
+    ],
+    "4822": [
+      {
+        "id": "2628824b-7e09-405e-9f39-f252d2c163c0",
+        "flowId": 4822,
+        "set": "Squad Goals",
+        "setId": "0c4addb6-5154-448b-8b9c-29a194487efc",
+        "setFlowId": 136,
+        "playerId": null,
+        "playerName": "New Orleans Pelicans",
+        "team": "New Orleans Pelicans",
+        "teamAtMoment": "New Orleans Pelicans",
+        "playType": "Dunk",
+        "date": "2023-11-12",
+        "series": 5,
+        "tier": "Rare",
+        "badges": [
+          "TEAM"
+        ]
+      }
+    ],
+    "4821": [
+      {
+        "id": "8efda874-fccd-42c9-ba32-07785408b04b",
+        "flowId": 4821,
+        "set": "Squad Goals",
+        "setId": "0c4addb6-5154-448b-8b9c-29a194487efc",
+        "setFlowId": 136,
+        "playerId": null,
+        "playerName": "Minnesota Timberwolves",
+        "team": "Minnesota Timberwolves",
+        "teamAtMoment": "Minnesota Timberwolves",
+        "playType": "Dunk",
+        "date": "2023-11-08",
+        "series": 5,
+        "tier": "Rare",
+        "badges": [
+          "TEAM"
+        ]
+      }
+    ],
+    "4820": [
+      {
+        "id": "46cf68a1-2f6f-45be-98f6-1663901758f0",
+        "flowId": 4820,
+        "set": "Squad Goals",
+        "setId": "0c4addb6-5154-448b-8b9c-29a194487efc",
+        "setFlowId": 136,
+        "playerId": null,
+        "playerName": "Milwaukee Bucks",
+        "team": "Milwaukee Bucks",
+        "teamAtMoment": "Milwaukee Bucks",
+        "playType": "Dunk",
+        "date": "2023-12-11",
+        "series": 5,
+        "tier": "Rare",
+        "badges": [
+          "TEAM"
+        ]
+      }
+    ],
+    "4819": [
+      {
+        "id": "dfbf476e-3d4b-4dc4-8159-51b89b13fd1c",
+        "flowId": 4819,
+        "set": "Squad Goals",
+        "setId": "0c4addb6-5154-448b-8b9c-29a194487efc",
+        "setFlowId": 136,
+        "playerId": null,
+        "playerName": "Miami Heat",
+        "team": "Miami Heat",
+        "teamAtMoment": "Miami Heat",
+        "playType": "3 Pointer",
+        "date": "2023-11-11",
+        "series": 5,
+        "tier": "Rare",
+        "badges": [
+          "TEAM"
+        ]
+      }
+    ],
+    "4818": [
+      {
+        "id": "ac4122bf-e359-4094-aa45-f62b8068f3cb",
+        "flowId": 4818,
+        "set": "Squad Goals",
+        "setId": "0c4addb6-5154-448b-8b9c-29a194487efc",
+        "setFlowId": 136,
+        "playerId": null,
+        "playerName": "Memphis Grizzlies",
+        "team": "Memphis Grizzlies",
+        "teamAtMoment": "Memphis Grizzlies",
+        "playType": "Dunk",
+        "date": "2023-12-26",
+        "series": 5,
+        "tier": "Rare",
+        "badges": [
+          "TEAM"
+        ]
+      }
+    ],
+    "4817": [
+      {
+        "id": "27d83c72-f869-4bf9-bf02-e454c2ed68bf",
+        "flowId": 4817,
+        "set": "Squad Goals",
+        "setId": "0c4addb6-5154-448b-8b9c-29a194487efc",
+        "setFlowId": 136,
+        "playerId": null,
+        "playerName": "Los Angeles Lakers",
+        "team": "Los Angeles Lakers",
+        "teamAtMoment": "Los Angeles Lakers",
+        "playType": "Dunk",
+        "date": "2024-01-21",
+        "series": 5,
+        "tier": "Rare",
+        "badges": [
+          "TEAM"
+        ]
+      }
+    ],
+    "4816": [
+      {
+        "id": "03936e77-71f8-4354-a999-7eac4168ca09",
+        "flowId": 4816,
+        "set": "Squad Goals",
+        "setId": "0c4addb6-5154-448b-8b9c-29a194487efc",
+        "setFlowId": 136,
+        "playerId": null,
+        "playerName": "LA Clippers",
+        "team": "LA Clippers",
+        "teamAtMoment": "LA Clippers",
+        "playType": "Dunk",
+        "date": "2023-11-17",
+        "series": 5,
+        "tier": "Rare",
+        "badges": [
+          "TEAM"
+        ]
+      }
+    ],
+    "4815": [
+      {
+        "id": "034a854d-7e0a-433a-a06f-97ae3e847211",
+        "flowId": 4815,
+        "set": "Squad Goals",
+        "setId": "0c4addb6-5154-448b-8b9c-29a194487efc",
+        "setFlowId": 136,
+        "playerId": null,
+        "playerName": "Indiana Pacers",
+        "team": "Indiana Pacers",
+        "teamAtMoment": "Indiana Pacers",
+        "playType": "Layup",
+        "date": "2023-10-30",
+        "series": 5,
+        "tier": "Rare",
+        "badges": [
+          "TEAM"
+        ]
+      }
+    ],
+    "4814": [
+      {
+        "id": "5e19de33-3e8f-48dd-86c6-274409defff8",
+        "flowId": 4814,
+        "set": "Squad Goals",
+        "setId": "0c4addb6-5154-448b-8b9c-29a194487efc",
+        "setFlowId": 136,
+        "playerId": null,
+        "playerName": "Houston Rockets",
+        "team": "Houston Rockets",
+        "teamAtMoment": "Houston Rockets",
+        "playType": "Dunk",
+        "date": "2024-01-15",
+        "series": 5,
+        "tier": "Rare",
+        "badges": [
+          "TEAM"
+        ]
+      }
+    ],
+    "4813": [
+      {
+        "id": "fd7afa8f-fa0f-424c-802e-68a330880c15",
+        "flowId": 4813,
+        "set": "Squad Goals",
+        "setId": "0c4addb6-5154-448b-8b9c-29a194487efc",
+        "setFlowId": 136,
+        "playerId": null,
+        "playerName": "Golden State Warriors",
+        "team": "Golden State Warriors",
+        "teamAtMoment": "Golden State Warriors",
+        "playType": "3 Pointer",
+        "date": "2023-11-20",
+        "series": 5,
+        "tier": "Rare",
+        "badges": [
+          "TEAM"
+        ]
+      }
+    ],
+    "4812": [
+      {
+        "id": "bd80c85e-2264-4be9-9ccb-e116cd56360a",
+        "flowId": 4812,
+        "set": "Squad Goals",
+        "setId": "0c4addb6-5154-448b-8b9c-29a194487efc",
+        "setFlowId": 136,
+        "playerId": null,
+        "playerName": "Detroit Pistons",
+        "team": "Detroit Pistons",
+        "teamAtMoment": "Detroit Pistons",
+        "playType": "3 Pointer",
+        "date": "2023-11-02",
+        "series": 5,
+        "tier": "Rare",
+        "badges": [
+          "TEAM"
+        ]
+      }
+    ],
+    "4811": [
+      {
+        "id": "f921e479-456a-4d34-ac92-b7cf6c35f54d",
+        "flowId": 4811,
+        "set": "Squad Goals",
+        "setId": "0c4addb6-5154-448b-8b9c-29a194487efc",
+        "setFlowId": 136,
+        "playerId": null,
+        "playerName": "Denver Nuggets",
+        "team": "Denver Nuggets",
+        "teamAtMoment": "Denver Nuggets",
+        "playType": "Dunk",
+        "date": "2023-12-14",
+        "series": 5,
+        "tier": "Rare",
+        "badges": [
+          "TEAM"
+        ]
+      }
+    ],
+    "4810": [
+      {
+        "id": "cf5c6d72-ca4a-4371-ac78-61dd1a8e6bf1",
+        "flowId": 4810,
+        "set": "Squad Goals",
+        "setId": "0c4addb6-5154-448b-8b9c-29a194487efc",
+        "setFlowId": 136,
+        "playerId": null,
+        "playerName": "Dallas Mavericks",
+        "team": "Dallas Mavericks",
+        "teamAtMoment": "Dallas Mavericks",
+        "playType": "Dunk",
+        "date": "2024-01-05",
+        "series": 5,
+        "tier": "Rare",
+        "badges": [
+          "TEAM"
+        ]
+      }
+    ],
+    "4809": [
+      {
+        "id": "910b17ff-776c-404f-b89f-e31f451d3c52",
+        "flowId": 4809,
+        "set": "Squad Goals",
+        "setId": "0c4addb6-5154-448b-8b9c-29a194487efc",
+        "setFlowId": 136,
+        "playerId": null,
+        "playerName": "Cleveland Cavaliers",
+        "team": "Cleveland Cavaliers",
+        "teamAtMoment": "Cleveland Cavaliers",
+        "playType": "Dunk",
+        "date": "2023-11-08",
+        "series": 5,
+        "tier": "Rare",
+        "badges": [
+          "TEAM"
+        ]
+      }
+    ],
+    "4808": [
+      {
+        "id": "559c8bd7-41f6-4e1b-aad5-5f2091762789",
+        "flowId": 4808,
+        "set": "Squad Goals",
+        "setId": "0c4addb6-5154-448b-8b9c-29a194487efc",
+        "setFlowId": 136,
+        "playerId": null,
+        "playerName": "Chicago Bulls",
+        "team": "Chicago Bulls",
+        "teamAtMoment": "Chicago Bulls",
+        "playType": "Dunk",
+        "date": "2024-01-05",
+        "series": 5,
+        "tier": "Rare",
+        "badges": [
+          "TEAM"
+        ]
+      }
+    ],
+    "4807": [
+      {
+        "id": "6342e333-0a94-4400-8027-07be77d28686",
+        "flowId": 4807,
+        "set": "Squad Goals",
+        "setId": "0c4addb6-5154-448b-8b9c-29a194487efc",
+        "setFlowId": 136,
+        "playerId": null,
+        "playerName": "Charlotte Hornets",
+        "team": "Charlotte Hornets",
+        "teamAtMoment": "Charlotte Hornets",
+        "playType": "3 Pointer",
+        "date": "2023-11-01",
+        "series": 5,
+        "tier": "Rare",
+        "badges": [
+          "TEAM"
+        ]
+      }
+    ],
+    "4806": [
+      {
+        "id": "c2e8c361-6202-4520-94c1-4457c94e3940",
+        "flowId": 4806,
+        "set": "Squad Goals",
+        "setId": "0c4addb6-5154-448b-8b9c-29a194487efc",
+        "setFlowId": 136,
+        "playerId": null,
+        "playerName": "Boston Celtics",
+        "team": "Boston Celtics",
+        "teamAtMoment": "Boston Celtics",
+        "playType": "Dunk",
+        "date": "2024-01-05",
+        "series": 5,
+        "tier": "Rare",
+        "badges": [
+          "TEAM"
+        ]
+      }
+    ],
+    "4805": [
+      {
+        "id": "5fb82227-4bad-4ca4-8c6e-fc212560bdc8",
+        "flowId": 4805,
+        "set": "Squad Goals",
+        "setId": "0c4addb6-5154-448b-8b9c-29a194487efc",
+        "setFlowId": 136,
+        "playerId": null,
+        "playerName": "Brooklyn Nets",
+        "team": "Brooklyn Nets",
+        "teamAtMoment": "Brooklyn Nets",
+        "playType": "Dunk",
+        "date": "2023-10-25",
+        "series": 5,
+        "tier": "Rare",
+        "badges": [
+          "TEAM"
+        ]
+      }
+    ],
+    "4804": [
+      {
+        "id": "72682f35-4cff-4e10-a909-ae3d1ea1fabb",
+        "flowId": 4804,
+        "set": "Squad Goals",
+        "setId": "0c4addb6-5154-448b-8b9c-29a194487efc",
+        "setFlowId": 136,
+        "playerId": null,
+        "playerName": "Atlanta Hawks",
+        "team": "Atlanta Hawks",
+        "teamAtMoment": "Atlanta Hawks",
+        "playType": "Dunk",
+        "date": "2023-12-31",
+        "series": 5,
+        "tier": "Rare",
+        "badges": [
+          "TEAM"
+        ]
+      }
+    ],
     "4803": [
       {
         "id": "ee9bedc9-4709-4bf9-b069-8e62143c5aea",
@@ -331,7 +1905,7 @@
         "badges": [
           "RY",
           "RM",
-          "TSD"
+          "CR"
         ]
       }
     ],

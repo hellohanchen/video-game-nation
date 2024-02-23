@@ -141,7 +141,7 @@
       }
     },
     "Series 23-24": {
-      "count": 12,
+      "count": 14,
       "tiers": {
         "Common": {
           "124": "Base Set",
@@ -149,7 +149,8 @@
           "126": "Fresh Thread",
           "129": "Archive Set",
           "132": "Hustle and Show",
-          "133": "Extra Spice"
+          "133": "Extra Spice",
+          "137": "Crunch Time"
         },
         "Fandom": {
         },
@@ -158,7 +159,8 @@
           "128": "For The Win",
           "130": "Video Game Numbers",
           "134": "Metallic Gold LE",
-          "135": "Freshman Gems"
+          "135": "Freshman Gems",
+          "136": "Squad Goals"
         },
         "Legendary": {
           "131": "Holo Icon"
