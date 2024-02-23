@@ -301,6 +301,27 @@ def join_giveaway(gid, user, fav_team):
     return True, None
 
 
+def leave_giveaway(gid, uid):
+    db_conn = None
+    try:
+        db_conn = CNX_POOL.get_connection()
+        cursor = db_conn.cursor()
+
+        query = f"DELETE FROM vgn.ts_giveaway_submissions WHERE user_id = {uid} AND giveaway_id = {gid}"
+        cursor.execute(query)
+
+        db_conn.commit()
+        db_conn.close()
+    except Exception as err:
+        if db_conn is not None:
+            db_conn.close()
+
+        return False, err
+
+    return True, None
+
+
+
 def close_giveaway(gid):
     db_conn = None
     try:

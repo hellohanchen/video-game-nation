@@ -9,9 +9,12 @@ from constants import NBA_TEAM_IDS
 from vgnlog.channel_logger import ADMIN_LOGGER
 from provider.topshot.graphql.get_address import get_flow_account_info
 from repository.ts_giveaways import message_giveaway, get_ongoing_giveaways, get_submission, get_submission_count, \
-    join_giveaway, get_submitted_fav_team, ban_user, get_submissions_with_flow_info, close_giveaway
+    join_giveaway, get_submitted_fav_team, ban_user, get_submissions_with_flow_info, close_giveaway, leave_giveaway
 from repository.vgn_users import get_user_new
 from service.common.profile.views import ProfileView
+
+
+THUMBNAIL_URL = "https://i.ibb.co/TWmVsFB/g-01.png"
 
 
 class Giveaway:
@@ -41,6 +44,7 @@ class Giveaway:
         content += f"Ends at: **<t:{int(e.timestamp())}:R>**"
 
         self.embed = discord.Embed(title=f"GIVEAWAY: {n.upper()}", description=content)
+        self.embed.set_thumbnail(url=THUMBNAIL_URL)
 
     async def send_message(self):
         if self.message is not None:
@@ -78,6 +82,8 @@ class Giveaway:
             if self.view is None:
                 self.view = JoinGiveawayView(self)
 
+            self.refresh_submission()
+            self.view.join_button.label = f"Joined: {self.submissions}"
             await self.message.edit(embed=self.embed, view=self.view)
 
     def refresh_submission(self):
@@ -179,6 +185,18 @@ class Giveaway:
             await ADMIN_LOGGER.error(f"Giveaway:Join:{err}")
             return False, f"ERROR: Join:{err}"
 
+    async def leave(self, uid):
+        epoch = datetime.datetime.utcnow()
+        if self.end_at <= epoch:
+            return False, "Submission is already closed."
+
+        successful, err = leave_giveaway(self.id, uid)
+        if successful:
+            return True, f"Your entry is removed."
+        else:
+            await ADMIN_LOGGER.error(f"Giveaway:Leave:{err}")
+            return False, f"ERROR: Leave:{err}"
+
 
 class GiveawayService:
     def __init__(self):
@@ -223,7 +241,7 @@ GIVEAWAY_SERVICE = GiveawayService()
 
 class JoinRulesButton(discord.ui.Button['JoinRules']):
     def __init__(self):
-        super(JoinRulesButton, self).__init__(style=discord.ButtonStyle.secondary, label="Rules", row=0)
+        super(JoinRulesButton, self).__init__(style=discord.ButtonStyle.blurple, label="Rules", row=0)
 
     async def callback(self, interaction: discord.Interaction):
         assert self.view is not None
@@ -231,9 +249,10 @@ class JoinRulesButton(discord.ui.Button['JoinRules']):
                   f"**Rule 0.** The rewards will be sent to the linked Topshot accounts of winners. Make sure your " \
                   f"Discord is linked to your own Topshot account.\n" \
                   f"**Rule 1.** If you join a **fav-team-gated** giveaway, don't change your fav-team before the " \
-                  f"giveaway ends, otherwise your will be banned from all giveaways.\n" \
+                  f"giveaway ends, otherwise you will be removed from all giveaways.\n" \
                   f"**Rule 2.** If you are in **an ongoing fav-team-gated** giveaway, don't change your fav-team " \
-                  f"to join another gated giveaway with a different team, you will be banned.\n"
+                  f"to join another gated giveaway with a different team, otherwise you will be removed from all " \
+                  f"giveaways.\n"
         await interaction.response.send_message(content=message, ephemeral=True, delete_after=120.0)
 
 
@@ -260,18 +279,30 @@ class JoinGiveawayButton(discord.ui.Button['Join']):
             return
 
         joined, content = await view.giveaway.join(user)
-        if joined:
-            view.giveaway.refresh_submission()
-            self.label = f"Joined: {view.giveaway.submissions}"
-
         await interaction.response.send_message(content=content, ephemeral=True, delete_after=30.0)
-        await view.giveaway.refresh()
+        if joined:
+            await view.giveaway.refresh()
+
+
+class LeaveGiveawayButton(discord.ui.Button['Quit']):
+    def __init__(self):
+        super(LeaveGiveawayButton, self).__init__(style=discord.ButtonStyle.red, label=f"Leave", row=0)
+
+    async def callback(self, interaction: discord.Interaction):
+        assert self.view is not None
+        view: JoinGiveawayView = self.view
+        leaved, content = await view.giveaway.leave(interaction.user.id)
+        await interaction.response.send_message(content=content, ephemeral=True, delete_after=30.0)
+        if leaved:
+            await view.giveaway.refresh()
 
 
 class JoinGiveawayView(discord.ui.View):
     def __init__(self, giveaway: Giveaway):
         super(JoinGiveawayView, self).__init__()
         giveaway.refresh_submission()
-        self.add_item(JoinGiveawayButton(giveaway.submissions))
+        self.join_button: discord.ui.Button = JoinGiveawayButton(giveaway.submissions)
+        self.add_item(self.join_button)
         self.giveaway: Giveaway = giveaway
         self.add_item(JoinRulesButton())
+        self.add_item(LeaveGiveawayButton())

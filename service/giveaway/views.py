@@ -164,7 +164,7 @@ class GiveawayCreateView(GiveawayBaseView):
 class GiveawayCreateModal(discord.ui.Modal, title='Create a giveaway'):
     giveaway_name = discord.ui.TextInput(label='Name (<= 64 chars)')
     description = discord.ui.TextInput(label='Description (Optional, <= 256 chars)', required=False)
-    winners = discord.ui.TextInput(label='Winners (1 ~ 10)')
+    winners = discord.ui.TextInput(label='Winners (1 ~ 50)')
     duration = discord.ui.TextInput(label='Duration (in hours, <= 240)')
 
     def __init__(self, view: GiveawayCreateView, guild_id, channel_id):
@@ -191,7 +191,7 @@ class GiveawayCreateModal(discord.ui.Modal, title='Create a giveaway'):
             await interaction.response.edit_message(content=message, view=self.view.restart())
             return
         winners = int(winners_input)
-        if winners < 1 or winners > 10:
+        if winners < 1 or winners > 50:
             message = f"Invalid winners: {winners_input}"
             await interaction.response.edit_message(content=message, view=self.view.restart())
             return
