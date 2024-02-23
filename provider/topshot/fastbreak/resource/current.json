@@ -1,110 +1,119 @@
 {
-  "02/22/2024": {
-    "count": 5,
-    "isCombine": true,
-    "buckets": [
-      {
-        "stats": "3PT",
-        "target": 17,
-        "order": "DESC"
+  "rounds": [
+    {
+      "id": 1,
+      "name": "B2B Contest 02/22/2024 ~ 02/29/2024",
+      "validation": "ONE",
+      "dates": {
+        "02/22/2024": {
+          "count": 5,
+          "isCombine": true,
+          "buckets": [
+            {
+              "stats": "3PT",
+              "target": 17,
+              "order": "DESC"
+            }
+          ]
+        },
+        "02/23/2024": {
+          "count": 5,
+          "isCombine": true,
+          "buckets": [
+            {
+              "stats": "BLK",
+              "target": 8,
+              "order": "DESC"
+            },
+            {
+              "stats": "REB",
+              "target": 40,
+              "order": "DESC"
+            }
+          ]
+        },
+        "02/24/2024": {
+          "count": 5,
+          "isCombine": true,
+          "buckets": [
+            {
+              "stats": "AST",
+              "target": 30,
+              "order": "DESC"
+            },
+            {
+              "stats": "STL",
+              "target": 5,
+              "order": "DESC"
+            }
+          ]
+        },
+        "02/25/2024": {
+          "count": 5,
+          "isCombine": true,
+          "buckets": [
+            {
+              "stats": "PTS",
+              "target": 140,
+              "order": "DESC"
+            }
+          ]
+        },
+        "02/26/2024": {
+          "count": 5,
+          "isCombine": true,
+          "buckets": [
+            {
+              "stats": "AST",
+              "target": 30,
+              "order": "DESC"
+            },
+            {
+              "stats": "REB",
+              "target": 50,
+              "order": "DESC"
+            }
+          ]
+        },
+        "02/27/2024": {
+          "count": 5,
+          "isCombine": true,
+          "buckets": [
+            {
+              "stats": "BLK",
+              "target": 8,
+              "order": "DESC"
+            }
+          ]
+        },
+        "02/28/2024": {
+          "count": 5,
+          "isCombine": true,
+          "buckets": [
+            {
+              "stats": "FTA",
+              "target": 30,
+              "order": "DESC"
+            },
+            {
+              "stats": "FGA",
+              "target": 70,
+              "order": "DESC"
+            }
+          ]
+        },
+        "02/29/2024": {
+          "count": 5,
+          "isCombine": true,
+          "buckets": [
+            {
+              "stats": "AMT",
+              "target": 25,
+              "order": "DESC"
+            }
+          ]
+        }
       }
-    ]
-  },
-  "02/23/2024": {
-    "count": 5,
-    "isCombine": true,
-    "buckets": [
-      {
-        "stats": "BLK",
-        "target": 8,
-        "order": "DESC"
-      },
-      {
-        "stats": "REB",
-        "target": 40,
-        "order": "DESC"
-      }
-    ]
-  },
-  "02/24/2024": {
-    "count": 5,
-    "isCombine": true,
-    "buckets": [
-      {
-        "stats": "AST",
-        "target": 30,
-        "order": "DESC"
-      },
-      {
-        "stats": "STL",
-        "target": 5,
-        "order": "DESC"
-      }
-    ]
-  },
-  "02/25/2024": {
-    "count": 5,
-    "isCombine": true,
-    "buckets": [
-      {
-        "stats": "PTS",
-        "target": 140,
-        "order": "DESC"
-      }
-    ]
-  },
-  "02/26/2024": {
-    "count": 5,
-    "isCombine": true,
-    "buckets": [
-      {
-        "stats": "AST",
-        "target": 30,
-        "order": "DESC"
-      },
-      {
-        "stats": "REB",
-        "target": 50,
-        "order": "DESC"
-      }
-    ]
-  },
-  "02/27/2024": {
-    "count": 5,
-    "isCombine": true,
-    "buckets": [
-      {
-        "stats": "BLK",
-        "target": 8,
-        "order": "DESC"
-      }
-    ]
-  },
-  "02/28/2024": {
-    "count": 5,
-    "isCombine": true,
-    "buckets": [
-      {
-        "stats": "FTA",
-        "target": 30,
-        "order": "DESC"
-      },
-      {
-        "stats": "FGA",
-        "target": 70,
-        "order": "DESC"
-      }
-    ]
-  },
-  "02/29/2024": {
-    "count": 5,
-    "isCombine": true,
-    "buckets": [
-      {
-        "stats": "AMT",
-        "target": 25,
-        "order": "DESC"
-      }
-    ]
-  }
+    }
+  ]
 }

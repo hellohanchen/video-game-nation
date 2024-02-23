@@ -1,6 +1,7 @@
 import pandas as pd
 
 from constants import INVALID_ID
+from provider.topshot.fb_provider import FB_PROVIDER
 from repository.common import rw_db
 from repository.config import CNX_POOL
 
@@ -45,39 +46,6 @@ def get_lineups(game_date):
 
 
 def upsert_lineup(lineup):
-    if lineup[1] in ['02/22/2024', '02/23/2024', '02/24/2024', '02/25/2024', '02/26/2024', '02/27/2024', '02/28/2024', '02/29/2024']:
-        db_conn = None
-        try:
-            db_conn = CNX_POOL.get_connection()
-            query = "SELECT * FROM vgn.fb_lineups WHERE game_date >= '02/22/204' AND game_date <= '02/29/2024' " \
-                    "AND user_id = {} AND game_date != {}".format(lineup[0], lineup[1])
-
-            # Execute SQL query and store results in a pandas dataframe
-            df = pd.read_sql(query, db_conn)
-
-            # Convert dataframe to a dictionary with headers
-            lineups = df.to_dict('records')
-
-            db_conn.commit()
-            db_conn.close()
-        except Exception as err:
-            print("DB error: {}".format(err))
-
-            if db_conn is not None:
-                db_conn.close()
-            return None, err
-
-        used_players = []
-        for l in lineups:
-            for key in ['player_1', 'player_2', 'player_3', 'player_4', 'player_5']:
-                player_id = l[key]
-                if player_id is not None and player_id != INVALID_ID:
-                    used_players.append(player_id)
-
-        for key in range(2, 7):
-            if lineup[key] != INVALID_ID and lineup[key] in used_players:
-                return None, "player is used"
-
     write = "INSERT INTO vgn.fb_lineups (user_id, game_date, player_1, player_2, player_3, " \
             "player_4, player_5, player_6, player_7, player_8, is_ranked) " \
             "VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, FALSE) ON DUPLICATE KEY UPDATE " \
@@ -87,6 +55,48 @@ def upsert_lineup(lineup):
     read = "SELECT * FROM vgn.fb_lineups WHERE user_id = {} AND game_date = '{}'".format(lineup[0], lineup[1])
 
     return rw_db(CNX_POOL, write, read, lineup)
+
+
+def get_player_usages(uid, game_date):
+    if game_date not in FB_PROVIDER.date_to_rounds:
+        return {}, None
+
+    game_round = FB_PROVIDER.rounds[FB_PROVIDER.date_to_rounds[game_date]]
+    round_dates = game_round['dates']
+
+    db_conn = None
+    try:
+        db_conn = CNX_POOL.get_connection()
+        query = "SELECT * FROM vgn.fb_lineups WHERE game_date IN ({}) " \
+                "AND user_id = {} AND game_date != '{}'"\
+            .format(', '.join("'" + d + "'" for d in round_dates), uid, game_date)
+
+        # Execute SQL query and store results in a pandas dataframe
+        df = pd.read_sql(query, db_conn)
+
+        # Convert dataframe to a dictionary with headers
+        db_lineups = df.to_dict('records')
+
+        db_conn.commit()
+        db_conn.close()
+    except Exception as err:
+        print("DB error: {}".format(err))
+
+        if db_conn is not None:
+            db_conn.close()
+        return {}, err
+
+    player_usages = {}
+    for db_l in db_lineups:
+        for key in ['player_1', 'player_2', 'player_3', 'player_4', 'player_5']:
+            player_id = db_l[key]
+            if player_id is not None and player_id != INVALID_ID:
+                if player_id not in player_usages:
+                    player_usages[player_id] = 1
+                else:
+                    player_usages[player_id] = player_usages[player_id] + 1
+
+    return player_usages, None
 
 
 def submit_lineup(lineup):

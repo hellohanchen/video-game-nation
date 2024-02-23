@@ -11,7 +11,7 @@ from provider.topshot.cadence.flow_collections import get_account_plays_with_low
 from provider.topshot.fb_provider import FB_PROVIDER
 from provider.topshot.ts_provider import TS_PROVIDER
 from repository.fb_lineups import get_lineups, upsert_score, get_weekly_ranks, get_user_results, upsert_lineup, \
-    submit_lineup, get_lineup
+    submit_lineup, get_lineup, get_player_usages
 from repository.vgn_players import get_empty_players_stats, get_players
 from repository.vgn_users import get_user_new
 from service.fastbreak.fastbreak import FastBreak
@@ -134,7 +134,7 @@ class Lineup:
             self.player_ids[pos_idx] = player_to_remove
 
             if err == "player is used":
-                return f"Each player can only be used once in B2B Fastbreak contest: {player_name}"
+                return f"Player reaches maximum usages: {player_name}"
 
             return f"Failed to update lineup: {err}"
 
@@ -180,8 +180,9 @@ class Lineup:
 
         # load submitted serials if the lineup is already submitted
         submitted_serials = {}
+        game_date = self.service.current_game_date
         if self.is_ranked:
-            submitted, err = get_lineup(self.user_id, self.service.current_game_date)
+            submitted, err = get_lineup(self.user_id, game_date)
             if err is not None:
                 await ADMIN_LOGGER.error(f"DynamicLineup:Submit:GetLineup:{err}")
             else:
@@ -213,8 +214,31 @@ class Lineup:
                 serial_sum += collections[pid]['serial']
                 serials.append(collections[pid]['serial'])
 
+        if game_date in FB_PROVIDER.date_to_rounds:
+            player_usages, err = get_player_usages(self.user_id, game_date)
+            if err is not None:
+                await ADMIN_LOGGER.error(f"FBR:Submit:PlayerUsages:{err}")
+
+            validation = FB_PROVIDER.rounds[FB_PROVIDER.date_to_rounds[game_date]]['validation']
+            if validation == "ONE":
+                for pid in self.player_ids[0:5]:
+                    if pid != INVALID_ID:
+                        if pid in player_usages:
+                            return f"Submission failed: {self.service.players[pid]['full_name']} reaches limit: 1"
+            elif validation == "TS":
+                for pid in self.player_ids[0:5]:
+                    if pid != INVALID_ID:
+                        if collections[pid]['tier'] == "Legendary":
+                            limit = 4
+                        elif collections[pid]['tier'] == 'Rare':
+                            limit = 2
+                        else:
+                            limit = 1
+                        if pid in player_usages and player_usages[pid] == limit:
+                            return f"Submission failed: {self.service.players[pid]['full_name']} reaches limit: {limit}"
+
         successful, err = submit_lineup((
-            self.user_id, user['topshot_username'], self.service.current_game_date,
+            self.user_id, user['topshot_username'], game_date,
             self.player_ids[0], serials[0],
             self.player_ids[1], serials[1], self.player_ids[2], serials[2],
             self.player_ids[3], serials[3], self.player_ids[4], serials[4],

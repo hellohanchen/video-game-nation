@@ -152,7 +152,7 @@ class LineupSubmitButton(discord.ui.Button['LineupSubmit']):
             await followup.send(message, ephemeral=True)
         except Exception as err:
             await ADMIN_LOGGER.error(f"FB:Submit:{err}")
-            await followup.send(f"Submission failed, please rey", ephemeral=True)
+            await followup.send(f"Submission failed, please retry", ephemeral=True)
 
 
 class LineupLeaderboardButton(discord.ui.Button['LineupLeaderboard']):
@@ -304,7 +304,26 @@ class TeamPlayerButton(discord.ui.Button['TeamPlayer']):
         view: TeamView = self.view
         content, new_view = view.add_to_lineup(self.player_idx)
 
+        if not self.view.is_ranked:
+            await interaction.response.edit_message(content=content, view=new_view)
+            return
+
+        # if ranked but not full, don't submit
+        for i in range(0, self.view.service.fb.count):
+            if self.view.lineup.player_ids[i] == INVALID_ID:
+                await interaction.response.edit_message(content=content, view=new_view)
+                return
+
+        content += "\nLineup is full, submitting ..."
         await interaction.response.edit_message(content=content, view=new_view)
+
+        followup = interaction.followup
+        try:
+            message = await view.lineup.submit()
+            await followup.send(message, ephemeral=True)
+        except Exception as err:
+            await ADMIN_LOGGER.error(f"FB:Submit:{err}")
+            await followup.send(f"Submission failed, please retry", ephemeral=True)
 
 
 class TeamTeamsButton(discord.ui.Button['TeamTeams']):

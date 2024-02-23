@@ -11,11 +11,34 @@ from utils import parse_slash_date, to_slash_date
 class FastBreakProvider:
     def __init__(self):
         self.fb_info = {}
+        self.rounds = {}
+        self.date_to_rounds = {}
         self.coming_date = ""
         self.reload()
 
     def reload(self):
-        self.fb_info = load_fb_data()
+        fb_data = load_fb_data()
+        fbs = {}
+        rounds = {}
+        dates_to_rounds = {}
+
+        for r in fb_data['rounds']:
+            i = r['id']
+            dates = []
+            for d in r['dates']:
+                f = r['dates'][d]
+                fbs[d] = f
+                dates.append(d)
+                dates_to_rounds[d] = i
+
+            rounds[i] = {
+                "dates": dates,
+                "validation": r['validation']
+            }
+
+        self.fb_info = fbs
+        self.rounds = rounds
+        self.date_to_rounds = dates_to_rounds
         self.set_coming_game_date()
 
     def get_coming_game_date(self):
