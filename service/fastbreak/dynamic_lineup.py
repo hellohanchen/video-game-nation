@@ -1,6 +1,5 @@
 import asyncio
 import datetime
-import math
 from typing import Dict, List
 
 from nba_api.live.nba.endpoints import boxscore
@@ -311,6 +310,7 @@ class DynamicLineupService(AbstractDynamicLineupService):
         index = 0
         for player in loaded:
             player_id = player['id']
+            player_name = player['full_name']
             index += 1
 
             self.players[player_id] = player
@@ -320,7 +320,8 @@ class DynamicLineupService(AbstractDynamicLineupService):
             game = self.player_games[player_id]
             team = game['team']
             self.team_players[team].append(player_id)
-            self.formatted_teams[team] += f"**{player['full_name']}**  **{game['team']}** vs {game['opponent']}\n"
+            injury = NBA_PROVIDER.get_player_injury(player_name)
+            self.formatted_teams[team] += f"**{player_name}**  *{game['team']}* vs {game['opponent']} **{injury}**\n"
 
         player_stats = get_empty_players_stats(self.player_ids)
         for player_id in player_stats:
@@ -482,7 +483,7 @@ class DynamicLineupService(AbstractDynamicLineupService):
         for user_id in self.lineups:
             if user_id not in self.user_scores:
                 continue
-            err = upsert_score(user_id, self.current_game_date,
+            err = upsert_score(user_id, self.current_game_date, self.user_scores[user_id]['score'],
                                self.user_scores[user_id]['rate'], self.user_scores[user_id]['passed'])
             if err is not None:
                 await ADMIN_LOGGER.error(f"FBRanking:Upload:{err}")
@@ -517,37 +518,43 @@ class DynamicLineupService(AbstractDynamicLineupService):
                    f"{game['statusText']}\n"
 
     async def schedule_with_scores(self, user_id):
-        dates = FB_PROVIDER.get_dates()
+        dates = FB_PROVIDER.get_dates(self.current_game_date)
         user_results, err = get_user_results(user_id, dates)
         if err is not None:
             await ADMIN_LOGGER.error(f"FBRanking:UserProgress:{err}")
             return f"Error loading progress: {err}"
         if user_id in self.user_scores:
             score = self.user_scores[user_id]
-            if score['passed']:
-                user_results[self.current_game_date] = 1
-            elif self.status != GameDateStatus.POST_GAME:
-                user_results[self.current_game_date] = -1
+            if score['passed'] or self.status == GameDateStatus.POST_GAME:
+                user_results[self.current_game_date] = {
+                    "is_passed": score['passed'],
+                    "score": score['score'],
+                    "rate": score['rate'],
+                }
             else:
-                user_results[self.current_game_date] = 0
+                user_results[self.current_game_date] = None
         else:
-            user_results[self.current_game_date] = -1
+            user_results[self.current_game_date] = None
 
         dates.sort()
         wins = 0
         message = "***FASTBREAK SCHEDULE***\n\n"
         for d in dates:
             if d > self.current_game_date:
-                message += "🟡 "
-            elif user_results[d] == 1:
-                message += "🟢 "
-                wins += 1
-            elif user_results[d] == 0:
-                message += "🔴 "
+                message += f"🟡 **{d}**\n"
             else:
-                message += "🟡 "
+                result = user_results[d]
+                if result is None:
+                    message += f"🟡 **{d}**\n"
+                else:
+                    if result['is_passed']:
+                        message += f"🟢 **{d} | {result['score']}/{result['rate']}**\n"
+                        wins += 1
+                    else:
+                        message += f"🔴 **{d} | {result['score']}/{result['rate']}**\n"
+
             fb = FastBreak(FB_PROVIDER.fb_info[d])
-            message += f"**{d}**\n{fb.get_formatted()[2:-4]}\n"
+            message += f"{fb.get_formatted()[2:-4]}\n"
 
         message += f"\n🟢 **{wins} WINS**"
 

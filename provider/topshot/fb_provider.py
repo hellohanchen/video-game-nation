@@ -84,8 +84,8 @@ class FastBreakProvider:
             }
         return f
 
-    def get_dates(self):
-        return list(self.fb_info.keys())
+    def get_dates(self, game_date):
+        return self.rounds[self.date_to_rounds[game_date]]['dates']
 
 
 def load_fb_data():
