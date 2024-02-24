@@ -5,8 +5,8 @@ from provider.topshot.cadence.flow_collections import get_account_plays
 from repository.vgn_collections import upsert_collection as repo_upsert_collection
 from repository.vgn_lineups import get_weekly_score
 from repository.vgn_users import get_user
+from service.fantasy.lineup import PAGE_SIZE
 from service.fantasy.ranking import RANK_PROVIDER
-from vgnlog.channel_logger import ADMIN_LOGGER
 
 
 class FantasyView(discord.ui.View):
@@ -174,7 +174,7 @@ class LineupView(FantasyView):
         self.lineup = self.lineup_provider.get_or_create_lineup(self.user_id)
 
     def jump_to_players(self):
-        message = self.lineup_provider.formatted_10_players(1)
+        message = self.lineup_provider.formatted_players_of_page(1)
         view = PlayersView(1, self.lineup_provider, self.user_id)
 
         return message, view
@@ -417,9 +417,9 @@ class PlayerView(FantasyView):
         return lineup.add_player_by_idx(self.current_player, pos_idx), self
 
     def back_to_players(self):
-        page = int((self.current_player - 1) / 10) + 1
+        page = int((self.current_player - 1) / PAGE_SIZE) + 1
 
-        message = self.lineup_provider.formatted_10_players(page)
+        message = self.lineup_provider.formatted_players_of_page(page)
         view = PlayersView(page, self.lineup_provider, self.user_id)
 
         return message, view
@@ -433,18 +433,18 @@ class PlayerView(FantasyView):
 
 
 class PlayersPlayerButton(discord.ui.Button['PlayersPlayer']):
-    def __init__(self, idx_in_page):
+    def __init__(self, player_idx: int):
         super().__init__(style=discord.ButtonStyle.primary,
-                         label=f'#{idx_in_page}',
-                         row=int((idx_in_page + 2) / 3) - 1 if idx_in_page != 10 else 2)
-        self.idx_in_page = idx_in_page
+                         label=f'{player_idx}',
+                         row=min(2, int(((player_idx - 1) % 10) / 3)))
+        self.player_idx = player_idx
 
     # This function is called whenever this particular button is pressed
     # This is part of the "meat" of the game logic
     async def callback(self, interaction: discord.Interaction):
         assert self.view is not None
         view: PlayersView = self.view
-        message, new_view = view.get_player_info(self.idx_in_page)
+        message, new_view = view.get_player_info(self.player_idx)
 
         await interaction.response.edit_message(content=message, view=new_view)
 
@@ -461,8 +461,7 @@ class PlayersToggleButton(discord.ui.Button['Players']):
     async def callback(self, interaction: discord.Interaction):
         assert self.view is not None
         view: PlayersView = self.view
-        view.current_page += self.offset
-        content, new_view = view.get_players_info()
+        content, new_view = view.jump_to_page(view.current_page + self.offset)
 
         await interaction.response.edit_message(content=content, view=new_view)
 
@@ -475,8 +474,7 @@ class PlayersSalaryButton(discord.ui.Button['PlayersSalary']):
     async def callback(self, interaction: discord.Interaction):
         assert self.view is not None
         view: PlayersView = self.view
-        view.current_page = view.get_page_of_salary(self.salary)
-        content, new_view = view.get_players_info()
+        content, new_view = view.jump_to_page(view.get_page_of_salary(self.salary))
 
         await interaction.response.edit_message(content=content, view=new_view)
 
@@ -488,8 +486,8 @@ class PlayersView(FantasyView):
         self.lineup_provider = lineup_provider
         self.user_id = user_id
 
-        for i in range(1, 11):
-            self.add_item(PlayersPlayerButton(i))
+        self.player_buttons = []
+        self.__refresh_player_buttons()
 
         self.add_item(PlayersSalaryButton(45))
         self.add_item(PlayersSalaryButton(30))
@@ -500,25 +498,38 @@ class PlayersView(FantasyView):
         self.add_item(PlayersToggleButton(-1))
         self.add_item(PlayersToggleButton(1))
 
-    def get_players_info(self):
-        if self.current_page > len(self.lineup_provider.player_ids) / 10 + 1:
-            self.current_page -= 1
-        elif self.current_page < 1:
-            self.current_page = 1
+    def __refresh_player_buttons(self):
+        for button in self.player_buttons:
+            self.remove_item(button)
+        self.player_buttons = []
+        idxes = self.lineup_provider.get_player_idxes_of_page(self.current_page)
+        for i in idxes:
+            button = PlayersPlayerButton(i)
+            self.add_item(button)
+            self.player_buttons.append(button)
 
-        message = self.lineup_provider.formatted_10_players(self.current_page)
+    def jump_to_page(self, page):
+        max_page = int((len(self.lineup_provider.player_ids) + PAGE_SIZE - 1) / PAGE_SIZE)
+        if page < 1:
+            self.current_page = 1
+        elif page > max_page:
+            self.current_page = max_page
+        else:
+            self.current_page = page
+
+        self.__refresh_player_buttons()
+        message = self.lineup_provider.formatted_players_of_page(self.current_page)
         return message, self
 
     def get_page_of_salary(self, salary):
         return self.lineup_provider.salary_pages[salary]
 
-    def get_player_info(self, idx_in_page):
-        player_idx = self.current_page * 10 + idx_in_page - 10
+    def get_player_info(self, player_idx):
         if player_idx > len(self.lineup_provider.player_ids):
             player_idx = len(self.lineup_provider.player_ids)
 
-        message = self.lineup_provider.detailed_player_by_id(self.lineup_provider.player_ids[player_idx - 1],
-                                                             self.user_id)
+        message = self.lineup_provider.detailed_player_by_id(
+            self.lineup_provider.player_ids[player_idx - 1], self.user_id)
 
         return message, PlayerView(player_idx, self.lineup_provider, self.user_id)
 

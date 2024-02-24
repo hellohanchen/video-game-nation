@@ -1,13 +1,15 @@
 import math
+from typing import List
 
 from provider.nba.nba_provider import NBA_PROVIDER
 from repository.vgn_collections import get_collections
 from repository.vgn_lineups import get_lineups, upsert_lineup, submit_lineup
 from repository.vgn_players import get_players
-from utils import compute_vgn_score, truncate_message, compute_vgn_scores
+from utils import compute_vgn_score, compute_vgn_scores
 
 SALARY_CAP = 165.00
 SALARY_GROUPS = [5, 10, 20, 30, 45]
+PAGE_SIZE = 10
 
 
 class LineupProvider:
@@ -50,7 +52,7 @@ class LineupProvider:
         i = len(players) - 1
         while i >= 0:
             if players[i]['current_salary'] / 100.0 >= float(SALARY_GROUPS[group]):
-                self.salary_pages[SALARY_GROUPS[group]] = int(i / 10) + 1
+                self.salary_pages[SALARY_GROUPS[group]] = int(i / PAGE_SIZE) + 1
                 i += 1
                 if group == 4:
                     break
@@ -160,12 +162,18 @@ class LineupProvider:
             ), \
             score
 
-    def formatted_10_players(self, page):
-        start = (page - 1) * 10 + 1
-        end = len(self.players) if page * 10 > len(self.players) else page * 10
+    def get_player_idxes_of_page(self, page) -> List[int]:
+        start = (page - 1) * PAGE_SIZE + 1
+        end = len(self.players) if page * PAGE_SIZE > len(self.players) else page * PAGE_SIZE
+
+        return list(range(start, end + 1))
+
+    def formatted_players_of_page(self, page):
+        start_idx = (page - 1) * PAGE_SIZE + 1
+        end_idx = len(self.players) if page * PAGE_SIZE > len(self.players) else page * PAGE_SIZE
 
         message = ""
-        for player_id in self.player_ids[start - 1:end]:
+        for player_id in self.player_ids[start_idx - 1:end_idx]:
             message += self.players[player_id]['formatted']
         return message
 
@@ -174,7 +182,7 @@ class LineupProvider:
         for player_id in self.team_to_players[team]:
             player_msg = self.players[player_id]['formatted']
             parenthesis = player_msg.find(')')
-            message += player_msg[parenthesis+4:]
+            message += player_msg[parenthesis + 4:]
         return message
 
     def get_formatted_team(self, team):
@@ -287,7 +295,8 @@ class Lineup:
         message += "🎽 {}\n".format(self.formatted_lineup_player(7))
 
         total_salary = self.get_total_salary()
-        message += "\nTotal salary ${:.2f}m, cap $165.00m, space ${:.2f}m".format(total_salary, SALARY_CAP - total_salary)
+        message += "\nTotal salary ${:.2f}m, cap $165.00m, space ${:.2f}m".format(total_salary,
+                                                                                  SALARY_CAP - total_salary)
         return message
 
     def formatted_lineup_player(self, z_idx_pos):
@@ -389,7 +398,7 @@ class Lineup:
 
     def submit(self):
         if None in self.player_ids:
-            return False, "Still have {} unfilled positions"\
+            return False, "Still have {} unfilled positions" \
                 .format(len([i for i in range(0, 8) if self.player_ids[i] is None]))
 
         if self.get_total_salary() > SALARY_CAP:
