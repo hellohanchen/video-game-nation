@@ -147,7 +147,7 @@ def upsert_score(user_id, game_date, score, rate, rank, passed):
     return None
 
 
-def get_weekly_ranks(game_dates, count):
+def get_slate_ranks(game_dates, count):
     try:
         db_conn = CNX_POOL.get_connection()
         query = "SELECT u.topshot_username as username, u.id as user_id, SUM(IF(l.is_passed, 1, 0)) as wins, " \

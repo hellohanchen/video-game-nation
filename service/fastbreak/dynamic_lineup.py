@@ -9,7 +9,7 @@ from provider.nba.nba_provider import NBAProvider, NBA_PROVIDER
 from provider.topshot.cadence.flow_collections import get_account_plays_with_lowest_serial
 from provider.topshot.fb_provider import FB_PROVIDER
 from provider.topshot.ts_provider import TS_PROVIDER
-from repository.fb_lineups import get_lineups, upsert_score, get_weekly_ranks, get_user_results, upsert_lineup, \
+from repository.fb_lineups import get_lineups, upsert_score, get_slate_ranks, get_user_results, upsert_lineup, \
     submit_lineup, get_lineup, get_player_usages, get_user_slate_result
 from repository.vgn_players import get_empty_players_stats, get_players
 from repository.vgn_users import get_user_new
@@ -591,7 +591,7 @@ class DynamicLineupService(AbstractDynamicLineupService):
     @staticmethod
     def formatted_slate_leaderboard(dates, top):
         message = "***Slate Leaderboard {}~{}***\n\n".format(dates[0], dates[-1])
-        loaded = get_weekly_ranks(dates, top)
+        loaded = get_slate_ranks(dates, top)
         for i in range(0, min(top, len(loaded))):
             message += f"**#{i + 1}.** **{loaded[i]['username']}** *{loaded[i]['wins']}* wins, " \
                        f"*{round(loaded[i]['total_score'], 2)}* CR"
