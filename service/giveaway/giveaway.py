@@ -1,7 +1,7 @@
 import datetime
 import random
 import time
-from typing import Dict
+from typing import Dict, Optional
 
 import discord
 
@@ -18,7 +18,7 @@ THUMBNAIL_URL = "https://i.ibb.co/TWmVsFB/g-01.png"
 
 
 class Giveaway:
-    def __init__(self, i, c, m, n, d, w, dur, f, ws, e, s):
+    def __init__(self, i, c, m, n, d, w, dur, f, ws, tb, e, s):
         self.id = i
         self.channel = c
         self.message = m
@@ -29,22 +29,24 @@ class Giveaway:
 
         self.fav_teams = [] if f is None else f.split(',')
         self.set_weights = [] if ws is None else [int(w) for w in ws.split(',')]
+        self.thumbnail_url: Optional[str] = tb
         self.end_at = e
         self.submissions = s
         self.view = None
+        self.embed = discord.Embed(title=f"GIVEAWAY: {n.upper()}", description=self.__build_embed_content())
+        self.embed.set_thumbnail(url=THUMBNAIL_URL if self.thumbnail_url is None else self.thumbnail_url)
 
+    def __build_embed_content(self) -> str:
         content = ""
-        if d is not None and len(d) > 0:
-            content += f"Description: {d}\n\n"
+        if self.description is not None and len(self.description) > 0:
+            content += f"Description: {self.description}\n\n"
         else:
             content += f"No description\n\n"
-        content += f"Winners: {w}\n\n"
+        content += f"Winners: {self.winners}\n\n"
         if len(self.fav_teams) > 0:
-            content += f"Favorite Teams: **{f}**\n\n"
-        content += f"Ends at: **<t:{int(e.timestamp())}:R>**"
-
-        self.embed = discord.Embed(title=f"GIVEAWAY: {n.upper()}", description=content)
-        self.embed.set_thumbnail(url=THUMBNAIL_URL)
+            content += f"Favorite Teams: **{','.join(self.fav_teams)}**\n\n"
+        content += f"Ends at: **<t:{int(self.end_at.timestamp())}:R>**"
+        return content
 
     async def send_message(self):
         if self.message is not None:
@@ -72,7 +74,7 @@ class Giveaway:
                 message = None
 
         return Giveaway(g['id'], c, message, g['name'], g['description'], g['winners'], g['duration'],
-                        g['fav_teams'], g['team_set_weights'], g['end_at'], 0)
+                        g['fav_teams'], g['team_set_weights'], g['thumbnail_url'], g['end_at'], 0)
 
     async def refresh(self):
         if self.message is None:

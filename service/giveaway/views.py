@@ -229,7 +229,8 @@ class GiveawayCreateModal(discord.ui.Modal, title='Create a giveaway'):
 
 
 class GiveawaySubmitModal(discord.ui.Modal, title='Complete details'):
-    fav_teams = discord.ui.TextInput(label="Fav teams, optional, e.g. 'ATL,BOS'", required=False)
+    fav_teams = discord.ui.TextInput(label="Fav teams, (Optional, e.g. 'ATL,BOS')", required=False)
+    thumbnail_url = discord.ui.TextInput(label="Thumbnail URL, (Optional, <= 256 chars)", required=False)
 
     def __init__(self, view: GiveawayBaseView, giveaway, channel):
         super(GiveawaySubmitModal, self).__init__()
@@ -248,7 +249,13 @@ class GiveawaySubmitModal(discord.ui.Modal, title='Complete details'):
                 await interaction.response.edit_message(content=message, view=self.view.restart())
                 return
 
-        team_set_weights_input = ""
+        thumbnail_url = str(self.thumbnail_url).strip()
+        if len(thumbnail_url) > 256:
+            message = f"URL overall 256 characters: {thumbnail_url}"
+            await interaction.response.edit_message(content=message, view=self.view.restart())
+            return
+
+        team_set_weights_input = ""  # TODO: take input from user
         if len(team_set_weights_input) > 0:
             weights = team_set_weights_input.split(',')
             for weight in weights:
@@ -263,7 +270,7 @@ class GiveawaySubmitModal(discord.ui.Modal, title='Complete details'):
                     return
 
         db_record, err = submit_giveaway(
-            self.giveaway['id'], self.giveaway['duration'], fav_teams_input, team_set_weights_input)
+            self.giveaway['id'], self.giveaway['duration'], fav_teams_input, team_set_weights_input, thumbnail_url)
 
         if db_record is None:
             await ADMIN_LOGGER.error(f"Giveaway:Submit:{err}")
@@ -323,7 +330,8 @@ class GiveawayDraftView(BaseView):
                f"Winners: **{winners}**\n" \
                f"Duration: **{duration}** hours\n\n" \
                f"*Please click 'Submit' to fill in more details and start the giveaway:*\n" \
-               f"**Fav Teams**: a comma separated list of team abbreviations, optional, example: ATL,BOS\n"
+               f"**Fav Teams**: a comma separated list of team abbreviations, optional, example: ATL,BOS\n" \
+               f"**Thumbnail URL**: a link to image that will be used as the thumbnail picture of the giveaway\n"
 
     @staticmethod
     def formatted_giveaway(giveaway):
