@@ -544,26 +544,26 @@ class DynamicLineupService(AbstractDynamicLineupService):
         message = "***FASTBREAK SCHEDULE***\n\n"
         for d in dates:
             if d > self.current_game_date:
-                message += f"🟡 **{d}**\n"
+                message += f"🟡 **{d[0:-5]}**\n"
             else:
                 result = daily_results[d]
                 if result is None:
-                    message += f"🟡 **{d}**\n"
+                    message += f"🟡 **{d[0:-5]}**\n"
                 else:
                     if result['is_passed']:
-                        message += f"🟢 **{d} | {result['score']}/{result['rate']} #{int(result['rank'])}**\n"
+                        message += f"🟢 **{d[0:-5]} | {result['score']}/{result['rate']} #{int(result['rank'])}**\n"
                         wins += 1
                     elif d == self.current_game_date and self.status != GameDateStatus.POST_GAME:
-                        message += f"🟡 **{d} | {result['score']}/{result['rate']} #{int(result['rank'])}**\n"
+                        message += f"🟡 **{d[0:-5]} | {result['score']}/{result['rate']} #{int(result['rank'])}**\n"
                     else:
-                        message += f"🔴 **{d} | {result['score']}/{result['rate']} #{int(result['rank'])}**\n"
+                        message += f"🔴 **{d[0:-5]} | {result['score']}/{result['rate']} #{int(result['rank'])}**\n"
 
             fb = FastBreak(FB_PROVIDER.fb_info[d])
             message += f"{fb.get_formatted()[2:-4]}\n"
 
         message += f"\n🟢 **{wins} WINS**"
         if slate_result is not None:
-            message += f"\n\nYour rank of *{dates[0]}~{dates[-1]}*:\n" \
+            message += f"\n\nYour rank of *{dates[0][0:-5]}~{dates[-1][0:-5]}*:\n" \
                        f"**{slate_result['wins']}** wins, **{round(slate_result['total_score'], 2)}** CR,"
             message += f" **#{slate_result['rank']}**\n" \
                        f"*current game date not included*"
