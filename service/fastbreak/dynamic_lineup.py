@@ -10,7 +10,7 @@ from provider.topshot.cadence.flow_collections import get_account_plays_with_low
 from provider.topshot.fb_provider import FB_PROVIDER
 from provider.topshot.ts_provider import TS_PROVIDER
 from repository.fb_lineups import get_lineups, upsert_score, get_weekly_ranks, get_user_results, upsert_lineup, \
-    submit_lineup, get_lineup, get_player_usages
+    submit_lineup, get_lineup, get_player_usages, get_user_slate_result
 from repository.vgn_players import get_empty_players_stats, get_players
 from repository.vgn_users import get_user_new
 from service.fastbreak.fastbreak import FastBreak
@@ -484,7 +484,8 @@ class DynamicLineupService(AbstractDynamicLineupService):
             if user_id not in self.user_scores:
                 continue
             err = upsert_score(user_id, self.current_game_date, self.user_scores[user_id]['score'],
-                               self.user_scores[user_id]['rate'], self.user_scores[user_id]['passed'])
+                               self.user_scores[user_id]['rate'], self.user_scores[user_id]['rank'],
+                               self.user_scores[user_id]['passed'])
             if err is not None:
                 await ADMIN_LOGGER.error(f"FBRanking:Upload:{err}")
 
@@ -519,22 +520,24 @@ class DynamicLineupService(AbstractDynamicLineupService):
 
     async def schedule_with_scores(self, user_id):
         dates = FB_PROVIDER.get_dates(self.current_game_date)
-        user_results, err = get_user_results(user_id, dates)
+        daily_results, err = get_user_results(user_id, dates)
         if err is not None:
-            await ADMIN_LOGGER.error(f"FBRanking:UserProgress:{err}")
-            return f"Error loading progress: {err}"
+            await ADMIN_LOGGER.error(f"FBRanking:UserDailyResult:{err}")
+            return f"Error loading daily results: {err}"
+        slate_result, err = get_user_slate_result(user_id, dates)
+        if err is not None:
+            await ADMIN_LOGGER.error(f"FBRanking:UserSlateResult:{err}")
+            return f"Error loading slate result: {err}"
         if user_id in self.user_scores:
             score = self.user_scores[user_id]
-            if score['passed'] or self.status == GameDateStatus.POST_GAME:
-                user_results[self.current_game_date] = {
-                    "is_passed": score['passed'],
-                    "score": score['score'],
-                    "rate": score['rate'],
-                }
-            else:
-                user_results[self.current_game_date] = None
+            daily_results[self.current_game_date] = {
+                "is_passed": score['passed'],
+                "score": score['score'],
+                "rate": score['rate'],
+                "rank": score['rank'],
+            }
         else:
-            user_results[self.current_game_date] = None
+            daily_results[self.current_game_date] = None
 
         dates.sort()
         wins = 0
@@ -543,20 +546,27 @@ class DynamicLineupService(AbstractDynamicLineupService):
             if d > self.current_game_date:
                 message += f"🟡 **{d}**\n"
             else:
-                result = user_results[d]
+                result = daily_results[d]
                 if result is None:
                     message += f"🟡 **{d}**\n"
                 else:
                     if result['is_passed']:
-                        message += f"🟢 **{d} | {result['score']}/{result['rate']}**\n"
+                        message += f"🟢 **{d} | {result['score']}/{result['rate']} #{result['rank']}**\n"
                         wins += 1
+                    elif d == self.current_game_date and self.status != GameDateStatus.POST_GAME:
+                        message += f"🟡 **{d} | {result['score']}/{result['rate']} #{result['rank']}**\n"
                     else:
-                        message += f"🔴 **{d} | {result['score']}/{result['rate']}**\n"
+                        message += f"🔴 **{d} | {result['score']}/{result['rate']} #{result['rank']}**\n"
 
             fb = FastBreak(FB_PROVIDER.fb_info[d])
             message += f"{fb.get_formatted()[2:-4]}\n"
 
         message += f"\n🟢 **{wins} WINS**"
+        if slate_result is not None:
+            message += f"\n\nYour rank of *{dates[0]}~{dates[-1]}*:\n" \
+                       f"**{slate_result['wins']}** wins, **{round(slate_result['total_score'], 2)}** CR,"
+            message += f" **#{slate_result['rank']}**\n" \
+                       f"*current game date not included*"
 
         return message
 

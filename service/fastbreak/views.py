@@ -45,7 +45,7 @@ class MainPage(discord.ui.View):
 
 class LineupButton(discord.ui.Button[FastBreakView]):
     def __init__(self, row):
-        super().__init__(style=discord.ButtonStyle.success, label="My lineup", row=row)
+        super().__init__(style=discord.ButtonStyle.success, label="My Lineup", row=row)
 
     async def callback(self, interaction: discord.Interaction):
         assert self.view is not None
@@ -81,7 +81,7 @@ class LineupRemoveButton(discord.ui.Button['LineupRemove']):
 
 class LineupScheduleButton(discord.ui.Button['LineupSchedule']):
     def __init__(self):
-        super().__init__(style=discord.ButtonStyle.secondary, label="Schedule", row=1)
+        super().__init__(style=discord.ButtonStyle.secondary, label="Schedule & Results", row=1)
 
     async def callback(self, interaction: discord.Interaction):
         assert self.view is not None
@@ -115,7 +115,7 @@ class LineupView(FastBreakView):
 
 class LineupRulesButton(discord.ui.Button['LineupRules']):
     def __init__(self):
-        super().__init__(style=discord.ButtonStyle.secondary, label="Rules", row=1)
+        super().__init__(style=discord.ButtonStyle.secondary, label="Rules", row=2)
 
     async def callback(self, interaction: discord.Interaction):
         assert self.view is not None
@@ -157,7 +157,7 @@ class LineupSubmitButton(discord.ui.Button['LineupSubmit']):
 
 class LineupLeaderboardButton(discord.ui.Button['LineupLeaderboard']):
     def __init__(self):
-        super().__init__(style=discord.ButtonStyle.secondary, label="Leaderboard", row=2)
+        super().__init__(style=discord.ButtonStyle.secondary, label="Top 20", row=2)
 
     async def callback(self, interaction: discord.Interaction):
         assert self.view is not None
@@ -174,9 +174,9 @@ class RankedLineupView(LineupView):
         self.add_item(LineupRemoveButton())
         self.add_item(LineupSubmitButton())
         self.add_item(LineupScheduleButton())
-        self.add_item(LineupRulesButton())
         self.add_item(LineupButton(2))
         self.add_item(LineupLeaderboardButton())
+        self.add_item(LineupRulesButton())
 
     def check_leaderboard(self):
         return self.service.formatted_leaderboard(20), self
