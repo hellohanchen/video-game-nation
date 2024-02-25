@@ -551,12 +551,12 @@ class DynamicLineupService(AbstractDynamicLineupService):
                     message += f"🟡 **{d}**\n"
                 else:
                     if result['is_passed']:
-                        message += f"🟢 **{d} | {result['score']}/{result['rate']} #{result['rank']}**\n"
+                        message += f"🟢 **{d} | {result['score']}/{result['rate']} #{int(result['rank'])}**\n"
                         wins += 1
                     elif d == self.current_game_date and self.status != GameDateStatus.POST_GAME:
-                        message += f"🟡 **{d} | {result['score']}/{result['rate']} #{result['rank']}**\n"
+                        message += f"🟡 **{d} | {result['score']}/{result['rate']} #{int(result['rank'])}**\n"
                     else:
-                        message += f"🔴 **{d} | {result['score']}/{result['rate']} #{result['rank']}**\n"
+                        message += f"🔴 **{d} | {result['score']}/{result['rate']} #{int(result['rank'])}**\n"
 
             fb = FastBreak(FB_PROVIDER.fb_info[d])
             message += f"{fb.get_formatted()[2:-4]}\n"
