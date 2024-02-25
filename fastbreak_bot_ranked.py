@@ -8,6 +8,7 @@ from dotenv import load_dotenv
 
 from constants import GameDateStatus
 from provider.nba.nba_provider import NBA_PROVIDER
+from provider.topshot.fb_provider import FB_PROVIDER
 from service.fastbreak.dynamic_lineup import DYNAMIC_LINEUP_SERVICE
 from service.fastbreak.ranked.views import RankedMainPage
 from utils import get_the_past_week_with_offset, truncate_message
@@ -103,12 +104,8 @@ async def update_stats():
     new_status = DYNAMIC_LINEUP_SERVICE.status
 
     if init_status == GameDateStatus.POST_GAME and new_status != init_status:
-        b2b_contest_dates = ['02/22/2024', '02/23/2024', '02/24/2024', '02/25/2024', '02/26/2024', '02/27/2024', '02/28/2024', '02/29/2024']
-        if init_date in b2b_contest_dates:
-            dates = b2b_contest_dates
-        else:
-            dates = get_the_past_week_with_offset(init_date, 4)
-        winners, weekly_lb = DYNAMIC_LINEUP_SERVICE.formatted_weekly_leaderboard(dates, 20)
+        dates = FB_PROVIDER.get_dates(init_date)
+        winners, weekly_lb = DYNAMIC_LINEUP_SERVICE.formatted_slate_leaderboard(dates, 20)
 
         for message in FB_CHANNEL_MESSAGES:
             await message.channel.send(init_lb)

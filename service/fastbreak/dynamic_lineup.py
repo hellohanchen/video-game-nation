@@ -589,8 +589,8 @@ class DynamicLineupService(AbstractDynamicLineupService):
         return message
 
     @staticmethod
-    def formatted_weekly_leaderboard(dates, top):
-        message = "***Weekly Leaderboard {}~{}***\n\n".format(dates[0], dates[-1])
+    def formatted_slate_leaderboard(dates, top):
+        message = "***Slate Leaderboard {}~{}***\n\n".format(dates[0], dates[-1])
         loaded = get_weekly_ranks(dates, top)
         for i in range(0, min(top, len(loaded))):
             message += f"**#{i + 1}.** **{loaded[i]['username']}** *{loaded[i]['wins']}* wins, " \
