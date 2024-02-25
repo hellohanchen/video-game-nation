@@ -1,4 +1,5 @@
 from enum import Enum
+from typing import Dict
 
 import pytz
 
@@ -99,7 +100,7 @@ TEAM_TRICODES = {
     "UTA": "UTA"
 }
 
-EMPTY_PLAYER_COLLECTION = {
+EMPTY_PLAYER_COLLECTION: Dict[str, int] = {
     "dunk": 0,
     "three_pointer": 0,
     "badge": 0,

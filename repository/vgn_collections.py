@@ -4,6 +4,7 @@ import pandas as pd
 from repository.config import CNX_POOL
 from provider.topshot.cadence.flow_collections import get_account_plays
 from provider.topshot.ts_provider import TS_PROVIDER
+from utils import list_to_str
 
 TIERS = {'Common': 2, 'Fandom': 5, 'Rare': 10, 'Legendary': 25}
 TYPES = {
@@ -178,7 +179,7 @@ def get_collections(user_ids, player_ids):
             .format(', '.join([str(user_id) for user_id in user_ids]))
 
         if player_ids is not None and len(player_ids) > 0:
-            query += f"AND player_id IN ({', '.join([str(player_id) for player_id in player_ids])})"
+            query += f"AND player_id IN ({list_to_str(player_ids)})"
 
         # Execute SQL query and store results in a pandas dataframe
         df = pd.read_sql(query, db_conn)

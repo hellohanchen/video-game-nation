@@ -63,7 +63,7 @@ class NBAProvider:
         """
         return scoreboard.ScoreBoard().get_dict()['scoreboard']
 
-    def get_games_on_date(self, date) -> Dict[str, str]:
+    def get_games_on_date(self, date) -> Dict[str, Dict[str, str]]:
         """
         Get all game ids for a provided date.
 

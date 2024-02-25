@@ -2,7 +2,7 @@ import datetime
 import math
 import re
 import time
-from typing import Dict, Union
+from typing import Dict, Union, Optional
 
 from constants import EMPTY_PLAYER_COLLECTION, STATS_PLAY_TYPE, STATS_SCORE, INVALID_ID
 
@@ -74,7 +74,7 @@ def get_game_info(game_boxscore: Dict[str, Union[str, Dict[str, Union[str, int]]
     }
 
 
-def compute_vgn_score(player, collection=None):
+def compute_vgn_score(player: Dict[str, any], collection: Optional[Dict[str, int]] = None):
     if player is None:
         return 0.0
 
@@ -168,7 +168,8 @@ async def update_channel_messages(msgs, channels, messages_ids):
                 messages_ids[channel_id].append(new_message.id)
 
             if len(msgs) < len(messages_ids[channel_id]):
-                redundant_messages = [await channel.fetch_message(messages_ids[channel_id][i]) for i in range(len(msgs), len(messages_ids[channel_id]))]
+                redundant_messages = [await channel.fetch_message(messages_ids[channel_id][i]) for i in
+                                      range(len(msgs), len(messages_ids[channel_id]))]
                 await channel.delete_messages(redundant_messages)
                 messages_ids[channel.id] = messages_ids[channel.id][0:len(msgs)]
 

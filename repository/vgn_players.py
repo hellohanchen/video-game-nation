@@ -2,6 +2,7 @@
 
 import random
 import time
+from typing import List, Dict
 
 import pandas as pd
 
@@ -179,7 +180,7 @@ def get_player(player_id):
         return None
 
 
-def get_players(player_ids, order_by=None):
+def get_players(player_ids, order_by=None) -> List[Dict[str, any]]:
     try:
         db_conn = CNX_POOL.get_connection()
         query = \

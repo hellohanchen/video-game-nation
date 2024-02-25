@@ -1,5 +1,5 @@
 import math
-from typing import List
+from typing import List, Dict, Union, Optional
 
 from provider.nba.nba_provider import NBA_PROVIDER
 from repository.vgn_collections import get_collections
@@ -10,24 +10,25 @@ from utils import compute_vgn_score, compute_vgn_scores
 SALARY_CAP = 165.00
 SALARY_GROUPS = [5, 10, 20, 30, 45]
 PAGE_SIZE = 10
+LINEUP_SIZE = 9
 
 
 class LineupProvider:
     def __init__(self):
-        self.coming_game_date = ""
-        self.team_to_opponent = {}
-        self.team_to_players = {}
-        self.formatted_teams = {}
+        self.coming_game_date: str = ""
+        self.team_to_opponent: Dict[str, str] = {}
+        self.team_to_players: Dict[str, List[int]] = {}
+        self.formatted_teams: Dict[str, str] = {}
 
-        self.player_to_team = {}
-        self.players = {}
-        self.player_ids = []
+        self.player_to_team: Dict[int, str] = {}
+        self.players: Dict[int, Dict[str, any]] = {}
+        self.player_ids: List[int] = []
 
-        self.lineups = {}
-        self.collections = {}
+        self.lineups: Dict[int, Lineup] = {}
+        self.collections: Dict[int, Dict[int, Dict[str, int]]] = {}
 
-        self.formatted_schedule = ""
-        self.salary_pages = {
+        self.formatted_schedule: str = ""
+        self.salary_pages: Dict[int, int] = {
             45: 1,
             30: 1,
             20: 1,
@@ -37,7 +38,7 @@ class LineupProvider:
         self.reload()
 
     def __load_players(self):
-        player_ids_to_load = []
+        player_ids_to_load: List[int] = []
 
         for game_id, game in NBA_PROVIDER.get_games_on_date(self.coming_game_date).items():
             for team in [game['homeTeam'], game['awayTeam']]:
@@ -67,13 +68,13 @@ class LineupProvider:
 
             self.players[player_id] = player
             self.players[player_id]['index'] = index
-            self.players[player_id]['formatted'], self.players[player_id]['score'] = self.formatted_player(player, None)
+            self.players[player_id]['formatted'], self.players[player_id]['score'] = self.__format_player(player, None)
             self.player_ids.append(player_id)
 
             self.team_to_players[self.player_to_team[player_id]].append(player_id)
 
         for team in self.team_to_players:
-            self.formatted_teams[team] = self.formatted_team(team)
+            self.formatted_teams[team] = self.__format_team(team)
 
     def __load_lineups_and_collections(self):
         lineups = get_lineups(self.coming_game_date)
@@ -103,7 +104,7 @@ class LineupProvider:
         self.__load_players()
         self.__load_lineups_and_collections()
 
-    def __create_lineup(self, user_id):
+    def __create_lineup(self, user_id: int):
         self.lineups[user_id] = Lineup(
             {
                 "user_id": user_id,
@@ -116,33 +117,34 @@ class LineupProvider:
                 "bench_6": None,
                 "bench_7": None,
                 "bench_8": None,
+                "backup_9": None,
                 "submitted": False
             },
             self
         )
 
-    def get_or_create_lineup(self, user_id):
+    def get_or_create_lineup(self, user_id: int) -> 'Lineup':
         if user_id not in self.lineups:
             self.__create_lineup(user_id)
 
         return self.lineups[user_id]
 
-    def load_user_collection(self, user_id):
+    def load_user_collection(self, user_id: int):
         collection = get_collections([user_id], self.player_ids)
 
         if collection is not None:
             self.collections[user_id] = collection[user_id]
 
-    def get_user_collection(self, user_id):
+    def get_user_collection(self, user_id: int) -> Dict[int, Dict[str, int]]:
         if user_id not in self.collections:
             self.load_user_collection(user_id)
 
         return self.collections.get(user_id)
 
-    def get_opponent(self, player_id):
+    def get_opponent(self, player_id: int) -> str:
         return self.team_to_opponent[self.player_to_team[player_id]]
 
-    def formatted_player(self, player, collection):
+    def __format_player(self, player: Dict[str, any], collection: Optional[Dict[str, int]]) -> [str, float]:
         score = compute_vgn_score(player, collection)
         return \
             "**{})** **{} +{:.2f}v {}** vs *{}* **${:.2f}m** **{}**\n" \
@@ -162,13 +164,13 @@ class LineupProvider:
             ), \
             score
 
-    def get_player_idxes_of_page(self, page) -> List[int]:
+    def get_player_idxes_of_page(self, page: int) -> List[int]:
         start = (page - 1) * PAGE_SIZE + 1
         end = len(self.players) if page * PAGE_SIZE > len(self.players) else page * PAGE_SIZE
 
         return list(range(start, end + 1))
 
-    def formatted_players_of_page(self, page):
+    def formatted_players_of_page(self, page: int) -> str:
         start_idx = (page - 1) * PAGE_SIZE + 1
         end_idx = len(self.players) if page * PAGE_SIZE > len(self.players) else page * PAGE_SIZE
 
@@ -177,7 +179,7 @@ class LineupProvider:
             message += self.players[player_id]['formatted']
         return message
 
-    def formatted_team(self, team):
+    def __format_team(self, team: str) -> str:
         message = ""
         for player_id in self.team_to_players[team]:
             player_msg = self.players[player_id]['formatted']
@@ -185,12 +187,10 @@ class LineupProvider:
             message += player_msg[parenthesis + 4:]
         return message
 
-    def get_formatted_team(self, team):
-        if team not in self.formatted_teams:
-            return ["{} is not playing on {}.".format(team, self.coming_game_date)]
-        return self.formatted_teams[team]
+    def get_formatted_team(self, team: str) -> str:
+        return self.formatted_teams.get(team, "{} is not playing on {}.".format(team, self.coming_game_date))
 
-    def detailed_player(self, player, collection):
+    def detailed_player(self, player: Dict[str, any], collection: Dict[str, int]) -> str:
         scores, total, bonus = compute_vgn_scores(player, collection)
         return \
             "**{}.** ***{} {}#{}*** *vs {}* **${:.2f}m** **{}**\n" \
@@ -240,28 +240,28 @@ class LineupProvider:
                 total, bonus
             )
 
-    def detailed_player_by_id(self, player_id, user_id):
+    def detailed_player_by_id(self, player_id: int, user_id: int):
         collection = self.get_user_collection(user_id)
         if collection is None:
             return "Fail to load user collection."
         return self.detailed_player(self.players[player_id], collection.get(player_id))
 
-    def get_coming_games(self):
+    def get_coming_games(self) -> List[Dict[str, str]]:
         return NBA_PROVIDER.get_games_on_date(self.coming_game_date).items()
 
-    def __formatted_schedule(self):
+    def __formatted_schedule(self) -> str:
         message = "🏀 ***{} GAMES***\n".format(self.coming_game_date)
-        for game_id, game in self.get_coming_games():
+        for _, game in self.get_coming_games():
             message += f"{game['awayTeam']} at {game['homeTeam']}\n"
 
         return message
 
 
 class Lineup:
-    def __init__(self, db_lineup, provider):
-        self.user_id = db_lineup['user_id']
-        self.game_date = db_lineup['game_date']
-        self.player_ids = [
+    def __init__(self, db_lineup: Dict[str, any], provider: LineupProvider):
+        self.user_id: int = db_lineup['user_id']
+        self.game_date: str = db_lineup['game_date']
+        self.player_ids: List[Optional[int]] = [
             self.__cast_player_id(db_lineup['captain_1']),
             self.__cast_player_id(db_lineup['starter_2']),
             self.__cast_player_id(db_lineup['starter_3']),
@@ -270,37 +270,39 @@ class Lineup:
             self.__cast_player_id(db_lineup['bench_6']),
             self.__cast_player_id(db_lineup['bench_7']),
             self.__cast_player_id(db_lineup['bench_8']),
+            self.__cast_player_id(db_lineup['backup_9']),
         ]
-        self.submitted = db_lineup['submitted']
-        self.provider = provider
+        self.submitted: bool = db_lineup['submitted']
+        self.provider: LineupProvider = provider
 
     @staticmethod
-    def __cast_player_id(db_player_id):
+    def __cast_player_id(db_player_id) -> Optional[int]:
         if db_player_id is not None and not math.isnan(float(db_player_id)):
-            return db_player_id
+            return int(db_player_id)
         return None
 
-    def formatted(self):
+    def formatted(self) -> str:
         message = self.provider.formatted_schedule + "\n"
 
         message += "Your lineup for **{}** is {}.\n" \
-            .format(self.game_date, "**submitted**" if self.submitted else "**NOT** submitted")
-        message += "🏅 {}\n".format(self.formatted_lineup_player(0))
-        message += "🏀 {}\n".format(self.formatted_lineup_player(1))
-        message += "🏀 {}\n".format(self.formatted_lineup_player(2))
-        message += "🏀 {}\n".format(self.formatted_lineup_player(3))
-        message += "🏀 {}\n".format(self.formatted_lineup_player(4))
-        message += "🎽 {}\n".format(self.formatted_lineup_player(5))
-        message += "🎽 {}\n".format(self.formatted_lineup_player(6))
-        message += "🎽 {}\n".format(self.formatted_lineup_player(7))
+            .format(self.game_date, "**SUBMITTED**" if self.submitted else "**NOT** submitted")
+        message += "🏅 {}\n".format(self.__format_player(0))
+        message += "🏀 {}\n".format(self.__format_player(1))
+        message += "🏀 {}\n".format(self.__format_player(2))
+        message += "🏀 {}\n".format(self.__format_player(3))
+        message += "🏀 {}\n".format(self.__format_player(4))
+        message += "🎽 {}\n".format(self.__format_player(5))
+        message += "🎽 {}\n".format(self.__format_player(6))
+        message += "🎽 {}\n".format(self.__format_player(7))
+        message += "🚩 {}\n".format(self.__format_player(8))
 
         total_salary = self.get_total_salary()
         message += "\nTotal salary ${:.2f}m, cap $165.00m, space ${:.2f}m".format(total_salary,
                                                                                   SALARY_CAP - total_salary)
         return message
 
-    def formatted_lineup_player(self, z_idx_pos):
-        player_id = self.player_ids[z_idx_pos]
+    def __format_player(self, player_idx: int) -> str:
+        player_id = self.player_ids[player_idx]
 
         if player_id is None:
             return "---"
@@ -314,7 +316,15 @@ class Lineup:
                 player['current_salary'] / 100
             )
 
-    def add_player_by_idx(self, player_idx, pos_idx):
+    def __upsert_lineup(self) -> bool:
+        successful, _ = upsert_lineup(
+            (self.user_id, self.game_date,
+             self.player_ids[0], self.player_ids[1], self.player_ids[2], self.player_ids[3], self.player_ids[4],
+             self.player_ids[5], self.player_ids[6], self.player_ids[7], self.player_ids[8])
+        )
+        return successful
+
+    def add_player_by_idx(self, player_idx: int, pos: int) -> str:
         if player_idx < 1 or player_idx > len(self.provider.player_ids):
             return "Player index should be between [1, {}]".format(len(self.provider.player_ids))
 
@@ -327,79 +337,77 @@ class Lineup:
 
         message = ""
 
-        player_to_remove = self.player_ids[pos_idx]
+        player_to_remove = self.player_ids[pos]
         if player_to_remove is not None:
             message += "Removed **{}. {}**. ".format(
                 self.provider.players[player_to_remove]['index'],
                 self.provider.players[player_to_remove]['full_name'],
             )
-        self.player_ids[pos_idx] = player_id
+        self.player_ids[pos] = player_id
 
         if self.submitted and self.get_total_salary() > SALARY_CAP:
-            self.player_ids[pos_idx] = player_to_remove
+            self.player_ids[pos] = player_to_remove
             return "Total salary exceeds cap, please adjust lineup."
 
-        successful, _ = upsert_lineup(
-            (self.user_id, self.game_date, self.player_ids[0], self.player_ids[1], self.player_ids[2],
-             self.player_ids[3], self.player_ids[4], self.player_ids[5], self.player_ids[6], self.player_ids[7])
-        )
+        successful = self.__upsert_lineup()
         if successful:
+            if pos == 0:
+                logo = "🏅 Captain"
+            elif pos < 5:
+                logo = "🏀 Starter"
+            elif pos < 8:
+                logo = "🎽 Bench"
+            else:
+                logo = "🚩 Backup"
+
             message += "Added **{}. {}** to {}. ".format(
-                self.provider.players[self.player_ids[pos_idx]]['index'],
-                self.provider.players[self.player_ids[pos_idx]]['full_name'],
-                "🏅 Captain" if pos_idx == 0 else "🏀 Starter" if pos_idx < 5 else "🎽 Bench"
+                self.provider.players[self.player_ids[pos]]['index'],
+                self.provider.players[self.player_ids[pos]]['full_name'],
+                logo,
             )
 
             return message
         else:
-            self.player_ids[pos_idx] = player_to_remove
+            self.player_ids[pos] = player_to_remove
             return "Failed to update lineup, please retry."
 
-    def remove_player(self, pos_idx):
-        if self.player_ids[pos_idx] is None:
+    def remove_player(self, pos: int) -> str:
+        if self.player_ids[pos] is None:
             return "No player at this position."
 
-        player_to_remove = self.player_ids[pos_idx]
-        self.player_ids[pos_idx] = None
+        player_to_remove = self.player_ids[pos]
+        self.player_ids[pos] = None
 
-        successful, _ = upsert_lineup(
-            (self.user_id, self.game_date, self.player_ids[0], self.player_ids[1], self.player_ids[2],
-             self.player_ids[3], self.player_ids[4], self.player_ids[5], self.player_ids[6], self.player_ids[7])
-        )
-
+        successful = self.__upsert_lineup()
         if successful:
             return "Removed **{}. {}**. ".format(
                 self.provider.players[player_to_remove]['index'],
                 self.provider.players[player_to_remove]['full_name'],
             )
         else:
-            self.player_ids[pos_idx] = player_to_remove
+            self.player_ids[pos] = player_to_remove
             return "Failed to update lineup, please retry."
 
-    def swap_players(self, pos_idx_1, pos_idx_2):
-        if self.player_ids[pos_idx_1] is None and self.player_ids[pos_idx_2] is None:
+    def swap_players(self, pos_1: int, pos_2: int) -> str:
+        if self.player_ids[pos_1] is None and self.player_ids[pos_2] is None:
             return "Swapped."
 
-        tmp = self.player_ids[pos_idx_1]
-        self.player_ids[pos_idx_1] = self.player_ids[pos_idx_2]
-        self.player_ids[pos_idx_2] = tmp
+        tmp = self.player_ids[pos_1]
+        self.player_ids[pos_1] = self.player_ids[pos_2]
+        self.player_ids[pos_2] = tmp
 
-        successful, _ = upsert_lineup(
-            (self.user_id, self.game_date, self.player_ids[0], self.player_ids[1], self.player_ids[2],
-             self.player_ids[3], self.player_ids[4], self.player_ids[5], self.player_ids[6], self.player_ids[7])
-        )
-
+        successful = self.__upsert_lineup()
         if successful:
             return "Swapped."
         else:
-            self.player_ids[pos_idx_2] = self.player_ids[pos_idx_1]
-            self.player_ids[pos_idx_1] = tmp
+            self.player_ids[pos_2] = self.player_ids[pos_1]
+            self.player_ids[pos_1] = tmp
             return "Failed to update lineup, please retry."
 
-    def submit(self):
-        if None in self.player_ids:
+    def submit(self) -> [bool, str]:
+        if None in self.player_ids[:LINEUP_SIZE - 1]:
             return False, "Still have {} unfilled positions" \
-                .format(len([i for i in range(0, 8) if self.player_ids[i] is None]))
+                .format(len([i for i in range(0, LINEUP_SIZE - 1) if self.player_ids[i] is None]))
 
         if self.get_total_salary() > SALARY_CAP:
             return False, self.formatted() + "\nTotal salary exceeds cap, please adjust lineup."
@@ -411,7 +419,7 @@ class Lineup:
         else:
             return False, self.formatted() + "\nFailed to update lineup, please retry."
 
-    def get_total_salary(self):
+    def get_total_salary(self) -> float:
         total_salary = 0
         for player_id in self.player_ids:
             if player_id is not None:

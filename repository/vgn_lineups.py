@@ -127,11 +127,11 @@ def upsert_lineup(lineup):
         db_conn = CNX_POOL.get_connection()
         cursor = db_conn.cursor()
         query = "INSERT INTO vgn.lineups (user_id, game_date, captain_1, starter_2, starter_3, " \
-                "starter_4, starter_5, bench_6, bench_7, bench_8) " \
-                "VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s) ON DUPLICATE KEY UPDATE " \
+                "starter_4, starter_5, bench_6, bench_7, bench_8, backup_9) " \
+                "VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s) ON DUPLICATE KEY UPDATE " \
                 "captain_1=VALUES(captain_1), starter_2=VALUES(starter_2), starter_3=VALUES(starter_3), " \
                 "starter_4=VALUES(starter_4), starter_5=VALUES(starter_5), bench_6=VALUES(bench_6), " \
-                "bench_7=VALUES(bench_7), bench_8=VALUES(bench_8)"
+                "bench_7=VALUES(bench_7), bench_8=VALUES(bench_8), backup_9=VALUES(backup_9)"
         cursor.execute(query, lineup)
         db_conn.commit()
         db_conn.close()

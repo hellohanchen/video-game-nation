@@ -1,4 +1,5 @@
 import datetime
+from typing import Dict
 
 from nba_api.live.nba.endpoints import boxscore
 
@@ -7,7 +8,7 @@ from repository.vgn_collections import get_collections
 from repository.vgn_lineups import get_lineups, upsert_score, get_weekly_ranks, get_submission_count
 from repository.vgn_players import get_empty_players_stats
 from repository.vgn_users import get_users
-from service.fantasy.lineup import Lineup, LINEUP_PROVIDER
+from service.fantasy.lineup import Lineup, LINEUP_PROVIDER, LINEUP_SIZE
 from utils import compute_vgn_score, truncate_message, compute_vgn_scores, get_game_info, to_slash_date
 
 
@@ -15,7 +16,7 @@ class RankingProvider:
     def __init__(self):
         self.current_game_date = ""
         self.lineups = {}
-        self.collections = {}
+        self.collections: Dict[int, Dict[int, Dict[str, int]]] = {}
 
         self.status = "PRE_GAME"
         self.games = []
@@ -110,7 +111,7 @@ class RankingProvider:
         if self.status == "PRE_GAME" or self.status == "NO_GAME":
             return
 
-        all_player_stats = {}
+        all_player_stats: Dict[int, Dict[str, any]] = {}
         for game_id in self.games:
             try:
                 game_stats = boxscore.BoxScore(game_id=game_id).get_dict()['game']
@@ -132,12 +133,20 @@ class RankingProvider:
                 if raw_stats['played'] == '1':
                     self.record_player_stats(all_player_stats, raw_stats, game_info, win)
 
-        user_scores = {}
+        user_scores: Dict[int, Dict[str, float]] = {}
         for user_id in self.lineups:
             vgn_scores = [compute_vgn_score(
                 all_player_stats.get(player_id),
                 self.collections[user_id].get(player_id)
             ) for player_id in self.lineups[user_id].player_ids]
+
+            for i in range(0, 8):
+                player_id = self.lineups[user_id].player_ids[i]
+                player_stats = all_player_stats.get(player_id)
+                if player_stats is None:
+                    vgn_scores[i] = vgn_scores[8]
+                    break
+
             user_scores[user_id] = {
                 'score': sum([vgn_scores[0] * 1.5, vgn_scores[1], vgn_scores[2], vgn_scores[3], vgn_scores[4],
                               vgn_scores[5] * 0.5, vgn_scores[6] * 0.5, vgn_scores[7] * 0.5])
@@ -230,7 +239,7 @@ class RankingProvider:
         message = "**{} {:.2f}v Rank#{}**\n".format(
             self.collections[user_id][0], self.scores[user_id]['score'], self.scores[user_id]['rank']
         )
-        for i in range(0, 8):
+        for i in range(0, LINEUP_SIZE):
             new_message = self.formatted_player(user_id, i)
             message, _ = truncate_message(messages, message, new_message, 1950)
 
@@ -246,8 +255,10 @@ class RankingProvider:
                 message = "🏅 No player\n\n"
             elif idx < 5:
                 message = "🏀 No player\n\n"
-            else:
+            elif idx < 8:
                 message = "🎽 No player\n\n"
+            else:
+                message = "🚩 No player\n\n"
             return message
 
         player = self.player_stats.get(player_id)
@@ -258,8 +269,10 @@ class RankingProvider:
             message = "🏅 **{} {:.2f}v** (+{:.2f}v) ".format(player['name'], total_score, total_bonus)
         elif idx < 5:
             message = "🏀 **{} {:.2f}v** (+{:.2f}v) ".format(player['name'], total_score, total_bonus)
-        else:
+        elif idx < 8:
             message = "🎽 **{} {:.2f}v** (+{:.2f}v) ".format(player['name'], total_score, total_bonus)
+        else:
+            message = "🚩 **{} {:.2f}v** (+{:.2f}v) ".format(player['name'], total_score, total_bonus)
 
         message += "{} {}-{} {} {}\n".format(
             player['gameInfo']['awayTeam'], player['gameInfo']['awayScore'],
