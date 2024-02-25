@@ -1,4 +1,4 @@
-from typing import Optional, List
+from typing import Optional, List, Union
 
 import discord
 
@@ -17,7 +17,7 @@ class FantasyView(discord.ui.View):
         self.lineup_provider: LineupProvider = lineup_provider
         self.user_id: int = user_id
 
-    def back_to_lineup(self) -> [str, discord.ui.View]:
+    def back_to_lineup(self) -> [str, 'LineupView']:
         message = self.lineup_provider.get_or_create_lineup(self.user_id).formatted()
 
         return message, LineupView(self.lineup_provider, self.user_id)
@@ -41,7 +41,7 @@ class MainPage(discord.ui.View):
         self.lineup_provider: LineupProvider = lineup_provider
         self.rank_provider: RankingProvider = rank_provider
 
-    def launch_fantasy(self, user_id: int) -> [str, discord.ui.View]:
+    def launch_fantasy(self, user_id: int) -> [str, 'LineupView']:
         if self.rank_provider.status != "IN_GAME":
             message = self.lineup_provider.get_or_create_lineup(user_id).formatted()
         else:
@@ -74,32 +74,32 @@ class LineupView(FantasyView):
         self.add_item(LineupWeekScoreButton())
         self.lineup: Lineup = self.lineup_provider.get_or_create_lineup(self.user_id)
 
-    def jump_to_players(self) -> [str, discord.ui.View]:
+    def jump_to_players(self) -> [str, 'PageView']:
         message = self.lineup_provider.formatted_players_of_page(1)
         view = PageView(1, self.lineup_provider, self.user_id)
 
         return message, view
 
-    def jump_to_teams(self) -> [str, discord.ui.View]:
+    def jump_to_teams(self) -> [str, 'TeamsView']:
         message = self.lineup_provider.formatted_schedule
         return message, TeamsView(self.lineup_provider, self.user_id)
 
-    def submit_lineup(self) -> [bool, str, discord.ui.View]:
+    def submit_lineup(self) -> [bool, str, 'LineupView']:
         successful, message = self.lineup.submit()
 
         return successful, message, self
 
-    def remove_player(self) -> [str, discord.ui.View]:
+    def remove_player(self) -> [str, 'RemoveView']:
         return self.lineup.formatted() + "\nRemove a player from your lineup", \
                RemoveView(self.lineup_provider, self.user_id)
 
-    def swap_player(self) -> [str, discord.ui.View]:
+    def swap_player(self) -> [str, 'SwapView']:
         return self.lineup.formatted() + "\nSwap 2 players in your lineup", SwapView(self.lineup_provider, self.user_id)
 
-    def check_score(self) -> [str, discord.ui.View]:
+    def check_score(self) -> [str, 'LineupView']:
         return RANK_PROVIDER.formatted_user_score(self.user_id)[0], self
 
-    def check_week_score(self) -> [str, discord.ui.View]:
+    def check_week_score(self) -> [str, 'LineupView']:
         if RANK_PROVIDER.current_game_date == "":
             date = self.lineup_provider.coming_game_date
         else:
@@ -109,7 +109,7 @@ class LineupView(FantasyView):
         score = get_weekly_score(dates, self.user_id)
         return f"Total score {dates[0]}~{dates[-1]}: **{score}**", self
 
-    async def reload_collection(self) -> [str, discord.ui.View, bool]:
+    async def reload_collection(self) -> [str, 'LineupView', bool]:
         vgn_user = get_user(self.user_id)
 
         if vgn_user is None:
@@ -242,7 +242,7 @@ class RemoveView(FantasyView):
         self.add_item(LineupButton(int((i + 3) / 4) + 1))
 
     # This method update current player info
-    def remove_player(self, pos: int) -> [str, discord.ui.View]:
+    def remove_player(self, pos: int) -> [str, 'RemoveView']:
         return self.lineup.formatted() + "\n" + self.lineup.remove_player(pos), self
 
 
@@ -277,10 +277,10 @@ class SwapView(FantasyView):
         self.selected: Optional[int] = None
 
     # This method update current player info
-    def swap_player(self, pos: int) -> [str, discord.ui.View]:
+    def swap_player(self, pos: int) -> [str, Union['LineupView', 'SwapView']]:
+        view: Union[LineupView, SwapView] = self
         if self.selected is None:
             message = "Select another player."
-            view = self
             self.selected = pos
         else:
             message = self.lineup.swap_players(self.selected, pos)
@@ -325,7 +325,7 @@ class PlayerView(FantasyView):
         player_id = self.lineup_provider.player_ids[self.current_player - 1]
         return self.lineup_provider.detailed_player_by_id(player_id, self.user_id)
 
-    def add_to_lineup(self) -> [str, discord.ui.View]:
+    def add_to_lineup(self) -> [str, 'PlayerView']:
         lineup = self.lineup_provider.get_or_create_lineup(self.user_id)
         if lineup is None:
             return "Fail to load lineup.", self
@@ -341,11 +341,11 @@ class PlayerView(FantasyView):
 
         return lineup.add_player_by_idx(self.current_player, pos), self
 
-    def back_to_players(self) -> [str, discord.ui.View]:
+    def back_to_players(self) -> [str, 'PageView']:
         page = int((self.current_player - 1) / PAGE_SIZE) + 1
 
         return self.lineup_provider.formatted_players_of_page(page), \
-               PageView(page, self.lineup_provider, self.user_id)
+            PageView(page, self.lineup_provider, self.user_id)
 
     def back_to_team(self) -> [str, discord.ui.View]:
         player_id = self.lineup_provider.player_ids[self.current_player - 1]
@@ -417,8 +417,8 @@ class PlayerTeamButton(discord.ui.Button[PlayerView]):
         message, new_view = self.view.back_to_team()
 
         await interaction.response.edit_message(content=message, view=new_view)
-        
-        
+
+
 class PageView(FantasyView):
     def __init__(self, page: int, lineup_provider: LineupProvider, user_id: int):
         super().__init__(lineup_provider, user_id)
@@ -445,7 +445,7 @@ class PageView(FantasyView):
             self.add_item(button)
             self.player_buttons.append(button)
 
-    def jump_to(self, page: int) -> [str, discord.ui.View]:
+    def jump_to(self, page: int) -> [str, 'PageView']:
         max_page = int((len(self.lineup_provider.player_ids) + PAGE_SIZE - 1) / PAGE_SIZE)
         if page < 1:
             self.current_page = 1
@@ -461,7 +461,7 @@ class PageView(FantasyView):
     def get_page_of_salary(self, salary) -> int:
         return self.lineup_provider.salary_pages[salary]
 
-    def get_player(self, player_idx) -> [str, discord.ui.View]:
+    def get_player(self, player_idx) -> [str, PlayerView]:
         if player_idx > len(self.lineup_provider.player_ids):
             player_idx = len(self.lineup_provider.player_ids)
 
@@ -554,76 +554,65 @@ class TeamsTeamButton(discord.ui.Button[TeamsView]):
         await interaction.response.edit_message(content=content, view=new_view)
 
 
-class TeamsGameButton(discord.ui.Button['TeamsGame']):
-    def __init__(self, row, home_team, away_team):
+class TeamsGameButton(discord.ui.Button[TeamsView]):
+    def __init__(self, row: int, home_team: str, away_team: str):
         super().__init__(style=discord.ButtonStyle.primary, label=f"{away_team}@{home_team}", row=row)
-        self.home_team = home_team
-        self.away_team = away_team
+        self.home_team: str = home_team
+        self.away_team: str = away_team
 
     async def callback(self, interaction: discord.Interaction):
         assert self.view is not None
-        view: TeamsView = self.view
-        content, new_view = view.get_game(self.home_team, self.away_team)
-
-        await interaction.response.edit_message(content=content, view=new_view)
-
-
-class GameTeamButton(discord.ui.Button['GameTeam']):
-    def __init__(self, team):
-        super().__init__(style=discord.ButtonStyle.primary, label=team, row=1)
-        self.team = team
-
-    async def callback(self, interaction: discord.Interaction):
-        assert self.view is not None
-        view: GameView = self.view
-        content, new_view = view.get_team_info(self.team)
+        content, new_view = self.view.get_game(self.home_team, self.away_team)
 
         await interaction.response.edit_message(content=content, view=new_view)
 
 
 class GameView(FantasyView):
-    def __init__(self, home_team, away_team, lineup_provider, user_id):
+    def __init__(self, home_team: str, away_team: str, lineup_provider: LineupProvider, user_id: int):
         super().__init__(lineup_provider, user_id)
 
         self.add_item(GameTeamButton(away_team))
         self.add_item(GameTeamButton(home_team))
-        self.add_item(LineupButton(2))
+        self.add_item(LineupButton(1))
+        self.add_item(GameTeamsButton())
 
     def get_team_info(self, team):
         message = self.lineup_provider.get_formatted_team(team)
 
         return message, TeamView(team, self.lineup_provider, self.user_id)
 
+    def back_to_teams(self) -> [str, TeamsView]:
+        message = self.lineup_provider.formatted_schedule
+        return message, TeamsView(self.lineup_provider, self.user_id)
 
-class TeamPlayerButton(discord.ui.Button['TeamPlayer']):
-    def __init__(self, row, player_idx, player_name):
-        super().__init__(style=discord.ButtonStyle.primary, label=f"{player_name}", row=row)
-        self.player_idx = player_idx
+
+class GameTeamButton(discord.ui.Button[GameView]):
+    def __init__(self, team: str):
+        super().__init__(style=discord.ButtonStyle.primary, label=team, row=0)
+        self.team: str = team
 
     async def callback(self, interaction: discord.Interaction):
         assert self.view is not None
-        view: TeamView = self.view
-        content, new_view = view.get_player_info(self.player_idx)
+        content, new_view = self.view.get_team_info(self.team)
 
         await interaction.response.edit_message(content=content, view=new_view)
 
 
-class TeamTeamsButton(discord.ui.Button['TeamTeams']):
-    def __init__(self, row):
-        super().__init__(style=discord.ButtonStyle.success, label='Teams', row=row)
+class GameTeamsButton(discord.ui.Button[GameView]):
+    def __init__(self):
+        super().__init__(style=discord.ButtonStyle.green, label='Teams', row=1)
 
     async def callback(self, interaction: discord.Interaction):
         assert self.view is not None
-        view: TeamView = self.view
-        content, new_view = view.back_to_teams()
+        content, new_view = self.view.back_to_teams()
 
         await interaction.response.edit_message(content=content, view=new_view)
 
 
 class TeamView(FantasyView):
-    def __init__(self, team, lineup_provider, user_id):
+    def __init__(self, team: str, lineup_provider: LineupProvider, user_id: int):
         super().__init__(lineup_provider, user_id)
-        self.team = team
+        self.team: str = team
 
         player_ids = self.lineup_provider.team_to_players[team]
         for i in range(0, len(player_ids)):
@@ -634,11 +623,34 @@ class TeamView(FantasyView):
         self.add_item(LineupButton(last_row))
         self.add_item(TeamTeamsButton(last_row))
 
-    def get_player_info(self, player_idx):
-        message = self.lineup_provider.detailed_player_by_id(self.lineup_provider.player_ids[player_idx - 1],
-                                                             self.user_id)
+    def get_player_info(self, player_idx: int) -> [str, PlayerView]:
+        message = self.lineup_provider.detailed_player_by_id(
+            self.lineup_provider.player_ids[player_idx - 1], self.user_id)
 
         return message, PlayerView(player_idx, self.lineup_provider, self.user_id)
 
-    def back_to_teams(self):
+    def back_to_teams(self) -> [str, TeamsView]:
         return self.lineup_provider.formatted_schedule, TeamsView(self.lineup_provider, self.user_id)
+
+
+class TeamPlayerButton(discord.ui.Button[TeamView]):
+    def __init__(self, row: int, player_idx: int, player_name: str):
+        super().__init__(style=discord.ButtonStyle.primary, label=f"{player_name}", row=row)
+        self.player_idx: int = player_idx
+
+    async def callback(self, interaction: discord.Interaction):
+        assert self.view is not None
+        content, new_view = self.view.get_player_info(self.player_idx)
+
+        await interaction.response.edit_message(content=content, view=new_view)
+
+
+class TeamTeamsButton(discord.ui.Button[TeamView]):
+    def __init__(self, row):
+        super().__init__(style=discord.ButtonStyle.success, label='Teams', row=row)
+
+    async def callback(self, interaction: discord.Interaction):
+        assert self.view is not None
+        content, new_view = self.view.back_to_teams()
+
+        await interaction.response.edit_message(content=content, view=new_view)

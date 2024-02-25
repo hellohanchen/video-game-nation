@@ -1,5 +1,5 @@
 import datetime
-from typing import Dict
+from typing import Dict, List, Optional
 
 from nba_api.live.nba.endpoints import boxscore
 
@@ -8,35 +8,36 @@ from repository.vgn_collections import get_collections
 from repository.vgn_lineups import get_lineups, upsert_score, get_weekly_ranks, get_submission_count
 from repository.vgn_players import get_empty_players_stats
 from repository.vgn_users import get_users
-from service.fantasy.lineup import Lineup, LINEUP_PROVIDER, LINEUP_SIZE
+from service.fantasy.lineup import Lineup, LINEUP_PROVIDER, LINEUP_SIZE, AbstractProvider
 from utils import compute_vgn_score, truncate_message, compute_vgn_scores, get_game_info, to_slash_date
 
 
-class RankingProvider:
+class RankingProvider(AbstractProvider):
     def __init__(self):
-        self.current_game_date = ""
-        self.lineups = {}
+        super(RankingProvider, self).__init__()
+        self.current_game_date: str = ""
+        self.lineups: Dict[int, Lineup] = {}
         self.collections: Dict[int, Dict[int, Dict[str, int]]] = {}
 
-        self.status = "PRE_GAME"
-        self.games = []
+        self.status: str = "PRE_GAME"
+        self.games: List[int] = []
 
-        self.player_stats = {}
-        self.scores = {}
-        self.leaderboard = []
-        self.player_leaderboard = []
+        self.player_stats: Dict[int, Dict[str, any]] = {}
+        self.scores: Dict[int, Dict[str, any]] = {}
+        self.leaderboard: List[int] = []
+        self.player_leaderboard: List[int] = []
 
         self.update()
 
     def __load_lineups_and_collections(self):
-        game_day_players = []
+        game_day_players: List[int] = []
         for game_id, game in NBA_PROVIDER.get_games_on_date(self.current_game_date).items():
             for team in [game['homeTeam'], game['awayTeam']]:
                 for player in NBA_PROVIDER.get_players_for_team(team):
                     game_day_players.append(player)
 
-        loaded = get_lineups(self.current_game_date, True)
-        player_ids = []
+        loaded: List[Dict[str, any]] = get_lineups(self.current_game_date, True)
+        player_ids: List[Optional[int]] = []
         for lineup in loaded:
             self.lineups[lineup['user_id']] = Lineup(lineup, self)
 
@@ -61,12 +62,12 @@ class RankingProvider:
             self.player_stats = get_empty_players_stats(player_ids)
 
     def reload(self):
-        self.lineups = {}
-        self.collections = {}
-        self.player_stats = {}
-        self.scores = {}
-        self.leaderboard = []
-        self.player_leaderboard = []
+        self.lineups: Dict[int, Lineup] = {}
+        self.collections: Dict[int, Dict[int, Dict[str, int]]] = {}
+        self.player_stats: Dict[int, Dict[str, any]] = {}
+        self.scores: Dict[int, Dict[str, any]] = {}
+        self.leaderboard: List[int] = []
+        self.player_leaderboard: List[int] = []
         self.__load_lineups_and_collections()
 
     def update(self):
@@ -95,7 +96,8 @@ class RankingProvider:
 
         self.__update_leaderboard()
 
-    def record_player_stats(self, all_player_stats, raw_stats, game_info, team_win):
+    def record_player_stats(self, all_player_stats: Dict[int, Dict[str, any]], raw_stats: Dict[str, any],
+                            game_info: Dict[str, any], team_win: int):
         if raw_stats['played'] == '1':
             player_id = raw_stats['personId']
             all_player_stats[player_id] = self.enrich_stats(raw_stats['statistics'])
@@ -111,7 +113,7 @@ class RankingProvider:
         if self.status == "PRE_GAME" or self.status == "NO_GAME":
             return
 
-        all_player_stats: Dict[int, Dict[str, any]] = {}
+        played_player_stats: Dict[int, Dict[str, any]] = {}
         for game_id in self.games:
             try:
                 game_stats = boxscore.BoxScore(game_id=game_id).get_dict()['game']
@@ -126,23 +128,23 @@ class RankingProvider:
             win = game_stats['homeTeam']['score'] > game_stats['awayTeam']['score']
             for raw_stats in game_stats['homeTeam']['players']:
                 if raw_stats['played'] == '1':
-                    self.record_player_stats(all_player_stats, raw_stats, game_info, win)
+                    self.record_player_stats(played_player_stats, raw_stats, game_info, win)
 
             win = game_stats['awayTeam']['score'] > game_stats['homeTeam']['score']
             for raw_stats in game_stats['awayTeam']['players']:
                 if raw_stats['played'] == '1':
-                    self.record_player_stats(all_player_stats, raw_stats, game_info, win)
+                    self.record_player_stats(played_player_stats, raw_stats, game_info, win)
 
         user_scores: Dict[int, Dict[str, float]] = {}
         for user_id in self.lineups:
             vgn_scores = [compute_vgn_score(
-                all_player_stats.get(player_id),
+                played_player_stats.get(player_id),
                 self.collections[user_id].get(player_id)
             ) for player_id in self.lineups[user_id].player_ids]
 
             for i in range(0, 8):
                 player_id = self.lineups[user_id].player_ids[i]
-                player_stats = all_player_stats.get(player_id)
+                player_stats = played_player_stats.get(player_id)
                 if player_stats is None:
                     vgn_scores[i] = vgn_scores[8]
                     break
@@ -164,9 +166,9 @@ class RankingProvider:
         self.leaderboard = leaderboard
 
         player_scores = {}
-        for player_id in all_player_stats:
-            self.player_stats[player_id] = all_player_stats[player_id]
-            player_scores[player_id] = compute_vgn_score(all_player_stats[player_id])
+        for player_id in played_player_stats:
+            self.player_stats[player_id] = played_player_stats[player_id]
+            player_scores[player_id] = compute_vgn_score(played_player_stats[player_id])
         player_ids = list(player_scores.keys())
         player_ids.sort(key=lambda pid: player_scores[pid], reverse=True)
         self.player_leaderboard = player_ids
@@ -175,7 +177,7 @@ class RankingProvider:
         for user_id in self.lineups:
             upsert_score(user_id, self.lineups[user_id].game_date, self.scores[user_id]['score'])
 
-    def formatted_leaderboard(self, top):
+    def formatted_leaderboard(self, top: int):
         if self.status != "IN_GAME" and self.status != "POST_GAME":
             message = "***Leaderboard {}***\n\n".format(LINEUP_PROVIDER.coming_game_date)
             submissions = get_submission_count(LINEUP_PROVIDER.coming_game_date)
@@ -194,7 +196,7 @@ class RankingProvider:
 
         return messages
 
-    def formatted_players(self, top):
+    def formatted_player_leaderboard(self, top: int):
         if self.status != "IN_GAME" and self.status != "POST_GAME":
             message = "***Players {}***\n\n".format(LINEUP_PROVIDER.coming_game_date)
             return [message + "Games are not started yet.\n"]
@@ -202,7 +204,7 @@ class RankingProvider:
         message = "***Players {}***\n\n".format(self.current_game_date)
         messages = []
         for i in range(0, min(top, len(self.player_leaderboard))):
-            new_message = self.__formatted_player_by_id(self.player_leaderboard[i], i + 1)
+            new_message = self.__format_leaderboard_player(self.player_leaderboard[i], i + 1)
             message, _ = truncate_message(messages, message, new_message, 1950)
 
         if message != "":
@@ -240,7 +242,7 @@ class RankingProvider:
             self.collections[user_id][0], self.scores[user_id]['score'], self.scores[user_id]['rank']
         )
         for i in range(0, LINEUP_SIZE):
-            new_message = self.formatted_player(user_id, i)
+            new_message = self.__format_player(user_id, i)
             message, _ = truncate_message(messages, message, new_message, 1950)
 
         if message != "":
@@ -248,7 +250,7 @@ class RankingProvider:
 
         return messages
 
-    def formatted_player(self, user_id, idx):
+    def __format_player(self, user_id, idx):
         player_id = self.lineups[user_id].player_ids[idx]
         if player_id is None:
             if idx == 0:
@@ -290,7 +292,7 @@ class RankingProvider:
 
         return message
 
-    def __formatted_player_by_id(self, player_id, rank):
+    def __format_leaderboard_player(self, player_id, rank):
         player = self.player_stats.get(player_id)
         _, total_score, _ = compute_vgn_scores(player)
 

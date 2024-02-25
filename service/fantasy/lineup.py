@@ -1,5 +1,5 @@
 import math
-from typing import List, Dict, Union, Optional
+from typing import List, Dict, Optional
 
 from provider.nba.nba_provider import NBA_PROVIDER
 from repository.vgn_collections import get_collections
@@ -13,21 +13,31 @@ PAGE_SIZE = 10
 LINEUP_SIZE = 9
 
 
-class LineupProvider:
+class AbstractProvider:
     def __init__(self):
-        self.coming_game_date: str = ""
+        super(AbstractProvider, self).__init__()
+        self.formatted_schedule: str = ""
         self.team_to_opponent: Dict[str, str] = {}
-        self.team_to_players: Dict[str, List[int]] = {}
-        self.formatted_teams: Dict[str, str] = {}
 
         self.player_to_team: Dict[int, str] = {}
         self.players: Dict[int, Dict[str, any]] = {}
         self.player_ids: List[int] = []
 
+    def get_opponent(self, player_id: int) -> str:
+        return self.team_to_opponent[self.player_to_team[player_id]]
+
+
+class LineupProvider(AbstractProvider):
+    def __init__(self):
+        super(LineupProvider, self).__init__()
+        self.coming_game_date: str = ""
+        self.team_to_opponent: Dict[str, str] = {}
+        self.team_to_players: Dict[str, List[int]] = {}
+        self.formatted_teams: Dict[str, str] = {}
+
         self.lineups: Dict[int, Lineup] = {}
         self.collections: Dict[int, Dict[int, Dict[str, int]]] = {}
 
-        self.formatted_schedule: str = ""
         self.salary_pages: Dict[int, int] = {
             45: 1,
             30: 1,
@@ -140,9 +150,6 @@ class LineupProvider:
             self.load_user_collection(user_id)
 
         return self.collections.get(user_id)
-
-    def get_opponent(self, player_id: int) -> str:
-        return self.team_to_opponent[self.player_to_team[player_id]]
 
     def __format_player(self, player: Dict[str, any], collection: Optional[Dict[str, int]]) -> [str, float]:
         score = compute_vgn_score(player, collection)
@@ -258,7 +265,7 @@ class LineupProvider:
 
 
 class Lineup:
-    def __init__(self, db_lineup: Dict[str, any], provider: LineupProvider):
+    def __init__(self, db_lineup: Dict[str, any], provider: AbstractProvider):
         self.user_id: int = db_lineup['user_id']
         self.game_date: str = db_lineup['game_date']
         self.player_ids: List[Optional[int]] = [
@@ -273,7 +280,7 @@ class Lineup:
             self.__cast_player_id(db_lineup['backup_9']),
         ]
         self.submitted: bool = db_lineup['submitted']
-        self.provider: LineupProvider = provider
+        self.provider: AbstractProvider = provider
 
     @staticmethod
     def __cast_player_id(db_player_id) -> Optional[int]:
@@ -296,7 +303,7 @@ class Lineup:
         message += "🎽 {}\n".format(self.__format_player(7))
         message += "🚩 {}\n".format(self.__format_player(8))
 
-        total_salary = self.get_total_salary()
+        total_salary = self.__get_total_salary()
         message += "\nTotal salary ${:.2f}m, cap $165.00m, space ${:.2f}m".format(total_salary,
                                                                                   SALARY_CAP - total_salary)
         return message
@@ -345,7 +352,7 @@ class Lineup:
             )
         self.player_ids[pos] = player_id
 
-        if self.submitted and self.get_total_salary() > SALARY_CAP:
+        if self.submitted and self.__get_total_salary() > SALARY_CAP:
             self.player_ids[pos] = player_to_remove
             return "Total salary exceeds cap, please adjust lineup."
 
@@ -409,7 +416,7 @@ class Lineup:
             return False, "Still have {} unfilled positions" \
                 .format(len([i for i in range(0, LINEUP_SIZE - 1) if self.player_ids[i] is None]))
 
-        if self.get_total_salary() > SALARY_CAP:
+        if self.__get_total_salary() > SALARY_CAP:
             return False, self.formatted() + "\nTotal salary exceeds cap, please adjust lineup."
 
         successful, _ = submit_lineup(self.user_id, self.game_date)
@@ -419,7 +426,7 @@ class Lineup:
         else:
             return False, self.formatted() + "\nFailed to update lineup, please retry."
 
-    def get_total_salary(self) -> float:
+    def __get_total_salary(self) -> float:
         total_salary = 0
         for player_id in self.player_ids:
             if player_id is not None:

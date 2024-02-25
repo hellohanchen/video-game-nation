@@ -158,7 +158,7 @@ async def update_leaderboard():
         await update_channel_messages(messages, LB_CHANNELS, LB_MESSAGE_IDS)
 
         if new_status == "IN_GAME" or new_status == "POST_GAME":
-            messages = RANK_PROVIDER.formatted_players(20)
+            messages = RANK_PROVIDER.formatted_player_leaderboard(20)
             messages.append("ET: **{}** , UPDATE EVERY 5 MINs".format(datetime.now(TZ_ET).strftime("%H:%M:%S")))
             await update_channel_messages(messages, PLAYERS_CHANNELS, PLAYERS_MESSAGE_IDS)
 
