@@ -13,6 +13,8 @@ EXCHANGE_MESSAGE = "**Video Game Nation Exchange System**\n\n" \
                    "Each user can hold *at most 5 listing posts*, creating extra posts will remove old posts " \
                    "automatically.\n" \
                    "Each post can be sent to connected Discord servers *once every 30 minutes.*\n\n" \
+                   "Connected servers: *Video Game Nation, The Spice Exchange, Boards2Buckets, " \
+                   "Collectin & Connectin*\n" \
                    "*Please do not abuse this system.*\n\n"
 
 
