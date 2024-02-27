@@ -10,7 +10,7 @@ from provider.topshot.cadence.flow_collections import get_account_plays_with_low
 from provider.topshot.fb_provider import FB_PROVIDER
 from provider.topshot.ts_provider import TS_PROVIDER
 from repository.fb_lineups import get_lineups, upsert_score, get_slate_ranks, get_user_results, upsert_lineup, \
-    submit_lineup, get_lineup, get_player_usages, get_user_slate_result
+    submit_lineup, get_lineup, get_player_usages, get_user_slate_result, get_usages
 from repository.vgn_players import get_empty_players_stats, get_players
 from repository.vgn_users import get_user_new
 from service.fastbreak.fastbreak import FastBreak
@@ -29,6 +29,7 @@ class AbstractDynamicLineupService:
         self.player_ids: List[int] = []
         self.player_games: Dict[int, Dict[str, str]] = {}
 
+        self.user_usages: Dict[int, Dict[int, int]] = {}
         self.user_scores: Dict[int, Dict[str, any]] = {}
         self.leaderboard: List[int] = []
 
@@ -214,11 +215,8 @@ class Lineup:
                 serials.append(collections[pid]['serial'])
 
         if game_date in FB_PROVIDER.date_to_rounds:
-            player_usages, err = get_player_usages(self.user_id, game_date)
-            if err is not None:
-                await ADMIN_LOGGER.error(f"FBR:Submit:PlayerUsages:{err}")
-
             validation = FB_PROVIDER.rounds[FB_PROVIDER.date_to_rounds[game_date]]['validation']
+            player_usages = self.service.user_usages.get(self.user_id, {})
             if validation == "ONE":
                 for pid in self.player_ids[0:5]:
                     if pid != INVALID_ID:
@@ -356,6 +354,9 @@ class DynamicLineupService(AbstractDynamicLineupService):
         self.lineups = {}
         self.__load_lineups()
 
+        self.user_usages, err = get_usages(self.current_game_date)
+        if err is not None:
+            asyncio.run(ADMIN_LOGGER.error(f"FBR:UserUsages:{err}"))
         self.user_scores = {}
         self.leaderboard = []
 
@@ -602,10 +603,21 @@ class DynamicLineupService(AbstractDynamicLineupService):
 
         return loaded[:10], message
 
-    def formatted_team_players(self, team) -> str:
+    def formatted_team_players(self, team: str, user_id: int) -> str:
         if team not in self.formatted_teams:
             return "{} is not playing on {}.".format(team, self.current_game_date)
-        return self.formatted_teams[team]
+
+        message = self.formatted_teams[team]
+        message += "\n"
+        has_used = False
+        usage = self.user_usages.get(user_id, {})
+        for pid in self.team_players[team]:
+            if pid in usage:
+                if not has_used:
+                    has_used = True
+                    message += "*PLAYERS USED*:\n"
+                message += f"**{usage[pid]}x {self.players[pid]['full_name']}**\n"
+        return message
 
     def get_coming_games(self):
         return NBA_PROVIDER.get_games_on_date(self.current_game_date).items()

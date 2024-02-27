@@ -99,6 +99,52 @@ def get_player_usages(uid, game_date):
     return player_usages, None
 
 
+def get_usages(game_date):
+    if game_date not in FB_PROVIDER.date_to_rounds:
+        return {}, None
+
+    game_round = FB_PROVIDER.rounds[FB_PROVIDER.date_to_rounds[game_date]]
+    round_dates = game_round['dates']
+
+    db_conn = None
+    try:
+        db_conn = CNX_POOL.get_connection()
+        query = "SELECT * FROM vgn.fb_lineups WHERE game_date IN ({}) " \
+                "AND game_date != '{}'" \
+            .format(', '.join("'" + d + "'" for d in round_dates), game_date)
+
+        # Execute SQL query and store results in a pandas dataframe
+        df = pd.read_sql(query, db_conn)
+
+        # Convert dataframe to a dictionary with headers
+        db_lineups = df.to_dict('records')
+
+        db_conn.commit()
+        db_conn.close()
+    except Exception as err:
+        print("DB error: {}".format(err))
+
+        if db_conn is not None:
+            db_conn.close()
+        return {}, err
+
+    user_usages = {}
+    for db_l in db_lineups:
+        uid = db_l['user_id']
+        if uid not in user_usages:
+            user_usages[uid] = {}
+
+        for key in ['player_1', 'player_2', 'player_3', 'player_4', 'player_5']:
+            player_id = db_l[key]
+            if player_id is not None and player_id != INVALID_ID:
+                if player_id not in user_usages[uid]:
+                    user_usages[uid][player_id] = 1
+                else:
+                    user_usages[uid][player_id] = user_usages[uid][player_id] + 1
+
+    return user_usages, None
+
+
 def submit_lineup(lineup):
     db_conn = None
     try:

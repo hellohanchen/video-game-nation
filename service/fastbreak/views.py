@@ -263,7 +263,8 @@ class TeamsView(FastBreakView):
         self.add_item(LineupButton(int((i - 1) / 4) + 1))
 
     def get_team_info(self, team):
-        return self.service.formatted_team_players(team), TeamView(team, self.service, self.user_id, self.is_ranked)
+        return self.service.formatted_team_players(team, self.user_id), \
+            TeamView(team, self.service, self.user_id, self.is_ranked)
 
     def get_game_info(self, home_team, away_team):
         return f"{away_team} at {home_team}", GameView(home_team, away_team, self.service, self.user_id, self.is_ranked)
@@ -291,7 +292,8 @@ class GameView(FastBreakView):
         self.add_item(LineupButton(2))
 
     def get_team_info(self, team):
-        return self.service.formatted_team_players(team), TeamView(team, self.service, self.user_id, self.is_ranked)
+        return self.service.formatted_team_players(team, self.user_id), \
+            TeamView(team, self.service, self.user_id, self.is_ranked)
 
 
 class TeamPlayerButton(discord.ui.Button['TeamPlayer']):
