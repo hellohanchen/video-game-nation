@@ -126,8 +126,7 @@ class LineupRulesButton(discord.ui.Button['LineupRules']):
                   f"**Rule 0.** The gameplay is the same as the Topshot Fastbreak: " \
                   f"users will select 3 to 5 players. Each game night has different stats and different scores " \
                   f"that the lineup must beat in order to get a win.\n" \
-                  f"**Rule 1.** Users must link their own Topshot accounts with Discord account to join the game, " \
-                  f"and submit the same lineup as Topshot Fastbreak for every night.\n" \
+                  f"**Rule 1.** Users must link their own Topshot accounts with Discord account to join the game.\n" \
                   f"**Rule 2.** The DAILY leaderboard will be determined by score of the lineup. Tierbreaker is \n" \
                   f"*sum of lowest serials of the highest tier moments of each player*.\n" \
                   f"**Rule 3.** The WEEKLY leaderboard will be determined by the number of wins. Tierbreaker is sum " \
