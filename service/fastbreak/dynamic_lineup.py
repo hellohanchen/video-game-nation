@@ -102,7 +102,7 @@ class Lineup:
             message += f" is **SUBMITTED** to *{FB_PROVIDER.contests[contest_id]['name']}*.\n"
         else:
             if contest_id is not None:
-                message += f" is **NOT** submitted to *{FB_PROVIDER.contests[contest_id]['name']}*."
+                message += f" is **NOT** submitted to *{FB_PROVIDER.contests[contest_id]['name']}*.\n"
             else:
                 message += ".\n"
 
