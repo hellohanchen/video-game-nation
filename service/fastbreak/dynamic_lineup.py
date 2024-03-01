@@ -391,7 +391,7 @@ class DynamicLineupService(AbstractDynamicLineupService):
         new_status = NBAProvider.get_status_enum(scoreboard['games'])
 
         if new_status == GameDateStatus.POST_GAME:
-            pst_time = datetime.datetime.now(pytz.timezone('US/Alaska')).replace(tzinfo=None)
+            pst_time = datetime.datetime.now(TZ_PT).replace(tzinfo=None)
             diff = pst_time - scoreboard_date
             if diff.days >= 1:
                 new_status = GameDateStatus.PRE_GAME
