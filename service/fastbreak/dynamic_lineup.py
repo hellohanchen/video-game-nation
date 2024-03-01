@@ -1,7 +1,8 @@
 import asyncio
 import datetime
-from typing import Dict, List
+from typing import Dict, List, Optional
 
+import pytz
 from nba_api.live.nba.endpoints import boxscore
 
 from constants import TZ_PT, GameDateStatus, INVALID_ID
@@ -10,7 +11,7 @@ from provider.topshot.cadence.flow_collections import get_account_plays_with_low
 from provider.topshot.fb_provider import FB_PROVIDER
 from provider.topshot.ts_provider import TS_PROVIDER
 from repository.fb_lineups import get_lineups, upsert_score, get_slate_ranks, get_user_results, upsert_lineup, \
-    submit_lineup, get_lineup, get_player_usages, get_user_slate_result, get_usages
+    submit_lineup, get_lineup, get_user_slate_result, get_usages, get_submissions
 from repository.vgn_players import get_empty_players_stats, get_players
 from repository.vgn_users import get_user_new
 from service.fastbreak.fastbreak import FastBreak
@@ -23,21 +24,43 @@ class AbstractDynamicLineupService:
     def __init__(self):
         self.current_game_date: str = ""
         self.status: GameDateStatus = GameDateStatus.INIT
-        self.fb: FastBreak | None = None
+        self.contest_fbs: Dict[int, FastBreak] = {}
 
         self.players: Dict[int, Dict[str, any]] = {}
         self.player_ids: List[int] = []
         self.player_games: Dict[int, Dict[str, str]] = {}
 
         self.user_usages: Dict[int, Dict[int, int]] = {}
-        self.user_scores: Dict[int, Dict[str, any]] = {}
-        self.leaderboard: List[int] = []
+        self.contest_scores: Dict[int, Dict[int, Dict[str, any]]] = {}
+        self.leaderboards: Dict[int, List[int]] = {}
 
         self.games: Dict[str, any] = {}
         self.formatted_games: str = ""
 
-    def formatted_player(self, player_id: int) -> str:
+    def formatted_player(self, player_id: int, fb: FastBreak) -> str:
         pass
+
+    @staticmethod
+    def get_fb_on(game_date, contest_id: Optional[int] = None) -> FastBreak:
+        if contest_id is None:
+            contest_id = FB_PROVIDER.date_contests.get(game_date, {}).get(INVALID_ID)
+
+        if game_date in FB_PROVIDER.fb_details and contest_id in FB_PROVIDER.fb_details[game_date]:
+            return FastBreak(FB_PROVIDER.fb_details[game_date][contest_id])
+        return FastBreak.get_empty()
+
+    def get_fb(self, contest_id: Optional[int] = None) -> FastBreak:
+        game_date = self.current_game_date
+        if contest_id is None:
+            default_contest_id = FB_PROVIDER.date_contests.get(game_date, {}).get(INVALID_ID)
+            return self.contest_fbs.get(default_contest_id, FastBreak.get_empty())
+
+        return self.contest_fbs.get(contest_id, FastBreak.get_empty())
+
+    def remove_user_scores(self, user_id: int):
+        for cid in self.contest_scores:
+            self.leaderboards[cid].remove(user_id)
+            del self.contest_scores[cid][user_id]
 
 
 class Lineup:
@@ -45,9 +68,10 @@ class Lineup:
         self.user_id: int = INVALID_ID
         self.username: str = ""
         self.player_ids: [int] = []
-        self.is_ranked: bool = False
+        self.is_submitted: bool = False
         self.serial: int = 0
         self.service: AbstractDynamicLineupService = service
+        self.contests: Dict[int, Dict[str, any]] = {}
         self.reload(db_lineup)
 
     def reload(self, db_lineup: Dict[str, int | bool | str]):
@@ -63,38 +87,47 @@ class Lineup:
             cast_player_id(db_lineup['player_7']),
             cast_player_id(db_lineup['player_8']),
         ]
-        self.is_ranked = db_lineup['is_ranked']
+        self.is_submitted = db_lineup['is_ranked']
         self.serial = db_lineup['sum_serial']
+        self.contests, _ = get_submissions(self.user_id, self.service.current_game_date)
 
-    def formatted(self) -> str:
+    def formatted(self, contest_id: Optional[int] = None) -> str:
         message = self.service.formatted_games + "\n"
-        if self.service.fb is not None:
-            message += self.service.fb.get_formatted()
+        fb = self.service.get_fb(contest_id)
+        if fb is not None:
+            message += fb.get_formatted()
 
         message += f"Your lineup for **{self.service.current_game_date}**"
-        if self.is_ranked:
-            message += " is **SUBMITTED**.\n"
+        if self.is_submitted and contest_id is not None and contest_id in self.contests:
+            message += f" is **SUBMITTED** to *{FB_PROVIDER.contests[contest_id]['name']}*.\n"
         else:
-            message += ".\n"
+            if contest_id is not None:
+                message += f" is **NOT** submitted to *{FB_PROVIDER.contests[contest_id]['name']}*."
+            else:
+                message += ".\n"
 
-        for player_id in self.player_ids[0: self.service.fb.count]:
-            message += self.service.formatted_player(player_id)
+        for player_id in self.player_ids[0: fb.count]:
+            message += self.service.formatted_player(player_id, fb)
 
-        if self.user_id in self.service.user_scores:
-            score = self.service.user_scores[self.user_id]
-            message += f"\n{score['message']}\n\n" \
-                       f"Your current rank is **{score['rank']}/{len(self.service.user_scores)}**"
+        if contest_id in self.service.contest_scores:
+            contest_scores = self.service.contest_scores[contest_id]
+            if self.user_id in contest_scores:
+                score = contest_scores[self.user_id]
+                message += f"\n{score['message']}\n\n" \
+                           f"Your current rank is **{score['rank']}/{len(contest_scores)}**"
 
         if self.service.status == GameDateStatus.PRE_GAME:
             message += f"\nGames are not started yet."
 
         return message
 
-    def add_player_by_idx(self, player_idx: int, pos_idx: int, is_ranked: bool = False) -> str:
-        if self.is_ranked and not is_ranked:
-            return f"B2B contest lineup can only be updated in B2B server."
-        if pos_idx < 0 or pos_idx > self.service.fb.count:
-            return "Player index should be between [0, {}]".format(self.service.fb.count - 1)
+    def add_player_by_idx(self, player_idx: int, pos_idx: int, is_ranked: bool = False,
+                          contest_id: Optional[int] = None) -> str:
+        fb = self.service.get_fb(contest_id)
+        if self.is_submitted and not is_ranked:
+            return f"**SUBMITTED** lineup can't be modified here, please go to the original Discord server."
+        if pos_idx < 0 or pos_idx > fb.count:
+            return "Player index should be between [0, {}]".format(fb.count - 1)
         if player_idx < 1 or player_idx > len(self.service.player_ids):
             return "Player index should be between [1, {}]".format(len(self.service.player_ids))
 
@@ -118,15 +151,10 @@ class Lineup:
         )
         if err is None:
             message += f"Added **{player_name}**"
-            if self.is_ranked:
-                if is_ranked:
-                    message += "\nClick **Submit** to save your changes."
-                else:
-                    message += "\nPlease **Submit** to save your changes in B2B server."
+            if self.is_submitted:
+                message += "\n**You need to SUBMIT again to save your changes to join leaderboard.**"
 
-            if self.user_id in self.service.user_scores:
-                self.service.leaderboard.remove(self.user_id)
-                del self.service.user_scores[self.user_id]
+            self.service.remove_user_scores(self.user_id)
 
             self.reload(updated_lineup[0])
             return message
@@ -139,8 +167,8 @@ class Lineup:
             return f"Failed to update lineup: {err}"
 
     def remove_player(self, pos_idx: int, is_ranked: bool = False) -> str:
-        if self.is_ranked and not is_ranked:
-            return f"B2B contest lineup can only be updated in B2B server."
+        if self.is_submitted and not is_ranked:
+            return f"**SUBMITTED** lineup can't be modified here, please go to the original Discord server."
         if self.player_ids[pos_idx] is INVALID_ID:
             return "No player at this position."
 
@@ -156,15 +184,10 @@ class Lineup:
         )
         if err is None:
             message = f"Removed **{self.service.players[player_to_remove]['full_name']}**."
-            if self.is_ranked:
-                if is_ranked:
-                    message += "\nClick **Submit** to save your changes."
-                else:
-                    message += "\nPlease **Submit** to save your changes in B2B server."
+            if self.is_submitted:
+                message += "\n**You need to SUBMIT again to save your changes to join leaderboard.**"
 
-            if self.user_id in self.service.user_scores:
-                self.service.leaderboard.remove(self.user_id)
-                del self.service.user_scores[self.user_id]
+            self.service.remove_user_scores(self.user_id)
 
             self.reload(updated_lineup[0])
             return message
@@ -172,7 +195,9 @@ class Lineup:
             self.player_ids[pos_idx] = player_to_remove
             return "Failed to update lineup, please retry."
 
-    async def submit(self) -> str:
+    async def submit(self, contest_id: Optional[int]) -> str:
+        if contest_id is None:
+            return "Discord server doesn't have on-going Fastbreak contest."
         user, err = get_user_new(self.user_id)
         if user is None:
             await ADMIN_LOGGER.error(f"DynamicLineup:Submit:{err}")
@@ -181,7 +206,7 @@ class Lineup:
         # load submitted serials if the lineup is already submitted
         submitted_serials = {}
         game_date = self.service.current_game_date
-        if self.is_ranked:
+        if len(self.contests) > 0:
             submitted, err = get_lineup(self.user_id, game_date)
             if err is not None:
                 await ADMIN_LOGGER.error(f"DynamicLineup:Submit:GetLineup:{err}")
@@ -214,8 +239,8 @@ class Lineup:
                 serial_sum += collections[pid]['serial']
                 serials.append(collections[pid]['serial'])
 
-        if game_date in FB_PROVIDER.date_to_rounds:
-            validation = FB_PROVIDER.rounds[FB_PROVIDER.date_to_rounds[game_date]]['validation']
+        if contest_id in FB_PROVIDER.contests:
+            validation = FB_PROVIDER.contests[contest_id]['validation']
             player_usages = self.service.user_usages.get(self.user_id, {})
             if validation == "ONE":
                 for pid in self.player_ids[0:5]:
@@ -234,20 +259,19 @@ class Lineup:
                         if pid in player_usages and player_usages[pid] == limit:
                             return f"Submission failed: {self.service.players[pid]['full_name']} reaches limit: {limit}"
 
-        successful, err = submit_lineup((
+        successful, updated_lineup, err = submit_lineup((
             self.user_id, user['topshot_username'], game_date,
             self.player_ids[0], serials[0],
             self.player_ids[1], serials[1], self.player_ids[2], serials[2],
             self.player_ids[3], serials[3], self.player_ids[4], serials[4],
             serial_sum
-        ))
+        ), self.user_id, contest_id)
         if not successful:
             return f"Submission failed: {err}"
+        self.reload(updated_lineup[0])
 
-        self.is_ranked = True
-        self.serial = serial_sum
-        self.username = user['topshot_username']
-        message = "You've submitted lineup using the following players:\n\n"
+        message = f"You've submitted lineup for *{FB_PROVIDER.contests[contest_id]['name']}* " \
+                  f"using the following players:\n\n"
         for pid in self.player_ids[0:5]:
             if pid == INVALID_ID:
                 continue
@@ -327,7 +351,7 @@ class DynamicLineupService(AbstractDynamicLineupService):
                 self.player_stats[player_id] = player_stats[player_id]
 
     def __load_lineups(self):
-        if self.fb is None:
+        if len(self.contest_fbs) == 0:
             return
 
         game_day_players = []
@@ -342,7 +366,7 @@ class DynamicLineupService(AbstractDynamicLineupService):
 
     def reload(self):
         FB_PROVIDER.reload()
-        self.fb = FastBreak(FB_PROVIDER.get_fb(self.current_game_date))
+        self.contest_fbs = {cid: FastBreak(cfb) for cid, cfb in FB_PROVIDER.get_fbs(self.current_game_date).items()}
 
         self.players = {}
         self.player_ids = []
@@ -357,8 +381,8 @@ class DynamicLineupService(AbstractDynamicLineupService):
         self.user_usages, err = get_usages(self.current_game_date)
         if err is not None:
             asyncio.run(ADMIN_LOGGER.error(f"FBR:UserUsages:{err}"))
-        self.user_scores = {}
-        self.leaderboard = []
+        self.contest_scores = {}
+        self.leaderboards = {}
 
     async def update(self):
         scoreboard = NBAProvider.get_scoreboard()
@@ -367,7 +391,7 @@ class DynamicLineupService(AbstractDynamicLineupService):
         new_status = NBAProvider.get_status_enum(scoreboard['games'])
 
         if new_status == GameDateStatus.POST_GAME:
-            pst_time = datetime.datetime.now(TZ_PT).replace(tzinfo=None)
+            pst_time = datetime.datetime.now(pytz.timezone('US/Alaska')).replace(tzinfo=None)
             diff = pst_time - scoreboard_date
             if diff.days >= 1:
                 new_status = GameDateStatus.PRE_GAME
@@ -453,44 +477,50 @@ class DynamicLineupService(AbstractDynamicLineupService):
         for game_id in games:
             self.games[game_id] = games[game_id]
 
-        user_scores = {}
+        contest_scores = {cid: {} for cid in self.contest_fbs}
+        leaderboards = {}
         for user_id in self.lineups:
             lineup = self.lineups[user_id]
-            if not lineup.is_ranked:
+            if len(lineup.contests) == 0:
                 continue
 
-            score, passed, rate, message = self.fb.compute_score(lineup.player_ids[0:self.fb.count], self.player_stats)
-            user_scores[user_id] = {
-                'score': score,
-                'serial': lineup.serial,
-                'passed': passed,
-                'rate': rate,
-                'message': message
-            }
+            for cid in lineup.contests:
+                fb = self.get_fb(cid)
+                score, passed, rate, message = fb.compute_score(lineup.player_ids[0:fb.count], self.player_stats)
+                contest_scores[cid][user_id] = {
+                    'score': score,
+                    'serial': lineup.serial,
+                    'passed': passed,
+                    'rate': rate,
+                    'message': message
+                }
 
-        user_ids = list(user_scores.keys())
-        user_ids.sort(key=lambda uid: user_scores[uid]['serial'], reverse=False)
-        user_ids.sort(key=lambda uid: user_scores[uid]['score'], reverse=True)
+        for cid in self.contest_fbs:
+            user_scores = contest_scores[cid]
+            user_ids = list(user_scores.keys())
+            user_ids.sort(key=lambda uid: user_scores[uid]['serial'], reverse=False)
+            user_ids.sort(key=lambda uid: user_scores[uid]['score'], reverse=True)
 
-        leaderboard = []
-        for i, user_id in enumerate(user_ids):
-            user_scores[user_id]['rank'] = i + 1
-            leaderboard.append(user_id)
+            leaderboard = []
+            for i, user_id in enumerate(user_ids):
+                user_scores[user_id]['rank'] = i + 1
+                leaderboard.append(user_id)
+            leaderboards[cid] = leaderboard
 
-        self.user_scores = user_scores
-        self.leaderboard = leaderboard
+        self.contest_scores = contest_scores
+        self.leaderboards = leaderboards
 
     async def __upload_leaderboard(self):
-        for user_id in self.lineups:
-            if user_id not in self.user_scores:
-                continue
-            err = upsert_score(user_id, self.current_game_date, self.user_scores[user_id]['score'],
-                               self.user_scores[user_id]['rate'], self.user_scores[user_id]['rank'],
-                               self.user_scores[user_id]['passed'])
-            if err is not None:
-                await ADMIN_LOGGER.error(f"FBRanking:Upload:{err}")
+        for contest_id in self.contest_scores:
+            user_scores = self.contest_scores[contest_id]
+            for user_id in user_scores:
+                score = user_scores[user_id]
+                err = upsert_score(user_id, contest_id, self.current_game_date,
+                                   score['score'], score['rate'], score['rank'], score['passed'])
+                if err is not None:
+                    await ADMIN_LOGGER.error(f"FBRanking:Upload:{err}")
 
-    def formatted_player(self, player_id: int) -> str:
+    def formatted_player(self, player_id: int, fb: FastBreak) -> str:
         if player_id == INVALID_ID:
             return "🏀 ---\n\n"
 
@@ -501,10 +531,7 @@ class DynamicLineupService(AbstractDynamicLineupService):
                 return f"🏀 invalid player id: **{player_id}**\n\n"
             message = f"🏀 **{player['full_name']}**\n"
         else:
-            if self.fb is None:
-                message = f"🏀 **{player_stats['full_name']}**\n"
-            else:
-                message = f"🏀 {self.fb.formatted_score(player_stats)}\n"
+            message = f"🏀 {fb.formatted_score(player_stats)}\n"
 
         player_game = self.player_games[player_id]
         game = self.games[player_game['id']]
@@ -519,18 +546,22 @@ class DynamicLineupService(AbstractDynamicLineupService):
                    f"{game['homeScore']} {game['homeTeam']} " \
                    f"{game['statusText']}\n"
 
-    async def schedule_with_scores(self, user_id):
+    async def schedule_with_scores(self, user_id, contest_id: Optional[int] = None):
         dates = FB_PROVIDER.get_dates(self.current_game_date)
-        daily_results, err = get_user_results(user_id, dates)
-        if err is not None:
-            await ADMIN_LOGGER.error(f"FBRanking:UserDailyResult:{err}")
-            return f"Error loading daily results: {err}"
-        slate_result, err = get_user_slate_result(user_id, dates)
-        if err is not None:
-            await ADMIN_LOGGER.error(f"FBRanking:UserSlateResult:{err}")
-            return f"Error loading slate result: {err}"
-        if user_id in self.user_scores:
-            score = self.user_scores[user_id]
+        if contest_id is not None:
+            daily_results, err = get_user_results(user_id, contest_id, dates)
+            if err is not None:
+                await ADMIN_LOGGER.error(f"FBRanking:UserDailyResult:{err}")
+                return f"Error loading daily results: {err}"
+            slate_result, err = get_user_slate_result(user_id, contest_id, dates)
+            if err is not None:
+                await ADMIN_LOGGER.error(f"FBRanking:UserSlateResult:{err}")
+                return f"Error loading slate result: {err}"
+        else:
+            daily_results = {}
+            slate_result = None
+        if contest_id is not None and contest_id in self.contest_scores and user_id in self.contest_scores[contest_id]:
+            score = self.contest_scores[contest_id][user_id]
             daily_results[self.current_game_date] = {
                 "is_passed": score['passed'],
                 "score": score['score'],
@@ -547,52 +578,57 @@ class DynamicLineupService(AbstractDynamicLineupService):
             if d > self.current_game_date:
                 message += f"🟡 **{d[0:-5]}**\n"
             else:
-                result = daily_results[d]
+                result = daily_results.get(d)
                 if result is None:
                     message += f"🟡 **{d[0:-5]}**\n"
                 else:
                     if result['is_passed']:
-                        message += f"🟢 **{d[0:-5]} | {result['score']}/{result['rate']} #{int(result['rank'])}**\n"
+                        message += f"🟢 **{d[0:-5]} | {result['score']}/{result['rate']} #{result['rank']}**\n"
                         wins += 1
                     elif d == self.current_game_date and self.status != GameDateStatus.POST_GAME:
-                        message += f"🟡 **{d[0:-5]} | {result['score']}/{result['rate']} #{int(result['rank'])}**\n"
+                        message += f"🟡 **{d[0:-5]} | {result['score']}/{result['rate']} #{result['rank']}**\n"
                     else:
-                        message += f"🔴 **{d[0:-5]} | {result['score']}/{result['rate']} #{int(result['rank'])}**\n"
+                        message += f"🔴 **{d[0:-5]} | {result['score']}/{result['rate']} #{result['rank']}**\n"
 
-            fb = FastBreak(FB_PROVIDER.fb_info[d])
-            message += f"{fb.get_formatted()[2:-4]}\n"
+            message += f"{self.get_fb_on(d, contest_id).get_formatted()[2:-4]}\n"
 
         message += f"\n🟢 **{wins} WINS**"
         if slate_result is not None:
-            message += f"\n\nYour rank of *{dates[0][0:-5]}~{dates[-1][0:-5]}*:\n" \
-                       f"**{slate_result['wins']}** wins, **{round(slate_result['total_score'], 2)}** CR,"
-            message += f" **#{slate_result['rank']}**\n" \
+            contest_name = FB_PROVIDER.contests.get(contest_id, {'name': f'{dates[0][0:-5]}~{dates[-1][0:-5]}'})['name']
+            message += f"\n\nYour rank of *{contest_name}*:\n" \
+                       f"**{int(slate_result['wins'])}** wins, **{round(slate_result['total_score'], 2)}** CR," \
+                       f" **#{slate_result['rank']}**\n" \
                        f"*current game date not included*"
 
         return message
 
-    def formatted_leaderboard(self, top):
+    def formatted_leaderboard(self, top, contest_id: Optional[int]):
         if self.status == GameDateStatus.PRE_GAME:
             return "Games are not started yet.\n"
+        if contest_id not in self.leaderboards:
+            return "No live leaderboard.\n"
 
-        message = f"***Leaderboard {self.current_game_date}***\n\n"
-        for i in range(0, min(top, len(self.leaderboard))):
-            uid = self.leaderboard[i]
-            if self.user_scores[uid]['passed']:
+        message = f"***Leaderboard {self.current_game_date}***\n" \
+                  f"*{FB_PROVIDER.contests[contest_id]['name']}*\n\n"
+        for i in range(0, min(top, len(self.leaderboards[contest_id]))):
+            uid = self.leaderboards[contest_id][i]
+            score = self.contest_scores[contest_id][uid]
+            if score['passed']:
                 message += "🟢 "
             else:
                 message += "🔴 "
             message += f"**#{i + 1}.**  **{self.lineups[uid].username}** " \
-                       f"points {self.user_scores[uid]['score']}, serial {int(self.lineups[uid].serial)}\n"
+                       f"points {score['score']}, serial {int(self.lineups[uid].serial)}\n"
 
-        message += f"\nTotal submissions: **{len(self.user_scores)}**\n"
+        message += f"\nTotal submissions: **{len(self.contest_scores[contest_id])}**\n"
 
         return message
 
     @staticmethod
-    def formatted_slate_leaderboard(dates, top):
-        message = "***Slate Leaderboard {}~{}***\n\n".format(dates[0], dates[-1])
-        loaded = get_slate_ranks(dates, top)
+    def formatted_slate_leaderboard(dates, top, contest_id: int):
+        message = f"***Slate Leaderboard {dates[0]}~{dates[-1]}***\n" \
+                  f"*{FB_PROVIDER.contests[contest_id]['name']}*\n\n"
+        loaded = get_slate_ranks(contest_id, dates, top)
         for i in range(0, min(top, len(loaded))):
             message += f"**#{i + 1}.** **{loaded[i]['username']}** *{loaded[i]['wins']}* wins, " \
                        f"*{round(loaded[i]['total_score'], 2)}* CR"
@@ -601,7 +637,7 @@ class DynamicLineupService(AbstractDynamicLineupService):
             else:
                 message += "\n"
 
-        return loaded[:10], message
+        return loaded[:min(10, len(loaded))], message
 
     def formatted_team_players(self, team: str, user_id: int) -> str:
         if team not in self.formatted_teams:

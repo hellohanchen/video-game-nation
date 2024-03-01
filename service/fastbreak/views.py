@@ -1,3 +1,5 @@
+from typing import Optional
+
 import discord
 
 from constants import INVALID_ID
@@ -6,19 +8,19 @@ from vgnlog.channel_logger import ADMIN_LOGGER
 
 
 class FastBreakView(discord.ui.View):
-    def __init__(self, lineup_service: DynamicLineupService, user_id: int, is_ranked=False):
+    def __init__(self, lineup_service: DynamicLineupService, user_id: int, contest_id: Optional[int] = None):
         super().__init__()
         self.service: DynamicLineupService = lineup_service
         self.user_id: int = user_id
-        self.is_ranked = is_ranked
+        self.contest_id = contest_id
 
     def back_to_lineup(self):
-        message = self.service.load_or_create_lineup(self.user_id).formatted()
-
-        if self.is_ranked:
-            return message, RankedLineupView(self.service, self.user_id)
+        if self.contest_id is not None:
+            view = RankedLineupView(self.service, self.user_id, self.contest_id)
+            return view.lineup.formatted(self.contest_id), view
         else:
-            return message, LineupView(self.service, self.user_id)
+            view = LineupView(self.service, self.user_id)
+            return view.lineup.formatted(self.contest_id), view
 
 
 class MainStartButton(discord.ui.Button['Start']):
@@ -28,7 +30,7 @@ class MainStartButton(discord.ui.Button['Start']):
     async def callback(self, interaction: discord.Interaction):
         assert self.view is not None
         view: MainPage = self.view
-        message, new_view = view.launch_fb(interaction.user.id)
+        message, new_view = view.launch_fb(interaction.user.id, interaction.channel.id)
 
         await interaction.response.send_message(content=message, view=new_view, ephemeral=True, delete_after=600.0)
 
@@ -39,7 +41,7 @@ class MainPage(discord.ui.View):
         self.add_item(MainStartButton())
         self.service = service
 
-    def launch_fb(self, user_id):
+    def launch_fb(self, user_id, channel_id):
         return self.service.load_or_create_lineup(user_id).formatted(), LineupView(self.service, user_id)
 
 
@@ -92,9 +94,9 @@ class LineupScheduleButton(discord.ui.Button['LineupSchedule']):
 
 
 class LineupView(FastBreakView):
-    def __init__(self, service, user_id, is_ranked=False):
-        super().__init__(service, user_id, is_ranked)
-        if not is_ranked:
+    def __init__(self, service, user_id, contest_id: Optional[int] = None):
+        super().__init__(service, user_id, contest_id)
+        if contest_id is None:
             self.add_item(LineupTeamsButton())
             self.add_item(LineupRemoveButton())
             self.add_item(LineupButton(1))
@@ -102,14 +104,14 @@ class LineupView(FastBreakView):
         self.lineup = self.service.load_or_create_lineup(self.user_id)
 
     def jump_to_teams(self):
-        return self.service.formatted_games, TeamsView(self.service, self.user_id, self.is_ranked)
+        return self.service.formatted_games, TeamsView(self.service, self.user_id, self.contest_id)
 
     def remove_player(self):
-        return self.lineup.formatted() + "\nRemove a player from your lineup", \
-               RemoveView(self.service, self.user_id, self.is_ranked)
+        return self.lineup.formatted(self.contest_id) + "\nRemove a player from your lineup", \
+               RemoveView(self.service, self.user_id, self.contest_id)
 
     async def get_fb_schedule(self):
-        schedule = await self.service.schedule_with_scores(self.user_id)
+        schedule = await self.service.schedule_with_scores(self.user_id, self.contest_id)
         return schedule, self
 
 
@@ -148,7 +150,7 @@ class LineupSubmitButton(discord.ui.Button['LineupSubmit']):
         await interaction.response.edit_message(content=f"Submission in progress...\n", view=view)
         followup = interaction.followup
         try:
-            message = await view.lineup.submit()
+            message = await view.lineup.submit(view.contest_id)
             await followup.send(message, ephemeral=True)
         except Exception as err:
             await ADMIN_LOGGER.error(f"FB:Submit:{err}")
@@ -168,8 +170,8 @@ class LineupLeaderboardButton(discord.ui.Button['LineupLeaderboard']):
 
 
 class RankedLineupView(LineupView):
-    def __init__(self, service, user_id):
-        super().__init__(service, user_id, True)
+    def __init__(self, service, user_id, contest_id):
+        super().__init__(service, user_id, contest_id)
         self.add_item(LineupTeamsButton())
         self.add_item(LineupRemoveButton())
         self.add_item(LineupSubmitButton())
@@ -179,7 +181,7 @@ class RankedLineupView(LineupView):
         self.add_item(LineupRulesButton())
 
     def check_leaderboard(self):
-        return self.service.formatted_leaderboard(20), self
+        return self.service.formatted_leaderboard(20, self.contest_id), self
 
 
 class RemovePlayerButton(discord.ui.Button['RemovePlayer']):
@@ -200,13 +202,13 @@ class RemovePlayerButton(discord.ui.Button['RemovePlayer']):
 
 
 class RemoveView(FastBreakView):
-    def __init__(self, service, user_id, is_ranked=False):
-        super().__init__(service, user_id, is_ranked)
+    def __init__(self, service, user_id, contest_id):
+        super().__init__(service, user_id, contest_id)
         self.lineup = self.service.get_or_create_lineup(self.user_id)
 
         player_ids = self.lineup.player_ids
         i = 0
-        for j in range(0, self.service.fb.count):
+        for j in range(0, len(player_ids)):
             if player_ids[j] != INVALID_ID:
                 self.add_item(RemovePlayerButton(int(i / 4), self.service.players[player_ids[j]]['full_name'], j))
                 i += 1
@@ -214,8 +216,8 @@ class RemoveView(FastBreakView):
 
     # This method update current player info
     def remove_player(self, pos_idx):
-        message = self.lineup.remove_player(pos_idx, self.is_ranked)
-        return f"{self.lineup.formatted()}\n{message}", self
+        message = self.lineup.remove_player(pos_idx, self.contest_id is not None)
+        return f"{self.lineup.formatted(self.contest_id)}\n{message}", self
 
 
 class TeamsTeamButton(discord.ui.Button['TeamsTeam']):
@@ -246,8 +248,8 @@ class TeamsGameButton(discord.ui.Button['TeamsGame']):
 
 
 class TeamsView(FastBreakView):
-    def __init__(self, lineup_service, user_id, is_ranked=False):
-        super().__init__(lineup_service, user_id, is_ranked)
+    def __init__(self, lineup_service, user_id, contest_id: Optional[int] = None):
+        super().__init__(lineup_service, user_id, contest_id)
 
         teams = list(self.service.team_players.keys())
         i = 0
@@ -264,10 +266,10 @@ class TeamsView(FastBreakView):
 
     def get_team_info(self, team):
         return self.service.formatted_team_players(team, self.user_id), \
-            TeamView(team, self.service, self.user_id, self.is_ranked)
+            TeamView(team, self.service, self.user_id, self.contest_id)
 
     def get_game_info(self, home_team, away_team):
-        return f"{away_team} at {home_team}", GameView(home_team, away_team, self.service, self.user_id, self.is_ranked)
+        return f"{away_team} at {home_team}", GameView(home_team, away_team, self.service, self.user_id, self.contest_id)
 
 
 class GameTeamButton(discord.ui.Button['GameTeam']):
@@ -284,8 +286,8 @@ class GameTeamButton(discord.ui.Button['GameTeam']):
 
 
 class GameView(FastBreakView):
-    def __init__(self, home_team, away_team, lineup_service, user_id, is_ranked=False):
-        super().__init__(lineup_service, user_id, is_ranked)
+    def __init__(self, home_team, away_team, lineup_service, user_id, contest_id: Optional[int] = None):
+        super().__init__(lineup_service, user_id, contest_id)
 
         self.add_item(GameTeamButton(away_team))
         self.add_item(GameTeamButton(home_team))
@@ -293,7 +295,7 @@ class GameView(FastBreakView):
 
     def get_team_info(self, team):
         return self.service.formatted_team_players(team, self.user_id), \
-            TeamView(team, self.service, self.user_id, self.is_ranked)
+            TeamView(team, self.service, self.user_id, self.contest_id)
 
 
 class TeamPlayerButton(discord.ui.Button['TeamPlayer']):
@@ -306,22 +308,23 @@ class TeamPlayerButton(discord.ui.Button['TeamPlayer']):
         view: TeamView = self.view
         content, new_view = view.add_to_lineup(self.player_idx)
 
-        if not self.view.is_ranked:
+        if self.view.contest_id is None:
             await interaction.response.edit_message(content=content, view=new_view)
             return
 
         # if ranked but not full, don't submit
-        for i in range(0, self.view.service.fb.count):
+        fb = self.view.service.get_fb(self.view.contest_id)
+        for i in range(0, fb.count):
             if self.view.lineup.player_ids[i] == INVALID_ID:
                 await interaction.response.edit_message(content=content, view=new_view)
                 return
 
-        content += "\nLineup is full, submitting ..."
+        content += "\nLineup is full, auto submitting ..."
         await interaction.response.edit_message(content=content, view=new_view)
 
         followup = interaction.followup
         try:
-            message = await view.lineup.submit()
+            message = await view.lineup.submit(view.contest_id)
             await followup.send(message, ephemeral=True)
         except Exception as err:
             await ADMIN_LOGGER.error(f"FB:Submit:{err}")
@@ -341,8 +344,8 @@ class TeamTeamsButton(discord.ui.Button['TeamTeams']):
 
 
 class TeamView(FastBreakView):
-    def __init__(self, team, service, user_id, is_ranked=False):
-        super().__init__(service, user_id, is_ranked)
+    def __init__(self, team, service, user_id, contest_id: Optional[int] = None):
+        super().__init__(service, user_id, contest_id)
         self.team = team
         self.lineup: Lineup = self.service.get_or_create_lineup(user_id)
 
@@ -356,16 +359,17 @@ class TeamView(FastBreakView):
         self.add_item(TeamTeamsButton(last_row))
 
     def add_to_lineup(self, player_idx):
-        pos_idx = self.service.fb.count
-        for i in range(0, self.service.fb.count):
+        fb = self.service.get_fb(self.contest_id)
+        pos_idx = fb.count
+        for i in range(0, fb.count):
             if self.lineup.player_ids[i] == INVALID_ID:
                 pos_idx = i
                 break
 
-        if pos_idx == self.service.fb.count:
+        if pos_idx == fb.count:
             return "Lineup is already full, please remove a player.", self
 
-        return self.lineup.add_player_by_idx(player_idx, pos_idx, self.is_ranked), self
+        return self.lineup.add_player_by_idx(player_idx, pos_idx, self.contest_id is not None), self
 
     def back_to_teams(self):
-        return self.service.formatted_games, TeamsView(self.service, self.user_id, self.is_ranked)
+        return self.service.formatted_games, TeamsView(self.service, self.user_id, self.contest_id)

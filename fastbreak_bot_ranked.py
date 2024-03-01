@@ -54,7 +54,7 @@ REFRESH_COUNT = 0
 @bot.event
 async def on_ready():
     for guild in bot.guilds:
-        if guild == B2B_GUILD_ID:
+        if guild.id == B2B_GUILD_ID:
             global B2B_GUILD
             B2B_GUILD = guild
         for channel in guild.channels:
@@ -99,31 +99,36 @@ async def reload(context):
 async def update_stats():
     init_status = DYNAMIC_LINEUP_SERVICE.status
     init_date = DYNAMIC_LINEUP_SERVICE.current_game_date
-    init_lb = DYNAMIC_LINEUP_SERVICE.formatted_leaderboard(20)
+    init_lbs = {}
+    for channel_id in FB_PROVIDER.date_contests[init_date]:
+        contest_id = FB_PROVIDER.get_contest_id(init_date, channel_id)
+        init_lbs[channel_id] = DYNAMIC_LINEUP_SERVICE.formatted_leaderboard(20, contest_id)
     await DYNAMIC_LINEUP_SERVICE.update()
     new_status = DYNAMIC_LINEUP_SERVICE.status
 
     if init_status == GameDateStatus.POST_GAME and new_status != init_status:
         dates = FB_PROVIDER.get_dates(init_date)
-        winners, weekly_lb = DYNAMIC_LINEUP_SERVICE.formatted_slate_leaderboard(dates, 20)
-
         for message in FB_CHANNEL_MESSAGES:
-            await message.channel.send(init_lb)
-            await message.channel.send(weekly_lb)
+            contest_id = FB_PROVIDER.get_contest_id(init_date, message.channel.id)
+            if contest_id is not None:
+                winners, weekly_lb = DYNAMIC_LINEUP_SERVICE.formatted_slate_leaderboard(dates, 20, contest_id)
+                await message.channel.send(init_lbs[message.channel.id])
+                await message.channel.send(weekly_lb)
 
-        if init_date == '02/29/2024' or len(dates) == 7:
-            if B2B_GUILD is not None:
-                winner_role = B2B_GUILD.get_role(1194158354608697465)
-                if winner_role is None:
-                    await ADMIN_LOGGER.warn("FBR:WinnerRole:not found")
-                    return
+                if message.channel.id == 1195804395309367469:
+                    if init_date == dates[-1]:
+                        if B2B_GUILD is not None:
+                            winner_role = B2B_GUILD.get_role(1194158354608697465)
+                            if winner_role is None:
+                                await ADMIN_LOGGER.warn("FBR:WinnerRole:not found")
+                                return
 
-                for user in winners:
-                    member = B2B_GUILD.get_member(user['user_id'])
-                    if member is not None:
-                        await member.add_roles(winner_role)
-            else:
-                await ADMIN_LOGGER.warn("FBR:B2BGuild:not found")
+                            for user in winners:
+                                member = B2B_GUILD.get_member(user['user_id'])
+                                if member is not None:
+                                    await member.add_roles(winner_role)
+                        else:
+                            await ADMIN_LOGGER.warn("FBR:B2BGuild:not found")
 
 
 @tasks.loop(minutes=2)

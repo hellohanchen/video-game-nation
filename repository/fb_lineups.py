@@ -1,3 +1,5 @@
+from typing import Dict, Optional
+
 import pandas as pd
 
 from constants import INVALID_ID
@@ -23,6 +25,7 @@ def get_lineup(user_id, game_date):
 
 
 def get_lineups(game_date):
+    db_conn = None
     try:
         db_conn = CNX_POOL.get_connection()
         query = "SELECT * FROM vgn.fb_lineups WHERE game_date = '{}' ".format(game_date)
@@ -57,61 +60,18 @@ def upsert_lineup(lineup):
     return rw_db(CNX_POOL, write, read, lineup)
 
 
-def get_player_usages(uid, game_date):
-    if game_date not in FB_PROVIDER.date_to_rounds:
-        return {}, None
-
-    game_round = FB_PROVIDER.rounds[FB_PROVIDER.date_to_rounds[game_date]]
-    round_dates = game_round['dates']
-
-    db_conn = None
-    try:
-        db_conn = CNX_POOL.get_connection()
-        query = "SELECT * FROM vgn.fb_lineups WHERE game_date IN ({}) " \
-                "AND user_id = {} AND game_date != '{}'" \
-            .format(', '.join("'" + d + "'" for d in round_dates), uid, game_date)
-
-        # Execute SQL query and store results in a pandas dataframe
-        df = pd.read_sql(query, db_conn)
-
-        # Convert dataframe to a dictionary with headers
-        db_lineups = df.to_dict('records')
-
-        db_conn.commit()
-        db_conn.close()
-    except Exception as err:
-        print("DB error: {}".format(err))
-
-        if db_conn is not None:
-            db_conn.close()
-        return {}, err
-
-    player_usages = {}
-    for db_l in db_lineups:
-        for key in ['player_1', 'player_2', 'player_3', 'player_4', 'player_5']:
-            player_id = db_l[key]
-            if player_id is not None and player_id != INVALID_ID:
-                if player_id not in player_usages:
-                    player_usages[player_id] = 1
-                else:
-                    player_usages[player_id] = player_usages[player_id] + 1
-
-    return player_usages, None
-
-
 def get_usages(game_date):
-    if game_date not in FB_PROVIDER.date_to_rounds:
+    if game_date not in FB_PROVIDER.date_contests:
         return {}, None
 
-    game_round = FB_PROVIDER.rounds[FB_PROVIDER.date_to_rounds[game_date]]
-    round_dates = game_round['dates']
+    contest_dates = FB_PROVIDER.get_dates(game_date)
 
     db_conn = None
     try:
         db_conn = CNX_POOL.get_connection()
         query = "SELECT * FROM vgn.fb_lineups WHERE game_date IN ({}) " \
                 "AND game_date != '{}'" \
-            .format(', '.join("'" + d + "'" for d in round_dates), game_date)
+            .format(', '.join("'" + d + "'" for d in contest_dates), game_date)
 
         # Execute SQL query and store results in a pandas dataframe
         df = pd.read_sql(query, db_conn)
@@ -145,42 +105,58 @@ def get_usages(game_date):
     return user_usages, None
 
 
-def submit_lineup(lineup):
+def submit_lineup(lineup, uid, cid):
     db_conn = None
     try:
         db_conn = CNX_POOL.get_connection()
         cursor = db_conn.cursor()
-        query = "INSERT INTO vgn.fb_lineups (user_id, topshot_username, game_date, " \
-                "player_1, player_1_serial, player_2, player_2_serial, " \
-                "player_3, player_3_serial, player_4, player_4_serial, " \
-                "player_5, player_5_serial, is_ranked, sum_serial) " \
-                "VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, TRUE, %s) ON DUPLICATE KEY UPDATE " \
-                "topshot_username=VALUES(topshot_username), " \
-                "player_1=VALUES(player_1), player_1_serial=VALUES(player_1_serial), " \
-                "player_2=VALUES(player_2), player_2_serial=VALUES(player_2_serial), " \
-                "player_3=VALUES(player_3), player_3_serial=VALUES(player_3_serial), " \
-                "player_4=VALUES(player_4), player_4_serial=VALUES(player_4_serial), " \
-                "player_5=VALUES(player_5), player_5_serial=VALUES(player_5_serial), " \
-                "is_ranked=TRUE, sum_serial=VALUES(sum_serial)"
-        cursor.execute(query, lineup)
+        update_query = "INSERT INTO vgn.fb_lineups (user_id, topshot_username, game_date, " \
+                       "player_1, player_1_serial, player_2, player_2_serial, " \
+                       "player_3, player_3_serial, player_4, player_4_serial, " \
+                       "player_5, player_5_serial, is_ranked, sum_serial) " \
+                       "VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, TRUE, %s) ON DUPLICATE KEY UPDATE " \
+                       "topshot_username=VALUES(topshot_username), " \
+                       "player_1=VALUES(player_1), player_1_serial=VALUES(player_1_serial), " \
+                       "player_2=VALUES(player_2), player_2_serial=VALUES(player_2_serial), " \
+                       "player_3=VALUES(player_3), player_3_serial=VALUES(player_3_serial), " \
+                       "player_4=VALUES(player_4), player_4_serial=VALUES(player_4_serial), " \
+                       "player_5=VALUES(player_5), player_5_serial=VALUES(player_5_serial), " \
+                       "is_ranked=TRUE, sum_serial=VALUES(sum_serial)"
+        cursor.execute(update_query, lineup)
+
+        submit_query = "INSERT INTO vgn.fb_submissions (user_id, topshot_username, game_date, contest_id) " \
+                       "VALUES(%s, %s, %s, %s) ON DUPLICATE KEY UPDATE topshot_username=VALUES(topshot_username)"
+        cursor.execute(submit_query, (uid, lineup[1], lineup[2], cid))
+
+        read = "SELECT * FROM vgn.fb_lineups WHERE user_id = {} AND game_date = '{}'".format(lineup[0], lineup[2])
+        # Execute SQL query and store results in a pandas dataframe
+        df = pd.read_sql(read, db_conn)
+
+        # Convert dataframe to a dictionary with headers
+        db_lineups = df.to_dict('records')
+
         db_conn.commit()
         db_conn.close()
 
-        return True, "Updated"
+        if len(db_lineups) == 0:
+            return False, [], "submitted lineup not found"
+
+        return True, db_lineups, "submitted"
     except Exception as err:
         if db_conn is not None:
             db_conn.close()
 
-        return False, "DB error: {}".format(err)
+        return False, [], "DB error: {}".format(err)
 
 
-def upsert_score(user_id, game_date, score, rate, rank, passed):
+def upsert_score(uid, cid, game_date, score, rate, rank, passed):
     db_conn = None
     try:
         db_conn = CNX_POOL.get_connection()
         cursor = db_conn.cursor()
-        query = "UPDATE vgn.fb_lineups SET score = {}, rate = {}, `rank` = {}, is_passed = {} " \
-                "WHERE user_id = {} AND game_date = '{}'".format(score, rate, rank, passed, user_id, game_date)
+        query = "UPDATE vgn.fb_submissions SET score = {}, rate = {}, `rank` = {}, is_passed = {} " \
+                "WHERE user_id = {} AND contest_id = {} AND game_date = '{}'" \
+            .format(score, rate, rank, passed, uid, cid, game_date)
         cursor.execute(query)
         db_conn.commit()
         db_conn.close()
@@ -193,15 +169,15 @@ def upsert_score(user_id, game_date, score, rate, rank, passed):
     return None
 
 
-def get_slate_ranks(game_dates, count):
+def get_slate_ranks(cid, game_dates, count):
+    db_conn = None
     try:
         db_conn = CNX_POOL.get_connection()
-        query = "SELECT u.topshot_username as username, u.id as user_id, SUM(IF(l.is_passed, 1, 0)) as wins, " \
-                "SUM(l.rate) * IF(COUNT(*) = {}, 1.1, 1) as total_score, COUNT(*) = {} AS all_checked_in FROM " \
-                "(SELECT * FROM vgn.fb_lineups WHERE game_date IN ({}) AND is_ranked = TRUE) l " \
-                "JOIN vgn.users u ON l.user_id = u.id " \
-                "GROUP BY u.id ORDER BY wins DESC, total_score DESC LIMIT {}" \
-            .format(len(game_dates), len(game_dates), ', '.join("'" + date + "'" for date in game_dates), count)
+        query = "SELECT user_id, topshot_username as username, SUM(IF(is_passed, 1, 0)) as wins, " \
+                "SUM(rate) * IF(COUNT(*) = {}, 1.1, 1) as total_score, COUNT(*) = {} AS all_checked_in " \
+                "FROM vgn.fb_submissions WHERE contest_id = {} AND game_date in ({}) " \
+                "GROUP BY user_id, topshot_username ORDER BY wins DESC, total_score DESC LIMIT {}" \
+            .format(len(game_dates), len(game_dates), cid, ', '.join("'" + date + "'" for date in game_dates), count)
 
         # Execute SQL query and store results in a pandas dataframe
         df = pd.read_sql(query, db_conn)
@@ -216,18 +192,18 @@ def get_slate_ranks(game_dates, count):
 
         if db_conn is not None:
             db_conn.close()
-        return {}
+        return []
 
     return leaderboard
 
 
-def get_user_results(uid, game_dates):
+def get_user_results(uid, cid, game_dates):
     db_conn = None
     try:
         db_conn = CNX_POOL.get_connection()
-        query = "SELECT game_date, is_passed, score, rate, `rank` FROM vgn.fb_lineups " \
-                "WHERE is_ranked = TRUE AND game_date IN ({}) AND user_id = {}" \
-            .format(', '.join("'" + date + "'" for date in game_dates), uid)
+        query = "SELECT game_date, is_passed, score, rate, `rank` FROM vgn.fb_submissions " \
+                "WHERE game_date IN ({}) AND user_id = {} AND contest_id = {}" \
+            .format(', '.join("'" + date + "'" for date in game_dates), uid, cid)
 
         # Execute SQL query and store results in a pandas dataframe
         df = pd.read_sql(query, db_conn)
@@ -253,22 +229,51 @@ def get_user_results(uid, game_dates):
     return results, None
 
 
-def get_user_slate_result(uid, game_dates):
+def get_submissions(uid, game_date) -> [Dict[int, Dict[str, any]], Optional[Exception]]:
     db_conn = None
     try:
         db_conn = CNX_POOL.get_connection()
+        query = "SELECT * FROM vgn.fb_submissions WHERE user_id = {} AND game_date = '{}'" \
+            .format(uid, game_date)
+
+        # Execute SQL query and store results in a pandas dataframe
+        df = pd.read_sql(query, db_conn)
+
+        # Convert dataframe to a dictionary with headers
+        loaded = df.to_dict('records')
+
+        db_conn.commit()
+        db_conn.close()
+    except Exception as err:
+        if db_conn is not None:
+            db_conn.close()
+
+        return {}, err
+
+    results = {}
+    for row in loaded:
+        results[row['contest_id']] = row
+
+    return results, None
+
+
+def get_user_slate_result(uid, cid, game_dates):
+    db_conn = None
+    try:
+        db_conn = CNX_POOL.get_connection()
+        slate_len = len(game_dates)
         query = "SELECT r.user_id, r.wins, r.total_score, r.all_checked_in, r.`rank` " \
                 "FROM (" \
                 "   SELECT user_id, SUM(IF(l.is_passed, 1, 0)) as wins, " \
                 "       SUM(l.rate) * IF(COUNT(*) = {}, 1.1, 1) as total_score, COUNT(*) = {} AS all_checked_in, " \
                 "       rank() over (" \
                 "           ORDER BY SUM(IF(l.is_passed, 1, 0)) DESC, " \
-                "           SUM(l.rate) * IF(COUNT(*) = 22, 1.1, 1) DESC) as `rank`" \
-                "   FROM vgn.fb_lineups AS l " \
-                "   WHERE game_date IN ({}) " \
+                "           SUM(l.rate) * IF(COUNT(*) = {}, 1.1, 1) DESC) as `rank`" \
+                "   FROM vgn.fb_submissions AS l " \
+                "   WHERE game_date IN ({}) AND contest_id = {}" \
                 "   GROUP BY l.user_id) r " \
-                "WHERE r.user_id = {}".format(
-                    len(game_dates), len(game_dates), ', '.join("'" + date + "'" for date in game_dates), uid)
+                "WHERE r.user_id = {}"\
+            .format(slate_len, slate_len, slate_len, ', '.join("'" + date + "'" for date in game_dates), cid, uid)
 
         # Execute SQL query and store results in a pandas dataframe
         df = pd.read_sql(query, db_conn)

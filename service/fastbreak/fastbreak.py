@@ -115,6 +115,14 @@ class FastBreak:
         self.buckets: List[FBBucket] = self.load_buckets(fb_json['buckets'])
 
     @staticmethod
+    def get_empty() -> 'FastBreak':
+        return FastBreak({
+            "count": 8,
+            "isCombine": True,
+            "buckets": []
+        })
+
+    @staticmethod
     def load_buckets(buckets_json):
         return [FBBucket(b) for b in buckets_json]
 
