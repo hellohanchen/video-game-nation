@@ -57,6 +57,7 @@ STARTED = False
 
 @bot.event
 async def on_ready():
+    global STARTED
     if not STARTED:
         for guild in bot.guilds:
             gid = guild.id
@@ -110,7 +111,6 @@ async def on_ready():
         refresh_entry.start()
         refresh_giveaways.start()
 
-        global STARTED
         STARTED = True
 
 
