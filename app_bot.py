@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import os
+import time
 
 import discord
 from discord.ext import commands, tasks
@@ -51,61 +52,66 @@ WELCOME_MESSAGE = "**Video Game Nation Portal (ALPHA)**\n\n" \
                   "**Enter NBA Top Shot Exchange** to post listings for exchange/trade.\n" \
                   "**Verify NBA Top Shot Collection** to get roles and access to games, giveaways and other events." \
 
+STARTED = False
 
 
 @bot.event
 async def on_ready():
-    for guild in bot.guilds:
-        gid = guild.id
-        if guild.id not in GUILDS:
-            GUILDS[gid] = {
-                "guild": guild,
-                "channels": {}
-            }
+    if not STARTED:
+        for guild in bot.guilds:
+            gid = guild.id
+            if guild.id not in GUILDS:
+                GUILDS[gid] = {
+                    "guild": guild,
+                    "channels": {}
+                }
 
-    verify_rules, _ = get_role_verifications(list(GUILDS.keys()))
-    trade_channels = []
-    for gid in GUILDS:
-        guild = GUILDS[gid]['guild']
-        bot_member = guild.me
+        verify_rules, _ = get_role_verifications(list(GUILDS.keys()))
+        trade_channels = []
+        for gid in GUILDS:
+            guild = GUILDS[gid]['guild']
+            bot_member = guild.me
 
-        if gid in verify_rules:
-            roles = await guild.fetch_roles()
-            role_map = {r.id: r for r in roles}
+            if gid in verify_rules:
+                roles = await guild.fetch_roles()
+                role_map = {r.id: r for r in roles}
 
-            for rule in verify_rules[gid]:
-                if rule['role_id'] in role_map:
-                    rule['role'] = role_map[rule['role_id']]
-                else:
-                    rule['role'] = None
+                for rule in verify_rules[gid]:
+                    if rule['role_id'] in role_map:
+                        rule['role'] = role_map[rule['role_id']]
+                    else:
+                        rule['role'] = None
 
-            guild_rules = list(filter(lambda r: r['role'] is not None, verify_rules[gid]))
-            if len(guild_rules) > 0:
-                GUILDS[gid]['roles'] = guild_rules
+                guild_rules = list(filter(lambda r: r['role'] is not None, verify_rules[gid]))
+                if len(guild_rules) > 0:
+                    GUILDS[gid]['roles'] = guild_rules
 
-        for channel in guild.channels:
-            if channel.type != discord.ChannelType.text:
-                continue
-            if channel.id == ADMIN_CHANNEL_ID:
-                ADMIN_LOGGER.init("App", channel)
-                continue
-            if channel.id in MAIN_CHANNEL_IDS:
-                view = MainPage(GUILDS)
-                message = await channel.send(WELCOME_MESSAGE, view=view)
-                MAIN_CHANNEL_MESSAGES.append(message)
-            if channel.id in TRADE_CHANNEL_IDS:
-                trade_channels.append(channel)
+            for channel in guild.channels:
+                if channel.type != discord.ChannelType.text:
+                    continue
+                if channel.id == ADMIN_CHANNEL_ID:
+                    ADMIN_LOGGER.init("App", channel)
+                    continue
+                if channel.id in MAIN_CHANNEL_IDS:
+                    view = MainPage(GUILDS)
+                    message = await channel.send(WELCOME_MESSAGE, view=view)
+                    MAIN_CHANNEL_MESSAGES.append(message)
+                if channel.id in TRADE_CHANNEL_IDS:
+                    trade_channels.append(channel)
 
-            permissions = channel.permissions_for(bot_member)
-            if not has_giveaway_permissions(permissions):
-                continue
+                permissions = channel.permissions_for(bot_member)
+                if not has_giveaway_permissions(permissions):
+                    continue
 
-            GUILDS[gid]['channels'][channel.id] = channel
+                GUILDS[gid]['channels'][channel.id] = channel
 
-    await GIVEAWAY_SERVICE.load_from_guilds(GUILDS)
-    LISTING_SERVICE.set_channels(trade_channels)
-    refresh_entry.start()
-    refresh_giveaways.start()
+        await GIVEAWAY_SERVICE.load_from_guilds(GUILDS)
+        LISTING_SERVICE.set_channels(trade_channels)
+        refresh_entry.start()
+        refresh_giveaways.start()
+
+        global STARTED
+        STARTED = True
 
 
 @bot.command(name='menu', help='Get video game nation portal menu')
@@ -173,9 +179,22 @@ async def resync_guilds(context):
 
 @tasks.loop(seconds=120)
 async def refresh_entry():
-    for message in MAIN_CHANNEL_MESSAGES:
+    for i in range(0, len(MAIN_CHANNEL_MESSAGES)):
+        message = MAIN_CHANNEL_MESSAGES[i]
         view = MainPage(GUILDS)
-        await message.edit(content=WELCOME_MESSAGE, view=view)
+        try:
+            await message.edit(content=WELCOME_MESSAGE, view=view)
+            return
+        except Exception as err:
+            await ADMIN_LOGGER.error(f"App:Refresh:{err}")
+
+        try:
+            new_message = await message.channel.send(content=WELCOME_MESSAGE, view=view)
+            MAIN_CHANNEL_MESSAGES[i] = new_message
+        except Exception as err:
+            await ADMIN_LOGGER.error(f"App:Resend:{err}")
+
+        time.sleep(0.2)
 
 
 @tasks.loop(seconds=60)
