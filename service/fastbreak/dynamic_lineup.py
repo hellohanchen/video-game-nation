@@ -59,8 +59,10 @@ class AbstractDynamicLineupService:
 
     def remove_user_scores(self, user_id: int):
         for cid in self.contest_scores:
-            self.leaderboards[cid].remove(user_id)
-            del self.contest_scores[cid][user_id]
+            if user_id in self.leaderboards[cid]:
+                self.leaderboards[cid].remove(user_id)
+            if user_id in self.contest_scores[cid]:
+                del self.contest_scores[cid][user_id]
 
 
 class Lineup:
