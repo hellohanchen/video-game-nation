@@ -184,15 +184,20 @@ async def refresh_entry():
         view = MainPage(GUILDS)
         try:
             await message.edit(content=WELCOME_MESSAGE, view=view)
-            return
+            continue
         except Exception as err:
-            await ADMIN_LOGGER.error(f"App:Refresh:{err}")
+            await ADMIN_LOGGER.error(f"R:E:{err}")
+
+        try:
+            await message.channel.delete_messages([message])
+        except Exception as err:
+            await ADMIN_LOGGER.error(f"R:D:{err}")
 
         try:
             new_message = await message.channel.send(content=WELCOME_MESSAGE, view=view)
             MAIN_CHANNEL_MESSAGES[i] = new_message
         except Exception as err:
-            await ADMIN_LOGGER.error(f"App:Resend:{err}")
+            await ADMIN_LOGGER.error(f"R:S:{err}")
 
         time.sleep(0.2)
 
