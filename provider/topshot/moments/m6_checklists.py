@@ -131,9 +131,11 @@ def group_play_to_checklists():
                     if int(play_id) not in checklist['series'][series]['players'][player_id]['plays']:
                         checklist['series'][series]['players'][player_id]['plays'].append(int(play_id))
 
+    sets = list(set_checklists.keys())
+    sets.sort(reverse=True)
     with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "resource/set_checklists.json"),
               'w') as output_file:
-        json.dump(set_checklists, output_file, indent=2)
+        json.dump({set: set_checklists[set] for set in sets}, output_file, indent=2)
 
     teams = list(team_checklists.keys())
     teams.sort(reverse=False)

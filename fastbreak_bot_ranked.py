@@ -11,7 +11,7 @@ from provider.nba.nba_provider import NBA_PROVIDER
 from provider.topshot.fb_provider import FB_PROVIDER
 from service.fastbreak.dynamic_lineup import DYNAMIC_LINEUP_SERVICE
 from service.fastbreak.ranked.views import RankedMainPage
-from utils import get_the_past_week_with_offset, truncate_message
+from utils import truncate_message
 from vgnlog.channel_logger import ADMIN_LOGGER
 
 # config bot
@@ -41,9 +41,11 @@ WELCOME_MESSAGE = "**Welcome to the B2B fastbreak contest!**\n" \
                   "3️⃣ *Watch NBA games LIVE with the community to help out with your late swaps, celebrate your W's*" \
                   ", and **WIN MORE GIVEAWAYS!**\n" \
                   "<:boards:1091858916335435837> <https://playback.tv/b2b>\n\n" \
-                  "**Don't forget to enter NBA Pick em!**\n" \
-                  "*FREE to Enter!*\n" \
-                  "https://www.krausepicks.com/auth/signup?community=2"
+                  "**Don't forget our other FB tools! ** ⚔\n" \
+                  "*Trade for Fast Break Pieces!*\n" \
+                  "https://discord.com/channels/718491088142204998/1211737640274100254\n" \
+                  "*Plan your entire Fast Break slate!*\n" \
+                  "https://discord.com/channels/718491088142204998/927632483200163911/1193196950556790814"
 
 
 REFRESH_COUNT = 0

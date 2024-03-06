@@ -30,14 +30,14 @@ FB_CHANNEL_MESSAGES = []
 WELCOME_MESSAGE = "**Welcome to the B2B fastbreak contest!**\n" \
                   "1️⃣ *Link TS account.*\n" \
                   "2️⃣ *Submit your fastbreak lineup.*\n" \
-                  "- To be eligible to win prizes, please make sure to confirm your submission by providing a " \
-                  "screenshot of your lineup in this channel that exactly matches your submission.\n" \
                   "3️⃣ *Watch NBA games LIVE with the community to help out with your late swaps, celebrate your W's*" \
                   ", and **WIN MORE GIVEAWAYS!**\n" \
                   "<:boards:1091858916335435837> <https://playback.tv/b2b>\n\n" \
-                  "**Don't forget to enter NBA Pick em!**\n" \
-                  "*FREE to Enter!*\n" \
-                  "https://www.krausepicks.com/auth/signup?community=2"
+                  "**Don't forget our other FB tools!**\n" \
+                  "*Trade for Fast Break Pieces!*\n" \
+                  "https://discord.com/channels/718491088142204998/1211737640274100254\n" \
+                  "*Plan your entire Fast Break slate!*\n" \
+                  "https://discord.com/channels/718491088142204998/927632483200163911/1193196950556790814"
 
 
 @bot.event
