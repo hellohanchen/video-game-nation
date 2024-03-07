@@ -448,13 +448,10 @@ class DynamicLineupService(AbstractDynamicLineupService):
         player_stats: Dict[int, Dict[str, any]] = {}
         games: Dict[str, Dict[str, any]] = {}
         for game_id in self.games:
-            if self.games[game_id] == 1:
-                continue  # game not started yet
-
             try:
                 game_stats = boxscore.BoxScore(game_id=game_id).get_dict()['game']
             except Exception as err:
-                #  await ADMIN_LOGGER.error(f"Ranking:UpdateStats:{err}")  TODO: look into this noisy error
+                # game stats not available
                 continue
 
             if game_stats['gameStatus'] == 1:
