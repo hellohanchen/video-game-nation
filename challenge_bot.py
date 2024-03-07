@@ -125,7 +125,7 @@ async def reload(ctx):
 
 @tasks.loop(minutes=2)
 async def update_fastbreak():
-    await DYNAMIC_LINEUP_SERVICE.update()
+    await DYNAMIC_LINEUP_SERVICE.update(skip_upload=True)
     for message in FB_CHANNEL_MESSAGES:
         view = MainPage(DYNAMIC_LINEUP_SERVICE)
         await message.edit(content="Track your fastbreak here!", view=view)

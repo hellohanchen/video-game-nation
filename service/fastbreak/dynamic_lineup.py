@@ -386,7 +386,7 @@ class DynamicLineupService(AbstractDynamicLineupService):
         self.contest_scores = {}
         self.leaderboards = {}
 
-    async def update(self):
+    async def update(self, skip_upload=False):
         scoreboard = NBAProvider.get_scoreboard()
         scoreboard_date = datetime.datetime.strptime(scoreboard['gameDate'], '%Y-%m-%d')
         active_games = list(filter(lambda g: g['gameStatusText'] != "PPD", scoreboard['games']))
@@ -432,7 +432,8 @@ class DynamicLineupService(AbstractDynamicLineupService):
             await self.__update_stats()
             if new_status == GameDateStatus.PRE_GAME:
                 # upload leader board if move to a new game date
-                await self.__upload_leaderboard()
+                if not skip_upload:
+                    await self.__upload_leaderboard()
 
                 # start a new date
                 self.current_game_date = current_game_date
