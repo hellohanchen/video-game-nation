@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import os
+import time
 
 import discord
 from discord.ext import commands, tasks
@@ -144,18 +145,40 @@ async def refresh_entry():
             try:
                 new_message = await old_message.channel.send(WELCOME_MESSAGE, view=view)
             except Exception as err:
-                print(err)
+                await ADMIN_LOGGER.error(f"R:S:{err}")
                 new_messages.append(old_message)
                 continue
 
             new_messages.append(new_message)
-            await old_message.delete()
+            try:
+                await old_message.delete()
+            except Exception as err:
+                await ADMIN_LOGGER.error(f"R:D:{err}")
+
         FB_CHANNEL_MESSAGES = new_messages
         REFRESH_COUNT = 0
     else:
-        for message in FB_CHANNEL_MESSAGES:
+        for i in range(0, len(FB_CHANNEL_MESSAGES)):
+            message = FB_CHANNEL_MESSAGES[i]
             view = RankedMainPage(DYNAMIC_LINEUP_SERVICE)
-            await message.edit(content=WELCOME_MESSAGE, view=view)
+            try:
+                await message.edit(content=WELCOME_MESSAGE, view=view)
+                continue
+            except Exception as err:
+                await ADMIN_LOGGER.error(f"R:E:{err}")
+
+            try:
+                await message.delete()
+            except Exception as err:
+                await ADMIN_LOGGER.error(f"R:D:{err}")
+
+            try:
+                new_message = await message.channel.send(content=WELCOME_MESSAGE, view=view)
+                FB_CHANNEL_MESSAGES[i] = new_message
+            except Exception as err:
+                await ADMIN_LOGGER.error(f"R:S:{err}")
+
+            time.sleep(0.2)
 
 
 @tasks.loop(minutes=5)

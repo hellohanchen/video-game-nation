@@ -3,6 +3,7 @@ import json
 import os
 import pathlib
 import threading
+import time
 from datetime import datetime
 
 import discord
@@ -126,9 +127,27 @@ async def reload(ctx):
 @tasks.loop(minutes=2)
 async def update_fastbreak():
     await DYNAMIC_LINEUP_SERVICE.update(skip_upload=True)
-    for message in FB_CHANNEL_MESSAGES:
+    for i in range(0, len(FB_CHANNEL_MESSAGES)):
+        message = FB_CHANNEL_MESSAGES[i]
         view = MainPage(DYNAMIC_LINEUP_SERVICE)
-        await message.edit(content="Track your fastbreak here!", view=view)
+        try:
+            await message.edit(content="Track your fastbreak here!", view=view)
+            continue
+        except Exception as err:
+            await ADMIN_LOGGER.error(f"R:E:{err}")
+
+        try:
+            await message.channel.delete_messages([message])
+        except Exception as err:
+            await ADMIN_LOGGER.error(f"R:D:{err}")
+
+        try:
+            new_message = await message.channel.send(content="Track your fastbreak here!", view=view)
+            FB_CHANNEL_MESSAGES[i] = new_message
+        except Exception as err:
+            await ADMIN_LOGGER.error(f"R:S:{err}")
+
+        time.sleep(0.2)
 
 
 bot.run(TOKEN)
