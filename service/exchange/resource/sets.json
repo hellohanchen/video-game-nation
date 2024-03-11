@@ -141,7 +141,7 @@
       }
     },
     "Series 23-24": {
-      "count": 14,
+      "count": 16,
       "tiers": {
         "Common": {
           "124": "Base Set",
@@ -164,7 +164,8 @@
           "136": "Squad Goals"
         },
         "Legendary": {
-          "131": "Holo Icon"
+          "131": "Holo Icon",
+          "139": "Rookie Revelation"
         }
       }
     },

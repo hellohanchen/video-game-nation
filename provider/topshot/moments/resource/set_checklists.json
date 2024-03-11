@@ -1,4 +1,101 @@
 {
+  "139": {
+    "name": "Rookie Revelation 5",
+    "series": 5,
+    "moments": {
+      "4966": {
+        "player": "Bilal Coulibaly",
+        "team": "Washington Wizards",
+        "playerId": 1641731,
+        "date": "2023-12-16"
+      },
+      "4965": {
+        "player": "Keyonte George",
+        "team": "Utah Jazz",
+        "playerId": 1641718,
+        "date": "2024-02-16"
+      },
+      "4964": {
+        "player": "Gradey Dick",
+        "team": "Toronto Raptors",
+        "playerId": 1641711,
+        "date": "2024-02-11"
+      },
+      "4963": {
+        "player": "Victor Wembanyama",
+        "team": "San Antonio Spurs",
+        "playerId": 1641705,
+        "date": "2024-02-24"
+      },
+      "4962": {
+        "player": "Scoot Henderson",
+        "team": "Portland Trail Blazers",
+        "playerId": 1630703,
+        "date": "2024-02-01"
+      },
+      "4961": {
+        "player": "Chet Holmgren",
+        "team": "Oklahoma City Thunder",
+        "playerId": 1631096,
+        "date": "2023-11-19"
+      },
+      "4960": {
+        "player": "Cason Wallace",
+        "team": "Oklahoma City Thunder",
+        "playerId": 1641717,
+        "date": "2024-01-19"
+      },
+      "4959": {
+        "player": "Jordan Hawkins",
+        "team": "New Orleans Pelicans",
+        "playerId": 1641722,
+        "date": "2024-01-14"
+      },
+      "4958": {
+        "player": "Jaime Jaquez Jr.",
+        "team": "Miami Heat",
+        "playerId": 1631170,
+        "date": "2024-02-27"
+      },
+      "4957": {
+        "player": "Cam Whitmore",
+        "team": "Houston Rockets",
+        "playerId": 1641715,
+        "date": "2024-02-03"
+      },
+      "4956": {
+        "player": "Amen Thompson",
+        "team": "Houston Rockets",
+        "playerId": 1641708,
+        "date": "2023-12-23"
+      },
+      "4955": {
+        "player": "Brandin Podziemski",
+        "team": "Golden State Warriors",
+        "playerId": 1641764,
+        "date": "2023-12-24"
+      },
+      "4954": {
+        "player": "Ausar Thompson",
+        "team": "Detroit Pistons",
+        "playerId": 1641709,
+        "date": "2023-11-05"
+      },
+      "4953": {
+        "player": "Dereck Lively II",
+        "team": "Dallas Mavericks",
+        "playerId": 1641726,
+        "date": "2023-12-03"
+      },
+      "4952": {
+        "player": "Brandon Miller",
+        "team": "Charlotte Hornets",
+        "playerId": 1641706,
+        "date": "2024-02-08"
+      }
+    },
+    "count": 15
+  },
   "138": {
     "name": "2024 NBA All-Star 5",
     "series": 5,
@@ -70,6 +167,54 @@
     "name": "Crunch Time 5",
     "series": 5,
     "moments": {
+      "4976": {
+        "player": "Lauri Markkanen",
+        "team": "Utah Jazz",
+        "playerId": 1628374,
+        "date": "2024-02-07"
+      },
+      "4975": {
+        "player": "De'Aaron Fox",
+        "team": "Sacramento Kings",
+        "playerId": 1628368,
+        "date": "2024-01-04"
+      },
+      "4974": {
+        "player": "Giannis Antetokounmpo",
+        "team": "Milwaukee Bucks",
+        "playerId": 203507,
+        "date": "2023-11-07"
+      },
+      "4973": {
+        "player": "Ziaire Williams",
+        "team": "Memphis Grizzlies",
+        "playerId": 1630533,
+        "date": "2024-02-16"
+      },
+      "4972": {
+        "player": "Alperen \u015eeng\u00fcn",
+        "team": "Houston Rockets",
+        "playerId": 1630578,
+        "date": "2023-11-20"
+      },
+      "4970": {
+        "player": "Cade Cunningham",
+        "team": "Detroit Pistons",
+        "playerId": 1630595,
+        "date": "2023-12-30"
+      },
+      "4969": {
+        "player": "Nikola Joki\u0107",
+        "team": "Denver Nuggets",
+        "playerId": 203999,
+        "date": "2024-01-24"
+      },
+      "4967": {
+        "player": "Mikal Bridges",
+        "team": "Brooklyn Nets",
+        "playerId": 1628969,
+        "date": "2024-01-07"
+      },
       "4887": {
         "player": "Devin Vassell",
         "team": "San Antonio Spurs",
@@ -131,7 +276,7 @@
         "date": "2024-01-11"
       }
     },
-    "count": 10
+    "count": 18
   },
   "136": {
     "name": "Squad Goals 5",
@@ -2224,6 +2369,18 @@
     "name": "Rookie Debut 5",
     "series": 5,
     "moments": {
+      "4939": {
+        "player": "Sidy Cissoko",
+        "team": "San Antonio Spurs",
+        "playerId": 1631321,
+        "date": "2023-12-27"
+      },
+      "4938": {
+        "player": "Rayan Rupert",
+        "team": "Portland Trail Blazers",
+        "playerId": 1641712,
+        "date": "2023-11-20"
+      },
       "4897": {
         "player": "E.J. Liddell",
         "team": "New Orleans Pelicans",
@@ -2513,12 +2670,84 @@
         "date": "2023-10-25"
       }
     },
-    "count": 48
+    "count": 50
   },
   "124": {
     "name": "Base Set 5",
     "series": 5,
     "moments": {
+      "4951": {
+        "player": "Jontay Porter",
+        "team": "Toronto Raptors",
+        "playerId": 1629007,
+        "date": "2024-01-19"
+      },
+      "4950": {
+        "player": "Blake Wesley",
+        "team": "San Antonio Spurs",
+        "playerId": 1631104,
+        "date": "2024-02-15"
+      },
+      "4949": {
+        "player": "Aaron Wiggins",
+        "team": "Oklahoma City Thunder",
+        "playerId": 1630598,
+        "date": "2024-02-05"
+      },
+      "4948": {
+        "player": "Josh Hart",
+        "team": "New York Knicks",
+        "playerId": 1628404,
+        "date": "2024-01-31"
+      },
+      "4947": {
+        "player": "Khris Middleton",
+        "team": "Milwaukee Bucks",
+        "playerId": 203114,
+        "date": "2023-11-29"
+      },
+      "4946": {
+        "player": "Nikola Jovi\u0107",
+        "team": "Miami Heat",
+        "playerId": 1631107,
+        "date": "2024-02-14"
+      },
+      "4945": {
+        "player": "Vince Williams Jr.",
+        "team": "Memphis Grizzlies",
+        "playerId": 1631246,
+        "date": "2024-01-15"
+      },
+      "4944": {
+        "player": "James Harden",
+        "team": "LA Clippers",
+        "playerId": 201935,
+        "date": "2023-11-21"
+      },
+      "4943": {
+        "player": "Isaac Okoro",
+        "team": "Cleveland Cavaliers",
+        "playerId": 1630171,
+        "date": "2024-01-30"
+      },
+      "4942": {
+        "player": "Miles Bridges",
+        "team": "Charlotte Hornets",
+        "playerId": 1628970,
+        "date": "2023-11-21"
+      },
+      "4941": {
+        "player": "Jayson Tatum",
+        "team": "Boston Celtics",
+        "playerId": 1628369,
+        "date": "2024-01-07"
+      },
+      "4940": {
+        "player": "Bruno Fernando",
+        "team": "Atlanta Hawks",
+        "playerId": 1628981,
+        "date": "2024-02-06"
+      },
       "4909": {
         "player": "Marvin Bagley III",
         "team": "Washington Wizards",
@@ -3720,7 +3949,7 @@
         "date": "2023-10-28"
       }
     },
-    "count": 200
+    "count": 212
   },
   "123": {
     "name": "WNBA Origins 4",
