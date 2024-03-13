@@ -201,12 +201,16 @@ async def update_games():
 @tasks.loop(minutes=2)
 async def refresh_entry():
     for message in FANTASY_CHANNEL_MESSAGES:
-        emoji = message.guild.get_emoji(VGN_EMOJI_ID)
-        view = MainPage(LINEUP_PROVIDER, RANK_PROVIDER)
-        if emoji is None:
-            await message.edit(content="Ready to start daily NBA fantasy game?", view=view)
-        else:
-            await message.edit(content=f"Ready to start daily NBA fantasy game? {emoji}", view=view)
+        try:
+            emoji = message.guild.get_emoji(VGN_EMOJI_ID)
+            view = MainPage(LINEUP_PROVIDER, RANK_PROVIDER)
+            if emoji is None:
+                await message.edit(content="Ready to start daily NBA fantasy game?", view=view)
+            else:
+                await message.edit(content=f"Ready to start daily NBA fantasy game? {emoji}", view=view)
+        except Exception as err:
+            await ADMIN_LOGGER.error(f"R:E:{err}")
+            continue
 
 
 # start the bot
