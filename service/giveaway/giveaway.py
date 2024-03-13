@@ -143,7 +143,11 @@ class Giveaway:
                                     f"Winning the giveaway of **{self.name}**")
 
             if self.message is not None:
-                await self.message.edit(content=f"**GIVEAWAY END**\nWinners: {', '.join(mentions)}", view=None)
+                await self.message.edit(
+                    content=f"**GIVEAWAY ENDED**\n"
+                            f"Winners: {', '.join(mentions)}\n"
+                            f"Reroll command: `.vgn.reroll {self.id}`",
+                    view=None)
 
         except Exception as err:
             await ADMIN_LOGGER.error(f"Giveaway:Close:{err}")
@@ -231,8 +235,8 @@ class GiveawayService:
                 try:
                     await self.giveaways[gid].refresh()
                 except Exception as err:
-                    await ADMIN_LOGGER.error(f"Giveaway:Refresh:{err}")
-                    pass
+                    await ADMIN_LOGGER.error(f"Refresh {gid}:{err}")
+                    continue
 
         for gid in expired:
             del self.giveaways[gid]

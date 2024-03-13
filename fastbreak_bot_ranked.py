@@ -50,10 +50,15 @@ WELCOME_MESSAGE = "**Welcome to the B2B fastbreak contest!**\n" \
 
 
 REFRESH_COUNT = 0
+STARTED = False
 
 
 @bot.event
 async def on_ready():
+    global STARTED
+    if STARTED:
+        return
+
     for guild in bot.guilds:
         if guild.id == B2B_GUILD_ID:
             global B2B_GUILD
@@ -77,6 +82,8 @@ async def on_ready():
     update_stats.start()
     refresh_entry.start()
     injury_update.start()
+
+    STARTED = True
 
 
 ############

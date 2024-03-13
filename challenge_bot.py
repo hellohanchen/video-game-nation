@@ -59,10 +59,15 @@ CHALLENGE_CHANNELS = []
 CHALLENGE_MESSAGE_IDS = {}
 
 FB_CHANNEL_MESSAGES = []
+STARTED = False
 
 
 @bot.event
 async def on_ready():
+    global STARTED
+    if STARTED:
+        return
+
     for guild in bot.guilds:
         for channel in guild.channels:
             if channel.type != discord.ChannelType.text:
@@ -90,6 +95,7 @@ async def on_ready():
 
     update_fastbreak.start()
     update_challenges.start()
+    STARTED = False
 
 
 @tasks.loop(seconds=90)

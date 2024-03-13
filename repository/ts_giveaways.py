@@ -69,10 +69,10 @@ def message_giveaway(gid, mid):
     return True, None
 
 
-def get_giveaway(gid):
+def get_giveaway(gid, uid):
     try:
         db_conn = CNX_POOL.get_connection()
-        query = f"SELECT * from vgn.ts_giveaways WHERE id = {gid}"
+        query = f"SELECT * from vgn.ts_giveaways WHERE id = {gid} AND creator_id = {uid}"
         # Execute SQL query and store results in a pandas dataframe
         df = pd.read_sql(query, db_conn)
 
@@ -81,11 +81,10 @@ def get_giveaway(gid):
 
         db_conn.close()
 
-        giveaways = {}
-        for giveaway in loaded:
-            giveaways[giveaway['id']] = giveaway
+        if len(loaded) == 0:
+            return None, None
 
-        return giveaways, None
+        return loaded[0], None
 
     except Exception as err:
         return None, err

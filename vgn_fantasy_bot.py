@@ -48,10 +48,15 @@ GAMES_MESSAGE_IDS = {}
 PLAYERS_MESSAGE_IDS = {}
 
 VGN_EMOJI_ID = 1166225667952758815
+STARTED = False
 
 
 @bot.event
 async def on_ready():
+    global STARTED
+    if STARTED:
+        return
+
     for guild in bot.guilds:
         for channel in guild.channels:
             if channel.type != discord.ChannelType.text:
@@ -77,6 +82,7 @@ async def on_ready():
     update_leaderboard.start()
     update_games.start()
     refresh_entry.start()
+    STARTED = True
 
 
 async def load_and_upsert_collection(user_id, flow_address):

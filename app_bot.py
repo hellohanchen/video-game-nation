@@ -9,11 +9,11 @@ from dotenv import load_dotenv
 
 from app import MainPage
 from repository.discord_roles import get_role_verifications
-from repository.ts_giveaways import add_giveaway_access
+from repository.ts_giveaways import add_giveaway_access, get_giveaway
 from service.exchange.listing import LISTING_SERVICE
 from utils import has_giveaway_permissions
 from vgnlog.channel_logger import ADMIN_LOGGER
-from service.giveaway.giveaway import GIVEAWAY_SERVICE
+from service.giveaway.giveaway import GIVEAWAY_SERVICE, Giveaway
 
 # config bot
 load_dotenv()
@@ -175,6 +175,38 @@ async def resync_guilds(context):
                 continue
 
             GUILDS[gid]['channels'][channel.id] = channel
+
+
+@bot.command(name='reroll', help='generate new winners of a specific giveaway')
+async def reroll_giveaway(context, gid):
+    if not gid.isnumeric():
+        return
+
+    gid = int(gid)
+    uid = context.message.author.id
+    db_g, err = get_giveaway(gid, uid)
+    if err is not None:
+        await ADMIN_LOGGER.error(f"Roll:Get:{err}")
+        return
+    if db_g is None or not db_g['is_submitted']:
+        await ADMIN_LOGGER.warn(f"Roll:Get:None:{gid},{uid}")
+        await context.channel.send(f"Only giveaway creator can reroll.")
+        return
+    if db_g['channel_id'] != context.channel.id:
+        await context.channel.send(f"Giveaway is not in this channel.")
+        return
+    if not db_g['is_ended']:
+        await context.channel.send(f"Giveaway is not ended yet.")
+        return
+
+    try:
+        g = await Giveaway.from_db(db_g, context.channel)
+        g.winners = 1  # only reroll for 1 winner at a time
+        await g.close()
+    except Exception as err:
+        await ADMIN_LOGGER.error(f"Roll:Close:{err}")
+        await context.channel.send(f"Service error, please retry or contact admin.")
+        return
 
 
 @tasks.loop(seconds=120)
