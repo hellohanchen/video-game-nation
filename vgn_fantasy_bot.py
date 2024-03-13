@@ -17,6 +17,7 @@ from service.fantasy import LINEUP_PROVIDER
 from service.fantasy.ranking import RANK_PROVIDER
 from service.fantasy.views import MainPage
 from utils import update_channel_messages, get_the_past_week_from_sunday, send_channel_messages, truncate_message
+from vgnlog.channel_logger import ADMIN_LOGGER
 
 # config bot
 load_dotenv()
@@ -69,6 +70,7 @@ async def on_ready():
             if channel.name in PLAYERS_CHANNEL_NAMES:
                 PLAYERS_CHANNELS.append(channel)
             if channel.name in ADMIN_CHANNEL_NAMES:
+                ADMIN_LOGGER.init("Fantasy", channel)
                 ADMIN_CHANNEL_IDS.append(channel.id)
             if channel.name in FANTASY_CHANNEL_NAMES:
                 emoji = guild.get_emoji(VGN_EMOJI_ID)
