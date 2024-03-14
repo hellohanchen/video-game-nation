@@ -27,6 +27,7 @@ intents.presences = False
 
 bot = commands.Bot(command_prefix='.vgn.', intents=intents)
 ADMIN_CHANNEL_ID = 1097055938441130004
+TS_TC_CHANNEL_ID = 986751321656922194
 
 MAIN_CHANNEL_IDS = [
     1203921985898291260,  # VGN
@@ -116,7 +117,7 @@ async def on_ready():
 
 @bot.command(name='menu', help='Get video game nation portal menu')
 async def menu(context):
-    if not isinstance(context.channel, discord.channel.DMChannel):
+    if context.channel.id != TS_TC_CHANNEL_ID and not isinstance(context.channel, discord.channel.DMChannel):
         return
 
     await context.channel.send(WELCOME_MESSAGE, view=MainPage(GUILDS, False))

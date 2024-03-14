@@ -12,6 +12,11 @@ GIVEAWAY_INTRO_MESSAGE = "**Giveaway Portal**\n\n" \
                          "To request channel accesses or ask questions, please contact <@723723650909601833>"
 
 
+TS_GUILD_ID = 606111887876292622
+TS_TC_ROLE_ID = 972222885705941003
+TS_MOD_ROLE_ID = 721089588457635950
+
+
 class GiveawayBaseView(BaseView):
     def __init__(self, user_id, guilds, guild_ids, channel_ids):
         super(GiveawayBaseView, self).__init__(user_id)
@@ -20,8 +25,8 @@ class GiveawayBaseView(BaseView):
         self.channel_ids = channel_ids
 
     def restart(self):
-        guilds, guild_ids, channel_ids, _ = get_user_giveaway_accesses(self.user_id, self.guilds)
-        return GiveawayView(self.user_id, guilds, guild_ids, channel_ids)
+        _, view = GiveawayView.new_giveaway_view(self.user_id, self.guilds)
+        return view
 
 
 class GiveawayCreateButton(discord.ui.Button['Create']):
@@ -55,7 +60,20 @@ class GiveawayView(GiveawayBaseView):
 
     @staticmethod
     def new_giveaway_view(user_id, guilds):
-        guilds, guild_ids, channel_ids, _ = get_user_giveaway_accesses(user_id, guilds)
+        role_id = None
+        if TS_GUILD_ID in guilds:
+            ts_guild = guilds[TS_GUILD_ID]['guild']
+            member = ts_guild.get_member(user_id)
+            if member is not None:
+                mod = member.get_role(TS_MOD_ROLE_ID)
+                if mod is not None:
+                    role_id = TS_MOD_ROLE_ID
+                else:
+                    tc = member.get_role(TS_TC_ROLE_ID)
+                    if tc is not None:
+                        role_id = TS_TC_ROLE_ID
+
+        guilds, guild_ids, channel_ids, _ = get_user_giveaway_accesses(user_id, guilds, role_id)
         if guilds is None or len(guilds) == 0:
             return "You don't have access to manage giveaways", None
 

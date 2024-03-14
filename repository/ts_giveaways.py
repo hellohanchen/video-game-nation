@@ -136,10 +136,12 @@ def get_drafts_for_user(uid, guild_ids, channel_ids):
         return None, err
 
 
-def get_user_giveaway_accesses(uid, all_guilds):
+def get_user_giveaway_accesses(uid, all_guilds, role_id=None):
     try:
         db_conn = CNX_POOL.get_connection()
         query = f"SELECT * from vgn.ts_giveaway_creators where user_id = {uid}"
+        if role_id is not None:
+            query += f" OR role_id = {role_id}"
         # Execute SQL query and store results in a pandas dataframe
         df = pd.read_sql(query, db_conn)
 
@@ -151,8 +153,8 @@ def get_user_giveaway_accesses(uid, all_guilds):
         guilds = {}
         guild_ids = []
         channel_ids = []
-        for giveaway in loaded:
-            gid = giveaway['guild_id']
+        for access in loaded:
+            gid = access['guild_id']
             if gid not in all_guilds:
                 continue
 
@@ -162,7 +164,7 @@ def get_user_giveaway_accesses(uid, all_guilds):
                 guilds[gid]['channels'] = {}
                 guild_ids.append(gid)
 
-            cid = giveaway['channel_id']
+            cid = access['channel_id']
             if cid == 0:
                 guilds[gid]['channels'] = all_guilds[gid]['channels']
                 channel_ids.extend(list(all_guilds[gid]['channels'].keys()))
