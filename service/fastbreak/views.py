@@ -152,8 +152,15 @@ class LineupSubmitButton(discord.ui.Button['LineupSubmit']):
             message = await view.lineup.submit(view.contest_id)
             await followup.send(message, ephemeral=True)
         except Exception as err:
-            await ADMIN_LOGGER.error(f"FB:Submit:{err}")
+            await ADMIN_LOGGER.error(f"Submit:{err}")
             await followup.send(f"Submission failed, please retry", ephemeral=True)
+
+        if interaction.guild.id == 718491088142204998:
+            role = interaction.guild.get_role(1095033370855080006)
+            try:
+                await interaction.user.add_roles(role)
+            except Exception as err:
+                await ADMIN_LOGGER.error(f"Submit:Role:{err}")
 
 
 class LineupLeaderboardButton(discord.ui.Button['LineupLeaderboard']):

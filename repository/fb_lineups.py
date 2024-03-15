@@ -295,6 +295,28 @@ def get_user_slate_result(uid, cid, game_dates):
     return loaded[0], None
 
 
+def get_submitted_users():
+    db_conn = None
+    try:
+        db_conn = CNX_POOL.get_connection()
+        query = "SELECT DISTINCT user_id FROM vgn.fb_lineups WHERE is_ranked = TRUE"
+
+        # Execute SQL query and store results in a pandas dataframe
+        df = pd.read_sql(query, db_conn)
+
+        # Convert dataframe to a dictionary with headers
+        users = df.to_dict('records')
+
+        db_conn.commit()
+        db_conn.close()
+    except Exception as err:
+        if db_conn is not None:
+            db_conn.close()
+        return [], err
+
+    return users, None
+
+
 if __name__ == '__main__':
     # get_lineups("04/11/2023")
     get_lineup("100", "04/11/2023")
