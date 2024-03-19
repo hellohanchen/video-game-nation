@@ -3,7 +3,7 @@
     {
       "id": 4,
       "defaultContestID": 4,
-      "validation": "BSB_TSD",
+      "validation": "B2B_TSD",
       "name": "B2B Contest 03/19/2024 ~ 03/28/2024",
       "channels": [
         1195804395309367469,
