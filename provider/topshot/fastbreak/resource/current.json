@@ -50,7 +50,7 @@
           "buckets": [
             {
               "stats": "SPB",
-              "target": 25,
+              "target": 15,
               "order": "DESC"
             }
           ]
