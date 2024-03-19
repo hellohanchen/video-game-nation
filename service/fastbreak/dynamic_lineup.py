@@ -397,10 +397,17 @@ class DynamicLineupService(AbstractDynamicLineupService):
             diff = pst_time - scoreboard_date
             if diff.days >= 1:
                 new_status = GameDateStatus.PRE_GAME
+                current_game_date = FB_PROVIDER.get_next_game_date(scoreboard_date)
+            else:
+                current_game_date = scoreboard_date_slash
         elif new_status == GameDateStatus.NO_GAME:
+            current_game_date = FB_PROVIDER.get_next_game_date(scoreboard_date)
             new_status = GameDateStatus.PRE_GAME  # skip dates with no game
+        else:
+            current_game_date = scoreboard_date.strftime('%m/%d/%Y')
 
-        current_game_date = FB_PROVIDER.get_next_game_date(scoreboard_date)
+        if current_game_date not in FB_PROVIDER.fb_details:
+            current_game_date = FB_PROVIDER.get_next_game_date(current_game_date)
         if current_game_date != scoreboard_date_slash:
             new_status = GameDateStatus.PRE_GAME  # skip dates with no fb
 
