@@ -157,10 +157,12 @@ class LineupSubmitButton(discord.ui.Button['LineupSubmit']):
 
         if interaction.guild.id == 718491088142204998:
             role = interaction.guild.get_role(1095033370855080006)
-            try:
-                await interaction.user.add_roles(role)
-            except Exception as err:
-                await ADMIN_LOGGER.error(f"Submit:Role:{err}")
+            member = interaction.guild.get_member(interaction.user.id)
+            if member is not None:
+                try:
+                    await member.add_roles(role)
+                except Exception as err:
+                    await ADMIN_LOGGER.error(f"Submit:Role:{err}")
 
 
 class LineupLeaderboardButton(discord.ui.Button['LineupLeaderboard']):
