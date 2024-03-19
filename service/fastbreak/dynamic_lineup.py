@@ -401,6 +401,8 @@ class DynamicLineupService(AbstractDynamicLineupService):
             new_status = GameDateStatus.PRE_GAME  # skip dates with no game
 
         current_game_date = FB_PROVIDER.get_next_game_date(scoreboard_date)
+        if current_game_date != scoreboard_date_slash:
+            new_status = GameDateStatus.PRE_GAME  # skip dates with no fb
 
         # reboot the service with loading all info for current date
         if self.status == GameDateStatus.INIT:
