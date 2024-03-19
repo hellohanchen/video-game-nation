@@ -77,7 +77,7 @@
           "buckets": [
             {
               "stats": "3PA",
-              "target": 40,
+              "target": 35,
               "order": "DESC"
             }
           ]

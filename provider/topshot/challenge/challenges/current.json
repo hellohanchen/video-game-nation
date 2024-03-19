@@ -1,26 +1,4 @@
 {
   "message": "NBA 2023-24",
-  "challenges": [
-    {
-      "id": 1,
-      "title": "Introducing Flash Leaderboards",
-      "buckets": [
-        {
-          "description": "To compete, track the top 10 scorers from today’s NBA games and submit eligible Rare or Top Shot Debut Moments (Volume-based)",
-          "is_wildcard": false,
-          "type": "LB",
-          "count": 10,
-          "tier_breakers": [
-            {
-              "stats": "PTS",
-              "order": "DESC"
-            }
-          ],
-          "dates": [
-            "03/18/2024"
-          ]
-        }
-      ]
-    }
-  ]
+  "challenges": []
 }
