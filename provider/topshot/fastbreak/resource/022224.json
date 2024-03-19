@@ -1,110 +1,373 @@
 {
-  "02/22/2024": {
-    "count": 5,
-    "isCombine": true,
-    "buckets": [
-      {
-        "stats": "3PT",
-        "target": 17,
-        "order": "DESC"
+  "contests": [
+    {
+      "id": 1,
+      "defaultContestID": 1,
+      "validation": "ONE",
+      "name": "B2B Contest 02/22/2024 ~ 02/29/2024",
+      "channels": [
+        1195804395309367469,
+        1210688371773407252,
+        1178938072562417714
+      ],
+      "dates": {
+        "02/22/2024": {
+          "count": 5,
+          "isCombine": true,
+          "buckets": [
+            {
+              "stats": "3PT",
+              "target": 17,
+              "order": "DESC"
+            }
+          ]
+        },
+        "02/23/2024": {
+          "count": 5,
+          "isCombine": true,
+          "buckets": [
+            {
+              "stats": "BLK",
+              "target": 8,
+              "order": "DESC"
+            },
+            {
+              "stats": "REB",
+              "target": 40,
+              "order": "DESC"
+            }
+          ]
+        },
+        "02/24/2024": {
+          "count": 5,
+          "isCombine": true,
+          "buckets": [
+            {
+              "stats": "AST",
+              "target": 30,
+              "order": "DESC"
+            },
+            {
+              "stats": "STL",
+              "target": 5,
+              "order": "DESC"
+            }
+          ]
+        },
+        "02/25/2024": {
+          "count": 5,
+          "isCombine": true,
+          "buckets": [
+            {
+              "stats": "PTS",
+              "target": 140,
+              "order": "DESC"
+            }
+          ]
+        },
+        "02/26/2024": {
+          "count": 5,
+          "isCombine": true,
+          "buckets": [
+            {
+              "stats": "AST",
+              "target": 30,
+              "order": "DESC"
+            },
+            {
+              "stats": "REB",
+              "target": 50,
+              "order": "DESC"
+            }
+          ]
+        },
+        "02/27/2024": {
+          "count": 5,
+          "isCombine": true,
+          "buckets": [
+            {
+              "stats": "BLK",
+              "target": 8,
+              "order": "DESC"
+            }
+          ]
+        },
+        "02/28/2024": {
+          "count": 5,
+          "isCombine": true,
+          "buckets": [
+            {
+              "stats": "FTA",
+              "target": 30,
+              "order": "DESC"
+            },
+            {
+              "stats": "FGA",
+              "target": 70,
+              "order": "DESC"
+            }
+          ]
+        },
+        "02/29/2024": {
+          "count": 5,
+          "isCombine": true,
+          "buckets": [
+            {
+              "stats": "AMT",
+              "target": 25,
+              "order": "DESC"
+            }
+          ]
+        }
       }
-    ]
-  },
-  "02/23/2024": {
-    "count": 5,
-    "isCombine": true,
-    "buckets": [
-      {
-        "stats": "BLK",
-        "target": 8,
-        "order": "DESC"
-      },
-      {
-        "stats": "REB",
-        "target": 40,
-        "order": "DESC"
+    },
+    {
+      "id": 2,
+      "defaultContestID": 2,
+      "validation": "TS",
+      "name": "NBA Top Shot Fastbreak 03/01/2024 ~ 03/17/2024",
+      "channels": [],
+      "dates": {
+        "03/01/2024": {
+          "count": 5,
+          "isCombine": true,
+          "buckets": [
+            {
+              "stats": "PTS",
+              "target": 130,
+              "order": "DESC"
+            }
+          ]
+        },
+        "03/02/2024": {
+          "count": 5,
+          "isCombine": true,
+          "buckets": [
+            {
+              "stats": "AST",
+              "target": 25,
+              "order": "DESC"
+            }
+          ]
+        },
+        "03/03/2024": {
+          "count": 5,
+          "isCombine": true,
+          "buckets": [
+            {
+              "stats": "REB",
+              "target": 50,
+              "order": "DESC"
+            }
+          ]
+        },
+        "03/04/2024": {
+          "count": 5,
+          "isCombine": true,
+          "buckets": [
+            {
+              "stats": "3PT",
+              "target": 15,
+              "order": "DESC"
+            }
+          ]
+        },
+        "03/05/2024": {
+          "count": 5,
+          "isCombine": true,
+          "buckets": [
+            {
+              "stats": "FTM",
+              "target": 20,
+              "order": "DESC"
+            },
+            {
+              "stats": "FTA",
+              "target": 25,
+              "order": "DESC"
+            }
+          ]
+        },
+        "03/06/2024": {
+          "count": 5,
+          "isCombine": true,
+          "buckets": [
+            {
+              "stats": "AMT",
+              "target": 25,
+              "order": "DESC"
+            }
+          ]
+        },
+        "03/07/2024": {
+          "count": 5,
+          "isCombine": true,
+          "buckets": [
+            {
+              "stats": "PTS",
+              "target": 130,
+              "order": "DESC"
+            }
+          ]
+        },
+        "03/08/2024": {
+          "count": 5,
+          "isCombine": true,
+          "buckets": [
+            {
+              "stats": "FGM",
+              "target": 40,
+              "order": "DESC"
+            },
+            {
+              "stats": "STL",
+              "target": 5,
+              "order": "DESC"
+            }
+          ]
+        },
+        "03/09/2024": {
+          "count": 5,
+          "isCombine": true,
+          "buckets": [
+            {
+              "stats": "3PT",
+              "target": 15,
+              "order": "DESC"
+            }
+          ]
+        },
+        "03/10/2024": {
+          "count": 5,
+          "isCombine": true,
+          "buckets": [
+            {
+              "stats": "3PA",
+              "target": 25,
+              "order": "DESC"
+            },
+            {
+              "stats": "FTA",
+              "target": 20,
+              "order": "DESC"
+            }
+          ]
+        },
+        "03/11/2024": {
+          "count": 5,
+          "isCombine": true,
+          "buckets": [
+            {
+              "stats": "PTS",
+              "target": 100,
+              "order": "DESC"
+            },
+            {
+              "stats": "REB",
+              "target": 40,
+              "order": "DESC"
+            }
+          ]
+        },
+        "03/12/2024": {
+          "count": 5,
+          "isCombine": true,
+          "buckets": [
+            {
+              "stats": "BLK",
+              "target": 7,
+              "order": "DESC"
+            },
+            {
+              "stats": "PIP",
+              "target": 40,
+              "order": "DESC"
+            }
+          ]
+        },
+        "03/13/2024": {
+          "count": 5,
+          "isCombine": true,
+          "buckets": [
+            {
+              "stats": "AST",
+              "target": 35,
+              "order": "DESC"
+            }
+          ]
+        },
+        "03/14/2024": {
+          "count": 5,
+          "isCombine": true,
+          "buckets": [
+            {
+              "stats": "3PT",
+              "target": 15,
+              "order": "DESC"
+            },
+            {
+              "stats": "3PA",
+              "target": 25,
+              "order": "DESC"
+            }
+          ]
+        },
+        "03/15/2024": {
+          "count": 5,
+          "isCombine": true,
+          "buckets": [
+            {
+              "stats": "FTM",
+              "target": 20,
+              "order": "DESC"
+            },
+            {
+              "stats": "FTA",
+              "target": 25,
+              "order": "DESC"
+            }
+          ]
+        },
+        "03/16/2024": {
+          "count": 5,
+          "isCombine": true,
+          "buckets": [
+            {
+              "stats": "PTS",
+              "target": 150,
+              "order": "DESC"
+            }
+          ]
+        },
+        "03/17/2024": {
+          "count": 5,
+          "isCombine": true,
+          "buckets": [
+            {
+              "stats": "REB",
+              "target": 50,
+              "order": "DESC"
+            },
+            {
+              "stats": "BLK",
+              "target": 5,
+              "order": "DESC"
+            }
+          ]
+        }
       }
-    ]
-  },
-  "02/24/2024": {
-    "count": 5,
-    "isCombine": true,
-    "buckets": [
-      {
-        "stats": "AST",
-        "target": 30,
-        "order": "DESC"
-      },
-      {
-        "stats": "STL",
-        "target": 5,
-        "order": "DESC"
-      }
-    ]
-  },
-  "02/25/2024": {
-    "count": 5,
-    "isCombine": true,
-    "buckets": [
-      {
-        "stats": "PTS",
-        "target": 140,
-        "order": "DESC"
-      }
-    ]
-  },
-  "02/26/2024": {
-    "count": 5,
-    "isCombine": true,
-    "buckets": [
-      {
-        "stats": "AST",
-        "target": 30,
-        "order": "DESC"
-      },
-      {
-        "stats": "REB",
-        "target": 50,
-        "order": "DESC"
-      }
-    ]
-  },
-  "02/27/2024": {
-    "count": 5,
-    "isCombine": true,
-    "buckets": [
-      {
-        "stats": "BLK",
-        "target": 8,
-        "order": "DESC"
-      }
-    ]
-  },
-  "02/28/2024": {
-    "count": 5,
-    "isCombine": true,
-    "buckets": [
-      {
-        "stats": "FTA",
-        "target": 30,
-        "order": "DESC"
-      },
-      {
-        "stats": "FGA",
-        "target": 70,
-        "order": "DESC"
-      }
-    ]
-  },
-  "02/29/2024": {
-    "count": 5,
-    "isCombine": true,
-    "buckets": [
-      {
-        "stats": "AMT",
-        "target": 25,
-        "order": "DESC"
-      }
-    ]
-  }
+    },
+    {
+      "id": 3,
+      "defaultContestID": 2,
+      "validation": "TS",
+      "name": "B2B Contest 03/01/2024 ~ 03/17/2024",
+      "channels": [
+        1195804395309367469,
+        1210688371773407252,
+        1178938072562417714
+      ],
+      "dates": {}
+    }
+  ]
 }

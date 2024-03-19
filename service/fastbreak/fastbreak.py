@@ -7,6 +7,7 @@ STATS_MAP = {
     "FGA": "field goal attempts",
     "FGM": "field goals made",
     "3PT": "three pointers made",
+    "3PM": "three pointers made",
     "3PA": "three pointer attempts",
     "REB": "rebounds",
     "ORB": "offensive rebounds",
@@ -25,6 +26,7 @@ STATS_MAP = {
     "PMP": "plus minus",
     "AMT": "assists minus turnovers",
     "TOV": "turnovers",
+    "SPB": "steals plus blocks",
 }
 BOXSCORE_MAP = {
     "PTS": "points",
@@ -90,6 +92,10 @@ class FBBucket:
             assists = 0.0 if BOXSCORE_MAP['AST'] not in player_stat else player_stat[BOXSCORE_MAP['AST']]
             turnovers = 0.0 if BOXSCORE_MAP['TOV'] not in player_stat else player_stat[BOXSCORE_MAP['TOV']]
             raw_score = assists - turnovers
+        elif self.stats == 'SPB':
+            steals = 0.0 if BOXSCORE_MAP['STL'] not in player_stat else player_stat[BOXSCORE_MAP['STL']]
+            blocks = 0.0 if BOXSCORE_MAP['BLK'] not in player_stat else player_stat[BOXSCORE_MAP['BLK']]
+            raw_score = steals + blocks
         else:
             key = BOXSCORE_MAP[self.stats]
             if key not in player_stat:

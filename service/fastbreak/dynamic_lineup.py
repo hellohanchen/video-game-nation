@@ -244,21 +244,20 @@ class Lineup:
         if contest_id in FB_PROVIDER.contests:
             validation = FB_PROVIDER.contests[contest_id]['validation']
             player_usages = self.service.user_usages.get(self.user_id, {})
-            if validation == "ONE":
-                for pid in self.player_ids[0:5]:
-                    if pid != INVALID_ID:
-                        if pid in player_usages:
-                            return f"Submission failed: {self.service.players[pid]['full_name']} reaches limit: 1"
-            elif validation == "TS":
-                for pid in self.player_ids[0:5]:
-                    if pid != INVALID_ID:
-                        if collections[pid]['tier'] == "Legendary":
-                            limit = 4
-                        elif collections[pid]['tier'] == 'Rare':
-                            limit = 2
-                        else:
-                            limit = 1
-                        if pid in player_usages and player_usages[pid] == limit:
+            for pid in self.player_ids[0:5]:
+                if pid != INVALID_ID:
+                    if pid in player_usages:
+                        limit = 1
+                        if validation in ["TS", "B2B_TSD"]:
+                            if collections[pid]['tier'] == "Legendary":
+                                limit = 4
+                            elif collections[pid]['tier'] == 'Rare':
+                                limit = 2
+                            else:
+                                limit = 1
+                            if validation == "B2B_TSD" and collections[pid]['tsd']:
+                                limit += 1
+                        if player_usages[pid] == limit:
                             return f"Submission failed: {self.service.players[pid]['full_name']} reaches limit: {limit}"
 
         successful, updated_lineup, err = submit_lineup((
@@ -389,6 +388,7 @@ class DynamicLineupService(AbstractDynamicLineupService):
     async def update(self, skip_upload=False):
         scoreboard = NBAProvider.get_scoreboard()
         scoreboard_date = datetime.datetime.strptime(scoreboard['gameDate'], '%Y-%m-%d')
+        scoreboard_date_slash = scoreboard_date.strftime('%m/%d/%Y')
         active_games = list(filter(lambda g: g['gameStatusText'] != "PPD", scoreboard['games']))
         new_status = NBAProvider.get_status_enum(scoreboard['games'])
 
@@ -397,21 +397,17 @@ class DynamicLineupService(AbstractDynamicLineupService):
             diff = pst_time - scoreboard_date
             if diff.days >= 1:
                 new_status = GameDateStatus.PRE_GAME
-                current_game_date = FB_PROVIDER.get_next_game_date(scoreboard_date)
-            else:
-                current_game_date = scoreboard_date.strftime('%m/%d/%Y')
         elif new_status == GameDateStatus.NO_GAME:
-            current_game_date = FB_PROVIDER.get_next_game_date(scoreboard_date)
             new_status = GameDateStatus.PRE_GAME  # skip dates with no game
-        else:
-            current_game_date = scoreboard_date.strftime('%m/%d/%Y')
+
+        current_game_date = FB_PROVIDER.get_next_game_date(scoreboard_date)
 
         # reboot the service with loading all info for current date
         if self.status == GameDateStatus.INIT:
             self.current_game_date = current_game_date
             self.status = new_status
             self.reload()
-            if current_game_date == scoreboard_date.strftime('%m/%d/%Y'):
+            if current_game_date == scoreboard_date_slash:
                 # the current game date is still ongoing, we need to load current games and lineups
                 if new_status == GameDateStatus.IN_GAME or new_status == GameDateStatus.POST_GAME:
                     await self.__update_stats()

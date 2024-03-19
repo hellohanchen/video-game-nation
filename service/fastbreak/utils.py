@@ -49,6 +49,7 @@ def build_fb_collections(ts_provider, plays, player_ids):
             serial = plays[play_id][set_id]
             player_id = play['playerId']
             tier = play['tier']
+            is_tsd = 'TSD' in play['badges']
 
             if player_id is not None and player_id != 0:
                 if player_id not in player_ids:
@@ -58,20 +59,26 @@ def build_fb_collections(ts_provider, plays, player_ids):
                     player_collections[player_id] = {
                         'tier': tier,
                         'serial': serial,
+                        'tsd': is_tsd
                     }
                 else:
-                    if player_collections[player_id]['tier'] == 'Common' or \
-                            player_collections[player_id]['tier'] == 'Fandom':
+                    existing_tier = player_collections[player_id]['tier']
+                    if existing_tier == 'Common' or existing_tier == 'Fandom':
                         if serial < player_collections[player_id]['serial'] or \
                                 tier == 'Rare' or tier == 'Legendary':
                             player_collections[player_id]['tier'] = tier
                             player_collections[player_id]['serial'] = serial
-                    elif player_collections[player_id]['tier'] == 'Rare':
+
+                        player_collections[player_id]['tsd'] |= is_tsd
+                    elif existing_tier == 'Rare':
                         if tier == 'Legendary' or \
                                 (tier == 'Rare' and serial < player_collections[player_id]['serial']):
                             player_collections[player_id]['tier'] = tier
                             player_collections[player_id]['serial'] = serial
                     elif tier == 'Legendary' and serial < player_collections[player_id]['serial']:
                         player_collections[player_id]['serial'] = serial
+
+                    if player_collections[player_id]['tier'] == tier:
+                        player_collections[player_id]['tsd'] |= is_tsd
 
     return player_collections, not_found_plays
