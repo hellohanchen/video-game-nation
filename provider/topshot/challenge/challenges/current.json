@@ -3,21 +3,21 @@
   "challenges": [
     {
       "id": 1,
-      "title": "Get Ready for a Flash Leaderboard",
+      "title": "03/20/2024",
       "buckets": [
         {
-          "description": "Tonight’s focus, players who finish in the top 5 for Field Goals Made",
+          "description": "Top 5 PRA",
           "is_wildcard": false,
           "type": "LB",
           "count": 5,
           "tier_breakers": [
             {
-              "stats": "FGM",
+              "stats": "PTS,REB,AST",
               "order": "DESC"
             }
           ],
           "dates": [
-            "03/19/2024"
+            "03/20/2024"
           ]
         }
       ]
