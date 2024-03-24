@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 from constants import TZ_ET
 from provider.nba.nba_provider import NBA_PROVIDER
 from provider.topshot.cadence.flow_collections import get_account_plays
-from provider.topshot.graphql.get_address import get_flow_address
+from provider.topshot.graphql.get_account import get_flow_address
 from repository.vgn_collections import upsert_collection as repo_upsert_collection
 from repository.vgn_users import insert_user
 from service.fantasy import LINEUP_PROVIDER

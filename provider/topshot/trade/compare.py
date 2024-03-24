@@ -3,7 +3,7 @@ import random
 import time
 
 from provider.topshot.cadence.flow_collections import get_collection_for_trade
-from provider.topshot.graphql.get_address import get_flow_address
+from provider.topshot.graphql.get_account import get_flow_address
 from provider.topshot.graphql.get_price import get_listing_prices
 from provider.topshot.ts_provider import TS_PROVIDER
 

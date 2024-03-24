@@ -12,7 +12,7 @@ from repository.vgn_users import get_user, insert_user
 from service.fantasy import LINEUP_PROVIDER
 from service.fantasy.ranking import RANK_PROVIDER
 from provider.topshot.cadence.flow_collections import get_account_plays
-from provider.topshot.graphql.get_address import get_flow_address
+from provider.topshot.graphql.get_account import get_flow_address
 
 # config bot
 load_dotenv()

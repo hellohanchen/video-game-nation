@@ -1,24 +1,23 @@
 import datetime
 import random
 import time
-from typing import Dict, Optional
+from typing import Dict, Optional, Tuple
 
 import discord
 
-from constants import NBA_TEAM_IDS
-from vgnlog.channel_logger import ADMIN_LOGGER
-from provider.topshot.graphql.get_address import get_flow_account_info
+from constants import NBA_TEAM_IDS, NBA_TEAMS
+from provider.topshot.graphql.get_account import get_flow_account_info, get_team_leaderboard_rank
 from repository.ts_giveaways import message_giveaway, get_ongoing_giveaways, get_submission, get_submission_count, \
     join_giveaway, get_submitted_fav_team, ban_user, get_submissions_with_flow_info, close_giveaway, leave_giveaway
 from repository.vgn_users import get_user_new
 from service.common.profile.views import ProfileView
-
+from vgnlog.channel_logger import ADMIN_LOGGER
 
 THUMBNAIL_URL = "https://i.ibb.co/TWmVsFB/g-01.png"
 
 
 class Giveaway:
-    def __init__(self, i, c, m, n, d, w, dur, f, ws, tb, e, s):
+    def __init__(self, i, c, m, n, d, w, dur, f, ws, lb, tb, e, s):
         self.id = i
         self.channel = c
         self.message = m
@@ -29,6 +28,7 @@ class Giveaway:
 
         self.fav_teams = [] if f is None else f.split(',')
         self.set_weights = [] if ws is None else [int(w) for w in ws.split(',')]
+        self.leaderboard: Optional[Tuple[str, int]] = self.parse_lb(lb)
         self.thumbnail_url: Optional[str] = tb
         self.end_at = e
         self.submissions = s
@@ -45,6 +45,8 @@ class Giveaway:
         content += f"Winners: {self.winners}\n\n"
         if len(self.fav_teams) > 0:
             content += f"Favorite Teams: **{','.join(self.fav_teams)}**\n\n"
+        if self.leaderboard is not None:
+            content += f"Leaderboard: **Top {self.leaderboard[1]} of {self.leaderboard[0]}**\n\n"
         content += f"Ends at: **<t:{int(self.end_at.timestamp())}:R>**"
         return content
 
@@ -74,7 +76,19 @@ class Giveaway:
                 message = None
 
         return Giveaway(g['id'], c, message, g['name'], g['description'], g['winners'], g['duration'],
-                        g['fav_teams'], g['team_set_weights'], g['thumbnail_url'], g['end_at'], 0)
+                        g['fav_teams'], g['team_set_weights'], g['leaderboard'], g['thumbnail_url'], g['end_at'], 0)
+
+    @staticmethod
+    def parse_lb(lb) -> Optional[Tuple[str, int]]:
+        if lb is None or len(lb) == 0:
+            return None
+        team = lb[0:3]
+        if team not in NBA_TEAMS:
+            return None
+        rank = lb[4:]
+        if not rank.isnumeric():
+            return None
+        return team, int(rank)
 
     async def refresh(self):
         if self.message is None:
@@ -93,7 +107,7 @@ class Giveaway:
         if err is None:
             self.submissions = s
 
-    async def close(self):
+    async def close(self, is_reroll=True):
         try:
             await self.refresh()
 
@@ -110,25 +124,11 @@ class Giveaway:
                     winner = submitted_users[i]
                     i += 1
 
-                    # try to validate winner's favorite team
-                    retry = 1
-                    fav_team_id = None
-                    while retry >= 0 and fav_team_id is None:
-                        _, _, fav_team_id, err = await get_flow_account_info(winner['topshot_username'])
-                        if err is not None:
-                            await ADMIN_LOGGER.warn(f"Giveaway:Close:GetFavTeam:{err}")
-                            retry -= 1
-                        time.sleep(0.3)
-
-                    if fav_team_id is not None:
-                        fav_team = NBA_TEAM_IDS.get(int(fav_team_id))
-                        if winner['fav_team'] != fav_team:
-                            _, err = ban_user(winner['user_id'])
-                            if err is not None:
-                                await ADMIN_LOGGER.warn(f"Giveaway:Close:BanUser:{err}")
-                            continue
-
-                    winners.append(winner)
+                    _, passed, _ = await self.verify(
+                        winner['user_id'], winner['topshot_username'], winner['flow_address'], winner['fav_team'],
+                        ban=not is_reroll)
+                    if passed:
+                        winners.append(winner)
             else:
                 winners = submitted_users[:min(len(submitted_users), self.winners)]
 
@@ -142,7 +142,7 @@ class Giveaway:
             await self.channel.send(f"Congratulations to the winners: {', '.join(mentions)} 🎉\n"
                                     f"Winning the giveaway of **{self.name}**")
 
-            if self.message is not None:
+            if self.message is not None and not is_reroll:
                 await self.message.edit(
                     content=f"**GIVEAWAY ENDED**\n"
                             f"Winners: {', '.join(mentions)}\n"
@@ -167,29 +167,23 @@ class Giveaway:
         if submission is not None:
             return False, f"Flow account *{user['flow_address']}* has already joined this giveaway."
 
-        fav_team = None
+        submitted_fav_team = None
         if len(self.fav_teams) > 0:
-            _, _, fav_team_id, err = await get_flow_account_info(user['topshot_username'])
+            submitted_fav_team, err = get_submitted_fav_team(user['id'])
             if err is not None:
-                await ADMIN_LOGGER.warn(f"Giveaway:Join:GetFlow:{err}")
-                return False, f"Join-GetFavTeam:{err}"
-            fav_team = NBA_TEAM_IDS.get(int(fav_team_id))
-            if fav_team not in self.fav_teams:
-                return False, f"Favorite team requirement: {', '.join(self.fav_teams)}"
-
-            submitted_fav_team, _ = get_submitted_fav_team(user['id'])
-            if submitted_fav_team is not None and fav_team != submitted_fav_team:
-                _, err = ban_user(user['id'])
-                if err is not None:
-                    await ADMIN_LOGGER.warn(f"Giveaway:Join:BanUser:{err}")
-                return False, f"Favorite team rule violation."
+                await ADMIN_LOGGER.error(f"Giveaway:Join:{err}")
+                return False, f"failed to get fav team, please retry or contact admin."
+        fav_team, passed, msg = await self.verify(
+            user['id'], user['topshot_username'], user['flow_address'], submitted_fav_team)
+        if not passed:
+            return False, msg
 
         successful, err = join_giveaway(self.id, user, fav_team)
         if successful:
             return True, f"Joined!"
         else:
             await ADMIN_LOGGER.error(f"Giveaway:Join:{err}")
-            return False, f"ERROR: Join:{err}"
+            return False, f"failed to join giveaway, please retry or contact admin."
 
     async def leave(self, uid):
         epoch = datetime.datetime.utcnow()
@@ -202,6 +196,55 @@ class Giveaway:
         else:
             await ADMIN_LOGGER.error(f"Giveaway:Leave:{err}")
             return False, f"ERROR: Leave:{err}"
+
+    async def verify(self, uid, topshot_username, flow_address, submitted_fav_team: Optional[str], ban=True) \
+            -> [Optional[str], bool, str]:
+        current_fav_team = None
+        if len(self.fav_teams) > 0:
+            # try to validate winner's favorite team
+            retry = 1
+            fav_team_id = None
+            while retry >= 0 and fav_team_id is None:
+                _, _, fav_team_id, err = await get_flow_account_info(topshot_username)
+                if err is not None:
+                    await ADMIN_LOGGER.warn(f"Giveaway:Verify:GetFavTeam:{err}")
+                    retry -= 1
+                time.sleep(0.05)
+
+            if fav_team_id is not None:
+                current_fav_team = NBA_TEAM_IDS.get(int(fav_team_id))
+                if submitted_fav_team is not None and submitted_fav_team != current_fav_team:
+                    await ADMIN_LOGGER.info(f"Giveaway:Verify:FavTeam:{topshot_username}:"
+                                            f"{submitted_fav_team}-->{current_fav_team}")
+                    if ban:
+                        _, err = ban_user(uid)
+                        if err is not None:
+                            await ADMIN_LOGGER.warn(f"Giveaway:Verify:Ban:{topshot_username}:{err}")
+                    return current_fav_team, False, f"fav team violation"
+                if current_fav_team not in self.fav_teams:
+                    return current_fav_team, False, f"fav team violation: {', '.join(self.fav_teams)}"
+            if fav_team_id is None and retry == 0:
+                return None, False, f"fav team violation"
+
+        if self.leaderboard is not None:
+            team = self.leaderboard[0]
+            requirement = self.leaderboard[1]
+
+            # try to validate winner's team leaderboard rank
+            retry = 1
+            user_rank = None
+            while retry >= 0 and user_rank is None:
+                user_rank, err = await get_team_leaderboard_rank(flow_address, NBA_TEAMS[team])
+                if err is not None:
+                    await ADMIN_LOGGER.warn(f"Giveaway:Verify:Rank:{err}")
+                    retry -= 1
+                time.sleep(0.05)
+
+            if user_rank is None or user_rank > requirement:
+                await ADMIN_LOGGER.info(f"Giveaway:Verify:LB:{topshot_username},{team}:{user_rank}>{requirement}")
+                return current_fav_team, False, f"leaderboard violation: current rank {user_rank}"
+
+        return current_fav_team, True, ""
 
 
 class GiveawayService:

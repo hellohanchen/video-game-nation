@@ -248,6 +248,7 @@ class GiveawayCreateModal(discord.ui.Modal, title='Create a giveaway'):
 
 class GiveawaySubmitModal(discord.ui.Modal, title='Complete details'):
     fav_teams = discord.ui.TextInput(label="Fav teams, (Optional, e.g. 'ATL,BOS')", required=False)
+    leaderboard = discord.ui.TextInput(label="Leaderboard, (Optional, e.g. 'DAL,1000')", required=False)
     thumbnail_url = discord.ui.TextInput(label="Thumbnail URL, (Optional, <= 256 chars)", required=False)
 
     def __init__(self, view: GiveawayBaseView, giveaway, channel):
@@ -263,13 +264,34 @@ class GiveawaySubmitModal(discord.ui.Modal, title='Complete details'):
             fav_teams = fav_teams_input.split(',')
         for team in fav_teams:
             if team not in NBA_TEAMS:
-                message = f"Invalid team: {team}"
+                message = f"Invalid fav team: {team}, must be 3-letter team abbreviation, " \
+                          f"click *Manage Drafts* to retry"
                 await interaction.response.edit_message(content=message, view=self.view.restart())
                 return
 
+        leaderboard = str(self.leaderboard).strip()
+        comma = leaderboard.find(',')
+        if comma == -1:
+            message = f"Invalid leaderboard: {leaderboard}, must in 'DAL,1000' format with " \
+                      f"a comma between team abbreviation and required rank, click *Manage Drafts* to retry"
+            await interaction.response.edit_message(content=message, view=self.view.restart())
+            return
+        team = leaderboard[:comma].upper()
+        if team not in NBA_TEAMS:
+            message = f"Invalid leaderboard team: {team}, " \
+                      f"must be 3-letter team abbreviation, click *Manage Drafts* to retry"
+            await interaction.response.edit_message(content=message, view=self.view.restart())
+            return
+        rank = leaderboard[comma+1:]
+        if not rank.isnumeric() or int(rank) < 1 or int(rank) > 9999:
+            message = f"Invalid leaderboard rank: {rank}, " \
+                      f"must be integer between 1 and 9999, click *Manage Drafts* to retry"
+            await interaction.response.edit_message(content=message, view=self.view.restart())
+            return
+
         thumbnail_url = str(self.thumbnail_url).strip()
         if len(thumbnail_url) > 256:
-            message = f"URL overall 256 characters: {thumbnail_url}"
+            message = f"URL overall 256 characters: {thumbnail_url}, click *Manage Drafts* to retry"
             await interaction.response.edit_message(content=message, view=self.view.restart())
             return
 
@@ -278,17 +300,18 @@ class GiveawaySubmitModal(discord.ui.Modal, title='Complete details'):
             weights = team_set_weights_input.split(',')
             for weight in weights:
                 if not weight.isnumeric():
-                    message = f"Invalid weight: {weight}"
+                    message = f"Invalid weight: {weight}, click *Manage Drafts* to retry"
                     await interaction.response.edit_message(content=message, view=self.view.restart())
                     return
                 w = int(weight)
                 if w < 1 or w > 4:
-                    message = f"Invalid weight: {weight}"
+                    message = f"Invalid weight: {weight}, click *Manage Drafts* to retry"
                     await interaction.response.edit_message(content=message, view=self.view.restart())
                     return
 
         db_record, err = submit_giveaway(
-            self.giveaway['id'], self.giveaway['duration'], fav_teams_input, team_set_weights_input, thumbnail_url)
+            self.giveaway['id'], self.giveaway['duration'],
+            fav_teams_input, team_set_weights_input, leaderboard, thumbnail_url)
 
         if db_record is None:
             await ADMIN_LOGGER.error(f"Giveaway:Submit:{err}")
@@ -348,7 +371,9 @@ class GiveawayDraftView(BaseView):
                f"Winners: **{winners}**\n" \
                f"Duration: **{duration}** hours\n\n" \
                f"*Please click 'Submit' to fill in more details and start the giveaway:*\n" \
-               f"**Fav Teams**: a comma separated list of team abbreviations, optional, example: ATL,BOS\n" \
+               f"**Fav Teams**: a comma separated list of 3-letter team abbreviations, optional, example: ATL,BOS\n" \
+               f"**Leaderboard**: leaderboard requirement of **1** team, " \
+               f"pick a team abbreviation and an integer between 1 and 9999, optional, example: DAL,1000\n" \
                f"**Thumbnail URL**: a link to image that will be used as the thumbnail picture of the giveaway\n"
 
     @staticmethod

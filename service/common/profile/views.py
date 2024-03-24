@@ -1,7 +1,7 @@
 import discord
 
 from vgnlog.channel_logger import ADMIN_LOGGER
-from provider.topshot.graphql.get_address import get_flow_account_info
+from provider.topshot.graphql.get_account import get_flow_account_info
 from repository.vgn_users import insert_and_get_user, get_user_new
 from service.views import BaseView
 

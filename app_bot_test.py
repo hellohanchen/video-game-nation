@@ -8,8 +8,9 @@ from dotenv import load_dotenv
 
 from app import MainPage
 from repository.discord_roles import get_role_verifications
+from repository.ts_giveaways import get_giveaway
 from service.exchange.listing import LISTING_SERVICE
-from service.giveaway.giveaway import GIVEAWAY_SERVICE
+from service.giveaway.giveaway import GIVEAWAY_SERVICE, Giveaway
 from utils import has_giveaway_permissions
 from vgnlog.channel_logger import ADMIN_LOGGER
 

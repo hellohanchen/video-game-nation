@@ -25,7 +25,7 @@ def create_giveaway(guild_id, channel_id, creator_id, name, description, winners
     return giveaway_id, None
 
 
-def submit_giveaway(gid, duration, fav_teams, team_set_weights, thumbnail_url):
+def submit_giveaway(gid, duration, fav_teams, team_set_weights, leaderboard, thumbnail_url):
     write = f"UPDATE vgn.ts_giveaways SET is_submitted = TRUE, submitted_at = NOW(), " \
             f"end_at = ADDTIME(NOW(), '{duration}:00:00.000000') "
 
@@ -33,6 +33,8 @@ def submit_giveaway(gid, duration, fav_teams, team_set_weights, thumbnail_url):
         write += f", fav_teams='{fav_teams}'"
     if team_set_weights is not None and len(team_set_weights) > 0:
         write += f", team_set_weights='{team_set_weights}'"
+    if leaderboard is not None and len(leaderboard) > 0:
+        write += f", leaderboard='{leaderboard}'"
     if thumbnail_url is not None and len(thumbnail_url) > 0:
         write += f", thumbnail_url='{thumbnail_url}'"
 
