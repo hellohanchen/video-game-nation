@@ -107,7 +107,7 @@ class Giveaway:
         if err is None:
             self.submissions = s
 
-    async def close(self, is_reroll=True):
+    async def close(self, is_reroll=False):
         try:
             await self.refresh()
 
@@ -129,6 +129,7 @@ class Giveaway:
                         ban=not is_reroll)
                     if passed:
                         winners.append(winner)
+                    time.sleep(0.1)
             else:
                 winners = submitted_users[:min(len(submitted_users), self.winners)]
 
