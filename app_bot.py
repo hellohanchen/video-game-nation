@@ -203,7 +203,7 @@ async def reroll_giveaway(context, gid):
     try:
         g = await Giveaway.from_db(db_g, context.channel)
         g.winners = 1  # only reroll for 1 winner at a time
-        await g.close(is_reroll=False)
+        await g.close(is_reroll=True)
     except Exception as err:
         await ADMIN_LOGGER.error(f"Roll:Close:{err}")
         await context.channel.send(f"Service error, please retry or contact admin.")
