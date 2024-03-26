@@ -270,24 +270,25 @@ class GiveawaySubmitModal(discord.ui.Modal, title='Complete details'):
                 return
 
         leaderboard = str(self.leaderboard).strip()
-        comma = leaderboard.find(',')
-        if comma == -1:
-            message = f"Invalid leaderboard: {leaderboard}, must in 'DAL,1000' format with " \
-                      f"a comma between team abbreviation and required rank, click *Manage Drafts* to retry"
-            await interaction.response.edit_message(content=message, view=self.view.restart())
-            return
-        team = leaderboard[:comma].upper()
-        if team not in NBA_TEAMS:
-            message = f"Invalid leaderboard team: {team}, " \
-                      f"must be 3-letter team abbreviation, click *Manage Drafts* to retry"
-            await interaction.response.edit_message(content=message, view=self.view.restart())
-            return
-        rank = leaderboard[comma+1:]
-        if not rank.isnumeric() or int(rank) < 1 or int(rank) > 9999:
-            message = f"Invalid leaderboard rank: {rank}, " \
-                      f"must be integer between 1 and 9999, click *Manage Drafts* to retry"
-            await interaction.response.edit_message(content=message, view=self.view.restart())
-            return
+        if len(leaderboard) > 0:
+            comma = leaderboard.find(',')
+            if comma == -1:
+                message = f"Invalid leaderboard: {leaderboard}, must in 'DAL,1000' format with " \
+                          f"a comma between team abbreviation and required rank, click *Manage Drafts* to retry"
+                await interaction.response.edit_message(content=message, view=self.view.restart())
+                return
+            team = leaderboard[:comma].upper()
+            if team not in NBA_TEAMS:
+                message = f"Invalid leaderboard team: {team}, " \
+                          f"must be 3-letter team abbreviation, click *Manage Drafts* to retry"
+                await interaction.response.edit_message(content=message, view=self.view.restart())
+                return
+            rank = leaderboard[comma+1:]
+            if not rank.isnumeric() or int(rank) < 1 or int(rank) > 9999:
+                message = f"Invalid leaderboard rank: {rank}, " \
+                          f"must be integer between 1 and 9999, click *Manage Drafts* to retry"
+                await interaction.response.edit_message(content=message, view=self.view.restart())
+                return
 
         thumbnail_url = str(self.thumbnail_url).strip()
         if len(thumbnail_url) > 256:
