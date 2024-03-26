@@ -210,7 +210,9 @@ class Giveaway:
                 if err is not None:
                     await ADMIN_LOGGER.warn(f"Giveaway:Verify:GetFavTeam:{err}")
                     retry -= 1
-                time.sleep(0.05)
+                    if retry == 0:
+                        await ADMIN_LOGGER.error(f"Giveaway:Verify:GetFavTeam:{topshot_username} server error")
+                time.sleep(0.1)
 
             if fav_team_id is not None:
                 current_fav_team = NBA_TEAM_IDS.get(int(fav_team_id))
