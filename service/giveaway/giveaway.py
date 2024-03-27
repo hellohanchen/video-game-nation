@@ -6,11 +6,12 @@ from typing import Dict, Optional, Tuple
 import discord
 
 from constants import NBA_TEAM_IDS, NBA_TEAMS
-from provider.topshot.graphql.get_account import get_flow_account_info, get_team_leaderboard_rank
+from provider.topshot.graphql.get_account import get_team_leaderboard_rank, \
+    get_profile_with_address
 from repository.ts_giveaways import message_giveaway, get_ongoing_giveaways, get_submission, get_submission_count, \
     join_giveaway, get_submitted_fav_team, ban_user, get_submissions_with_flow_info, close_giveaway, leave_giveaway
 from repository.vgn_users import get_user_new
-from service.common.profile.views import ProfileView
+from service.common.profile.views import ProfileView, LINK_TS_ACCOUNT_MESSAGE
 from vgnlog.channel_logger import ADMIN_LOGGER
 
 THUMBNAIL_URL = "https://i.ibb.co/TWmVsFB/g-01.png"
@@ -181,7 +182,7 @@ class Giveaway:
 
         successful, err = join_giveaway(self.id, user, fav_team)
         if successful:
-            return True, f"Joined!"
+            return True, f"Joined with linked account {user['topshot_username']}({user['flow_address']}) !"
         else:
             await ADMIN_LOGGER.error(f"Giveaway:Join:{err}")
             return False, f"failed to join giveaway, please retry or contact admin."
@@ -206,7 +207,7 @@ class Giveaway:
             retry = 1
             fav_team_id = None
             while retry >= 0 and fav_team_id is None:
-                _, _, fav_team_id, err = await get_flow_account_info(topshot_username)
+                _, fav_team_id, err = await get_profile_with_address(flow_address)
                 if err is not None:
                     await ADMIN_LOGGER.warn(f"Giveaway:Verify:GetFavTeam:{err}")
                     retry -= 1
@@ -349,6 +350,41 @@ class LeaveGiveawayButton(discord.ui.Button['Quit']):
             await view.giveaway.refresh()
 
 
+class GiveawayAccountButton(discord.ui.Button['Account']):
+    def __init__(self):
+        super(GiveawayAccountButton, self).__init__(style=discord.ButtonStyle.green, label=f"My Account", row=0)
+
+    async def callback(self, interaction: discord.Interaction):
+        assert self.view is not None
+        user_id = interaction.user.id
+        user, err = get_user_new(user_id)
+        if err is not None:
+            await ADMIN_LOGGER.error(f"Giveaway:Account:Get:{err}")
+            await interaction.response.send_message(
+                content="Failed to load user info, please retry or contact admin", ephemeral=True, delete_after=30.0)
+            return
+        if user is None:
+            await interaction.response.send_message(
+                content=LINK_TS_ACCOUNT_MESSAGE, view=ProfileView(user_id), ephemeral=True, delete_after=600.0)
+            return
+
+        _, fav_team_id, err = await get_profile_with_address(user['flow_address'])
+        if err is not None:
+            await ADMIN_LOGGER.error(f"Giveaway:Account:GetFavTeam:{err}")
+            await interaction.response.send_message(
+                content="Failed to load user info, please retry or contact admin", ephemeral=True, delete_after=30.0)
+            return
+
+        fav_team = NBA_TEAM_IDS.get(int(fav_team_id))
+        message = f"TS username: **{user['topshot_username']}**\n" \
+                  f"Address: **{user['flow_address']}**\n"
+        if fav_team is not None:
+            message += f"Fav team: **{fav_team}**"
+
+        await interaction.response.send_message(
+            content=message, view=ProfileView(user_id, user['flow_address']), ephemeral=True, delete_after=600.0)
+
+
 class JoinGiveawayView(discord.ui.View):
     def __init__(self, giveaway: Giveaway):
         super(JoinGiveawayView, self).__init__()
@@ -358,3 +394,4 @@ class JoinGiveawayView(discord.ui.View):
         self.giveaway: Giveaway = giveaway
         self.add_item(JoinRulesButton())
         self.add_item(LeaveGiveawayButton())
+        self.add_item(GiveawayAccountButton())

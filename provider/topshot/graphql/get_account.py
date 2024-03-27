@@ -38,7 +38,7 @@ async def get_flow_address(topshot_username):
     return result['getUserProfileByUsername']['publicInfo']['flowAddress']
 
 
-async def get_flow_account_info(topshot_username):
+async def get_profile_with_ts_username(topshot_username):
     try:
         # Select your transport with a defined url endpoint
         transport = AIOHTTPTransport(url="https://public-api.nbatopshot.com/graphql")
@@ -75,6 +75,37 @@ async def get_flow_account_info(topshot_username):
            None
 
 
+async def get_profile_with_address(flow_address):
+    try:
+        # Select your transport with a defined url endpoint
+        transport = AIOHTTPTransport(url="https://public-api.nbatopshot.com/graphql")
+
+        # Create a GraphQL client using the defined transport
+        client = Client(transport=transport, fetch_schema_from_transport=False)
+
+        query = gql(
+            """
+            query getUserProfile($input: GetUserProfileInput !) {
+              getUserProfile(input: $input) {
+                publicInfo {
+                  username
+                  favoriteTeamID
+                }
+              }
+            }
+        """
+        )
+
+    # Execute the query on the transport
+        result = await client.execute_async(query, variable_values={"input": {"flowAddress": flow_address}})
+    except Exception as err:
+        return None, None, err
+
+    return result['getUserProfile']['publicInfo'].get('username'), \
+           result['getUserProfile']['publicInfo'].get('favoriteTeamID'), \
+           None
+
+
 async def get_team_leaderboard_rank(address, tid):
     try:
         # Select your transport with a defined url endpoint
@@ -106,4 +137,4 @@ async def get_team_leaderboard_rank(address, tid):
 
 
 if __name__ == '__main__':
-    print(asyncio.run(get_team_leaderboard_rank('ad955e5d8047ef82', 1610612741)))
+    print(asyncio.run(get_profile_with_address('ad955e5d8047ef82')))

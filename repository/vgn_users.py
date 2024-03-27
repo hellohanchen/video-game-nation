@@ -24,6 +24,25 @@ def insert_user(discord_id, topshot_username, flow_address):
     return f"Put new user id: {discord_id}, topshot username: {topshot_username}."
 
 
+def update_user(topshot_username, flow_address):
+    db_conn = None
+    try:
+        db_conn = CNX_POOL.get_connection()
+        cursor = db_conn.cursor()
+        query = "UPDATE vgn.users SET topshot_username = '{}' WHERE flow_address = '{}'"\
+            .format(topshot_username, flow_address)
+        cursor.execute(query)
+        db_conn.commit()
+        db_conn.close()
+    except Exception as err:
+        if db_conn is not None:
+            db_conn.close()
+
+        return err
+
+    return None
+
+
 def insert_and_get_user(discord_id, topshot_username, flow_address):
     write = f"INSERT INTO vgn.users (id, topshot_username, flow_address) " \
             f"VALUES({discord_id}, '{topshot_username}' ,'{flow_address}') ON DUPLICATE KEY UPDATE " \
