@@ -1,26 +1,4 @@
 {
   "message": "NBA 2023-24",
-  "challenges": [
-    {
-      "id": 1,
-      "title": "New Flash Leaderboard ⚡",
-      "buckets": [
-        {
-          "description": "top 5 players in combined points, rebounds and assists.",
-          "is_wildcard": false,
-          "type": "LB",
-          "count": 5,
-          "tier_breakers": [
-            {
-              "stats": "PTS,REB,AST",
-              "order": "DESC"
-            }
-          ],
-          "dates": [
-            "03/27/2024"
-          ]
-        }
-      ]
-    }
-  ]
+  "challenges": []
 }
