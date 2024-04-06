@@ -252,7 +252,7 @@
               "order": "DESC"
             },
             {
-              "stats": "FTA",
+              "stats": "FGA",
               "target": 75,
               "order": "DESC"
             }
@@ -285,7 +285,7 @@
           "isCombine": true,
           "buckets": [
             {
-              "stats": "BLk",
+              "stats": "BLK",
               "target": 10,
               "order": "DESC"
             },
