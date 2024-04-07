@@ -7,7 +7,7 @@ from provider.topshot.cadence.flow_collections import get_account_plays
 from repository.vgn_collections import upsert_collection as repo_upsert_collection
 from repository.vgn_lineups import get_weekly_score
 from repository.vgn_users import get_user
-from service.fantasy.lineup import PAGE_SIZE, LINEUP_SIZE, LineupProvider, Lineup
+from service.fantasy.lineup import PAGE_SIZE, LINEUP_SIZE, LineupProvider, Lineup, SALARY_GROUPS
 from service.fantasy.ranking import RANK_PROVIDER, RankingProvider
 
 
@@ -426,11 +426,8 @@ class PageView(FantasyView):
         self.player_buttons: List[discord.ui.Button] = []
         self.__refresh_player_buttons()
 
-        self.add_item(PageSalaryButton(45))
-        self.add_item(PageSalaryButton(30))
-        self.add_item(PageSalaryButton(20))
-        self.add_item(PageSalaryButton(10))
-        self.add_item(PageSalaryButton(5))
+        for salary in reversed(SALARY_GROUPS):
+            self.add_item(PageSalaryButton(salary))
         self.add_item(LineupButton(4))
         self.add_item(PageToggleButton(-1))
         self.add_item(PageToggleButton(1))

@@ -8,7 +8,7 @@ from repository.vgn_players import get_players
 from utils import compute_vgn_score, compute_vgn_scores
 
 SALARY_CAP = 165.00
-SALARY_GROUPS = [5, 10, 20, 30, 45]
+SALARY_GROUPS = [2, 5, 10, 20, 35]
 PAGE_SIZE = 10
 LINEUP_SIZE = 9
 
@@ -39,11 +39,11 @@ class LineupProvider(AbstractProvider):
         self.collections: Dict[int, Dict[int, Dict[str, int]]] = {}
 
         self.salary_pages: Dict[int, int] = {
-            45: 1,
-            30: 1,
+            35: 1,
             20: 1,
             10: 1,
             5: 1,
+            2: 1,
         }
         self.reload()
 
