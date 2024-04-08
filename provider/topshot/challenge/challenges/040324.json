@@ -1,0 +1,26 @@
+{
+  "message": "NBA 2023-24",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "New Flash Leaderboard ⚡",
+      "buckets": [
+        {
+          "description": "top 5 players in free throws attempted",
+          "is_wildcard": false,
+          "type": "LB",
+          "count": 5,
+          "tier_breakers": [
+            {
+              "stats": "FTA",
+              "order": "DESC"
+            }
+          ],
+          "dates": [
+            "04/03/2024"
+          ]
+        }
+      ]
+    }
+  ]
+}
