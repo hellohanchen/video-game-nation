@@ -272,7 +272,11 @@ class GiveawayService:
     async def refresh(self):
         expired = []
         epoch = datetime.datetime.utcnow()
-        for gid in self.giveaways:
+        gids = list(self.giveaways.keys())
+        for gid in gids:
+            if gid not in self.giveaways:
+                continue
+
             giveaway = self.giveaways[gid]
             if giveaway.end_at <= epoch:
                 successful = await giveaway.close()
