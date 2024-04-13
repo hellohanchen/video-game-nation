@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 
 from app import MainPage
 from repository.discord_roles import get_role_verifications
-from repository.ts_giveaways import get_giveaway
+from repository.ts_giveaways import get_giveaway_with_user
 from service.exchange.listing import LISTING_SERVICE
 from service.giveaway.giveaway import GIVEAWAY_SERVICE, Giveaway
 from utils import has_giveaway_permissions
@@ -106,7 +106,8 @@ async def refresh_entry():
 
 @tasks.loop(seconds=60)
 async def refresh_giveaways():
-    await GIVEAWAY_SERVICE.refresh()
+    # await GIVEAWAY_SERVICE.refresh()
+    pass
 
 
 # start the bot

@@ -12,8 +12,8 @@ def create_giveaway(guild_id, channel_id, creator_id, name, description, winners
         cursor = db_conn.cursor()
         query = "INSERT INTO vgn.ts_giveaways (guild_id, channel_id, creator_id, " \
                 "name, description, winners, duration) " \
-                f"VALUES({guild_id}, {channel_id}, {creator_id}, '{name}', '{description}', {winners}, {duration})"
-        cursor.execute(query)
+                "VALUES(%s, %s, %s, %s, %s, %s, %s)"
+        cursor.execute(query, (guild_id, channel_id, creator_id, name, description, winners, duration))
         giveaway_id = cursor.lastrowid
         db_conn.commit()
         db_conn.close()
@@ -71,7 +71,7 @@ def message_giveaway(gid, mid):
     return True, None
 
 
-def get_giveaway(gid, uid):
+def get_giveaway_with_user(gid, uid):
     try:
         db_conn = CNX_POOL.get_connection()
         query = f"SELECT * from vgn.ts_giveaways WHERE id = {gid} AND creator_id = {uid}"

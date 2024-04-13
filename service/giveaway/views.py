@@ -240,10 +240,8 @@ class GiveawayCreateModal(discord.ui.Modal, title='Create a giveaway'):
             'winners': winners,
             'duration': duration,
         }
-        message = GiveawayDraftView.formatted_giveaway(giveaway)
-        await interaction.response.edit_message(
-            content=message,
-            view=GiveawayDraftView(self.view, giveaway, self.view.guilds[self.guild_id]['channels'][self.channel_id]))
+        new_view = GiveawayDraftView(self.view, giveaway, self.view.guilds[self.guild_id]['channels'][self.channel_id])
+        await interaction.response.edit_message(content=new_view.formatted_message(), view=new_view)
 
 
 class GiveawaySubmitModal(discord.ui.Modal, title='Complete details'):
@@ -352,35 +350,30 @@ class GiveawayDraftSubmitButton(discord.ui.Button['DraftSubmit']):
 
 
 class GiveawayDraftView(BaseView):
-    def __init__(self, view: GiveawayBaseView, giveaway, channel):
+    def __init__(self, view: GiveawayBaseView, db_giveaway, channel):
         super(GiveawayDraftView, self).__init__(view.user_id)
         self.add_item(GiveawayDraftMenuButton())
         self.add_item(GiveawayDraftSubmitButton())
         self.view = view
-        self.giveaway = giveaway
+        self.db_giveaway = db_giveaway
         self.channel = channel
 
     def get_submit_giveaway_modal(self):
-        return GiveawaySubmitModal(self.view, self.giveaway, self.channel)
+        return GiveawaySubmitModal(self.view, self.db_giveaway, self.channel)
 
-    @staticmethod
-    def formatted_message(gid, name, description, winners, duration):
+    def formatted_message(self):
         return f"***GIVEAWAY DRAFT***\n\n" \
-               f"ID: **{gid}**\n" \
-               f"Name: **{name}**\n" \
-               f"Description: **{description} **\n" \
-               f"Winners: **{winners}**\n" \
-               f"Duration: **{duration}** hours\n\n" \
+               f"Channel: **{self.channel.guild.name}#{self.channel.name}**\n" \
+               f"ID: **{self.db_giveaway['id']}**\n" \
+               f"Name: **{self.db_giveaway['name']}**\n" \
+               f"Description: **{self.db_giveaway['description']} **\n" \
+               f"Winners: **{self.db_giveaway['winners']}**\n" \
+               f"Duration: **{self.db_giveaway['duration']}** hours\n\n" \
                f"*Please click 'Submit' to fill in more details and start the giveaway:*\n" \
                f"**Fav Teams**: a comma separated list of 3-letter team abbreviations, optional, example: ATL,BOS\n" \
                f"**Leaderboard**: leaderboard requirement of **1** team, " \
                f"pick a team abbreviation and an integer between 1 and 9999, optional, example: DAL,1000\n" \
                f"**Thumbnail URL**: a link to image that will be used as the thumbnail picture of the giveaway\n"
-
-    @staticmethod
-    def formatted_giveaway(giveaway):
-        return GiveawayDraftView.formatted_message(
-            giveaway['id'], giveaway['name'], giveaway['description'], giveaway['winners'], giveaway['duration'])
 
 
 class GiveawayDraftSelectMenu(discord.ui.Select):
@@ -400,12 +393,12 @@ class GiveawayDraftSelectMenu(discord.ui.Select):
             return
 
         giveaway = self.drafts[selection]
-        message = GiveawayDraftView.formatted_giveaway(giveaway)
-        await interaction.response.edit_message(
-            content=message,
-            view=GiveawayDraftView(
+        new_view = GiveawayDraftView(
                 view, giveaway, view.guilds[giveaway['guild_id']]['channels'][giveaway['channel_id']]
             )
+        await interaction.response.edit_message(
+            content=new_view.formatted_message(),
+            view=new_view
         )
 
 

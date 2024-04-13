@@ -9,7 +9,8 @@ from constants import NBA_TEAM_IDS, NBA_TEAMS
 from provider.topshot.graphql.get_account import get_team_leaderboard_rank, \
     get_profile_with_address
 from repository.ts_giveaways import message_giveaway, get_ongoing_giveaways, get_submission, get_submission_count, \
-    join_giveaway, get_submitted_fav_team, ban_user, get_submissions_with_flow_info, close_giveaway, leave_giveaway
+    join_giveaway, get_submitted_fav_team, ban_user, get_submissions_with_flow_info, close_giveaway, leave_giveaway, \
+    get_giveaway_with_user
 from repository.vgn_users import get_user_new
 from service.common.profile.views import ProfileView, LINK_TS_ACCOUNT_MESSAGE
 from vgnlog.channel_logger import ADMIN_LOGGER
@@ -153,6 +154,21 @@ class Giveaway:
 
         except Exception as err:
             await ADMIN_LOGGER.error(f"Giveaway:Close:{err}")
+            return False
+
+        return True
+
+    async def delete(self):
+        try:
+            # close giveaway in db
+            closed, err = close_giveaway(self.id)
+            if not closed:
+                return False
+            if self.message is not None:
+                await self.message.delete()
+
+        except Exception as err:
+            await ADMIN_LOGGER.error(f"Giveaway:Delete:{self.id}:{err}")
             return False
 
         return True
@@ -389,6 +405,35 @@ class GiveawayAccountButton(discord.ui.Button['Account']):
             content=message, view=ProfileView(user_id, user['flow_address']), ephemeral=True, delete_after=600.0)
 
 
+class DeleteGiveawayButton(discord.ui.Button['JoinGiveawayView']):
+    def __init__(self):
+        super(DeleteGiveawayButton, self).__init__(style=discord.ButtonStyle.grey, label=f"Close", row=0)
+
+    async def callback(self, interaction: discord.Interaction):
+        assert self.view is not None
+        view: JoinGiveawayView = self.view
+
+        uid = interaction.user.id
+        gid = view.giveaway.id
+        db_g, err = get_giveaway_with_user(gid, uid)
+        if err is not None:
+            await ADMIN_LOGGER.error(f"Delete:Get:{gid}:{err}")
+            return
+        if db_g is None or not db_g['is_submitted']:
+            await ADMIN_LOGGER.warn(f"Delete:Get:None:{gid},{uid}")
+            await interaction.response.send_message(
+                content=f"Only giveaway creator can delete.", ephemeral=True, delete_after=30.0)
+            return
+
+        deleted = await view.giveaway.delete()
+        if deleted:
+            await interaction.response.send_message(content="Giveaway is closed", ephemeral=True, delete_after=30.0)
+            return
+
+        await interaction.response.send_message(
+            content="Giveaway is not closed, please retry", ephemeral=True, delete_after=30.0)
+
+
 class JoinGiveawayView(discord.ui.View):
     def __init__(self, giveaway: Giveaway):
         super(JoinGiveawayView, self).__init__()
@@ -399,3 +444,4 @@ class JoinGiveawayView(discord.ui.View):
         self.add_item(JoinRulesButton())
         self.add_item(LeaveGiveawayButton())
         self.add_item(GiveawayAccountButton())
+        self.add_item(DeleteGiveawayButton())

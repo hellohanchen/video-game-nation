@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 
 from app import MainPage
 from repository.discord_roles import get_role_verifications
-from repository.ts_giveaways import add_giveaway_access, get_giveaway
+from repository.ts_giveaways import add_giveaway_access, get_giveaway_with_user
 from service.exchange.listing import LISTING_SERVICE
 from utils import has_giveaway_permissions
 from vgnlog.channel_logger import ADMIN_LOGGER
@@ -185,7 +185,7 @@ async def reroll_giveaway(context, gid):
 
     gid = int(gid)
     uid = context.message.author.id
-    db_g, err = get_giveaway(gid, uid)
+    db_g, err = get_giveaway_with_user(gid, uid)
     if err is not None:
         await ADMIN_LOGGER.error(f"Roll:Get:{err}")
         return
