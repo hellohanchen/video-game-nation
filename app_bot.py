@@ -210,6 +210,34 @@ async def reroll_giveaway(context, gid):
         return
 
 
+@bot.command(name='close', help='close a giveaway and remove its message')
+async def close_giveaway(context, gid):
+    if not gid.isnumeric():
+        return
+
+    gid = int(gid)
+    uid = context.message.author.id
+    db_g, err = get_giveaway_with_user(gid, uid)
+    if err is not None:
+        await ADMIN_LOGGER.error(f"Close:Get:{gid},{uid}:{err}")
+        return
+    if db_g is None or not db_g['is_submitted']:
+        await ADMIN_LOGGER.warn(f"Close:Get:None:{gid},{uid}")
+        await context.channel.send(f"Only giveaway creator can close.")
+        return
+    if db_g['channel_id'] != context.channel.id:
+        await context.channel.send(f"Giveaway is not in this channel.")
+        return
+
+    try:
+        g = await Giveaway.from_db(db_g, context.channel)
+        await g.delete()
+    except Exception as err:
+        await ADMIN_LOGGER.error(f"Close:Delete:{err}")
+        await context.channel.send(f"Service error, please retry or contact admin.")
+        return
+
+
 @tasks.loop(seconds=120)
 async def refresh_entry():
     for i in range(0, len(MAIN_CHANNEL_MESSAGES)):

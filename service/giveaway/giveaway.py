@@ -169,7 +169,7 @@ class Giveaway:
 
         except Exception as err:
             await ADMIN_LOGGER.error(f"Giveaway:Delete:{self.id}:{err}")
-            return False
+            raise err
 
         return True
 
@@ -422,16 +422,12 @@ class DeleteGiveawayButton(discord.ui.Button['JoinGiveawayView']):
         if db_g is None or not db_g['is_submitted']:
             await ADMIN_LOGGER.warn(f"Delete:Get:None:{gid},{uid}")
             await interaction.response.send_message(
-                content=f"Only giveaway creator can delete.", ephemeral=True, delete_after=30.0)
-            return
-
-        deleted = await view.giveaway.delete()
-        if deleted:
-            await interaction.response.send_message(content="Giveaway is closed", ephemeral=True, delete_after=30.0)
+                content=f"Only giveaway creator can close.", ephemeral=True, delete_after=30.0)
             return
 
         await interaction.response.send_message(
-            content="Giveaway is not closed, please retry", ephemeral=True, delete_after=30.0)
+            content=f"Close command: `.vgn.close {gid}`",
+            ephemeral=True, delete_after=60.0)
 
 
 class JoinGiveawayView(discord.ui.View):
