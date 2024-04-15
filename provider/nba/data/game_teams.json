@@ -5178,5 +5178,37 @@
   "0022301200": {
     "homeTeam": "SAC",
     "awayTeam": "POR"
+  },
+  "0052300121": {
+    "homeTeam": "NOP",
+    "awayTeam": "LAL"
+  },
+  "0052300131": {
+    "homeTeam": "SAC",
+    "awayTeam": "GSW"
+  },
+  "0052300101": {
+    "homeTeam": "PHI",
+    "awayTeam": "MIA"
+  },
+  "0052300111": {
+    "homeTeam": "CHI",
+    "awayTeam": "ATL"
+  },
+  "0042300131": {
+    "homeTeam": "CLE",
+    "awayTeam": "ORL"
+  },
+  "0042300161": {
+    "homeTeam": "MIN",
+    "awayTeam": "PHX"
+  },
+  "0042300121": {
+    "homeTeam": "MIL",
+    "awayTeam": "IND"
+  },
+  "0042300171": {
+    "homeTeam": "LAC",
+    "awayTeam": "DAL"
   }
 }

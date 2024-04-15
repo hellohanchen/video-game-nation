@@ -5530,5 +5530,45 @@
       "homeTeam": "SAC",
       "awayTeam": "POR"
     }
+  },
+  "04/16/2024": {
+    "0052300121": {
+      "homeTeam": "NOP",
+      "awayTeam": "LAL"
+    },
+    "0052300131": {
+      "homeTeam": "SAC",
+      "awayTeam": "GSW"
+    }
+  },
+  "04/17/2024": {
+    "0052300101": {
+      "homeTeam": "PHI",
+      "awayTeam": "MIA"
+    },
+    "0052300111": {
+      "homeTeam": "CHI",
+      "awayTeam": "ATL"
+    }
+  },
+  "04/20/2024": {
+    "0042300131": {
+      "homeTeam": "CLE",
+      "awayTeam": "ORL"
+    },
+    "0042300161": {
+      "homeTeam": "MIN",
+      "awayTeam": "PHX"
+    }
+  },
+  "04/21/2024": {
+    "0042300121": {
+      "homeTeam": "MIL",
+      "awayTeam": "IND"
+    },
+    "0042300171": {
+      "homeTeam": "LAC",
+      "awayTeam": "DAL"
+    }
   }
 }

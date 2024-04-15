@@ -232,6 +232,7 @@ async def close_giveaway(context, gid):
     try:
         g = await Giveaway.from_db(db_g, context.channel)
         await g.delete()
+        await ADMIN_LOGGER.info(f"Close:{gid}")
     except Exception as err:
         await ADMIN_LOGGER.error(f"Close:Delete:{err}")
         await context.channel.send(f"Service error, please retry or contact admin.")
