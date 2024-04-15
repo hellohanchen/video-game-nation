@@ -16,7 +16,7 @@ from repository.vgn_players import get_empty_players_stats, get_players
 from repository.vgn_users import get_user_new
 from service.fastbreak.fastbreak import FastBreak
 from service.fastbreak.utils import build_fb_collections
-from utils import get_game_info, cast_player_id
+from utils import get_game_info, cast_player_id, parse_slash_date
 from vgnlog.channel_logger import ADMIN_LOGGER
 
 
@@ -407,7 +407,7 @@ class DynamicLineupService(AbstractDynamicLineupService):
             current_game_date = scoreboard_date_slash
 
         if current_game_date not in FB_PROVIDER.fb_details:
-            current_game_date = FB_PROVIDER.get_next_game_date(current_game_date)
+            current_game_date = FB_PROVIDER.get_next_game_date(parse_slash_date(current_game_date))
         if current_game_date != scoreboard_date_slash:
             new_status = GameDateStatus.PRE_GAME  # skip dates with no fb
 
