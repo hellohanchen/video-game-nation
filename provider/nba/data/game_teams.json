@@ -5195,9 +5195,17 @@
     "homeTeam": "CHI",
     "awayTeam": "ATL"
   },
+  "0052300211": {
+    "homeTeam": "NOP",
+    "awayTeam": "SAC"
+  },
   "0042300131": {
     "homeTeam": "CLE",
     "awayTeam": "ORL"
+  },
+  "0042300151": {
+    "homeTeam": "DEN",
+    "awayTeam": "LAL"
   },
   "0042300161": {
     "homeTeam": "MIN",
@@ -5208,6 +5216,126 @@
     "awayTeam": "IND"
   },
   "0042300171": {
+    "homeTeam": "LAC",
+    "awayTeam": "DAL"
+  },
+  "0042300132": {
+    "homeTeam": "CLE",
+    "awayTeam": "ORL"
+  },
+  "0042300152": {
+    "homeTeam": "DEN",
+    "awayTeam": "LAL"
+  },
+  "0042300122": {
+    "homeTeam": "MIL",
+    "awayTeam": "IND"
+  },
+  "0042300162": {
+    "homeTeam": "MIN",
+    "awayTeam": "PHX"
+  },
+  "0042300172": {
+    "homeTeam": "LAC",
+    "awayTeam": "DAL"
+  },
+  "0042300133": {
+    "homeTeam": "ORL",
+    "awayTeam": "CLE"
+  },
+  "0042300153": {
+    "homeTeam": "LAL",
+    "awayTeam": "DEN"
+  },
+  "0042300123": {
+    "homeTeam": "IND",
+    "awayTeam": "MIL"
+  },
+  "0042300163": {
+    "homeTeam": "PHX",
+    "awayTeam": "MIN"
+  },
+  "0042300173": {
+    "homeTeam": "DAL",
+    "awayTeam": "LAC"
+  },
+  "0042300134": {
+    "homeTeam": "ORL",
+    "awayTeam": "CLE"
+  },
+  "0042300154": {
+    "homeTeam": "LAL",
+    "awayTeam": "DEN"
+  },
+  "0042300124": {
+    "homeTeam": "IND",
+    "awayTeam": "MIL"
+  },
+  "0042300164": {
+    "homeTeam": "PHX",
+    "awayTeam": "MIN"
+  },
+  "0042300174": {
+    "homeTeam": "DAL",
+    "awayTeam": "LAC"
+  },
+  "0042300155": {
+    "homeTeam": "DEN",
+    "awayTeam": "LAL"
+  },
+  "0042300125": {
+    "homeTeam": "MIL",
+    "awayTeam": "IND"
+  },
+  "0042300135": {
+    "homeTeam": "CLE",
+    "awayTeam": "ORL"
+  },
+  "0042300165": {
+    "homeTeam": "MIN",
+    "awayTeam": "PHX"
+  },
+  "0042300175": {
+    "homeTeam": "LAC",
+    "awayTeam": "DAL"
+  },
+  "0042300126": {
+    "homeTeam": "IND",
+    "awayTeam": "MIL"
+  },
+  "0042300156": {
+    "homeTeam": "LAL",
+    "awayTeam": "DEN"
+  },
+  "0042300166": {
+    "homeTeam": "PHX",
+    "awayTeam": "MIN"
+  },
+  "0042300136": {
+    "homeTeam": "ORL",
+    "awayTeam": "CLE"
+  },
+  "0042300176": {
+    "homeTeam": "DAL",
+    "awayTeam": "LAC"
+  },
+  "0042300127": {
+    "homeTeam": "MIL",
+    "awayTeam": "IND"
+  },
+  "0042300157": {
+    "homeTeam": "DEN",
+    "awayTeam": "LAL"
+  },
+  "0042300167": {
+    "homeTeam": "MIN",
+    "awayTeam": "PHX"
+  },
+  "0042300137": {
+    "homeTeam": "CLE",
+    "awayTeam": "ORL"
+  },
+  "0042300177": {
     "homeTeam": "LAC",
     "awayTeam": "DAL"
   }
