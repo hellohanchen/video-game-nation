@@ -5219,9 +5219,17 @@
     "homeTeam": "MIN",
     "awayTeam": "PHX"
   },
+  "0042300101": {
+    "homeTeam": "BOS",
+    "awayTeam": "MIA"
+  },
   "0042300121": {
     "homeTeam": "MIL",
     "awayTeam": "IND"
+  },
+  "0042300141": {
+    "homeTeam": "OKC",
+    "awayTeam": "NOP"
   },
   "0042300171": {
     "homeTeam": "LAC",
@@ -5251,6 +5259,14 @@
     "homeTeam": "LAC",
     "awayTeam": "DAL"
   },
+  "0042300102": {
+    "homeTeam": "BOS",
+    "awayTeam": "MIA"
+  },
+  "0042300142": {
+    "homeTeam": "OKC",
+    "awayTeam": "NOP"
+  },
   "0042300113": {
     "homeTeam": "PHI",
     "awayTeam": "NYK"
@@ -5275,9 +5291,17 @@
     "homeTeam": "DAL",
     "awayTeam": "LAC"
   },
+  "0042300103": {
+    "homeTeam": "MIA",
+    "awayTeam": "BOS"
+  },
   "0042300134": {
     "homeTeam": "ORL",
     "awayTeam": "CLE"
+  },
+  "0042300143": {
+    "homeTeam": "NOP",
+    "awayTeam": "OKC"
   },
   "0042300154": {
     "homeTeam": "LAL",
@@ -5299,6 +5323,14 @@
     "homeTeam": "DAL",
     "awayTeam": "LAC"
   },
+  "0042300104": {
+    "homeTeam": "MIA",
+    "awayTeam": "BOS"
+  },
+  "0042300144": {
+    "homeTeam": "NOP",
+    "awayTeam": "OKC"
+  },
   "0042300155": {
     "homeTeam": "DEN",
     "awayTeam": "LAL"
@@ -5318,6 +5350,14 @@
   "0042300165": {
     "homeTeam": "MIN",
     "awayTeam": "PHX"
+  },
+  "0042300105": {
+    "homeTeam": "BOS",
+    "awayTeam": "MIA"
+  },
+  "0042300145": {
+    "homeTeam": "OKC",
+    "awayTeam": "NOP"
   },
   "0042300175": {
     "homeTeam": "LAC",
@@ -5339,9 +5379,17 @@
     "homeTeam": "PHX",
     "awayTeam": "MIN"
   },
+  "0042300106": {
+    "homeTeam": "MIA",
+    "awayTeam": "BOS"
+  },
   "0042300136": {
     "homeTeam": "ORL",
     "awayTeam": "CLE"
+  },
+  "0042300146": {
+    "homeTeam": "NOP",
+    "awayTeam": "OKC"
   },
   "0042300176": {
     "homeTeam": "DAL",
@@ -5363,9 +5411,17 @@
     "homeTeam": "MIN",
     "awayTeam": "PHX"
   },
+  "0042300107": {
+    "homeTeam": "BOS",
+    "awayTeam": "MIA"
+  },
   "0042300137": {
     "homeTeam": "CLE",
     "awayTeam": "ORL"
+  },
+  "0042300147": {
+    "homeTeam": "OKC",
+    "awayTeam": "NOP"
   },
   "0042300177": {
     "homeTeam": "LAC",
