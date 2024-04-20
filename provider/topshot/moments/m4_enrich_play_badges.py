@@ -8,7 +8,8 @@ TIER_MAP = {
     "R": "Rare",
     "F": "Fandom",
     "L": "Legendary",
-    "A": "Unknown"
+    "A": "Unknown",
+    "U": "Ultimate",
 }
 
 historical_teams = {

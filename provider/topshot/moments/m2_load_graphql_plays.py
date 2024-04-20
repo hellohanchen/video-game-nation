@@ -10,7 +10,8 @@ TIER_MAP = {
     "SET_VISUAL_RARE": "R",
     "SET_VISUAL_FANDOM": "F",
     "SET_VISUAL_LEGENDARY": "L",
-    "SET_VISUAL_ANTHOLOGY": "A"
+    "SET_VISUAL_ANTHOLOGY": "A",
+    "SET_VISUAL_ULTIMATE": "U"
 }
 
 historical_teams = {

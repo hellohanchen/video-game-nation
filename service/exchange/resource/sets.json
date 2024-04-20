@@ -141,7 +141,7 @@
       }
     },
     "Series 23-24": {
-      "count": 16,
+      "count": 19,
       "tiers": {
         "Common": {
           "124": "Base Set",
@@ -153,7 +153,8 @@
           "137": "Crunch Time"
         },
         "Fandom": {
-          "138": "2024 NBA All-Star"
+          "138": "2024 NBA All-Star",
+          "141": "The Champion's Path 2024"
         },
         "Rare": {
           "127": "Throwdowns",
@@ -161,11 +162,13 @@
           "130": "Video Game Numbers",
           "134": "Metallic Gold LE",
           "135": "Freshman Gems",
-          "136": "Squad Goals"
+          "136": "Squad Goals",
+          "141": "The Champion's Path 2024"
         },
         "Legendary": {
           "131": "Holo Icon",
-          "139": "Rookie Revelation"
+          "139": "Rookie Revelation",
+          "140": "2023 Rookie Ultimates"
         }
       }
     },

@@ -65,17 +65,26 @@ def build_fb_collections(ts_provider, plays, player_ids):
                     existing_tier = player_collections[player_id]['tier']
                     if existing_tier == 'Common' or existing_tier == 'Fandom':
                         if serial < player_collections[player_id]['serial'] or \
-                                tier == 'Rare' or tier == 'Legendary':
+                                tier == 'Rare' or tier == 'Legendary' or tier == 'Ultimate':
                             player_collections[player_id]['tier'] = tier
                             player_collections[player_id]['serial'] = serial
 
                         player_collections[player_id]['tsd'] |= is_tsd
                     elif existing_tier == 'Rare':
-                        if tier == 'Legendary' or \
+                        if tier == 'Legendary' or tier == 'Ultimate' or \
                                 (tier == 'Rare' and serial < player_collections[player_id]['serial']):
                             player_collections[player_id]['tier'] = tier
                             player_collections[player_id]['serial'] = serial
-                    elif tier == 'Legendary' and serial < player_collections[player_id]['serial']:
+                            if tier != 'Rare':
+                                player_collections[player_id]['tsd'] = False
+                    elif existing_tier == 'Legendary':
+                        if tier == 'Ultimate' or \
+                                (tier == 'Legendary' and serial < player_collections[player_id]['serial']):
+                            player_collections[player_id]['tier'] = tier
+                            player_collections[player_id]['serial'] = serial
+                            if tier != 'Legendary':
+                                player_collections[player_id]['tsd'] = False
+                    elif tier == 'Ultimate' and serial < player_collections[player_id]['serial']:
                         player_collections[player_id]['serial'] = serial
 
                     if player_collections[player_id]['tier'] == tier:

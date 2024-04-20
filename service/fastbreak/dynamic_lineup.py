@@ -249,7 +249,7 @@ class Lineup:
                     if pid in player_usages:
                         limit = 1
                         if validation in ["TS", "B2B_TSD"]:
-                            if collections[pid]['tier'] == "Legendary":
+                            if collections[pid]['tier'] == "Legendary" or collections[pid]['tier'] == "Ultimate":
                                 limit = 4
                             elif collections[pid]['tier'] == 'Rare':
                                 limit = 2
