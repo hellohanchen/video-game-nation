@@ -1,26 +1,4 @@
 {
   "message": "NBA 2023-24",
-  "challenges": [
-    {
-      "id": 1,
-      "title": "New Flash Leaderboard ⚡",
-      "buckets": [
-        {
-          "description": "Tonight's focus is on the top 5 players with the most points scored.",
-          "is_wildcard": false,
-          "type": "LB",
-          "count": 5,
-          "tier_breakers": [
-            {
-              "stats": "PTS",
-              "order": "DESC"
-            }
-          ],
-          "dates": [
-            "04/10/2024"
-          ]
-        }
-      ]
-    }
-  ]
+  "challenges": []
 }
