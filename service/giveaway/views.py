@@ -267,7 +267,7 @@ class GiveawaySubmitModal(discord.ui.Modal, title='Complete details'):
                 await interaction.response.edit_message(content=message, view=self.view.restart())
                 return
 
-        leaderboard = str(self.leaderboard).strip()
+        leaderboard = str(self.leaderboard).strip().upper()
         if len(leaderboard) > 0:
             comma = leaderboard.find(',')
             if comma == -1:
