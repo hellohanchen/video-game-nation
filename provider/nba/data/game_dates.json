@@ -5725,20 +5725,12 @@
     "0042300135": {
       "homeTeam": "CLE",
       "awayTeam": "ORL"
-    },
-    "0042300165": {
-      "homeTeam": "MIN",
-      "awayTeam": "PHX"
     }
   },
   "05/01/2024": {
     "0042300105": {
       "homeTeam": "BOS",
       "awayTeam": "MIA"
-    },
-    "0042300145": {
-      "homeTeam": "OKC",
-      "awayTeam": "NOP"
     },
     "0042300175": {
       "homeTeam": "LAC",
@@ -5753,14 +5745,6 @@
     "0042300126": {
       "homeTeam": "IND",
       "awayTeam": "MIL"
-    },
-    "0042300156": {
-      "homeTeam": "LAL",
-      "awayTeam": "DEN"
-    },
-    "0042300166": {
-      "homeTeam": "PHX",
-      "awayTeam": "MIN"
     }
   },
   "05/03/2024": {
@@ -5771,10 +5755,6 @@
     "0042300136": {
       "homeTeam": "ORL",
       "awayTeam": "CLE"
-    },
-    "0042300146": {
-      "homeTeam": "NOP",
-      "awayTeam": "OKC"
     },
     "0042300176": {
       "homeTeam": "DAL",
@@ -5790,13 +5770,9 @@
       "homeTeam": "MIL",
       "awayTeam": "IND"
     },
-    "0042300157": {
+    "0042300231": {
       "homeTeam": "DEN",
-      "awayTeam": "LAL"
-    },
-    "0042300167": {
-      "homeTeam": "MIN",
-      "awayTeam": "PHX"
+      "awayTeam": "MIN"
     }
   },
   "05/05/2024": {
@@ -5808,13 +5784,45 @@
       "homeTeam": "CLE",
       "awayTeam": "ORL"
     },
-    "0042300147": {
-      "homeTeam": "OKC",
-      "awayTeam": "NOP"
-    },
     "0042300177": {
       "homeTeam": "LAC",
       "awayTeam": "DAL"
+    }
+  },
+  "05/06/2024": {
+    "0042300232": {
+      "homeTeam": "DEN",
+      "awayTeam": "MIN"
+    }
+  },
+  "05/10/2024": {
+    "0042300233": {
+      "homeTeam": "MIN",
+      "awayTeam": "DEN"
+    }
+  },
+  "05/12/2024": {
+    "0042300234": {
+      "homeTeam": "MIN",
+      "awayTeam": "DEN"
+    }
+  },
+  "05/14/2024": {
+    "0042300235": {
+      "homeTeam": "DEN",
+      "awayTeam": "MIN"
+    }
+  },
+  "05/16/2024": {
+    "0042300236": {
+      "homeTeam": "MIN",
+      "awayTeam": "DEN"
+    }
+  },
+  "05/19/2024": {
+    "0042300237": {
+      "homeTeam": "DEN",
+      "awayTeam": "MIN"
     }
   }
 }

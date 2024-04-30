@@ -5347,17 +5347,9 @@
     "homeTeam": "CLE",
     "awayTeam": "ORL"
   },
-  "0042300165": {
-    "homeTeam": "MIN",
-    "awayTeam": "PHX"
-  },
   "0042300105": {
     "homeTeam": "BOS",
     "awayTeam": "MIA"
-  },
-  "0042300145": {
-    "homeTeam": "OKC",
-    "awayTeam": "NOP"
   },
   "0042300175": {
     "homeTeam": "LAC",
@@ -5371,14 +5363,6 @@
     "homeTeam": "IND",
     "awayTeam": "MIL"
   },
-  "0042300156": {
-    "homeTeam": "LAL",
-    "awayTeam": "DEN"
-  },
-  "0042300166": {
-    "homeTeam": "PHX",
-    "awayTeam": "MIN"
-  },
   "0042300106": {
     "homeTeam": "MIA",
     "awayTeam": "BOS"
@@ -5386,10 +5370,6 @@
   "0042300136": {
     "homeTeam": "ORL",
     "awayTeam": "CLE"
-  },
-  "0042300146": {
-    "homeTeam": "NOP",
-    "awayTeam": "OKC"
   },
   "0042300176": {
     "homeTeam": "DAL",
@@ -5403,13 +5383,9 @@
     "homeTeam": "MIL",
     "awayTeam": "IND"
   },
-  "0042300157": {
+  "0042300231": {
     "homeTeam": "DEN",
-    "awayTeam": "LAL"
-  },
-  "0042300167": {
-    "homeTeam": "MIN",
-    "awayTeam": "PHX"
+    "awayTeam": "MIN"
   },
   "0042300107": {
     "homeTeam": "BOS",
@@ -5419,12 +5395,32 @@
     "homeTeam": "CLE",
     "awayTeam": "ORL"
   },
-  "0042300147": {
-    "homeTeam": "OKC",
-    "awayTeam": "NOP"
-  },
   "0042300177": {
     "homeTeam": "LAC",
     "awayTeam": "DAL"
+  },
+  "0042300232": {
+    "homeTeam": "DEN",
+    "awayTeam": "MIN"
+  },
+  "0042300233": {
+    "homeTeam": "MIN",
+    "awayTeam": "DEN"
+  },
+  "0042300234": {
+    "homeTeam": "MIN",
+    "awayTeam": "DEN"
+  },
+  "0042300235": {
+    "homeTeam": "DEN",
+    "awayTeam": "MIN"
+  },
+  "0042300236": {
+    "homeTeam": "MIN",
+    "awayTeam": "DEN"
+  },
+  "0042300237": {
+    "homeTeam": "DEN",
+    "awayTeam": "MIN"
   }
 }
