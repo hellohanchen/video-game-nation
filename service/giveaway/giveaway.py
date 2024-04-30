@@ -142,8 +142,14 @@ class Giveaway:
 
             # send out winner messages
             mentions = [f"<@{w['user_id']}>({w['topshot_username']})" for w in winners]
-            await self.channel.send(f"Congratulations to the winners: {', '.join(mentions)} 🎉\n"
-                                    f"Winning the giveaway of **{self.name}**")
+            if self.message is not None:
+                await self.message.reply(f"Congratulations to the winners: {', '.join(mentions)} 🎉\n"
+                                         f"Winning the giveaway of **{self.name}**:\n"
+                                         f"{self.description}")
+            else:
+                await self.channel.send(f"Congratulations to the winners: {', '.join(mentions)} 🎉\n"
+                                        f"Winning the giveaway of **{self.name}**:\n"
+                                        f"{self.description}")
 
             if self.message is not None and not is_reroll:
                 await self.message.edit(
