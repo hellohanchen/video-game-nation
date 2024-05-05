@@ -62,6 +62,7 @@ BOXSCORE_MAP = {
 
 class RRBucket:
     def __init__(self, bucket_json, players):
+        print(players)
         self.stats = bucket_json['stats']
         self.order = bucket_json['order']
         self.moment_types = bucket_json['momentTypes'].split(',')
