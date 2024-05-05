@@ -116,7 +116,7 @@ class LineupSubmitButton(discord.ui.Button['LineupView']):
 
 class LineupScoreButton(discord.ui.Button['LineupLeaderboard']):
     def __init__(self):
-        super().__init__(style=discord.ButtonStyle.secondary, label="Top 20", row=2)
+        super().__init__(style=discord.ButtonStyle.blurple, label="My Score", row=2)
 
     async def callback(self, interaction: discord.Interaction):
         assert self.view is not None
@@ -128,7 +128,7 @@ class LineupScoreButton(discord.ui.Button['LineupLeaderboard']):
 
 class LineupLeaderboardButton(discord.ui.Button['LineupLeaderboard']):
     def __init__(self):
-        super().__init__(style=discord.ButtonStyle.blurple, label="My Score", row=2)
+        super().__init__(style=discord.ButtonStyle.blurple, label="Daily LB", row=2)
 
     async def callback(self, interaction: discord.Interaction):
         assert self.view is not None
@@ -151,7 +151,7 @@ class LineupView(RedemptionRunView):
         self.lineup: Lineup = lineup_service.get_or_create_lineup(user_id)
 
     def check_score(self):
-        return self.ranking_service.formatted_user_score(self.user_id), self
+        return self.ranking_service.formatted_user_score(self.user_id)[0], self
 
     def check_leaderboard(self):
         return self.ranking_service.formatted_leaderboard(20), self
