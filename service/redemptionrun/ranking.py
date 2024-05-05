@@ -163,7 +163,7 @@ class RankingService(AbstractLineupService):
             submissions = get_submission_count(RR_LINEUP_SERVICE.current_game_date)
             return [message + "Games are not started yet.\nTotal submissions: **{}**\n".format(submissions)]
 
-        submissions = get_submission_count(self.current_game_date)
+        submissions, _ = get_submission_count(self.current_game_date)
         message = f"***Leaderboard {self.current_game_date}***\n\n"
         for i in range(0, min(top, len(self.leaderboard))):
             uid = self.leaderboard[i]
@@ -201,7 +201,8 @@ class RankingService(AbstractLineupService):
         if user_id not in self.scores:
             return ["Scores are not updated yet."]
 
-        return [self.scores[user_id]['message']]
+        return [f"{self.scores[user_id]['message']}\n"
+                f"You need to be top **{int(len(self.scores) * self.rr.threshold)}** to survive."]
 
     @staticmethod
     def enrich_stats(player_stats):
