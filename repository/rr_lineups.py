@@ -163,9 +163,6 @@ def get_user_results(uid, game_dates):
     results = {}
     for row in loaded:
         results[row['game_date']] = row
-    for d in game_dates:
-        if d not in results:
-            results[d] = None
 
     return results, None
 

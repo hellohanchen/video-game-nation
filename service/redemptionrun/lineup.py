@@ -218,8 +218,12 @@ class Lineup:
             await ADMIN_LOGGER.error(f"RRLineup:Submit:GetUser:{err}")
             return ERROR_MESSAGE
 
+        losses, err = get_user_losses(self.user_id, RR_PROVIDER.rr_details.keys(), self.service.current_game_date)
+        if err is not None:
+            await ADMIN_LOGGER.error(f"RRLineup:Submit:GetLosses:{self.user_id}:{err}")
+            return ERROR_MESSAGE
+
         try:
-            losses = get_user_losses(self.user_id, RR_PROVIDER.rr_details.keys(), self.service.current_game_date)
             plays = await get_account_plays_with_lowest_serial(user['flow_address'])
             collection, _, rr_moments = build_rr_collection(
                 TS_PROVIDER, plays, self.service.rr, RR_PROVIDER.eligible_team_ids)
