@@ -24,7 +24,7 @@ class MainStartButton(discord.ui.Button['Start']):
     async def callback(self, interaction: discord.Interaction):
         assert self.view is not None
         view: MainPage = self.view
-        message, new_view = view.launch_rr(interaction.user.id, interaction.channel.id)
+        message, new_view = view.launch_rr(interaction.user.id)
 
         await interaction.response.send_message(content=message, view=new_view, ephemeral=True, delete_after=600.0)
 
