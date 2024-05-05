@@ -172,7 +172,7 @@ class RedemptionRun:
     def load_buckets(buckets: List[Dict[str, any]], players):
         return [RRBucket(b, players) for b in buckets]
 
-    def compute_selections_score(self, selections: List[RRSelection], bucket_scores: List[Tuple[float, float]]) \
+    def compute_selections_score(self, selections: List[RRSelection], buckets_scores: List[Tuple[float, float]]) \
             -> [int, float, int, int, int, str]:
         wins = 0
         sum_score = 0.0
@@ -184,7 +184,7 @@ class RedemptionRun:
         for i in range(len(self.buckets)):
             selection = selections[i]
             bucket = self.buckets[i]
-            bucket_scores = bucket_scores[i]
+            bucket_scores = buckets_scores[i]
 
             win, raw_score = selection.compute_score(bucket, bucket_scores[0], bucket_scores[1])
             if win:
@@ -200,8 +200,8 @@ class RedemptionRun:
 
         return wins, sum_score, serials, legos, rares, message
 
-    def compute_bucket_scores(self, teams_players_stats, players_stats) -> List[Tuple[float, float]]:
-        bucket_scores = []
+    def compute_buckets_scores(self, teams_players_stats, players_stats) -> List[Tuple[float, float]]:
+        buckets_scores = []
 
         for bucket in self.buckets:
             if bucket.is_team:
@@ -210,6 +210,6 @@ class RedemptionRun:
             else:
                 option_0_score = bucket.load_player_score(players_stats.get(bucket.options[0][0], {}))
                 option_1_score = bucket.load_player_score(players_stats.get(bucket.options[1][0], {}))
-            bucket_scores.append((option_0_score, option_1_score))
+            buckets_scores.append((option_0_score, option_1_score))
 
-        return bucket_scores
+        return buckets_scores

@@ -120,7 +120,7 @@ class RankingService(AbstractLineupService):
                     team_players_stats.append(played_player_stats[player_id])
             teams_players_stats[int(game_stats['awayTeam']['teamId'])] = team_players_stats
 
-        bucket_scores = self.rr.compute_bucket_scores(teams_players_stats, played_player_stats)
+        buckets_scores = self.rr.compute_buckets_scores(teams_players_stats, played_player_stats)
         try:
             scoreboard = NBAProvider.get_scoreboard_message_no_headline()
         except Exception as err:
@@ -130,7 +130,7 @@ class RankingService(AbstractLineupService):
         for user_id in self.lineups:
             lineup = self.lineups[user_id]
             wins, sum_score, serials, legos, rares, message = self.rr.compute_selections_score(
-                lineup.selections, bucket_scores)
+                lineup.selections, buckets_scores)
 
             user_scores[user_id] = {
                 'wins': wins,
