@@ -56,7 +56,7 @@ class RedemptionRunProvider:
         return to_slash_date(start_date)
 
     def get_rr(self, game_date) -> Dict[str, any]:
-        return self.rr_details.get(game_date, {})
+        return self.rr_details.get(game_date, {"buckets": [], "threshold": 100.0})
 
 
 def load_rr_data():
