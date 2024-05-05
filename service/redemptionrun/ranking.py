@@ -119,7 +119,7 @@ class RankingService(AbstractLineupService):
 
         bucket_scores = self.rr.compute_bucket_scores(teams_players_stats, played_player_stats)
         try:
-            scoreboard = NBAProvider.get_scoreboard_message(f"***{self.current_game_date}***")
+            scoreboard = NBAProvider.get_scoreboard_message_no_headline()
         except Exception as err:
             scoreboard = f"***{self.current_game_date}***\nGame scores not available\n\n"
 

@@ -212,6 +212,27 @@ class NBAProvider:
         return message
 
     @staticmethod
+    def get_scoreboard_message_no_headline():
+        score_board = NBAProvider.get_scoreboard()
+        message = ""
+
+        if len(score_board['games']) > 0:
+            message += "**Games on {}**\n\n".format(score_board['gameDate'])
+
+            for game in score_board['games']:
+                message += "**{}** {} : {} **{}** {}\n".format(
+                    game['awayTeam']['teamTricode'],
+                    game['awayTeam']['score'],
+                    game['homeTeam']['score'],
+                    game['homeTeam']['teamTricode'],
+                    game['gameStatusText']
+                )
+
+            message += "\n\n"
+
+        return message
+
+    @staticmethod
     def get_status(games):
         if len(games) == 0:
             return "NO_GAME"

@@ -109,7 +109,6 @@ class LineupService(AbstractLineupService):
                 await ADMIN_LOGGER.error(f"UserSlateResult:{user_id}:{err}")
                 return ERROR_MESSAGE
 
-            del daily_results[self.current_game_date]
             dates.sort()
             message = "***REDEMPTION RUN RESULTS***\n\n"
             for d in dates:
