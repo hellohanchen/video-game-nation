@@ -113,13 +113,13 @@ class LineupService(AbstractLineupService):
             message = "***REDEMPTION RUN RESULTS***\n\n"
             for d in dates:
                 if d not in daily_results:
-                    message += f"---- **{d[0:-5]}**\n"
+                    message += f"**{d[0:-5]}** ---\n"
                 else:
                     result = daily_results.get(d)
                     if result['win']:
-                        message += f"WIN, {result['points']}x🟢, {result['sum_score']}, **{d[0:-5]} #{result['rank']}**\n"
+                        message += f"**{d[0:-5]} WIN** {result['points']}x🟢, {result['raw_score']}, #{result['rank']}\n"
                     else:
-                        message += f"LOST, {result['points']}x🔴, {result['sum_score']}, **{d[0:-5]} #{result['rank']}**\n"
+                        message += f"**{d[0:-5]} LOST** {result['points']}x🔴, {result['raw_score']}, #{result['rank']}\n"
 
             if slate_result is not None:
                 message += f"\nYour slate rank:\n" \

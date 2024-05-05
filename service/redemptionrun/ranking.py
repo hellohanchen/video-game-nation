@@ -168,7 +168,7 @@ class RankingService(AbstractLineupService):
         for i in range(0, min(top, len(self.leaderboard))):
             uid = self.leaderboard[i]
             score = self.scores[uid]
-            message += f"**#{i + 1}.** **{self.lineups[uid].username}**\n" \
+            message += f"**#{i + 1}.** **{self.lineups[uid].username}** " \
                        f"{score['wins']}x🟢, {score['sum_score']}"
 
         message += f"\nTotal submissions: **{submissions}**\n"
