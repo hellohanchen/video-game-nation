@@ -109,6 +109,7 @@ class LineupService(AbstractLineupService):
                 await ADMIN_LOGGER.error(f"UserSlateResult:{user_id}:{err}")
                 return ERROR_MESSAGE
 
+            del daily_results[self.current_game_date]
             dates.sort()
             message = "***REDEMPTION RUN RESULTS***\n\n"
             for d in dates:
@@ -117,14 +118,14 @@ class LineupService(AbstractLineupService):
                 else:
                     result = daily_results.get(d)
                     if result['win']:
-                        message += f"**{d[0:-5]} WIN** {result['points']}x🟢, {result['raw_score']}, #{result['rank']}\n"
+                        message += f"**{d[0:-5]} WIN** {result['points']}x🟢, {result['raw_score']:.2f}, #{result['rank']}\n"
                     else:
-                        message += f"**{d[0:-5]} LOST** {result['points']}x🔴, {result['raw_score']}, #{result['rank']}\n"
+                        message += f"**{d[0:-5]} LOST** {result['points']}x🟢, {result['raw_score']:.2f}, #{result['rank']}\n"
 
             if slate_result is not None:
-                message += f"\nYour slate rank:\n" \
-                           f"**{int(slate_result['wins'])}** WINS, **{slate_result['total_points']}**x🟢, " \
-                           f"**{slate_result['losses']}** LOSSES, **{slate_result['total_score']}** SCORE, " \
+                message += f"\nYour slate result:\n" \
+                           f"**{int(slate_result['wins'])}** WINS, **{int(slate_result['total_points'])}**x🟢, " \
+                           f"**{int(slate_result['losses'])}** LOSSES, **{slate_result['total_score']:.2f}** SCORE, " \
                            f"**RANK #{slate_result['rank']}**\n" \
                            f"*current game date not included*"
 

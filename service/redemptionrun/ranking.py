@@ -1,5 +1,5 @@
 import datetime
-from typing import Dict, List
+from typing import Dict, List, Tuple, Optional, Any
 
 from nba_api.live.nba.endpoints import boxscore
 
@@ -118,6 +118,10 @@ class RankingService(AbstractLineupService):
             teams_players_stats[int(game_stats['awayTeam']['teamId'])] = team_players_stats
 
         bucket_scores = self.rr.compute_bucket_scores(teams_players_stats, played_player_stats)
+        try:
+            scoreboard = NBAProvider.get_scoreboard_message(f"***{self.current_game_date}***")
+        except Exception as err:
+            scoreboard = f"***{self.current_game_date}***\nGame scores not available\n\n"
 
         user_scores: Dict[int, Dict[str, any]] = {}
         for user_id in self.lineups:
@@ -131,7 +135,7 @@ class RankingService(AbstractLineupService):
                 'serials': serials,
                 'legos': legos,
                 'rares': rares,
-                'message': message
+                'message': scoreboard + message
             }
 
         user_ids = list(user_scores.keys())
@@ -169,7 +173,7 @@ class RankingService(AbstractLineupService):
             uid = self.leaderboard[i]
             score = self.scores[uid]
             message += f"**#{i + 1}.** **{self.lineups[uid].username}** " \
-                       f"{score['wins']}x🟢, {score['sum_score']}"
+                       f"{score['wins']}x🟢, {score['sum_score']}\n"
 
         message += f"\nTotal submissions: **{submissions}**\n"
 
