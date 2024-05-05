@@ -30,7 +30,8 @@ class AbstractLineupService:
                 for player_id in NBA_PROVIDER.get_players_for_team(team):
                     player_ids_to_load.append(player_id)
 
-        self.players = get_player_ids_names(player_ids_to_load)
+        players, _ = get_player_ids_names(player_ids_to_load)
+        self.players = players
 
 
 class LineupService(AbstractLineupService):
