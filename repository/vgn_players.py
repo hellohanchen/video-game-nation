@@ -226,9 +226,13 @@ def get_player_ids_names(player_ids, order_by=None) -> [Optional[List[Dict[str, 
         df = pd.read_sql(query, db_conn)
 
         # Convert dataframe to a dictionary with headers
-        players = df.to_dict('records')
+        loaded = df.to_dict('records')
 
         db_conn.close()
+
+        players = {}
+        for player in loaded:
+            players[player['id']] = player
 
         return players, None
     except Exception as err:
