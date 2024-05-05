@@ -88,7 +88,8 @@ class LineupService(AbstractLineupService):
         return NBA_PROVIDER.get_games_on_date(self.current_game_date).items()
 
     def __formatted_schedule(self) -> str:
-        message = "🏀 ***{} GAMES***\n".format(self.current_game_date)
+        message = f"**Games on {self.current_game_date}**\n"
+
         for _, game in self.get_coming_games():
             message += f"{game['awayTeam']} at {game['homeTeam']}\n"
 
@@ -220,15 +221,14 @@ class Lineup:
             return ERROR_MESSAGE
         self.reload(updated_lineup[0])
 
-        message = f"You've submitted lineup for *{self.service.current_game_date}* " \
-                  f"with the following selections:\n\n"
+        message = f"You've submitted selections for *{self.service.current_game_date}*:\n\n"
         for i in range(len(self.service.rr.buckets)):
             bucket = self.service.rr.buckets[i]
             selection = self.selections[i]
             selected_name = bucket.options[0][1] if selection.selected == bucket.options[0][0] else bucket.options[1][1]
 
             message += f"🏀 **{selected_name}** " \
-                       f"{selection.serial}({selection.tier})\n"
+                       f"{selection.serial}, {selection.tier}\n"
 
         return message
 
