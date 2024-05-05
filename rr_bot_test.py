@@ -13,7 +13,7 @@ from vgnlog.channel_logger import ADMIN_LOGGER
 
 # config bot
 load_dotenv()
-TOKEN = os.getenv('DISCORD_TOKEN_REDEMPTION_RUM')
+TOKEN = os.getenv('DISCORD_TOKEN_REDEMPTION_RUN')
 GUILD = os.getenv('DISCORD_GUILD')
 
 intents = discord.Intents.default()
