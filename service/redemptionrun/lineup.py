@@ -174,6 +174,21 @@ class Lineup:
 
         return message
 
+    def __upsert(self):
+        return upsert_lineup(
+            (
+                self.user_id, self.service.current_game_date,
+                None if self.selections[0] is None else self.selections[0].to_db_str(),
+                None if self.selections[1] is None else self.selections[1].to_db_str(),
+                None if self.selections[2] is None else self.selections[2].to_db_str(),
+                None if self.selections[3] is None else self.selections[3].to_db_str(),
+                None if self.selections[4] is None else self.selections[4].to_db_str(),
+                None if self.selections[5] is None else self.selections[5].to_db_str(),
+                None if self.selections[6] is None else self.selections[6].to_db_str(),
+                None if self.selections[7] is None else self.selections[7].to_db_str(),
+            )
+        )
+
     async def select(self, bucket_idx, selected) -> str:
         bucket = self.service.rr.buckets[bucket_idx]
         selected_name = bucket.options[0][1] if selected == bucket.options[0][0] else bucket.options[1][1]
@@ -181,15 +196,7 @@ class Lineup:
         new_selection = RRSelection(selected, 0, 'Unknown')
         self.selections[bucket_idx] = new_selection
 
-        updated_lineup, err = upsert_lineup(
-            (
-                self.user_id, self.service.current_game_date,
-                self.selections[0].to_db_str(), self.selections[1].to_db_str(),
-                self.selections[2].to_db_str(), self.selections[3].to_db_str(),
-                self.selections[4].to_db_str(), self.selections[5].to_db_str(),
-                self.selections[6].to_db_str(), self.selections[7].to_db_str()
-            )
-        )
+        updated_lineup, err = self.__upsert()
         if err is None:
             message = self.formatted()
             message += f"\nSelected **{selected_name}**."
@@ -231,15 +238,7 @@ class Lineup:
             await ADMIN_LOGGER.error(f"RRLineup:Collection:{self.user_id}:{err}")
             return ERROR_MESSAGE
 
-        _, err = upsert_lineup(
-            (
-                self.user_id, self.service.current_game_date,
-                self.selections[0].to_db_str(), self.selections[1].to_db_str(),
-                self.selections[2].to_db_str(), self.selections[3].to_db_str(),
-                self.selections[4].to_db_str(), self.selections[5].to_db_str(),
-                self.selections[6].to_db_str(), self.selections[7].to_db_str()
-            )
-        )
+        _, err = self.__upsert()
         if err is not None:
             await ADMIN_LOGGER.error(f"RRLineup:Submit:Upsert:{self.user_id}:{err}")
             return ERROR_MESSAGE
