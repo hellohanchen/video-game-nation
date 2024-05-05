@@ -213,7 +213,7 @@ def get_user_slate_result(uid, game_dates):
                 "           ORDER BY SUM(IF(l.win, 1, 0)) DESC, " \
                 "           SUM(points) DESC, " \
                 "           COUNT(*) - SUM(IF(win, 1, 0)), " \
-                "           SUM(raw_score), " \
+                "           SUM(raw_score) " \
                 "       ) as `rank`" \
                 "   FROM vgn.rr_lineups AS l " \
                 "   WHERE game_date IN ({})" \

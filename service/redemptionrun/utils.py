@@ -62,6 +62,8 @@ def build_rr_collection(ts_provider, plays, rr: RedemptionRun, team_ids: List[in
                     elif existing_tier == 'Rare' and tier in ['Legendary', 'Ultimate']:
                         collection[identifier]['tier'] = 'Legendary'
 
+                    print(collection[identifier]['serial'])
+                    print(serial)
                     if collection[identifier]['serial'] > serial:
                         collection[identifier]['serial'] = serial
 
