@@ -79,7 +79,7 @@ class LineupScheduleButton(discord.ui.Button['LineupView']):
 
 class LineupRulesButton(discord.ui.Button['LineupView']):
     def __init__(self):
-        super().__init__(style=discord.ButtonStyle.secondary, label="Rules", row=2)
+        super().__init__(style=discord.ButtonStyle.secondary, label="Rules", row=0)
 
     async def callback(self, interaction: discord.Interaction):
         assert self.view is not None
@@ -114,9 +114,21 @@ class LineupSubmitButton(discord.ui.Button['LineupView']):
             await followup.send(f"Submission failed, please retry", ephemeral=True)
 
 
-class LineupLeaderboardButton(discord.ui.Button['LineupLeaderboard']):
+class LineupScoreButton(discord.ui.Button['LineupLeaderboard']):
     def __init__(self):
         super().__init__(style=discord.ButtonStyle.secondary, label="Top 20", row=2)
+
+    async def callback(self, interaction: discord.Interaction):
+        assert self.view is not None
+        view: LineupView = self.view
+        message, new_view = view.check_score()
+
+        await interaction.response.edit_message(content=message, view=new_view)
+
+
+class LineupLeaderboardButton(discord.ui.Button['LineupLeaderboard']):
+    def __init__(self):
+        super().__init__(style=discord.ButtonStyle.blurple, label="My Score", row=2)
 
     async def callback(self, interaction: discord.Interaction):
         assert self.view is not None
@@ -130,12 +142,16 @@ class LineupView(RedemptionRunView):
     def __init__(self, lineup_service, ranking_service, user_id):
         super().__init__(lineup_service, ranking_service, user_id)
         self.add_item(LineupBucketsButton())
+        self.add_item(LineupRulesButton())
         self.add_item(LineupSubmitButton())
         self.add_item(LineupScheduleButton())
         self.add_item(LineupButton(2))
+        self.add_item(LineupScoreButton())
         self.add_item(LineupLeaderboardButton())
-        self.add_item(LineupRulesButton())
         self.lineup: Lineup = lineup_service.get_or_create_lineup(user_id)
+
+    def check_score(self):
+        return self.ranking_service.formatted_user_score(self.user_id), self
 
     def check_leaderboard(self):
         return self.ranking_service.formatted_leaderboard(20), self
