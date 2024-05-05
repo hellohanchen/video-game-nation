@@ -136,6 +136,7 @@ class Lineup:
             else:
                 message += selection.format_with_bucket(bucket)
             message += '\n'
+        message += f"\n\n**Survival Rate: {int(self.service.rr.threshold * 100.0)}%"
 
         return message
 

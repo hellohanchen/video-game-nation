@@ -172,10 +172,6 @@ class RedemptionRun:
     def load_buckets(buckets: List[Dict[str, any]], players):
         return [RRBucket(b, players) for b in buckets]
 
-    def get_formatted(self) -> str:
-        return '\n'.join([b.get_formatted() for b in self.buckets]) + \
-               f"\n\n**Survival Rate: {int(self.threshold * 100.0)}%"
-
     def compute_selections_score(self, selections: List[RRSelection], bucket_scores: List[Tuple[float, float]]) \
             -> [int, float, int, int, int, str]:
         wins = 0
