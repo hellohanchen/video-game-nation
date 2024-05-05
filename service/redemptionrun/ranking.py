@@ -182,18 +182,32 @@ class RankingService(AbstractLineupService):
         return message
 
     async def get_user_slate_results(self, user_id):
-        dates = list(RR_PROVIDER.rr_details.keys())
-        if self.current_game_date in dates:
-            dates.remove(self.current_game_date)
+        dates = []
+        for d in RR_PROVIDER.rr_details:
+            if d == self.current_game_date:
+                break
+            dates.append(d)
 
-        daily_results, err = get_user_results(user_id, dates)
-        if err is not None:
-            await ADMIN_LOGGER.error(f"UserDailyResult:{user_id}:{err}")
-            return ERROR_MESSAGE
-        slate_result, err = get_user_slate_result(user_id, dates)
-        if err is not None:
-            await ADMIN_LOGGER.error(f"UserSlateResult:{user_id}:{err}")
-            return ERROR_MESSAGE
+        if len(dates) > 0:
+            daily_results, err = get_user_results(user_id, dates)
+            if err is not None:
+                await ADMIN_LOGGER.error(f"UserDailyResult:{user_id}:{err}")
+                return ERROR_MESSAGE
+            slate_result, err = get_user_slate_result(user_id, dates)
+            if err is not None:
+                await ADMIN_LOGGER.error(f"UserSlateResult:{user_id}:{err}")
+                return ERROR_MESSAGE
+        else:
+            daily_results = {}
+            slate_result = None
+        if slate_result is None:
+            slate_result = {
+                "wins": 0,
+                "total_points": 0,
+                "losses": 0,
+                "total_score": 0.0,
+                "rank": "None"
+            }
 
         dates.sort()
         message = "***REDEMPTION RUN RESULTS***\n\n"
@@ -207,12 +221,11 @@ class RankingService(AbstractLineupService):
                 else:
                     message += f"**{d[0:-5]} LOST** {result['points']}x🟢, {result['raw_score']:.2f}, #{result['rank']}\n"
 
-        if slate_result is not None:
-            message += f"\nYour slate result:\n" \
-                       f"**{int(slate_result['wins'])}** WINS, **{int(slate_result['total_points'])}**x🟢, " \
-                       f"**{int(slate_result['losses'])}** LOSSES, **{slate_result['total_score']:.2f}** SCORE, " \
-                       f"**RANK #{slate_result['rank']}**\n" \
-                       f"*current game date not included*"
+        message += f"\nYour slate result:\n" \
+                   f"**{int(slate_result['wins'])}** WINS, **{int(slate_result['total_points'])}**x🟢, " \
+                   f"**{int(slate_result['losses'])}** LOSSES, **{slate_result['total_score']:.2f}** SCORE, " \
+                   f"**RANK #{slate_result['rank']}**\n" \
+                   f"*current game date not included*"
 
         return message
 
