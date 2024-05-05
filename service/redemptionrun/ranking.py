@@ -3,13 +3,15 @@ from typing import Dict, List, Tuple, Optional, Any
 
 from nba_api.live.nba.endpoints import boxscore
 
-from constants import GameDateStatus
+from constants import GameDateStatus, ERROR_MESSAGE
 from provider.games.rr_provider import RR_PROVIDER
 from provider.nba.nba_provider import NBAProvider, NBA_PROVIDER
-from repository.rr_lineups import get_lineups, upsert_score, get_submission_count, get_slate_ranks
+from repository.rr_lineups import get_lineups, upsert_score, get_submission_count, get_slate_ranks, get_user_results, \
+    get_user_slate_result
 from service.redemptionrun.lineup import AbstractLineupService, Lineup, RR_LINEUP_SERVICE
 from service.redemptionrun.redemption_run import RedemptionRun
 from utils import to_slash_date, get_game_info, truncate_message
+from vgnlog.channel_logger import ADMIN_LOGGER
 
 
 class RankingService(AbstractLineupService):
@@ -176,6 +178,41 @@ class RankingService(AbstractLineupService):
                        f"{score['wins']}x🟢, {score['sum_score']}\n"
 
         message += f"\nTotal submissions: **{submissions}**\n"
+
+        return message
+
+    async def get_user_slate_results(self, user_id):
+        dates = list(RR_PROVIDER.rr_details.keys())
+        if self.current_game_date in dates:
+            dates.remove(self.current_game_date)
+
+        daily_results, err = get_user_results(user_id, dates)
+        if err is not None:
+            await ADMIN_LOGGER.error(f"UserDailyResult:{user_id}:{err}")
+            return ERROR_MESSAGE
+        slate_result, err = get_user_slate_result(user_id, dates)
+        if err is not None:
+            await ADMIN_LOGGER.error(f"UserSlateResult:{user_id}:{err}")
+            return ERROR_MESSAGE
+
+        dates.sort()
+        message = "***REDEMPTION RUN RESULTS***\n\n"
+        for d in dates:
+            if d not in daily_results:
+                message += f"**{d[0:-5]}** ---\n"
+            else:
+                result = daily_results.get(d)
+                if result['win']:
+                    message += f"**{d[0:-5]} WIN** {result['points']}x🟢, {result['raw_score']:.2f}, #{result['rank']}\n"
+                else:
+                    message += f"**{d[0:-5]} LOST** {result['points']}x🟢, {result['raw_score']:.2f}, #{result['rank']}\n"
+
+        if slate_result is not None:
+            message += f"\nYour slate result:\n" \
+                       f"**{int(slate_result['wins'])}** WINS, **{int(slate_result['total_points'])}**x🟢, " \
+                       f"**{int(slate_result['losses'])}** LOSSES, **{slate_result['total_score']:.2f}** SCORE, " \
+                       f"**RANK #{slate_result['rank']}**\n" \
+                       f"*current game date not included*"
 
         return message
 

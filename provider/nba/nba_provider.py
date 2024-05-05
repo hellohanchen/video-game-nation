@@ -217,7 +217,7 @@ class NBAProvider:
         message = ""
 
         if len(score_board['games']) > 0:
-            message += "**Games on {}**\n\n".format(score_board['gameDate'])
+            message += "**Games on {}**\n".format(score_board['gameDate'])
 
             for game in score_board['games']:
                 message += "**{}** {} : {} **{}** {}\n".format(
@@ -228,7 +228,7 @@ class NBAProvider:
                     game['gameStatusText']
                 )
 
-            message += "\n\n"
+            message += "\n"
 
         return message
 

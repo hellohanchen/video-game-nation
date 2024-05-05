@@ -160,7 +160,7 @@ class LineupView(RedemptionRunView):
         return self.lineup.formatted(), BucketsView(self.lineup_service, self.ranking_service, self.user_id)
 
     async def get_rr_results(self):
-        slate_results = await self.lineup_service.get_user_slate_results(self.user_id)
+        slate_results = await self.ranking_service.get_user_slate_results(self.user_id)
         return slate_results, self
 
 

@@ -94,45 +94,6 @@ class LineupService(AbstractLineupService):
 
         return message
 
-    async def get_user_slate_results(self, user_id):
-        try:
-            dates = list(RR_PROVIDER.rr_details.keys())
-            if self.current_game_date in dates:
-                dates.remove(self.current_game_date)
-
-            daily_results, err = get_user_results(user_id, dates)
-            if err is not None:
-                await ADMIN_LOGGER.error(f"UserDailyResult:{user_id}:{err}")
-                return ERROR_MESSAGE
-            slate_result, err = get_user_slate_result(user_id, dates)
-            if err is not None:
-                await ADMIN_LOGGER.error(f"UserSlateResult:{user_id}:{err}")
-                return ERROR_MESSAGE
-
-            dates.sort()
-            message = "***REDEMPTION RUN RESULTS***\n\n"
-            for d in dates:
-                if d not in daily_results:
-                    message += f"**{d[0:-5]}** ---\n"
-                else:
-                    result = daily_results.get(d)
-                    if result['win']:
-                        message += f"**{d[0:-5]} WIN** {result['points']}x🟢, {result['raw_score']:.2f}, #{result['rank']}\n"
-                    else:
-                        message += f"**{d[0:-5]} LOST** {result['points']}x🟢, {result['raw_score']:.2f}, #{result['rank']}\n"
-
-            if slate_result is not None:
-                message += f"\nYour slate result:\n" \
-                           f"**{int(slate_result['wins'])}** WINS, **{int(slate_result['total_points'])}**x🟢, " \
-                           f"**{int(slate_result['losses'])}** LOSSES, **{slate_result['total_score']:.2f}** SCORE, " \
-                           f"**RANK #{slate_result['rank']}**\n" \
-                           f"*current game date not included*"
-
-            return message
-        except Exception as err:
-            await ADMIN_LOGGER.error(err)
-            return err
-
 
 class Lineup:
     def __init__(self, db_lineup: Dict[str, int | bool | str], service: AbstractLineupService):
