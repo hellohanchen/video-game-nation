@@ -176,4 +176,5 @@ class BucketsView(RedemptionRunView):
         self.lineup = lineup_service.get_or_create_lineup(user_id)
 
     async def select(self, bucket_idx, selected):
-        return self.lineup.select(bucket_idx, selected), self
+        message = await self.lineup.select(bucket_idx, selected)
+        return message, self
