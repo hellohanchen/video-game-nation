@@ -3,6 +3,7 @@ import json
 import os
 import pathlib
 
+from constants import NBA_TEAM_NAME_IDS
 from provider.topshot.graphql.get_set_plays import get_set_plays
 
 TIER_MAP = {

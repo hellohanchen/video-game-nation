@@ -274,7 +274,11 @@
       "2": {},
       "3": {},
       "4": {},
-      "5": {}
+      "5": {
+        "TSD": true,
+        "RY": true,
+        "RM": true
+      }
     },
     "sets": [
       125
@@ -473,13 +477,14 @@
       "3": {},
       "4": {},
       "5": {
+        "RP": true,
         "RY": true,
         "RM": true,
-        "TSD": true,
-        "RP": true
+        "TSD": true
       }
     },
     "sets": [
+      140,
       139,
       135,
       125
@@ -815,13 +820,14 @@
       "3": {},
       "4": {},
       "5": {
+        "RP": true,
         "RY": true,
         "RM": true,
-        "TSD": true,
-        "RP": true
+        "TSD": true
       }
     },
     "sets": [
+      140,
       139,
       135,
       125
@@ -861,14 +867,15 @@
       "3": {},
       "4": {},
       "5": {
-        "CR": true,
+        "RP": true,
         "RY": true,
         "RM": true,
-        "TSD": true,
-        "RP": true
+        "CR": true,
+        "TSD": true
       }
     },
     "sets": [
+      140,
       134,
       139,
       135,
@@ -1569,13 +1576,14 @@
       "3": {},
       "4": {},
       "5": {
+        "RP": true,
         "RY": true,
         "RM": true,
-        "TSD": true,
-        "RP": true
+        "TSD": true
       }
     },
     "sets": [
+      140,
       139,
       135,
       125
@@ -2624,14 +2632,15 @@
       "3": {},
       "4": {},
       "5": {
+        "RP": true,
         "RY": true,
         "RM": true,
         "CR": true,
-        "TSD": true,
-        "RP": true
+        "TSD": true
       }
     },
     "sets": [
+      140,
       139,
       134,
       135,

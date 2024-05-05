@@ -5767,10 +5767,6 @@
     "0042300137": {
       "homeTeam": "CLE",
       "awayTeam": "ORL"
-    },
-    "0042300177": {
-      "homeTeam": "LAC",
-      "awayTeam": "DAL"
     }
   },
   "05/06/2024": {
@@ -5783,10 +5779,22 @@
       "awayTeam": "MIN"
     }
   },
+  "05/07/2024": {
+    "0042300221": {
+      "homeTeam": "OKC",
+      "awayTeam": "DAL"
+    }
+  },
   "05/08/2024": {
     "0042300212": {
       "homeTeam": "NYK",
       "awayTeam": "IND"
+    }
+  },
+  "05/09/2024": {
+    "0042300222": {
+      "homeTeam": "OKC",
+      "awayTeam": "DAL"
     }
   },
   "05/10/2024": {
@@ -5799,6 +5807,12 @@
       "awayTeam": "DEN"
     }
   },
+  "05/11/2024": {
+    "0042300223": {
+      "homeTeam": "DAL",
+      "awayTeam": "OKC"
+    }
+  },
   "05/12/2024": {
     "0042300214": {
       "homeTeam": "IND",
@@ -5809,10 +5823,26 @@
       "awayTeam": "DEN"
     }
   },
+  "05/13/2024": {
+    "0042300224": {
+      "homeTeam": "DAL",
+      "awayTeam": "OKC"
+    }
+  },
   "05/14/2024": {
+    "0042300215": {
+      "homeTeam": "NYK",
+      "awayTeam": "IND"
+    },
     "0042300235": {
       "homeTeam": "DEN",
       "awayTeam": "MIN"
+    }
+  },
+  "05/15/2024": {
+    "0042300225": {
+      "homeTeam": "OKC",
+      "awayTeam": "DAL"
     }
   },
   "05/16/2024": {
@@ -5821,10 +5851,32 @@
       "awayTeam": "DEN"
     }
   },
+  "05/17/2024": {
+    "0042300216": {
+      "homeTeam": "IND",
+      "awayTeam": "NYK"
+    }
+  },
+  "05/18/2024": {
+    "0042300226": {
+      "homeTeam": "DAL",
+      "awayTeam": "OKC"
+    }
+  },
   "05/19/2024": {
+    "0042300217": {
+      "homeTeam": "NYK",
+      "awayTeam": "IND"
+    },
     "0042300237": {
       "homeTeam": "DEN",
       "awayTeam": "MIN"
+    }
+  },
+  "05/20/2024": {
+    "0042300227": {
+      "homeTeam": "OKC",
+      "awayTeam": "DAL"
     }
   }
 }

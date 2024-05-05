@@ -2,7 +2,7 @@
 
 import random
 import time
-from typing import List, Dict
+from typing import List, Dict, Optional
 
 import pandas as pd
 
@@ -210,7 +210,35 @@ def get_players(player_ids, order_by=None) -> List[Dict[str, any]]:
         return None
 
 
-def get_all_team_players(current_only = True):
+def get_player_ids_names(player_ids, order_by=None) -> [Optional[List[Dict[str, any]]], Optional[Exception]]:
+    db_conn = None
+    try:
+        db_conn = CNX_POOL.get_connection()
+        query = \
+            "SELECT id, full_name " \
+            "FROM vgn.players WHERE id IN ({}) " \
+                .format(', '.join([str(player_id) for player_id in player_ids]))
+
+        if order_by is not None:
+            query += " ORDER BY {} ".format(', '.join([o[0] + " " + o[1] + " " for o in order_by]))
+
+        # Execute SQL query and store results in a pandas dataframe
+        df = pd.read_sql(query, db_conn)
+
+        # Convert dataframe to a dictionary with headers
+        players = df.to_dict('records')
+
+        db_conn.close()
+
+        return players, None
+    except Exception as err:
+        if db_conn is not None:
+            db_conn.close()
+
+        return None, err
+
+
+def get_all_team_players(current_only=True):
     try:
         db_conn = CNX_POOL.get_connection()
         query = \
@@ -302,7 +330,7 @@ def reformat_dashboard(raw_player_stats):
             round(float(ps['TD3']) / games_play, 2), round(float(ps['TD3']) / games_play, 2),
             0.0, 0.0, 0.0, 0.0,
             ps['MIN'], ps['MIN'], ps['PFD'], ps['PFD'],
-         ))
+        ))
 
     return result
 

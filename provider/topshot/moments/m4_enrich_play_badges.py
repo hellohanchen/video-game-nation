@@ -2,6 +2,7 @@ import json
 import os
 import pathlib
 
+from constants import NBA_TEAM_NAME_IDS
 
 TIER_MAP = {
     "C": "Common",
@@ -59,6 +60,8 @@ def enrich_plays():
     }
 
     for play_id in play_ids:
+        for play in new_plays[play_id]:
+            play['teamId'] = NBA_TEAM_NAME_IDS.get(play['team'], 0)
         result['plays'][play_id] = new_plays[play_id]
 
     with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "resource/enriched_plays.json"),

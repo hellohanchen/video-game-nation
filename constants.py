@@ -187,6 +187,8 @@ NBA_TEAMS = {
     "WAS": 1610612764
 }
 
+NBA_TEAM_IDS = {v: k for k, v in NBA_TEAMS.items()}
+
 NBA_TEAM_NAMES = {
     "ATL": "Atlanta Hawks",
     "BOS": "Boston Celtics",
@@ -220,38 +222,8 @@ NBA_TEAM_NAMES = {
     "WAS": "Washington Wizards"
 }
 
-NBA_TEAM_IDS = {
-    1610612737: "ATL",
-    1610612738: "BOS",
-    1610612751: "BKN",
-    1610612766: "CHA",
-    1610612741: "CHI",
-    1610612739: "CLE",
-    1610612742: "DAL",
-    1610612743: "DEN",
-    1610612765: "DET",
-    1610612744: "GSW",
-    1610612745: "HOU",
-    1610612754: "IND",
-    1610612746: "LAC",
-    1610612747: "LAL",
-    1610612763: "MEM",
-    1610612748: "MIA",
-    1610612749: "MIL",
-    1610612750: "MIN",
-    1610612740: "NOP",
-    1610612752: "NYK",
-    1610612760: "OKC",
-    1610612753: "ORL",
-    1610612755: "PHI",
-    1610612756: "PHX",
-    1610612757: "POR",
-    1610612758: "SAC",
-    1610612759: "SAS",
-    1610612761: "TOR",
-    1610612762: "UTA",
-    1610612764: "WAS",
-}
+NBA_TEAM_NAME_TRICODES = {v: k for k, v in NBA_TEAM_NAMES.items()}
+NBA_TEAM_NAME_IDS = {k: NBA_TEAMS[v] for k, v in NBA_TEAM_NAME_TRICODES.items()}
 
 
 class GameDateStatus(Enum):
@@ -269,3 +241,6 @@ class RoleVerificationType(Enum):
     LINKED = 0
     SET = 1
     TEAM = 2
+
+
+ERROR_MESSAGE = "Something went wrong, please retry or contact admin."

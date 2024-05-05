@@ -3,6 +3,30 @@
     "name": "The Champion's Path 2024 5",
     "series": 5,
     "moments": {
+      "5197": {
+        "player": "New Orleans Pelicans",
+        "team": "New Orleans Pelicans",
+        "playerId": null,
+        "date": ""
+      },
+      "5196": {
+        "player": "New Orleans Pelicans",
+        "team": "New Orleans Pelicans",
+        "playerId": null,
+        "date": ""
+      },
+      "5195": {
+        "player": "Miami Heat",
+        "team": "Miami Heat",
+        "playerId": null,
+        "date": ""
+      },
+      "5194": {
+        "player": "Miami Heat",
+        "team": "Miami Heat",
+        "playerId": null,
+        "date": ""
+      },
       "5193": {
         "player": "New Orleans Pelicans",
         "team": "New Orleans Pelicans",
@@ -268,12 +292,42 @@
         "date": ""
       }
     },
-    "count": 44
+    "count": 48
   },
   "140": {
     "name": "2023 Rookie Ultimates 5",
     "series": 5,
     "moments": {
+      "5202": {
+        "player": "Amen Thompson",
+        "team": "Houston Rockets",
+        "playerId": 1641708,
+        "date": "2023-10-25"
+      },
+      "5201": {
+        "player": "Jaime Jaquez Jr.",
+        "team": "Miami Heat",
+        "playerId": 1631170,
+        "date": "2023-10-25"
+      },
+      "5200": {
+        "player": "Scoot Henderson",
+        "team": "Portland Trail Blazers",
+        "playerId": 1630703,
+        "date": "2023-10-26"
+      },
+      "5199": {
+        "player": "Brandon Miller",
+        "team": "Charlotte Hornets",
+        "playerId": 1641706,
+        "date": "2023-10-25"
+      },
+      "5198": {
+        "player": "Dereck Lively II",
+        "team": "Dallas Mavericks",
+        "playerId": 1641726,
+        "date": "2023-10-26"
+      },
       "5141": {
         "player": "Victor Wembanyama",
         "team": "San Antonio Spurs",
@@ -281,7 +335,7 @@
         "date": "2023-10-26"
       }
     },
-    "count": 1
+    "count": 6
   },
   "139": {
     "name": "Rookie Revelation 5",
@@ -638,6 +692,12 @@
     "name": "Squad Goals 5",
     "series": 5,
     "moments": {
+      "5203": {
+        "player": "Dallas Mavericks",
+        "team": "Dallas Mavericks",
+        "playerId": null,
+        "date": "2024-03-21"
+      },
       "4833": {
         "player": "Washington Wizards",
         "team": "Washington Wizards",
@@ -819,7 +879,7 @@
         "date": "2023-12-31"
       }
     },
-    "count": 30
+    "count": 31
   },
   "135": {
     "name": "Freshman Gems 5",
