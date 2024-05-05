@@ -114,7 +114,7 @@ async def refresh_entry():
 async def update_stats():
     init_status = RR_RANKING_SERVICE.status
     init_lb = RR_RANKING_SERVICE.formatted_leaderboard(20)
-    await RR_RANKING_SERVICE.update()
+    RR_RANKING_SERVICE.update()
     new_status = RR_RANKING_SERVICE.status
 
     if init_status == GameDateStatus.POST_GAME and new_status != init_status:
