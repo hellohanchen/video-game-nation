@@ -129,10 +129,12 @@ class RRSelection:
         if self.selected == bucket.options[0][0]:
             return f"{'Higher' if bucket.order == 'DESC' else 'Lower'} " \
                    f"{'total ' if bucket.is_team else ''}{bucket.stats}:\n" \
+                   f"*Moment types: {bucket.moment_types}*\n" \
                    f"**{bucket.options[0][1]}** vs {bucket.options[1][1]}\n"
         else:
             return f"{'Higher' if bucket.order == 'DESC' else 'Lower'} " \
                    f"{'total ' if bucket.is_team else ''}{bucket.stats}:\n" \
+                   f"*Moment types: {bucket.moment_types}*\n" \
                    f"{bucket.options[0][1]} vs **{bucket.options[1][1]}**\n"
 
     def format_with_bucket_and_score(self, bucket: RRBucket, op_0_score: float, op_1_score: float) -> str:
@@ -171,7 +173,8 @@ class RedemptionRun:
         return [RRBucket(b, players) for b in buckets]
 
     def get_formatted(self) -> str:
-        return '\n'.join([b.get_formatted() for b in self.buckets])
+        return '\n'.join([b.get_formatted() for b in self.buckets]) + \
+               f"\n\n**Survival Rate: {int(self.threshold * 100.0)}%"
 
     def compute_selections_score(self, selections: List[RRSelection], bucket_scores: List[Tuple[float, float]]) \
             -> [int, float, int, int, int, str]:

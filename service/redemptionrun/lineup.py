@@ -122,7 +122,7 @@ class Lineup:
     def formatted(self) -> str:
         message = self.service.formatted_games + "\n"
 
-        message += f"Your lineup for **{self.service.current_game_date}**"
+        message += f"Your selections for **{self.service.current_game_date}**"
         if self.is_submitted:
             message += f" is **SUBMITTED**.\n\n"
         else:
