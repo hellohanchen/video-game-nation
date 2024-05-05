@@ -1,4 +1,5 @@
 import datetime
+import math
 from typing import Dict, List, Tuple, Optional, Any
 
 from nba_api.live.nba.endpoints import boxscore
@@ -148,10 +149,10 @@ class RankingService(AbstractLineupService):
         user_ids.sort(key=lambda uid: user_scores[uid]['wins'], reverse=True)
 
         leaderboard = []
-        threshold = int(len(user_ids) * 0.5)  # TODO: confirm percentage
+        threshold = math.ceil(len(user_ids) * self.rr.threshold)
         for i, user_id in enumerate(user_ids):
             user_scores[user_id]['rank'] = i + 1
-            user_scores[user_id]['win'] = i <= threshold
+            user_scores[user_id]['win'] = i < threshold
             leaderboard.append(user_id)
 
         self.scores = user_scores
@@ -182,11 +183,7 @@ class RankingService(AbstractLineupService):
         return message
 
     async def get_user_slate_results(self, user_id):
-        dates = []
-        for d in RR_PROVIDER.rr_details:
-            if d == self.current_game_date:
-                break
-            dates.append(d)
+        dates = self.get_previous_game_dates()
 
         if len(dates) > 0:
             daily_results, err = get_user_results(user_id, dates)
@@ -229,6 +226,17 @@ class RankingService(AbstractLineupService):
 
         return message
 
+    def get_previous_game_dates(self, excluded_date=None):
+        if excluded_date is None:
+            excluded_date = self.current_game_date
+
+        dates = []
+        for d in RR_PROVIDER.rr_details:
+            if d == excluded_date:
+                break
+            dates.append(d)
+        return dates
+
     @staticmethod
     def formatted_slate_leaderboard(dates, top):
         messages = []
@@ -256,7 +264,7 @@ class RankingService(AbstractLineupService):
             return ["Scores are not updated yet."]
 
         return [f"{self.scores[user_id]['message']}\n"
-                f"You need to be top **{int(len(self.scores) * self.rr.threshold)}** to survive."]
+                f"You need to be top **{math.ceil(len(self.scores) * self.rr.threshold)}** to survive."]
 
     @staticmethod
     def enrich_stats(player_stats):

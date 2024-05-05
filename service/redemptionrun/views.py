@@ -1,5 +1,7 @@
 import discord
 
+from repository.vgn_users import get_user_new
+from service.common.profile.views import LINK_TS_ACCOUNT_MESSAGE, ProfileView
 from service.redemptionrun.lineup import LineupService, Lineup
 from service.redemptionrun.ranking import RankingService
 from vgnlog.channel_logger import ADMIN_LOGGER
@@ -37,6 +39,10 @@ class MainPage(discord.ui.View):
         self.ranking_service = ranking_service
 
     def launch_rr(self, user_id):
+        user, _ = get_user_new(user_id)
+        if user is None:
+            return LINK_TS_ACCOUNT_MESSAGE, ProfileView(user_id)
+
         view = LineupView(self.lineup_service, self.ranking_service, user_id)
         return view.lineup.formatted(), view
 
