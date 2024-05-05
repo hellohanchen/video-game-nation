@@ -7,10 +7,8 @@ RR_SETS = [141, 142, 143]
 
 
 def build_rr_collection(ts_provider, plays, rr: RedemptionRun, team_ids: List[int]):
-    player_or_team_ids = []
     moment_types = {}
     for b in rr.buckets:
-        player_or_team_ids.extend([b.options[0][0], b.options[1][0]])
         moment_types[b.options[0][0]] = b.moment_types
         moment_types[b.options[1][0]] = b.moment_types
 
@@ -37,9 +35,11 @@ def build_rr_collection(ts_provider, plays, rr: RedemptionRun, team_ids: List[in
                 identifier = play['teamId']
             else:
                 identifier = play['playerId']
-            if identifier in team_ids:
+            if identifier in team_ids and set_id in RR_SETS:
                 rr_moment_count += 1
 
+            if identifier not in moment_types:
+                continue
             if 'Any' not in moment_types[identifier] and play['playType'] not in moment_types[identifier]:
                 continue
 

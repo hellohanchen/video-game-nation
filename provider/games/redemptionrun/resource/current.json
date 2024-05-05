@@ -11,6 +11,21 @@
     "CLE"
   ],
   "runs": {
+    "05/03/2024": {
+      "threshold": 0.5,
+      "buckets": [
+        {
+          "stats": "PTS",
+          "order": "DESC",
+          "momentTypes": "Any",
+          "isTeam": true,
+          "options": [
+            "LAC",
+            "DAL"
+          ]
+        }
+      ]
+    },
     "05/04/2024": {
       "threshold": 0.5,
       "buckets": [
