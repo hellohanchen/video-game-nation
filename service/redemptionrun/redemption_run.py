@@ -81,7 +81,7 @@ class RRBucket:
         result = 0.0
 
         for player_stats in team_players_stats:
-            result += self.load_player_score(player_stats['statistics'])
+            result += self.load_player_score(player_stats)
 
         return result
 
