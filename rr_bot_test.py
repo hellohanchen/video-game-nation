@@ -25,7 +25,7 @@ intents.presences = False
 bot = commands.Bot(command_prefix='.rrtest.', intents=intents)
 ADMIN_CHANNEL_ID = 1097055938441130004
 
-RR_CHANNEL_IDS = ["🎮-fantasy-test"]
+RR_CHANNEL_IDS = [1178938072562417714]
 RR_CHANNEL_MESSAGES = []
 
 WELCOME_MESSAGE = "**Welcome to the Redemption Run game!**\n"
