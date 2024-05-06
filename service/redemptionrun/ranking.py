@@ -168,7 +168,7 @@ class RankingService(AbstractLineupService):
     def formatted_leaderboard(self, top):
         if self.status != GameDateStatus.IN_GAME and self.status != GameDateStatus.POST_GAME:
             message = "***Leaderboard {}***\n\n".format(RR_LINEUP_SERVICE.current_game_date)
-            submissions = get_submission_count(RR_LINEUP_SERVICE.current_game_date)
+            submissions, _ = get_submission_count(RR_LINEUP_SERVICE.current_game_date)
             return message + "Games are not started yet.\nTotal submissions: **{}**\n".format(submissions)
 
         submissions, _ = get_submission_count(self.current_game_date)
