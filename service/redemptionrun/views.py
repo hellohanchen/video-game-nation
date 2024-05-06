@@ -170,7 +170,7 @@ class LineupView(RedemptionRunView):
         return slate_results, self
 
 
-class BucketOptionButton(discord.ui.Button['BucketsView']):
+class BucketsOptionButton(discord.ui.Button['BucketsView']):
     def __init__(self, bucket_idx, option, option_label, row):
         super().__init__(style=discord.ButtonStyle.primary, label=option_label, row=row)
         self.bucket_idx = bucket_idx
@@ -184,6 +184,23 @@ class BucketOptionButton(discord.ui.Button['BucketsView']):
         await interaction.response.edit_message(content=content, view=new_view)
 
 
+class BucketsSubmitButton(discord.ui.Button['BucketsView']):
+    def __init__(self, row):
+        super().__init__(style=discord.ButtonStyle.success, label="Submit", row=row)
+
+    async def callback(self, interaction: discord.Interaction):
+        assert self.view is not None
+        view: LineupView = self.view
+        await interaction.response.edit_message(content=f"Submission in progress...\n", view=view)
+        followup = interaction.followup
+        try:
+            message = await view.lineup.submit()
+            await followup.send(message, ephemeral=True)
+        except Exception as err:
+            await ADMIN_LOGGER.error(f"Submit:{err}")
+            await followup.send(f"Submission failed, please retry", ephemeral=True)
+
+
 class BucketsView(RedemptionRunView):
     def __init__(self, lineup_service, ranking_service, user_id):
         super().__init__(lineup_service, ranking_service, user_id)
@@ -191,10 +208,11 @@ class BucketsView(RedemptionRunView):
         buckets = lineup_service.rr.buckets
         for i in range(len(buckets)):
             bucket = buckets[i]
-            self.add_item(BucketOptionButton(i, bucket.options[0][0], bucket.options[0][1], int(i / 2)))
-            self.add_item(BucketOptionButton(i, bucket.options[1][0], bucket.options[1][1], int(i / 2)))
+            self.add_item(BucketsOptionButton(i, bucket.options[0][0], bucket.options[0][1], int(i / 2)))
+            self.add_item(BucketsOptionButton(i, bucket.options[1][0], bucket.options[1][1], int(i / 2)))
 
         self.add_item(LineupButton(int((len(buckets) - 1) / 2) + 1))
+        self.add_item(BucketsSubmitButton(int((len(buckets) - 1) / 2) + 1))
         self.lineup = lineup_service.get_or_create_lineup(user_id)
 
     async def select(self, bucket_idx, selected):
