@@ -67,6 +67,16 @@
             "IND",
             "NYK"
           ]
+        },
+        {
+          "stats": "PTS",
+          "order": "DESC",
+          "momentTypes": "Dunk,3 Pointer",
+          "isTeam": false,
+          "options": [
+            203999,
+            1630162
+          ]
         }
       ]
     },
@@ -101,6 +111,16 @@
           "options": [
             1630596,
             201143
+          ]
+        },
+        {
+          "stats": "PTS",
+          "order": "DESC",
+          "momentTypes": "Any",
+          "isTeam": true,
+          "options": [
+            "CLE",
+            "BOS"
           ]
         }
       ]
@@ -137,6 +157,16 @@
             1627783,
             1628384
           ]
+        },
+        {
+          "stats": "BLK",
+          "order": "DESC",
+          "momentTypes": "Any",
+          "isTeam": true,
+          "options": [
+            "IND",
+            "NYK"
+          ]
         }
       ]
     },
@@ -171,6 +201,16 @@
           "options": [
             "DAL",
             "OKC"
+          ]
+        },
+        {
+          "stats": "AST",
+          "order": "DESC",
+          "momentTypes": "Assist",
+          "isTeam": false,
+          "options": [
+            1628401,
+            1629636
           ]
         }
       ]
@@ -207,6 +247,16 @@
             "DEN",
             "MIN"
           ]
+        },
+        {
+          "stats": "BLK",
+          "order": "DESC",
+          "momentTypes": "Block",
+          "isTeam": false,
+          "options": [
+            1629011,
+            1626167
+          ]
         }
       ]
     },
@@ -241,6 +291,16 @@
           "options": [
             201950,
             1629636
+          ]
+        },
+        {
+          "stats": "STL",
+          "order": "DESC",
+          "momentTypes": "Any",
+          "isTeam": true,
+          "options": [
+            "OKC",
+            "DAL"
           ]
         }
       ]
@@ -277,6 +337,16 @@
             1628978,
             1626167
           ]
+        },
+        {
+          "stats": "BLK",
+          "order": "DESC",
+          "momentTypes": "Any",
+          "isTeam": true,
+          "options": [
+            "DEN",
+            "MIN"
+          ]
         }
       ]
     },
@@ -311,6 +381,16 @@
           "options": [
             "OKC",
             "DAL"
+          ]
+        },
+        {
+          "stats": "AST",
+          "order": "DESC",
+          "momentTypes": "Assist",
+          "isTeam": false,
+          "options": [
+            1628369,
+            1628378
           ]
         }
       ]

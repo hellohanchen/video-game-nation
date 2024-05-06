@@ -121,9 +121,10 @@ async def update_stats():
         dates = RR_RANKING_SERVICE.get_previous_game_dates(RR_LINEUP_SERVICE.current_game_date)
 
         for message in RR_CHANNEL_MESSAGES:
-            winners, weekly_lb = RR_RANKING_SERVICE.formatted_slate_leaderboard(dates, 20)
+            msgs = RR_RANKING_SERVICE.formatted_slate_leaderboard(dates, 20)
             await message.channel.send(init_lb)
-            await message.channel.send(weekly_lb)
+            for msg in msgs:
+                await message.channel.send(msg)
 
         global REFRESH_COUNT
         REFRESH_COUNT = 59

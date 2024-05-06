@@ -71,7 +71,7 @@ class LineupBucketsButton(discord.ui.Button['LineupView']):
         await interaction.response.edit_message(content=message, view=new_view)
 
 
-class LineupScheduleButton(discord.ui.Button['LineupView']):
+class LineupResultsButton(discord.ui.Button['LineupView']):
     def __init__(self):
         super().__init__(style=discord.ButtonStyle.secondary, label="Run Results", row=1)
 
@@ -150,7 +150,7 @@ class LineupView(RedemptionRunView):
         self.add_item(LineupBucketsButton())
         self.add_item(LineupRulesButton())
         self.add_item(LineupSubmitButton())
-        self.add_item(LineupScheduleButton())
+        self.add_item(LineupResultsButton())
         self.add_item(LineupButton(2))
         self.add_item(LineupScoreButton())
         self.add_item(LineupLeaderboardButton())

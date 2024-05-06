@@ -63,6 +63,7 @@ class RankingService(AbstractLineupService):
                 NBA_PROVIDER.reload()
                 RR_LINEUP_SERVICE.reload()
 
+            self.current_game_date = RR_LINEUP_SERVICE.current_game_date
             self.status = GameDateStatus.PRE_GAME
         elif self.status == GameDateStatus.PRE_GAME:  # more from PRE_GAME to IN_GAME or POST_GAME
             self.current_game_date = to_slash_date(datetime.datetime.strptime(scoreboard['gameDate'], '%Y-%m-%d'))
@@ -168,7 +169,7 @@ class RankingService(AbstractLineupService):
         if self.status != GameDateStatus.IN_GAME and self.status != GameDateStatus.POST_GAME:
             message = "***Leaderboard {}***\n\n".format(RR_LINEUP_SERVICE.current_game_date)
             submissions = get_submission_count(RR_LINEUP_SERVICE.current_game_date)
-            return [message + "Games are not started yet.\nTotal submissions: **{}**\n".format(submissions)]
+            return message + "Games are not started yet.\nTotal submissions: **{}**\n".format(submissions)
 
         submissions, _ = get_submission_count(self.current_game_date)
         message = f"***Leaderboard {self.current_game_date}***\n\n"
