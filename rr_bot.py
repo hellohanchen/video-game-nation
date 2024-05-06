@@ -125,8 +125,8 @@ async def update_stats():
             await message.channel.send(init_lb)
             await message.channel.send(weekly_lb)
 
-    global REFRESH_COUNT
-    REFRESH_COUNT = 59
+        global REFRESH_COUNT
+        REFRESH_COUNT = 59
 
 
 # start the bot
