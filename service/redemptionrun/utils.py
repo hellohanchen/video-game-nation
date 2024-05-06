@@ -2,15 +2,24 @@ from typing import List
 
 from service.redemptionrun.redemption_run import RedemptionRun
 
-
 RR_SETS = [141, 142, 143]
+PLAYOFF_SETS = [
+    16, 17, 18, 19, 20, 21,
+    39, 40, 41,
+    67, 68, 69, 104, 105, 110,
+    141, 142, 143
+]
 
 
 def build_rr_collection(ts_provider, plays, rr: RedemptionRun, team_ids: List[int]):
     moment_types = {}
     for b in rr.buckets:
-        moment_types[b.options[0][0]] = b.moment_types
-        moment_types[b.options[1][0]] = b.moment_types
+        if b.is_team:
+            moment_types[b.options[0][0]] = ["Playoff"]
+            moment_types[b.options[1][0]] = ["Playoff"]
+        else:
+            moment_types[b.options[0][0]] = b.moment_types
+            moment_types[b.options[1][0]] = b.moment_types
 
     collection = {}
     not_found_plays = []
@@ -35,13 +44,23 @@ def build_rr_collection(ts_provider, plays, rr: RedemptionRun, team_ids: List[in
                 identifier = play['teamId']
             else:
                 identifier = play['playerId']
+
+            # check whether this is a redemption moment
             if identifier in team_ids and set_id in RR_SETS:
                 rr_moment_count += 1
 
+            # check whether the id is in the options
             if identifier not in moment_types:
                 continue
-            if 'Any' not in moment_types[identifier] and play['playType'] not in moment_types[identifier]:
-                continue
+
+            # check required moment types
+            required_types = moment_types[identifier]
+            if 'Playoff' in required_types:
+                if set_id not in PLAYOFF_SETS:
+                    continue
+            else:
+                if 'Any' not in required_types and play['playType'] not in moment_types[identifier]:
+                    continue
 
             serial = plays[play_id][set_id]
             tier = play['tier']

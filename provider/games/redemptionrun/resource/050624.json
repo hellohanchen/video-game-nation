@@ -10,6 +10,31 @@
     "CLE"
   ],
   "runs": {
+    "05/05/2024": {
+      "threshold": 0.5,
+      "buckets": [
+        {
+          "stats": "PTS",
+          "order": "DESC",
+          "momentTypes": "Dunk,3 Pointer",
+          "isTeam": false,
+          "options": [
+            1631094,
+            1628378
+          ]
+        },
+        {
+          "stats": "STL",
+          "order": "DESC",
+          "momentTypes": "Any Playoff",
+          "isTeam": true,
+          "options": [
+            "ORL",
+            "CLE"
+          ]
+        }
+      ]
+    },
     "05/06/2024": {
       "threshold": 0.5,
       "buckets": [
@@ -26,7 +51,7 @@
         {
           "stats": "BLK",
           "order": "DESC",
-          "momentTypes": "Any",
+          "momentTypes": "Any Playoff",
           "isTeam": true,
           "options": [
             "MIN",
@@ -36,11 +61,21 @@
         {
           "stats": "STL",
           "order": "DESC",
-          "momentTypes": "Any",
+          "momentTypes": "Any Playoff",
           "isTeam": true,
           "options": [
             "IND",
             "NYK"
+          ]
+        },
+        {
+          "stats": "PTS",
+          "order": "DESC",
+          "momentTypes": "Dunk,3 Pointer",
+          "isTeam": false,
+          "options": [
+            203999,
+            1630162
           ]
         }
       ]
@@ -61,7 +96,7 @@
         {
           "stats": "AST",
           "order": "DESC",
-          "momentTypes": "Any",
+          "momentTypes": "Any Playoff",
           "isTeam": true,
           "options": [
             "DAL",
@@ -76,6 +111,16 @@
           "options": [
             1630596,
             201143
+          ]
+        },
+        {
+          "stats": "PTS",
+          "order": "DESC",
+          "momentTypes": "Any Playoff",
+          "isTeam": true,
+          "options": [
+            "CLE",
+            "BOS"
           ]
         }
       ]
@@ -96,7 +141,7 @@
         {
           "stats": "AST",
           "order": "DESC",
-          "momentTypes": "Any",
+          "momentTypes": "Any Playoff",
           "isTeam": true,
           "options": [
             "IND",
@@ -111,6 +156,16 @@
           "options": [
             1627783,
             1628384
+          ]
+        },
+        {
+          "stats": "BLK",
+          "order": "DESC",
+          "momentTypes": "Any Playoff",
+          "isTeam": true,
+          "options": [
+            "IND",
+            "NYK"
           ]
         }
       ]
@@ -131,7 +186,7 @@
         {
           "stats": "STL",
           "order": "DESC",
-          "momentTypes": "Any",
+          "momentTypes": "Any Playoff",
           "isTeam": true,
           "options": [
             "CLE",
@@ -141,11 +196,21 @@
         {
           "stats": "BLK",
           "order": "DESC",
-          "momentTypes": "Any",
+          "momentTypes": "Any Playoff",
           "isTeam": true,
           "options": [
             "DAL",
             "OKC"
+          ]
+        },
+        {
+          "stats": "AST",
+          "order": "DESC",
+          "momentTypes": "Assist",
+          "isTeam": false,
+          "options": [
+            1628401,
+            1629636
           ]
         }
       ]
@@ -166,7 +231,7 @@
         {
           "stats": "PTS",
           "order": "DESC",
-          "momentTypes": "Any",
+          "momentTypes": "Any Playoff",
           "isTeam": true,
           "options": [
             "NYK",
@@ -176,11 +241,21 @@
         {
           "stats": "STL",
           "order": "DESC",
-          "momentTypes": "Any",
+          "momentTypes": "Any Playoff",
           "isTeam": true,
           "options": [
             "DEN",
             "MIN"
+          ]
+        },
+        {
+          "stats": "BLK",
+          "order": "DESC",
+          "momentTypes": "Block",
+          "isTeam": false,
+          "options": [
+            1629011,
+            1626167
           ]
         }
       ]
@@ -201,7 +276,7 @@
         {
           "stats": "BLK",
           "order": "DESC",
-          "momentTypes": "Any",
+          "momentTypes": "Any Playoff",
           "isTeam": true,
           "options": [
             "BOS",
@@ -216,6 +291,16 @@
           "options": [
             201950,
             1629636
+          ]
+        },
+        {
+          "stats": "STL",
+          "order": "DESC",
+          "momentTypes": "Any Playoff",
+          "isTeam": true,
+          "options": [
+            "OKC",
+            "DAL"
           ]
         }
       ]
@@ -236,7 +321,7 @@
         {
           "stats": "AST",
           "order": "DESC",
-          "momentTypes": "Any",
+          "momentTypes": "Any Playoff",
           "isTeam": true,
           "options": [
             "NYK",
@@ -252,6 +337,16 @@
             1628978,
             1626167
           ]
+        },
+        {
+          "stats": "BLK",
+          "order": "DESC",
+          "momentTypes": "Any Playoff",
+          "isTeam": true,
+          "options": [
+            "DEN",
+            "MIN"
+          ]
         }
       ]
     },
@@ -261,7 +356,7 @@
         {
           "stats": "BLK",
           "order": "DESC",
-          "momentTypes": "Any",
+          "momentTypes": "Any Playoff",
           "isTeam": false,
           "options": [
             1631096,
@@ -271,7 +366,7 @@
         {
           "stats": "STL",
           "order": "DESC",
-          "momentTypes": "Any",
+          "momentTypes": "Any Playoff",
           "isTeam": true,
           "options": [
             "BOS",
@@ -281,11 +376,21 @@
         {
           "stats": "PTS",
           "order": "DESC",
-          "momentTypes": "Any",
+          "momentTypes": "Any Playoff",
           "isTeam": true,
           "options": [
             "OKC",
             "DAL"
+          ]
+        },
+        {
+          "stats": "AST",
+          "order": "DESC",
+          "momentTypes": "Assist",
+          "isTeam": false,
+          "options": [
+            1628369,
+            1628378
           ]
         }
       ]

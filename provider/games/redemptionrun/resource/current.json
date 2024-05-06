@@ -26,7 +26,7 @@
         {
           "stats": "STL",
           "order": "DESC",
-          "momentTypes": "Any",
+          "momentTypes": "Any Playoff",
           "isTeam": true,
           "options": [
             "ORL",
@@ -51,7 +51,7 @@
         {
           "stats": "BLK",
           "order": "DESC",
-          "momentTypes": "Any",
+          "momentTypes": "Any Playoff",
           "isTeam": true,
           "options": [
             "MIN",
@@ -61,7 +61,7 @@
         {
           "stats": "STL",
           "order": "DESC",
-          "momentTypes": "Any",
+          "momentTypes": "Any Playoff",
           "isTeam": true,
           "options": [
             "IND",
@@ -96,7 +96,7 @@
         {
           "stats": "AST",
           "order": "DESC",
-          "momentTypes": "Any",
+          "momentTypes": "Any Playoff",
           "isTeam": true,
           "options": [
             "DAL",
@@ -116,7 +116,7 @@
         {
           "stats": "PTS",
           "order": "DESC",
-          "momentTypes": "Any",
+          "momentTypes": "Any Playoff",
           "isTeam": true,
           "options": [
             "CLE",
@@ -141,7 +141,7 @@
         {
           "stats": "AST",
           "order": "DESC",
-          "momentTypes": "Any",
+          "momentTypes": "Any Playoff",
           "isTeam": true,
           "options": [
             "IND",
@@ -161,7 +161,7 @@
         {
           "stats": "BLK",
           "order": "DESC",
-          "momentTypes": "Any",
+          "momentTypes": "Any Playoff",
           "isTeam": true,
           "options": [
             "IND",
@@ -186,7 +186,7 @@
         {
           "stats": "STL",
           "order": "DESC",
-          "momentTypes": "Any",
+          "momentTypes": "Any Playoff",
           "isTeam": true,
           "options": [
             "CLE",
@@ -196,7 +196,7 @@
         {
           "stats": "BLK",
           "order": "DESC",
-          "momentTypes": "Any",
+          "momentTypes": "Any Playoff",
           "isTeam": true,
           "options": [
             "DAL",
@@ -231,7 +231,7 @@
         {
           "stats": "PTS",
           "order": "DESC",
-          "momentTypes": "Any",
+          "momentTypes": "Any Playoff",
           "isTeam": true,
           "options": [
             "NYK",
@@ -241,7 +241,7 @@
         {
           "stats": "STL",
           "order": "DESC",
-          "momentTypes": "Any",
+          "momentTypes": "Any Playoff",
           "isTeam": true,
           "options": [
             "DEN",
@@ -276,7 +276,7 @@
         {
           "stats": "BLK",
           "order": "DESC",
-          "momentTypes": "Any",
+          "momentTypes": "Any Playoff",
           "isTeam": true,
           "options": [
             "BOS",
@@ -296,7 +296,7 @@
         {
           "stats": "STL",
           "order": "DESC",
-          "momentTypes": "Any",
+          "momentTypes": "Any Playoff",
           "isTeam": true,
           "options": [
             "OKC",
@@ -321,7 +321,7 @@
         {
           "stats": "AST",
           "order": "DESC",
-          "momentTypes": "Any",
+          "momentTypes": "Any Playoff",
           "isTeam": true,
           "options": [
             "NYK",
@@ -341,7 +341,7 @@
         {
           "stats": "BLK",
           "order": "DESC",
-          "momentTypes": "Any",
+          "momentTypes": "Any Playoff",
           "isTeam": true,
           "options": [
             "DEN",
@@ -356,7 +356,7 @@
         {
           "stats": "BLK",
           "order": "DESC",
-          "momentTypes": "Any",
+          "momentTypes": "Any Playoff",
           "isTeam": false,
           "options": [
             1631096,
@@ -366,7 +366,7 @@
         {
           "stats": "STL",
           "order": "DESC",
-          "momentTypes": "Any",
+          "momentTypes": "Any Playoff",
           "isTeam": true,
           "options": [
             "BOS",
@@ -376,7 +376,7 @@
         {
           "stats": "PTS",
           "order": "DESC",
-          "momentTypes": "Any",
+          "momentTypes": "Any Playoff",
           "isTeam": true,
           "options": [
             "OKC",

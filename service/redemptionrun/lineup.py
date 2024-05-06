@@ -202,7 +202,7 @@ class Lineup:
                 selection = self.selections[i]
                 identifier = selection.selected
                 if identifier not in collection:
-                    return f"Missing {list_to_str(bucket.moment_types)} {'TEAM ' if bucket.is_team else ''}" \
+                    return f"Missing {list_to_str(bucket.moment_types)} " \
                            f"moments of {self.service.rr.buckets[i].get_option_name(identifier)}"
                 selection.tier = collection[identifier]['tier']
                 selection.serial = collection[identifier]['serial']
