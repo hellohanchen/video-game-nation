@@ -11,15 +11,15 @@ PLAYOFF_SETS = [
 ]
 
 
-def build_rr_collection(ts_provider, plays, rr: RedemptionRun, team_ids: List[int]):
-    moment_types = {}
+def build_rr_collection(ts_provider, plays, rr: RedemptionRun, redemption_team_ids: List[int]):
+    moment_types_of_ids = {}
     for b in rr.buckets:
         if b.is_team:
-            moment_types[b.options[0][0]] = ["Playoff"]
-            moment_types[b.options[1][0]] = ["Playoff"]
+            moment_types_of_ids[b.options[0][0]] = ["Playoff"]
+            moment_types_of_ids[b.options[1][0]] = ["Playoff"]
         else:
-            moment_types[b.options[0][0]] = b.moment_types
-            moment_types[b.options[1][0]] = b.moment_types
+            moment_types_of_ids[b.options[0][0]] = b.moment_types
+            moment_types_of_ids[b.options[1][0]] = b.moment_types
 
     collection = {}
     not_found_plays = []
@@ -40,48 +40,57 @@ def build_rr_collection(ts_provider, plays, rr: RedemptionRun, team_ids: List[in
                 not_found_plays.append(play_id * 10000 + set_id)
                 continue
 
-            if 'TEAM' in play['badges']:
-                identifier = play['teamId']
-            else:
-                identifier = play['playerId']
-
-            # check whether this is a redemption moment
-            if identifier in team_ids and set_id in RR_SETS:
-                rr_moment_count += 1
-
-            # check whether the id is in the options
-            if identifier not in moment_types:
-                continue
-
-            # check required moment types
-            required_types = moment_types[identifier]
-            if 'Playoff' in required_types:
-                if set_id not in PLAYOFF_SETS:
-                    continue
-            else:
-                if 'Any' not in required_types and play['playType'] not in moment_types[identifier]:
-                    continue
-
             serial = plays[play_id][set_id]
             tier = play['tier']
 
-            if identifier is not None and identifier != 0:
-                if identifier not in collection:
-                    collection[identifier] = {
+            # handle player id case
+            player_id = play['playerId']
+            if player_id in moment_types_of_ids:
+                required_types = moment_types_of_ids[player_id]
+                if 'Any' not in required_types and play['playType'] not in moment_types_of_ids[player_id]:
+                    continue
+
+                if player_id not in collection:
+                    collection[player_id] = {
                         'tier': tier,
                         'serial': serial,
                     }
                 else:
-                    existing_tier = collection[identifier]['tier']
+                    existing_tier = collection[player_id]['tier']
                     if existing_tier == 'Common' or existing_tier == 'Fandom':
                         if tier == 'Rare':
-                            collection[identifier]['tier'] = 'Rare'
+                            collection[player_id]['tier'] = 'Rare'
                         elif tier in ['Legendary', 'Ultimate']:
-                            collection[identifier]['tier'] = 'Legendary'
+                            collection[player_id]['tier'] = 'Legendary'
                     elif existing_tier == 'Rare' and tier in ['Legendary', 'Ultimate']:
-                        collection[identifier]['tier'] = 'Legendary'
+                        collection[player_id]['tier'] = 'Legendary'
 
-                    if collection[identifier]['serial'] > serial:
-                        collection[identifier]['serial'] = serial
+                    if collection[player_id]['serial'] > serial:
+                        collection[player_id]['serial'] = serial
+
+            team_id = play['teamId']
+            if team_id in redemption_team_ids and set_id in RR_SETS:
+                rr_moment_count += 1
+            if team_id in moment_types_of_ids:
+                if set_id not in PLAYOFF_SETS:
+                    continue
+
+                if team_id not in collection:
+                    collection[team_id] = {
+                        'tier': tier,
+                        'serial': serial,
+                    }
+                else:
+                    existing_tier = collection[team_id]['tier']
+                    if existing_tier == 'Common' or existing_tier == 'Fandom':
+                        if tier == 'Rare':
+                            collection[team_id]['tier'] = 'Rare'
+                        elif tier in ['Legendary', 'Ultimate']:
+                            collection[team_id]['tier'] = 'Legendary'
+                    elif existing_tier == 'Rare' and tier in ['Legendary', 'Ultimate']:
+                        collection[team_id]['tier'] = 'Legendary'
+
+                    if collection[team_id]['serial'] > serial:
+                        collection[team_id]['serial'] = serial
 
     return collection, not_found_plays, rr_moment_count
