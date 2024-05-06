@@ -11,6 +11,7 @@ from repository.vgn_players import get_player_ids_names
 from repository.vgn_users import get_user_new
 from service.redemptionrun.redemption_run import RRSelection, RedemptionRun
 from service.redemptionrun.utils import build_rr_collection
+from utils import list_to_str
 from vgnlog.channel_logger import ADMIN_LOGGER
 
 
@@ -197,11 +198,12 @@ class Lineup:
                 return f"You've lost {losses} lives and have {rr_moments} 23-24 redemption/playoff moments."
 
             for i in range(len(self.service.rr.buckets)):
+                bucket = self.service.rr.buckets[i]
                 selection = self.selections[i]
                 identifier = selection.selected
                 if identifier not in collection:
-                    return f"Missing {self.service.rr.buckets[i].moment_types} moments of " \
-                           f"{self.service.rr.buckets[i].get_option_name(identifier)}"
+                    return f"Missing {list_to_str(bucket.moment_types)} {'TEAM ' if bucket.is_team else ''}" \
+                           f"moments of {self.service.rr.buckets[i].get_option_name(identifier)}"
                 selection.tier = collection[identifier]['tier']
                 selection.serial = collection[identifier]['serial']
         except Exception as err:
