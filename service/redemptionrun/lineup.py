@@ -88,10 +88,10 @@ class LineupService(AbstractLineupService):
         return NBA_PROVIDER.get_games_on_date(self.current_game_date).items()
 
     def __formatted_schedule(self) -> str:
-        message = f"**Games on {self.current_game_date}**\n"
+        message = f"__Games on {self.current_game_date}__\n"
 
         for _, game in self.get_coming_games():
-            message += f"{game['awayTeam']} at {game['homeTeam']}\n"
+            message += f"**{game['awayTeam']} at {game['homeTeam']}**\n"
 
         return message
 
@@ -136,7 +136,6 @@ class Lineup:
                 message += bucket.get_formatted()
             else:
                 message += selection.format_with_bucket(bucket)
-            message += '\n'
         message += f"**Survival Rate: {int(self.service.rr.threshold * 100.0)}%**"
 
         return message

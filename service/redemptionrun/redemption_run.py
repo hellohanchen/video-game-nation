@@ -1,7 +1,7 @@
 from typing import List, Dict, Tuple
 
 from constants import NBA_TEAMS, NBA_TEAM_NAMES
-from utils import parse_boxscore_minutes
+from utils import parse_boxscore_minutes, list_to_str
 
 STATS_MAP = {
     "PTS": "points",
@@ -72,10 +72,13 @@ class RRBucket:
             self.options: List[Tuple[int, str]] = [
                 (int(o), players[int(o)]['full_name']) for o in bucket_json['options']]
 
+    def get_formatted_stats(self):
+        return f"__{'Team' if self.is_team else 'Player'} {'Higher' if self.order == 'DESC' else 'Lower'} " \
+               f"{'total ' if self.is_team else ''}{self.stats}:__\n"
+
     def get_formatted(self):
-        return f"{'Higher' if self.order == 'DESC' else 'Lower'} {'total ' if self.is_team else ''}{self.stats}:\n" \
-               f"*Moment types: {self.moment_types}*\n" \
-               f"{self.options[0][1]} vs {self.options[1][1]}\n"
+        return f"{self.get_formatted_stats()}*Moment types: {list_to_str(self.moment_types)}*\n" \
+               f"{self.options[0][1]} vs {self.options[1][1]}\n\n"
 
     def load_team_score(self, team_players_stats: List[Dict[str, any]]) -> float:
         result = 0.0
@@ -127,23 +130,21 @@ class RRSelection:
 
     def format_with_bucket(self, bucket: RRBucket) -> str:
         if self.selected == bucket.options[0][0]:
-            return f"{'Higher' if bucket.order == 'DESC' else 'Lower'} " \
-                   f"{'total ' if bucket.is_team else ''}{bucket.stats}:\n" \
-                   f"*Moment types: {bucket.moment_types}*\n" \
-                   f"**{bucket.options[0][1]}** vs {bucket.options[1][1]}\n"
+            return f"{bucket.get_formatted_stats()}*Moment types: {list_to_str(bucket.moment_types)}*\n" \
+                   f"**{bucket.options[0][1]}** vs {bucket.options[1][1]}\n\n"
         else:
-            return f"{'Higher' if bucket.order == 'DESC' else 'Lower'} " \
-                   f"{'total ' if bucket.is_team else ''}{bucket.stats}:\n" \
-                   f"*Moment types: {bucket.moment_types}*\n" \
-                   f"{bucket.options[0][1]} vs **{bucket.options[1][1]}**\n"
+            return f"{bucket.get_formatted_stats()}*Moment types: {list_to_str(bucket.moment_types)}*\n" \
+                   f"{bucket.options[0][1]} vs **{bucket.options[1][1]}**\n\n"
 
     def format_with_bucket_and_score(self, bucket: RRBucket, op_0_score: float, op_1_score: float) -> str:
         if self.selected == bucket.options[0][0]:
-            return f"{self.format_with_bucket(bucket)}" \
-                   f"**{op_0_score} {bucket.stats}** - {op_1_score} {bucket.stats}\n"
+            return f"{bucket.get_formatted_stats()}" \
+                   f"**{bucket.options[0][1]}** vs {bucket.options[1][1]}\n" \
+                   f"**{op_0_score} {bucket.stats}** - {op_1_score} {bucket.stats}\n\n"
         else:
-            return f"{self.format_with_bucket(bucket)}" \
-                   f"{op_1_score} {bucket.stats} - **{op_1_score} {bucket.stats}**\n"
+            return f"{bucket.get_formatted_stats()}" \
+                   f"{bucket.options[0][1]} vs **{bucket.options[1][1]}**\n" \
+                   f"{op_0_score} {bucket.stats} - **{op_1_score} {bucket.stats}**\n\n"
 
     def compute_score(self, bucket: RRBucket, op_0_score: float, op_1_score: float) -> [bool, float]:
         if self.selected == bucket.options[0][0]:
@@ -197,6 +198,8 @@ class RedemptionRun:
                 rares += 1
 
             message += selection.format_with_bucket_and_score(bucket, bucket_scores[0], bucket_scores[1])
+
+        message += f"{wins * '✔' if wins > 0 else '**0**'}, {sum_score} score, {serials} total serial\n\n"
 
         return wins, sum_score, serials, legos, rares, message
 

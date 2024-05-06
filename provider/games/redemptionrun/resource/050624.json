@@ -10,31 +10,6 @@
     "CLE"
   ],
   "runs": {
-    "05/05/2024": {
-      "threshold": 0.5,
-      "buckets": [
-        {
-          "stats": "PTS",
-          "order": "DESC",
-          "momentTypes": "Dunk,3 Pointer",
-          "isTeam": false,
-          "options": [
-            1631094,
-            1628378
-          ]
-        },
-        {
-          "stats": "STL",
-          "order": "DESC",
-          "momentTypes": "Any",
-          "isTeam": true,
-          "options": [
-            "ORL",
-            "CLE"
-          ]
-        }
-      ]
-    },
     "05/06/2024": {
       "threshold": 0.5,
       "buckets": [

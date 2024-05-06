@@ -176,7 +176,7 @@ class RankingService(AbstractLineupService):
             uid = self.leaderboard[i]
             score = self.scores[uid]
             message += f"**#{i + 1}.** **{self.lineups[uid].username}** " \
-                       f"{score['wins']}x🟢, {score['sum_score']}\n"
+                       f"{score['wins'] * '✔' if score['wins'] > 0 else '**0**'}, {score['sum_score']}, {score['serials']}\n"
 
         message += f"\nTotal submissions: **{submissions}**\n"
 
@@ -214,12 +214,12 @@ class RankingService(AbstractLineupService):
             else:
                 result = daily_results.get(d)
                 if result['win']:
-                    message += f"**{d[0:-5]} WIN** {result['points']}x🟢, {result['raw_score']:.2f}, #{result['rank']}\n"
+                    message += f"**{d[0:-5]} WIN** {result['points']}x✔, {result['raw_score']:.2f}, #{result['rank']}\n"
                 else:
-                    message += f"**{d[0:-5]} LOST** {result['points']}x🟢, {result['raw_score']:.2f}, #{result['rank']}\n"
+                    message += f"**{d[0:-5]} LOST** {result['points']}x✔, {result['raw_score']:.2f}, #{result['rank']}\n"
 
         message += f"\nYour slate result:\n" \
-                   f"**{int(slate_result['wins'])}** WINS, **{int(slate_result['total_points'])}**x🟢, " \
+                   f"**{int(slate_result['wins'])}** WINS, **{int(slate_result['total_points'])}**x✔, " \
                    f"**{int(slate_result['losses'])}** LOSSES, **{slate_result['total_score']:.2f}** SCORE, " \
                    f"**RANK #{slate_result['rank']}**\n" \
                    f"*current game date not included*"
@@ -244,7 +244,7 @@ class RankingService(AbstractLineupService):
         loaded = get_slate_ranks(dates, top)
         for i in range(0, min(top, len(loaded))):
             new_message = f"#**{i + 1}.**  **{loaded[i]['username']}** " \
-                          f"*{loaded[i]['wins']}xWINS* *{loaded[i]['total_points']}x🟢* " \
+                          f"*{loaded[i]['wins']}xWINS* *{loaded[i]['total_points']}x✔* " \
                           f"*{loaded[i]['losses']}xLOSSES* *{loaded[i]['total_score']:.2f}*\n"
             message, _ = truncate_message(messages, message, new_message, 1950)
 
@@ -263,8 +263,9 @@ class RankingService(AbstractLineupService):
         if user_id not in self.scores:
             return ["Scores are not updated yet."]
 
-        return [f"{self.scores[user_id]['message']}\n"
-                f"You need to be top **{math.ceil(len(self.scores) * self.rr.threshold)}** to survive."]
+        return [f"{self.scores[user_id]['message']}"
+                f"**Rank #{self.scores[user_id]['rank']}**, "
+                f"top **{math.ceil(len(self.scores) * self.rr.threshold)}** survive."]
 
     @staticmethod
     def enrich_stats(player_stats):

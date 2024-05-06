@@ -217,7 +217,7 @@ class NBAProvider:
         message = ""
 
         if len(score_board['games']) > 0:
-            message += "**Games on {}**\n".format(score_board['gameDate'])
+            message += "__Games on {}__\n".format(score_board['gameDate'])
 
             for game in score_board['games']:
                 message += "**{}** {} : {} **{}** {}\n".format(
