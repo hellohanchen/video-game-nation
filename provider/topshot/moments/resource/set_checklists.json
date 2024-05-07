@@ -1,4 +1,72 @@
 {
+  "143": {
+    "name": "2024 NBA Playoffs 5",
+    "series": 5,
+    "moments": {
+      "5212": {
+        "player": "Nikola Joki\u0107",
+        "team": "Denver Nuggets",
+        "playerId": 203999,
+        "date": "2024-04-27"
+      },
+      "5210": {
+        "player": "Michael Porter Jr.",
+        "team": "Denver Nuggets",
+        "playerId": 1629008,
+        "date": "2024-04-23"
+      },
+      "5209": {
+        "player": "Bradley Beal",
+        "team": "Phoenix Suns",
+        "playerId": 203078,
+        "date": "2024-04-20"
+      },
+      "5208": {
+        "player": "Karl-Anthony Towns",
+        "team": "Minnesota Timberwolves",
+        "playerId": 1626157,
+        "date": "2024-04-27"
+      },
+      "5206": {
+        "player": "Kevin Durant",
+        "team": "Phoenix Suns",
+        "playerId": 201142,
+        "date": "2024-04-29"
+      },
+      "5205": {
+        "player": "Jaden McDaniels",
+        "team": "Minnesota Timberwolves",
+        "playerId": 1630183,
+        "date": "2024-04-23"
+      }
+    },
+    "count": 6
+  },
+  "142": {
+    "name": "Best of 2024 NBA Playoffs 5",
+    "series": 5,
+    "moments": {
+      "5211": {
+        "player": "Jamal Murray",
+        "team": "Denver Nuggets",
+        "playerId": 1627750,
+        "date": "2024-04-22"
+      },
+      "5207": {
+        "player": "Devin Booker",
+        "team": "Phoenix Suns",
+        "playerId": 1626164,
+        "date": "2024-04-29"
+      },
+      "5204": {
+        "player": "Anthony Edwards",
+        "team": "Minnesota Timberwolves",
+        "playerId": 1630162,
+        "date": "2024-04-20"
+      }
+    },
+    "count": 3
+  },
   "141": {
     "name": "The Champion's Path 2024 5",
     "series": 5,

@@ -14,12 +14,8 @@ PLAYOFF_SETS = [
 def build_rr_collection(ts_provider, plays, rr: RedemptionRun, redemption_team_ids: List[int]):
     moment_types_of_ids = {}
     for b in rr.buckets:
-        if b.is_team:
-            moment_types_of_ids[b.options[0][0]] = ["Playoff"]
-            moment_types_of_ids[b.options[1][0]] = ["Playoff"]
-        else:
-            moment_types_of_ids[b.options[0][0]] = b.moment_types
-            moment_types_of_ids[b.options[1][0]] = b.moment_types
+        moment_types_of_ids[b.options[0][0]] = b.moment_types
+        moment_types_of_ids[b.options[1][0]] = b.moment_types
 
     collection = {}
     not_found_plays = []
@@ -47,7 +43,7 @@ def build_rr_collection(ts_provider, plays, rr: RedemptionRun, redemption_team_i
             player_id = play['playerId']
             if player_id in moment_types_of_ids:
                 required_types = moment_types_of_ids[player_id]
-                if 'Any' not in required_types and play['playType'] not in moment_types_of_ids[player_id]:
+                if 'Any' not in required_types and play['playType'] not in required_types:
                     continue
 
                 if player_id not in collection:
@@ -72,8 +68,12 @@ def build_rr_collection(ts_provider, plays, rr: RedemptionRun, redemption_team_i
             if team_id in redemption_team_ids and set_id in RR_SETS:
                 rr_moment_count += 1
             if team_id in moment_types_of_ids:
-                if set_id not in PLAYOFF_SETS:
-                    continue
+                required_types = moment_types_of_ids[team_id]
+                if 'Any' not in required_types:
+                    if 'Playoff' not in required_types and play['playType'] not in required_types:
+                        continue
+                    elif set_id not in PLAYOFF_SETS:
+                        continue
 
                 if team_id not in collection:
                     collection[team_id] = {

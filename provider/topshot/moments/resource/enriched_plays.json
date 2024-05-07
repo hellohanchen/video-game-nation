@@ -54,8 +54,179 @@
     4221,
     4234
   ],
-  "count": 5628,
+  "count": 5637,
   "plays": {
+    "5212": [
+      {
+        "id": "c39f4a79-0a8e-4d09-a9b9-3945e866ac93",
+        "flowId": 5212,
+        "set": "2024 NBA Playoffs",
+        "setId": "8df8ceef-349e-49bb-9157-f81227d1ddef",
+        "setFlowId": 143,
+        "playerId": 203999,
+        "playerName": "Nikola Joki\u0107",
+        "team": "Denver Nuggets",
+        "teamAtMoment": "Denver Nuggets",
+        "playType": "Assist",
+        "date": "2024-04-27",
+        "series": 5,
+        "tier": "Fandom",
+        "badges": [],
+        "teamId": 1610612743
+      }
+    ],
+    "5211": [
+      {
+        "id": "393619c2-fe04-4a74-932d-fb134288c85e",
+        "flowId": 5211,
+        "set": "Best of 2024 NBA Playoffs",
+        "setId": "ec00d190-4367-4516-9c9e-287355e109bb",
+        "setFlowId": 142,
+        "playerId": 1627750,
+        "playerName": "Jamal Murray",
+        "team": "Denver Nuggets",
+        "teamAtMoment": "Denver Nuggets",
+        "playType": "Jump Shot",
+        "date": "2024-04-22",
+        "series": 5,
+        "tier": "Rare",
+        "badges": [],
+        "teamId": 1610612743
+      }
+    ],
+    "5210": [
+      {
+        "id": "46d04cce-6504-4dfc-92ca-364fef64a617",
+        "flowId": 5210,
+        "set": "2024 NBA Playoffs",
+        "setId": "8df8ceef-349e-49bb-9157-f81227d1ddef",
+        "setFlowId": 143,
+        "playerId": 1629008,
+        "playerName": "Michael Porter Jr.",
+        "team": "Denver Nuggets",
+        "teamAtMoment": "Denver Nuggets",
+        "playType": "3 Pointer",
+        "date": "2024-04-23",
+        "series": 5,
+        "tier": "Fandom",
+        "badges": [],
+        "teamId": 1610612743
+      }
+    ],
+    "5209": [
+      {
+        "id": "9d104404-dba9-45cc-8d55-7c0e25af3075",
+        "flowId": 5209,
+        "set": "2024 NBA Playoffs",
+        "setId": "8df8ceef-349e-49bb-9157-f81227d1ddef",
+        "setFlowId": 143,
+        "playerId": 203078,
+        "playerName": "Bradley Beal",
+        "team": "Phoenix Suns",
+        "teamAtMoment": "Phoenix Suns",
+        "playType": "Jump Shot",
+        "date": "2024-04-20",
+        "series": 5,
+        "tier": "Fandom",
+        "badges": [],
+        "teamId": 1610612756
+      }
+    ],
+    "5208": [
+      {
+        "id": "0b7d6a9d-b471-477f-a1cc-0057855ca031",
+        "flowId": 5208,
+        "set": "2024 NBA Playoffs",
+        "setId": "8df8ceef-349e-49bb-9157-f81227d1ddef",
+        "setFlowId": 143,
+        "playerId": 1626157,
+        "playerName": "Karl-Anthony Towns",
+        "team": "Minnesota Timberwolves",
+        "teamAtMoment": "Minnesota Timberwolves",
+        "playType": "3 Pointer",
+        "date": "2024-04-27",
+        "series": 5,
+        "tier": "Fandom",
+        "badges": [],
+        "teamId": 1610612750
+      }
+    ],
+    "5207": [
+      {
+        "id": "b6a7e010-e2ad-4936-8dd6-477845dc2d4f",
+        "flowId": 5207,
+        "set": "Best of 2024 NBA Playoffs",
+        "setId": "ec00d190-4367-4516-9c9e-287355e109bb",
+        "setFlowId": 142,
+        "playerId": 1626164,
+        "playerName": "Devin Booker",
+        "team": "Phoenix Suns",
+        "teamAtMoment": "Phoenix Suns",
+        "playType": "Jump Shot",
+        "date": "2024-04-29",
+        "series": 5,
+        "tier": "Rare",
+        "badges": [],
+        "teamId": 1610612756
+      }
+    ],
+    "5206": [
+      {
+        "id": "c3956d96-ccae-4f36-b2d1-4e617a2fa028",
+        "flowId": 5206,
+        "set": "2024 NBA Playoffs",
+        "setId": "8df8ceef-349e-49bb-9157-f81227d1ddef",
+        "setFlowId": 143,
+        "playerId": 201142,
+        "playerName": "Kevin Durant",
+        "team": "Phoenix Suns",
+        "teamAtMoment": "Phoenix Suns",
+        "playType": "Block",
+        "date": "2024-04-29",
+        "series": 5,
+        "tier": "Fandom",
+        "badges": [],
+        "teamId": 1610612756
+      }
+    ],
+    "5205": [
+      {
+        "id": "8a1d2ad5-6c19-4f20-96fe-985c2c83d258",
+        "flowId": 5205,
+        "set": "2024 NBA Playoffs",
+        "setId": "8df8ceef-349e-49bb-9157-f81227d1ddef",
+        "setFlowId": 143,
+        "playerId": 1630183,
+        "playerName": "Jaden McDaniels",
+        "team": "Minnesota Timberwolves",
+        "teamAtMoment": "Minnesota Timberwolves",
+        "playType": "3 Pointer",
+        "date": "2024-04-23",
+        "series": 5,
+        "tier": "Fandom",
+        "badges": [],
+        "teamId": 1610612750
+      }
+    ],
+    "5204": [
+      {
+        "id": "80fdc488-6405-499e-9d6d-c52e92950e47",
+        "flowId": 5204,
+        "set": "Best of 2024 NBA Playoffs",
+        "setId": "ec00d190-4367-4516-9c9e-287355e109bb",
+        "setFlowId": 142,
+        "playerId": 1630162,
+        "playerName": "Anthony Edwards",
+        "team": "Minnesota Timberwolves",
+        "teamAtMoment": "Minnesota Timberwolves",
+        "playType": "Reel",
+        "date": "2024-04-20",
+        "series": 5,
+        "tier": "Rare",
+        "badges": [],
+        "teamId": 1610612750
+      }
+    ],
     "5203": [
       {
         "id": "6866cd16-fd16-441e-9024-15d05705fb19",

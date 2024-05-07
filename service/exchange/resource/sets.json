@@ -141,7 +141,7 @@
       }
     },
     "Series 23-24": {
-      "count": 19,
+      "count": 21,
       "tiers": {
         "Common": {
           "124": "Base Set",
@@ -154,7 +154,8 @@
         },
         "Fandom": {
           "138": "2024 NBA All-Star",
-          "141": "The Champion's Path 2024"
+          "141": "The Champion's Path 2024",
+          "143": "2024 NBA Playoffs"
         },
         "Rare": {
           "127": "Throwdowns",
@@ -163,7 +164,8 @@
           "134": "Metallic Gold LE",
           "135": "Freshman Gems",
           "136": "Squad Goals",
-          "141": "The Champion's Path 2024"
+          "141": "The Champion's Path 2024",
+          "142": "Best of 2024 NBA Playoffs"
         },
         "Legendary": {
           "131": "Holo Icon",
