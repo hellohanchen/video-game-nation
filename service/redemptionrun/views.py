@@ -208,8 +208,8 @@ class BucketsView(RedemptionRunView):
         buckets = lineup_service.rr.buckets
         for i in range(len(buckets)):
             bucket = buckets[i]
-            self.add_item(BucketsOptionButton(i, bucket.options[0][0], bucket.options[0][1], int(i / 2)))
-            self.add_item(BucketsOptionButton(i, bucket.options[1][0], bucket.options[1][1], int(i / 2)))
+            self.add_item(BucketsOptionButton(i, bucket.options[0][0], f"{i + 1}.{bucket.options[0][1]}", int(i / 2)))
+            self.add_item(BucketsOptionButton(i, bucket.options[1][0], f"{i + 1}.{bucket.options[1][1]}", int(i / 2)))
 
         self.add_item(LineupButton(int((len(buckets) - 1) / 2) + 1))
         self.add_item(BucketsSubmitButton(int((len(buckets) - 1) / 2) + 1))

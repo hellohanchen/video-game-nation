@@ -91,7 +91,8 @@ class RRBucket:
     def load_player_score(self, single_player_stat: Dict[str, any]) -> float:
         if self.stats == 'AMT':
             assists = 0.0 if BOXSCORE_MAP['AST'] not in single_player_stat else single_player_stat[BOXSCORE_MAP['AST']]
-            turnovers = 0.0 if BOXSCORE_MAP['TOV'] not in single_player_stat else single_player_stat[BOXSCORE_MAP['TOV']]
+            turnovers = 0.0 if BOXSCORE_MAP['TOV'] not in single_player_stat \
+                else single_player_stat[BOXSCORE_MAP['TOV']]
             raw_score = assists - turnovers
         elif self.stats == 'SPB':
             steals = 0.0 if BOXSCORE_MAP['STL'] not in single_player_stat else single_player_stat[BOXSCORE_MAP['STL']]
@@ -197,7 +198,7 @@ class RedemptionRun:
             elif selection.tier == "Rare":
                 rares += 1
 
-            message += selection.format_with_bucket_and_score(bucket, bucket_scores[0], bucket_scores[1])
+            message += f"{i + 1}.{selection.format_with_bucket_and_score(bucket, bucket_scores[0], bucket_scores[1])}"
 
         message += f"{wins * '✔' if wins > 0 else '**0**'}, {sum_score} score, {serials} total serial\n\n"
 

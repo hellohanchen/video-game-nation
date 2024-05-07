@@ -133,6 +133,7 @@ class Lineup:
         for i in range(len(self.service.rr.buckets)):
             selection = self.selections[i]
             bucket = self.service.rr.buckets[i]
+            message += f"{i + 1}."
             if selection is None:
                 message += bucket.get_formatted()
             else:
