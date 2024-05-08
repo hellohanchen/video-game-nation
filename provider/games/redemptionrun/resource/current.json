@@ -61,7 +61,7 @@
         {
           "stats": "STL",
           "order": "DESC",
-          "momentTypes": "Steal",
+          "momentTypes": "Layup",
           "isTeam": false,
           "options": [
             1628404,
