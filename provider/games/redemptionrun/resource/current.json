@@ -71,7 +71,7 @@
         {
           "stats": "AST",
           "order": "DESC",
-          "momentTypes": "Playoff",
+          "momentTypes": "Assist",
           "isTeam": true,
           "options": [
             "IND",
@@ -91,7 +91,7 @@
         {
           "stats": "BLK",
           "order": "DESC",
-          "momentTypes": "Playoff",
+          "momentTypes": "Block",
           "isTeam": true,
           "options": [
             "IND",
@@ -161,7 +161,7 @@
         {
           "stats": "PTS",
           "order": "DESC",
-          "momentTypes": "Playoff",
+          "momentTypes": "Jump Shot,Handle,Layup",
           "isTeam": true,
           "options": [
             "NYK",
@@ -251,7 +251,7 @@
         {
           "stats": "AST",
           "order": "DESC",
-          "momentTypes": "Playoff",
+          "momentTypes": "Assist",
           "isTeam": true,
           "options": [
             "NYK",
