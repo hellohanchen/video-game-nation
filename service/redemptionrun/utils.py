@@ -70,9 +70,10 @@ def build_rr_collection(ts_provider, plays, rr: RedemptionRun, redemption_team_i
             if team_id in moment_types_of_ids:
                 required_types = moment_types_of_ids[team_id]
                 if 'Any' not in required_types:
-                    if 'Playoff' not in required_types and play['playType'] not in required_types:
-                        continue
-                    elif set_id not in PLAYOFF_SETS:
+                    if 'Playoff' in required_types:
+                        if set_id not in PLAYOFF_SETS:
+                            continue
+                    elif play['playType'] not in required_types:
                         continue
 
                 if team_id not in collection:
