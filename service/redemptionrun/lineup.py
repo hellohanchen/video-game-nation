@@ -3,7 +3,8 @@ from typing import List, Dict, Optional
 from constants import INVALID_ID, ERROR_MESSAGE
 from provider.games.rr_provider import RR_PROVIDER
 from provider.nba.nba_provider import NBA_PROVIDER
-from provider.topshot.cadence.flow_collections import get_account_plays_with_lowest_serial
+from provider.topshot.cadence.flow_collections import get_account_plays_with_lowest_serial, \
+    get_account_plays_with_lowest_serial_in_batches
 from provider.topshot.ts_provider import TS_PROVIDER
 from repository.rr_lineups import get_lineups, upsert_lineup, submit_lineup, get_user_losses, get_user_results, \
     get_user_slate_result
@@ -193,6 +194,17 @@ class Lineup:
 
         try:
             plays = await get_account_plays_with_lowest_serial(user['flow_address'])
+        except Exception as err:
+            await ADMIN_LOGGER.error(f"RRLineup:Collection:{self.user_id}:{err}")
+            plays = None
+        if plays is None:
+            try:
+                plays = await get_account_plays_with_lowest_serial_in_batches(user['flow_address'])
+            except Exception as err:
+                await ADMIN_LOGGER.error(f"RRLineup:CollectionBatch:{self.user_id}:{err}")
+                return ERROR_MESSAGE
+
+        try:
             collection, _, rr_moments = build_rr_collection(
                 TS_PROVIDER, plays, self.service.rr, RR_PROVIDER.eligible_team_ids)
             if losses > rr_moments:

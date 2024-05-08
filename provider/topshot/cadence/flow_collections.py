@@ -204,6 +204,126 @@ async def get_account_plays_with_lowest_serial(address):
     return plays
 
 
+async def get_account_moment_ids(address):
+    script = Script(
+        code="""
+                import TopShot from 0x0b2a3299cc857e29
+
+                pub fun main(account: Address): [UInt64] {
+                    let acct = getAccount(account)
+
+                    let collectionRef = acct.getCapability(/public/MomentCollection)
+                                            .borrow<&{TopShot.MomentCollectionPublic}>()!
+
+                    return collectionRef.getIDs()
+                }
+            """,
+        arguments=[cadence.Address.from_hex(address)],
+    )
+
+    async with flow_client(
+            host="access.mainnet.nodes.onflow.org", port=9000
+    ) as client:
+        complex_script = await client.execute_script(
+            script=script
+            # , block_id
+            # , block_height
+        )
+        moment_ids = complex_script.value
+
+    return moment_ids
+
+
+async def get_account_plays_with_lowest_serial_of_moments(address, moment_ids):
+    script = Script(
+        code="""
+                import TopShot from 0x0b2a3299cc857e29
+
+                pub fun main(account: Address, momentIds: [UInt64]): {UInt32:{UInt32:UInt32}} {
+                    let acct = getAccount(account)
+
+                    let collectionRef = acct.getCapability(/public/MomentCollection)
+                                            .borrow<&{TopShot.MomentCollectionPublic}>()!
+
+                    let res: {UInt32:{UInt32:UInt32}} = {}                        
+
+                    for id in momentIds {
+                        // Borrow a reference to the specified moment
+                        let token = collectionRef.borrowMoment(id: id)
+                            ?? panic("Could not borrow a reference to the specified moment")
+
+                        // Get the moment's metadata to access its play and Set IDs
+                        let data = token.data
+
+                        if res.containsKey(data.playID) == false {
+                            let playLowestSerial: {UInt32:UInt32} = {}
+                            playLowestSerial.insert(key: data.setID, data.serialNumber)
+                            res.insert(key: data.playID, playLowestSerial)
+                        } else {
+                            let playLowestSerial: {UInt32:UInt32} = res[data.playID]!
+                            if playLowestSerial.containsKey(data.setID) == false {
+                                playLowestSerial.insert(key: data.setID, data.serialNumber)
+                            } else {
+                                var low: UInt32 = playLowestSerial[data.setID]!
+                                if data.serialNumber < low {
+                                    playLowestSerial.insert(key: data.setID, data.serialNumber)
+                                }
+                            }
+
+                            res.insert(key: data.playID, playLowestSerial)
+                        }
+                    }
+
+                    return res
+                }
+            """,
+        arguments=[cadence.Address.from_hex(address), cadence.Array(moment_ids)],
+    )
+
+    async with flow_client(
+            host="access.mainnet.nodes.onflow.org", port=9000
+    ) as client:
+        complex_script = await client.execute_script(
+            script=script
+            # , block_id
+            # , block_height
+        )
+        plays = {}
+
+        for play in complex_script.value:
+            play_lowest_serial_per_set = {}
+            for set_info in play.value.value:
+                play_lowest_serial_per_set[set_info.key.value] = set_info.value.value
+
+            plays[play.key.value] = play_lowest_serial_per_set
+
+    return plays
+
+
+async def get_account_plays_with_lowest_serial_in_batches(address):
+    moment_ids = await get_account_moment_ids(address)
+
+    combined_result = {}
+
+    for i in range(0, len(moment_ids), 3000):
+        sub_group = moment_ids[i:min(len(moment_ids), i + 3000)]
+        sub_result = await get_account_plays_with_lowest_serial_of_moments(address, sub_group)
+
+        for pid in sub_result:
+            if pid not in combined_result:
+                combined_result[pid] = {}
+            for sid in sub_result[pid]:
+                if sid not in combined_result[pid] or sub_result[pid][sid] < combined_result[pid][sid]:
+                    combined_result[pid][sid] = sub_result[pid][sid]
+
+    return combined_result
+
 if __name__ == '__main__':
-    result = asyncio.run(get_account_plays_with_lowest_serial("0xad955e5d8047ef82"))
-    print(result)
+    result = asyncio.run(get_account_plays_with_lowest_serial_in_batches("0xad955e5d8047ef82"))
+    result_2 = asyncio.run(get_account_plays_with_lowest_serial("0xad955e5d8047ef82"))
+
+    for pid in result_2:
+        for sid in result_2[pid]:
+            if result[pid][sid] != result_2[pid][sid]:
+                print(pid, sid)
+
