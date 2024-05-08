@@ -207,8 +207,8 @@ class Lineup:
         try:
             collection, _, rr_moments = build_rr_collection(
                 TS_PROVIDER, plays, self.service.rr, RR_PROVIDER.eligible_team_ids)
-            if losses > rr_moments:
-                return f"You've lost {losses} lives and have {rr_moments} 23-24 redemption/playoff moments."
+            if losses > rr_moments + 1:
+                return f"You've lost {losses - 1} lives and have {rr_moments} 23-24 redemption/playoff moments."
 
             for i in range(len(self.service.rr.buckets)):
                 bucket = self.service.rr.buckets[i]
