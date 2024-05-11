@@ -196,7 +196,7 @@
         {
           "stats": "PTS",
           "order": "DESC",
-          "momentTypes": "Dunk,3 Pointer",
+          "momentTypes": "Any",
           "isTeam": false,
           "options": [
             202681,
