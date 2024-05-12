@@ -324,6 +324,96 @@
           ]
         }
       ]
+    },
+    "05/14/2024": {
+      "threshold": 0.5,
+      "buckets": [
+        {
+          "stats": "PTS",
+          "order": "DESC",
+          "momentTypes": "Dunk,3 Pointer",
+          "isTeam": false,
+          "options": [
+            1629008,
+            1626157
+          ]
+        },
+        {
+          "stats": "PTS",
+          "order": "DESC",
+          "momentTypes": "Playoff",
+          "isTeam": true,
+          "options": [
+            "MIN",
+            "DEN"
+          ]
+        },
+        {
+          "stats": "FGM",
+          "order": "DESC",
+          "momentTypes": "Layup,Jump Shot",
+          "isTeam": false,
+          "options": [
+            1628973,
+            1630169
+          ]
+        },
+        {
+          "stats": "PTS",
+          "order": "DESC",
+          "momentTypes": "Dunk,3 Pointer",
+          "isTeam": true,
+          "options": [
+            "IND",
+            "NYK"
+          ]
+        }
+      ]
+    },
+    "05/15/2024": {
+      "threshold": 0.5,
+      "buckets": [
+        {
+          "stats": "FTM",
+          "order": "DESC",
+          "momentTypes": "Handles,Layup",
+          "isTeam": false,
+          "options": [
+            1628378,
+            1628369
+          ]
+        },
+        {
+          "stats": "PTS",
+          "order": "DESC",
+          "momentTypes": "Playoff",
+          "isTeam": true,
+          "options": [
+            "BOS",
+            "CLE"
+          ]
+        },
+        {
+          "stats": "AST",
+          "order": "DESC",
+          "momentTypes": "Assist",
+          "isTeam": false,
+          "options": [
+            1628983,
+            1629029
+          ]
+        },
+        {
+          "stats": "PTS",
+          "order": "DESC",
+          "momentTypes": "Dunk,3 Pointer",
+          "isTeam": true,
+          "options": [
+            "OKC",
+            "DAL"
+          ]
+        }
+      ]
     }
   }
 }
