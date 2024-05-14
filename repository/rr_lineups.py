@@ -115,7 +115,7 @@ def get_slate_ranks(game_dates, top_n):
         db_conn = CNX_POOL.get_connection()
         query = "SELECT user_id, topshot_username as username, SUM(IF(win, 1, 0)) as wins, " \
                 "SUM(points) as total_points, SUM(raw_score) as total_score, COUNT(*) - SUM(IF(win, 1, 0)) as losses " \
-                "FROM vgn.rr_lineups WHERE game_date in ({}) " \
+                "FROM vgn.rr_lineups WHERE game_date in ({}) AND is_submitted = TRUE " \
                 "GROUP BY user_id, topshot_username ORDER BY wins DESC, total_points DESC, " \
                 "losses, total_score DESC LIMIT {}" \
             .format(', '.join("'" + date + "'" for date in game_dates), top_n)
@@ -143,7 +143,7 @@ def get_user_results(uid, game_dates):
     try:
         db_conn = CNX_POOL.get_connection()
         query = "SELECT game_date, points, raw_score, `rank`, win FROM vgn.rr_lineups " \
-                "WHERE game_date IN ({}) AND user_id = {} ORDER BY game_date" \
+                "WHERE game_date IN ({}) AND user_id = {} AND is_submitted = TRUE ORDER BY game_date" \
             .format(', '.join("'" + date + "'" for date in game_dates), uid)
 
         # Execute SQL query and store results in a pandas dataframe
@@ -173,7 +173,7 @@ def get_user_losses(uid, game_dates, current_game_date):
         db_conn = CNX_POOL.get_connection()
         query = "SELECT COUNT(*) - SUM(IF(win, 1, 0)) as losses " \
                 "FROM vgn.rr_lineups WHERE game_date in ({}) " \
-                "AND user_id = {} AND game_date != '{}'" \
+                "AND user_id = {} AND game_date != '{}' AND is_submitted = TRUE " \
                 "GROUP BY user_id" \
             .format(', '.join("'" + date + "'" for date in game_dates), uid, current_game_date)
 
@@ -213,7 +213,7 @@ def get_user_slate_result(uid, game_dates):
                 "           SUM(raw_score) " \
                 "       ) as `rank`" \
                 "   FROM vgn.rr_lineups AS l " \
-                "   WHERE game_date IN ({})" \
+                "   WHERE game_date IN ({}) AND is_submitted = TRUE " \
                 "   GROUP BY l.user_id) r " \
                 "WHERE r.user_id = {}" \
             .format(', '.join("'" + date + "'" for date in game_dates), uid)
