@@ -414,6 +414,41 @@
           ]
         }
       ]
+    },
+    "05/16/2024": {
+      "threshold": 0.5,
+      "buckets": [
+        {
+          "stats": "REB",
+          "order": "DESC",
+          "momentTypes": "Any",
+          "isTeam": false,
+          "options": [
+            203999,
+            203497
+          ]
+        },
+        {
+          "stats": "FTA",
+          "order": "DESC",
+          "momentTypes": "Jump Shot,Layup,Handle",
+          "isTeam": true,
+          "options": [
+            "DEN",
+            "MIN"
+          ]
+        },
+        {
+          "stats": "PTS",
+          "order": "DESC",
+          "momentTypes": "Dunk,3 Pointer",
+          "isTeam": true,
+          "options": [
+            "DEN",
+            "MIN"
+          ]
+        }
+      ]
     }
   }
 }
