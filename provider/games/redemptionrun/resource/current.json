@@ -449,6 +449,76 @@
           ]
         }
       ]
+    },
+    "05/17/2024": {
+      "threshold": 0.5,
+      "buckets": [
+        {
+          "stats": "FGA",
+          "order": "DESC",
+          "momentTypes": "Layup,Jump Shot,3 Pointer",
+          "isTeam": false,
+          "options": [
+            1628973,
+            1630169
+          ]
+        },
+        {
+          "stats": "FTA",
+          "order": "DESC",
+          "momentTypes": "Jump Shot,Layup,Handle",
+          "isTeam": true,
+          "options": [
+            "NYK",
+            "IND"
+          ]
+        },
+        {
+          "stats": "PTS",
+          "order": "DESC",
+          "momentTypes": "Dunk,3 Pointer",
+          "isTeam": true,
+          "options": [
+            "NYK",
+            "IND"
+          ]
+        }
+      ]
+    },
+    "05/18/2024": {
+      "threshold": 0.5,
+      "buckets": [
+        {
+          "stats": "FGM",
+          "order": "DESC",
+          "momentTypes": "Handles,Layup",
+          "isTeam": false,
+          "options": [
+            202681,
+            1628983
+          ]
+        },
+        {
+          "stats": "FTA",
+          "order": "DESC",
+          "momentTypes": "Jump Shot,Layup,Handle",
+          "isTeam": true,
+          "options": [
+            "OKC",
+            "DAL"
+          ]
+        },
+        {
+          "stats": "PTS",
+          "order": "DESC",
+          "momentTypes": "Dunk,3 Pointer",
+          "isTeam": true,
+          "options": [
+            "OKC",
+            "DAL"
+          ]
+        }
+      ]
     }
   }
 }
