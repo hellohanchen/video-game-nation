@@ -519,6 +519,71 @@
           ]
         }
       ]
+    },
+    "05/19/2024": {
+      "threshold": 0.5,
+      "buckets": [
+        {
+          "stats": "PTS",
+          "order": "DESC",
+          "momentTypes": "3 Pointer,Jump Shot,Layup",
+          "isTeam": false,
+          "options": [
+            1630162,
+            203999
+          ]
+        },
+        {
+          "stats": "PTS",
+          "order": "DESC",
+          "momentTypes": "3 Pointer,Jump Shot,Layup",
+          "isTeam": false,
+          "options": [
+            1626157,
+            1627750
+          ]
+        },
+        {
+          "stats": "PTS",
+          "order": "DESC",
+          "momentTypes": "3 Pointer,Jump Shot,Layup",
+          "isTeam": true,
+          "options": [
+            "MIN",
+            "DEN"
+          ]
+        },
+        {
+          "stats": "3PT",
+          "order": "DESC",
+          "momentTypes": "3 Pointer,Jump Shot",
+          "isTeam": false,
+          "options": [
+            1630169,
+            1628973
+          ]
+        },
+        {
+          "stats": "PTS",
+          "order": "DESC",
+          "momentTypes": "3 Pointer,Jump Shot,Layup",
+          "isTeam": false,
+          "options": [
+            1628978,
+            1627783
+          ]
+        },
+        {
+          "stats": "PTS",
+          "order": "DESC",
+          "momentTypes": "3 Pointer,Jump Shot,Layup",
+          "isTeam": true,
+          "options": [
+            "IND",
+            "NYK"
+          ]
+        }
+      ]
     }
   }
 }
