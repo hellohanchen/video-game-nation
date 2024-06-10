@@ -5872,10 +5872,6 @@
     }
   },
   "05/17/2024": {
-    "0042300206": {
-      "homeTeam": "CLE",
-      "awayTeam": "BOS"
-    },
     "0042300216": {
       "homeTeam": "IND",
       "awayTeam": "NYK"
@@ -5888,10 +5884,6 @@
     }
   },
   "05/19/2024": {
-    "0042300207": {
-      "homeTeam": "BOS",
-      "awayTeam": "CLE"
-    },
     "0042300217": {
       "homeTeam": "NYK",
       "awayTeam": "IND"
@@ -5901,9 +5893,99 @@
       "awayTeam": "MIN"
     }
   },
-  "05/20/2024": {
-    "0042300227": {
-      "homeTeam": "OKC",
+  "05/21/2024": {
+    "0042300301": {
+      "homeTeam": "BOS",
+      "awayTeam": "IND"
+    }
+  },
+  "05/22/2024": {
+    "0042300311": {
+      "homeTeam": "MIN",
+      "awayTeam": "DAL"
+    }
+  },
+  "05/23/2024": {
+    "0042300302": {
+      "homeTeam": "BOS",
+      "awayTeam": "IND"
+    }
+  },
+  "05/24/2024": {
+    "0042300312": {
+      "homeTeam": "MIN",
+      "awayTeam": "DAL"
+    }
+  },
+  "05/25/2024": {
+    "0042300303": {
+      "homeTeam": "IND",
+      "awayTeam": "BOS"
+    }
+  },
+  "05/26/2024": {
+    "0042300313": {
+      "homeTeam": "DAL",
+      "awayTeam": "MIN"
+    }
+  },
+  "05/27/2024": {
+    "0042300304": {
+      "homeTeam": "IND",
+      "awayTeam": "BOS"
+    }
+  },
+  "05/28/2024": {
+    "0042300314": {
+      "homeTeam": "DAL",
+      "awayTeam": "MIN"
+    }
+  },
+  "05/30/2024": {
+    "0042300315": {
+      "homeTeam": "MIN",
+      "awayTeam": "DAL"
+    }
+  },
+  "06/06/2024": {
+    "0042300401": {
+      "homeTeam": "BOS",
+      "awayTeam": "DAL"
+    }
+  },
+  "06/09/2024": {
+    "0042300402": {
+      "homeTeam": "BOS",
+      "awayTeam": "DAL"
+    }
+  },
+  "06/12/2024": {
+    "0042300403": {
+      "homeTeam": "DAL",
+      "awayTeam": "BOS"
+    }
+  },
+  "06/14/2024": {
+    "0042300404": {
+      "homeTeam": "DAL",
+      "awayTeam": "BOS"
+    }
+  },
+  "06/17/2024": {
+    "0042300405": {
+      "homeTeam": "BOS",
+      "awayTeam": "DAL"
+    }
+  },
+  "06/20/2024": {
+    "0042300406": {
+      "homeTeam": "DAL",
+      "awayTeam": "BOS"
+    }
+  },
+  "06/23/2024": {
+    "0042300407": {
+      "homeTeam": "BOS",
       "awayTeam": "DAL"
     }
   }
