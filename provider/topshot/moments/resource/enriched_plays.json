@@ -55,29 +55,10 @@
     4234,
     5252,
     5254,
-    5256,
-    5257,
-    5258,
-    5259,
-    5260,
-    5261,
-    5262,
-    5263,
-    5288,
-    5289,
-    5290,
-    5291,
-    5292,
-    5293,
-    5294,
-    5295,
-    5296,
-    5297,
-    5298,
     5313,
     5315
   ],
-  "count": 5722,
+  "count": 5741,
   "plays": {
     "5320": [
       {
@@ -459,6 +440,219 @@
         "teamId": 1610612760
       }
     ],
+    "5298": [
+      {
+        "id": "553e5db1-bd9a-42d8-b76e-940fa54469a1",
+        "flowId": 5298,
+        "set": "WNBA 2024",
+        "setId": "4f83e29e-441d-46e1-88e7-2f97b8f631e9",
+        "setFlowId": 145,
+        "playerId": 1628909,
+        "playerName": "Kelsey Mitchell",
+        "team": "Indiana Fever",
+        "teamAtMoment": "Indiana Fever",
+        "playType": "Assist",
+        "date": "2024-05-20",
+        "series": 5,
+        "tier": "Common",
+        "badges": [],
+        "teamId": 0
+      }
+    ],
+    "5297": [
+      {
+        "id": "595e95ef-8620-4f56-b8dc-7b52472e558a",
+        "flowId": 5297,
+        "set": "WNBA 2024",
+        "setId": "4f83e29e-441d-46e1-88e7-2f97b8f631e9",
+        "setFlowId": 145,
+        "playerId": 1629477,
+        "playerName": "Sabrina Ionescu",
+        "team": "New York Liberty",
+        "teamAtMoment": "New York Liberty",
+        "playType": "3 Pointer",
+        "date": "2024-05-18",
+        "series": 5,
+        "tier": "Common",
+        "badges": [],
+        "teamId": 0
+      }
+    ],
+    "5296": [
+      {
+        "id": "0df78af5-5ae4-48a7-b1a9-41c926c2b7d4",
+        "flowId": 5296,
+        "set": "WNBA 2024",
+        "setId": "4f83e29e-441d-46e1-88e7-2f97b8f631e9",
+        "setFlowId": 145,
+        "playerId": 202252,
+        "playerName": "Alysha Clark",
+        "team": "Las Vegas Aces",
+        "teamAtMoment": "Las Vegas Aces",
+        "playType": "3 Pointer",
+        "date": "2024-05-26",
+        "series": 5,
+        "tier": "Common",
+        "badges": [],
+        "teamId": 0
+      }
+    ],
+    "5295": [
+      {
+        "id": "b7e92eb4-87f2-4a35-9f5e-4c5018f22ec7",
+        "flowId": 5295,
+        "set": "WNBA 2024",
+        "setId": "4f83e29e-441d-46e1-88e7-2f97b8f631e9",
+        "setFlowId": 145,
+        "playerId": 1629574,
+        "playerName": "Li Yueru",
+        "team": "Los Angeles Sparks",
+        "teamAtMoment": "Los Angeles Sparks",
+        "playType": "Layup",
+        "date": "2024-05-27",
+        "series": 5,
+        "tier": "Common",
+        "badges": [
+          "TSD"
+        ],
+        "teamId": 0
+      }
+    ],
+    "5294": [
+      {
+        "id": "af7be7f8-50ef-4311-8fa0-de22dae6ccfb",
+        "flowId": 5294,
+        "set": "WNBA 2024",
+        "setId": "4f83e29e-441d-46e1-88e7-2f97b8f631e9",
+        "setFlowId": 145,
+        "playerId": 1629497,
+        "playerName": "Marina Mabrey",
+        "team": "Chicago Sky",
+        "teamAtMoment": "Chicago Sky",
+        "playType": "Handles",
+        "date": "2024-05-23",
+        "series": 5,
+        "tier": "Common",
+        "badges": [],
+        "teamId": 0
+      }
+    ],
+    "5293": [
+      {
+        "id": "d59ebedf-b93e-47de-9529-966b37df4e5a",
+        "flowId": 5293,
+        "set": "WNBA 2024",
+        "setId": "4f83e29e-441d-46e1-88e7-2f97b8f631e9",
+        "setFlowId": 145,
+        "playerId": 1628881,
+        "playerName": "Monique Billings",
+        "team": "Dallas Wings",
+        "teamAtMoment": "Dallas Wings",
+        "playType": "Layup",
+        "date": "2024-05-27",
+        "series": 5,
+        "tier": "Common",
+        "badges": [],
+        "teamId": 0
+      }
+    ],
+    "5292": [
+      {
+        "id": "792baadf-299e-4a3e-be35-59cfa3f42fa6",
+        "flowId": 5292,
+        "set": "WNBA 2024",
+        "setId": "4f83e29e-441d-46e1-88e7-2f97b8f631e9",
+        "setFlowId": 145,
+        "playerId": 1627671,
+        "playerName": "Rachel Banham",
+        "team": "Connecticut Sun",
+        "teamAtMoment": "Connecticut Sun",
+        "playType": "3 Pointer",
+        "date": "2024-05-23",
+        "series": 5,
+        "tier": "Common",
+        "badges": [
+          "TSD"
+        ],
+        "teamId": 0
+      }
+    ],
+    "5291": [
+      {
+        "id": "fd646e00-6b6e-4408-8c5e-3f43e1120b5d",
+        "flowId": 5291,
+        "set": "WNBA 2024",
+        "setId": "4f83e29e-441d-46e1-88e7-2f97b8f631e9",
+        "setFlowId": 145,
+        "playerId": 1628277,
+        "playerName": "Allisha Gray",
+        "team": "Atlanta Dream",
+        "teamAtMoment": "Atlanta Dream",
+        "playType": "Block",
+        "date": "2024-05-19",
+        "series": 5,
+        "tier": "Common",
+        "badges": [],
+        "teamId": 0
+      }
+    ],
+    "5290": [
+      {
+        "id": "5e5bf128-a51a-498b-bcd5-fcd22d32cb30",
+        "flowId": 5290,
+        "set": "WNBA 2024",
+        "setId": "4f83e29e-441d-46e1-88e7-2f97b8f631e9",
+        "setFlowId": 145,
+        "playerId": 1641651,
+        "playerName": "Jordan Horston",
+        "team": "Seattle Storm",
+        "teamAtMoment": "Seattle Storm",
+        "playType": "Assist",
+        "date": "2024-05-15",
+        "series": 5,
+        "tier": "Common",
+        "badges": [],
+        "teamId": 0
+      }
+    ],
+    "5289": [
+      {
+        "id": "8cd8b9f5-66f0-4f23-8704-a4c8a9ac3484",
+        "flowId": 5289,
+        "set": "WNBA 2024",
+        "setId": "4f83e29e-441d-46e1-88e7-2f97b8f631e9",
+        "setFlowId": 145,
+        "playerId": 1629482,
+        "playerName": "Sophie Cunningham",
+        "team": "Phoenix Mercury",
+        "teamAtMoment": "Phoenix Mercury",
+        "playType": "3 Pointer",
+        "date": "2024-05-19",
+        "series": 5,
+        "tier": "Common",
+        "badges": [],
+        "teamId": 0
+      }
+    ],
+    "5288": [
+      {
+        "id": "d0db0507-31c9-4b18-a532-118b45cf781e",
+        "flowId": 5288,
+        "set": "WNBA 2024",
+        "setId": "4f83e29e-441d-46e1-88e7-2f97b8f631e9",
+        "setFlowId": 145,
+        "playerId": 1629501,
+        "playerName": "Alanna Smith",
+        "team": "Minnesota Lynx",
+        "teamAtMoment": "Minnesota Lynx",
+        "playType": "3 Pointer",
+        "date": "2024-05-17",
+        "series": 5,
+        "tier": "Common",
+        "badges": [],
+        "teamId": 0
+      }
+    ],
     "5287": [
       {
         "id": "056f4732-0609-4166-a57c-7a7c3cc377b8",
@@ -588,7 +782,9 @@
         "date": "2024-05-15",
         "series": 5,
         "tier": "Rare",
-        "badges": [],
+        "badges": [
+          "MVP"
+        ],
         "teamId": 1610612743
       }
     ],
@@ -702,7 +898,10 @@
         "date": "2024-05-19",
         "series": 5,
         "tier": "Rare",
-        "badges": [],
+        "badges": [
+          "RY",
+          "RM"
+        ],
         "teamId": 1610612742
       }
     ],
@@ -913,6 +1112,198 @@
         "tier": "Rare",
         "badges": [],
         "teamId": 1610612739
+      }
+    ],
+    "5263": [
+      {
+        "id": "987ddcde-3766-4ba4-a1d4-51ba51bbb9e9",
+        "flowId": 5263,
+        "set": "WNBA Rookie Debut 2024",
+        "setId": "e559448b-91c0-455b-8cb2-8e936fe6f30a",
+        "setFlowId": 144,
+        "playerId": 1642287,
+        "playerName": "Cameron Brink",
+        "team": "Los Angeles Sparks",
+        "teamAtMoment": "Los Angeles Sparks",
+        "playType": "Layup",
+        "date": "2024-05-16",
+        "series": 5,
+        "tier": "Common",
+        "badges": [
+          "RP",
+          "RY",
+          "RM",
+          "TSD"
+        ],
+        "teamId": 0
+      }
+    ],
+    "5262": [
+      {
+        "id": "8199bca8-e33c-4d39-8ab0-921a00a881ff",
+        "flowId": 5262,
+        "set": "WNBA Rookie Debut 2024",
+        "setId": "e559448b-91c0-455b-8cb2-8e936fe6f30a",
+        "setFlowId": 144,
+        "playerId": 1642210,
+        "playerName": "Julie Vanloo",
+        "team": "Washington Mystics",
+        "teamAtMoment": "Washington Mystics",
+        "playType": "3 Pointer",
+        "date": "2024-05-14",
+        "series": 5,
+        "tier": "Common",
+        "badges": [
+          "RP",
+          "RY",
+          "RM",
+          "TSD"
+        ],
+        "teamId": 0
+      }
+    ],
+    "5261": [
+      {
+        "id": "5123e8cc-1872-4aa5-82f3-213f0dc4831a",
+        "flowId": 5261,
+        "set": "WNBA Rookie Debut 2024",
+        "setId": "e559448b-91c0-455b-8cb2-8e936fe6f30a",
+        "setFlowId": 144,
+        "playerId": 1641654,
+        "playerName": "Stephanie Soares",
+        "team": "Dallas Wings",
+        "teamAtMoment": "Dallas Wings",
+        "playType": "Layup",
+        "date": "2024-05-16",
+        "series": 5,
+        "tier": "Common",
+        "badges": [
+          "RP",
+          "RY",
+          "RM",
+          "TSD"
+        ],
+        "teamId": 0
+      }
+    ],
+    "5260": [
+      {
+        "id": "708e787c-b9e9-4d26-9b0d-6ea89e03cb2e",
+        "flowId": 5260,
+        "set": "WNBA Rookie Debut 2024",
+        "setId": "e559448b-91c0-455b-8cb2-8e936fe6f30a",
+        "setFlowId": 144,
+        "playerId": 1642290,
+        "playerName": "Aaliyah Edwards",
+        "team": "Washington Mystics",
+        "teamAtMoment": "Washington Mystics",
+        "playType": "Jump Shot",
+        "date": "2024-05-14",
+        "series": 5,
+        "tier": "Common",
+        "badges": [
+          "RP",
+          "RY",
+          "RM",
+          "TSD"
+        ],
+        "teamId": 0
+      }
+    ],
+    "5259": [
+      {
+        "id": "4b07bb02-7550-47a2-b0d9-17ea1323f55a",
+        "flowId": 5259,
+        "set": "WNBA Rookie Debut 2024",
+        "setId": "e559448b-91c0-455b-8cb2-8e936fe6f30a",
+        "setFlowId": 144,
+        "playerId": 1642286,
+        "playerName": "Caitlin Clark",
+        "team": "Indiana Fever",
+        "teamAtMoment": "Indiana Fever",
+        "playType": "Layup",
+        "date": "2024-05-14",
+        "series": 5,
+        "tier": "Common",
+        "badges": [
+          "RP",
+          "RY",
+          "RM",
+          "TSD"
+        ],
+        "teamId": 0
+      }
+    ],
+    "5258": [
+      {
+        "id": "45397396-dd5a-431e-af4c-1831c3a01acc",
+        "flowId": 5258,
+        "set": "WNBA Rookie Debut 2024",
+        "setId": "e559448b-91c0-455b-8cb2-8e936fe6f30a",
+        "setFlowId": 144,
+        "playerId": 1642324,
+        "playerName": "Kate Martin",
+        "team": "Las Vegas Aces",
+        "teamAtMoment": "Las Vegas Aces",
+        "playType": "3 Pointer",
+        "date": "2024-05-18",
+        "series": 5,
+        "tier": "Common",
+        "badges": [
+          "RP",
+          "RY",
+          "RM",
+          "TSD"
+        ],
+        "teamId": 0
+      }
+    ],
+    "5257": [
+      {
+        "id": "ff234557-7365-4c3c-92c5-d4407577cbcf",
+        "flowId": 5257,
+        "set": "WNBA Rookie Debut 2024",
+        "setId": "e559448b-91c0-455b-8cb2-8e936fe6f30a",
+        "setFlowId": 144,
+        "playerId": 1642288,
+        "playerName": "Rickea Jackson",
+        "team": "Los Angeles Sparks",
+        "teamAtMoment": "Los Angeles Sparks",
+        "playType": "Layup",
+        "date": "2024-05-16",
+        "series": 5,
+        "tier": "Common",
+        "badges": [
+          "RP",
+          "RY",
+          "RM",
+          "TSD"
+        ],
+        "teamId": 0
+      }
+    ],
+    "5256": [
+      {
+        "id": "56243422-025d-414c-bd1e-3ac9d08b2ad1",
+        "flowId": 5256,
+        "set": "WNBA Rookie Debut 2024",
+        "setId": "e559448b-91c0-455b-8cb2-8e936fe6f30a",
+        "setFlowId": 144,
+        "playerId": 1642291,
+        "playerName": "Angel Reese",
+        "team": "Chicago Sky",
+        "teamAtMoment": "Chicago Sky",
+        "playType": "Layup",
+        "date": "2024-05-16",
+        "series": 5,
+        "tier": "Common",
+        "badges": [
+          "RP",
+          "RY",
+          "RM",
+          "TSD"
+        ],
+        "teamId": 0
       }
     ],
     "5255": [
@@ -1717,7 +2108,9 @@
         "date": "2024-04-27",
         "series": 5,
         "tier": "Fandom",
-        "badges": [],
+        "badges": [
+          "MVP"
+        ],
         "teamId": 1610612743
       }
     ],
@@ -3797,7 +4190,9 @@
         "date": "2024-03-26",
         "series": 5,
         "tier": "Common",
-        "badges": [],
+        "badges": [
+          "TSD"
+        ],
         "teamId": 1610612764
       }
     ],
@@ -3949,7 +4344,9 @@
         "date": "2024-03-22",
         "series": 5,
         "tier": "Common",
-        "badges": [],
+        "badges": [
+          "TSD"
+        ],
         "teamId": 1610612749
       }
     ],
@@ -4282,7 +4679,8 @@
         "series": 5,
         "tier": "Rare",
         "badges": [
-          "CR"
+          "CR",
+          "MVP"
         ],
         "teamId": 1610612743
       }
@@ -4785,7 +5183,9 @@
         "date": "2024-02-04",
         "series": 5,
         "tier": "Common",
-        "badges": [],
+        "badges": [
+          "TSD"
+        ],
         "teamId": 1610612744
       }
     ],
@@ -6536,7 +6936,9 @@
         "date": "2024-01-24",
         "series": 5,
         "tier": "Common",
-        "badges": [],
+        "badges": [
+          "MVP"
+        ],
         "teamId": 1610612743
       }
     ],
@@ -8615,7 +9017,9 @@
         "date": "2024-01-05",
         "series": 5,
         "tier": "Legendary",
-        "badges": [],
+        "badges": [
+          "MVP"
+        ],
         "teamId": 1610612743
       }
     ],
@@ -10436,7 +10840,8 @@
         "series": 5,
         "tier": "Rare",
         "badges": [
-          "CR"
+          "CR",
+          "MVP"
         ],
         "teamId": 1610612743
       }
@@ -18941,7 +19346,9 @@
         "date": "2023-10-24",
         "series": 5,
         "tier": "Common",
-        "badges": [],
+        "badges": [
+          "MVP"
+        ],
         "teamAtMoment": "Denver Nuggets",
         "teamId": 1610612743
       }

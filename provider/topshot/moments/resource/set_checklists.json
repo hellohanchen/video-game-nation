@@ -1,4 +1,132 @@
 {
+  "145": {
+    "name": "WNBA 2024 5",
+    "series": 5,
+    "moments": {
+      "5298": {
+        "player": "Kelsey Mitchell",
+        "team": "Indiana Fever",
+        "playerId": 1628909,
+        "date": "2024-05-20"
+      },
+      "5297": {
+        "player": "Sabrina Ionescu",
+        "team": "New York Liberty",
+        "playerId": 1629477,
+        "date": "2024-05-18"
+      },
+      "5296": {
+        "player": "Alysha Clark",
+        "team": "Las Vegas Aces",
+        "playerId": 202252,
+        "date": "2024-05-26"
+      },
+      "5295": {
+        "player": "Li Yueru",
+        "team": "Los Angeles Sparks",
+        "playerId": 1629574,
+        "date": "2024-05-27"
+      },
+      "5294": {
+        "player": "Marina Mabrey",
+        "team": "Chicago Sky",
+        "playerId": 1629497,
+        "date": "2024-05-23"
+      },
+      "5293": {
+        "player": "Monique Billings",
+        "team": "Dallas Wings",
+        "playerId": 1628881,
+        "date": "2024-05-27"
+      },
+      "5292": {
+        "player": "Rachel Banham",
+        "team": "Connecticut Sun",
+        "playerId": 1627671,
+        "date": "2024-05-23"
+      },
+      "5291": {
+        "player": "Allisha Gray",
+        "team": "Atlanta Dream",
+        "playerId": 1628277,
+        "date": "2024-05-19"
+      },
+      "5290": {
+        "player": "Jordan Horston",
+        "team": "Seattle Storm",
+        "playerId": 1641651,
+        "date": "2024-05-15"
+      },
+      "5289": {
+        "player": "Sophie Cunningham",
+        "team": "Phoenix Mercury",
+        "playerId": 1629482,
+        "date": "2024-05-19"
+      },
+      "5288": {
+        "player": "Alanna Smith",
+        "team": "Minnesota Lynx",
+        "playerId": 1629501,
+        "date": "2024-05-17"
+      }
+    },
+    "count": 11
+  },
+  "144": {
+    "name": "WNBA Rookie Debut 2024 5",
+    "series": 5,
+    "moments": {
+      "5263": {
+        "player": "Cameron Brink",
+        "team": "Los Angeles Sparks",
+        "playerId": 1642287,
+        "date": "2024-05-16"
+      },
+      "5262": {
+        "player": "Julie Vanloo",
+        "team": "Washington Mystics",
+        "playerId": 1642210,
+        "date": "2024-05-14"
+      },
+      "5261": {
+        "player": "Stephanie Soares",
+        "team": "Dallas Wings",
+        "playerId": 1641654,
+        "date": "2024-05-16"
+      },
+      "5260": {
+        "player": "Aaliyah Edwards",
+        "team": "Washington Mystics",
+        "playerId": 1642290,
+        "date": "2024-05-14"
+      },
+      "5259": {
+        "player": "Caitlin Clark",
+        "team": "Indiana Fever",
+        "playerId": 1642286,
+        "date": "2024-05-14"
+      },
+      "5258": {
+        "player": "Kate Martin",
+        "team": "Las Vegas Aces",
+        "playerId": 1642324,
+        "date": "2024-05-18"
+      },
+      "5257": {
+        "player": "Rickea Jackson",
+        "team": "Los Angeles Sparks",
+        "playerId": 1642288,
+        "date": "2024-05-16"
+      },
+      "5256": {
+        "player": "Angel Reese",
+        "team": "Chicago Sky",
+        "playerId": 1642291,
+        "date": "2024-05-16"
+      }
+    },
+    "count": 8
+  },
   "143": {
     "name": "2024 NBA Playoffs 5",
     "series": 5,
