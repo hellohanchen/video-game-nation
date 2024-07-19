@@ -141,7 +141,7 @@
       }
     },
     "Series 23-24": {
-      "count": 21,
+      "count": 24,
       "tiers": {
         "Common": {
           "124": "Base Set",
@@ -170,13 +170,16 @@
           "142": "Best of 2024 NBA Playoffs",
           "146": "Level Up",
           "148": "WNBA Metallic Gold LE 2024",
-          "149": "2023-24 Honors"
+          "149": "2023-24 Honors",
+          "150": "WNBA Fresh Gems"
         },
         "Legendary": {
           "131": "Holo Icon",
           "139": "Rookie Revelation",
           "140": "2023 Rookie Ultimates",
-          "147": "2024 NBA Finals"
+          "147": "2024 NBA Finals",
+          "151": "2024 WNBA Rookie Ultimates",
+          "153": "2023-24 Hardware"
         }
       }
     },
