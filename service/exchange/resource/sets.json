@@ -141,7 +141,7 @@
       }
     },
     "Series 23-24": {
-      "count": 24,
+      "count": 27,
       "tiers": {
         "Common": {
           "124": "Base Set",
@@ -150,9 +150,7 @@
           "129": "Archive Set",
           "132": "Hustle and Show",
           "133": "Extra Spice",
-          "137": "Crunch Time",
-          "144": "WNBA Rookie Debut 2024",
-          "145": "WNBA 2024"
+          "137": "Crunch Time"
         },
         "Fandom": {
           "138": "2024 NBA All-Star",
@@ -168,18 +166,17 @@
           "136": "Squad Goals",
           "141": "The Champion's Path 2024",
           "142": "Best of 2024 NBA Playoffs",
-          "146": "Level Up",
-          "148": "WNBA Metallic Gold LE 2024",
-          "149": "2023-24 Honors",
-          "150": "WNBA Fresh Gems"
+          "157": "Run It Back: Origins",
+          "159": "Run It Back"
         },
         "Legendary": {
           "131": "Holo Icon",
           "139": "Rookie Revelation",
           "140": "2023 Rookie Ultimates",
           "147": "2024 NBA Finals",
-          "151": "2024 WNBA Rookie Ultimates",
-          "153": "2023-24 Hardware"
+          "153": "2023-24 Hardware",
+          "154": "Season Rewind: Signature Victory",
+          "160": "Run It Back: Legacies"
         }
       }
     },
@@ -241,6 +238,27 @@
           "96": "In Their Bag",
           "122": "Road To Royalty",
           "123": "WNBA Origins"
+        }
+      }
+    },
+    "Series 23-24": {
+      "count": 8,
+      "tiers": {
+        "Common": {
+          "144": "WNBA Rookie Debut 2024",
+          "145": "WNBA 2024"
+        },
+        "Fandom": {
+        },
+        "Rare": {
+          "146": "Level Up",
+          "148": "WNBA Metallic Gold LE 2024",
+          "149": "2023-24 Honors",
+          "150": "WNBA Fresh Gems"
+        },
+        "Legendary": {
+          "151": "2024 WNBA Rookie Ultimates",
+          "161": "WNBA Holo Icon"
         }
       }
     }
