@@ -16,7 +16,7 @@ def get_tiers(graphql_response):
 
 async def get_listing_tiers(series, player_id):
     # Select your transport with a defined url endpoint
-    transport = AIOHTTPTransport(url="https://public-api.nbatopshot.com/graphql")
+    transport = AIOHTTPTransport(url="https://public-api.nbatopshot.com/graphql", headers={"User-Agent": "VideoGameNation"})
 
     # Create a GraphQL client using the defined transport
     client = Client(transport=transport, fetch_schema_from_transport=False)

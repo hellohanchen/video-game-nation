@@ -7,7 +7,7 @@ from gql.transport.exceptions import TransportQueryError
 
 async def get_flow_address(topshot_username):
     # Select your transport with a defined url endpoint
-    transport = AIOHTTPTransport(url="https://public-api.nbatopshot.com/graphql")
+    transport = AIOHTTPTransport(url="https://public-api.nbatopshot.com/graphql", headers={"User-Agent": "VideoGameNation"})
 
     # Create a GraphQL client using the defined transport
     client = Client(transport=transport, fetch_schema_from_transport=False)
@@ -41,7 +41,7 @@ async def get_flow_address(topshot_username):
 async def get_profile_with_ts_username(topshot_username):
     try:
         # Select your transport with a defined url endpoint
-        transport = AIOHTTPTransport(url="https://public-api.nbatopshot.com/graphql")
+        transport = AIOHTTPTransport(url="https://public-api.nbatopshot.com/graphql", headers={"User-Agent": "VideoGameNation"})
 
         # Create a GraphQL client using the defined transport
         client = Client(transport=transport, fetch_schema_from_transport=False)
@@ -78,7 +78,7 @@ async def get_profile_with_ts_username(topshot_username):
 async def get_profile_with_address(flow_address):
     try:
         # Select your transport with a defined url endpoint
-        transport = AIOHTTPTransport(url="https://public-api.nbatopshot.com/graphql")
+        transport = AIOHTTPTransport(url="https://public-api.nbatopshot.com/graphql", headers={"User-Agent": "VideoGameNation"})
 
         # Create a GraphQL client using the defined transport
         client = Client(transport=transport, fetch_schema_from_transport=False)
@@ -109,7 +109,7 @@ async def get_profile_with_address(flow_address):
 async def get_team_leaderboard_rank(address, tid):
     try:
         # Select your transport with a defined url endpoint
-        transport = AIOHTTPTransport(url="https://public-api.nbatopshot.com/graphql")
+        transport = AIOHTTPTransport(url="https://public-api.nbatopshot.com/graphql", headers={"User-Agent": "VideoGameNation"})
 
         # Create a GraphQL client using the defined transport
         client = Client(transport=transport, fetch_schema_from_transport=False)

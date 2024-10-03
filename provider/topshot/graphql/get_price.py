@@ -20,7 +20,7 @@ def get_low_asks(result_dict):
 
 async def get_listing_prices(set_id, player_ids, team_ids):
     # Select your transport with a defined url endpoint
-    transport = AIOHTTPTransport(url="https://public-api.nbatopshot.com/graphql")
+    transport = AIOHTTPTransport(url="https://public-api.nbatopshot.com/graphql", headers={"User-Agent": "VideoGameNation"})
 
     # Create a GraphQL client using the defined transport
     client = Client(transport=transport, fetch_schema_from_transport=False)

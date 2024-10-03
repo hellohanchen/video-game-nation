@@ -242,7 +242,7 @@
       }
     },
     "Series 23-24": {
-      "count": 8,
+      "count": 9,
       "tiers": {
         "Common": {
           "144": "WNBA Rookie Debut 2024",
@@ -258,7 +258,8 @@
         },
         "Legendary": {
           "151": "2024 WNBA Rookie Ultimates",
-          "161": "WNBA Holo Icon"
+          "161": "WNBA Holo Icon",
+          "162": "WNBA Rookie Revelation"
         }
       }
     }
