@@ -8,7 +8,7 @@ from constants import NBA_TEAMS
 
 
 def download_schedule():
-    url = 'https://cdn.nba.com/static/json/staticData/scheduleLeagueV2.json'
+    url = 'https://cdn.nba.com/static/json/staticData/scheduleLeagueV2_2.json'
     response = requests.get(url)
 
     if response.status_code == 200:

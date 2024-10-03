@@ -1,5534 +1,5082 @@
 {
-  "0012300001": {
-    "homeTeam": "MIN",
-    "awayTeam": "DAL"
-  },
-  "0012300002": {
-    "homeTeam": "DAL",
-    "awayTeam": "MIN"
-  },
-  "0012300003": {
-    "homeTeam": "GSW",
-    "awayTeam": "LAL"
-  },
-  "0012300004": {
-    "homeTeam": "MIL",
-    "awayTeam": "CHI"
-  },
-  "0012300005": {
-    "homeTeam": "DET",
-    "awayTeam": "PHX"
-  },
-  "0012300006": {
-    "homeTeam": "BOS",
-    "awayTeam": "PHI"
-  },
-  "0012300007": {
-    "homeTeam": "MEM",
-    "awayTeam": "IND"
-  },
-  "0012300008": {
-    "homeTeam": "TOR",
-    "awayTeam": "SAC"
-  },
-  "0012300009": {
-    "homeTeam": "LAC",
-    "awayTeam": "UTA"
-  },
-  "0012300010": {
-    "homeTeam": "NYK",
-    "awayTeam": "BOS"
-  },
-  "0012300011": {
-    "homeTeam": "OKC",
-    "awayTeam": "SAS"
-  },
-  "0012300012": {
-    "homeTeam": "LAL",
-    "awayTeam": "BKN"
-  },
-  "0012300015": {
-    "homeTeam": "ATL",
-    "awayTeam": "CLE"
-  },
-  "0012300016": {
-    "homeTeam": "MIA",
-    "awayTeam": "CHA"
-  },
-  "0012300017": {
-    "homeTeam": "HOU",
-    "awayTeam": "IND"
-  },
-  "0012300018": {
-    "homeTeam": "MEM",
-    "awayTeam": "MIL"
-  },
-  "0012300019": {
-    "homeTeam": "NOP",
-    "awayTeam": "ORL"
-  },
-  "0012300020": {
-    "homeTeam": "LAC",
-    "awayTeam": "UTA"
-  },
-  "0012300021": {
-    "homeTeam": "PHX",
-    "awayTeam": "DEN"
-  },
-  "0012300023": {
-    "homeTeam": "PHI",
-    "awayTeam": "BOS"
-  },
-  "0012300024": {
-    "homeTeam": "LAL",
-    "awayTeam": "SAC"
-  },
-  "0012300025": {
-    "homeTeam": "WAS",
-    "awayTeam": "CHA"
-  },
-  "0012300026": {
-    "homeTeam": "CLE",
-    "awayTeam": "ORL"
-  },
-  "0012300027": {
-    "homeTeam": "OKC",
-    "awayTeam": "DET"
-  },
-  "0012300028": {
-    "homeTeam": "ATL",
-    "awayTeam": "MEM"
-  },
-  "0012300030": {
-    "homeTeam": "CHI",
-    "awayTeam": "DEN"
-  },
-  "0012300031": {
-    "homeTeam": "NOP",
-    "awayTeam": "HOU"
-  },
-  "0012300032": {
-    "homeTeam": "POR",
-    "awayTeam": "PHX"
-  },
-  "0012300033": {
-    "homeTeam": "SAS",
-    "awayTeam": "MIA"
-  },
-  "0012300034": {
-    "homeTeam": "LAL",
-    "awayTeam": "GSW"
-  },
-  "0012300035": {
-    "homeTeam": "ATL",
-    "awayTeam": "NOP"
-  },
-  "0012300036": {
-    "homeTeam": "NYK",
-    "awayTeam": "MIN"
-  },
-  "0012300037": {
-    "homeTeam": "UTA",
-    "awayTeam": "POR"
-  },
-  "0012300038": {
-    "homeTeam": "CHA",
-    "awayTeam": "OKC"
-  },
-  "0012300039": {
-    "homeTeam": "MIA",
-    "awayTeam": "MEM"
-  },
-  "0012300041": {
-    "homeTeam": "LAL",
-    "awayTeam": "MIL"
-  },
-  "0012300042": {
+  "0012400001": {
     "homeTeam": "DEN",
-    "awayTeam": "CHI"
-  },
-  "0012300043": {
-    "homeTeam": "SAC",
-    "awayTeam": "GSW"
-  },
-  "0012300044": {
-    "homeTeam": "IND",
-    "awayTeam": "ATL"
-  },
-  "0012300046": {
-    "homeTeam": "BKN",
-    "awayTeam": "PHI"
-  },
-  "0012300047": {
-    "homeTeam": "SAS",
-    "awayTeam": "HOU"
-  },
-  "0012300049": {
-    "homeTeam": "PHX",
-    "awayTeam": "POR"
-  },
-  "0012300050": {
-    "homeTeam": "ORL",
-    "awayTeam": "NOP"
-  },
-  "0012300051": {
-    "homeTeam": "BOS",
-    "awayTeam": "NYK"
-  },
-  "0012300052": {
-    "homeTeam": "CHI",
-    "awayTeam": "TOR"
-  },
-  "0012300053": {
-    "homeTeam": "OKC",
-    "awayTeam": "MIL"
-  },
-  "0012300055": {
-    "homeTeam": "LAC",
-    "awayTeam": "DEN"
-  },
-  "0012300056": {
-    "homeTeam": "MIA",
-    "awayTeam": "BKN"
-  },
-  "0012300057": {
-    "homeTeam": "NYK",
-    "awayTeam": "WAS"
-  },
-  "0012300058": {
-    "homeTeam": "SAS",
-    "awayTeam": "HOU"
-  },
-  "0012300059": {
-    "homeTeam": "GSW",
-    "awayTeam": "SAC"
-  },
-  "0012300060": {
-    "homeTeam": "CHA",
     "awayTeam": "BOS"
   },
-  "0012300061": {
-    "homeTeam": "CHI",
+  "0012400003": {
+    "homeTeam": "LAL",
     "awayTeam": "MIN"
   },
-  "0012300062": {
-    "homeTeam": "OKC",
-    "awayTeam": "DET"
-  },
-  "0012300063": {
-    "homeTeam": "LAL",
-    "awayTeam": "PHX"
-  },
-  "0012300064": {
-    "homeTeam": "LAC",
-    "awayTeam": "DEN"
-  },
-  "0012300065": {
-    "homeTeam": "SAC",
-    "awayTeam": "UTA"
-  },
-  "0012300066": {
-    "homeTeam": "IND",
-    "awayTeam": "CLE"
-  },
-  "0012300068": {
-    "homeTeam": "PHI",
-    "awayTeam": "ATL"
-  },
-  "0012300069": {
-    "homeTeam": "TOR",
-    "awayTeam": "WAS"
-  },
-  "0012300070": {
-    "homeTeam": "DAL",
-    "awayTeam": "DET"
-  },
-  "0012300071": {
-    "homeTeam": "HOU",
-    "awayTeam": "MIA"
-  },
-  "0012300072": {
-    "homeTeam": "MIL",
-    "awayTeam": "MEM"
-  },
-  "0012300073": {
-    "homeTeam": "GSW",
-    "awayTeam": "SAS"
-  },
-  "0022300061": {
-    "homeTeam": "DEN",
-    "awayTeam": "LAL"
-  },
-  "0022300062": {
-    "homeTeam": "GSW",
-    "awayTeam": "PHX"
-  },
-  "0022300063": {
-    "homeTeam": "CHA",
-    "awayTeam": "ATL"
-  },
-  "0022300064": {
-    "homeTeam": "IND",
-    "awayTeam": "WAS"
-  },
-  "0022300065": {
-    "homeTeam": "NYK",
-    "awayTeam": "BOS"
-  },
-  "0022300066": {
-    "homeTeam": "ORL",
-    "awayTeam": "HOU"
-  },
-  "0022300067": {
-    "homeTeam": "BKN",
-    "awayTeam": "CLE"
-  },
-  "0022300068": {
-    "homeTeam": "MIA",
-    "awayTeam": "DET"
-  },
-  "0022300069": {
-    "homeTeam": "TOR",
-    "awayTeam": "MIN"
-  },
-  "0022300070": {
-    "homeTeam": "CHI",
-    "awayTeam": "OKC"
-  },
-  "0022300071": {
-    "homeTeam": "MEM",
-    "awayTeam": "NOP"
-  },
-  "0022300072": {
-    "homeTeam": "UTA",
-    "awayTeam": "SAC"
-  },
-  "0022300073": {
-    "homeTeam": "SAS",
-    "awayTeam": "DAL"
-  },
-  "0022300074": {
-    "homeTeam": "LAC",
-    "awayTeam": "POR"
-  },
-  "0022300075": {
-    "homeTeam": "MIL",
-    "awayTeam": "PHI"
-  },
-  "0022300076": {
-    "homeTeam": "LAL",
-    "awayTeam": "PHX"
-  },
-  "0022300077": {
-    "homeTeam": "CHA",
-    "awayTeam": "DET"
-  },
-  "0022300078": {
-    "homeTeam": "MEM",
-    "awayTeam": "DEN"
-  },
-  "0022300079": {
-    "homeTeam": "ATL",
-    "awayTeam": "NYK"
-  },
-  "0022300080": {
-    "homeTeam": "BOS",
-    "awayTeam": "MIA"
-  },
-  "0022300081": {
-    "homeTeam": "CLE",
-    "awayTeam": "OKC"
-  },
-  "0022300082": {
-    "homeTeam": "CHI",
-    "awayTeam": "TOR"
-  },
-  "0022300083": {
-    "homeTeam": "SAS",
-    "awayTeam": "HOU"
-  },
-  "0022300084": {
-    "homeTeam": "DAL",
-    "awayTeam": "BKN"
-  },
-  "0022300085": {
-    "homeTeam": "UTA",
-    "awayTeam": "LAC"
-  },
-  "0022300086": {
-    "homeTeam": "POR",
-    "awayTeam": "ORL"
-  },
-  "0022300087": {
-    "homeTeam": "SAC",
-    "awayTeam": "GSW"
-  },
-  "0022300088": {
-    "homeTeam": "DET",
-    "awayTeam": "CHI"
-  },
-  "0022300089": {
-    "homeTeam": "WAS",
-    "awayTeam": "MEM"
-  },
-  "0022300090": {
-    "homeTeam": "NOP",
-    "awayTeam": "NYK"
-  },
-  "0022300091": {
-    "homeTeam": "CLE",
-    "awayTeam": "IND"
-  },
-  "0022300092": {
-    "homeTeam": "TOR",
-    "awayTeam": "PHI"
-  },
-  "0022300093": {
-    "homeTeam": "MIN",
-    "awayTeam": "MIA"
-  },
-  "0022300094": {
-    "homeTeam": "PHX",
-    "awayTeam": "UTA"
-  },
-  "0022300095": {
-    "homeTeam": "OKC",
-    "awayTeam": "DEN"
-  },
-  "0022300096": {
-    "homeTeam": "HOU",
-    "awayTeam": "GSW"
-  },
-  "0022300097": {
-    "homeTeam": "MIL",
-    "awayTeam": "ATL"
-  },
-  "0022300098": {
-    "homeTeam": "PHI",
-    "awayTeam": "POR"
-  },
-  "0022300099": {
-    "homeTeam": "LAC",
-    "awayTeam": "SAS"
-  },
-  "0022300100": {
-    "homeTeam": "SAC",
-    "awayTeam": "LAL"
-  },
-  "0022300101": {
-    "homeTeam": "CHA",
-    "awayTeam": "BKN"
-  },
-  "0022300102": {
-    "homeTeam": "IND",
-    "awayTeam": "CHI"
-  },
-  "0022300103": {
-    "homeTeam": "WAS",
-    "awayTeam": "BOS"
-  },
-  "0022300104": {
-    "homeTeam": "ATL",
-    "awayTeam": "MIN"
-  },
-  "0022300105": {
-    "homeTeam": "TOR",
-    "awayTeam": "POR"
-  },
-  "0022300106": {
-    "homeTeam": "MEM",
-    "awayTeam": "DAL"
-  },
-  "0022300107": {
-    "homeTeam": "MIL",
-    "awayTeam": "MIA"
-  },
-  "0022300108": {
-    "homeTeam": "NOP",
-    "awayTeam": "GSW"
-  },
-  "0022300109": {
-    "homeTeam": "OKC",
-    "awayTeam": "DET"
-  },
-  "0022300110": {
-    "homeTeam": "DEN",
-    "awayTeam": "UTA"
-  },
-  "0022300111": {
-    "homeTeam": "LAL",
-    "awayTeam": "ORL"
-  },
-  "0022300112": {
-    "homeTeam": "CLE",
-    "awayTeam": "NYK"
-  },
-  "0022300113": {
-    "homeTeam": "PHX",
-    "awayTeam": "SAS"
-  },
-  "0022300114": {
-    "homeTeam": "LAC",
-    "awayTeam": "ORL"
-  },
-  "0022300115": {
-    "homeTeam": "DET",
-    "awayTeam": "POR"
-  },
-  "0022300116": {
-    "homeTeam": "TOR",
-    "awayTeam": "MIL"
-  },
-  "0022300117": {
-    "homeTeam": "ATL",
-    "awayTeam": "WAS"
-  },
-  "0022300118": {
-    "homeTeam": "BOS",
-    "awayTeam": "IND"
-  },
-  "0022300119": {
-    "homeTeam": "MIA",
-    "awayTeam": "BKN"
-  },
-  "0022300120": {
-    "homeTeam": "NYK",
-    "awayTeam": "CLE"
-  },
-  "0022300121": {
-    "homeTeam": "OKC",
-    "awayTeam": "NOP"
-  },
-  "0022300122": {
-    "homeTeam": "HOU",
-    "awayTeam": "CHA"
-  },
-  "0022300123": {
-    "homeTeam": "MIN",
-    "awayTeam": "DEN"
-  },
-  "0022300124": {
-    "homeTeam": "DAL",
-    "awayTeam": "CHI"
-  },
-  "0022300125": {
-    "homeTeam": "UTA",
-    "awayTeam": "MEM"
-  },
-  "0022300126": {
-    "homeTeam": "GSW",
-    "awayTeam": "SAC"
-  },
-  "0022300127": {
-    "homeTeam": "LAL",
-    "awayTeam": "LAC"
-  },
-  "0022300128": {
-    "homeTeam": "PHI",
-    "awayTeam": "TOR"
-  },
-  "0022300129": {
-    "homeTeam": "NOP",
-    "awayTeam": "DET"
-  },
-  "0022300130": {
-    "homeTeam": "UTA",
-    "awayTeam": "ORL"
-  },
-  "0022300131": {
-    "homeTeam": "PHX",
-    "awayTeam": "SAS"
-  },
-  "0022300001": {
-    "homeTeam": "IND",
-    "awayTeam": "CLE"
-  },
-  "0022300002": {
-    "homeTeam": "MIL",
-    "awayTeam": "NYK"
-  },
-  "0022300003": {
-    "homeTeam": "MIA",
-    "awayTeam": "WAS"
-  },
-  "0022300004": {
-    "homeTeam": "CHI",
-    "awayTeam": "BKN"
-  },
-  "0022300005": {
-    "homeTeam": "OKC",
-    "awayTeam": "GSW"
-  },
-  "0022300006": {
-    "homeTeam": "DEN",
-    "awayTeam": "DAL"
-  },
-  "0022300007": {
-    "homeTeam": "POR",
-    "awayTeam": "MEM"
-  },
-  "0022300132": {
-    "homeTeam": "PHI",
-    "awayTeam": "PHX"
-  },
-  "0022300133": {
-    "homeTeam": "IND",
-    "awayTeam": "CHA"
-  },
-  "0022300134": {
-    "homeTeam": "ORL",
-    "awayTeam": "LAL"
-  },
-  "0022300135": {
-    "homeTeam": "NOP",
-    "awayTeam": "ATL"
-  },
-  "0022300136": {
-    "homeTeam": "BKN",
-    "awayTeam": "BOS"
-  },
-  "0022300137": {
-    "homeTeam": "HOU",
-    "awayTeam": "SAC"
-  },
-  "0022300138": {
-    "homeTeam": "MIN",
-    "awayTeam": "UTA"
-  },
-  "0022300139": {
-    "homeTeam": "DEN",
-    "awayTeam": "CHI"
-  },
-  "0022300140": {
-    "homeTeam": "DET",
-    "awayTeam": "PHX"
-  },
-  "0022300141": {
-    "homeTeam": "SAS",
-    "awayTeam": "TOR"
-  },
-  "0022300142": {
-    "homeTeam": "CLE",
-    "awayTeam": "GSW"
-  },
-  "0022300143": {
-    "homeTeam": "DAL",
-    "awayTeam": "CHA"
-  },
-  "0022300144": {
-    "homeTeam": "POR",
-    "awayTeam": "MEM"
-  },
-  "0022300145": {
-    "homeTeam": "DET",
-    "awayTeam": "GSW"
-  },
-  "0022300146": {
-    "homeTeam": "IND",
-    "awayTeam": "SAS"
-  },
-  "0022300147": {
-    "homeTeam": "ORL",
-    "awayTeam": "DAL"
-  },
-  "0022300148": {
-    "homeTeam": "PHI",
-    "awayTeam": "WAS"
-  },
-  "0022300149": {
-    "homeTeam": "BKN",
-    "awayTeam": "MIL"
-  },
-  "0022300150": {
-    "homeTeam": "MIA",
-    "awayTeam": "LAL"
-  },
-  "0022300151": {
-    "homeTeam": "NYK",
-    "awayTeam": "LAC"
-  },
-  "0022300152": {
-    "homeTeam": "CHI",
-    "awayTeam": "UTA"
-  },
-  "0022300153": {
-    "homeTeam": "HOU",
-    "awayTeam": "SAC"
-  },
-  "0022300154": {
-    "homeTeam": "MIN",
-    "awayTeam": "BOS"
-  },
-  "0022300155": {
-    "homeTeam": "OKC",
-    "awayTeam": "ATL"
-  },
-  "0022300156": {
-    "homeTeam": "DEN",
-    "awayTeam": "NOP"
-  },
-  "0022300157": {
-    "homeTeam": "CHA",
-    "awayTeam": "WAS"
-  },
-  "0022300158": {
-    "homeTeam": "IND",
-    "awayTeam": "UTA"
-  },
-  "0022300159": {
-    "homeTeam": "PHI",
-    "awayTeam": "BOS"
-  },
-  "0022300160": {
-    "homeTeam": "BKN",
-    "awayTeam": "LAC"
-  },
-  "0022300161": {
-    "homeTeam": "NYK",
-    "awayTeam": "SAS"
-  },
-  "0022300162": {
-    "homeTeam": "CHI",
-    "awayTeam": "PHX"
-  },
-  "0022300163": {
-    "homeTeam": "HOU",
-    "awayTeam": "LAL"
-  },
-  "0022300164": {
-    "homeTeam": "MEM",
-    "awayTeam": "MIA"
-  },
-  "0022300165": {
-    "homeTeam": "MIL",
-    "awayTeam": "DET"
-  },
-  "0022300166": {
-    "homeTeam": "MIN",
-    "awayTeam": "NOP"
-  },
-  "0022300167": {
-    "homeTeam": "OKC",
-    "awayTeam": "CLE"
-  },
-  "0022300168": {
-    "homeTeam": "DAL",
-    "awayTeam": "TOR"
-  },
-  "0022300169": {
-    "homeTeam": "DEN",
-    "awayTeam": "GSW"
-  },
-  "0022300170": {
-    "homeTeam": "SAC",
-    "awayTeam": "POR"
-  },
-  "0022300171": {
-    "homeTeam": "IND",
-    "awayTeam": "MIL"
-  },
-  "0022300172": {
-    "homeTeam": "ORL",
-    "awayTeam": "ATL"
-  },
-  "0022300008": {
-    "homeTeam": "DET",
-    "awayTeam": "PHI"
-  },
-  "0022300009": {
-    "homeTeam": "WAS",
-    "awayTeam": "CHA"
-  },
-  "0022300010": {
-    "homeTeam": "BOS",
-    "awayTeam": "BKN"
-  },
-  "0022300011": {
-    "homeTeam": "HOU",
-    "awayTeam": "NOP"
-  },
-  "0022300012": {
-    "homeTeam": "MEM",
-    "awayTeam": "UTA"
-  },
-  "0022300013": {
-    "homeTeam": "SAS",
-    "awayTeam": "MIN"
-  },
-  "0022300014": {
-    "homeTeam": "DAL",
-    "awayTeam": "LAC"
-  },
-  "0022300015": {
-    "homeTeam": "PHX",
-    "awayTeam": "LAL"
-  },
-  "0022300016": {
-    "homeTeam": "SAC",
-    "awayTeam": "OKC"
-  },
-  "0022300173": {
-    "homeTeam": "ORL",
-    "awayTeam": "MIL"
-  },
-  "0022300174": {
-    "homeTeam": "BOS",
-    "awayTeam": "TOR"
-  },
-  "0022300175": {
-    "homeTeam": "ATL",
-    "awayTeam": "MIA"
-  },
-  "0022300176": {
-    "homeTeam": "GSW",
-    "awayTeam": "CLE"
-  },
-  "0022300177": {
-    "homeTeam": "NYK",
-    "awayTeam": "CHA"
-  },
-  "0022300178": {
-    "homeTeam": "BKN",
-    "awayTeam": "WAS"
-  },
-  "0022300179": {
-    "homeTeam": "LAC",
-    "awayTeam": "MEM"
-  },
-  "0022300180": {
-    "homeTeam": "PHI",
-    "awayTeam": "IND"
-  },
-  "0022300181": {
-    "homeTeam": "CHI",
-    "awayTeam": "DET"
-  },
-  "0022300182": {
-    "homeTeam": "HOU",
-    "awayTeam": "DEN"
-  },
-  "0022300183": {
-    "homeTeam": "NOP",
-    "awayTeam": "DAL"
-  },
-  "0022300184": {
-    "homeTeam": "SAS",
-    "awayTeam": "MIA"
-  },
-  "0022300185": {
-    "homeTeam": "PHX",
-    "awayTeam": "OKC"
-  },
-  "0022300186": {
-    "homeTeam": "GSW",
-    "awayTeam": "MIN"
-  },
-  "0022300187": {
-    "homeTeam": "LAL",
-    "awayTeam": "POR"
-  },
-  "0022300188": {
-    "homeTeam": "BOS",
-    "awayTeam": "NYK"
-  },
-  "0022300189": {
-    "homeTeam": "TOR",
-    "awayTeam": "WAS"
-  },
-  "0022300190": {
-    "homeTeam": "MIL",
-    "awayTeam": "CHI"
-  },
-  "0022300191": {
-    "homeTeam": "SAC",
-    "awayTeam": "CLE"
-  },
-  "0022300017": {
-    "homeTeam": "CHA",
-    "awayTeam": "MIA"
-  },
-  "0022300018": {
-    "homeTeam": "DET",
-    "awayTeam": "ATL"
-  },
-  "0022300019": {
-    "homeTeam": "PHI",
-    "awayTeam": "IND"
-  },
-  "0022300020": {
-    "homeTeam": "BKN",
-    "awayTeam": "ORL"
-  },
-  "0022300021": {
-    "homeTeam": "OKC",
-    "awayTeam": "SAS"
-  },
-  "0022300022": {
-    "homeTeam": "NOP",
-    "awayTeam": "DAL"
-  },
-  "0022300023": {
-    "homeTeam": "UTA",
-    "awayTeam": "POR"
-  },
-  "0022300024": {
-    "homeTeam": "DEN",
-    "awayTeam": "LAC"
-  },
-  "0022300025": {
-    "homeTeam": "GSW",
-    "awayTeam": "MIN"
-  },
-  "0022300026": {
-    "homeTeam": "LAL",
-    "awayTeam": "MEM"
-  },
-  "0022300192": {
-    "homeTeam": "WAS",
-    "awayTeam": "DAL"
-  },
-  "0022300193": {
-    "homeTeam": "ATL",
-    "awayTeam": "NYK"
-  },
-  "0022300194": {
-    "homeTeam": "PHI",
-    "awayTeam": "BOS"
-  },
-  "0022300195": {
-    "homeTeam": "TOR",
-    "awayTeam": "MIL"
-  },
-  "0022300196": {
-    "homeTeam": "CHI",
-    "awayTeam": "ORL"
-  },
-  "0022300197": {
-    "homeTeam": "PHX",
-    "awayTeam": "MIN"
-  },
-  "0022300198": {
-    "homeTeam": "LAL",
-    "awayTeam": "SAC"
-  },
-  "0022300199": {
-    "homeTeam": "POR",
-    "awayTeam": "CLE"
-  },
-  "0022300200": {
-    "homeTeam": "MIA",
-    "awayTeam": "BKN"
-  },
-  "0022300201": {
-    "homeTeam": "GSW",
-    "awayTeam": "OKC"
-  },
-  "0022300027": {
-    "homeTeam": "CHA",
-    "awayTeam": "MIL"
-  },
-  "0022300028": {
-    "homeTeam": "WAS",
-    "awayTeam": "NYK"
-  },
-  "0022300029": {
-    "homeTeam": "ATL",
-    "awayTeam": "PHI"
-  },
-  "0022300030": {
-    "homeTeam": "CLE",
-    "awayTeam": "DET"
-  },
-  "0022300031": {
-    "homeTeam": "TOR",
-    "awayTeam": "BOS"
-  },
-  "0022300032": {
-    "homeTeam": "SAS",
-    "awayTeam": "SAC"
-  },
-  "0022300033": {
-    "homeTeam": "CHI",
-    "awayTeam": "ORL"
-  },
-  "0022300034": {
-    "homeTeam": "NOP",
-    "awayTeam": "DEN"
-  },
-  "0022300035": {
-    "homeTeam": "UTA",
-    "awayTeam": "PHX"
-  },
-  "0022300036": {
-    "homeTeam": "POR",
-    "awayTeam": "LAL"
-  },
-  "0022300037": {
-    "homeTeam": "LAC",
-    "awayTeam": "HOU"
-  },
-  "0022300202": {
-    "homeTeam": "CHA",
-    "awayTeam": "NYK"
-  },
-  "0022300203": {
-    "homeTeam": "NOP",
-    "awayTeam": "MIN"
-  },
-  "0022300204": {
-    "homeTeam": "CHI",
-    "awayTeam": "MIA"
-  },
-  "0022300205": {
-    "homeTeam": "MIL",
-    "awayTeam": "DAL"
-  },
-  "0022300206": {
-    "homeTeam": "SAS",
-    "awayTeam": "MEM"
-  },
-  "0022300207": {
-    "homeTeam": "GSW",
-    "awayTeam": "OKC"
-  },
-  "0022300208": {
-    "homeTeam": "BKN",
-    "awayTeam": "PHI"
-  },
-  "0022300209": {
-    "homeTeam": "IND",
-    "awayTeam": "ORL"
-  },
-  "0022300210": {
-    "homeTeam": "CLE",
-    "awayTeam": "DEN"
-  },
-  "0022300211": {
-    "homeTeam": "TOR",
-    "awayTeam": "DET"
-  },
-  "0022300212": {
-    "homeTeam": "DAL",
-    "awayTeam": "SAC"
-  },
-  "0022300213": {
-    "homeTeam": "MEM",
-    "awayTeam": "BOS"
-  },
-  "0022300214": {
-    "homeTeam": "UTA",
-    "awayTeam": "PHX"
-  },
-  "0022300215": {
-    "homeTeam": "POR",
-    "awayTeam": "OKC"
-  },
-  "0022300216": {
-    "homeTeam": "LAL",
-    "awayTeam": "HOU"
-  },
-  "0022300217": {
-    "homeTeam": "CHA",
-    "awayTeam": "BOS"
-  },
-  "0022300218": {
-    "homeTeam": "DET",
-    "awayTeam": "DEN"
-  },
-  "0022300219": {
-    "homeTeam": "WAS",
-    "awayTeam": "MIL"
-  },
-  "0022300220": {
-    "homeTeam": "CHI",
-    "awayTeam": "MIA"
-  },
-  "0022300221": {
-    "homeTeam": "MIN",
-    "awayTeam": "NYK"
-  },
-  "0022300222": {
-    "homeTeam": "NOP",
-    "awayTeam": "SAC"
-  },
-  "0022300223": {
-    "homeTeam": "SAS",
-    "awayTeam": "LAC"
-  },
-  "0022300224": {
-    "homeTeam": "GSW",
-    "awayTeam": "HOU"
-  },
-  "0022300038": {
-    "homeTeam": "ORL",
-    "awayTeam": "TOR"
-  },
-  "0022300039": {
-    "homeTeam": "ATL",
-    "awayTeam": "IND"
-  },
-  "0022300040": {
-    "homeTeam": "PHI",
-    "awayTeam": "CLE"
-  },
-  "0022300041": {
-    "homeTeam": "PHX",
-    "awayTeam": "POR"
-  },
-  "0022300042": {
-    "homeTeam": "LAL",
-    "awayTeam": "UTA"
-  },
-  "0022300225": {
-    "homeTeam": "CHA",
-    "awayTeam": "WAS"
-  },
-  "0022300226": {
-    "homeTeam": "ORL",
-    "awayTeam": "DEN"
-  },
-  "0022300227": {
-    "homeTeam": "ATL",
-    "awayTeam": "BKN"
-  },
-  "0022300228": {
-    "homeTeam": "BOS",
-    "awayTeam": "MIL"
-  },
-  "0022300229": {
-    "homeTeam": "CLE",
-    "awayTeam": "MIA"
-  },
-  "0022300230": {
-    "homeTeam": "IND",
-    "awayTeam": "TOR"
-  },
-  "0022300231": {
-    "homeTeam": "HOU",
-    "awayTeam": "MEM"
-  },
-  "0022300232": {
-    "homeTeam": "MIN",
-    "awayTeam": "PHI"
-  },
-  "0022300233": {
-    "homeTeam": "NOP",
-    "awayTeam": "SAC"
-  },
-  "0022300234": {
-    "homeTeam": "OKC",
-    "awayTeam": "CHI"
-  },
-  "0022300235": {
-    "homeTeam": "SAS",
-    "awayTeam": "LAC"
-  },
-  "0022300236": {
-    "homeTeam": "PHX",
-    "awayTeam": "GSW"
-  },
-  "0022300237": {
-    "homeTeam": "POR",
-    "awayTeam": "UTA"
-  },
-  "0022300238": {
-    "homeTeam": "LAL",
-    "awayTeam": "DAL"
-  },
-  "0022300043": {
-    "homeTeam": "ORL",
-    "awayTeam": "BOS"
-  },
-  "0022300044": {
-    "homeTeam": "MEM",
-    "awayTeam": "PHX"
-  },
-  "0022300045": {
-    "homeTeam": "NYK",
-    "awayTeam": "MIA"
-  },
-  "0022300046": {
-    "homeTeam": "TOR",
-    "awayTeam": "CHI"
-  },
-  "0022300047": {
-    "homeTeam": "IND",
-    "awayTeam": "DET"
-  },
-  "0022300048": {
-    "homeTeam": "HOU",
-    "awayTeam": "DEN"
-  },
-  "0022300049": {
-    "homeTeam": "MIL",
-    "awayTeam": "WAS"
-  },
-  "0022300050": {
-    "homeTeam": "MIN",
-    "awayTeam": "SAC"
-  },
-  "0022300051": {
-    "homeTeam": "GSW",
-    "awayTeam": "SAS"
-  },
-  "0022300052": {
-    "homeTeam": "LAC",
-    "awayTeam": "NOP"
-  },
-  "0022300239": {
-    "homeTeam": "OKC",
-    "awayTeam": "PHI"
-  },
-  "0022300240": {
-    "homeTeam": "BKN",
-    "awayTeam": "MIA"
-  },
-  "0022300241": {
-    "homeTeam": "WAS",
-    "awayTeam": "ATL"
-  },
-  "0022300242": {
-    "homeTeam": "CLE",
-    "awayTeam": "LAL"
-  },
-  "0022300243": {
-    "homeTeam": "UTA",
-    "awayTeam": "NOP"
-  },
-  "0022300244": {
-    "homeTeam": "LAC",
-    "awayTeam": "DAL"
-  },
-  "0022300245": {
-    "homeTeam": "MIL",
-    "awayTeam": "POR"
-  },
-  "0022300246": {
-    "homeTeam": "BOS",
-    "awayTeam": "ATL"
-  },
-  "0022300247": {
-    "homeTeam": "NYK",
-    "awayTeam": "PHX"
-  },
-  "0022300248": {
-    "homeTeam": "ORL",
-    "awayTeam": "CHA"
-  },
-  "0022300249": {
-    "homeTeam": "MEM",
-    "awayTeam": "MIN"
-  },
-  "0022300250": {
-    "homeTeam": "BKN",
-    "awayTeam": "CHI"
-  },
-  "0022300251": {
-    "homeTeam": "CLE",
-    "awayTeam": "TOR"
-  },
-  "0022300252": {
-    "homeTeam": "DEN",
-    "awayTeam": "SAS"
-  },
-  "0022300253": {
-    "homeTeam": "DET",
-    "awayTeam": "WAS"
-  },
-  "0022300254": {
-    "homeTeam": "IND",
-    "awayTeam": "POR"
-  },
-  "0022300255": {
-    "homeTeam": "PHI",
-    "awayTeam": "LAL"
-  },
-  "0022300256": {
-    "homeTeam": "UTA",
-    "awayTeam": "NOP"
-  },
-  "0022300257": {
-    "homeTeam": "LAC",
-    "awayTeam": "DEN"
-  },
-  "0022300053": {
-    "homeTeam": "BOS",
-    "awayTeam": "CHI"
-  },
-  "0022300054": {
-    "homeTeam": "BKN",
-    "awayTeam": "TOR"
-  },
-  "0022300055": {
-    "homeTeam": "CLE",
-    "awayTeam": "ATL"
-  },
-  "0022300056": {
-    "homeTeam": "MIA",
-    "awayTeam": "MIL"
-  },
-  "0022300057": {
-    "homeTeam": "NYK",
-    "awayTeam": "CHA"
-  },
-  "0022300058": {
-    "homeTeam": "MIN",
-    "awayTeam": "OKC"
-  },
-  "0022300059": {
-    "homeTeam": "DAL",
-    "awayTeam": "HOU"
-  },
-  "0022300060": {
-    "homeTeam": "SAC",
-    "awayTeam": "GSW"
-  },
-  "0022300258": {
-    "homeTeam": "DET",
-    "awayTeam": "LAL"
-  },
-  "0022300259": {
-    "homeTeam": "ORL",
-    "awayTeam": "WAS"
-  },
-  "0022300260": {
-    "homeTeam": "TOR",
-    "awayTeam": "PHX"
-  },
-  "0022300261": {
-    "homeTeam": "MEM",
-    "awayTeam": "UTA"
-  },
-  "0022300262": {
-    "homeTeam": "NOP",
-    "awayTeam": "PHI"
-  },
-  "0022300263": {
-    "homeTeam": "DEN",
-    "awayTeam": "HOU"
-  },
-  "0022300264": {
-    "homeTeam": "SAC",
-    "awayTeam": "LAC"
-  },
-  "0022300265": {
-    "homeTeam": "CLE",
-    "awayTeam": "POR"
-  },
-  "0022300266": {
-    "homeTeam": "BKN",
-    "awayTeam": "CHA"
-  },
-  "0022300267": {
-    "homeTeam": "MIA",
-    "awayTeam": "IND"
-  },
-  "0022300268": {
-    "homeTeam": "NYK",
-    "awayTeam": "DET"
-  },
-  "0022300269": {
-    "homeTeam": "CHI",
-    "awayTeam": "MIL"
-  },
-  "0022300270": {
-    "homeTeam": "MIN",
-    "awayTeam": "UTA"
-  },
-  "0022300271": {
-    "homeTeam": "OKC",
-    "awayTeam": "LAL"
-  },
-  "0022300272": {
-    "homeTeam": "SAS",
-    "awayTeam": "ATL"
-  },
-  "0022300273": {
-    "homeTeam": "GSW",
-    "awayTeam": "LAC"
-  },
-  "0022300274": {
-    "homeTeam": "ORL",
-    "awayTeam": "WAS"
-  },
-  "0022300275": {
-    "homeTeam": "BOS",
-    "awayTeam": "PHI"
-  },
-  "0022300276": {
-    "homeTeam": "TOR",
-    "awayTeam": "NYK"
-  },
-  "0022300277": {
-    "homeTeam": "DAL",
-    "awayTeam": "MEM"
-  },
-  "0022300278": {
-    "homeTeam": "NOP",
-    "awayTeam": "SAS"
-  },
-  "0022300279": {
-    "homeTeam": "PHX",
-    "awayTeam": "DEN"
-  },
-  "0022300280": {
+  "0012400004": {
     "homeTeam": "LAC",
     "awayTeam": "GSW"
   },
-  "0022300281": {
+  "0012400005": {
+    "homeTeam": "BOS",
+    "awayTeam": "DEN"
+  },
+  "0012400006": {
     "homeTeam": "CHA",
-    "awayTeam": "MIN"
-  },
-  "0022300282": {
-    "homeTeam": "BKN",
-    "awayTeam": "ORL"
-  },
-  "0022300283": {
-    "homeTeam": "DET",
-    "awayTeam": "CLE"
-  },
-  "0022300284": {
-    "homeTeam": "MIA",
-    "awayTeam": "IND"
-  },
-  "0022300285": {
-    "homeTeam": "CHI",
-    "awayTeam": "NOP"
-  },
-  "0022300286": {
-    "homeTeam": "MIL",
-    "awayTeam": "ATL"
-  },
-  "0022300287": {
-    "homeTeam": "DAL",
-    "awayTeam": "OKC"
-  },
-  "0022300288": {
-    "homeTeam": "PHX",
-    "awayTeam": "MEM"
-  },
-  "0022300289": {
-    "homeTeam": "UTA",
-    "awayTeam": "POR"
-  },
-  "0022300290": {
-    "homeTeam": "SAC",
-    "awayTeam": "DEN"
-  },
-  "0022300291": {
-    "homeTeam": "LAL",
-    "awayTeam": "HOU"
-  },
-  "0022301202": {
-    "homeTeam": "IND",
-    "awayTeam": "BOS"
-  },
-  "0022301204": {
-    "homeTeam": "SAC",
-    "awayTeam": "NOP"
-  },
-  "0022301201": {
-    "homeTeam": "MIL",
     "awayTeam": "NYK"
   },
-  "0022301203": {
-    "homeTeam": "LAL",
-    "awayTeam": "PHX"
-  },
-  "0022301205": {
-    "homeTeam": "CLE",
-    "awayTeam": "ORL"
-  },
-  "0022301206": {
-    "homeTeam": "DET",
-    "awayTeam": "MEM"
-  },
-  "0022301207": {
+  "0012400007": {
     "homeTeam": "TOR",
-    "awayTeam": "MIA"
-  },
-  "0022301208": {
-    "homeTeam": "WAS",
-    "awayTeam": "PHI"
-  },
-  "0022301209": {
-    "homeTeam": "ATL",
-    "awayTeam": "BKN"
-  },
-  "0022301210": {
-    "homeTeam": "MIN",
-    "awayTeam": "SAS"
-  },
-  "0022301211": {
-    "homeTeam": "CHI",
-    "awayTeam": "CHA"
-  },
-  "0022301212": {
-    "homeTeam": "HOU",
-    "awayTeam": "OKC"
-  },
-  "0022301213": {
-    "homeTeam": "DAL",
-    "awayTeam": "UTA"
-  },
-  "0022301214": {
-    "homeTeam": "GSW",
-    "awayTeam": "POR"
-  },
-  "0022301215": {
-    "homeTeam": "LAC",
-    "awayTeam": "DEN"
-  },
-  "0022301229": {
-    "homeTeam": "MIL",
-    "awayTeam": "IND"
-  },
-  "0022301230": {
-    "homeTeam": "LAL",
-    "awayTeam": "NOP"
-  },
-  "0022301216": {
-    "homeTeam": "CHA",
-    "awayTeam": "TOR"
-  },
-  "0022301217": {
-    "homeTeam": "ORL",
-    "awayTeam": "DET"
-  },
-  "0022301218": {
-    "homeTeam": "PHI",
-    "awayTeam": "ATL"
-  },
-  "0022301219": {
-    "homeTeam": "BKN",
     "awayTeam": "WAS"
   },
-  "0022301220": {
-    "homeTeam": "MIA",
-    "awayTeam": "CLE"
-  },
-  "0022301221": {
-    "homeTeam": "MEM",
-    "awayTeam": "MIN"
-  },
-  "0022301222": {
-    "homeTeam": "OKC",
-    "awayTeam": "GSW"
-  },
-  "0022301223": {
-    "homeTeam": "SAS",
-    "awayTeam": "CHI"
-  },
-  "0022301224": {
-    "homeTeam": "DEN",
-    "awayTeam": "HOU"
-  },
-  "0022301225": {
-    "homeTeam": "UTA",
-    "awayTeam": "LAC"
-  },
-  "0022301226": {
-    "homeTeam": "POR",
-    "awayTeam": "DAL"
-  },
-  "0022301227": {
-    "homeTeam": "BOS",
-    "awayTeam": "NYK"
-  },
-  "0022301228": {
-    "homeTeam": "PHX",
-    "awayTeam": "SAC"
-  },
-  "0062300001": {
-    "homeTeam": "LAL",
-    "awayTeam": "IND"
-  },
-  "0022300292": {
-    "homeTeam": "CHA",
-    "awayTeam": "MIA"
-  },
-  "0022300293": {
-    "homeTeam": "DET",
-    "awayTeam": "IND"
-  },
-  "0022300294": {
-    "homeTeam": "ORL",
-    "awayTeam": "CLE"
-  },
-  "0022300295": {
-    "homeTeam": "PHI",
-    "awayTeam": "WAS"
-  },
-  "0022300296": {
-    "homeTeam": "ATL",
-    "awayTeam": "DEN"
-  },
-  "0022300297": {
-    "homeTeam": "NYK",
-    "awayTeam": "TOR"
-  },
-  "0022300298": {
-    "homeTeam": "HOU",
-    "awayTeam": "SAS"
-  },
-  "0022300299": {
-    "homeTeam": "MEM",
-    "awayTeam": "DAL"
-  },
-  "0022300300": {
-    "homeTeam": "MIL",
-    "awayTeam": "CHI"
-  },
-  "0022300301": {
-    "homeTeam": "NOP",
-    "awayTeam": "MIN"
-  },
-  "0022300302": {
-    "homeTeam": "OKC",
-    "awayTeam": "UTA"
-  },
-  "0022300303": {
-    "homeTeam": "SAC",
-    "awayTeam": "BKN"
-  },
-  "0022300304": {
-    "homeTeam": "LAC",
-    "awayTeam": "POR"
-  },
-  "0022300305": {
-    "homeTeam": "BOS",
-    "awayTeam": "CLE"
-  },
-  "0022300306": {
-    "homeTeam": "DAL",
-    "awayTeam": "LAL"
-  },
-  "0022300307": {
-    "homeTeam": "CHI",
-    "awayTeam": "DEN"
-  },
-  "0022300308": {
-    "homeTeam": "PHX",
-    "awayTeam": "GSW"
-  },
-  "0022300309": {
-    "homeTeam": "LAC",
-    "awayTeam": "SAC"
-  },
-  "0022300310": {
-    "homeTeam": "DET",
-    "awayTeam": "PHI"
-  },
-  "0022300311": {
-    "homeTeam": "WAS",
-    "awayTeam": "NOP"
-  },
-  "0022300312": {
-    "homeTeam": "MIA",
-    "awayTeam": "CHA"
-  },
-  "0022300313": {
-    "homeTeam": "TOR",
-    "awayTeam": "ATL"
-  },
-  "0022300314": {
-    "homeTeam": "HOU",
-    "awayTeam": "MEM"
-  },
-  "0022300315": {
-    "homeTeam": "MIL",
-    "awayTeam": "IND"
-  },
-  "0022300316": {
-    "homeTeam": "SAS",
-    "awayTeam": "LAL"
-  },
-  "0022300317": {
-    "homeTeam": "PHX",
-    "awayTeam": "BKN"
-  },
-  "0022300318": {
-    "homeTeam": "UTA",
-    "awayTeam": "NYK"
-  },
-  "0022300319": {
-    "homeTeam": "BOS",
-    "awayTeam": "CLE"
-  },
-  "0022300320": {
-    "homeTeam": "MIA",
-    "awayTeam": "CHI"
-  },
-  "0022300321": {
-    "homeTeam": "DAL",
-    "awayTeam": "MIN"
-  },
-  "0022300322": {
-    "homeTeam": "DEN",
-    "awayTeam": "BKN"
-  },
-  "0022300323": {
-    "homeTeam": "POR",
-    "awayTeam": "UTA"
-  },
-  "0022300324": {
-    "homeTeam": "SAC",
-    "awayTeam": "OKC"
-  },
-  "0022300325": {
-    "homeTeam": "LAC",
-    "awayTeam": "GSW"
-  },
-  "0022300326": {
-    "homeTeam": "CHA",
-    "awayTeam": "NOP"
-  },
-  "0022300327": {
-    "homeTeam": "PHI",
-    "awayTeam": "DET"
-  },
-  "0022300328": {
-    "homeTeam": "WAS",
-    "awayTeam": "IND"
-  },
-  "0022300329": {
-    "homeTeam": "BOS",
-    "awayTeam": "ORL"
-  },
-  "0022300330": {
-    "homeTeam": "TOR",
-    "awayTeam": "ATL"
-  },
-  "0022300331": {
-    "homeTeam": "SAS",
-    "awayTeam": "LAL"
-  },
-  "0022300332": {
-    "homeTeam": "MEM",
-    "awayTeam": "HOU"
-  },
-  "0022300333": {
-    "homeTeam": "PHX",
-    "awayTeam": "NYK"
-  },
-  "0022300334": {
-    "homeTeam": "MIL",
-    "awayTeam": "DET"
-  },
-  "0022300335": {
-    "homeTeam": "CHA",
-    "awayTeam": "PHI"
-  },
-  "0022300336": {
-    "homeTeam": "CLE",
-    "awayTeam": "ATL"
-  },
-  "0022300337": {
-    "homeTeam": "MIA",
-    "awayTeam": "CHI"
-  },
-  "0022300338": {
-    "homeTeam": "MIN",
-    "awayTeam": "IND"
-  },
-  "0022300339": {
-    "homeTeam": "GSW",
-    "awayTeam": "BKN"
-  },
-  "0022300340": {
-    "homeTeam": "DEN",
-    "awayTeam": "OKC"
-  },
-  "0022300341": {
-    "homeTeam": "POR",
-    "awayTeam": "DAL"
-  },
-  "0022300342": {
-    "homeTeam": "SAC",
-    "awayTeam": "UTA"
-  },
-  "0022300343": {
-    "homeTeam": "LAC",
-    "awayTeam": "NYK"
-  },
-  "0022300344": {
-    "homeTeam": "BOS",
-    "awayTeam": "ORL"
-  },
-  "0022300345": {
-    "homeTeam": "SAS",
-    "awayTeam": "NOP"
-  },
-  "0022300346": {
-    "homeTeam": "MIL",
-    "awayTeam": "HOU"
-  },
-  "0022300347": {
-    "homeTeam": "PHX",
-    "awayTeam": "WAS"
-  },
-  "0022300348": {
-    "homeTeam": "POR",
-    "awayTeam": "GSW"
-  },
-  "0022300349": {
-    "homeTeam": "CLE",
-    "awayTeam": "HOU"
-  },
-  "0022300350": {
-    "homeTeam": "IND",
-    "awayTeam": "LAC"
-  },
-  "0022300351": {
-    "homeTeam": "PHI",
-    "awayTeam": "CHI"
-  },
-  "0022300352": {
-    "homeTeam": "ATL",
-    "awayTeam": "DET"
-  },
-  "0022300353": {
-    "homeTeam": "MIA",
-    "awayTeam": "MIN"
-  },
-  "0022300354": {
-    "homeTeam": "TOR",
-    "awayTeam": "CHA"
-  },
-  "0022300355": {
-    "homeTeam": "OKC",
-    "awayTeam": "MEM"
-  },
-  "0022300356": {
-    "homeTeam": "DEN",
-    "awayTeam": "DAL"
-  },
-  "0022300357": {
-    "homeTeam": "UTA",
-    "awayTeam": "BKN"
-  },
-  "0022300358": {
-    "homeTeam": "SAC",
-    "awayTeam": "WAS"
-  },
-  "0022300359": {
-    "homeTeam": "LAL",
-    "awayTeam": "NYK"
-  },
-  "0022300360": {
-    "homeTeam": "NOP",
-    "awayTeam": "MEM"
-  },
-  "0022300361": {
-    "homeTeam": "MIL",
-    "awayTeam": "SAS"
-  },
-  "0022300362": {
-    "homeTeam": "GSW",
-    "awayTeam": "BOS"
-  },
-  "0022300363": {
-    "homeTeam": "POR",
-    "awayTeam": "PHX"
-  },
-  "0022300364": {
-    "homeTeam": "CLE",
-    "awayTeam": "UTA"
-  },
-  "0022300365": {
-    "homeTeam": "IND",
-    "awayTeam": "CHA"
-  },
-  "0022300366": {
-    "homeTeam": "ORL",
-    "awayTeam": "MIA"
-  },
-  "0022300367": {
-    "homeTeam": "PHI",
-    "awayTeam": "MIN"
-  },
-  "0022300368": {
-    "homeTeam": "BKN",
-    "awayTeam": "NYK"
-  },
-  "0022300369": {
-    "homeTeam": "TOR",
-    "awayTeam": "DEN"
-  },
-  "0022300370": {
-    "homeTeam": "CHI",
-    "awayTeam": "LAL"
-  },
-  "0022300371": {
-    "homeTeam": "HOU",
-    "awayTeam": "ATL"
-  },
-  "0022300372": {
-    "homeTeam": "DAL",
-    "awayTeam": "LAC"
-  },
-  "0022300373": {
-    "homeTeam": "SAC",
-    "awayTeam": "BOS"
-  },
-  "0022300374": {
-    "homeTeam": "DET",
-    "awayTeam": "UTA"
-  },
-  "0022300375": {
-    "homeTeam": "CLE",
-    "awayTeam": "NOP"
-  },
-  "0022300376": {
-    "homeTeam": "CHI",
-    "awayTeam": "SAS"
-  },
-  "0022300377": {
-    "homeTeam": "MEM",
-    "awayTeam": "IND"
-  },
-  "0022300378": {
-    "homeTeam": "MIL",
-    "awayTeam": "ORL"
-  },
-  "0022300379": {
-    "homeTeam": "OKC",
-    "awayTeam": "LAC"
-  },
-  "0022300380": {
-    "homeTeam": "MIN",
-    "awayTeam": "LAL"
-  },
-  "0022300381": {
-    "homeTeam": "POR",
-    "awayTeam": "WAS"
-  },
-  "0022300382": {
-    "homeTeam": "PHI",
-    "awayTeam": "TOR"
-  },
-  "0022300383": {
-    "homeTeam": "BKN",
-    "awayTeam": "DEN"
-  },
-  "0022300384": {
-    "homeTeam": "MIA",
-    "awayTeam": "ATL"
-  },
-  "0022300385": {
-    "homeTeam": "HOU",
-    "awayTeam": "DAL"
-  },
-  "0022300386": {
-    "homeTeam": "GSW",
-    "awayTeam": "WAS"
-  },
-  "0022300387": {
-    "homeTeam": "SAC",
-    "awayTeam": "PHX"
-  },
-  "0022300388": {
-    "homeTeam": "NYK",
-    "awayTeam": "MIL"
-  },
-  "0022300389": {
-    "homeTeam": "LAC",
-    "awayTeam": "BOS"
-  },
-  "0022300390": {
-    "homeTeam": "CHA",
-    "awayTeam": "DEN"
-  },
-  "0022300391": {
-    "homeTeam": "IND",
-    "awayTeam": "ORL"
-  },
-  "0022300392": {
-    "homeTeam": "NOP",
-    "awayTeam": "HOU"
-  },
-  "0022300393": {
-    "homeTeam": "ATL",
-    "awayTeam": "MEM"
-  },
-  "0022300394": {
-    "homeTeam": "BKN",
-    "awayTeam": "DET"
-  },
-  "0022300395": {
-    "homeTeam": "TOR",
-    "awayTeam": "UTA"
-  },
-  "0022300396": {
-    "homeTeam": "CHI",
-    "awayTeam": "CLE"
-  },
-  "0022300397": {
-    "homeTeam": "OKC",
-    "awayTeam": "LAL"
-  },
-  "0022300398": {
-    "homeTeam": "DAL",
-    "awayTeam": "SAS"
-  },
-  "0022300399": {
-    "homeTeam": "GSW",
-    "awayTeam": "POR"
-  },
-  "0022300400": {
-    "homeTeam": "SAC",
-    "awayTeam": "MIN"
-  },
-  "0022300401": {
-    "homeTeam": "NYK",
-    "awayTeam": "MIL"
-  },
-  "0022300402": {
-    "homeTeam": "DEN",
-    "awayTeam": "GSW"
-  },
-  "0022300403": {
-    "homeTeam": "LAL",
-    "awayTeam": "BOS"
-  },
-  "0022300404": {
-    "homeTeam": "MIA",
-    "awayTeam": "PHI"
-  },
-  "0022300405": {
-    "homeTeam": "PHX",
-    "awayTeam": "DAL"
-  },
-  "0022300406": {
-    "homeTeam": "DET",
-    "awayTeam": "BKN"
-  },
-  "0022300407": {
-    "homeTeam": "WAS",
-    "awayTeam": "ORL"
-  },
-  "0022300408": {
-    "homeTeam": "CHI",
-    "awayTeam": "ATL"
-  },
-  "0022300409": {
-    "homeTeam": "HOU",
-    "awayTeam": "IND"
-  },
-  "0022300410": {
-    "homeTeam": "NOP",
-    "awayTeam": "MEM"
-  },
-  "0022300411": {
-    "homeTeam": "OKC",
-    "awayTeam": "MIN"
-  },
-  "0022300412": {
-    "homeTeam": "SAS",
-    "awayTeam": "UTA"
-  },
-  "0022300413": {
-    "homeTeam": "POR",
-    "awayTeam": "SAC"
-  },
-  "0022300414": {
-    "homeTeam": "LAC",
-    "awayTeam": "CHA"
-  },
-  "0022300415": {
-    "homeTeam": "ORL",
-    "awayTeam": "PHI"
-  },
-  "0022300416": {
-    "homeTeam": "WAS",
-    "awayTeam": "TOR"
-  },
-  "0022300417": {
-    "homeTeam": "BKN",
-    "awayTeam": "MIL"
-  },
-  "0022300418": {
-    "homeTeam": "HOU",
-    "awayTeam": "PHX"
-  },
-  "0022300419": {
-    "homeTeam": "OKC",
-    "awayTeam": "NYK"
-  },
-  "0022300420": {
-    "homeTeam": "DAL",
-    "awayTeam": "CLE"
-  },
-  "0022300421": {
-    "homeTeam": "BOS",
-    "awayTeam": "DET"
-  },
-  "0022300422": {
-    "homeTeam": "CHI",
-    "awayTeam": "IND"
-  },
-  "0022300423": {
-    "homeTeam": "MIN",
-    "awayTeam": "DAL"
-  },
-  "0022300424": {
-    "homeTeam": "NOP",
-    "awayTeam": "UTA"
-  },
-  "0022300425": {
-    "homeTeam": "DEN",
-    "awayTeam": "MEM"
-  },
-  "0022300426": {
-    "homeTeam": "GSW",
-    "awayTeam": "MIA"
-  },
-  "0022300427": {
-    "homeTeam": "POR",
-    "awayTeam": "SAS"
-  },
-  "0022300428": {
-    "homeTeam": "LAL",
-    "awayTeam": "CHA"
-  },
-  "0022300429": {
-    "homeTeam": "ORL",
-    "awayTeam": "NYK"
-  },
-  "0022300430": {
-    "homeTeam": "WAS",
-    "awayTeam": "BKN"
-  },
-  "0022300431": {
-    "homeTeam": "ATL",
-    "awayTeam": "SAC"
-  },
-  "0022300432": {
-    "homeTeam": "BOS",
-    "awayTeam": "TOR"
-  },
-  "0022300433": {
-    "homeTeam": "CLE",
-    "awayTeam": "MIL"
-  },
-  "0022300434": {
-    "homeTeam": "HOU",
-    "awayTeam": "PHI"
-  },
-  "0022300435": {
-    "homeTeam": "DEN",
-    "awayTeam": "OKC"
-  },
-  "0022300436": {
-    "homeTeam": "PHX",
-    "awayTeam": "CHA"
-  },
-  "0022300437": {
-    "homeTeam": "POR",
-    "awayTeam": "SAS"
-  },
-  "0022300438": {
-    "homeTeam": "LAC",
-    "awayTeam": "MEM"
-  },
-  "0022300439": {
-    "homeTeam": "UTA",
-    "awayTeam": "MIA"
-  },
-  "0022300440": {
-    "homeTeam": "DET",
-    "awayTeam": "TOR"
-  },
-  "0022300441": {
-    "homeTeam": "IND",
-    "awayTeam": "NYK"
-  },
-  "0022300442": {
-    "homeTeam": "CHI",
-    "awayTeam": "PHI"
-  },
-  "0022300443": {
-    "homeTeam": "MIN",
-    "awayTeam": "LAL"
-  },
-  "0022300444": {
-    "homeTeam": "GSW",
-    "awayTeam": "DAL"
-  },
-  "0022300445": {
-    "homeTeam": "WAS",
-    "awayTeam": "ATL"
-  },
-  "0022300446": {
-    "homeTeam": "NOP",
-    "awayTeam": "LAL"
-  },
-  "0022300447": {
-    "homeTeam": "OKC",
-    "awayTeam": "BKN"
-  },
-  "0022300448": {
-    "homeTeam": "SAS",
-    "awayTeam": "BOS"
-  },
-  "0022300449": {
-    "homeTeam": "MEM",
-    "awayTeam": "SAC"
-  },
-  "0022300450": {
-    "homeTeam": "PHX",
-    "awayTeam": "ORL"
-  },
-  "0022300451": {
-    "homeTeam": "NYK",
-    "awayTeam": "MIN"
-  },
-  "0022300452": {
-    "homeTeam": "TOR",
-    "awayTeam": "CLE"
-  },
-  "0022300453": {
-    "homeTeam": "HOU",
-    "awayTeam": "DET"
-  },
-  "0022300454": {
-    "homeTeam": "MIL",
-    "awayTeam": "IND"
-  },
-  "0022300455": {
-    "homeTeam": "DEN",
-    "awayTeam": "CHA"
-  },
-  "0022300456": {
-    "homeTeam": "PHX",
-    "awayTeam": "POR"
-  },
-  "0022300457": {
-    "homeTeam": "UTA",
-    "awayTeam": "DAL"
-  },
-  "0022300458": {
-    "homeTeam": "LAC",
-    "awayTeam": "MIA"
-  },
-  "0022300459": {
-    "homeTeam": "PHI",
-    "awayTeam": "CHI"
-  },
-  "0022300460": {
-    "homeTeam": "MEM",
-    "awayTeam": "SAS"
-  },
-  "0022300461": {
-    "homeTeam": "NOP",
-    "awayTeam": "BKN"
-  },
-  "0022300462": {
-    "homeTeam": "OKC",
-    "awayTeam": "BOS"
-  },
-  "0022300463": {
-    "homeTeam": "GSW",
-    "awayTeam": "ORL"
-  },
-  "0022300464": {
-    "homeTeam": "SAC",
-    "awayTeam": "CHA"
-  },
-  "0022300465": {
-    "homeTeam": "CLE",
-    "awayTeam": "WAS"
-  },
-  "0022300466": {
-    "homeTeam": "IND",
-    "awayTeam": "MIL"
-  },
-  "0022300467": {
-    "homeTeam": "ATL",
-    "awayTeam": "OKC"
-  },
-  "0022300468": {
-    "homeTeam": "NYK",
-    "awayTeam": "CHI"
-  },
-  "0022300469": {
-    "homeTeam": "HOU",
-    "awayTeam": "BKN"
-  },
-  "0022300470": {
-    "homeTeam": "MEM",
-    "awayTeam": "TOR"
-  },
-  "0022300471": {
-    "homeTeam": "MIN",
-    "awayTeam": "NOP"
-  },
-  "0022300472": {
-    "homeTeam": "DAL",
-    "awayTeam": "POR"
-  },
-  "0022300473": {
-    "homeTeam": "PHX",
-    "awayTeam": "LAC"
-  },
-  "0022300474": {
-    "homeTeam": "UTA",
-    "awayTeam": "DET"
-  },
-  "0022300475": {
-    "homeTeam": "LAL",
-    "awayTeam": "MIA"
-  },
-  "0022300476": {
-    "homeTeam": "SAC",
-    "awayTeam": "ORL"
-  },
-  "0022300477": {
-    "homeTeam": "SAS",
-    "awayTeam": "MIL"
-  },
-  "0022300478": {
-    "homeTeam": "GSW",
-    "awayTeam": "DEN"
-  },
-  "0022300479": {
-    "homeTeam": "BOS",
-    "awayTeam": "UTA"
-  },
-  "0022300480": {
-    "homeTeam": "IND",
-    "awayTeam": "ATL"
-  },
-  "0022300481": {
-    "homeTeam": "BKN",
-    "awayTeam": "OKC"
-  },
-  "0022300482": {
-    "homeTeam": "CLE",
-    "awayTeam": "WAS"
-  },
-  "0022300483": {
-    "homeTeam": "PHI",
-    "awayTeam": "NYK"
-  },
-  "0022300484": {
-    "homeTeam": "CHI",
-    "awayTeam": "CHA"
-  },
-  "0022300485": {
-    "homeTeam": "HOU",
-    "awayTeam": "MIN"
-  },
-  "0022300486": {
-    "homeTeam": "NOP",
-    "awayTeam": "LAC"
-  },
-  "0022300487": {
-    "homeTeam": "DAL",
-    "awayTeam": "POR"
-  },
-  "0022300488": {
-    "homeTeam": "DEN",
-    "awayTeam": "ORL"
-  },
-  "0022300489": {
-    "homeTeam": "PHX",
-    "awayTeam": "MIA"
-  },
-  "0022300490": {
-    "homeTeam": "GSW",
-    "awayTeam": "DET"
-  },
-  "0022300491": {
-    "homeTeam": "LAL",
-    "awayTeam": "MEM"
-  },
-  "0022300492": {
-    "homeTeam": "SAC",
-    "awayTeam": "TOR"
-  },
-  "0022300493": {
-    "homeTeam": "IND",
-    "awayTeam": "BOS"
-  },
-  "0022300494": {
-    "homeTeam": "WAS",
-    "awayTeam": "NYK"
-  },
-  "0022300495": {
-    "homeTeam": "PHI",
-    "awayTeam": "UTA"
-  },
-  "0022300496": {
-    "homeTeam": "HOU",
-    "awayTeam": "MIL"
-  },
-  "0022300497": {
-    "homeTeam": "CLE",
-    "awayTeam": "SAS"
-  },
-  "0022300498": {
-    "homeTeam": "BKN",
-    "awayTeam": "POR"
-  },
-  "0022300499": {
-    "homeTeam": "ORL",
-    "awayTeam": "ATL"
-  },
-  "0022300500": {
-    "homeTeam": "SAC",
-    "awayTeam": "NOP"
-  },
-  "0022300501": {
-    "homeTeam": "DAL",
-    "awayTeam": "MIN"
-  },
-  "0022300502": {
-    "homeTeam": "DEN",
-    "awayTeam": "DET"
-  },
-  "0022300503": {
-    "homeTeam": "PHX",
-    "awayTeam": "MEM"
-  },
-  "0022300504": {
-    "homeTeam": "GSW",
-    "awayTeam": "TOR"
-  },
-  "0022300505": {
-    "homeTeam": "LAL",
-    "awayTeam": "LAC"
-  },
-  "0022300506": {
-    "homeTeam": "CHA",
-    "awayTeam": "CHI"
-  },
-  "0022300507": {
-    "homeTeam": "IND",
-    "awayTeam": "BOS"
-  },
-  "0022300508": {
-    "homeTeam": "WAS",
-    "awayTeam": "OKC"
-  },
-  "0022300509": {
-    "homeTeam": "MIA",
-    "awayTeam": "HOU"
-  },
-  "0022300510": {
-    "homeTeam": "MIL",
-    "awayTeam": "UTA"
-  },
-  "0022300511": {
-    "homeTeam": "LAC",
-    "awayTeam": "PHX"
-  },
-  "0022300512": {
-    "homeTeam": "DET",
-    "awayTeam": "SAC"
-  },
-  "0022300513": {
-    "homeTeam": "ORL",
-    "awayTeam": "MIN"
-  },
-  "0022300514": {
-    "homeTeam": "NYK",
-    "awayTeam": "POR"
-  },
-  "0022300515": {
-    "homeTeam": "DAL",
-    "awayTeam": "MEM"
-  },
-  "0022300516": {
-    "homeTeam": "LAL",
-    "awayTeam": "TOR"
-  },
-  "0022300517": {
-    "homeTeam": "BOS",
-    "awayTeam": "MIN"
-  },
-  "0022300518": {
-    "homeTeam": "CHA",
-    "awayTeam": "SAC"
-  },
-  "0022300519": {
-    "homeTeam": "DET",
-    "awayTeam": "SAS"
-  },
-  "0022300520": {
-    "homeTeam": "IND",
-    "awayTeam": "WAS"
-  },
-  "0022300521": {
-    "homeTeam": "ATL",
-    "awayTeam": "PHI"
-  },
-  "0022300522": {
-    "homeTeam": "MIA",
-    "awayTeam": "OKC"
-  },
-  "0022300523": {
-    "homeTeam": "CHI",
-    "awayTeam": "HOU"
-  },
-  "0022300524": {
-    "homeTeam": "UTA",
-    "awayTeam": "DEN"
-  },
-  "0022300525": {
-    "homeTeam": "GSW",
-    "awayTeam": "NOP"
-  },
-  "0022300526": {
-    "homeTeam": "LAC",
-    "awayTeam": "TOR"
-  },
-  "0022300527": {
-    "homeTeam": "CLE",
-    "awayTeam": "BKN"
-  },
-  "0022300528": {
-    "homeTeam": "MIL",
-    "awayTeam": "BOS"
-  },
-  "0022300529": {
-    "homeTeam": "OKC",
-    "awayTeam": "POR"
-  },
-  "0022300530": {
-    "homeTeam": "DAL",
-    "awayTeam": "NYK"
-  },
-  "0022300531": {
-    "homeTeam": "LAL",
-    "awayTeam": "PHX"
-  },
-  "0022300532": {
-    "homeTeam": "PHI",
-    "awayTeam": "SAC"
-  },
-  "0022300533": {
-    "homeTeam": "ATL",
-    "awayTeam": "IND"
-  },
-  "0022300534": {
-    "homeTeam": "DET",
-    "awayTeam": "HOU"
-  },
-  "0022300535": {
-    "homeTeam": "MIA",
-    "awayTeam": "ORL"
-  },
-  "0022300536": {
-    "homeTeam": "CHI",
-    "awayTeam": "GSW"
-  },
-  "0022300537": {
-    "homeTeam": "MEM",
-    "awayTeam": "LAC"
-  },
-  "0022300538": {
-    "homeTeam": "MIN",
-    "awayTeam": "POR"
-  },
-  "0022300539": {
-    "homeTeam": "DEN",
-    "awayTeam": "NOP"
-  },
-  "0022300540": {
-    "homeTeam": "UTA",
-    "awayTeam": "TOR"
-  },
-  "0022300541": {
-    "homeTeam": "SAS",
-    "awayTeam": "CHA"
-  },
-  "0022300542": {
-    "homeTeam": "BOS",
-    "awayTeam": "HOU"
-  },
-  "0022300543": {
-    "homeTeam": "ATL",
-    "awayTeam": "WAS"
-  },
-  "0022300544": {
-    "homeTeam": "MEM",
-    "awayTeam": "NYK"
-  },
-  "0022300545": {
-    "homeTeam": "MIL",
-    "awayTeam": "GSW"
-  },
-  "0022300546": {
-    "homeTeam": "OKC",
-    "awayTeam": "ORL"
-  },
-  "0022300547": {
-    "homeTeam": "DAL",
-    "awayTeam": "NOP"
-  },
-  "0022300548": {
-    "homeTeam": "SAS",
-    "awayTeam": "CHI"
-  },
-  "0022300549": {
-    "homeTeam": "UTA",
-    "awayTeam": "LAL"
-  },
-  "0022300550": {
-    "homeTeam": "DEN",
-    "awayTeam": "IND"
-  },
-  "0022300551": {
-    "homeTeam": "MIA",
-    "awayTeam": "CHA"
-  },
-  "0022300552": {
-    "homeTeam": "MIL",
-    "awayTeam": "SAC"
-  },
-  "0022300553": {
-    "homeTeam": "MIN",
-    "awayTeam": "LAC"
-  },
-  "0022300554": {
-    "homeTeam": "POR",
-    "awayTeam": "PHX"
-  },
-  "0022300555": {
-    "homeTeam": "PHI",
-    "awayTeam": "HOU"
-  },
-  "0022300556": {
-    "homeTeam": "DAL",
-    "awayTeam": "NOP"
-  },
-  "0022300557": {
-    "homeTeam": "NYK",
-    "awayTeam": "ORL"
-  },
-  "0022300558": {
-    "homeTeam": "WAS",
-    "awayTeam": "DET"
-  },
-  "0022300559": {
-    "homeTeam": "ATL",
-    "awayTeam": "SAS"
-  },
-  "0022300560": {
-    "homeTeam": "MEM",
-    "awayTeam": "GSW"
-  },
-  "0022300561": {
-    "homeTeam": "CLE",
-    "awayTeam": "CHI"
-  },
-  "0022300562": {
-    "homeTeam": "BKN",
-    "awayTeam": "MIA"
-  },
-  "0022300563": {
-    "homeTeam": "TOR",
-    "awayTeam": "BOS"
-  },
-  "0022300564": {
-    "homeTeam": "UTA",
-    "awayTeam": "IND"
-  },
-  "0022300565": {
-    "homeTeam": "LAL",
-    "awayTeam": "OKC"
-  },
-  "0022300566": {
-    "homeTeam": "PHI",
-    "awayTeam": "DEN"
-  },
-  "0022300567": {
-    "homeTeam": "PHX",
-    "awayTeam": "SAC"
-  },
-  "0022300568": {
-    "homeTeam": "LAC",
-    "awayTeam": "OKC"
-  },
-  "0022300569": {
-    "homeTeam": "DET",
-    "awayTeam": "MIN"
-  },
-  "0022300570": {
-    "homeTeam": "ATL",
-    "awayTeam": "ORL"
-  },
-  "0022300571": {
-    "homeTeam": "BOS",
-    "awayTeam": "SAS"
-  },
-  "0022300572": {
-    "homeTeam": "CLE",
-    "awayTeam": "MIL"
-  },
-  "0022300573": {
-    "homeTeam": "NYK",
-    "awayTeam": "HOU"
-  },
-  "0022300574": {
-    "homeTeam": "TOR",
-    "awayTeam": "MIA"
-  },
-  "0022300575": {
-    "homeTeam": "NOP",
-    "awayTeam": "CHA"
-  },
-  "0022300577": {
-    "homeTeam": "LAL",
-    "awayTeam": "DAL"
-  },
-  "0022300578": {
-    "homeTeam": "POR",
-    "awayTeam": "BKN"
-  },
-  "0022300579": {
-    "homeTeam": "NYK",
-    "awayTeam": "WAS"
-  },
-  "0022300580": {
-    "homeTeam": "TOR",
-    "awayTeam": "CHI"
-  },
-  "0022300581": {
-    "homeTeam": "UTA",
-    "awayTeam": "OKC"
-  },
-  "0022300582": {
-    "homeTeam": "MIN",
-    "awayTeam": "MEM"
-  },
-  "0022300583": {
-    "homeTeam": "SAC",
-    "awayTeam": "IND"
-  },
-  "0022300584": {
-    "homeTeam": "CHA",
-    "awayTeam": "SAS"
-  },
-  "0022300585": {
-    "homeTeam": "ORL",
-    "awayTeam": "PHI"
-  },
-  "0022300586": {
-    "homeTeam": "BOS",
-    "awayTeam": "DEN"
-  },
-  "0022300587": {
-    "homeTeam": "MIA",
-    "awayTeam": "ATL"
-  },
-  "0022300588": {
-    "homeTeam": "NOP",
-    "awayTeam": "PHX"
-  },
-  "0022300590": {
-    "homeTeam": "POR",
-    "awayTeam": "IND"
-  },
-  "0022300591": {
-    "homeTeam": "LAL",
-    "awayTeam": "BKN"
-  },
-  "0022300592": {
+  "0012400008": {
     "homeTeam": "DET",
     "awayTeam": "MIL"
   },
-  "0022300593": {
-    "homeTeam": "CHA",
-    "awayTeam": "PHI"
+  "0012400009": {
+    "homeTeam": "LAL",
+    "awayTeam": "PHX"
   },
-  "0022300594": {
-    "homeTeam": "WAS",
-    "awayTeam": "SAS"
+  "0012400010": {
+    "homeTeam": "NOP",
+    "awayTeam": "ORL"
   },
-  "0022300595": {
-    "homeTeam": "ATL",
-    "awayTeam": "CLE"
-  },
-  "0022300596": {
-    "homeTeam": "NYK",
-    "awayTeam": "TOR"
-  },
-  "0022300597": {
-    "homeTeam": "CHI",
+  "0012400012": {
+    "homeTeam": "DAL",
     "awayTeam": "MEM"
   },
-  "0022300598": {
-    "homeTeam": "HOU",
-    "awayTeam": "UTA"
-  },
-  "0022300599": {
-    "homeTeam": "MIN",
+  "0012400013": {
+    "homeTeam": "SAS",
     "awayTeam": "OKC"
   },
-  "0022300600": {
+  "0012400014": {
+    "homeTeam": "UTA",
+    "awayTeam": "HOU"
+  },
+  "0012400015": {
+    "homeTeam": "CHA",
+    "awayTeam": "MIA"
+  },
+  "0012400016": {
+    "homeTeam": "CLE",
+    "awayTeam": "CHI"
+  },
+  "0012400017": {
+    "homeTeam": "DET",
+    "awayTeam": "PHX"
+  },
+  "0012400018": {
+    "homeTeam": "ATL",
+    "awayTeam": "IND"
+  },
+  "0012400019": {
     "homeTeam": "LAC",
     "awayTeam": "BKN"
   },
-  "0022300601": {
-    "homeTeam": "ORL",
-    "awayTeam": "MIA"
+  "0012400020": {
+    "homeTeam": "NYK",
+    "awayTeam": "WAS"
   },
-  "0022300602": {
-    "homeTeam": "WAS",
-    "awayTeam": "DEN"
+  "0012400021": {
+    "homeTeam": "OKC",
+    "awayTeam": "HOU"
   },
-  "0022300603": {
-    "homeTeam": "HOU",
-    "awayTeam": "BOS"
+  "0012400022": {
+    "homeTeam": "SAS",
+    "awayTeam": "ORL"
   },
-  "0022300604": {
-    "homeTeam": "PHX",
-    "awayTeam": "IND"
-  },
-  "0022300605": {
-    "homeTeam": "LAL",
-    "awayTeam": "POR"
-  },
-  "0022300606": {
-    "homeTeam": "DET",
-    "awayTeam": "MIL"
-  },
-  "0022300607": {
-    "homeTeam": "ORL",
-    "awayTeam": "CLE"
-  },
-  "0022300608": {
-    "homeTeam": "PHI",
-    "awayTeam": "SAS"
-  },
-  "0022300609": {
-    "homeTeam": "TOR",
-    "awayTeam": "MEM"
-  },
-  "0022300610": {
-    "homeTeam": "MIN",
-    "awayTeam": "CHA"
-  },
-  "0022300611": {
-    "homeTeam": "DAL",
-    "awayTeam": "BOS"
-  },
-  "0022300612": {
-    "homeTeam": "PHX",
-    "awayTeam": "CHI"
-  },
-  "0022300613": {
+  "0012400023": {
     "homeTeam": "SAC",
-    "awayTeam": "ATL"
-  },
-  "0022300614": {
-    "homeTeam": "IND",
-    "awayTeam": "DEN"
-  },
-  "0022300615": {
-    "homeTeam": "BKN",
-    "awayTeam": "NYK"
-  },
-  "0022300616": {
-    "homeTeam": "NOP",
-    "awayTeam": "UTA"
-  },
-  "0022300617": {
-    "homeTeam": "OKC",
-    "awayTeam": "POR"
-  },
-  "0022300618": {
-    "homeTeam": "LAC",
-    "awayTeam": "LAL"
-  },
-  "0022300619": {
-    "homeTeam": "DET",
-    "awayTeam": "CHA"
-  },
-  "0022300620": {
-    "homeTeam": "WAS",
-    "awayTeam": "MIN"
-  },
-  "0022300621": {
-    "homeTeam": "MIA",
-    "awayTeam": "MEM"
-  },
-  "0022300622": {
-    "homeTeam": "SAS",
-    "awayTeam": "OKC"
-  },
-  "0022300623": {
-    "homeTeam": "HOU",
-    "awayTeam": "POR"
-  },
-  "0022300624": {
-    "homeTeam": "MIL",
-    "awayTeam": "CLE"
-  },
-  "0022300625": {
-    "homeTeam": "DAL",
-    "awayTeam": "PHX"
-  },
-  "0022300626": {
-    "homeTeam": "GSW",
-    "awayTeam": "ATL"
-  },
-  "0022300627": {
-    "homeTeam": "IND",
-    "awayTeam": "PHI"
-  },
-  "0022300628": {
-    "homeTeam": "WAS",
-    "awayTeam": "UTA"
-  },
-  "0022300629": {
-    "homeTeam": "BKN",
-    "awayTeam": "MIN"
-  },
-  "0022300630": {
-    "homeTeam": "MIA",
-    "awayTeam": "BOS"
-  },
-  "0022300631": {
-    "homeTeam": "NYK",
-    "awayTeam": "DEN"
-  },
-  "0022300632": {
-    "homeTeam": "GSW",
-    "awayTeam": "SAC"
-  },
-  "0022300633": {
-    "homeTeam": "LAL",
-    "awayTeam": "CHI"
-  },
-  "0022300634": {
-    "homeTeam": "ATL",
-    "awayTeam": "DAL"
-  },
-  "0022300635": {
-    "homeTeam": "CHA",
-    "awayTeam": "HOU"
-  },
-  "0022300636": {
-    "homeTeam": "IND",
-    "awayTeam": "PHX"
-  },
-  "0022300637": {
-    "homeTeam": "TOR",
-    "awayTeam": "LAC"
-  },
-  "0022300638": {
-    "homeTeam": "MEM",
-    "awayTeam": "ORL"
-  },
-  "0022300639": {
-    "homeTeam": "MIL",
-    "awayTeam": "CLE"
-  },
-  "0022300640": {
-    "homeTeam": "NOP",
-    "awayTeam": "OKC"
-  },
-  "0022300641": {
-    "homeTeam": "SAS",
-    "awayTeam": "POR"
-  },
-  "0022300642": {
-    "homeTeam": "DET",
-    "awayTeam": "WAS"
-  },
-  "0022300643": {
-    "homeTeam": "NYK",
-    "awayTeam": "MIA"
-  },
-  "0022300644": {
-    "homeTeam": "DEN",
-    "awayTeam": "PHI"
-  },
-  "0022300645": {
-    "homeTeam": "BKN",
-    "awayTeam": "HOU"
-  },
-  "0022300646": {
-    "homeTeam": "BOS",
-    "awayTeam": "LAC"
-  },
-  "0022300647": {
-    "homeTeam": "CHA",
-    "awayTeam": "UTA"
-  },
-  "0022300648": {
-    "homeTeam": "MIL",
-    "awayTeam": "NOP"
-  },
-  "0022300649": {
-    "homeTeam": "SAS",
-    "awayTeam": "MIN"
-  },
-  "0022300650": {
-    "homeTeam": "GSW",
-    "awayTeam": "LAL"
-  },
-  "0022300651": {
-    "homeTeam": "DAL",
-    "awayTeam": "SAC"
-  },
-  "0022300652": {
-    "homeTeam": "IND",
-    "awayTeam": "MEM"
-  },
-  "0022300653": {
-    "homeTeam": "ATL",
-    "awayTeam": "TOR"
-  },
-  "0022300654": {
-    "homeTeam": "DET",
-    "awayTeam": "OKC"
-  },
-  "0022300655": {
-    "homeTeam": "ORL",
-    "awayTeam": "PHX"
-  },
-  "0022300656": {
-    "homeTeam": "POR",
-    "awayTeam": "CHI"
-  },
-  "0022300657": {
-    "homeTeam": "CHA",
-    "awayTeam": "NYK"
-  },
-  "0022300658": {
-    "homeTeam": "CLE",
-    "awayTeam": "LAC"
-  },
-  "0022300659": {
-    "homeTeam": "BOS",
-    "awayTeam": "NOP"
-  },
-  "0022300660": {
-    "homeTeam": "BKN",
-    "awayTeam": "UTA"
-  },
-  "0022300661": {
-    "homeTeam": "MIA",
-    "awayTeam": "PHX"
-  },
-  "0022300662": {
-    "homeTeam": "HOU",
-    "awayTeam": "LAL"
-  },
-  "0022300663": {
-    "homeTeam": "MEM",
-    "awayTeam": "SAC"
-  },
-  "0022300664": {
-    "homeTeam": "OKC",
-    "awayTeam": "MIN"
-  },
-  "0022300665": {
-    "homeTeam": "SAS",
-    "awayTeam": "WAS"
-  },
-  "0022300666": {
-    "homeTeam": "DAL",
-    "awayTeam": "ORL"
-  },
-  "0022300667": {
-    "homeTeam": "DEN",
-    "awayTeam": "MIL"
-  },
-  "0022300668": {
-    "homeTeam": "POR",
-    "awayTeam": "PHI"
-  },
-  "0022300669": {
-    "homeTeam": "ATL",
-    "awayTeam": "LAL"
-  },
-  "0022300670": {
-    "homeTeam": "BOS",
-    "awayTeam": "IND"
-  },
-  "0022300671": {
-    "homeTeam": "NYK",
-    "awayTeam": "UTA"
-  },
-  "0022300672": {
-    "homeTeam": "CHI",
-    "awayTeam": "TOR"
-  },
-  "0022300673": {
-    "homeTeam": "GSW",
-    "awayTeam": "PHI"
-  },
-  "0022300674": {
-    "homeTeam": "CHA",
-    "awayTeam": "CHI"
-  },
-  "0022300675": {
-    "homeTeam": "CLE",
-    "awayTeam": "DET"
-  },
-  "0022300676": {
-    "homeTeam": "WAS",
-    "awayTeam": "LAC"
-  },
-  "0022300677": {
-    "homeTeam": "BKN",
-    "awayTeam": "PHX"
-  },
-  "0022300678": {
-    "homeTeam": "MIA",
-    "awayTeam": "SAC"
-  },
-  "0022300679": {
-    "homeTeam": "HOU",
-    "awayTeam": "NOP"
-  },
-  "0022300680": {
-    "homeTeam": "MIN",
-    "awayTeam": "DAL"
-  },
-  "0022300681": {
-    "homeTeam": "SAS",
-    "awayTeam": "ORL"
-  },
-  "0022300682": {
-    "homeTeam": "OKC",
-    "awayTeam": "DEN"
-  },
-  "0022300683": {
-    "homeTeam": "POR",
-    "awayTeam": "MIL"
-  },
-  "0022300684": {
-    "homeTeam": "BOS",
-    "awayTeam": "LAL"
-  },
-  "0022300685": {
-    "homeTeam": "NYK",
-    "awayTeam": "IND"
-  },
-  "0022300686": {
-    "homeTeam": "UTA",
-    "awayTeam": "PHI"
-  },
-  "0022300687": {
-    "homeTeam": "MEM",
-    "awayTeam": "CLE"
-  },
-  "0022300688": {
-    "homeTeam": "DET",
-    "awayTeam": "LAC"
-  },
-  "0022300689": {
-    "homeTeam": "WAS",
-    "awayTeam": "MIA"
-  },
-  "0022300690": {
-    "homeTeam": "ATL",
-    "awayTeam": "PHX"
-  },
-  "0022300691": {
-    "homeTeam": "IND",
-    "awayTeam": "SAC"
-  },
-  "0022300692": {
-    "homeTeam": "HOU",
-    "awayTeam": "TOR"
-  },
-  "0022300693": {
-    "homeTeam": "MEM",
     "awayTeam": "GSW"
   },
-  "0022300694": {
-    "homeTeam": "MIN",
-    "awayTeam": "ORL"
+  "0012400024": {
+    "homeTeam": "CLE",
+    "awayTeam": "IND"
   },
-  "0022300695": {
-    "homeTeam": "OKC",
+  "0012400025": {
+    "homeTeam": "MIA",
+    "awayTeam": "ATL"
+  },
+  "0012400026": {
+    "homeTeam": "DAL",
+    "awayTeam": "UTA"
+  },
+  "0012400027": {
+    "homeTeam": "MEM",
     "awayTeam": "CHA"
   },
-  "0022300696": {
-    "homeTeam": "SAS",
+  "0012400028": {
+    "homeTeam": "MIL",
+    "awayTeam": "LAL"
+  },
+  "0012400030": {
+    "homeTeam": "ORL",
     "awayTeam": "NOP"
   },
-  "0022300697": {
-    "homeTeam": "DEN",
+  "0012400031": {
+    "homeTeam": "WAS",
+    "awayTeam": "TOR"
+  },
+  "0012400032": {
+    "homeTeam": "MIN",
+    "awayTeam": "PHI"
+  },
+  "0012400033": {
+    "homeTeam": "GSW",
+    "awayTeam": "SAC"
+  },
+  "0012400034": {
+    "homeTeam": "PHX",
+    "awayTeam": "DET"
+  },
+  "0012400035": {
+    "homeTeam": "LAC",
     "awayTeam": "POR"
   },
-  "0022300698": {
+  "0012400036": {
+    "homeTeam": "BOS",
+    "awayTeam": "PHI"
+  },
+  "0012400037": {
+    "homeTeam": "CHI",
+    "awayTeam": "MEM"
+  },
+  "0012400038": {
+    "homeTeam": "SAS",
+    "awayTeam": "UTA"
+  },
+  "0012400039": {
+    "homeTeam": "MIA",
+    "awayTeam": "NOP"
+  },
+  "0012400040": {
+    "homeTeam": "NYK",
+    "awayTeam": "MIN"
+  },
+  "0012400041": {
+    "homeTeam": "SAC",
+    "awayTeam": "POR"
+  },
+  "0012400042": {
+    "homeTeam": "BOS",
+    "awayTeam": "TOR"
+  },
+  "0012400043": {
+    "homeTeam": "DEN",
+    "awayTeam": "PHX"
+  },
+  "0012400044": {
+    "homeTeam": "GSW",
+    "awayTeam": "DET"
+  },
+  "0012400045": {
+    "homeTeam": "IND",
+    "awayTeam": "MEM"
+  },
+  "0012400046": {
+    "homeTeam": "ATL",
+    "awayTeam": "PHI"
+  },
+  "0012400047": {
+    "homeTeam": "BKN",
+    "awayTeam": "WAS"
+  },
+  "0012400048": {
+    "homeTeam": "MIL",
+    "awayTeam": "CHI"
+  },
+  "0012400049": {
+    "homeTeam": "LAC",
+    "awayTeam": "DAL"
+  },
+  "0012400050": {
+    "homeTeam": "TOR",
+    "awayTeam": "BOS"
+  },
+  "0012400051": {
+    "homeTeam": "MIA",
+    "awayTeam": "SAS"
+  },
+  "0012400052": {
+    "homeTeam": "NYK",
+    "awayTeam": "CHA"
+  },
+  "0012400053": {
+    "homeTeam": "HOU",
+    "awayTeam": "NOP"
+  },
+  "0012400054": {
+    "homeTeam": "DEN",
+    "awayTeam": "OKC"
+  },
+  "0012400055": {
+    "homeTeam": "UTA",
+    "awayTeam": "SAC"
+  },
+  "0012400056": {
+    "homeTeam": "LAL",
+    "awayTeam": "GSW"
+  },
+  "0012400057": {
+    "homeTeam": "DET",
+    "awayTeam": "CLE"
+  },
+  "0012400058": {
     "homeTeam": "PHI",
     "awayTeam": "BKN"
   },
-  "0022300699": {
-    "homeTeam": "ATL",
-    "awayTeam": "GSW"
-  },
-  "0022300700": {
-    "homeTeam": "CHI",
-    "awayTeam": "SAC"
-  },
-  "0022300701": {
-    "homeTeam": "NYK",
-    "awayTeam": "LAL"
-  },
-  "0022300702": {
-    "homeTeam": "DAL",
-    "awayTeam": "MIL"
-  },
-  "0022300703": {
-    "homeTeam": "SAS",
-    "awayTeam": "CLE"
-  },
-  "0022300704": {
-    "homeTeam": "DET",
-    "awayTeam": "ORL"
-  },
-  "0022300705": {
-    "homeTeam": "WAS",
-    "awayTeam": "PHX"
-  },
-  "0022300706": {
-    "homeTeam": "BOS",
-    "awayTeam": "MEM"
-  },
-  "0022300707": {
-    "homeTeam": "CHA",
-    "awayTeam": "IND"
-  },
-  "0022300708": {
-    "homeTeam": "MIA",
-    "awayTeam": "LAC"
-  },
-  "0022300709": {
-    "homeTeam": "MIN",
-    "awayTeam": "HOU"
-  },
-  "0022300710": {
-    "homeTeam": "OKC",
-    "awayTeam": "TOR"
-  },
-  "0022300711": {
-    "homeTeam": "UTA",
-    "awayTeam": "MIL"
-  },
-  "0022300712": {
-    "homeTeam": "DEN",
-    "awayTeam": "POR"
-  },
-  "0022300713": {
-    "homeTeam": "CHA",
-    "awayTeam": "LAL"
-  },
-  "0022300714": {
-    "homeTeam": "CLE",
-    "awayTeam": "SAC"
-  },
-  "0022300715": {
-    "homeTeam": "PHI",
-    "awayTeam": "DAL"
-  },
-  "0022300716": {
-    "homeTeam": "ATL",
-    "awayTeam": "LAC"
-  },
-  "0022300717": {
-    "homeTeam": "BKN",
-    "awayTeam": "GSW"
-  },
-  "0022300718": {
-    "homeTeam": "NOP",
-    "awayTeam": "TOR"
-  },
-  "0022300719": {
-    "homeTeam": "IND",
-    "awayTeam": "HOU"
-  },
-  "0022300720": {
-    "homeTeam": "BKN",
-    "awayTeam": "DAL"
-  },
-  "0022300721": {
-    "homeTeam": "MIA",
-    "awayTeam": "ORL"
-  },
-  "0022300722": {
-    "homeTeam": "NYK",
-    "awayTeam": "MEM"
-  },
-  "0022300723": {
+  "0012400059": {
     "homeTeam": "CHI",
     "awayTeam": "MIN"
   },
-  "0022300724": {
-    "homeTeam": "UTA",
-    "awayTeam": "OKC"
+  "0012400061": {
+    "homeTeam": "IND",
+    "awayTeam": "CHA"
   },
-  "0022300725": {
-    "homeTeam": "PHX",
+  "0012400062": {
+    "homeTeam": "DAL",
     "awayTeam": "MIL"
   },
-  "0022300726": {
-    "homeTeam": "CHA",
+  "0012400063": {
+    "homeTeam": "HOU",
+    "awayTeam": "SAS"
+  },
+  "0012400064": {
+    "homeTeam": "OKC",
+    "awayTeam": "ATL"
+  },
+  "0012400065": {
+    "homeTeam": "PHX",
+    "awayTeam": "LAL"
+  },
+  "0012400066": {
+    "homeTeam": "LAC",
+    "awayTeam": "SAC"
+  },
+  "0012400067": {
+    "homeTeam": "ORL",
+    "awayTeam": "PHI"
+  },
+  "0012400068": {
+    "homeTeam": "WAS",
+    "awayTeam": "NYK"
+  },
+  "0012400069": {
+    "homeTeam": "BKN",
     "awayTeam": "TOR"
   },
-  "0022300727": {
+  "0012400070": {
+    "homeTeam": "CHI",
+    "awayTeam": "CLE"
+  },
+  "0012400071": {
+    "homeTeam": "MEM",
+    "awayTeam": "MIA"
+  },
+  "0012400072": {
+    "homeTeam": "MIN",
+    "awayTeam": "DEN"
+  },
+  "0012400073": {
+    "homeTeam": "POR",
+    "awayTeam": "UTA"
+  },
+  "0012400074": {
+    "homeTeam": "GSW",
+    "awayTeam": "LAL"
+  },
+  "0022400061": {
+    "homeTeam": "BOS",
+    "awayTeam": "NYK"
+  },
+  "0022400062": {
+    "homeTeam": "LAL",
+    "awayTeam": "MIN"
+  },
+  "0022400063": {
+    "homeTeam": "DET",
+    "awayTeam": "IND"
+  },
+  "0022400064": {
+    "homeTeam": "ATL",
+    "awayTeam": "BKN"
+  },
+  "0022400065": {
+    "homeTeam": "MIA",
+    "awayTeam": "ORL"
+  },
+  "0022400066": {
     "homeTeam": "PHI",
+    "awayTeam": "MIL"
+  },
+  "0022400067": {
+    "homeTeam": "TOR",
+    "awayTeam": "CLE"
+  },
+  "0022400068": {
+    "homeTeam": "HOU",
+    "awayTeam": "CHA"
+  },
+  "0022400069": {
+    "homeTeam": "NOP",
+    "awayTeam": "CHI"
+  },
+  "0022400070": {
+    "homeTeam": "UTA",
+    "awayTeam": "MEM"
+  },
+  "0022400071": {
+    "homeTeam": "LAC",
+    "awayTeam": "PHX"
+  },
+  "0022400072": {
+    "homeTeam": "POR",
     "awayTeam": "GSW"
   },
-  "0022300728": {
+  "0022400073": {
+    "homeTeam": "WAS",
+    "awayTeam": "BOS"
+  },
+  "0022400074": {
+    "homeTeam": "DAL",
+    "awayTeam": "SAS"
+  },
+  "0022400075": {
+    "homeTeam": "DEN",
+    "awayTeam": "OKC"
+  },
+  "0022400076": {
+    "homeTeam": "SAC",
+    "awayTeam": "MIN"
+  },
+  "0022400077": {
+    "homeTeam": "ORL",
+    "awayTeam": "BKN"
+  },
+  "0022400078": {
+    "homeTeam": "TOR",
+    "awayTeam": "PHI"
+  },
+  "0022400079": {
+    "homeTeam": "ATL",
+    "awayTeam": "CHA"
+  },
+  "0022400080": {
+    "homeTeam": "CLE",
+    "awayTeam": "DET"
+  },
+  "0022400081": {
+    "homeTeam": "NYK",
+    "awayTeam": "IND"
+  },
+  "0022400082": {
+    "homeTeam": "HOU",
+    "awayTeam": "MEM"
+  },
+  "0022400083": {
+    "homeTeam": "MIL",
+    "awayTeam": "CHI"
+  },
+  "0022400084": {
+    "homeTeam": "UTA",
+    "awayTeam": "GSW"
+  },
+  "0022400085": {
+    "homeTeam": "LAL",
+    "awayTeam": "PHX"
+  },
+  "0022400086": {
+    "homeTeam": "POR",
+    "awayTeam": "NOP"
+  },
+  "0022400087": {
+    "homeTeam": "DEN",
+    "awayTeam": "LAC"
+  },
+  "0022400088": {
+    "homeTeam": "CHA",
+    "awayTeam": "MIA"
+  },
+  "0022400089": {
+    "homeTeam": "DET",
+    "awayTeam": "BOS"
+  },
+  "0022400090": {
     "homeTeam": "WAS",
     "awayTeam": "CLE"
   },
-  "0022300729": {
-    "homeTeam": "BOS",
-    "awayTeam": "ATL"
+  "0022400091": {
+    "homeTeam": "CHI",
+    "awayTeam": "OKC"
   },
-  "0022300730": {
-    "homeTeam": "MIA",
-    "awayTeam": "SAS"
+  "0022400092": {
+    "homeTeam": "MEM",
+    "awayTeam": "ORL"
   },
-  "0022300731": {
-    "homeTeam": "LAC",
-    "awayTeam": "NOP"
+  "0022400093": {
+    "homeTeam": "MIN",
+    "awayTeam": "TOR"
   },
-  "0022300732": {
-    "homeTeam": "SAC",
-    "awayTeam": "DET"
+  "0022400094": {
+    "homeTeam": "SAS",
+    "awayTeam": "HOU"
   },
-  "0022300733": {
-    "homeTeam": "IND",
-    "awayTeam": "GSW"
-  },
-  "0022300734": {
-    "homeTeam": "ORL",
-    "awayTeam": "SAS"
-  },
-  "0022300735": {
-    "homeTeam": "BKN",
-    "awayTeam": "CLE"
-  },
-  "0022300736": {
-    "homeTeam": "NYK",
+  "0022400095": {
+    "homeTeam": "PHX",
     "awayTeam": "DAL"
   },
-  "0022300737": {
+  "0022400096": {
+    "homeTeam": "LAL",
+    "awayTeam": "SAC"
+  },
+  "0022400097": {
+    "homeTeam": "IND",
+    "awayTeam": "PHI"
+  },
+  "0022400098": {
+    "homeTeam": "BKN",
+    "awayTeam": "MIL"
+  },
+  "0022400099": {
+    "homeTeam": "POR",
+    "awayTeam": "NOP"
+  },
+  "0022400100": {
+    "homeTeam": "OKC",
+    "awayTeam": "ATL"
+  },
+  "0022400101": {
+    "homeTeam": "GSW",
+    "awayTeam": "LAC"
+  },
+  "0022400102": {
+    "homeTeam": "ORL",
+    "awayTeam": "IND"
+  },
+  "0022400103": {
+    "homeTeam": "ATL",
+    "awayTeam": "WAS"
+  },
+  "0022400104": {
+    "homeTeam": "BOS",
+    "awayTeam": "MIL"
+  },
+  "0022400105": {
+    "homeTeam": "MIA",
+    "awayTeam": "DET"
+  },
+  "0022400106": {
+    "homeTeam": "NYK",
+    "awayTeam": "CLE"
+  },
+  "0022400107": {
+    "homeTeam": "TOR",
+    "awayTeam": "DEN"
+  },
+  "0022400108": {
     "homeTeam": "MEM",
     "awayTeam": "CHI"
   },
-  "0022300738": {
-    "homeTeam": "MIL",
-    "awayTeam": "MIN"
+  "0022400109": {
+    "homeTeam": "SAS",
+    "awayTeam": "HOU"
   },
-  "0022300739": {
-    "homeTeam": "PHX",
+  "0022400110": {
+    "homeTeam": "DAL",
     "awayTeam": "UTA"
   },
-  "0022300740": {
-    "homeTeam": "LAL",
-    "awayTeam": "DEN"
+  "0022400111": {
+    "homeTeam": "PHX",
+    "awayTeam": "LAL"
   },
-  "0022300741": {
-    "homeTeam": "POR",
-    "awayTeam": "DET"
-  },
-  "0022300742": {
-    "homeTeam": "PHI",
-    "awayTeam": "ATL"
-  },
-  "0022300743": {
-    "homeTeam": "BOS",
-    "awayTeam": "WAS"
-  },
-  "0022300744": {
-    "homeTeam": "TOR",
-    "awayTeam": "HOU"
-  },
-  "0022300745": {
-    "homeTeam": "MIL",
-    "awayTeam": "CHA"
-  },
-  "0022300746": {
+  "0022400112": {
     "homeTeam": "SAC",
+    "awayTeam": "POR"
+  },
+  "0022400113": {
+    "homeTeam": "BKN",
     "awayTeam": "DEN"
   },
-  "0022300747": {
-    "homeTeam": "LAL",
-    "awayTeam": "NOP"
+  "0022400114": {
+    "homeTeam": "MIN",
+    "awayTeam": "DAL"
   },
-  "0022300748": {
-    "homeTeam": "DAL",
-    "awayTeam": "OKC"
-  },
-  "0022300749": {
-    "homeTeam": "LAC",
-    "awayTeam": "DET"
-  },
-  "0022300750": {
-    "homeTeam": "BKN",
-    "awayTeam": "SAS"
-  },
-  "0022300751": {
-    "homeTeam": "CHA",
-    "awayTeam": "MEM"
-  },
-  "0022300752": {
-    "homeTeam": "ORL",
-    "awayTeam": "CHI"
-  },
-  "0022300753": {
-    "homeTeam": "WAS",
-    "awayTeam": "PHI"
-  },
-  "0022300754": {
-    "homeTeam": "ATL",
-    "awayTeam": "HOU"
-  },
-  "0022300755": {
-    "homeTeam": "NYK",
-    "awayTeam": "IND"
-  },
-  "0022300756": {
-    "homeTeam": "TOR",
-    "awayTeam": "CLE"
-  },
-  "0022300757": {
-    "homeTeam": "GSW",
-    "awayTeam": "PHX"
-  },
-  "0022300758": {
-    "homeTeam": "POR",
-    "awayTeam": "NOP"
-  },
-  "0022300759": {
-    "homeTeam": "MIA",
-    "awayTeam": "BOS"
-  },
-  "0022300760": {
-    "homeTeam": "OKC",
+  "0022400115": {
+    "homeTeam": "UTA",
     "awayTeam": "SAC"
   },
-  "0022300761": {
+  "0022400116": {
+    "homeTeam": "GSW",
+    "awayTeam": "NOP"
+  },
+  "0022400117": {
     "homeTeam": "CHA",
-    "awayTeam": "IND"
+    "awayTeam": "TOR"
   },
-  "0022300762": {
+  "0022400118": {
     "homeTeam": "CLE",
-    "awayTeam": "PHI"
+    "awayTeam": "LAL"
   },
-  "0022300763": {
-    "homeTeam": "ATL",
-    "awayTeam": "CHI"
+  "0022400119": {
+    "homeTeam": "IND",
+    "awayTeam": "BOS"
   },
-  "0022300764": {
-    "homeTeam": "TOR",
+  "0022400120": {
+    "homeTeam": "PHI",
+    "awayTeam": "DET"
+  },
+  "0022400121": {
+    "homeTeam": "WAS",
+    "awayTeam": "ATL"
+  },
+  "0022400122": {
+    "homeTeam": "MIA",
+    "awayTeam": "NYK"
+  },
+  "0022400123": {
+    "homeTeam": "CHI",
+    "awayTeam": "ORL"
+  },
+  "0022400124": {
+    "homeTeam": "MEM",
+    "awayTeam": "BKN"
+  },
+  "0022400125": {
+    "homeTeam": "OKC",
     "awayTeam": "SAS"
   },
-  "0022300765": {
+  "0022400126": {
+    "homeTeam": "GSW",
+    "awayTeam": "NOP"
+  },
+  "0022400127": {
+    "homeTeam": "LAC",
+    "awayTeam": "POR"
+  },
+  "0022400128": {
+    "homeTeam": "MEM",
+    "awayTeam": "MIL"
+  },
+  "0022400129": {
+    "homeTeam": "DAL",
+    "awayTeam": "HOU"
+  },
+  "0022400130": {
+    "homeTeam": "UTA",
+    "awayTeam": "SAS"
+  },
+  "0022400131": {
+    "homeTeam": "LAC",
+    "awayTeam": "PHX"
+  },
+  "0022400132": {
+    "homeTeam": "CHA",
+    "awayTeam": "BOS"
+  },
+  "0022400133": {
+    "homeTeam": "CLE",
+    "awayTeam": "ORL"
+  },
+  "0022400134": {
+    "homeTeam": "DET",
+    "awayTeam": "NYK"
+  },
+  "0022400135": {
+    "homeTeam": "ATL",
+    "awayTeam": "SAC"
+  },
+  "0022400136": {
+    "homeTeam": "BKN",
+    "awayTeam": "CHI"
+  },
+  "0022400137": {
+    "homeTeam": "TOR",
+    "awayTeam": "LAL"
+  },
+  "0022400138": {
+    "homeTeam": "NOP",
+    "awayTeam": "IND"
+  },
+  "0022400139": {
+    "homeTeam": "MIN",
+    "awayTeam": "DEN"
+  },
+  "0022400140": {
+    "homeTeam": "POR",
+    "awayTeam": "OKC"
+  },
+  "0022400141": {
+    "homeTeam": "CHA",
+    "awayTeam": "BOS"
+  },
+  "0022400142": {
+    "homeTeam": "PHI",
+    "awayTeam": "MEM"
+  },
+  "0022400143": {
+    "homeTeam": "TOR",
+    "awayTeam": "SAC"
+  },
+  "0022400144": {
+    "homeTeam": "HOU",
+    "awayTeam": "GSW"
+  },
+  "0022400145": {
+    "homeTeam": "MIL",
+    "awayTeam": "CLE"
+  },
+  "0022400146": {
+    "homeTeam": "SAS",
+    "awayTeam": "MIN"
+  },
+  "0022400147": {
+    "homeTeam": "WAS",
+    "awayTeam": "MIA"
+  },
+  "0022400148": {
+    "homeTeam": "DEN",
+    "awayTeam": "UTA"
+  },
+  "0022400149": {
+    "homeTeam": "PHX",
+    "awayTeam": "POR"
+  },
+  "0022400150": {
+    "homeTeam": "LAC",
+    "awayTeam": "OKC"
+  },
+  "0022400151": {
+    "homeTeam": "BKN",
+    "awayTeam": "DET"
+  },
+  "0022400152": {
+    "homeTeam": "NOP",
+    "awayTeam": "ATL"
+  },
+  "0022400153": {
+    "homeTeam": "DAL",
+    "awayTeam": "ORL"
+  },
+  "0022400154": {
+    "homeTeam": "CLE",
+    "awayTeam": "MIL"
+  },
+  "0022400155": {
+    "homeTeam": "WAS",
+    "awayTeam": "GSW"
+  },
+  "0022400156": {
+    "homeTeam": "DET",
+    "awayTeam": "LAL"
+  },
+  "0022400157": {
+    "homeTeam": "ATL",
+    "awayTeam": "BOS"
+  },
+  "0022400158": {
+    "homeTeam": "BKN",
+    "awayTeam": "MEM"
+  },
+  "0022400159": {
+    "homeTeam": "MIA",
+    "awayTeam": "SAC"
+  },
+  "0022400160": {
+    "homeTeam": "CHI",
+    "awayTeam": "UTA"
+  },
+  "0022400161": {
     "homeTeam": "HOU",
     "awayTeam": "NYK"
   },
-  "0022300766": {
-    "homeTeam": "MEM",
-    "awayTeam": "NOP"
+  "0022400162": {
+    "homeTeam": "MIN",
+    "awayTeam": "CHA"
   },
-  "0022300767": {
-    "homeTeam": "MIL",
-    "awayTeam": "DEN"
-  },
-  "0022300768": {
-    "homeTeam": "DAL",
-    "awayTeam": "WAS"
-  },
-  "0022300769": {
-    "homeTeam": "UTA",
-    "awayTeam": "GSW"
-  },
-  "0022300770": {
-    "homeTeam": "LAC",
-    "awayTeam": "MIN"
-  },
-  "0022300771": {
-    "homeTeam": "BKN",
-    "awayTeam": "BOS"
-  },
-  "0022300772": {
-    "homeTeam": "ORL",
-    "awayTeam": "OKC"
-  },
-  "0022300773": {
-    "homeTeam": "MIL",
-    "awayTeam": "MIA"
-  },
-  "0022300774": {
-    "homeTeam": "PHX",
-    "awayTeam": "SAC"
-  },
-  "0022300775": {
-    "homeTeam": "POR",
-    "awayTeam": "MIN"
-  },
-  "0022300776": {
-    "homeTeam": "LAL",
-    "awayTeam": "DET"
-  },
-  "0022300777": {
-    "homeTeam": "CHA",
-    "awayTeam": "ATL"
-  },
-  "0022300778": {
-    "homeTeam": "ORL",
-    "awayTeam": "NYK"
-  },
-  "0022300779": {
-    "homeTeam": "PHI",
-    "awayTeam": "MIA"
-  },
-  "0022300780": {
-    "homeTeam": "BOS",
-    "awayTeam": "BKN"
-  },
-  "0022300781": {
-    "homeTeam": "CLE",
-    "awayTeam": "CHI"
-  },
-  "0022300782": {
-    "homeTeam": "TOR",
-    "awayTeam": "IND"
-  },
-  "0022300783": {
-    "homeTeam": "MEM",
-    "awayTeam": "HOU"
-  },
-  "0022300784": {
-    "homeTeam": "NOP",
-    "awayTeam": "WAS"
-  },
-  "0022300785": {
-    "homeTeam": "DAL",
-    "awayTeam": "SAS"
-  },
-  "0022300786": {
-    "homeTeam": "DEN",
-    "awayTeam": "SAC"
-  },
-  "0022300787": {
-    "homeTeam": "PHX",
-    "awayTeam": "DET"
-  },
-  "0022300788": {
-    "homeTeam": "UTA",
-    "awayTeam": "LAL"
-  },
-  "0022300789": {
-    "homeTeam": "GSW",
-    "awayTeam": "LAC"
-  },
-  "0022300576": {
-    "homeTeam": "UTA",
-    "awayTeam": "GSW"
-  },
-  "0022300790": {
-    "homeTeam": "MEM",
-    "awayTeam": "MIL"
-  },
-  "0022300791": {
-    "homeTeam": "POR",
-    "awayTeam": "MIN"
-  },
-  "0022300792": {
-    "homeTeam": "CLE",
+  "0022400163": {
+    "homeTeam": "OKC",
     "awayTeam": "ORL"
   },
-  "0022300793": {
-    "homeTeam": "IND",
-    "awayTeam": "DET"
-  },
-  "0022300794": {
-    "homeTeam": "PHI",
-    "awayTeam": "NYK"
-  },
-  "0022300795": {
-    "homeTeam": "TOR",
-    "awayTeam": "BKN"
-  },
-  "0022300796": {
-    "homeTeam": "DAL",
-    "awayTeam": "PHX"
-  },
-  "0022300797": {
-    "homeTeam": "CHI",
-    "awayTeam": "BOS"
-  },
-  "0022300798": {
+  "0022400164": {
     "homeTeam": "NOP",
-    "awayTeam": "HOU"
-  },
-  "0022300799": {
-    "homeTeam": "OKC",
-    "awayTeam": "LAC"
-  },
-  "0022300800": {
-    "homeTeam": "DEN",
-    "awayTeam": "WAS"
-  },
-  "0022300801": {
-    "homeTeam": "UTA",
-    "awayTeam": "CHA"
-  },
-  "0022300802": {
-    "homeTeam": "GSW",
-    "awayTeam": "LAL"
-  },
-  "0022300803": {
-    "homeTeam": "SAC",
-    "awayTeam": "SAS"
-  },
-  "0022300804": {
-    "homeTeam": "ATL",
-    "awayTeam": "TOR"
-  },
-  "0022300805": {
-    "homeTeam": "PHI",
-    "awayTeam": "CLE"
-  },
-  "0022300806": {
-    "homeTeam": "HOU",
-    "awayTeam": "PHX"
-  },
-  "0022300807": {
-    "homeTeam": "MEM",
-    "awayTeam": "LAC"
-  },
-  "0022300808": {
-    "homeTeam": "MIN",
-    "awayTeam": "MIL"
-  },
-  "0022300809": {
-    "homeTeam": "OKC",
-    "awayTeam": "WAS"
-  },
-  "0022300810": {
-    "homeTeam": "NOP",
-    "awayTeam": "MIA"
-  },
-  "0022300811": {
-    "homeTeam": "GSW",
-    "awayTeam": "CHA"
-  },
-  "0022300812": {
-    "homeTeam": "POR",
-    "awayTeam": "DEN"
-  },
-  "0022300813": {
-    "homeTeam": "LAL",
-    "awayTeam": "SAS"
-  },
-  "0022300814": {
-    "homeTeam": "DET",
-    "awayTeam": "ORL"
-  },
-  "0022300815": {
-    "homeTeam": "MIN",
-    "awayTeam": "BKN"
-  },
-  "0022300816": {
-    "homeTeam": "NYK",
-    "awayTeam": "BOS"
-  },
-  "0022300817": {
-    "homeTeam": "PHI",
-    "awayTeam": "MIL"
-  },
-  "0022300818": {
-    "homeTeam": "PHX",
-    "awayTeam": "LAL"
-  },
-  "0022300819": {
-    "homeTeam": "IND",
-    "awayTeam": "DAL"
-  },
-  "0022300820": {
-    "homeTeam": "WAS",
-    "awayTeam": "CLE"
-  },
-  "0022300821": {
-    "homeTeam": "ATL",
-    "awayTeam": "ORL"
-  },
-  "0022300822": {
-    "homeTeam": "HOU",
-    "awayTeam": "OKC"
-  },
-  "0022300823": {
-    "homeTeam": "NOP",
-    "awayTeam": "CHI"
-  },
-  "0022300824": {
-    "homeTeam": "GSW",
-    "awayTeam": "DEN"
-  },
-  "0022300825": {
-    "homeTeam": "UTA",
-    "awayTeam": "SAS"
-  },
-  "0022300826": {
-    "homeTeam": "POR",
-    "awayTeam": "CHA"
-  },
-  "0022300827": {
-    "homeTeam": "LAC",
-    "awayTeam": "SAC"
-  },
-  "0022300828": {
-    "homeTeam": "NYK",
-    "awayTeam": "DET"
-  },
-  "0022300829": {
-    "homeTeam": "IND",
-    "awayTeam": "TOR"
-  },
-  "0022300830": {
-    "homeTeam": "MEM",
-    "awayTeam": "BKN"
-  },
-  "0022300831": {
-    "homeTeam": "SAC",
-    "awayTeam": "MIA"
-  },
-  "0022300832": {
-    "homeTeam": "CLE",
-    "awayTeam": "DAL"
-  },
-  "0022300833": {
-    "homeTeam": "ORL",
-    "awayTeam": "BKN"
-  },
-  "0022300834": {
-    "homeTeam": "WAS",
-    "awayTeam": "GSW"
-  },
-  "0022300835": {
-    "homeTeam": "ATL",
-    "awayTeam": "UTA"
-  },
-  "0022300836": {
-    "homeTeam": "BOS",
-    "awayTeam": "PHI"
-  },
-  "0022300837": {
-    "homeTeam": "NYK",
-    "awayTeam": "NOP"
-  },
-  "0022300838": {
-    "homeTeam": "MIN",
-    "awayTeam": "SAS"
-  },
-  "0022300839": {
-    "homeTeam": "CHI",
-    "awayTeam": "DET"
-  },
-  "0022300840": {
-    "homeTeam": "MIL",
-    "awayTeam": "CHA"
-  },
-  "0022300841": {
-    "homeTeam": "OKC",
-    "awayTeam": "HOU"
-  },
-  "0022300842": {
-    "homeTeam": "POR",
-    "awayTeam": "MIA"
-  },
-  "0022300843": {
-    "homeTeam": "IND",
-    "awayTeam": "NOP"
-  },
-  "0022300844": {
-    "homeTeam": "TOR",
-    "awayTeam": "DAL"
-  },
-  "0022300845": {
-    "homeTeam": "MIN",
-    "awayTeam": "MEM"
-  },
-  "0022300846": {
-    "homeTeam": "CHI",
-    "awayTeam": "CLE"
-  },
-  "0022300847": {
-    "homeTeam": "DEN",
-    "awayTeam": "SAC"
-  },
-  "0022300848": {
-    "homeTeam": "LAC",
-    "awayTeam": "LAL"
-  },
-  "0022300849": {
-    "homeTeam": "CHA",
-    "awayTeam": "MIL"
-  },
-  "0022300850": {
-    "homeTeam": "ORL",
-    "awayTeam": "UTA"
-  },
-  "0022300851": {
-    "homeTeam": "BKN",
-    "awayTeam": "ATL"
-  },
-  "0022300852": {
-    "homeTeam": "NYK",
-    "awayTeam": "GSW"
-  },
-  "0022300853": {
-    "homeTeam": "SAS",
-    "awayTeam": "OKC"
-  },
-  "0022300854": {
-    "homeTeam": "PHX",
-    "awayTeam": "HOU"
-  },
-  "0022300855": {
-    "homeTeam": "DEN",
-    "awayTeam": "MIA"
-  },
-  "0022300856": {
-    "homeTeam": "LAL",
-    "awayTeam": "WAS"
-  },
-  "0022300857": {
-    "homeTeam": "DET",
-    "awayTeam": "CLE"
-  },
-  "0022300858": {
-    "homeTeam": "PHI",
-    "awayTeam": "CHA"
-  },
-  "0022300859": {
-    "homeTeam": "BOS",
-    "awayTeam": "DAL"
-  },
-  "0022300860": {
-    "homeTeam": "TOR",
-    "awayTeam": "GSW"
-  },
-  "0022300861": {
-    "homeTeam": "MEM",
     "awayTeam": "POR"
   },
-  "0022300862": {
-    "homeTeam": "MIN",
-    "awayTeam": "SAC"
-  },
-  "0022300863": {
-    "homeTeam": "NOP",
+  "0022400165": {
+    "homeTeam": "DAL",
     "awayTeam": "IND"
   },
-  "0022300864": {
-    "homeTeam": "CHI",
-    "awayTeam": "MIL"
+  "0022400166": {
+    "homeTeam": "DEN",
+    "awayTeam": "TOR"
   },
-  "0022300865": {
-    "homeTeam": "LAC",
-    "awayTeam": "WAS"
-  },
-  "0022300866": {
-    "homeTeam": "BKN",
-    "awayTeam": "ATL"
-  },
-  "0022300867": {
-    "homeTeam": "MIA",
-    "awayTeam": "UTA"
-  },
-  "0022300868": {
-    "homeTeam": "MEM",
-    "awayTeam": "POR"
-  },
-  "0022300869": {
-    "homeTeam": "LAL",
-    "awayTeam": "DEN"
-  },
-  "0022300870": {
+  "0022400167": {
     "homeTeam": "PHX",
-    "awayTeam": "HOU"
-  },
-  "0022300871": {
-    "homeTeam": "DAL",
     "awayTeam": "PHI"
   },
-  "0022300872": {
+  "0022400168": {
+    "homeTeam": "LAC",
+    "awayTeam": "SAS"
+  },
+  "0022400169": {
+    "homeTeam": "CHA",
+    "awayTeam": "DET"
+  },
+  "0022400170": {
+    "homeTeam": "IND",
+    "awayTeam": "ORL"
+  },
+  "0022400171": {
+    "homeTeam": "ATL",
+    "awayTeam": "NYK"
+  },
+  "0022400172": {
     "homeTeam": "BOS",
     "awayTeam": "GSW"
   },
-  "0022300873": {
-    "homeTeam": "MIN",
-    "awayTeam": "LAC"
-  },
-  "0022300874": {
-    "homeTeam": "ORL",
-    "awayTeam": "DET"
-  },
-  "0022300875": {
-    "homeTeam": "TOR",
-    "awayTeam": "CHA"
-  },
-  "0022300876": {
-    "homeTeam": "CLE",
-    "awayTeam": "NYK"
-  },
-  "0022300877": {
-    "homeTeam": "SAS",
-    "awayTeam": "IND"
-  },
-  "0022300878": {
-    "homeTeam": "PHX",
-    "awayTeam": "OKC"
-  },
-  "0022300879": {
-    "homeTeam": "BKN",
-    "awayTeam": "MEM"
-  },
-  "0022300880": {
-    "homeTeam": "MIL",
-    "awayTeam": "LAC"
-  },
-  "0022300881": {
-    "homeTeam": "MIN",
-    "awayTeam": "POR"
-  },
-  "0022300882": {
-    "homeTeam": "UTA",
-    "awayTeam": "WAS"
-  },
-  "0022300883": {
-    "homeTeam": "SAC",
-    "awayTeam": "CHI"
-  },
-  "0022300884": {
-    "homeTeam": "LAL",
-    "awayTeam": "OKC"
-  },
-  "0022300885": {
-    "homeTeam": "CHA",
-    "awayTeam": "ORL"
-  },
-  "0022300886": {
-    "homeTeam": "CLE",
-    "awayTeam": "BOS"
-  },
-  "0022300887": {
-    "homeTeam": "BKN",
-    "awayTeam": "PHI"
-  },
-  "0022300888": {
-    "homeTeam": "MIA",
-    "awayTeam": "DET"
-  },
-  "0022300889": {
-    "homeTeam": "NYK",
-    "awayTeam": "ATL"
-  },
-  "0022300890": {
-    "homeTeam": "TOR",
-    "awayTeam": "NOP"
-  },
-  "0022300891": {
+  "0022400173": {
     "homeTeam": "HOU",
     "awayTeam": "SAS"
   },
-  "0022300892": {
-    "homeTeam": "DAL",
-    "awayTeam": "IND"
+  "0022400174": {
+    "homeTeam": "MEM",
+    "awayTeam": "LAL"
   },
-  "0022300893": {
-    "homeTeam": "DEN",
-    "awayTeam": "PHX"
-  },
-  "0022300894": {
-    "homeTeam": "WAS",
-    "awayTeam": "ORL"
-  },
-  "0022300895": {
-    "homeTeam": "ATL",
+  "0022400175": {
+    "homeTeam": "NOP",
     "awayTeam": "CLE"
   },
-  "0022300896": {
-    "homeTeam": "PHI",
-    "awayTeam": "MEM"
-  },
-  "0022300897": {
-    "homeTeam": "HOU",
-    "awayTeam": "LAC"
-  },
-  "0022300898": {
-    "homeTeam": "UTA",
+  "0022400176": {
+    "homeTeam": "DAL",
     "awayTeam": "CHI"
   },
-  "0022300899": {
-    "homeTeam": "GSW",
-    "awayTeam": "MIL"
-  },
-  "0022300900": {
-    "homeTeam": "POR",
+  "0022400177": {
+    "homeTeam": "DEN",
     "awayTeam": "OKC"
   },
-  "0022300901": {
-    "homeTeam": "LAL",
-    "awayTeam": "SAC"
-  },
-  "0022300902": {
-    "homeTeam": "DET",
-    "awayTeam": "BKN"
-  },
-  "0022300903": {
-    "homeTeam": "IND",
-    "awayTeam": "MIN"
-  },
-  "0022300904": {
-    "homeTeam": "DAL",
+  "0022400178": {
+    "homeTeam": "PHX",
     "awayTeam": "MIA"
   },
-  "0022300905": {
-    "homeTeam": "PHX",
+  "0022400179": {
+    "homeTeam": "LAC",
+    "awayTeam": "PHI"
+  },
+  "0022400180": {
+    "homeTeam": "SAC",
     "awayTeam": "TOR"
   },
-  "0022300906": {
-    "homeTeam": "DEN",
-    "awayTeam": "BOS"
-  },
-  "0022300907": {
-    "homeTeam": "GSW",
-    "awayTeam": "CHI"
-  },
-  "0022300908": {
-    "homeTeam": "SAC",
-    "awayTeam": "SAS"
-  },
-  "0022300909": {
-    "homeTeam": "PHI",
-    "awayTeam": "NOP"
-  },
-  "0022300910": {
-    "homeTeam": "WAS",
-    "awayTeam": "CHA"
-  },
-  "0022300911": {
-    "homeTeam": "CLE",
+  "0022400181": {
+    "homeTeam": "CHI",
     "awayTeam": "MIN"
   },
-  "0022300912": {
-    "homeTeam": "NYK",
-    "awayTeam": "ORL"
-  },
-  "0022300913": {
-    "homeTeam": "MEM",
-    "awayTeam": "ATL"
-  },
-  "0022300914": {
-    "homeTeam": "OKC",
-    "awayTeam": "MIA"
-  },
-  "0022300915": {
-    "homeTeam": "LAL",
-    "awayTeam": "MIL"
-  },
-  "0022300916": {
-    "homeTeam": "POR",
-    "awayTeam": "HOU"
-  },
-  "0022300917": {
-    "homeTeam": "LAC",
-    "awayTeam": "CHI"
-  },
-  "0022300918": {
-    "homeTeam": "CHA",
-    "awayTeam": "BKN"
-  },
-  "0022300919": {
-    "homeTeam": "DET",
-    "awayTeam": "DAL"
-  },
-  "0022300920": {
-    "homeTeam": "PHX",
-    "awayTeam": "BOS"
-  },
-  "0022300921": {
-    "homeTeam": "GSW",
-    "awayTeam": "SAS"
-  },
-  "0022300922": {
-    "homeTeam": "DEN",
+  "0022400182": {
+    "homeTeam": "MIL",
     "awayTeam": "UTA"
   },
-  "0022300923": {
-    "homeTeam": "POR",
-    "awayTeam": "TOR"
+  "0022400183": {
+    "homeTeam": "SAS",
+    "awayTeam": "POR"
   },
-  "0022300924": {
-    "homeTeam": "LAC",
-    "awayTeam": "MIL"
-  },
-  "0022300925": {
-    "homeTeam": "ATL",
-    "awayTeam": "NOP"
-  },
-  "0022300926": {
-    "homeTeam": "MIA",
-    "awayTeam": "WAS"
-  },
-  "0022300927": {
-    "homeTeam": "NYK",
-    "awayTeam": "PHI"
-  },
-  "0022300928": {
-    "homeTeam": "ORL",
+  "0022400184": {
+    "homeTeam": "CHA",
     "awayTeam": "IND"
   },
-  "0022300929": {
-    "homeTeam": "SAC",
-    "awayTeam": "HOU"
+  "0022400185": {
+    "homeTeam": "DET",
+    "awayTeam": "ATL"
   },
-  "0022300930": {
-    "homeTeam": "CLE",
+  "0022400186": {
+    "homeTeam": "ORL",
+    "awayTeam": "NOP"
+  },
+  "0022400187": {
+    "homeTeam": "BOS",
     "awayTeam": "BKN"
   },
-  "0022300931": {
-    "homeTeam": "OKC",
-    "awayTeam": "MEM"
-  },
-  "0022300932": {
-    "homeTeam": "LAL",
-    "awayTeam": "MIN"
-  },
-  "0022300933": {
-    "homeTeam": "DET",
-    "awayTeam": "CHA"
-  },
-  "0022300934": {
+  "0022400188": {
     "homeTeam": "CLE",
-    "awayTeam": "PHX"
-  },
-  "0022300935": {
-    "homeTeam": "CHI",
-    "awayTeam": "DAL"
-  },
-  "0022300936": {
-    "homeTeam": "SAS",
     "awayTeam": "GSW"
   },
-  "0022300937": {
-    "homeTeam": "DEN",
-    "awayTeam": "TOR"
-  },
-  "0022300938": {
-    "homeTeam": "POR",
-    "awayTeam": "BOS"
-  },
-  "0022300939": {
+  "0022400189": {
     "homeTeam": "NYK",
-    "awayTeam": "PHI"
+    "awayTeam": "MIL"
   },
-  "0022300940": {
+  "0022400190": {
+    "homeTeam": "DAL",
+    "awayTeam": "PHX"
+  },
+  "0022400191": {
     "homeTeam": "MEM",
     "awayTeam": "WAS"
   },
-  "0022300941": {
+  "0022400192": {
     "homeTeam": "OKC",
-    "awayTeam": "IND"
-  },
-  "0022300942": {
-    "homeTeam": "SAS",
     "awayTeam": "HOU"
   },
-  "0022300943": {
-    "homeTeam": "UTA",
-    "awayTeam": "BOS"
+  "0022400193": {
+    "homeTeam": "MIN",
+    "awayTeam": "POR"
   },
-  "0022300944": {
-    "homeTeam": "LAC",
-    "awayTeam": "MIN"
+  "0022400194": {
+    "homeTeam": "DEN",
+    "awayTeam": "MIA"
   },
-  "0022300945": {
+  "0022400195": {
+    "homeTeam": "LAL",
+    "awayTeam": "PHI"
+  },
+  "0022400196": {
     "homeTeam": "SAC",
-    "awayTeam": "MIL"
-  },
-  "0022300946": {
-    "homeTeam": "DET",
-    "awayTeam": "TOR"
-  },
-  "0022300947": {
-    "homeTeam": "ORL",
-    "awayTeam": "BKN"
-  },
-  "0022300948": {
-    "homeTeam": "IND",
-    "awayTeam": "CHI"
-  },
-  "0022300949": {
-    "homeTeam": "MIA",
-    "awayTeam": "DEN"
-  },
-  "0022300950": {
-    "homeTeam": "MEM",
-    "awayTeam": "CHA"
-  },
-  "0022300951": {
-    "homeTeam": "NOP",
-    "awayTeam": "CLE"
-  },
-  "0022300952": {
-    "homeTeam": "DAL",
-    "awayTeam": "GSW"
-  },
-  "0022300953": {
-    "homeTeam": "POR",
-    "awayTeam": "ATL"
-  },
-  "0022300954": {
-    "homeTeam": "SAC",
-    "awayTeam": "LAL"
-  },
-  "0022300955": {
-    "homeTeam": "BOS",
-    "awayTeam": "PHX"
-  },
-  "0022300956": {
-    "homeTeam": "CHI",
     "awayTeam": "LAC"
   },
-  "0022300957": {
+  "0022400197": {
+    "homeTeam": "SAS",
+    "awayTeam": "UTA"
+  },
+  "0022400198": {
+    "homeTeam": "ATL",
+    "awayTeam": "CHI"
+  },
+  "0022400199": {
+    "homeTeam": "CLE",
+    "awayTeam": "BKN"
+  },
+  "0022400200": {
+    "homeTeam": "LAC",
+    "awayTeam": "TOR"
+  },
+  "0022400201": {
+    "homeTeam": "DET",
+    "awayTeam": "HOU"
+  },
+  "0022400202": {
+    "homeTeam": "MIL",
+    "awayTeam": "BOS"
+  },
+  "0022400203": {
+    "homeTeam": "IND",
+    "awayTeam": "NYK"
+  },
+  "0022400204": {
+    "homeTeam": "ORL",
+    "awayTeam": "WAS"
+  },
+  "0022400205": {
+    "homeTeam": "PHI",
+    "awayTeam": "CHA"
+  },
+  "0022400206": {
+    "homeTeam": "MIN",
+    "awayTeam": "MIA"
+  },
+  "0022400207": {
+    "homeTeam": "OKC",
+    "awayTeam": "GSW"
+  },
+  "0022400208": {
+    "homeTeam": "DEN",
+    "awayTeam": "DAL"
+  },
+  "0022400209": {
+    "homeTeam": "PHX",
+    "awayTeam": "SAC"
+  },
+  "0022400210": {
+    "homeTeam": "POR",
+    "awayTeam": "MEM"
+  },
+  "0022400211": {
+    "homeTeam": "LAL",
+    "awayTeam": "TOR"
+  },
+  "0022400212": {
+    "homeTeam": "CHI",
+    "awayTeam": "CLE"
+  },
+  "0022400213": {
     "homeTeam": "HOU",
     "awayTeam": "WAS"
   },
-  "0022300958": {
-    "homeTeam": "MIL",
-    "awayTeam": "PHI"
+  "0022400214": {
+    "homeTeam": "NOP",
+    "awayTeam": "BKN"
   },
-  "0022300959": {
+  "0022400215": {
     "homeTeam": "OKC",
-    "awayTeam": "DAL"
+    "awayTeam": "LAC"
   },
-  "0022300960": {
-    "homeTeam": "POR",
-    "awayTeam": "NYK"
+  "0022400216": {
+    "homeTeam": "SAS",
+    "awayTeam": "SAC"
   },
-  "0022300961": {
-    "homeTeam": "CHA",
-    "awayTeam": "PHX"
+  "0022400001": {
+    "homeTeam": "BOS",
+    "awayTeam": "ATL"
   },
-  "0022300962": {
+  "0022400002": {
     "homeTeam": "DET",
     "awayTeam": "MIA"
   },
-  "0022300963": {
+  "0022400003": {
+    "homeTeam": "ORL",
+    "awayTeam": "CHA"
+  },
+  "0022400004": {
+    "homeTeam": "PHI",
+    "awayTeam": "NYK"
+  },
+  "0022400005": {
+    "homeTeam": "MIL",
+    "awayTeam": "TOR"
+  },
+  "0022400006": {
+    "homeTeam": "UTA",
+    "awayTeam": "PHX"
+  },
+  "0022400007": {
+    "homeTeam": "GSW",
+    "awayTeam": "DAL"
+  },
+  "0022400008": {
+    "homeTeam": "POR",
+    "awayTeam": "MIN"
+  },
+  "0022400217": {
+    "homeTeam": "ORL",
+    "awayTeam": "IND"
+  },
+  "0022400218": {
+    "homeTeam": "BKN",
+    "awayTeam": "BOS"
+  },
+  "0022400219": {
+    "homeTeam": "NYK",
+    "awayTeam": "CHI"
+  },
+  "0022400220": {
+    "homeTeam": "PHI",
+    "awayTeam": "CLE"
+  },
+  "0022400221": {
+    "homeTeam": "OKC",
+    "awayTeam": "NOP"
+  },
+  "0022400222": {
+    "homeTeam": "HOU",
+    "awayTeam": "LAC"
+  },
+  "0022400223": {
+    "homeTeam": "MIL",
+    "awayTeam": "DET"
+  },
+  "0022400224": {
+    "homeTeam": "SAS",
+    "awayTeam": "WAS"
+  },
+  "0022400225": {
+    "homeTeam": "LAL",
+    "awayTeam": "MEM"
+  },
+  "0022400226": {
+    "homeTeam": "POR",
+    "awayTeam": "MIN"
+  },
+  "0022400227": {
+    "homeTeam": "SAC",
+    "awayTeam": "PHX"
+  },
+  "0022400228": {
+    "homeTeam": "UTA",
+    "awayTeam": "DAL"
+  },
+  "0022400009": {
+    "homeTeam": "IND",
+    "awayTeam": "MIA"
+  },
+  "0022400010": {
+    "homeTeam": "ORL",
+    "awayTeam": "PHI"
+  },
+  "0022400011": {
     "homeTeam": "TOR",
+    "awayTeam": "DET"
+  },
+  "0022400012": {
+    "homeTeam": "ATL",
+    "awayTeam": "WAS"
+  },
+  "0022400013": {
+    "homeTeam": "CLE",
+    "awayTeam": "CHI"
+  },
+  "0022400014": {
+    "homeTeam": "NYK",
+    "awayTeam": "BKN"
+  },
+  "0022400015": {
+    "homeTeam": "SAS",
+    "awayTeam": "LAL"
+  },
+  "0022400016": {
+    "homeTeam": "HOU",
+    "awayTeam": "LAC"
+  },
+  "0022400017": {
+    "homeTeam": "NOP",
+    "awayTeam": "DEN"
+  },
+  "0022400018": {
+    "homeTeam": "OKC",
+    "awayTeam": "PHX"
+  },
+  "0022400019": {
+    "homeTeam": "GSW",
+    "awayTeam": "MEM"
+  },
+  "0022400020": {
+    "homeTeam": "SAC",
+    "awayTeam": "MIN"
+  },
+  "0022400229": {
+    "homeTeam": "CHA",
+    "awayTeam": "MIL"
+  },
+  "0022400230": {
+    "homeTeam": "BOS",
+    "awayTeam": "TOR"
+  },
+  "0022400231": {
+    "homeTeam": "NOP",
+    "awayTeam": "LAL"
+  },
+  "0022400232": {
+    "homeTeam": "DAL",
+    "awayTeam": "SAS"
+  },
+  "0022400233": {
+    "homeTeam": "SAC",
+    "awayTeam": "UTA"
+  },
+  "0022400234": {
+    "homeTeam": "MIN",
+    "awayTeam": "PHX"
+  },
+  "0022400235": {
+    "homeTeam": "IND",
+    "awayTeam": "MIA"
+  },
+  "0022400236": {
+    "homeTeam": "CLE",
+    "awayTeam": "CHA"
+  },
+  "0022400237": {
+    "homeTeam": "WAS",
+    "awayTeam": "DET"
+  },
+  "0022400238": {
+    "homeTeam": "MEM",
+    "awayTeam": "DEN"
+  },
+  "0022400239": {
+    "homeTeam": "POR",
+    "awayTeam": "ATL"
+  },
+  "0022400240": {
+    "homeTeam": "NYK",
+    "awayTeam": "BKN"
+  },
+  "0022400241": {
+    "homeTeam": "CHI",
+    "awayTeam": "HOU"
+  },
+  "0022400242": {
+    "homeTeam": "OKC",
+    "awayTeam": "DAL"
+  },
+  "0022400243": {
+    "homeTeam": "LAC",
+    "awayTeam": "UTA"
+  },
+  "0022400244": {
+    "homeTeam": "DET",
+    "awayTeam": "CHI"
+  },
+  "0022400245": {
+    "homeTeam": "MIA",
+    "awayTeam": "PHI"
+  },
+  "0022400246": {
+    "homeTeam": "NYK",
+    "awayTeam": "WAS"
+  },
+  "0022400247": {
+    "homeTeam": "TOR",
+    "awayTeam": "IND"
+  },
+  "0022400248": {
+    "homeTeam": "MIL",
+    "awayTeam": "HOU"
+  },
+  "0022400249": {
+    "homeTeam": "PHX",
     "awayTeam": "ORL"
   },
-  "0022300964": {
-    "homeTeam": "NOP",
-    "awayTeam": "LAC"
-  },
-  "0022300965": {
-    "homeTeam": "SAS",
-    "awayTeam": "DEN"
-  },
-  "0022300966": {
-    "homeTeam": "UTA",
+  "0022400250": {
+    "homeTeam": "SAC",
     "awayTeam": "ATL"
   },
-  "0022300967": {
-    "homeTeam": "HOU",
-    "awayTeam": "CLE"
-  },
-  "0022300968": {
-    "homeTeam": "IND",
-    "awayTeam": "BKN"
-  },
-  "0022300969": {
-    "homeTeam": "PHI",
-    "awayTeam": "CHA"
-  },
-  "0022300970": {
-    "homeTeam": "NOP",
-    "awayTeam": "POR"
-  },
-  "0022300971": {
-    "homeTeam": "CHI",
-    "awayTeam": "WAS"
-  },
-  "0022300972": {
-    "homeTeam": "MEM",
-    "awayTeam": "OKC"
-  },
-  "0022300973": {
-    "homeTeam": "LAL",
+  "0022400251": {
+    "homeTeam": "LAC",
     "awayTeam": "GSW"
   },
-  "0022300974": {
-    "homeTeam": "UTA",
-    "awayTeam": "MIN"
-  },
-  "0022300975": {
-    "homeTeam": "SAC",
-    "awayTeam": "NYK"
-  },
-  "0022300976": {
-    "homeTeam": "MIL",
-    "awayTeam": "PHX"
-  },
-  "0022300977": {
-    "homeTeam": "DET",
-    "awayTeam": "MIA"
-  },
-  "0022300978": {
-    "homeTeam": "DAL",
-    "awayTeam": "DEN"
-  },
-  "0022300979": {
-    "homeTeam": "ORL",
-    "awayTeam": "TOR"
-  },
-  "0022300980": {
-    "homeTeam": "WAS",
-    "awayTeam": "BOS"
-  },
-  "0022300981": {
-    "homeTeam": "SAS",
-    "awayTeam": "BKN"
-  },
-  "0022300982": {
-    "homeTeam": "LAC",
-    "awayTeam": "ATL"
-  },
-  "0022300983": {
-    "homeTeam": "IND",
+  "0022400021": {
+    "homeTeam": "BOS",
     "awayTeam": "CLE"
   },
-  "0022300984": {
-    "homeTeam": "BOS",
-    "awayTeam": "DET"
-  },
-  "0022300985": {
-    "homeTeam": "PHI",
-    "awayTeam": "MIA"
-  },
-  "0022300986": {
-    "homeTeam": "CHI",
-    "awayTeam": "POR"
-  },
-  "0022300987": {
-    "homeTeam": "UTA",
-    "awayTeam": "MIN"
-  },
-  "0022300988": {
-    "homeTeam": "GSW",
-    "awayTeam": "NYK"
-  },
-  "0022300989": {
-    "homeTeam": "SAC",
-    "awayTeam": "MEM"
-  },
-  "0022300990": {
-    "homeTeam": "LAL",
-    "awayTeam": "ATL"
-  },
-  "0022300991": {
-    "homeTeam": "ORL",
+  "0022400022": {
+    "homeTeam": "BKN",
     "awayTeam": "CHA"
   },
-  "0022300992": {
-    "homeTeam": "WAS",
-    "awayTeam": "HOU"
-  },
-  "0022300993": {
-    "homeTeam": "BKN",
-    "awayTeam": "NOP"
-  },
-  "0022300994": {
-    "homeTeam": "SAS",
-    "awayTeam": "DAL"
-  },
-  "0022300995": {
-    "homeTeam": "MIN",
+  "0022400023": {
+    "homeTeam": "MEM",
     "awayTeam": "DEN"
   },
-  "0022300996": {
-    "homeTeam": "CLE",
-    "awayTeam": "MIA"
-  },
-  "0022300997": {
-    "homeTeam": "DET",
-    "awayTeam": "IND"
-  },
-  "0022300998": {
-    "homeTeam": "BOS",
-    "awayTeam": "MIL"
-  },
-  "0022300999": {
-    "homeTeam": "TOR",
-    "awayTeam": "SAC"
-  },
-  "0022301000": {
-    "homeTeam": "OKC",
-    "awayTeam": "UTA"
-  },
-  "0022301001": {
-    "homeTeam": "GSW",
-    "awayTeam": "MEM"
-  },
-  "0022301002": {
-    "homeTeam": "PHX",
-    "awayTeam": "PHI"
-  },
-  "0022301003": {
-    "homeTeam": "POR",
-    "awayTeam": "LAC"
-  },
-  "0022301004": {
-    "homeTeam": "ORL",
+  "0022400024": {
+    "homeTeam": "DAL",
     "awayTeam": "NOP"
   },
-  "0022301005": {
-    "homeTeam": "WAS",
-    "awayTeam": "SAC"
+  "0022400025": {
+    "homeTeam": "SAS",
+    "awayTeam": "OKC"
   },
-  "0022301006": {
-    "homeTeam": "HOU",
+  "0022400026": {
+    "homeTeam": "LAL",
+    "awayTeam": "UTA"
+  },
+  "0022400252": {
+    "homeTeam": "CLE",
+    "awayTeam": "NOP"
+  },
+  "0022400253": {
+    "homeTeam": "MIL",
     "awayTeam": "CHI"
   },
-  "0022301007": {
-    "homeTeam": "MIL",
-    "awayTeam": "BKN"
+  "0022400254": {
+    "homeTeam": "HOU",
+    "awayTeam": "IND"
   },
-  "0022301008": {
-    "homeTeam": "DAL",
-    "awayTeam": "UTA"
+  "0022400255": {
+    "homeTeam": "MEM",
+    "awayTeam": "PHI"
   },
-  "0022301009": {
-    "homeTeam": "DEN",
+  "0022400256": {
+    "homeTeam": "OKC",
+    "awayTeam": "POR"
+  },
+  "0022400257": {
+    "homeTeam": "PHX",
     "awayTeam": "NYK"
   },
-  "0022301010": {
-    "homeTeam": "PHX",
+  "0022400258": {
+    "homeTeam": "GSW",
     "awayTeam": "ATL"
   },
-  "0022301011": {
-    "homeTeam": "DET",
-    "awayTeam": "BOS"
-  },
-  "0022301012": {
-    "homeTeam": "TOR",
-    "awayTeam": "OKC"
-  },
-  "0022301013": {
-    "homeTeam": "MIA",
-    "awayTeam": "NOP"
-  },
-  "0022301014": {
-    "homeTeam": "MIN",
-    "awayTeam": "CLE"
-  },
-  "0022301015": {
-    "homeTeam": "SAS",
-    "awayTeam": "MEM"
-  },
-  "0022301016": {
-    "homeTeam": "GSW",
-    "awayTeam": "IND"
-  },
-  "0022301017": {
-    "homeTeam": "POR",
-    "awayTeam": "LAC"
-  },
-  "0022301018": {
-    "homeTeam": "LAL",
-    "awayTeam": "PHI"
-  },
-  "0022301019": {
-    "homeTeam": "NYK",
-    "awayTeam": "BKN"
-  },
-  "0022301020": {
-    "homeTeam": "ORL",
-    "awayTeam": "SAC"
-  },
-  "0022301021": {
-    "homeTeam": "ATL",
-    "awayTeam": "CHA"
-  },
-  "0022301022": {
-    "homeTeam": "WAS",
-    "awayTeam": "TOR"
-  },
-  "0022301023": {
-    "homeTeam": "CHI",
-    "awayTeam": "BOS"
-  },
-  "0022301024": {
-    "homeTeam": "HOU",
-    "awayTeam": "UTA"
-  },
-  "0022301025": {
-    "homeTeam": "SAS",
-    "awayTeam": "PHX"
-  },
-  "0022301026": {
-    "homeTeam": "POR",
-    "awayTeam": "DEN"
-  },
-  "0022301027": {
-    "homeTeam": "DET",
-    "awayTeam": "NOP"
-  },
-  "0022301028": {
+  "0022400259": {
     "homeTeam": "LAC",
-    "awayTeam": "PHI"
+    "awayTeam": "ORL"
   },
-  "0022301029": {
-    "homeTeam": "MIA",
-    "awayTeam": "CLE"
-  },
-  "0022301030": {
-    "homeTeam": "MIL",
-    "awayTeam": "OKC"
-  },
-  "0022301031": {
-    "homeTeam": "MIN",
-    "awayTeam": "GSW"
-  },
-  "0022301032": {
-    "homeTeam": "LAL",
-    "awayTeam": "IND"
-  },
-  "0022301033": {
-    "homeTeam": "CLE",
-    "awayTeam": "CHA"
-  },
-  "0022301034": {
-    "homeTeam": "ATL",
-    "awayTeam": "BOS"
-  },
-  "0022301035": {
-    "homeTeam": "NYK",
+  "0022400260": {
+    "homeTeam": "CHA",
     "awayTeam": "DET"
   },
-  "0022301036": {
+  "0022400261": {
     "homeTeam": "TOR",
+    "awayTeam": "MIN"
+  },
+  "0022400262": {
+    "homeTeam": "SAS",
+    "awayTeam": "UTA"
+  },
+  "0022400263": {
+    "homeTeam": "LAL",
+    "awayTeam": "ORL"
+  },
+  "0022400027": {
+    "homeTeam": "PHI",
     "awayTeam": "BKN"
   },
-  "0022301037": {
-    "homeTeam": "CHI",
-    "awayTeam": "WAS"
+  "0022400028": {
+    "homeTeam": "WAS",
+    "awayTeam": "BOS"
   },
-  "0022301038": {
+  "0022400029": {
+    "homeTeam": "MIL",
+    "awayTeam": "IND"
+  },
+  "0022400030": {
+    "homeTeam": "CHI",
+    "awayTeam": "ATL"
+  },
+  "0022400031": {
     "homeTeam": "HOU",
     "awayTeam": "POR"
   },
-  "0022301039": {
-    "homeTeam": "SAS",
-    "awayTeam": "PHX"
+  "0022400032": {
+    "homeTeam": "NOP",
+    "awayTeam": "GSW"
   },
-  "0022301040": {
+  "0022400033": {
     "homeTeam": "DEN",
+    "awayTeam": "DAL"
+  },
+  "0022400034": {
+    "homeTeam": "LAC",
+    "awayTeam": "SAC"
+  },
+  "0022400264": {
+    "homeTeam": "UTA",
+    "awayTeam": "NYK"
+  },
+  "0022400265": {
+    "homeTeam": "ORL",
+    "awayTeam": "DET"
+  },
+  "0022400266": {
+    "homeTeam": "CHI",
     "awayTeam": "MEM"
   },
-  "0022301041": {
-    "homeTeam": "UTA",
-    "awayTeam": "DAL"
-  },
-  "0022301042": {
-    "homeTeam": "SAC",
-    "awayTeam": "PHI"
-  },
-  "0022301043": {
-    "homeTeam": "LAC",
-    "awayTeam": "IND"
-  },
-  "0022301044": {
-    "homeTeam": "MIA",
-    "awayTeam": "GSW"
-  },
-  "0022301045": {
-    "homeTeam": "MIL",
-    "awayTeam": "LAL"
-  },
-  "0022301046": {
-    "homeTeam": "NOP",
-    "awayTeam": "OKC"
-  },
-  "0022301047": {
-    "homeTeam": "SAC",
-    "awayTeam": "DAL"
-  },
-  "0022301048": {
-    "homeTeam": "CHA",
-    "awayTeam": "CLE"
-  },
-  "0022301049": {
-    "homeTeam": "ORL",
-    "awayTeam": "GSW"
-  },
-  "0022301050": {
-    "homeTeam": "WAS",
-    "awayTeam": "BKN"
-  },
-  "0022301051": {
-    "homeTeam": "ATL",
+  "0022400267": {
+    "homeTeam": "HOU",
     "awayTeam": "POR"
   },
-  "0022301052": {
+  "0022400268": {
+    "homeTeam": "MIL",
+    "awayTeam": "CHA"
+  },
+  "0022400269": {
+    "homeTeam": "SAS",
+    "awayTeam": "GSW"
+  },
+  "0022400270": {
+    "homeTeam": "LAL",
+    "awayTeam": "DEN"
+  },
+  "0022400271": {
+    "homeTeam": "BOS",
+    "awayTeam": "MIN"
+  },
+  "0022400272": {
+    "homeTeam": "IND",
+    "awayTeam": "WAS"
+  },
+  "0022400273": {
+    "homeTeam": "MIA",
+    "awayTeam": "DAL"
+  },
+  "0022400274": {
     "homeTeam": "PHI",
     "awayTeam": "LAC"
   },
-  "0022301053": {
-    "homeTeam": "TOR",
+  "0022400275": {
+    "homeTeam": "CLE",
+    "awayTeam": "TOR"
+  },
+  "0022400276": {
+    "homeTeam": "SAC",
+    "awayTeam": "BKN"
+  },
+  "0022400277": {
+    "homeTeam": "CHA",
+    "awayTeam": "ORL"
+  },
+  "0022400278": {
+    "homeTeam": "DET",
+    "awayTeam": "TOR"
+  },
+  "0022400279": {
+    "homeTeam": "IND",
+    "awayTeam": "NOP"
+  },
+  "0022400280": {
+    "homeTeam": "ATL",
+    "awayTeam": "DAL"
+  },
+  "0022400281": {
+    "homeTeam": "BOS",
+    "awayTeam": "LAC"
+  },
+  "0022400282": {
+    "homeTeam": "MEM",
+    "awayTeam": "POR"
+  },
+  "0022400283": {
+    "homeTeam": "DEN",
     "awayTeam": "NYK"
   },
-  "0022301054": {
-    "homeTeam": "CHI",
-    "awayTeam": "IND"
+  "0022400284": {
+    "homeTeam": "GSW",
+    "awayTeam": "BKN"
   },
-  "0022301055": {
-    "homeTeam": "MEM",
-    "awayTeam": "LAL"
+  "0022400285": {
+    "homeTeam": "SAC",
+    "awayTeam": "OKC"
   },
-  "0022301056": {
+  "0022400035": {
+    "homeTeam": "WAS",
+    "awayTeam": "CHI"
+  },
+  "0022400036": {
+    "homeTeam": "MIA",
+    "awayTeam": "MIL"
+  },
+  "0022400037": {
     "homeTeam": "MIN",
-    "awayTeam": "DET"
-  },
-  "0022301057": {
-    "homeTeam": "OKC",
     "awayTeam": "HOU"
   },
-  "0022301058": {
+  "0022400038": {
     "homeTeam": "UTA",
     "awayTeam": "SAS"
   },
-  "0022301059": {
-    "homeTeam": "DEN",
-    "awayTeam": "PHX"
-  },
-  "0022301060": {
-    "homeTeam": "ATL",
-    "awayTeam": "BOS"
-  },
-  "0022301061": {
-    "homeTeam": "NOP",
-    "awayTeam": "MIL"
-  },
-  "0022301062": {
-    "homeTeam": "CHA",
-    "awayTeam": "GSW"
-  },
-  "0022301063": {
-    "homeTeam": "IND",
+  "0022400039": {
+    "homeTeam": "PHX",
     "awayTeam": "LAL"
   },
-  "0022301064": {
-    "homeTeam": "ORL",
-    "awayTeam": "LAC"
-  },
-  "0022301065": {
-    "homeTeam": "WAS",
-    "awayTeam": "DET"
-  },
-  "0022301066": {
-    "homeTeam": "BKN",
-    "awayTeam": "CHI"
-  },
-  "0022301067": {
-    "homeTeam": "CLE",
-    "awayTeam": "PHI"
-  },
-  "0022301068": {
-    "homeTeam": "MIA",
-    "awayTeam": "POR"
-  },
-  "0022301069": {
-    "homeTeam": "OKC",
-    "awayTeam": "PHX"
-  },
-  "0022301070": {
-    "homeTeam": "SAS",
-    "awayTeam": "NYK"
-  },
-  "0022301071": {
-    "homeTeam": "DEN",
-    "awayTeam": "MIN"
-  },
-  "0022301072": {
-    "homeTeam": "UTA",
-    "awayTeam": "HOU"
-  },
-  "0022301073": {
-    "homeTeam": "SAC",
-    "awayTeam": "DAL"
-  },
-  "0022301074": {
-    "homeTeam": "NOP",
-    "awayTeam": "BOS"
-  },
-  "0022301075": {
-    "homeTeam": "ORL",
-    "awayTeam": "MEM"
-  },
-  "0022301076": {
-    "homeTeam": "ATL",
-    "awayTeam": "MIL"
-  },
-  "0022301077": {
-    "homeTeam": "DEN",
-    "awayTeam": "CLE"
-  },
-  "0022301078": {
-    "homeTeam": "BKN",
-    "awayTeam": "LAL"
-  },
-  "0022301079": {
+  "0022400286": {
     "homeTeam": "CHA",
-    "awayTeam": "LAC"
-  },
-  "0022301080": {
-    "homeTeam": "TOR",
-    "awayTeam": "PHI"
-  },
-  "0022301081": {
-    "homeTeam": "WAS",
     "awayTeam": "MIA"
   },
-  "0022301082": {
-    "homeTeam": "NYK",
-    "awayTeam": "OKC"
+  "0022400287": {
+    "homeTeam": "CLE",
+    "awayTeam": "ATL"
   },
-  "0022301083": {
-    "homeTeam": "HOU",
-    "awayTeam": "DAL"
+  "0022400288": {
+    "homeTeam": "IND",
+    "awayTeam": "POR"
   },
-  "0022301084": {
-    "homeTeam": "MIN",
+  "0022400289": {
+    "homeTeam": "ORL",
     "awayTeam": "CHI"
   },
-  "0022301085": {
+  "0022400290": {
+    "homeTeam": "PHI",
+    "awayTeam": "HOU"
+  },
+  "0022400291": {
+    "homeTeam": "WAS",
+    "awayTeam": "LAC"
+  },
+  "0022400292": {
+    "homeTeam": "DAL",
+    "awayTeam": "NYK"
+  },
+  "0022400293": {
+    "homeTeam": "MEM",
+    "awayTeam": "DET"
+  },
+  "0022400294": {
+    "homeTeam": "MIN",
+    "awayTeam": "SAC"
+  },
+  "0022400295": {
+    "homeTeam": "NOP",
+    "awayTeam": "TOR"
+  },
+  "0022400296": {
     "homeTeam": "SAS",
+    "awayTeam": "LAL"
+  },
+  "0022400297": {
+    "homeTeam": "PHX",
+    "awayTeam": "BKN"
+  },
+  "0022400298": {
+    "homeTeam": "UTA",
+    "awayTeam": "DEN"
+  },
+  "0022400299": {
+    "homeTeam": "GSW",
+    "awayTeam": "OKC"
+  },
+  "0022400040": {
+    "homeTeam": "CHA",
+    "awayTeam": "NYK"
+  },
+  "0022400041": {
+    "homeTeam": "ATL",
+    "awayTeam": "CLE"
+  },
+  "0022400042": {
+    "homeTeam": "MEM",
+    "awayTeam": "NOP"
+  },
+  "0022400043": {
+    "homeTeam": "BKN",
+    "awayTeam": "ORL"
+  },
+  "0022400044": {
+    "homeTeam": "MIN",
+    "awayTeam": "LAC"
+  },
+  "0022400045": {
+    "homeTeam": "IND",
+    "awayTeam": "DET"
+  },
+  "0022400046": {
+    "homeTeam": "MIA",
+    "awayTeam": "TOR"
+  },
+  "0022400047": {
+    "homeTeam": "CHI",
+    "awayTeam": "BOS"
+  },
+  "0022400048": {
+    "homeTeam": "LAL",
+    "awayTeam": "OKC"
+  },
+  "0022400049": {
+    "homeTeam": "POR",
+    "awayTeam": "SAC"
+  },
+  "0022400300": {
+    "homeTeam": "CHA",
+    "awayTeam": "ATL"
+  },
+  "0022400301": {
+    "homeTeam": "DET",
+    "awayTeam": "PHI"
+  },
+  "0022400302": {
+    "homeTeam": "MIL",
+    "awayTeam": "WAS"
+  },
+  "0022400303": {
+    "homeTeam": "PHX",
     "awayTeam": "GSW"
   },
-  "0022301086": {
+  "0022400304": {
+    "homeTeam": "UTA",
+    "awayTeam": "DAL"
+  },
+  "0022400305": {
+    "homeTeam": "BKN",
+    "awayTeam": "ORL"
+  },
+  "0022400306": {
+    "homeTeam": "MEM",
+    "awayTeam": "IND"
+  },
+  "0022400307": {
+    "homeTeam": "CLE",
+    "awayTeam": "BOS"
+  },
+  "0022400308": {
+    "homeTeam": "NYK",
+    "awayTeam": "NOP"
+  },
+  "0022400309": {
+    "homeTeam": "TOR",
+    "awayTeam": "MIA"
+  },
+  "0022400310": {
+    "homeTeam": "HOU",
+    "awayTeam": "OKC"
+  },
+  "0022400311": {
+    "homeTeam": "UTA",
+    "awayTeam": "LAL"
+  },
+  "0022400312": {
+    "homeTeam": "POR",
+    "awayTeam": "DAL"
+  },
+  "0022400313": {
+    "homeTeam": "SAC",
+    "awayTeam": "SAS"
+  },
+  "0022400314": {
+    "homeTeam": "LAC",
+    "awayTeam": "DEN"
+  },
+  "0022400315": {
+    "homeTeam": "ATL",
+    "awayTeam": "NOP"
+  },
+  "0022400316": {
+    "homeTeam": "BOS",
+    "awayTeam": "MIA"
+  },
+  "0022400317": {
+    "homeTeam": "CHI",
+    "awayTeam": "BKN"
+  },
+  "0022400318": {
+    "homeTeam": "MIN",
+    "awayTeam": "LAL"
+  },
+  "0022400050": {
+    "homeTeam": "CHA",
+    "awayTeam": "PHI"
+  },
+  "0022400051": {
+    "homeTeam": "CLE",
+    "awayTeam": "WAS"
+  },
+  "0022400052": {
+    "homeTeam": "DET",
+    "awayTeam": "MIL"
+  },
+  "0022400053": {
+    "homeTeam": "NYK",
+    "awayTeam": "ORL"
+  },
+  "0022400054": {
+    "homeTeam": "TOR",
+    "awayTeam": "IND"
+  },
+  "0022400055": {
+    "homeTeam": "OKC",
+    "awayTeam": "UTA"
+  },
+  "0022400056": {
+    "homeTeam": "DAL",
+    "awayTeam": "MEM"
+  },
+  "0022400057": {
+    "homeTeam": "PHX",
+    "awayTeam": "SAS"
+  },
+  "0022400058": {
+    "homeTeam": "DEN",
+    "awayTeam": "GSW"
+  },
+  "0022400059": {
+    "homeTeam": "SAC",
+    "awayTeam": "HOU"
+  },
+  "0022400060": {
+    "homeTeam": "LAC",
+    "awayTeam": "POR"
+  },
+  "0022400319": {
+    "homeTeam": "BOS",
+    "awayTeam": "DET"
+  },
+  "0022400320": {
+    "homeTeam": "BKN",
+    "awayTeam": "IND"
+  },
+  "0022400321": {
+    "homeTeam": "MIA",
+    "awayTeam": "LAL"
+  },
+  "0022400322": {
+    "homeTeam": "PHI",
+    "awayTeam": "ORL"
+  },
+  "0022400323": {
+    "homeTeam": "MIL",
+    "awayTeam": "ATL"
+  },
+  "0022400324": {
+    "homeTeam": "LAC",
+    "awayTeam": "MIN"
+  },
+  "0022400325": {
+    "homeTeam": "CLE",
+    "awayTeam": "DEN"
+  },
+  "0022400326": {
+    "homeTeam": "WAS",
+    "awayTeam": "DAL"
+  },
+  "0022400327": {
+    "homeTeam": "NYK",
+    "awayTeam": "CHA"
+  },
+  "0022400328": {
+    "homeTeam": "TOR",
+    "awayTeam": "OKC"
+  },
+  "0022400329": {
+    "homeTeam": "MEM",
+    "awayTeam": "SAC"
+  },
+  "0022400330": {
+    "homeTeam": "NOP",
+    "awayTeam": "PHX"
+  },
+  "0022400331": {
+    "homeTeam": "SAS",
+    "awayTeam": "CHI"
+  },
+  "0022400332": {
+    "homeTeam": "GSW",
+    "awayTeam": "HOU"
+  },
+  "0022400333": {
+    "homeTeam": "PHI",
+    "awayTeam": "ORL"
+  },
+  "0022400334": {
+    "homeTeam": "ATL",
+    "awayTeam": "LAL"
+  },
+  "0022400335": {
+    "homeTeam": "BOS",
+    "awayTeam": "MIL"
+  },
+  "0022400336": {
+    "homeTeam": "CHI",
+    "awayTeam": "IND"
+  },
+  "0022400337": {
+    "homeTeam": "SAS",
+    "awayTeam": "SAC"
+  },
+  "0022400338": {
+    "homeTeam": "GSW",
+    "awayTeam": "MIN"
+  },
+  "0022400339": {
+    "homeTeam": "POR",
+    "awayTeam": "UTA"
+  },
+  "0022400340": {
+    "homeTeam": "CHA",
+    "awayTeam": "CLE"
+  },
+  "0022400341": {
+    "homeTeam": "WAS",
+    "awayTeam": "DEN"
+  },
+  "0022400342": {
+    "homeTeam": "NOP",
+    "awayTeam": "OKC"
+  },
+  "0022400343": {
+    "homeTeam": "NYK",
+    "awayTeam": "DET"
+  },
+  "0022400344": {
+    "homeTeam": "TOR",
+    "awayTeam": "DAL"
+  },
+  "0022400345": {
+    "homeTeam": "BOS",
+    "awayTeam": "MEM"
+  },
+  "0022400346": {
+    "homeTeam": "MIA",
+    "awayTeam": "PHX"
+  },
+  "0022400347": {
+    "homeTeam": "CHI",
+    "awayTeam": "PHI"
+  },
+  "0022400348": {
+    "homeTeam": "BKN",
+    "awayTeam": "MIL"
+  },
+  "0022400349": {
+    "homeTeam": "IND",
+    "awayTeam": "CHA"
+  },
+  "0022400350": {
+    "homeTeam": "ATL",
+    "awayTeam": "DEN"
+  },
+  "0022400351": {
+    "homeTeam": "MIA",
+    "awayTeam": "CLE"
+  },
+  "0022400352": {
+    "homeTeam": "ORL",
+    "awayTeam": "PHX"
+  },
+  "0022400353": {
+    "homeTeam": "WAS",
+    "awayTeam": "MEM"
+  },
+  "0022400354": {
+    "homeTeam": "SAS",
+    "awayTeam": "NOP"
+  },
+  "0022400355": {
+    "homeTeam": "GSW",
+    "awayTeam": "MIN"
+  },
+  "0022400356": {
+    "homeTeam": "LAC",
+    "awayTeam": "HOU"
+  },
+  "0022400357": {
     "homeTeam": "SAC",
     "awayTeam": "UTA"
   },
-  "0022301087": {
-    "homeTeam": "CHA",
+  "0022400358": {
+    "homeTeam": "LAL",
+    "awayTeam": "POR"
+  },
+  "0022400359": {
+    "homeTeam": "TOR",
+    "awayTeam": "NYK"
+  },
+  "0022400360": {
+    "homeTeam": "DET",
+    "awayTeam": "UTA"
+  },
+  "0022400361": {
+    "homeTeam": "ORL",
+    "awayTeam": "OKC"
+  },
+  "0022400362": {
+    "homeTeam": "WAS",
+    "awayTeam": "CHA"
+  },
+  "0022400363": {
+    "homeTeam": "BOS",
+    "awayTeam": "CHI"
+  },
+  "0022400364": {
+    "homeTeam": "TOR",
+    "awayTeam": "BKN"
+  },
+  "0022400365": {
+    "homeTeam": "HOU",
+    "awayTeam": "NOP"
+  },
+  "0022400366": {
+    "homeTeam": "MEM",
+    "awayTeam": "GSW"
+  },
+  "0022400367": {
+    "homeTeam": "MIN",
+    "awayTeam": "NYK"
+  },
+  "0022400368": {
+    "homeTeam": "DAL",
+    "awayTeam": "LAC"
+  },
+  "0022400369": {
+    "homeTeam": "PHX",
+    "awayTeam": "IND"
+  },
+  "0022400370": {
+    "homeTeam": "SAS",
+    "awayTeam": "ATL"
+  },
+  "0022400371": {
+    "homeTeam": "POR",
+    "awayTeam": "DEN"
+  },
+  "0022400372": {
+    "homeTeam": "SAC",
+    "awayTeam": "LAL"
+  },
+  "0022400373": {
+    "homeTeam": "PHI",
+    "awayTeam": "CHA"
+  },
+  "0022400374": {
+    "homeTeam": "CLE",
+    "awayTeam": "MIL"
+  },
+  "0022400375": {
+    "homeTeam": "MIA",
+    "awayTeam": "OKC"
+  },
+  "0022400376": {
+    "homeTeam": "SAC",
+    "awayTeam": "LAL"
+  },
+  "0022400377": {
+    "homeTeam": "ORL",
+    "awayTeam": "MIA"
+  },
+  "0022400378": {
+    "homeTeam": "ATL",
+    "awayTeam": "MEM"
+  },
+  "0022400379": {
+    "homeTeam": "BKN",
+    "awayTeam": "UTA"
+  },
+  "0022400380": {
+    "homeTeam": "CLE",
+    "awayTeam": "PHI"
+  },
+  "0022400381": {
+    "homeTeam": "CHI",
     "awayTeam": "BOS"
   },
-  "0022301088": {
+  "0022400382": {
+    "homeTeam": "MIL",
+    "awayTeam": "WAS"
+  },
+  "0022400383": {
+    "homeTeam": "MIN",
+    "awayTeam": "GSW"
+  },
+  "0022400384": {
+    "homeTeam": "NOP",
+    "awayTeam": "NYK"
+  },
+  "0022400385": {
+    "homeTeam": "DAL",
+    "awayTeam": "LAC"
+  },
+  "0022400386": {
+    "homeTeam": "SAS",
+    "awayTeam": "POR"
+  },
+  "0022400387": {
+    "homeTeam": "PHX",
+    "awayTeam": "DET"
+  },
+  "0022400388": {
+    "homeTeam": "TOR",
+    "awayTeam": "HOU"
+  },
+  "0022400389": {
+    "homeTeam": "SAC",
+    "awayTeam": "IND"
+  },
+  "0022400390": {
+    "homeTeam": "NOP",
+    "awayTeam": "DEN"
+  },
+  "0022400391": {
+    "homeTeam": "CHA",
+    "awayTeam": "HOU"
+  },
+  "0022400392": {
+    "homeTeam": "CLE",
+    "awayTeam": "UTA"
+  },
+  "0022400393": {
+    "homeTeam": "ORL",
+    "awayTeam": "BOS"
+  },
+  "0022400394": {
+    "homeTeam": "PHI",
+    "awayTeam": "SAS"
+  },
+  "0022400395": {
+    "homeTeam": "ATL",
+    "awayTeam": "MIN"
+  },
+  "0022400396": {
+    "homeTeam": "MIA",
+    "awayTeam": "BKN"
+  },
+  "0022400397": {
+    "homeTeam": "NYK",
+    "awayTeam": "TOR"
+  },
+  "0022400398": {
+    "homeTeam": "CHI",
+    "awayTeam": "MIL"
+  },
+  "0022400399": {
+    "homeTeam": "MEM",
+    "awayTeam": "LAC"
+  },
+  "0022400400": {
+    "homeTeam": "OKC",
+    "awayTeam": "WAS"
+  },
+  "0022400401": {
+    "homeTeam": "DAL",
+    "awayTeam": "POR"
+  },
+  "0022400402": {
+    "homeTeam": "DEN",
+    "awayTeam": "PHX"
+  },
+  "0022400403": {
+    "homeTeam": "GSW",
+    "awayTeam": "IND"
+  },
+  "0022400404": {
+    "homeTeam": "LAL",
+    "awayTeam": "DET"
+  },
+  "0022400405": {
+    "homeTeam": "NYK",
+    "awayTeam": "SAS"
+  },
+  "0022400406": {
+    "homeTeam": "DAL",
+    "awayTeam": "MIN"
+  },
+  "0022400407": {
+    "homeTeam": "BOS",
+    "awayTeam": "PHI"
+  },
+  "0022400408": {
+    "homeTeam": "GSW",
+    "awayTeam": "LAL"
+  },
+  "0022400409": {
+    "homeTeam": "PHX",
+    "awayTeam": "DEN"
+  },
+  "0022400410": {
+    "homeTeam": "IND",
+    "awayTeam": "OKC"
+  },
+  "0022400411": {
+    "homeTeam": "ORL",
+    "awayTeam": "MIA"
+  },
+  "0022400412": {
+    "homeTeam": "WAS",
+    "awayTeam": "CHA"
+  },
+  "0022400413": {
+    "homeTeam": "ATL",
+    "awayTeam": "CHI"
+  },
+  "0022400414": {
+    "homeTeam": "MEM",
+    "awayTeam": "TOR"
+  },
+  "0022400415": {
+    "homeTeam": "MIL",
+    "awayTeam": "BKN"
+  },
+  "0022400416": {
+    "homeTeam": "NOP",
+    "awayTeam": "HOU"
+  },
+  "0022400417": {
+    "homeTeam": "POR",
+    "awayTeam": "UTA"
+  },
+  "0022400418": {
+    "homeTeam": "SAC",
+    "awayTeam": "DET"
+  },
+  "0022400419": {
+    "homeTeam": "ORL",
+    "awayTeam": "NYK"
+  },
+  "0022400420": {
+    "homeTeam": "BOS",
+    "awayTeam": "IND"
+  },
+  "0022400421": {
+    "homeTeam": "BKN",
+    "awayTeam": "SAS"
+  },
+  "0022400422": {
+    "homeTeam": "HOU",
+    "awayTeam": "MIN"
+  },
+  "0022400423": {
+    "homeTeam": "NOP",
+    "awayTeam": "MEM"
+  },
+  "0022400424": {
+    "homeTeam": "DEN",
+    "awayTeam": "CLE"
+  },
+  "0022400425": {
+    "homeTeam": "PHX",
+    "awayTeam": "DAL"
+  },
+  "0022400426": {
+    "homeTeam": "LAC",
+    "awayTeam": "GSW"
+  },
+  "0022400427": {
+    "homeTeam": "ATL",
+    "awayTeam": "MIA"
+  },
+  "0022400428": {
+    "homeTeam": "CHA",
+    "awayTeam": "OKC"
+  },
+  "0022400429": {
+    "homeTeam": "WAS",
+    "awayTeam": "NYK"
+  },
+  "0022400430": {
+    "homeTeam": "CHI",
+    "awayTeam": "MIL"
+  },
+  "0022400431": {
+    "homeTeam": "GSW",
+    "awayTeam": "PHX"
+  },
+  "0022400432": {
+    "homeTeam": "DEN",
+    "awayTeam": "DET"
+  },
+  "0022400433": {
+    "homeTeam": "UTA",
+    "awayTeam": "PHI"
+  },
+  "0022400434": {
+    "homeTeam": "POR",
+    "awayTeam": "DAL"
+  },
+  "0022400435": {
+    "homeTeam": "LAL",
+    "awayTeam": "SAC"
+  },
+  "0022400436": {
+    "homeTeam": "ORL",
+    "awayTeam": "BKN"
+  },
+  "0022400437": {
+    "homeTeam": "BOS",
+    "awayTeam": "IND"
+  },
+  "0022400438": {
+    "homeTeam": "TOR",
+    "awayTeam": "ATL"
+  },
+  "0022400439": {
+    "homeTeam": "HOU",
+    "awayTeam": "MIA"
+  },
+  "0022400440": {
+    "homeTeam": "OKC",
+    "awayTeam": "MEM"
+  },
+  "0022400441": {
+    "homeTeam": "MIN",
+    "awayTeam": "SAS"
+  },
+  "0022400442": {
+    "homeTeam": "CHA",
+    "awayTeam": "CHI"
+  },
+  "0022400443": {
+    "homeTeam": "WAS",
+    "awayTeam": "NYK"
+  },
+  "0022400444": {
+    "homeTeam": "NOP",
+    "awayTeam": "LAC"
+  },
+  "0022400445": {
+    "homeTeam": "UTA",
+    "awayTeam": "DEN"
+  },
+  "0022400446": {
+    "homeTeam": "GSW",
+    "awayTeam": "CLE"
+  },
+  "0022400447": {
+    "homeTeam": "POR",
+    "awayTeam": "PHI"
+  },
+  "0022400448": {
+    "homeTeam": "SAC",
+    "awayTeam": "DAL"
+  },
+  "0022400449": {
+    "homeTeam": "BOS",
+    "awayTeam": "TOR"
+  },
+  "0022400450": {
+    "homeTeam": "IND",
+    "awayTeam": "MIL"
+  },
+  "0022400451": {
+    "homeTeam": "SAS",
+    "awayTeam": "LAC"
+  },
+  "0022400452": {
+    "homeTeam": "OKC",
+    "awayTeam": "MIN"
+  },
+  "0022400453": {
+    "homeTeam": "PHX",
+    "awayTeam": "MEM"
+  },
+  "0022400454": {
+    "homeTeam": "LAL",
+    "awayTeam": "CLE"
+  },
+  "0022400455": {
+    "homeTeam": "DET",
+    "awayTeam": "ORL"
+  },
+  "0022400456": {
+    "homeTeam": "WAS",
+    "awayTeam": "CHI"
+  },
+  "0022400457": {
+    "homeTeam": "MIA",
+    "awayTeam": "NOP"
+  },
+  "0022400458": {
+    "homeTeam": "NYK",
+    "awayTeam": "UTA"
+  },
+  "0022400459": {
+    "homeTeam": "TOR",
+    "awayTeam": "BKN"
+  },
+  "0022400460": {
+    "homeTeam": "HOU",
+    "awayTeam": "DAL"
+  },
+  "0022400461": {
+    "homeTeam": "DEN",
+    "awayTeam": "ATL"
+  },
+  "0022400462": {
+    "homeTeam": "SAC",
+    "awayTeam": "PHI"
+  },
+  "0022400463": {
+    "homeTeam": "MIA",
+    "awayTeam": "IND"
+  },
+  "0022400464": {
+    "homeTeam": "MIN",
+    "awayTeam": "BOS"
+  },
+  "0022400465": {
+    "homeTeam": "MIL",
+    "awayTeam": "BKN"
+  },
+  "0022400466": {
+    "homeTeam": "OKC",
+    "awayTeam": "LAC"
+  },
+  "0022400467": {
+    "homeTeam": "GSW",
+    "awayTeam": "PHI"
+  },
+  "0022400468": {
+    "homeTeam": "LAL",
+    "awayTeam": "POR"
+  },
+  "0022400469": {
+    "homeTeam": "DET",
+    "awayTeam": "CHA"
+  },
+  "0022400470": {
+    "homeTeam": "TOR",
+    "awayTeam": "ORL"
+  },
+  "0022400471": {
+    "homeTeam": "HOU",
+    "awayTeam": "BOS"
+  },
+  "0022400472": {
+    "homeTeam": "NOP",
+    "awayTeam": "WAS"
+  },
+  "0022400473": {
+    "homeTeam": "OKC",
+    "awayTeam": "NYK"
+  },
+  "0022400474": {
+    "homeTeam": "DAL",
+    "awayTeam": "CLE"
+  },
+  "0022400475": {
+    "homeTeam": "DEN",
+    "awayTeam": "SAS"
+  },
+  "0022400476": {
+    "homeTeam": "SAC",
+    "awayTeam": "MEM"
+  },
+  "0022400477": {
+    "homeTeam": "LAL",
+    "awayTeam": "ATL"
+  },
+  "0022400478": {
+    "homeTeam": "BKN",
+    "awayTeam": "PHI"
+  },
+  "0022400479": {
+    "homeTeam": "DET",
+    "awayTeam": "MIN"
+  },
+  "0022400480": {
+    "homeTeam": "IND",
+    "awayTeam": "PHX"
+  },
+  "0022400481": {
+    "homeTeam": "MIA",
+    "awayTeam": "UTA"
+  },
+  "0022400482": {
+    "homeTeam": "CHI",
+    "awayTeam": "NYK"
+  },
+  "0022400483": {
+    "homeTeam": "MIL",
+    "awayTeam": "POR"
+  },
+  "0022400484": {
+    "homeTeam": "SAS",
+    "awayTeam": "DEN"
+  },
+  "0022400485": {
+    "homeTeam": "GSW",
+    "awayTeam": "MEM"
+  },
+  "0022400486": {
+    "homeTeam": "LAC",
+    "awayTeam": "ATL"
+  },
+  "0022400487": {
+    "homeTeam": "OKC",
+    "awayTeam": "BOS"
+  },
+  "0022400488": {
+    "homeTeam": "CLE",
+    "awayTeam": "CHA"
+  },
+  "0022400489": {
+    "homeTeam": "WAS",
+    "awayTeam": "NOP"
+  },
+  "0022400490": {
+    "homeTeam": "ORL",
+    "awayTeam": "UTA"
+  },
+  "0022400491": {
+    "homeTeam": "HOU",
+    "awayTeam": "LAL"
+  },
+  "0022400492": {
+    "homeTeam": "GSW",
+    "awayTeam": "SAC"
+  },
+  "0022400493": {
+    "homeTeam": "DET",
+    "awayTeam": "POR"
+  },
+  "0022400494": {
+    "homeTeam": "PHI",
+    "awayTeam": "PHX"
+  },
+  "0022400495": {
+    "homeTeam": "BKN",
+    "awayTeam": "IND"
+  },
+  "0022400496": {
+    "homeTeam": "NYK",
+    "awayTeam": "ORL"
+  },
+  "0022400497": {
+    "homeTeam": "TOR",
+    "awayTeam": "MIL"
+  },
+  "0022400498": {
+    "homeTeam": "CHI",
+    "awayTeam": "SAS"
+  },
+  "0022400499": {
+    "homeTeam": "MEM",
+    "awayTeam": "DAL"
+  },
+  "0022400500": {
+    "homeTeam": "MIN",
+    "awayTeam": "LAC"
+  },
+  "0022400501": {
+    "homeTeam": "SAC",
+    "awayTeam": "MIA"
+  },
+  "0022400502": {
+    "homeTeam": "CHA",
+    "awayTeam": "PHX"
+  },
+  "0022400503": {
+    "homeTeam": "WAS",
+    "awayTeam": "HOU"
+  },
+  "0022400504": {
+    "homeTeam": "DAL",
+    "awayTeam": "LAL"
+  },
+  "0022400505": {
+    "homeTeam": "NOP",
+    "awayTeam": "MIN"
+  },
+  "0022400506": {
+    "homeTeam": "UTA",
+    "awayTeam": "ATL"
+  },
+  "0022400507": {
+    "homeTeam": "DEN",
+    "awayTeam": "BOS"
+  },
+  "0022400508": {
+    "homeTeam": "GSW",
+    "awayTeam": "MIA"
+  },
+  "0022400509": {
+    "homeTeam": "CLE",
+    "awayTeam": "OKC"
+  },
+  "0022400510": {
+    "homeTeam": "IND",
+    "awayTeam": "CHI"
+  },
+  "0022400511": {
+    "homeTeam": "NYK",
+    "awayTeam": "TOR"
+  },
+  "0022400512": {
+    "homeTeam": "PHI",
+    "awayTeam": "WAS"
+  },
+  "0022400513": {
+    "homeTeam": "BKN",
+    "awayTeam": "DET"
+  },
+  "0022400514": {
+    "homeTeam": "NOP",
+    "awayTeam": "POR"
+  },
+  "0022400515": {
+    "homeTeam": "DEN",
+    "awayTeam": "LAC"
+  },
+  "0022400516": {
+    "homeTeam": "MIL",
+    "awayTeam": "SAS"
+  },
+  "0022400517": {
+    "homeTeam": "CLE",
+    "awayTeam": "TOR"
+  },
+  "0022400518": {
+    "homeTeam": "DET",
+    "awayTeam": "GSW"
+  },
+  "0022400519": {
+    "homeTeam": "ORL",
+    "awayTeam": "MIN"
+  },
+  "0022400520": {
+    "homeTeam": "MEM",
+    "awayTeam": "HOU"
+  },
+  "0022400521": {
+    "homeTeam": "DAL",
+    "awayTeam": "POR"
+  },
+  "0022400522": {
+    "homeTeam": "PHX",
+    "awayTeam": "ATL"
+  },
+  "0022400523": {
+    "homeTeam": "UTA",
+    "awayTeam": "MIA"
+  },
+  "0022400524": {
+    "homeTeam": "LAL",
+    "awayTeam": "CHA"
+  },
+  "0022400525": {
+    "homeTeam": "IND",
+    "awayTeam": "GSW"
+  },
+  "0022400526": {
+    "homeTeam": "ORL",
+    "awayTeam": "MIL"
+  },
+  "0022400527": {
+    "homeTeam": "PHI",
+    "awayTeam": "NOP"
+  },
+  "0022400528": {
+    "homeTeam": "BOS",
+    "awayTeam": "SAC"
+  },
+  "0022400529": {
+    "homeTeam": "NYK",
+    "awayTeam": "OKC"
+  },
+  "0022400530": {
+    "homeTeam": "CHI",
+    "awayTeam": "WAS"
+  },
+  "0022400531": {
+    "homeTeam": "DEN",
+    "awayTeam": "BKN"
+  },
+  "0022400532": {
+    "homeTeam": "ATL",
+    "awayTeam": "HOU"
+  },
+  "0022400533": {
+    "homeTeam": "PHX",
+    "awayTeam": "UTA"
+  },
+  "0022400534": {
+    "homeTeam": "DET",
+    "awayTeam": "TOR"
+  },
+  "0022400535": {
+    "homeTeam": "MIN",
+    "awayTeam": "MEM"
+  },
+  "0022400536": {
+    "homeTeam": "POR",
+    "awayTeam": "MIA"
+  },
+  "0022400537": {
+    "homeTeam": "LAL",
+    "awayTeam": "SAS"
+  },
+  "0022400538": {
+    "homeTeam": "LAC",
+    "awayTeam": "CHA"
+  },
+  "0022400539": {
+    "homeTeam": "NYK",
+    "awayTeam": "MIL"
+  },
+  "0022400540": {
+    "homeTeam": "DAL",
+    "awayTeam": "DEN"
+  },
+  "0022400541": {
+    "homeTeam": "CHI",
+    "awayTeam": "SAC"
+  },
+  "0022400542": {
+    "homeTeam": "BOS",
+    "awayTeam": "NOP"
+  },
+  "0022400543": {
+    "homeTeam": "CLE",
+    "awayTeam": "IND"
+  },
+  "0022400544": {
+    "homeTeam": "ORL",
+    "awayTeam": "PHI"
+  },
+  "0022400545": {
+    "homeTeam": "WAS",
+    "awayTeam": "OKC"
+  },
+  "0022400546": {
+    "homeTeam": "UTA",
+    "awayTeam": "BKN"
+  },
+  "0022400547": {
+    "homeTeam": "PHX",
+    "awayTeam": "CHA"
+  },
+  "0022400548": {
+    "homeTeam": "WAS",
+    "awayTeam": "MIN"
+  },
+  "0022400549": {
+    "homeTeam": "NYK",
+    "awayTeam": "DET"
+  },
+  "0022400550": {
+    "homeTeam": "TOR",
+    "awayTeam": "GSW"
+  },
+  "0022400551": {
+    "homeTeam": "HOU",
+    "awayTeam": "MEM"
+  },
+  "0022400552": {
+    "homeTeam": "LAL",
+    "awayTeam": "SAS"
+  },
+  "0022400553": {
+    "homeTeam": "LAC",
+    "awayTeam": "MIA"
+  },
+  "0022400554": {
+    "homeTeam": "IND",
+    "awayTeam": "CLE"
+  },
+  "0022400555": {
+    "homeTeam": "PHI",
+    "awayTeam": "OKC"
+  },
+  "0022400556": {
+    "homeTeam": "ATL",
+    "awayTeam": "PHX"
+  },
+  "0022400557": {
+    "homeTeam": "CHI",
+    "awayTeam": "NOP"
+  },
+  "0022400558": {
+    "homeTeam": "MIL",
+    "awayTeam": "SAC"
+  },
+  "0022400559": {
+    "homeTeam": "DAL",
+    "awayTeam": "DEN"
+  },
+  "0022400560": {
+    "homeTeam": "POR",
+    "awayTeam": "BKN"
+  },
+  "0022400561": {
+    "homeTeam": "PHI",
+    "awayTeam": "NYK"
+  },
+  "0022400562": {
+    "homeTeam": "TOR",
+    "awayTeam": "BOS"
+  },
+  "0022400563": {
+    "homeTeam": "CHI",
+    "awayTeam": "ATL"
+  },
+  "0022400564": {
+    "homeTeam": "MIL",
+    "awayTeam": "ORL"
+  },
+  "0022400565": {
+    "homeTeam": "MIN",
+    "awayTeam": "GSW"
+  },
+  "0022400566": {
+    "homeTeam": "NOP",
+    "awayTeam": "DAL"
+  },
+  "0022400567": {
+    "homeTeam": "SAS",
+    "awayTeam": "MEM"
+  },
+  "0022400568": {
+    "homeTeam": "DEN",
+    "awayTeam": "HOU"
+  },
+  "0022400569": {
+    "homeTeam": "UTA",
+    "awayTeam": "CHA"
+  },
+  "0022400570": {
+    "homeTeam": "LAL",
+    "awayTeam": "MIA"
+  },
+  "0022400571": {
+    "homeTeam": "LAC",
+    "awayTeam": "BKN"
+  },
+  "0022400572": {
+    "homeTeam": "DET",
+    "awayTeam": "IND"
+  },
+  "0022400573": {
+    "homeTeam": "WAS",
+    "awayTeam": "PHX"
+  },
+  "0022400574": {
+    "homeTeam": "OKC",
+    "awayTeam": "CLE"
+  },
+  "0022400575": {
+    "homeTeam": "POR",
+    "awayTeam": "LAC"
+  },
+  "0022400576": {
+    "homeTeam": "SAC",
+    "awayTeam": "HOU"
+  },
+  "0022400577": {
+    "homeTeam": "BOS",
+    "awayTeam": "ORL"
+  },
+  "0022400578": {
+    "homeTeam": "NYK",
+    "awayTeam": "MIN"
+  },
+  "0022400579": {
+    "homeTeam": "MIA",
+    "awayTeam": "DEN"
+  },
+  "0022400580": {
+    "homeTeam": "MIL",
+    "awayTeam": "TOR"
+  },
+  "0022400581": {
+    "homeTeam": "NOP",
+    "awayTeam": "UTA"
+  },
+  "0022400582": {
+    "homeTeam": "SAS",
+    "awayTeam": "MEM"
+  },
+  "0022400583": {
+    "homeTeam": "DAL",
+    "awayTeam": "OKC"
+  },
+  "0022400584": {
+    "homeTeam": "CHI",
+    "awayTeam": "CHA"
+  },
+  "0022400585": {
+    "homeTeam": "LAL",
+    "awayTeam": "BKN"
+  },
+  "0022400586": {
+    "homeTeam": "DET",
+    "awayTeam": "PHX"
+  },
+  "0022400587": {
+    "homeTeam": "BOS",
+    "awayTeam": "ATL"
+  },
+  "0022400588": {
+    "homeTeam": "IND",
+    "awayTeam": "PHI"
+  },
+  "0022400589": {
+    "homeTeam": "GSW",
+    "awayTeam": "WAS"
+  },
+  "0022400590": {
+    "homeTeam": "MIN",
+    "awayTeam": "CLE"
+  },
+  "0022400591": {
+    "homeTeam": "POR",
+    "awayTeam": "HOU"
+  },
+  "0022400592": {
+    "homeTeam": "MIA",
+    "awayTeam": "SAS"
+  },
+  "0022400593": {
+    "homeTeam": "ORL",
+    "awayTeam": "DEN"
+  },
+  "0022400594": {
+    "homeTeam": "MIL",
+    "awayTeam": "PHI"
+  },
+  "0022400595": {
+    "homeTeam": "OKC",
+    "awayTeam": "BKN"
+  },
+  "0022400596": {
+    "homeTeam": "LAC",
+    "awayTeam": "LAL"
+  },
+  "0022400597": {
+    "homeTeam": "POR",
+    "awayTeam": "CHI"
+  },
+  "0022400598": {
+    "homeTeam": "SAC",
+    "awayTeam": "WAS"
+  },
+  "0022400599": {
+    "homeTeam": "CHA",
+    "awayTeam": "DAL"
+  },
+  "0022400600": {
+    "homeTeam": "HOU",
+    "awayTeam": "DET"
+  },
+  "0022400601": {
+    "homeTeam": "MEM",
+    "awayTeam": "MIN"
+  },
+  "0022400602": {
+    "homeTeam": "NYK",
+    "awayTeam": "ATL"
+  },
+  "0022400603": {
+    "homeTeam": "CLE",
+    "awayTeam": "PHX"
+  },
+  "0022400604": {
+    "homeTeam": "GSW",
+    "awayTeam": "BOS"
+  },
+  "0022400605": {
+    "homeTeam": "NOP",
+    "awayTeam": "UTA"
+  },
+  "0022400606": {
+    "homeTeam": "BKN",
+    "awayTeam": "NYK"
+  },
+  "0022400607": {
+    "homeTeam": "MIA",
+    "awayTeam": "POR"
+  },
+  "0022400608": {
+    "homeTeam": "TOR",
+    "awayTeam": "ORL"
+  },
+  "0022400609": {
+    "homeTeam": "DEN",
+    "awayTeam": "PHI"
+  },
+  "0022400610": {
+    "homeTeam": "LAL",
+    "awayTeam": "WAS"
+  },
+  "0022400611": {
+    "homeTeam": "LAC",
+    "awayTeam": "CHI"
+  },
+  "0022400612": {
+    "homeTeam": "ATL",
+    "awayTeam": "DET"
+  },
+  "0022400613": {
+    "homeTeam": "BKN",
+    "awayTeam": "PHX"
+  },
+  "0022400614": {
+    "homeTeam": "DAL",
+    "awayTeam": "MIN"
+  },
+  "0022400615": {
+    "homeTeam": "HOU",
+    "awayTeam": "CLE"
+  },
+  "0022400616": {
+    "homeTeam": "MEM",
+    "awayTeam": "CHA"
+  },
+  "0022400617": {
+    "homeTeam": "NOP",
+    "awayTeam": "MIL"
+  },
+  "0022400618": {
+    "homeTeam": "OKC",
+    "awayTeam": "UTA"
+  },
+  "0022400619": {
+    "homeTeam": "SAC",
+    "awayTeam": "GSW"
+  },
+  "0022400620": {
+    "homeTeam": "LAC",
+    "awayTeam": "BOS"
+  },
+  "0022400621": {
+    "homeTeam": "IND",
+    "awayTeam": "SAS"
+  },
+  "0022400622": {
+    "homeTeam": "ORL",
+    "awayTeam": "POR"
+  },
+  "0022400623": {
+    "homeTeam": "ATL",
+    "awayTeam": "TOR"
+  },
+  "0022400624": {
+    "homeTeam": "MIL",
+    "awayTeam": "MIA"
+  },
+  "0022400625": {
+    "homeTeam": "OKC",
+    "awayTeam": "DAL"
+  },
+  "0022400626": {
+    "homeTeam": "DEN",
+    "awayTeam": "SAC"
+  },
+  "0022400627": {
+    "homeTeam": "UTA",
+    "awayTeam": "WAS"
+  },
+  "0022400628": {
+    "homeTeam": "GSW",
+    "awayTeam": "CHI"
+  },
+  "0022400629": {
+    "homeTeam": "LAL",
+    "awayTeam": "BOS"
+  },
+  "0022400630": {
+    "homeTeam": "CHA",
+    "awayTeam": "POR"
+  },
+  "0022400631": {
+    "homeTeam": "PHI",
+    "awayTeam": "CLE"
+  },
+  "0022400632": {
+    "homeTeam": "MEM",
+    "awayTeam": "NOP"
+  },
+  "0022400633": {
+    "homeTeam": "SAS",
+    "awayTeam": "IND"
+  },
+  "0022400634": {
+    "homeTeam": "MIN",
+    "awayTeam": "DEN"
+  },
+  "0022400635": {
+    "homeTeam": "DAL",
+    "awayTeam": "BOS"
+  },
+  "0022400636": {
+    "homeTeam": "BKN",
+    "awayTeam": "MIA"
+  },
+  "0022400637": {
+    "homeTeam": "CHA",
+    "awayTeam": "NOP"
+  },
+  "0022400638": {
+    "homeTeam": "ORL",
+    "awayTeam": "DET"
+  },
+  "0022400639": {
+    "homeTeam": "ATL",
+    "awayTeam": "TOR"
+  },
+  "0022400640": {
+    "homeTeam": "CLE",
+    "awayTeam": "HOU"
+  },
+  "0022400641": {
+    "homeTeam": "NYK",
+    "awayTeam": "SAC"
+  },
+  "0022400642": {
+    "homeTeam": "CHI",
+    "awayTeam": "PHI"
+  },
+  "0022400643": {
+    "homeTeam": "MEM",
+    "awayTeam": "UTA"
+  },
+  "0022400644": {
+    "homeTeam": "GSW",
+    "awayTeam": "LAL"
+  },
+  "0022400645": {
+    "homeTeam": "PHX",
+    "awayTeam": "WAS"
+  },
+  "0022400646": {
+    "homeTeam": "LAC",
+    "awayTeam": "MIL"
+  },
+  "0022400647": {
+    "homeTeam": "POR",
+    "awayTeam": "OKC"
+  },
+  "0022400648": {
+    "homeTeam": "CHA",
+    "awayTeam": "LAL"
+  },
+  "0022400649": {
+    "homeTeam": "CLE",
+    "awayTeam": "DET"
+  },
+  "0022400650": {
+    "homeTeam": "BOS",
+    "awayTeam": "HOU"
+  },
+  "0022400651": {
+    "homeTeam": "BKN",
+    "awayTeam": "SAC"
+  },
+  "0022400652": {
+    "homeTeam": "MIA",
+    "awayTeam": "ORL"
+  },
+  "0022400653": {
+    "homeTeam": "NYK",
+    "awayTeam": "MEM"
+  },
+  "0022400654": {
+    "homeTeam": "TOR",
+    "awayTeam": "NOP"
+  },
+  "0022400655": {
+    "homeTeam": "CHI",
+    "awayTeam": "DEN"
+  },
+  "0022400656": {
+    "homeTeam": "MIN",
+    "awayTeam": "ATL"
+  },
+  "0022400657": {
+    "homeTeam": "DAL",
+    "awayTeam": "WAS"
+  },
+  "0022400658": {
+    "homeTeam": "UTA",
+    "awayTeam": "MIL"
+  },
+  "0022400659": {
+    "homeTeam": "PHX",
+    "awayTeam": "LAC"
+  },
+  "0022400660": {
+    "homeTeam": "PHI",
+    "awayTeam": "LAL"
+  },
+  "0022400661": {
+    "homeTeam": "GSW",
+    "awayTeam": "UTA"
+  },
+  "0022400662": {
+    "homeTeam": "POR",
+    "awayTeam": "MIL"
+  },
+  "0022400663": {
+    "homeTeam": "CHA",
+    "awayTeam": "BKN"
+  },
+  "0022400664": {
+    "homeTeam": "IND",
+    "awayTeam": "DET"
+  },
+  "0022400665": {
+    "homeTeam": "WAS",
+    "awayTeam": "TOR"
+  },
+  "0022400666": {
+    "homeTeam": "BOS",
+    "awayTeam": "CHI"
+  },
+  "0022400667": {
+    "homeTeam": "MIA",
+    "awayTeam": "CLE"
+  },
+  "0022400668": {
+    "homeTeam": "NYK",
+    "awayTeam": "DEN"
+  },
+  "0022400669": {
+    "homeTeam": "PHI",
+    "awayTeam": "SAC"
+  },
+  "0022400670": {
+    "homeTeam": "NOP",
+    "awayTeam": "DAL"
+  },
+  "0022400671": {
+    "homeTeam": "SAS",
+    "awayTeam": "LAC"
+  },
+  "0022400672": {
+    "homeTeam": "PHX",
+    "awayTeam": "MIN"
+  },
+  "0022400673": {
+    "homeTeam": "GSW",
+    "awayTeam": "OKC"
+  },
+  "0022400674": {
+    "homeTeam": "WAS",
+    "awayTeam": "LAL"
+  },
+  "0022400675": {
+    "homeTeam": "CLE",
+    "awayTeam": "ATL"
+  },
+  "0022400676": {
+    "homeTeam": "MEM",
+    "awayTeam": "HOU"
+  },
+  "0022400677": {
+    "homeTeam": "UTA",
+    "awayTeam": "MIN"
+  },
+  "0022400678": {
+    "homeTeam": "POR",
+    "awayTeam": "ORL"
+  },
+  "0022400679": {
+    "homeTeam": "CHA",
+    "awayTeam": "LAC"
+  },
+  "0022400680": {
+    "homeTeam": "DET",
+    "awayTeam": "DAL"
+  },
+  "0022400681": {
+    "homeTeam": "PHI",
+    "awayTeam": "DEN"
+  },
+  "0022400682": {
+    "homeTeam": "TOR",
+    "awayTeam": "CHI"
+  },
+  "0022400683": {
+    "homeTeam": "NOP",
+    "awayTeam": "BOS"
+  },
+  "0022400684": {
+    "homeTeam": "SAS",
+    "awayTeam": "MIL"
+  },
+  "0022400685": {
+    "homeTeam": "GSW",
+    "awayTeam": "PHX"
+  },
+  "0022400686": {
+    "homeTeam": "IND",
+    "awayTeam": "ATL"
+  },
+  "0022400687": {
+    "homeTeam": "UTA",
+    "awayTeam": "ORL"
+  },
+  "0022400688": {
+    "homeTeam": "CHA",
+    "awayTeam": "DEN"
+  },
+  "0022400689": {
+    "homeTeam": "HOU",
+    "awayTeam": "BKN"
+  },
+  "0022400690": {
+    "homeTeam": "MIN",
+    "awayTeam": "WAS"
+  },
+  "0022400691": {
+    "homeTeam": "OKC",
+    "awayTeam": "SAC"
+  },
+  "0022400692": {
+    "homeTeam": "NYK",
+    "awayTeam": "LAL"
+  },
+  "0022400693": {
+    "homeTeam": "SAS",
+    "awayTeam": "MIA"
+  },
+  "0022400694": {
+    "homeTeam": "POR",
+    "awayTeam": "PHX"
+  },
+  "0022400695": {
+    "homeTeam": "DET",
+    "awayTeam": "CHI"
+  },
+  "0022400696": {
+    "homeTeam": "CLE",
+    "awayTeam": "DAL"
+  },
+  "0022400697": {
+    "homeTeam": "TOR",
+    "awayTeam": "LAC"
+  },
+  "0022400698": {
+    "homeTeam": "PHI",
+    "awayTeam": "BOS"
+  },
+  "0022400699": {
+    "homeTeam": "MIL",
+    "awayTeam": "MEM"
+  },
+  "0022400700": {
+    "homeTeam": "CHA",
+    "awayTeam": "WAS"
+  },
+  "0022400701": {
+    "homeTeam": "DET",
+    "awayTeam": "ATL"
+  },
+  "0022400702": {
+    "homeTeam": "NYK",
+    "awayTeam": "HOU"
+  },
+  "0022400703": {
+    "homeTeam": "MEM",
+    "awayTeam": "SAS"
+  },
+  "0022400704": {
+    "homeTeam": "MIN",
+    "awayTeam": "SAC"
+  },
+  "0022400705": {
+    "homeTeam": "OKC",
+    "awayTeam": "MIL"
+  },
+  "0022400706": {
+    "homeTeam": "DEN",
+    "awayTeam": "NOP"
+  },
+  "0022400707": {
+    "homeTeam": "UTA",
+    "awayTeam": "IND"
+  },
+  "0022400708": {
+    "homeTeam": "GSW",
+    "awayTeam": "ORL"
+  },
+  "0022400709": {
+    "homeTeam": "POR",
+    "awayTeam": "PHX"
+  },
+  "0022400710": {
+    "homeTeam": "CLE",
+    "awayTeam": "BOS"
+  },
+  "0022400711": {
+    "homeTeam": "BKN",
+    "awayTeam": "HOU"
+  },
+  "0022400712": {
+    "homeTeam": "PHI",
+    "awayTeam": "DAL"
+  },
+  "0022400713": {
+    "homeTeam": "TOR",
+    "awayTeam": "NYK"
+  },
+  "0022400714": {
+    "homeTeam": "CHI",
+    "awayTeam": "MIA"
+  },
+  "0022400715": {
+    "homeTeam": "LAC",
+    "awayTeam": "LAL"
+  },
+  "0022400716": {
+    "homeTeam": "POR",
+    "awayTeam": "IND"
+  },
+  "0022400717": {
+    "homeTeam": "CHA",
+    "awayTeam": "MIL"
+  },
+  "0022400718": {
+    "homeTeam": "DET",
+    "awayTeam": "CLE"
+  },
+  "0022400719": {
+    "homeTeam": "ATL",
+    "awayTeam": "SAS"
+  },
+  "0022400720": {
+    "homeTeam": "BKN",
+    "awayTeam": "WAS"
+  },
+  "0022400721": {
+    "homeTeam": "PHI",
+    "awayTeam": "MIA"
+  },
+  "0022400722": {
+    "homeTeam": "TOR",
+    "awayTeam": "MEM"
+  },
+  "0022400723": {
+    "homeTeam": "MIN",
+    "awayTeam": "CHI"
+  },
+  "0022400724": {
+    "homeTeam": "OKC",
+    "awayTeam": "PHX"
+  },
+  "0022400725": {
+    "homeTeam": "UTA",
+    "awayTeam": "GSW"
+  },
+  "0022400726": {
+    "homeTeam": "DEN",
+    "awayTeam": "NOP"
+  },
+  "0022400727": {
+    "homeTeam": "SAC",
+    "awayTeam": "ORL"
+  },
+  "0022400728": {
+    "homeTeam": "BOS",
+    "awayTeam": "DAL"
+  },
+  "0022400729": {
+    "homeTeam": "MIN",
+    "awayTeam": "HOU"
+  },
+  "0022400730": {
+    "homeTeam": "DEN",
+    "awayTeam": "ORL"
+  },
+  "0022400731": {
+    "homeTeam": "LAL",
+    "awayTeam": "GSW"
+  },
+  "0022400732": {
+    "homeTeam": "POR",
+    "awayTeam": "SAC"
+  },
+  "0022400733": {
+    "homeTeam": "LAC",
+    "awayTeam": "IND"
+  },
+  "0022400734": {
+    "homeTeam": "CHA",
+    "awayTeam": "SAS"
+  },
+  "0022400735": {
+    "homeTeam": "WAS",
+    "awayTeam": "CLE"
+  },
+  "0022400736": {
+    "homeTeam": "ATL",
+    "awayTeam": "MIL"
+  },
+  "0022400737": {
+    "homeTeam": "BKN",
+    "awayTeam": "MIA"
+  },
+  "0022400738": {
+    "homeTeam": "DET",
+    "awayTeam": "PHI"
+  },
+  "0022400739": {
+    "homeTeam": "OKC",
+    "awayTeam": "TOR"
+  },
+  "0022400740": {
+    "homeTeam": "PHX",
+    "awayTeam": "UTA"
+  },
+  "0022400741": {
+    "homeTeam": "DAL",
+    "awayTeam": "HOU"
+  },
+  "0022400742": {
+    "homeTeam": "LAL",
+    "awayTeam": "IND"
+  },
+  "0022400743": {
+    "homeTeam": "ORL",
+    "awayTeam": "SAS"
+  },
+  "0022400744": {
+    "homeTeam": "WAS",
+    "awayTeam": "ATL"
+  },
+  "0022400745": {
+    "homeTeam": "CHI",
+    "awayTeam": "GSW"
+  },
+  "0022400746": {
+    "homeTeam": "MEM",
+    "awayTeam": "OKC"
+  },
+  "0022400747": {
+    "homeTeam": "MIN",
+    "awayTeam": "POR"
+  },
+  "0022400748": {
+    "homeTeam": "NYK",
+    "awayTeam": "BOS"
+  },
+  "0022400749": {
+    "homeTeam": "PHX",
+    "awayTeam": "DEN"
+  },
+  "0022400750": {
+    "homeTeam": "SAC",
+    "awayTeam": "NOP"
+  },
+  "0022400751": {
+    "homeTeam": "LAC",
+    "awayTeam": "UTA"
+  },
+  "0022400752": {
+    "homeTeam": "DET",
+    "awayTeam": "CHA"
+  },
+  "0022400753": {
+    "homeTeam": "HOU",
+    "awayTeam": "TOR"
+  },
+  "0022400754": {
+    "homeTeam": "MIL",
+    "awayTeam": "PHI"
+  },
+  "0022400755": {
+    "homeTeam": "CLE",
+    "awayTeam": "MIN"
+  },
+  "0022400756": {
+    "homeTeam": "ORL",
+    "awayTeam": "ATL"
+  },
+  "0022400757": {
+    "homeTeam": "WAS",
+    "awayTeam": "SAS"
+  },
+  "0022400758": {
+    "homeTeam": "BKN",
+    "awayTeam": "CHA"
+  },
+  "0022400759": {
+    "homeTeam": "MIA",
+    "awayTeam": "BOS"
+  },
+  "0022400760": {
+    "homeTeam": "MIL",
+    "awayTeam": "GSW"
+  },
+  "0022400761": {
+    "homeTeam": "OKC",
+    "awayTeam": "NOP"
+  },
+  "0022400762": {
+    "homeTeam": "DAL",
+    "awayTeam": "SAC"
+  },
+  "0022400763": {
+    "homeTeam": "DEN",
+    "awayTeam": "POR"
+  },
+  "0022400764": {
+    "homeTeam": "PHI",
+    "awayTeam": "TOR"
+  },
+  "0022400765": {
+    "homeTeam": "IND",
+    "awayTeam": "NYK"
+  },
+  "0022400766": {
+    "homeTeam": "CHI",
+    "awayTeam": "DET"
+  },
+  "0022400767": {
+    "homeTeam": "PHX",
+    "awayTeam": "MEM"
+  },
+  "0022400768": {
+    "homeTeam": "LAL",
+    "awayTeam": "UTA"
+  },
+  "0022400769": {
+    "homeTeam": "BOS",
+    "awayTeam": "SAS"
+  },
+  "0022400770": {
+    "homeTeam": "ORL",
+    "awayTeam": "CHA"
+  },
+  "0022400771": {
+    "homeTeam": "WAS",
+    "awayTeam": "IND"
+  },
+  "0022400772": {
+    "homeTeam": "BKN",
+    "awayTeam": "PHI"
+  },
+  "0022400773": {
+    "homeTeam": "NYK",
+    "awayTeam": "ATL"
+  },
+  "0022400774": {
+    "homeTeam": "TOR",
+    "awayTeam": "CLE"
+  },
+  "0022400775": {
+    "homeTeam": "CHI",
+    "awayTeam": "DET"
+  },
+  "0022400776": {
+    "homeTeam": "MIN",
+    "awayTeam": "MIL"
+  },
+  "0022400777": {
+    "homeTeam": "NOP",
+    "awayTeam": "SAC"
+  },
+  "0022400778": {
+    "homeTeam": "OKC",
+    "awayTeam": "MIA"
+  },
+  "0022400779": {
+    "homeTeam": "HOU",
+    "awayTeam": "PHX"
+  },
+  "0022400780": {
+    "homeTeam": "DEN",
+    "awayTeam": "POR"
+  },
+  "0022400781": {
+    "homeTeam": "UTA",
+    "awayTeam": "LAL"
+  },
+  "0022400782": {
+    "homeTeam": "DAL",
+    "awayTeam": "GSW"
+  },
+  "0022400783": {
+    "homeTeam": "LAC",
+    "awayTeam": "MEM"
+  },
+  "0022400784": {
+    "homeTeam": "HOU",
+    "awayTeam": "GSW"
+  },
+  "0022400785": {
+    "homeTeam": "NOP",
+    "awayTeam": "SAC"
+  },
+  "0022400786": {
+    "homeTeam": "DAL",
+    "awayTeam": "MIA"
+  },
+  "0022400787": {
+    "homeTeam": "MIN",
+    "awayTeam": "OKC"
+  },
+  "0022400788": {
+    "homeTeam": "IND",
+    "awayTeam": "MEM"
+  },
+  "0022400789": {
+    "homeTeam": "PHI",
+    "awayTeam": "BOS"
+  },
+  "0022400790": {
+    "homeTeam": "ATL",
+    "awayTeam": "ORL"
+  },
+  "0022400791": {
+    "homeTeam": "BKN",
+    "awayTeam": "CLE"
+  },
+  "0022400792": {
+    "homeTeam": "NYK",
+    "awayTeam": "CHI"
+  },
+  "0022400793": {
+    "homeTeam": "MIL",
+    "awayTeam": "LAC"
+  },
+  "0022400794": {
+    "homeTeam": "DEN",
+    "awayTeam": "CHA"
+  },
+  "0022400795": {
+    "homeTeam": "SAS",
+    "awayTeam": "PHX"
+  },
+  "0022400796": {
+    "homeTeam": "POR",
+    "awayTeam": "LAL"
+  },
+  "0022400797": {
+    "homeTeam": "CLE",
+    "awayTeam": "NYK"
+  },
+  "0022400798": {
+    "homeTeam": "ORL",
+    "awayTeam": "MEM"
+  },
+  "0022400799": {
+    "homeTeam": "WAS",
+    "awayTeam": "MIL"
+  },
+  "0022400800": {
+    "homeTeam": "TOR",
+    "awayTeam": "MIA"
+  },
+  "0022400801": {
+    "homeTeam": "HOU",
+    "awayTeam": "MIN"
+  },
+  "0022400802": {
+    "homeTeam": "SAS",
+    "awayTeam": "DET"
+  },
+  "0022400803": {
+    "homeTeam": "DAL",
+    "awayTeam": "NOP"
+  },
+  "0022400804": {
+    "homeTeam": "UTA",
+    "awayTeam": "OKC"
+  },
+  "0022400805": {
+    "homeTeam": "SAC",
+    "awayTeam": "GSW"
+  },
+  "0022400806": {
+    "homeTeam": "CHI",
+    "awayTeam": "PHX"
+  },
+  "0022400807": {
+    "homeTeam": "PHI",
+    "awayTeam": "BKN"
+  },
+  "0022400808": {
+    "homeTeam": "DEN",
+    "awayTeam": "LAL"
+  },
+  "0022400809": {
+    "homeTeam": "UTA",
+    "awayTeam": "HOU"
+  },
+  "0022400810": {
+    "homeTeam": "POR",
+    "awayTeam": "CHA"
+  },
+  "0022400811": {
+    "homeTeam": "BOS",
+    "awayTeam": "NYK"
+  },
+  "0022400812": {
+    "homeTeam": "GSW",
+    "awayTeam": "DAL"
+  },
+  "0022400813": {
+    "homeTeam": "IND",
+    "awayTeam": "LAC"
+  },
+  "0022400814": {
+    "homeTeam": "ATL",
+    "awayTeam": "DET"
+  },
+  "0022400815": {
+    "homeTeam": "ORL",
+    "awayTeam": "WAS"
+  },
+  "0022400816": {
+    "homeTeam": "TOR",
+    "awayTeam": "PHX"
+  },
+  "0022400817": {
+    "homeTeam": "MIL",
+    "awayTeam": "MIA"
+  },
+  "0022400818": {
+    "homeTeam": "NOP",
+    "awayTeam": "SAS"
+  },
+  "0022400819": {
+    "homeTeam": "CLE",
+    "awayTeam": "MEM"
+  },
+  "0022400820": {
+    "homeTeam": "MIN",
+    "awayTeam": "OKC"
+  },
+  "0022400821": {
+    "homeTeam": "DET",
+    "awayTeam": "LAC"
+  },
+  "0022400822": {
+    "homeTeam": "IND",
+    "awayTeam": "DEN"
+  },
+  "0022400823": {
+    "homeTeam": "PHI",
+    "awayTeam": "CHI"
+  },
+  "0022400824": {
+    "homeTeam": "WAS",
+    "awayTeam": "BKN"
+  },
+  "0022400825": {
+    "homeTeam": "ATL",
+    "awayTeam": "MIA"
+  },
+  "0022400826": {
+    "homeTeam": "OKC",
+    "awayTeam": "MIN"
+  },
+  "0022400827": {
+    "homeTeam": "UTA",
+    "awayTeam": "POR"
+  },
+  "0022400828": {
+    "homeTeam": "SAC",
+    "awayTeam": "CHA"
+  },
+  "0022400829": {
+    "homeTeam": "TOR",
+    "awayTeam": "BOS"
+  },
+  "0022400830": {
+    "homeTeam": "ORL",
+    "awayTeam": "CLE"
+  },
+  "0022400831": {
+    "homeTeam": "HOU",
+    "awayTeam": "MIL"
+  },
+  "0022400832": {
+    "homeTeam": "MEM",
+    "awayTeam": "PHX"
+  },
+  "0022400833": {
+    "homeTeam": "NOP",
+    "awayTeam": "SAS"
+  },
+  "0022400834": {
+    "homeTeam": "GSW",
+    "awayTeam": "CHA"
+  },
+  "0022400835": {
+    "homeTeam": "LAL",
+    "awayTeam": "DAL"
+  },
+  "0022400836": {
+    "homeTeam": "DET",
+    "awayTeam": "BOS"
+  },
+  "0022400837": {
+    "homeTeam": "IND",
+    "awayTeam": "TOR"
+  },
+  "0022400838": {
+    "homeTeam": "NYK",
+    "awayTeam": "PHI"
+  },
+  "0022400839": {
+    "homeTeam": "WAS",
+    "awayTeam": "POR"
+  },
+  "0022400840": {
+    "homeTeam": "BKN",
+    "awayTeam": "OKC"
+  },
+  "0022400841": {
+    "homeTeam": "MIA",
+    "awayTeam": "ATL"
+  },
+  "0022400842": {
+    "homeTeam": "CHI",
+    "awayTeam": "LAC"
+  },
+  "0022400843": {
+    "homeTeam": "UTA",
+    "awayTeam": "SAC"
+  },
+  "0022400844": {
+    "homeTeam": "HOU",
+    "awayTeam": "SAS"
+  },
+  "0022400845": {
+    "homeTeam": "ORL",
+    "awayTeam": "GSW"
+  },
+  "0022400846": {
+    "homeTeam": "MIL",
+    "awayTeam": "DEN"
+  },
+  "0022400847": {
+    "homeTeam": "DAL",
+    "awayTeam": "CHA"
+  },
+  "0022400848": {
+    "homeTeam": "PHX",
+    "awayTeam": "NOP"
+  },
+  "0022400849": {
+    "homeTeam": "LAL",
+    "awayTeam": "MIN"
+  },
+  "0022400850": {
+    "homeTeam": "DET",
+    "awayTeam": "DEN"
+  },
+  "0022400851": {
+    "homeTeam": "ATL",
+    "awayTeam": "OKC"
+  },
+  "0022400852": {
+    "homeTeam": "BOS",
+    "awayTeam": "CLE"
+  },
+  "0022400853": {
+    "homeTeam": "BKN",
+    "awayTeam": "POR"
+  },
+  "0022400854": {
+    "homeTeam": "MIA",
+    "awayTeam": "IND"
+  },
+  "0022400855": {
+    "homeTeam": "CHI",
+    "awayTeam": "TOR"
+  },
+  "0022400856": {
+    "homeTeam": "MEM",
+    "awayTeam": "NYK"
+  },
+  "0022400857": {
+    "homeTeam": "PHX",
+    "awayTeam": "NOP"
+  },
+  "0022400858": {
+    "homeTeam": "UTA",
+    "awayTeam": "MIN"
+  },
+  "0022400859": {
+    "homeTeam": "LAL",
+    "awayTeam": "LAC"
+  },
+  "0022400860": {
+    "homeTeam": "CHA",
+    "awayTeam": "WAS"
+  },
+  "0022400861": {
+    "homeTeam": "DET",
+    "awayTeam": "BKN"
+  },
+  "0022400862": {
+    "homeTeam": "HOU",
+    "awayTeam": "SAC"
+  },
+  "0022400863": {
+    "homeTeam": "MEM",
+    "awayTeam": "SAS"
+  },
+  "0022400864": {
+    "homeTeam": "PHI",
+    "awayTeam": "GSW"
+  },
+  "0022400865": {
+    "homeTeam": "DAL",
+    "awayTeam": "MIL"
+  },
+  "0022400866": {
+    "homeTeam": "BOS",
+    "awayTeam": "DEN"
+  },
+  "0022400867": {
+    "homeTeam": "CLE",
+    "awayTeam": "POR"
+  },
+  "0022400868": {
+    "homeTeam": "IND",
+    "awayTeam": "CHI"
+  },
+  "0022400869": {
+    "homeTeam": "MIA",
+    "awayTeam": "NYK"
+  },
+  "0022400870": {
+    "homeTeam": "ORL",
+    "awayTeam": "TOR"
+  },
+  "0022400871": {
+    "homeTeam": "SAS",
+    "awayTeam": "OKC"
+  },
+  "0022400872": {
+    "homeTeam": "UTA",
+    "awayTeam": "NOP"
+  },
+  "0022400873": {
+    "homeTeam": "PHX",
+    "awayTeam": "MIN"
+  },
+  "0022400874": {
+    "homeTeam": "LAL",
+    "awayTeam": "LAC"
+  },
+  "0022400875": {
+    "homeTeam": "CHA",
+    "awayTeam": "GSW"
+  },
+  "0022400876": {
+    "homeTeam": "PHI",
+    "awayTeam": "POR"
+  },
+  "0022400877": {
+    "homeTeam": "MIA",
+    "awayTeam": "WAS"
+  },
+  "0022400878": {
+    "homeTeam": "MEM",
+    "awayTeam": "ATL"
+  },
+  "0022400879": {
+    "homeTeam": "OKC",
+    "awayTeam": "HOU"
+  },
+  "0022400880": {
+    "homeTeam": "DAL",
+    "awayTeam": "SAC"
+  },
+  "0022400881": {
+    "homeTeam": "UTA",
+    "awayTeam": "DET"
+  },
+  "0022400882": {
+    "homeTeam": "IND",
+    "awayTeam": "HOU"
+  },
+  "0022400883": {
+    "homeTeam": "ORL",
+    "awayTeam": "TOR"
+  },
+  "0022400884": {
+    "homeTeam": "ATL",
+    "awayTeam": "MIL"
+  },
+  "0022400885": {
+    "homeTeam": "NYK",
+    "awayTeam": "GSW"
+  },
+  "0022400886": {
+    "homeTeam": "CHI",
+    "awayTeam": "CLE"
+  },
+  "0022400887": {
+    "homeTeam": "MIN",
+    "awayTeam": "PHI"
+  },
+  "0022400888": {
+    "homeTeam": "SAS",
+    "awayTeam": "BKN"
+  },
+  "0022400889": {
+    "homeTeam": "PHX",
+    "awayTeam": "LAC"
+  },
+  "0022400890": {
+    "homeTeam": "LAL",
+    "awayTeam": "NOP"
+  },
+  "0022400891": {
+    "homeTeam": "BOS",
+    "awayTeam": "POR"
+  },
+  "0022400892": {
+    "homeTeam": "CHA",
+    "awayTeam": "MIN"
+  },
+  "0022400893": {
+    "homeTeam": "CLE",
+    "awayTeam": "MIA"
+  },
+  "0022400894": {
+    "homeTeam": "WAS",
+    "awayTeam": "UTA"
+  },
+  "0022400895": {
+    "homeTeam": "MEM",
+    "awayTeam": "OKC"
+  },
+  "0022400896": {
+    "homeTeam": "DEN",
+    "awayTeam": "SAC"
+  },
+  "0022400897": {
+    "homeTeam": "MIL",
+    "awayTeam": "DAL"
+  },
+  "0022400898": {
+    "homeTeam": "LAC",
+    "awayTeam": "DET"
+  },
+  "0022400899": {
+    "homeTeam": "ATL",
+    "awayTeam": "IND"
+  },
+  "0022400900": {
+    "homeTeam": "BOS",
+    "awayTeam": "PHI"
+  },
+  "0022400901": {
+    "homeTeam": "BKN",
+    "awayTeam": "GSW"
+  },
+  "0022400902": {
+    "homeTeam": "NOP",
+    "awayTeam": "HOU"
+  },
+  "0022400903": {
+    "homeTeam": "LAL",
+    "awayTeam": "NYK"
+  },
+  "0022400904": {
+    "homeTeam": "CHA",
+    "awayTeam": "CLE"
+  },
+  "0022400905": {
+    "homeTeam": "TOR",
+    "awayTeam": "UTA"
+  },
+  "0022400906": {
+    "homeTeam": "DAL",
+    "awayTeam": "MEM"
+  },
+  "0022400907": {
+    "homeTeam": "MIA",
+    "awayTeam": "MIN"
+  },
+  "0022400908": {
+    "homeTeam": "OKC",
+    "awayTeam": "POR"
+  },
+  "0022400909": {
+    "homeTeam": "DEN",
+    "awayTeam": "PHX"
+  },
+  "0022400910": {
+    "homeTeam": "SAC",
+    "awayTeam": "SAS"
+  },
+  "0022400911": {
+    "homeTeam": "LAC",
+    "awayTeam": "NYK"
+  },
+  "0022400912": {
+    "homeTeam": "CHA",
+    "awayTeam": "BKN"
+  },
+  "0022400913": {
+    "homeTeam": "HOU",
+    "awayTeam": "NOP"
+  },
+  "0022400914": {
+    "homeTeam": "ATL",
+    "awayTeam": "IND"
+  },
+  "0022400915": {
+    "homeTeam": "TOR",
+    "awayTeam": "WAS"
+  },
+  "0022400916": {
+    "homeTeam": "MIA",
+    "awayTeam": "CHI"
+  },
+  "0022400917": {
+    "homeTeam": "MIL",
+    "awayTeam": "ORL"
+  },
+  "0022400918": {
+    "homeTeam": "BOS",
+    "awayTeam": "LAL"
+  },
+  "0022400919": {
+    "homeTeam": "GSW",
+    "awayTeam": "DET"
+  },
+  "0022400920": {
+    "homeTeam": "OKC",
+    "awayTeam": "DEN"
+  },
+  "0022400921": {
+    "homeTeam": "DAL",
+    "awayTeam": "PHX"
+  },
+  "0022400922": {
+    "homeTeam": "MIL",
+    "awayTeam": "CLE"
+  },
+  "0022400923": {
+    "homeTeam": "NOP",
+    "awayTeam": "MEM"
+  },
+  "0022400924": {
+    "homeTeam": "PHI",
+    "awayTeam": "UTA"
+  },
+  "0022400925": {
+    "homeTeam": "MIN",
+    "awayTeam": "SAS"
+  },
+  "0022400926": {
+    "homeTeam": "POR",
+    "awayTeam": "DET"
+  },
+  "0022400927": {
+    "homeTeam": "LAC",
+    "awayTeam": "SAC"
+  },
+  "0022400928": {
+    "homeTeam": "ATL",
+    "awayTeam": "PHI"
+  },
+  "0022400929": {
+    "homeTeam": "BOS",
+    "awayTeam": "UTA"
+  },
+  "0022400930": {
+    "homeTeam": "BKN",
+    "awayTeam": "LAL"
+  },
+  "0022400931": {
+    "homeTeam": "MIA",
+    "awayTeam": "CHA"
+  },
+  "0022400932": {
+    "homeTeam": "TOR",
+    "awayTeam": "WAS"
+  },
+  "0022400933": {
+    "homeTeam": "CHI",
+    "awayTeam": "IND"
+  },
+  "0022400934": {
+    "homeTeam": "HOU",
+    "awayTeam": "ORL"
+  },
+  "0022400935": {
+    "homeTeam": "MEM",
+    "awayTeam": "PHX"
+  },
+  "0022400936": {
+    "homeTeam": "OKC",
+    "awayTeam": "DEN"
+  },
+  "0022400937": {
+    "homeTeam": "SAS",
+    "awayTeam": "DAL"
+  },
+  "0022400938": {
+    "homeTeam": "GSW",
+    "awayTeam": "POR"
+  },
+  "0022400939": {
+    "homeTeam": "SAC",
+    "awayTeam": "NYK"
+  },
+  "0022400940": {
+    "homeTeam": "CLE",
+    "awayTeam": "BKN"
+  },
+  "0022400941": {
+    "homeTeam": "DET",
+    "awayTeam": "WAS"
+  },
+  "0022400942": {
+    "homeTeam": "IND",
+    "awayTeam": "MIL"
+  },
+  "0022400943": {
+    "homeTeam": "NOP",
+    "awayTeam": "LAC"
+  },
+  "0022400944": {
+    "homeTeam": "ORL",
+    "awayTeam": "CHI"
+  },
+  "0022400945": {
+    "homeTeam": "ATL",
+    "awayTeam": "CHA"
+  },
+  "0022400946": {
+    "homeTeam": "BOS",
+    "awayTeam": "OKC"
+  },
+  "0022400947": {
+    "homeTeam": "TOR",
+    "awayTeam": "PHI"
+  },
+  "0022400948": {
+    "homeTeam": "MIA",
+    "awayTeam": "LAC"
+  },
+  "0022400949": {
+    "homeTeam": "HOU",
+    "awayTeam": "PHX"
+  },
+  "0022400950": {
+    "homeTeam": "MEM",
+    "awayTeam": "UTA"
+  },
+  "0022400951": {
+    "homeTeam": "SAS",
+    "awayTeam": "DAL"
+  },
+  "0022400952": {
+    "homeTeam": "DEN",
+    "awayTeam": "MIN"
+  },
+  "0022400953": {
+    "homeTeam": "POR",
+    "awayTeam": "NYK"
+  },
+  "0022400954": {
+    "homeTeam": "DET",
+    "awayTeam": "WAS"
+  },
+  "0022400955": {
+    "homeTeam": "MIL",
+    "awayTeam": "LAL"
+  },
+  "0022400956": {
+    "homeTeam": "CHI",
+    "awayTeam": "BKN"
+  },
+  "0022400957": {
+    "homeTeam": "GSW",
+    "awayTeam": "SAC"
+  },
+  "0022400958": {
+    "homeTeam": "MIA",
+    "awayTeam": "BOS"
+  },
+  "0022400959": {
+    "homeTeam": "PHI",
+    "awayTeam": "IND"
+  },
+  "0022400960": {
+    "homeTeam": "ATL",
+    "awayTeam": "LAC"
+  },
+  "0022400961": {
+    "homeTeam": "HOU",
+    "awayTeam": "DAL"
+  },
+  "0022400962": {
+    "homeTeam": "MEM",
+    "awayTeam": "CLE"
+  },
+  "0022400963": {
+    "homeTeam": "MIN",
+    "awayTeam": "ORL"
+  },
+  "0022400964": {
+    "homeTeam": "SAS",
+    "awayTeam": "CHA"
+  },
+  "0022400965": {
+    "homeTeam": "DEN",
+    "awayTeam": "LAL"
+  },
+  "0022400966": {
+    "homeTeam": "UTA",
+    "awayTeam": "TOR"
+  },
+  "0022400967": {
+    "homeTeam": "PHX",
+    "awayTeam": "SAC"
+  },
+  "0022400968": {
+    "homeTeam": "BKN",
+    "awayTeam": "BOS"
+  },
+  "0022400969": {
+    "homeTeam": "DET",
+    "awayTeam": "OKC"
+  },
+  "0022400970": {
+    "homeTeam": "HOU",
+    "awayTeam": "CHI"
+  },
+  "0022400971": {
+    "homeTeam": "MEM",
+    "awayTeam": "MIA"
+  },
+  "0022400972": {
+    "homeTeam": "MIL",
+    "awayTeam": "IND"
+  },
+  "0022400973": {
+    "homeTeam": "SAS",
+    "awayTeam": "NOP"
+  },
+  "0022400974": {
+    "homeTeam": "GSW",
+    "awayTeam": "NYK"
+  },
+  "0022400975": {
+    "homeTeam": "DEN",
+    "awayTeam": "WAS"
+  },
+  "0022400976": {
+    "homeTeam": "DAL",
+    "awayTeam": "PHI"
+  },
+  "0022400977": {
+    "homeTeam": "LAL",
+    "awayTeam": "PHX"
+  },
+  "0022400978": {
+    "homeTeam": "BKN",
+    "awayTeam": "ATL"
+  },
+  "0022400979": {
+    "homeTeam": "CLE",
+    "awayTeam": "ORL"
+  },
+  "0022400980": {
+    "homeTeam": "POR",
+    "awayTeam": "TOR"
+  },
+  "0022400981": {
+    "homeTeam": "MIN",
+    "awayTeam": "UTA"
+  },
+  "0022400982": {
+    "homeTeam": "MIL",
+    "awayTeam": "OKC"
+  },
+  "0022400983": {
+    "homeTeam": "LAC",
+    "awayTeam": "WAS"
+  },
+  "0022400984": {
+    "homeTeam": "NYK",
+    "awayTeam": "MIA"
+  },
+  "0022400985": {
+    "homeTeam": "HOU",
+    "awayTeam": "PHI"
+  },
+  "0022400986": {
+    "homeTeam": "MIN",
+    "awayTeam": "IND"
+  },
+  "0022400987": {
+    "homeTeam": "NOP",
+    "awayTeam": "DET"
+  },
+  "0022400988": {
+    "homeTeam": "SAS",
+    "awayTeam": "ORL"
+  },
+  "0022400989": {
+    "homeTeam": "UTA",
+    "awayTeam": "CHI"
+  },
+  "0022400990": {
+    "homeTeam": "GSW",
+    "awayTeam": "DEN"
+  },
+  "0022400991": {
+    "homeTeam": "PHX",
+    "awayTeam": "TOR"
+  },
+  "0022400992": {
+    "homeTeam": "SAC",
+    "awayTeam": "MEM"
+  },
+  "0022400993": {
+    "homeTeam": "CHA",
+    "awayTeam": "ATL"
+  },
+  "0022400994": {
+    "homeTeam": "BOS",
+    "awayTeam": "BKN"
+  },
+  "0022400995": {
+    "homeTeam": "POR",
+    "awayTeam": "WAS"
+  },
+  "0022400996": {
+    "homeTeam": "LAL",
+    "awayTeam": "MIL"
+  },
+  "0022400997": {
+    "homeTeam": "LAC",
+    "awayTeam": "CLE"
+  },
+  "0022400998": {
+    "homeTeam": "IND",
+    "awayTeam": "DAL"
+  },
+  "0022400999": {
+    "homeTeam": "ORL",
+    "awayTeam": "HOU"
+  },
+  "0022401000": {
+    "homeTeam": "MIA",
+    "awayTeam": "DET"
+  },
+  "0022401001": {
+    "homeTeam": "MIN",
+    "awayTeam": "NOP"
+  },
+  "0022401002": {
+    "homeTeam": "OKC",
+    "awayTeam": "PHI"
+  },
+  "0022401003": {
+    "homeTeam": "SAS",
+    "awayTeam": "NYK"
+  },
+  "0022401004": {
+    "homeTeam": "UTA",
+    "awayTeam": "LAC"
+  },
+  "0022401005": {
+    "homeTeam": "GSW",
+    "awayTeam": "TOR"
+  },
+  "0022401006": {
+    "homeTeam": "LAL",
+    "awayTeam": "DEN"
+  },
+  "0022401007": {
+    "homeTeam": "PHX",
+    "awayTeam": "CHI"
+  },
+  "0022401008": {
+    "homeTeam": "POR",
+    "awayTeam": "MEM"
+  },
+  "0022401009": {
+    "homeTeam": "SAC",
+    "awayTeam": "CLE"
+  },
+  "0022401010": {
+    "homeTeam": "CHA",
+    "awayTeam": "NYK"
+  },
+  "0022401011": {
+    "homeTeam": "IND",
+    "awayTeam": "BKN"
+  },
+  "0022401012": {
+    "homeTeam": "GSW",
+    "awayTeam": "MIL"
+  },
+  "0022401013": {
+    "homeTeam": "SAC",
+    "awayTeam": "CHI"
+  },
+  "0022401014": {
+    "homeTeam": "WAS",
+    "awayTeam": "ORL"
+  },
+  "0022401015": {
+    "homeTeam": "MIA",
+    "awayTeam": "HOU"
+  },
+  "0022401016": {
+    "homeTeam": "MIN",
+    "awayTeam": "NOP"
+  },
+  "0022401017": {
+    "homeTeam": "OKC",
+    "awayTeam": "CHA"
+  },
+  "0022401018": {
+    "homeTeam": "SAS",
+    "awayTeam": "PHI"
+  },
+  "0022401019": {
+    "homeTeam": "DAL",
+    "awayTeam": "DET"
+  },
+  "0022401020": {
+    "homeTeam": "UTA",
+    "awayTeam": "BOS"
+  },
+  "0022401021": {
+    "homeTeam": "PHX",
+    "awayTeam": "CLE"
+  },
+  "0022401022": {
+    "homeTeam": "POR",
+    "awayTeam": "DEN"
+  },
+  "0022401023": {
+    "homeTeam": "LAC",
+    "awayTeam": "MEM"
+  },
+  "0022401024": {
+    "homeTeam": "IND",
+    "awayTeam": "BKN"
+  },
+  "0022401025": {
+    "homeTeam": "ATL",
+    "awayTeam": "GSW"
+  },
+  "0022401026": {
+    "homeTeam": "NYK",
+    "awayTeam": "WAS"
+  },
+  "0022401027": {
+    "homeTeam": "SAC",
+    "awayTeam": "MIL"
+  },
+  "0022401028": {
+    "homeTeam": "LAL",
+    "awayTeam": "CHI"
+  },
+  "0022401029": {
+    "homeTeam": "DET",
+    "awayTeam": "NOP"
+  },
+  "0022401030": {
+    "homeTeam": "UTA",
+    "awayTeam": "CLE"
+  },
+  "0022401031": {
+    "homeTeam": "ATL",
+    "awayTeam": "PHI"
+  },
+  "0022401032": {
+    "homeTeam": "MIA",
+    "awayTeam": "CHA"
+  },
+  "0022401033": {
+    "homeTeam": "TOR",
+    "awayTeam": "SAS"
+  },
+  "0022401034": {
+    "homeTeam": "POR",
+    "awayTeam": "BOS"
+  },
+  "0022401035": {
+    "homeTeam": "HOU",
+    "awayTeam": "DEN"
+  },
+  "0022401036": {
+    "homeTeam": "LAC",
+    "awayTeam": "OKC"
+  },
+  "0022401037": {
+    "homeTeam": "IND",
+    "awayTeam": "MIN"
+  },
+  "0022401038": {
+    "homeTeam": "ORL",
+    "awayTeam": "LAL"
+  },
+  "0022401039": {
+    "homeTeam": "WAS",
+    "awayTeam": "TOR"
+  },
+  "0022401040": {
+    "homeTeam": "BKN",
+    "awayTeam": "DAL"
+  },
+  "0022401041": {
+    "homeTeam": "NOP",
+    "awayTeam": "PHI"
+  },
+  "0022401042": {
+    "homeTeam": "DEN",
+    "awayTeam": "CHI"
+  },
+  "0022401043": {
+    "homeTeam": "PHX",
+    "awayTeam": "MIL"
+  },
+  "0022401044": {
+    "homeTeam": "SAC",
+    "awayTeam": "BOS"
+  },
+  "0022401045": {
+    "homeTeam": "CHA",
+    "awayTeam": "ORL"
+  },
+  "0022401046": {
+    "homeTeam": "DET",
+    "awayTeam": "SAS"
+  },
+  "0022401047": {
+    "homeTeam": "MIA",
+    "awayTeam": "GSW"
+  },
+  "0022401048": {
+    "homeTeam": "NYK",
+    "awayTeam": "DAL"
+  },
+  "0022401049": {
+    "homeTeam": "HOU",
+    "awayTeam": "ATL"
+  },
+  "0022401050": {
+    "homeTeam": "UTA",
+    "awayTeam": "MEM"
+  },
+  "0022401051": {
+    "homeTeam": "POR",
+    "awayTeam": "CLE"
+  },
+  "0022401052": {
+    "homeTeam": "SAC",
+    "awayTeam": "OKC"
+  },
+  "0022401053": {
+    "homeTeam": "PHI",
+    "awayTeam": "WAS"
+  },
+  "0022401054": {
+    "homeTeam": "BKN",
+    "awayTeam": "TOR"
+  },
+  "0022401055": {
+    "homeTeam": "IND",
+    "awayTeam": "LAL"
+  },
+  "0022401056": {
+    "homeTeam": "NYK",
+    "awayTeam": "LAC"
+  },
+  "0022401057": {
+    "homeTeam": "DEN",
+    "awayTeam": "MIL"
+  },
+  "0022401058": {
+    "homeTeam": "PHX",
+    "awayTeam": "BOS"
+  },
+  "0022401059": {
+    "homeTeam": "CLE",
+    "awayTeam": "SAS"
+  },
+  "0022401060": {
+    "homeTeam": "ORL",
+    "awayTeam": "DAL"
+  },
+  "0022401061": {
+    "homeTeam": "WAS",
+    "awayTeam": "IND"
+  },
+  "0022401062": {
+    "homeTeam": "MIA",
+    "awayTeam": "ATL"
+  },
+  "0022401063": {
+    "homeTeam": "CHI",
+    "awayTeam": "LAL"
+  },
+  "0022401064": {
+    "homeTeam": "OKC",
+    "awayTeam": "MEM"
+  },
+  "0022401065": {
+    "homeTeam": "UTA",
+    "awayTeam": "HOU"
+  },
+  "0022401066": {
+    "homeTeam": "SAC",
+    "awayTeam": "POR"
+  },
+  "0022401067": {
+    "homeTeam": "DET",
+    "awayTeam": "CLE"
+  },
+  "0022401068": {
+    "homeTeam": "BKN",
+    "awayTeam": "LAC"
+  },
+  "0022401069": {
+    "homeTeam": "TOR",
+    "awayTeam": "CHA"
+  },
+  "0022401070": {
+    "homeTeam": "MIL",
+    "awayTeam": "NYK"
+  },
+  "0022401071": {
+    "homeTeam": "MIN",
+    "awayTeam": "PHX"
+  },
+  "0022401072": {
+    "homeTeam": "NOP",
+    "awayTeam": "GSW"
+  },
+  "0022401073": {
+    "homeTeam": "DEN",
+    "awayTeam": "UTA"
+  },
+  "0022401074": {
+    "homeTeam": "ORL",
+    "awayTeam": "SAC"
+  },
+  "0022401075": {
+    "homeTeam": "WAS",
+    "awayTeam": "BKN"
+  },
+  "0022401076": {
+    "homeTeam": "PHI",
+    "awayTeam": "MIA"
+  },
+  "0022401077": {
+    "homeTeam": "CHI",
+    "awayTeam": "DAL"
+  },
+  "0022401078": {
+    "homeTeam": "MEM",
+    "awayTeam": "LAL"
+  },
+  "0022401079": {
+    "homeTeam": "OKC",
+    "awayTeam": "IND"
+  },
+  "0022401080": {
+    "homeTeam": "SAS",
+    "awayTeam": "BOS"
+  },
+  "0022401081": {
+    "homeTeam": "CLE",
+    "awayTeam": "LAC"
+  },
+  "0022401082": {
+    "homeTeam": "NYK",
+    "awayTeam": "POR"
+  },
+  "0022401083": {
+    "homeTeam": "MIL",
+    "awayTeam": "ATL"
+  },
+  "0022401084": {
+    "homeTeam": "MIN",
+    "awayTeam": "DET"
+  },
+  "0022401085": {
+    "homeTeam": "NOP",
+    "awayTeam": "CHA"
+  },
+  "0022401086": {
+    "homeTeam": "SAS",
+    "awayTeam": "GSW"
+  },
+  "0022401087": {
+    "homeTeam": "PHI",
+    "awayTeam": "TOR"
+  },
+  "0022401088": {
+    "homeTeam": "PHX",
+    "awayTeam": "HOU"
+  },
+  "0022401089": {
+    "homeTeam": "CHA",
+    "awayTeam": "UTA"
+  },
+  "0022401090": {
+    "homeTeam": "IND",
+    "awayTeam": "SAC"
+  },
+  "0022401091": {
+    "homeTeam": "ORL",
+    "awayTeam": "LAC"
+  },
+  "0022401092": {
+    "homeTeam": "WAS",
+    "awayTeam": "MIA"
+  },
+  "0022401093": {
+    "homeTeam": "MEM",
+    "awayTeam": "BOS"
+  },
+  "0022401094": {
+    "homeTeam": "OKC",
+    "awayTeam": "CHI"
+  },
+  "0022401095": {
+    "homeTeam": "DAL",
+    "awayTeam": "BKN"
+  },
+  "0022401096": {
+    "homeTeam": "LAL",
+    "awayTeam": "HOU"
+  },
+  "0022401097": {
+    "homeTeam": "ATL",
+    "awayTeam": "POR"
+  },
+  "0022401098": {
+    "homeTeam": "NYK",
+    "awayTeam": "PHI"
+  },
+  "0022401099": {
+    "homeTeam": "CHI",
+    "awayTeam": "TOR"
+  },
+  "0022401100": {
+    "homeTeam": "MEM",
+    "awayTeam": "GSW"
+  },
+  "0022401101": {
+    "homeTeam": "MIL",
+    "awayTeam": "PHX"
+  },
+  "0022401102": {
+    "homeTeam": "DEN",
+    "awayTeam": "MIN"
+  },
+  "0022401103": {
+    "homeTeam": "CLE",
+    "awayTeam": "NYK"
+  },
+  "0022401104": {
+    "homeTeam": "IND",
+    "awayTeam": "CHA"
+  },
+  "0022401105": {
+    "homeTeam": "WAS",
+    "awayTeam": "SAC"
+  },
+  "0022401106": {
+    "homeTeam": "BOS",
+    "awayTeam": "MIA"
+  },
+  "0022401107": {
+    "homeTeam": "HOU",
+    "awayTeam": "UTA"
+  },
+  "0022401108": {
+    "homeTeam": "OKC",
+    "awayTeam": "DET"
+  },
+  "0022401109": {
+    "homeTeam": "DAL",
+    "awayTeam": "ATL"
+  },
+  "0022401110": {
+    "homeTeam": "DEN",
+    "awayTeam": "SAS"
+  },
+  "0022401111": {
+    "homeTeam": "LAC",
+    "awayTeam": "NOP"
+  },
+  "0022401112": {
+    "homeTeam": "WAS",
+    "awayTeam": "ORL"
+  },
+  "0022401113": {
+    "homeTeam": "BKN",
+    "awayTeam": "MIN"
+  },
+  "0022401114": {
+    "homeTeam": "MIA",
+    "awayTeam": "MEM"
+  },
+  "0022401115": {
+    "homeTeam": "PHI",
+    "awayTeam": "MIL"
+  },
+  "0022401116": {
+    "homeTeam": "TOR",
+    "awayTeam": "POR"
+  },
+  "0022401117": {
+    "homeTeam": "LAL",
+    "awayTeam": "GSW"
+  },
+  "0022401118": {
+    "homeTeam": "CHA",
+    "awayTeam": "SAC"
+  },
+  "0022401119": {
+    "homeTeam": "IND",
+    "awayTeam": "UTA"
+  },
+  "0022401120": {
+    "homeTeam": "BOS",
+    "awayTeam": "PHX"
+  },
+  "0022401121": {
+    "homeTeam": "TOR",
+    "awayTeam": "DET"
+  },
+  "0022401122": {
+    "homeTeam": "CHI",
+    "awayTeam": "POR"
+  },
+  "0022401123": {
+    "homeTeam": "HOU",
+    "awayTeam": "OKC"
+  },
+  "0022401124": {
+    "homeTeam": "SAS",
+    "awayTeam": "CLE"
+  },
+  "0022401125": {
+    "homeTeam": "GSW",
+    "awayTeam": "DEN"
+  },
+  "0022401126": {
+    "homeTeam": "LAL",
+    "awayTeam": "NOP"
+  },
+  "0022401127": {
+    "homeTeam": "LAC",
+    "awayTeam": "DAL"
+  },
+  "0022401128": {
+    "homeTeam": "ATL",
+    "awayTeam": "NYK"
+  },
+  "0022401129": {
     "homeTeam": "DET",
     "awayTeam": "MEM"
   },
-  "0022301089": {
-    "homeTeam": "IND",
-    "awayTeam": "BKN"
-  },
-  "0022301090": {
-    "homeTeam": "ORL",
-    "awayTeam": "POR"
-  },
-  "0022301091": {
-    "homeTeam": "CHI",
-    "awayTeam": "ATL"
-  },
-  "0022301092": {
-    "homeTeam": "NOP",
-    "awayTeam": "PHX"
-  },
-  "0022300589": {
-    "homeTeam": "GSW",
-    "awayTeam": "DAL"
-  },
-  "0022301093": {
+  "0022401130": {
     "homeTeam": "PHI",
-    "awayTeam": "OKC"
+    "awayTeam": "MIN"
   },
-  "0022301094": {
-    "homeTeam": "TOR",
-    "awayTeam": "LAL"
-  },
-  "0022301095": {
-    "homeTeam": "WAS",
+  "0022401131": {
+    "homeTeam": "MIA",
     "awayTeam": "MIL"
   },
-  "0022301096": {
-    "homeTeam": "MIA",
-    "awayTeam": "NYK"
-  },
-  "0022301098": {
-    "homeTeam": "MIN",
-    "awayTeam": "HOU"
-  },
-  "0022301099": {
-    "homeTeam": "DEN",
-    "awayTeam": "SAS"
-  },
-  "0022301100": {
-    "homeTeam": "UTA",
-    "awayTeam": "CLE"
-  },
-  "0022301101": {
-    "homeTeam": "SAC",
-    "awayTeam": "LAC"
-  },
-  "0022301102": {
-    "homeTeam": "CHA",
-    "awayTeam": "POR"
-  },
-  "0022301103": {
-    "homeTeam": "WAS",
-    "awayTeam": "LAL"
-  },
-  "0022301104": {
-    "homeTeam": "ATL",
-    "awayTeam": "DET"
-  },
-  "0022301105": {
-    "homeTeam": "BOS",
-    "awayTeam": "OKC"
-  },
-  "0022301106": {
-    "homeTeam": "BKN",
-    "awayTeam": "IND"
-  },
-  "0022301107": {
-    "homeTeam": "MIL",
-    "awayTeam": "MEM"
-  },
-  "0022301108": {
-    "homeTeam": "MIN",
-    "awayTeam": "TOR"
-  },
-  "0022301109": {
-    "homeTeam": "NOP",
-    "awayTeam": "ORL"
-  },
-  "0022301110": {
-    "homeTeam": "PHX",
-    "awayTeam": "CLE"
-  },
-  "0022301111": {
-    "homeTeam": "MIA",
-    "awayTeam": "PHI"
-  },
-  "0022301112": {
-    "homeTeam": "NYK",
-    "awayTeam": "SAC"
-  },
-  "0022301113": {
-    "homeTeam": "HOU",
-    "awayTeam": "GSW"
-  },
-  "0022301114": {
+  "0022401132": {
     "homeTeam": "LAC",
-    "awayTeam": "DEN"
+    "awayTeam": "DAL"
   },
-  "0022301124": {
-    "homeTeam": "DAL",
-    "awayTeam": "ATL"
-  },
-  "0022301097": {
-    "homeTeam": "DAL",
-    "awayTeam": "GSW"
-  },
-  "0022301115": {
+  "0022401133": {
     "homeTeam": "CHA",
-    "awayTeam": "ORL"
-  },
-  "0022301116": {
-    "homeTeam": "IND",
-    "awayTeam": "OKC"
-  },
-  "0022301117": {
-    "homeTeam": "WAS",
-    "awayTeam": "POR"
-  },
-  "0022301118": {
-    "homeTeam": "BOS",
-    "awayTeam": "SAC"
-  },
-  "0022301119": {
-    "homeTeam": "CHI",
-    "awayTeam": "NYK"
-  },
-  "0022301120": {
-    "homeTeam": "HOU",
-    "awayTeam": "MIA"
-  },
-  "0022301121": {
-    "homeTeam": "MEM",
-    "awayTeam": "DET"
-  },
-  "0022301122": {
-    "homeTeam": "MIL",
-    "awayTeam": "TOR"
-  },
-  "0022301123": {
-    "homeTeam": "NOP",
-    "awayTeam": "SAS"
-  },
-  "0022301125": {
-    "homeTeam": "PHX",
-    "awayTeam": "MIN"
-  },
-  "0022301126": {
-    "homeTeam": "LAC",
-    "awayTeam": "UTA"
-  },
-  "0022301127": {
-    "homeTeam": "LAL",
-    "awayTeam": "CLE"
-  },
-  "0022301128": {
-    "homeTeam": "BKN",
-    "awayTeam": "DET"
-  },
-  "0022301129": {
-    "homeTeam": "MEM",
-    "awayTeam": "PHI"
-  },
-  "0022301130": {
-    "homeTeam": "DEN",
-    "awayTeam": "ATL"
-  },
-  "0022301131": {
-    "homeTeam": "DAL",
-    "awayTeam": "HOU"
-  },
-  "0022301132": {
-    "homeTeam": "LAC",
-    "awayTeam": "CLE"
-  },
-  "0022301133": {
-    "homeTeam": "IND",
-    "awayTeam": "MIA"
-  },
-  "0022301134": {
-    "homeTeam": "BOS",
-    "awayTeam": "POR"
-  },
-  "0022301135": {
-    "homeTeam": "CHA",
-    "awayTeam": "OKC"
-  },
-  "0022301136": {
-    "homeTeam": "ORL",
     "awayTeam": "CHI"
   },
-  "0022301137": {
-    "homeTeam": "TOR",
-    "awayTeam": "WAS"
-  },
-  "0022301138": {
-    "homeTeam": "PHX",
-    "awayTeam": "NOP"
-  },
-  "0022301139": {
-    "homeTeam": "MIL",
-    "awayTeam": "NYK"
-  },
-  "0022301140": {
-    "homeTeam": "SAS",
-    "awayTeam": "PHI"
-  },
-  "0022301141": {
-    "homeTeam": "BKN",
-    "awayTeam": "SAC"
-  },
-  "0022301142": {
-    "homeTeam": "GSW",
-    "awayTeam": "UTA"
-  },
-  "0022301143": {
-    "homeTeam": "LAL",
-    "awayTeam": "MIN"
-  },
-  "0022301144": {
-    "homeTeam": "CHA",
-    "awayTeam": "DAL"
-  },
-  "0022301145": {
-    "homeTeam": "PHI",
-    "awayTeam": "DET"
-  },
-  "0022301146": {
-    "homeTeam": "TOR",
-    "awayTeam": "IND"
-  },
-  "0022301147": {
-    "homeTeam": "ATL",
-    "awayTeam": "MIA"
-  },
-  "0022301148": {
-    "homeTeam": "MIL",
-    "awayTeam": "BOS"
-  },
-  "0022301149": {
-    "homeTeam": "CHI",
-    "awayTeam": "NYK"
-  },
-  "0022301150": {
-    "homeTeam": "HOU",
-    "awayTeam": "ORL"
-  },
-  "0022301151": {
-    "homeTeam": "MEM",
-    "awayTeam": "SAS"
-  },
-  "0022301152": {
-    "homeTeam": "MIN",
-    "awayTeam": "WAS"
-  },
-  "0022301153": {
-    "homeTeam": "OKC",
-    "awayTeam": "SAC"
-  },
-  "0022301154": {
-    "homeTeam": "UTA",
-    "awayTeam": "DEN"
-  },
-  "0022301155": {
-    "homeTeam": "LAL",
-    "awayTeam": "GSW"
-  },
-  "0022301156": {
-    "homeTeam": "PHX",
-    "awayTeam": "LAC"
-  },
-  "0022301157": {
-    "homeTeam": "POR",
-    "awayTeam": "NOP"
-  },
-  "0022301158": {
-    "homeTeam": "CLE",
-    "awayTeam": "MEM"
-  },
-  "0022301159": {
-    "homeTeam": "ATL",
-    "awayTeam": "CHA"
-  },
-  "0022301160": {
+  "0022401134": {
     "homeTeam": "BKN",
     "awayTeam": "TOR"
   },
-  "0022301161": {
-    "homeTeam": "MIA",
-    "awayTeam": "DAL"
-  },
-  "0022301162": {
-    "homeTeam": "MIL",
-    "awayTeam": "ORL"
-  },
-  "0022301163": {
+  "0022401135": {
     "homeTeam": "OKC",
+    "awayTeam": "LAL"
+  },
+  "0022401136": {
+    "homeTeam": "ATL",
+    "awayTeam": "UTA"
+  },
+  "0022401137": {
+    "homeTeam": "BOS",
+    "awayTeam": "WAS"
+  },
+  "0022401138": {
+    "homeTeam": "CLE",
+    "awayTeam": "SAC"
+  },
+  "0022401139": {
+    "homeTeam": "POR",
     "awayTeam": "SAS"
   },
-  "0022301164": {
-    "homeTeam": "DEN",
-    "awayTeam": "MIN"
-  },
-  "0022301165": {
-    "homeTeam": "LAC",
+  "0022401140": {
+    "homeTeam": "NYK",
     "awayTeam": "PHX"
   },
-  "0022301166": {
+  "0022401141": {
+    "homeTeam": "NOP",
+    "awayTeam": "ORL"
+  },
+  "0022401142": {
+    "homeTeam": "DEN",
+    "awayTeam": "IND"
+  },
+  "0022401143": {
+    "homeTeam": "GSW",
+    "awayTeam": "HOU"
+  },
+  "0022401144": {
     "homeTeam": "DET",
-    "awayTeam": "CHI"
-  },
-  "0022301167": {
-    "homeTeam": "BOS",
-    "awayTeam": "NYK"
-  },
-  "0022301168": {
-    "homeTeam": "UTA",
-    "awayTeam": "HOU"
-  },
-  "0022301169": {
-    "homeTeam": "POR",
-    "awayTeam": "GSW"
-  },
-  "0022301170": {
-    "homeTeam": "SAC",
-    "awayTeam": "NOP"
-  },
-  "0022301171": {
-    "homeTeam": "PHI",
-    "awayTeam": "ORL"
-  },
-  "0022301172": {
-    "homeTeam": "WAS",
-    "awayTeam": "CHI"
-  },
-  "0022301173": {
-    "homeTeam": "BOS",
-    "awayTeam": "CHA"
-  },
-  "0022301174": {
-    "homeTeam": "CLE",
-    "awayTeam": "IND"
-  },
-  "0022301175": {
-    "homeTeam": "NYK",
-    "awayTeam": "BKN"
-  },
-  "0022301176": {
-    "homeTeam": "MIA",
-    "awayTeam": "TOR"
-  },
-  "0022301177": {
-    "homeTeam": "MEM",
-    "awayTeam": "LAL"
-  },
-  "0022301178": {
-    "homeTeam": "MIN",
-    "awayTeam": "ATL"
-  },
-  "0022301179": {
-    "homeTeam": "OKC",
-    "awayTeam": "MIL"
-  },
-  "0022301180": {
-    "homeTeam": "SAS",
-    "awayTeam": "DEN"
-  },
-  "0022301181": {
-    "homeTeam": "DAL",
-    "awayTeam": "DET"
-  },
-  "0022301182": {
-    "homeTeam": "GSW",
-    "awayTeam": "NOP"
-  },
-  "0022301183": {
-    "homeTeam": "POR",
-    "awayTeam": "HOU"
-  },
-  "0022301184": {
-    "homeTeam": "LAC",
-    "awayTeam": "UTA"
-  },
-  "0022301185": {
-    "homeTeam": "SAC",
-    "awayTeam": "PHX"
-  },
-  "0022301186": {
-    "homeTeam": "BOS",
-    "awayTeam": "WAS"
-  },
-  "0022301187": {
-    "homeTeam": "CLE",
-    "awayTeam": "CHA"
-  },
-  "0022301188": {
-    "homeTeam": "IND",
-    "awayTeam": "ATL"
-  },
-  "0022301189": {
-    "homeTeam": "MIA",
-    "awayTeam": "TOR"
-  },
-  "0022301190": {
-    "homeTeam": "NYK",
-    "awayTeam": "CHI"
-  },
-  "0022301191": {
-    "homeTeam": "ORL",
-    "awayTeam": "MIL"
-  },
-  "0022301192": {
-    "homeTeam": "PHI",
-    "awayTeam": "BKN"
-  },
-  "0022301193": {
-    "homeTeam": "MEM",
-    "awayTeam": "DEN"
-  },
-  "0022301194": {
-    "homeTeam": "MIN",
-    "awayTeam": "PHX"
-  },
-  "0022301195": {
-    "homeTeam": "NOP",
-    "awayTeam": "LAL"
-  },
-  "0022301196": {
-    "homeTeam": "OKC",
-    "awayTeam": "DAL"
-  },
-  "0022301197": {
-    "homeTeam": "SAS",
-    "awayTeam": "DET"
-  },
-  "0022301198": {
-    "homeTeam": "GSW",
-    "awayTeam": "UTA"
-  },
-  "0022301199": {
-    "homeTeam": "LAC",
-    "awayTeam": "HOU"
-  },
-  "0022301200": {
-    "homeTeam": "SAC",
-    "awayTeam": "POR"
-  },
-  "0052300121": {
-    "homeTeam": "NOP",
-    "awayTeam": "LAL"
-  },
-  "0052300131": {
-    "homeTeam": "SAC",
-    "awayTeam": "GSW"
-  },
-  "0052300101": {
-    "homeTeam": "PHI",
-    "awayTeam": "MIA"
-  },
-  "0052300111": {
-    "homeTeam": "CHI",
-    "awayTeam": "ATL"
-  },
-  "0052300201": {
-    "homeTeam": "MIA",
-    "awayTeam": "CHI"
-  },
-  "0052300211": {
-    "homeTeam": "NOP",
     "awayTeam": "SAC"
   },
-  "0042300111": {
-    "homeTeam": "NYK",
-    "awayTeam": "PHI"
-  },
-  "0042300131": {
-    "homeTeam": "CLE",
-    "awayTeam": "ORL"
-  },
-  "0042300151": {
-    "homeTeam": "DEN",
-    "awayTeam": "LAL"
-  },
-  "0042300161": {
-    "homeTeam": "MIN",
-    "awayTeam": "PHX"
-  },
-  "0042300101": {
-    "homeTeam": "BOS",
-    "awayTeam": "MIA"
-  },
-  "0042300121": {
-    "homeTeam": "MIL",
-    "awayTeam": "IND"
-  },
-  "0042300141": {
-    "homeTeam": "OKC",
-    "awayTeam": "NOP"
-  },
-  "0042300171": {
-    "homeTeam": "LAC",
-    "awayTeam": "DAL"
-  },
-  "0042300112": {
-    "homeTeam": "NYK",
-    "awayTeam": "PHI"
-  },
-  "0042300132": {
-    "homeTeam": "CLE",
-    "awayTeam": "ORL"
-  },
-  "0042300152": {
-    "homeTeam": "DEN",
-    "awayTeam": "LAL"
-  },
-  "0042300122": {
-    "homeTeam": "MIL",
-    "awayTeam": "IND"
-  },
-  "0042300162": {
-    "homeTeam": "MIN",
-    "awayTeam": "PHX"
-  },
-  "0042300172": {
-    "homeTeam": "LAC",
-    "awayTeam": "DAL"
-  },
-  "0042300102": {
-    "homeTeam": "BOS",
-    "awayTeam": "MIA"
-  },
-  "0042300142": {
-    "homeTeam": "OKC",
-    "awayTeam": "NOP"
-  },
-  "0042300113": {
-    "homeTeam": "PHI",
-    "awayTeam": "NYK"
-  },
-  "0042300133": {
-    "homeTeam": "ORL",
-    "awayTeam": "CLE"
-  },
-  "0042300153": {
-    "homeTeam": "LAL",
-    "awayTeam": "DEN"
-  },
-  "0042300123": {
-    "homeTeam": "IND",
-    "awayTeam": "MIL"
-  },
-  "0042300163": {
-    "homeTeam": "PHX",
-    "awayTeam": "MIN"
-  },
-  "0042300173": {
-    "homeTeam": "DAL",
-    "awayTeam": "LAC"
-  },
-  "0042300103": {
+  "0022401145": {
     "homeTeam": "MIA",
+    "awayTeam": "PHI"
+  },
+  "0022401146": {
+    "homeTeam": "CHA",
+    "awayTeam": "MEM"
+  },
+  "0022401147": {
+    "homeTeam": "CLE",
+    "awayTeam": "CHI"
+  },
+  "0022401148": {
+    "homeTeam": "IND",
+    "awayTeam": "WAS"
+  },
+  "0022401149": {
+    "homeTeam": "ORL",
+    "awayTeam": "ATL"
+  },
+  "0022401150": {
+    "homeTeam": "BKN",
+    "awayTeam": "NOP"
+  },
+  "0022401151": {
+    "homeTeam": "NYK",
     "awayTeam": "BOS"
   },
-  "0042300134": {
+  "0022401152": {
+    "homeTeam": "MIL",
+    "awayTeam": "MIN"
+  },
+  "0022401153": {
+    "homeTeam": "OKC",
+    "awayTeam": "LAL"
+  },
+  "0022401154": {
+    "homeTeam": "PHX",
+    "awayTeam": "GSW"
+  },
+  "0022401155": {
+    "homeTeam": "LAC",
+    "awayTeam": "SAS"
+  },
+  "0022401156": {
     "homeTeam": "ORL",
+    "awayTeam": "BOS"
+  },
+  "0022401157": {
+    "homeTeam": "WAS",
+    "awayTeam": "PHI"
+  },
+  "0022401158": {
+    "homeTeam": "TOR",
+    "awayTeam": "CHA"
+  },
+  "0022401159": {
+    "homeTeam": "DAL",
+    "awayTeam": "LAL"
+  },
+  "0022401160": {
+    "homeTeam": "CHI",
+    "awayTeam": "MIA"
+  },
+  "0022401161": {
+    "homeTeam": "MIL",
+    "awayTeam": "NOP"
+  },
+  "0022401162": {
+    "homeTeam": "UTA",
+    "awayTeam": "POR"
+  },
+  "0022401163": {
+    "homeTeam": "GSW",
+    "awayTeam": "SAS"
+  },
+  "0022401164": {
+    "homeTeam": "PHX",
+    "awayTeam": "OKC"
+  },
+  "0022401165": {
+    "homeTeam": "SAC",
+    "awayTeam": "DEN"
+  },
+  "0022401166": {
+    "homeTeam": "LAC",
+    "awayTeam": "HOU"
+  },
+  "0022401167": {
+    "homeTeam": "DET",
+    "awayTeam": "NYK"
+  },
+  "0022401168": {
+    "homeTeam": "IND",
     "awayTeam": "CLE"
   },
-  "0042300143": {
+  "0022401169": {
+    "homeTeam": "BKN",
+    "awayTeam": "ATL"
+  },
+  "0022401170": {
+    "homeTeam": "MEM",
+    "awayTeam": "MIN"
+  },
+  "0022401171": {
+    "homeTeam": "DET",
+    "awayTeam": "MIL"
+  },
+  "0022401172": {
+    "homeTeam": "IND",
+    "awayTeam": "ORL"
+  },
+  "0022401173": {
+    "homeTeam": "PHI",
+    "awayTeam": "ATL"
+  },
+  "0022401174": {
+    "homeTeam": "BOS",
+    "awayTeam": "CHA"
+  },
+  "0022401175": {
+    "homeTeam": "NYK",
+    "awayTeam": "CLE"
+  },
+  "0022401176": {
+    "homeTeam": "CHI",
+    "awayTeam": "WAS"
+  },
+  "0022401177": {
+    "homeTeam": "NOP",
+    "awayTeam": "MIA"
+  },
+  "0022401178": {
+    "homeTeam": "DAL",
+    "awayTeam": "TOR"
+  },
+  "0022401179": {
+    "homeTeam": "MIN",
+    "awayTeam": "BKN"
+  },
+  "0022401180": {
+    "homeTeam": "DEN",
+    "awayTeam": "MEM"
+  },
+  "0022401181": {
+    "homeTeam": "UTA",
+    "awayTeam": "OKC"
+  },
+  "0022401182": {
+    "homeTeam": "PHX",
+    "awayTeam": "SAS"
+  },
+  "0022401183": {
+    "homeTeam": "POR",
+    "awayTeam": "GSW"
+  },
+  "0022401184": {
+    "homeTeam": "SAC",
+    "awayTeam": "LAC"
+  },
+  "0022401185": {
+    "homeTeam": "LAL",
+    "awayTeam": "HOU"
+  },
+  "0022401186": {
+    "homeTeam": "ATL",
+    "awayTeam": "ORL"
+  },
+  "0022401187": {
+    "homeTeam": "BOS",
+    "awayTeam": "CHA"
+  },
+  "0022401188": {
+    "homeTeam": "BKN",
+    "awayTeam": "NYK"
+  },
+  "0022401189": {
+    "homeTeam": "CLE",
+    "awayTeam": "IND"
+  },
+  "0022401190": {
+    "homeTeam": "MIA",
+    "awayTeam": "WAS"
+  },
+  "0022401191": {
+    "homeTeam": "PHI",
+    "awayTeam": "CHI"
+  },
+  "0022401192": {
+    "homeTeam": "MIL",
+    "awayTeam": "DET"
+  },
+  "0022401193": {
+    "homeTeam": "HOU",
+    "awayTeam": "DEN"
+  },
+  "0022401194": {
+    "homeTeam": "MEM",
+    "awayTeam": "DAL"
+  },
+  "0022401195": {
+    "homeTeam": "MIN",
+    "awayTeam": "UTA"
+  },
+  "0022401196": {
     "homeTeam": "NOP",
     "awayTeam": "OKC"
   },
-  "0042300154": {
-    "homeTeam": "LAL",
-    "awayTeam": "DEN"
+  "0022401197": {
+    "homeTeam": "SAS",
+    "awayTeam": "TOR"
   },
-  "0042300114": {
-    "homeTeam": "PHI",
-    "awayTeam": "NYK"
-  },
-  "0042300124": {
-    "homeTeam": "IND",
-    "awayTeam": "MIL"
-  },
-  "0042300164": {
-    "homeTeam": "PHX",
-    "awayTeam": "MIN"
-  },
-  "0042300174": {
-    "homeTeam": "DAL",
+  "0022401198": {
+    "homeTeam": "GSW",
     "awayTeam": "LAC"
   },
-  "0042300104": {
-    "homeTeam": "MIA",
-    "awayTeam": "BOS"
-  },
-  "0042300144": {
-    "homeTeam": "NOP",
-    "awayTeam": "OKC"
-  },
-  "0042300155": {
-    "homeTeam": "DEN",
+  "0022401199": {
+    "homeTeam": "POR",
     "awayTeam": "LAL"
   },
-  "0042300115": {
-    "homeTeam": "NYK",
-    "awayTeam": "PHI"
-  },
-  "0042300125": {
-    "homeTeam": "MIL",
-    "awayTeam": "IND"
-  },
-  "0042300135": {
-    "homeTeam": "CLE",
-    "awayTeam": "ORL"
-  },
-  "0042300105": {
-    "homeTeam": "BOS",
-    "awayTeam": "MIA"
-  },
-  "0042300175": {
-    "homeTeam": "LAC",
-    "awayTeam": "DAL"
-  },
-  "0042300116": {
-    "homeTeam": "PHI",
-    "awayTeam": "NYK"
-  },
-  "0042300126": {
-    "homeTeam": "IND",
-    "awayTeam": "MIL"
-  },
-  "0042300136": {
-    "homeTeam": "ORL",
-    "awayTeam": "CLE"
-  },
-  "0042300176": {
-    "homeTeam": "DAL",
-    "awayTeam": "LAC"
-  },
-  "0042300231": {
-    "homeTeam": "DEN",
-    "awayTeam": "MIN"
-  },
-  "0042300137": {
-    "homeTeam": "CLE",
-    "awayTeam": "ORL"
-  },
-  "0042300211": {
-    "homeTeam": "NYK",
-    "awayTeam": "IND"
-  },
-  "0042300232": {
-    "homeTeam": "DEN",
-    "awayTeam": "MIN"
-  },
-  "0042300201": {
-    "homeTeam": "BOS",
-    "awayTeam": "CLE"
-  },
-  "0042300221": {
-    "homeTeam": "OKC",
-    "awayTeam": "DAL"
-  },
-  "0042300212": {
-    "homeTeam": "NYK",
-    "awayTeam": "IND"
-  },
-  "0042300202": {
-    "homeTeam": "BOS",
-    "awayTeam": "CLE"
-  },
-  "0042300222": {
-    "homeTeam": "OKC",
-    "awayTeam": "DAL"
-  },
-  "0042300213": {
-    "homeTeam": "IND",
-    "awayTeam": "NYK"
-  },
-  "0042300233": {
-    "homeTeam": "MIN",
-    "awayTeam": "DEN"
-  },
-  "0042300203": {
-    "homeTeam": "CLE",
-    "awayTeam": "BOS"
-  },
-  "0042300223": {
-    "homeTeam": "DAL",
-    "awayTeam": "OKC"
-  },
-  "0042300214": {
-    "homeTeam": "IND",
-    "awayTeam": "NYK"
-  },
-  "0042300234": {
-    "homeTeam": "MIN",
-    "awayTeam": "DEN"
-  },
-  "0042300204": {
-    "homeTeam": "CLE",
-    "awayTeam": "BOS"
-  },
-  "0042300224": {
-    "homeTeam": "DAL",
-    "awayTeam": "OKC"
-  },
-  "0042300215": {
-    "homeTeam": "NYK",
-    "awayTeam": "IND"
-  },
-  "0042300235": {
-    "homeTeam": "DEN",
-    "awayTeam": "MIN"
-  },
-  "0042300205": {
-    "homeTeam": "BOS",
-    "awayTeam": "CLE"
-  },
-  "0042300225": {
-    "homeTeam": "OKC",
-    "awayTeam": "DAL"
-  },
-  "0042300236": {
-    "homeTeam": "MIN",
-    "awayTeam": "DEN"
-  },
-  "0042300216": {
-    "homeTeam": "IND",
-    "awayTeam": "NYK"
-  },
-  "0042300226": {
-    "homeTeam": "DAL",
-    "awayTeam": "OKC"
-  },
-  "0042300217": {
-    "homeTeam": "NYK",
-    "awayTeam": "IND"
-  },
-  "0042300237": {
-    "homeTeam": "DEN",
-    "awayTeam": "MIN"
-  },
-  "0042300301": {
-    "homeTeam": "BOS",
-    "awayTeam": "IND"
-  },
-  "0042300311": {
-    "homeTeam": "MIN",
-    "awayTeam": "DAL"
-  },
-  "0042300302": {
-    "homeTeam": "BOS",
-    "awayTeam": "IND"
-  },
-  "0042300312": {
-    "homeTeam": "MIN",
-    "awayTeam": "DAL"
-  },
-  "0042300303": {
-    "homeTeam": "IND",
-    "awayTeam": "BOS"
-  },
-  "0042300313": {
-    "homeTeam": "DAL",
-    "awayTeam": "MIN"
-  },
-  "0042300304": {
-    "homeTeam": "IND",
-    "awayTeam": "BOS"
-  },
-  "0042300314": {
-    "homeTeam": "DAL",
-    "awayTeam": "MIN"
-  },
-  "0042300315": {
-    "homeTeam": "MIN",
-    "awayTeam": "DAL"
-  },
-  "0042300401": {
-    "homeTeam": "BOS",
-    "awayTeam": "DAL"
-  },
-  "0042300402": {
-    "homeTeam": "BOS",
-    "awayTeam": "DAL"
-  },
-  "0042300403": {
-    "homeTeam": "DAL",
-    "awayTeam": "BOS"
-  },
-  "0042300404": {
-    "homeTeam": "DAL",
-    "awayTeam": "BOS"
-  },
-  "0042300405": {
-    "homeTeam": "BOS",
-    "awayTeam": "DAL"
+  "0022401200": {
+    "homeTeam": "SAC",
+    "awayTeam": "PHX"
   }
 }

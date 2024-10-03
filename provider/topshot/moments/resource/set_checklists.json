@@ -1,8 +1,117 @@
 {
+  "162": {
+    "name": "WNBA Rookie Revelation 5",
+    "series": 5,
+    "moments": {
+      "5628": {
+        "player": "Jacy Sheldon",
+        "team": "Dallas Wings",
+        "playerId": 1642292,
+        "date": "2024-09-13"
+      },
+      "5626": {
+        "player": "Rickea Jackson",
+        "team": "Los Angeles Sparks",
+        "playerId": 1642288,
+        "date": "2024-08-25"
+      },
+      "5625": {
+        "player": "Julie Vanloo",
+        "team": "Washington Mystics",
+        "playerId": 1642210,
+        "date": "2024-09-06"
+      },
+      "5624": {
+        "player": "Leonie Fiebich",
+        "team": "New York Liberty",
+        "playerId": 1630142,
+        "date": "2024-08-22"
+      },
+      "5623": {
+        "player": "Kate Martin",
+        "team": "Las Vegas Aces",
+        "playerId": 1642324,
+        "date": "2024-06-10"
+      },
+      "5622": {
+        "player": "Aaliyah Edwards",
+        "team": "Washington Mystics",
+        "playerId": 1642290,
+        "date": "2024-06-06"
+      },
+      "5621": {
+        "player": "Kamilla Cardoso",
+        "team": "Chicago Sky",
+        "playerId": 1642289,
+        "date": "2024-08-25"
+      },
+      "5620": {
+        "player": "Cameron Brink",
+        "team": "Los Angeles Sparks",
+        "playerId": 1642287,
+        "date": "2024-05-22"
+      },
+      "5619": {
+        "player": "Caitlin Clark",
+        "team": "Indiana Fever",
+        "playerId": 1642286,
+        "date": "2024-09-04"
+      },
+      "5618": {
+        "player": "Angel Reese",
+        "team": "Chicago Sky",
+        "playerId": 1642291,
+        "date": "2024-06-23"
+      }
+    },
+    "count": 10
+  },
   "161": {
     "name": "WNBA Holo Icon 5",
     "series": 5,
     "moments": {
+      "5627": {
+        "player": "A'ja Wilson",
+        "team": "Las Vegas Aces",
+        "playerId": 1628932,
+        "date": "2024-09-15"
+      },
+      "5617": {
+        "player": "Aliyah Boston",
+        "team": "Indiana Fever",
+        "playerId": 1641648,
+        "date": "2024-09-08"
+      },
+      "5615": {
+        "player": "Kelsey Mitchell",
+        "team": "Indiana Fever",
+        "playerId": 1628909,
+        "date": "2024-09-01"
+      },
+      "5612": {
+        "player": "Breanna Stewart",
+        "team": "New York Liberty",
+        "playerId": 1627668,
+        "date": "2024-08-16"
+      },
+      "5611": {
+        "player": "Brittney Griner",
+        "team": "Phoenix Mercury",
+        "playerId": 203398,
+        "date": "2024-08-16"
+      },
+      "5610": {
+        "player": "Jackie Young",
+        "team": "Las Vegas Aces",
+        "playerId": 1629498,
+        "date": "2024-06-20"
+      },
+      "5609": {
+        "player": "Arike Ogunbowale",
+        "team": "Dallas Wings",
+        "playerId": 1629481,
+        "date": "2024-09-01"
+      },
       "5549": {
         "player": "Tina Charles",
         "team": "Atlanta Dream",
@@ -76,7 +185,7 @@
         "date": "2024-06-15"
       }
     },
-    "count": 12
+    "count": 19
   },
   "160": {
     "name": "Run It Back: Legacies 5",
@@ -723,6 +832,30 @@
     "name": "2024 WNBA Rookie Ultimates 5",
     "series": 5,
     "moments": {
+      "5654": {
+        "player": "Caitlin Clark",
+        "team": "Indiana Fever",
+        "playerId": 1642286,
+        "date": "2024-05-14"
+      },
+      "5640": {
+        "player": "Julie Vanloo",
+        "team": "Washington Mystics",
+        "playerId": 1642210,
+        "date": "2024-05-14"
+      },
+      "5635": {
+        "player": "Rickea Jackson",
+        "team": "Los Angeles Sparks",
+        "playerId": 1642288,
+        "date": "2024-05-16"
+      },
+      "5629": {
+        "player": "Angel Reese",
+        "team": "Chicago Sky",
+        "playerId": 1642291,
+        "date": "2024-05-16"
+      },
       "5543": {
         "player": "Aaliyah Edwards",
         "team": "Washington Mystics",
@@ -748,7 +881,7 @@
         "date": "2024-05-16"
       }
     },
-    "count": 4
+    "count": 8
   },
   "150": {
     "name": "WNBA Fresh Gems 5",
@@ -996,6 +1129,78 @@
     "name": "WNBA Metallic Gold LE 2024 5",
     "series": 5,
     "moments": {
+      "5639": {
+        "player": "Kelsey Plum",
+        "team": "Las Vegas Aces",
+        "playerId": 1628276,
+        "date": "2024-07-03"
+      },
+      "5638": {
+        "player": "Tina Charles",
+        "team": "Atlanta Dream",
+        "playerId": 202250,
+        "date": "2024-08-16"
+      },
+      "5637": {
+        "player": "Caitlin Clark",
+        "team": "Indiana Fever",
+        "playerId": 1642286,
+        "date": "2024-07-17"
+      },
+      "5636": {
+        "player": "Aaliyah Edwards",
+        "team": "Washington Mystics",
+        "playerId": 1642290,
+        "date": "2024-05-22"
+      },
+      "5634": {
+        "player": "Alyssa Thomas",
+        "team": "Connecticut Sun",
+        "playerId": 203826,
+        "date": "2024-07-05"
+      },
+      "5633": {
+        "player": "Kamilla Cardoso",
+        "team": "Chicago Sky",
+        "playerId": 1642289,
+        "date": "2024-06-08"
+      },
+      "5632": {
+        "player": "Kayla McBride",
+        "team": "Minnesota Lynx",
+        "playerId": 203825,
+        "date": "2024-06-12"
+      },
+      "5631": {
+        "player": "Diana Taurasi",
+        "team": "Phoenix Mercury",
+        "playerId": 100940,
+        "date": "2024-08-23"
+      },
+      "5630": {
+        "player": "Teaira McCowan",
+        "team": "Dallas Wings",
+        "playerId": 1629479,
+        "date": "2024-08-25"
+      },
+      "5616": {
+        "player": "Sabrina Ionescu",
+        "team": "New York Liberty",
+        "playerId": 1629477,
+        "date": "2024-08-31"
+      },
+      "5614": {
+        "player": "Jewell Loyd",
+        "team": "Seattle Storm",
+        "playerId": 204319,
+        "date": "2024-08-29"
+      },
+      "5613": {
+        "player": "Dearica Hamby",
+        "team": "Los Angeles Sparks",
+        "playerId": 204324,
+        "date": "2024-08-29"
+      },
       "5511": {
         "player": "Napheesa Collier",
         "team": "Minnesota Lynx",
@@ -1141,7 +1346,7 @@
         "date": "2024-06-06"
       }
     },
-    "count": 24
+    "count": 36
   },
   "147": {
     "name": "2024 NBA Finals 5",
@@ -1263,6 +1468,78 @@
     "name": "WNBA 2024 5",
     "series": 5,
     "moments": {
+      "5652": {
+        "player": "Bridget Carleton",
+        "team": "Minnesota Lynx",
+        "playerId": 1629524,
+        "date": "2024-09-17"
+      },
+      "5651": {
+        "player": "Kia Nurse",
+        "team": "Los Angeles Sparks",
+        "playerId": 1628915,
+        "date": "2024-09-09"
+      },
+      "5650": {
+        "player": "Satou Sabally",
+        "team": "Dallas Wings",
+        "playerId": 1630149,
+        "date": "2024-08-28"
+      },
+      "5649": {
+        "player": "Megan Gustafson",
+        "team": "Las Vegas Aces",
+        "playerId": 1629484,
+        "date": "2024-08-25"
+      },
+      "5648": {
+        "player": "Jonquel Jones",
+        "team": "New York Liberty",
+        "playerId": 1627673,
+        "date": "2024-06-08"
+      },
+      "5647": {
+        "player": "DiJonai Carrington",
+        "team": "Connecticut Sun",
+        "playerId": 1630096,
+        "date": "2024-07-05"
+      },
+      "5646": {
+        "player": "Sami Whitcomb",
+        "team": "Seattle Storm",
+        "playerId": 1628244,
+        "date": "2024-08-27"
+      },
+      "5645": {
+        "player": "Kahleah Copper",
+        "team": "Phoenix Mercury",
+        "playerId": 1627674,
+        "date": "2024-05-22"
+      },
+      "5644": {
+        "player": "Aliyah Boston",
+        "team": "Indiana Fever",
+        "playerId": 1641648,
+        "date": "2024-07-06"
+      },
+      "5643": {
+        "player": "Emily Engstler",
+        "team": "Washington Mystics",
+        "playerId": 1631083,
+        "date": "2024-09-13"
+      },
+      "5642": {
+        "player": "Jordin Canada",
+        "team": "Atlanta Dream",
+        "playerId": 1628886,
+        "date": "2024-08-18"
+      },
+      "5641": {
+        "player": "Dana Evans",
+        "team": "Chicago Sky",
+        "playerId": 1630389,
+        "date": "2024-06-01"
+      },
       "5608": {
         "player": "Joyner Holmes",
         "team": "Seattle Storm",
@@ -1768,12 +2045,18 @@
         "date": "2024-05-17"
       }
     },
-    "count": 84
+    "count": 96
   },
   "144": {
     "name": "WNBA Rookie Debut 2024 5",
     "series": 5,
     "moments": {
+      "5653": {
+        "player": "Nika M\u00fchl",
+        "team": "Seattle Storm",
+        "playerId": 1642299,
+        "date": "2024-09-20"
+      },
       "5606": {
         "player": "Celeste Taylor",
         "team": "Indiana Fever",
@@ -1895,7 +2178,7 @@
         "date": "2024-05-16"
       }
     },
-    "count": 20
+    "count": 21
   },
   "143": {
     "name": "2024 NBA Playoffs 5",

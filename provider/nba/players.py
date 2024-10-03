@@ -81,4 +81,5 @@ def fresh_team_players() -> tuple[Dict[str, List[int]], List[str]]:
 
 
 if __name__ == '__main__':
+    fresh_team_players()
     get_player_stats_dashboard()

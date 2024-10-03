@@ -1,6 +1,13 @@
 {
   "sets": [
     {
+      "id": "2e99825d-e147-40c2-a261-cd92fc63618f",
+      "flowId": 162,
+      "flowName": "WNBA Rookie Revelation",
+      "flowSeriesNumber": 5,
+      "sortID": null
+    },
+    {
       "id": "1d81b48a-5ab9-497d-b3cb-f154beac416e",
       "flowId": 161,
       "flowName": "WNBA Holo Icon",
