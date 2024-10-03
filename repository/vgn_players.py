@@ -81,7 +81,7 @@ def upsert_player_with_stats(id):
         dd_rate = stats['DD2'] / stats['GP'] if stats['GP'] > 0 else 0.0
         td_rate = stats['TD3'] / stats['GP'] if stats['GP'] > 0 else 0.0
     except Exception as err:
-        print(f"Failed player id: {id}, parse error {err}, {info}")
+        print(f"Failed player: {full_name}({id}), parse error {err}, {info}")
         return
 
     db_conn = None
@@ -137,17 +137,16 @@ def upsert_player_with_stats(id):
         cursor.execute(query)
         db_conn.commit()
         db_conn.close()
+        print(f"Upserted player id: {id}, name: {full_name}.")
     except Exception as err:
         if db_conn is not None:
             db_conn.close()
 
-        print(f"Failed player id: {id}, db error {err}")
+        print(f"Failed player: {full_name}({id}), db error {err}")
 
         if db_conn is not None:
             db_conn.close()
         return
-
-    print(f"Upserted player id: {id}, name: {full_name}.")
 
 
 def get_player(player_id):

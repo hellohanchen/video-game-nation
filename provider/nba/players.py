@@ -71,7 +71,7 @@ def fresh_team_players() -> tuple[Dict[str, List[int]], List[str]]:
         if player_id not in player_ids:
             player_ids[player_id] = True
 
-    with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "data/team_players_23_24.json"), 'w') as file:
+    with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "data/team_players_24_25.json"), 'w') as file:
         json.dump(team_players, file, indent=2)
 
     with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "data/current_nba_players.json"), 'w') as output:

@@ -8,11 +8,10 @@ async def get_collection_for_trade(address):
         code="""
                 import TopShot from 0x0b2a3299cc857e29
 
-                pub fun main(account: Address): {UInt32:{UInt32:{String:String}}} {
+                access(all) fun main(account: Address): {UInt32:{UInt32:{String:String}}} {
                     let acct = getAccount(account)
 
-                    let collectionRef = acct.getCapability(/public/MomentCollection)
-                                            .borrow<&{TopShot.MomentCollectionPublic}>()!
+                    let collectionRef = acct.capabilities.borrow<&{TopShot.MomentCollectionPublic}>(/public/MomentCollection)!
 
                     let res: {UInt32:{UInt32:{String:String}}} = {}                        
 
@@ -78,11 +77,10 @@ async def get_account_plays(address):
         code="""
                 import TopShot from 0x0b2a3299cc857e29
 
-                pub fun main(account: Address): {UInt32:{UInt32:UInt32}} {
+                access(all) fun main(account: Address): {UInt32:{UInt32:UInt32}} {
                     let acct = getAccount(account)
 
-                    let collectionRef = acct.getCapability(/public/MomentCollection)
-                                            .borrow<&{TopShot.MomentCollectionPublic}>()!
+                    let collectionRef = acct.capabilities.borrow<&{TopShot.MomentCollectionPublic}>(/public/MomentCollection)!
 
                     let res: {UInt32:{UInt32:UInt32}} = {}                        
 
@@ -143,11 +141,10 @@ async def get_account_plays_with_lowest_serial(address):
         code="""
                 import TopShot from 0x0b2a3299cc857e29
 
-                pub fun main(account: Address): {UInt32:{UInt32:UInt32}} {
+                access(all) fun main(account: Address): {UInt32:{UInt32:UInt32}} {
                     let acct = getAccount(account)
 
-                    let collectionRef = acct.getCapability(/public/MomentCollection)
-                                            .borrow<&{TopShot.MomentCollectionPublic}>()!
+                    let collectionRef = acct.capabilities.borrow<&{TopShot.MomentCollectionPublic}>(/public/MomentCollection)!
 
                     let res: {UInt32:{UInt32:UInt32}} = {}                        
 
@@ -209,11 +206,10 @@ async def get_account_moment_ids(address):
         code="""
                 import TopShot from 0x0b2a3299cc857e29
 
-                pub fun main(account: Address): [UInt64] {
+                access(all) fun main(account: Address): [UInt64] {
                     let acct = getAccount(account)
 
-                    let collectionRef = acct.getCapability(/public/MomentCollection)
-                                            .borrow<&{TopShot.MomentCollectionPublic}>()!
+                    let collectionRef = acct.capabilities.borrow<&{TopShot.MomentCollectionPublic}>(/public/MomentCollection)!
 
                     return collectionRef.getIDs()
                 }
@@ -239,11 +235,10 @@ async def get_account_plays_with_lowest_serial_of_moments(address, moment_ids):
         code="""
                 import TopShot from 0x0b2a3299cc857e29
 
-                pub fun main(account: Address, momentIds: [UInt64]): {UInt32:{UInt32:UInt32}} {
+                access(all) fun main(account: Address, momentIds: [UInt64]): {UInt32:{UInt32:UInt32}} {
                     let acct = getAccount(account)
 
-                    let collectionRef = acct.getCapability(/public/MomentCollection)
-                                            .borrow<&{TopShot.MomentCollectionPublic}>()!
+                    let collectionRef = acct.capabilities.borrow<&{TopShot.MomentCollectionPublic}>(/public/MomentCollection)!
 
                     let res: {UInt32:{UInt32:UInt32}} = {}                        
 
