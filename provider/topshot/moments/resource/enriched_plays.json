@@ -106296,7 +106296,12 @@
         "date": "2020-08-07",
         "series": 1,
         "tier": "Rare",
-        "badges": [],
+        "badges": [
+          "CR",
+          "TSD",
+          "RY",
+          "RM"
+        ],
         "teamAtMoment": "Philadelphia 76ers",
         "teamId": 1610612755
       },
@@ -106313,7 +106318,11 @@
         "date": "2020-08-07",
         "series": 1,
         "tier": "Common",
-        "badges": [],
+        "badges": [
+          "TSD",
+          "RY",
+          "RM"
+        ],
         "teamAtMoment": "Philadelphia 76ers",
         "teamId": 1610612755
       }
@@ -106809,9 +106818,7 @@
         "date": "2019-11-03",
         "series": 1,
         "tier": "Common",
-        "badges": [
-          "CR"
-        ],
+        "badges": [],
         "teamAtMoment": "Sacramento Kings",
         "teamId": 1610612758
       }
@@ -107170,7 +107177,8 @@
         "tier": "Legendary",
         "badges": [
           "RY",
-          "RM"
+          "RM",
+          "CR"
         ],
         "teamAtMoment": "Miami Heat",
         "teamId": 1610612748
@@ -107697,9 +107705,7 @@
         "date": "2020-08-19",
         "series": 1,
         "tier": "Common",
-        "badges": [
-          "CR"
-        ],
+        "badges": [],
         "teamAtMoment": "Boston Celtics",
         "teamId": 1610612738
       }
@@ -107889,7 +107895,6 @@
         "tier": "Common",
         "badges": [
           "RY",
-          "CR",
           "RM"
         ],
         "teamAtMoment": "New York Knicks",
@@ -108071,7 +108076,8 @@
         "series": 1,
         "tier": "Rare",
         "badges": [
-          "TSD"
+          "TSD",
+          "CR"
         ],
         "teamAtMoment": "Cleveland Cavaliers",
         "teamId": 1610612739
@@ -108165,9 +108171,7 @@
         "date": "2019-12-28",
         "series": 1,
         "tier": "Common",
-        "badges": [
-          "CR"
-        ],
+        "badges": [],
         "teamAtMoment": "Charlotte Hornets",
         "teamId": 1610612766
       }
@@ -108973,8 +108977,7 @@
         "tier": "Common",
         "badges": [
           "TSD",
-          "CY",
-          "CR"
+          "CY"
         ],
         "teamAtMoment": "Los Angeles Lakers",
         "teamId": 1610612747
@@ -109015,8 +109018,7 @@
         "tier": "Rare",
         "badges": [
           "TSD",
-          "CY",
-          "CR"
+          "CY"
         ],
         "teamAtMoment": "Los Angeles Lakers",
         "teamId": 1610612747
@@ -109036,8 +109038,7 @@
         "tier": "Common",
         "badges": [
           "TSD",
-          "CY",
-          "CR"
+          "CY"
         ],
         "teamAtMoment": "Los Angeles Lakers",
         "teamId": 1610612747
@@ -109572,7 +109573,8 @@
         "tier": "Rare",
         "badges": [
           "TSD",
-          "CY"
+          "CY",
+          "CR"
         ],
         "teamAtMoment": "Los Angeles Lakers",
         "teamId": 1610612747
@@ -110707,9 +110709,7 @@
         "date": "2020-08-24",
         "series": 1,
         "tier": "Common",
-        "badges": [
-          "CR"
-        ],
+        "badges": [],
         "teamAtMoment": "Indiana Pacers",
         "teamId": 1610612754
       }
@@ -110878,9 +110878,7 @@
         "date": "2020-09-02",
         "series": 1,
         "tier": "Common",
-        "badges": [
-          "CR"
-        ],
+        "badges": [],
         "teamAtMoment": "Denver Nuggets",
         "teamId": 1610612743
       }
@@ -111255,7 +111253,8 @@
         "series": 1,
         "tier": "Rare",
         "badges": [
-          "TSD"
+          "TSD",
+          "CR"
         ],
         "teamAtMoment": "Portland Trail Blazers",
         "teamId": 1610612757
@@ -111313,9 +111312,7 @@
         "date": "2020-08-04",
         "series": 1,
         "tier": "Common",
-        "badges": [
-          "CR"
-        ],
+        "badges": [],
         "teamAtMoment": "Phoenix Suns",
         "teamId": 1610612756
       }
@@ -112786,7 +112783,9 @@
         "date": "2020-03-11",
         "series": 1,
         "tier": "Rare",
-        "badges": [],
+        "badges": [
+          "CR"
+        ],
         "teamAtMoment": "Houston Rockets",
         "teamId": 1610612745
       },
@@ -112841,7 +112840,9 @@
         "date": "2019-11-23",
         "series": 1,
         "tier": "Legendary",
-        "badges": [],
+        "badges": [
+          "CR"
+        ],
         "teamAtMoment": "Houston Rockets",
         "teamId": 1610612745
       },
@@ -113321,7 +113322,8 @@
         "series": 1,
         "tier": "Rare",
         "badges": [
-          "TSD"
+          "TSD",
+          "CR"
         ],
         "teamAtMoment": "Golden State Warriors",
         "teamId": 1610612744
@@ -113458,7 +113460,8 @@
         "series": 1,
         "tier": "Legendary",
         "badges": [
-          "TSD"
+          "TSD",
+          "CR"
         ],
         "teamAtMoment": "Portland Trail Blazers",
         "teamId": 1610612757
@@ -113576,7 +113579,8 @@
         "series": 1,
         "tier": "Rare",
         "badges": [
-          "TSD"
+          "TSD",
+          "CR"
         ],
         "teamAtMoment": "Detroit Pistons",
         "teamId": 1610612765
@@ -113999,7 +114003,8 @@
           "TSD",
           "RY",
           "RM",
-          "ROY"
+          "ROY",
+          "CR"
         ],
         "teamAtMoment": "Memphis Grizzlies",
         "teamId": 1610612763
@@ -114241,7 +114246,8 @@
         "tier": "Legendary",
         "badges": [
           "TSD",
-          "CY"
+          "CY",
+          "CR"
         ],
         "teamAtMoment": "Los Angeles Lakers",
         "teamId": 1610612747
@@ -114608,7 +114614,8 @@
         "badges": [
           "TSD",
           "RY",
-          "RM"
+          "RM",
+          "CR"
         ],
         "teamAtMoment": "New Orleans Pelicans",
         "teamId": 1610612740
@@ -115103,7 +115110,8 @@
         "series": 1,
         "tier": "Rare",
         "badges": [
-          "TSD"
+          "TSD",
+          "CR"
         ],
         "teamAtMoment": "Toronto Raptors",
         "teamId": 1610612761
@@ -115463,7 +115471,8 @@
         "series": 1,
         "tier": "Rare",
         "badges": [
-          "TSD"
+          "TSD",
+          "CR"
         ],
         "teamAtMoment": "Dallas Mavericks",
         "teamId": 1610612742
@@ -115523,8 +115532,7 @@
         "tier": "Common",
         "badges": [
           "TSD",
-          "CY",
-          "CR"
+          "CY"
         ],
         "teamAtMoment": "Los Angeles Lakers",
         "teamId": 1610612747
@@ -115565,8 +115573,7 @@
         "tier": "Common",
         "badges": [
           "TSD",
-          "CY",
-          "CR"
+          "CY"
         ],
         "teamAtMoment": "Los Angeles Lakers",
         "teamId": 1610612747
@@ -115724,7 +115731,8 @@
         "series": 1,
         "tier": "Rare",
         "badges": [
-          "TSD"
+          "TSD",
+          "CR"
         ],
         "teamAtMoment": "Phoenix Suns",
         "teamId": 1610612756
@@ -115802,7 +115810,8 @@
         "series": 1,
         "tier": "Legendary",
         "badges": [
-          "TSD"
+          "TSD",
+          "CR"
         ],
         "teamAtMoment": "Los Angeles Clippers",
         "teamId": 1610612746
@@ -116221,7 +116230,8 @@
         "series": 1,
         "tier": "Legendary",
         "badges": [
-          "TSD"
+          "TSD",
+          "CR"
         ],
         "teamAtMoment": "Oklahoma City Thunder",
         "teamId": 1610612760
@@ -116364,7 +116374,8 @@
         "series": 1,
         "tier": "Rare",
         "badges": [
-          "TSD"
+          "TSD",
+          "CR"
         ],
         "teamAtMoment": "Chicago Bulls",
         "teamId": 1610612741
@@ -116503,7 +116514,8 @@
         "series": 1,
         "tier": "Rare",
         "badges": [
-          "TSD"
+          "TSD",
+          "CR"
         ],
         "teamAtMoment": "Philadelphia 76ers",
         "teamId": 1610612755
@@ -117046,7 +117058,8 @@
         "series": 1,
         "tier": "Rare",
         "badges": [
-          "TSD"
+          "TSD",
+          "CR"
         ],
         "teamAtMoment": "Los Angeles Clippers",
         "teamId": 1610612746
@@ -117419,7 +117432,8 @@
         "series": 1,
         "tier": "Rare",
         "badges": [
-          "TSD"
+          "TSD",
+          "CR"
         ],
         "teamAtMoment": "Houston Rockets",
         "teamId": 1610612745
@@ -117873,8 +117887,7 @@
         "tier": "Rare",
         "badges": [
           "TSD",
-          "CY",
-          "CR"
+          "CY"
         ],
         "teamAtMoment": "Los Angeles Lakers",
         "teamId": 1610612747
@@ -117894,8 +117907,7 @@
         "tier": "Common",
         "badges": [
           "TSD",
-          "CY",
-          "CR"
+          "CY"
         ],
         "teamAtMoment": "Los Angeles Lakers",
         "teamId": 1610612747
@@ -118200,7 +118212,8 @@
         "badges": [
           "TSD",
           "RY",
-          "RM"
+          "RM",
+          "CR"
         ],
         "teamAtMoment": "Cleveland Cavaliers",
         "teamId": 1610612739
@@ -118302,8 +118315,7 @@
         "series": 1,
         "tier": "Legendary",
         "badges": [
-          "TSD",
-          "CR"
+          "TSD"
         ],
         "teamAtMoment": "Charlotte Hornets",
         "teamId": 1610612766
@@ -118322,8 +118334,7 @@
         "series": 1,
         "tier": "Common",
         "badges": [
-          "TSD",
-          "CR"
+          "TSD"
         ],
         "teamAtMoment": "Charlotte Hornets",
         "teamId": 1610612766
@@ -118422,7 +118433,8 @@
         "series": 1,
         "tier": "Rare",
         "badges": [
-          "TSD"
+          "TSD",
+          "CR"
         ],
         "teamAtMoment": "Oklahoma City Thunder",
         "teamId": 1610612760
@@ -121281,8 +121293,7 @@
         "series": 1,
         "tier": "Rare",
         "badges": [
-          "TSD",
-          "CR"
+          "TSD"
         ],
         "teamAtMoment": "San Antonio Spurs",
         "teamId": 1610612759
@@ -121301,8 +121312,7 @@
         "series": 1,
         "tier": "Legendary",
         "badges": [
-          "TSD",
-          "CR"
+          "TSD"
         ],
         "teamAtMoment": "San Antonio Spurs",
         "teamId": 1610612759
@@ -121321,8 +121331,7 @@
         "series": 1,
         "tier": "Common",
         "badges": [
-          "TSD",
-          "CR"
+          "TSD"
         ],
         "teamAtMoment": "San Antonio Spurs",
         "teamId": 1610612759
@@ -121367,7 +121376,6 @@
         "badges": [
           "TSD",
           "RY",
-          "CR",
           "RM"
         ],
         "teamAtMoment": "Denver Nuggets",
@@ -121389,7 +121397,6 @@
         "badges": [
           "TSD",
           "RY",
-          "CR",
           "RM"
         ],
         "teamAtMoment": "Denver Nuggets",
@@ -121411,7 +121418,8 @@
         "series": 1,
         "tier": "Common",
         "badges": [
-          "TSD"
+          "TSD",
+          "CR"
         ],
         "teamAtMoment": "New Orleans Pelicans",
         "teamId": 1610612740
@@ -122094,8 +122102,7 @@
         "series": 1,
         "tier": "Legendary",
         "badges": [
-          "TSD",
-          "CR"
+          "TSD"
         ],
         "teamAtMoment": "Atlanta Hawks",
         "teamId": 1610612737
@@ -122114,8 +122121,7 @@
         "series": 1,
         "tier": "Common",
         "badges": [
-          "TSD",
-          "CR"
+          "TSD"
         ],
         "teamAtMoment": "Atlanta Hawks",
         "teamId": 1610612737
@@ -122136,7 +122142,8 @@
         "series": 1,
         "tier": "Rare",
         "badges": [
-          "TSD"
+          "TSD",
+          "CR"
         ],
         "teamAtMoment": "Boston Celtics",
         "teamId": 1610612738
@@ -122195,7 +122202,8 @@
         "series": 1,
         "tier": "Rare",
         "badges": [
-          "TSD"
+          "TSD",
+          "CR"
         ],
         "teamAtMoment": "Brooklyn Nets",
         "teamId": 1610612751

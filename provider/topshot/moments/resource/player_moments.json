@@ -6849,7 +6849,12 @@
       1
     ],
     "badges": {
-      "1": {},
+      "1": {
+        "CR": true,
+        "TSD": true,
+        "RY": true,
+        "RM": true
+      },
       "2": {},
       "3": {},
       "4": {},
@@ -7379,7 +7384,8 @@
       "1": {
         "TSD": true,
         "RY": true,
-        "RM": true
+        "RM": true,
+        "CR": true
       },
       "2": {},
       "3": {},
@@ -7993,7 +7999,8 @@
       "1": {
         "RY": true,
         "RM": true,
-        "TSD": true
+        "TSD": true,
+        "CR": true
       },
       "2": {
         "CR": true
@@ -12318,7 +12325,8 @@
     ],
     "badges": {
       "1": {
-        "TSD": true
+        "TSD": true,
+        "CR": true
       },
       "2": {},
       "3": {
@@ -12767,7 +12775,8 @@
     ],
     "badges": {
       "1": {
-        "TSD": true
+        "TSD": true,
+        "CR": true
       },
       "2": {
         "CR": true
@@ -13118,7 +13127,8 @@
     ],
     "badges": {
       "1": {
-        "TSD": true
+        "TSD": true,
+        "CR": true
       },
       "2": {},
       "3": {
@@ -14010,7 +14020,8 @@
     ],
     "badges": {
       "1": {
-        "TSD": true
+        "TSD": true,
+        "CR": true
       },
       "2": {},
       "3": {},
@@ -15164,7 +15175,8 @@
     ],
     "badges": {
       "1": {
-        "TSD": true
+        "TSD": true,
+        "CR": true
       },
       "2": {},
       "3": {
@@ -15324,7 +15336,8 @@
     ],
     "badges": {
       "1": {
-        "TSD": true
+        "TSD": true,
+        "CR": true
       },
       "2": {},
       "3": {},
@@ -15489,7 +15502,8 @@
     ],
     "badges": {
       "1": {
-        "TSD": true
+        "TSD": true,
+        "CR": true
       },
       "2": {
         "CR": true
@@ -16101,7 +16115,8 @@
     ],
     "badges": {
       "1": {
-        "TSD": true
+        "TSD": true,
+        "CR": true
       },
       "2": {
         "CR": true
@@ -16734,7 +16749,8 @@
     "badges": {
       "1": {
         "RY": true,
-        "TSD": true
+        "TSD": true,
+        "CR": true
       },
       "2": {},
       "3": {},
@@ -17890,7 +17906,8 @@
     ],
     "badges": {
       "1": {
-        "TSD": true
+        "TSD": true,
+        "CR": true
       },
       "2": {
         "CR": true
@@ -18507,7 +18524,8 @@
     ],
     "badges": {
       "1": {
-        "TSD": true
+        "TSD": true,
+        "CR": true
       },
       "2": {
         "CR": true
@@ -18829,7 +18847,8 @@
     ],
     "badges": {
       "1": {
-        "TSD": true
+        "TSD": true,
+        "CR": true
       },
       "2": {
         "CR": true
@@ -19773,7 +19792,8 @@
     ],
     "badges": {
       "1": {
-        "TSD": true
+        "TSD": true,
+        "CR": true
       },
       "2": {
         "CR": true
@@ -19876,6 +19896,7 @@
     ],
     "badges": {
       "1": {
+        "CR": true,
         "TSD": true
       },
       "2": {
@@ -20472,6 +20493,7 @@
     ],
     "badges": {
       "1": {
+        "CR": true,
         "TSD": true
       },
       "2": {
@@ -20529,7 +20551,8 @@
     ],
     "badges": {
       "1": {
-        "TSD": true
+        "TSD": true,
+        "CR": true
       },
       "2": {
         "CR": true
@@ -21619,7 +21642,8 @@
     ],
     "badges": {
       "1": {
-        "TSD": true
+        "TSD": true,
+        "CR": true
       },
       "2": {
         "CR": true
@@ -22830,7 +22854,8 @@
     "badges": {
       "1": {
         "CY": true,
-        "TSD": true
+        "TSD": true,
+        "CR": true
       },
       "2": {},
       "3": {},
@@ -23146,7 +23171,8 @@
     "badges": {
       "1": {
         "CY": true,
-        "TSD": true
+        "TSD": true,
+        "CR": true
       },
       "2": {
         "CR": true

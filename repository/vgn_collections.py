@@ -6,7 +6,7 @@ from provider.topshot.cadence.flow_collections import get_account_plays
 from provider.topshot.ts_provider import TS_PROVIDER
 from utils import list_to_str
 
-TIERS = {'Common': 2, 'Fandom': 5, 'Rare': 10, 'Legendary': 25}
+TIERS = {'Common': 2, 'Fandom': 5, 'Rare': 10, 'Legendary': 25, 'Ultimate': 25}
 TYPES = {
     'Dunk': 'dunk', '3 Pointer': 'three_pointer', 'Assist': 'assist', 'Steal': 'steal', 'Block': 'block_shot',
     'Jump Shot': 'jump_shot', 'Hook Shot': 'hook_shot', 'Handles': 'handle', 'Layup': 'layup', 'Reel': 'reel',
