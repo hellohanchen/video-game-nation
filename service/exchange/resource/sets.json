@@ -242,7 +242,7 @@
       }
     },
     "Series 23-24": {
-      "count": 9,
+      "count": 11,
       "tiers": {
         "Common": {
           "144": "WNBA Rookie Debut 2024",
@@ -254,12 +254,14 @@
           "146": "Level Up",
           "148": "WNBA Metallic Gold LE 2024",
           "149": "2023-24 Honors",
-          "150": "WNBA Fresh Gems"
+          "150": "WNBA Fresh Gems",
+          "163": "2024 WNBA Playoffs"
         },
         "Legendary": {
           "151": "2024 WNBA Rookie Ultimates",
           "161": "WNBA Holo Icon",
-          "162": "WNBA Rookie Revelation"
+          "162": "WNBA Rookie Revelation",
+          "163": "2024 WNBA Playoffs"
         }
       }
     }
