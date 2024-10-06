@@ -46,7 +46,7 @@ def upsert_collection(user_id, plays):
     """
     db_conn = None
     try:
-        coll, not_found_plays = build_vgn_collection(plays)
+        coll, _ = build_vgn_collection(plays)
 
         sql_records = [
             (user_id, player_id, coll[player_id]['dunk'], coll[player_id]['three_pointer'],
@@ -75,11 +75,7 @@ def upsert_collection(user_id, plays):
 
         return "DB error: {}.".format(err)
 
-    if len(not_found_plays) > 0:
-        return "Collection updated with {} players, play ids not found: {}.".format(
-            len(plays) - len(not_found_plays), ', '.join([str(play) for play in not_found_plays]))
-
-    return f"Collection updated with {len(plays)} plays!"
+    return f"Collection updated with {len(plays)} eligible plays!"
 
 
 def build_vgn_collection(plays):
@@ -110,32 +106,23 @@ def build_vgn_collection(plays):
 
     player_collections = {}
     team_collections = {}
-    not_found_plays = []
+    not_eligible_plays = []
 
     for play_id in plays:
         if play_id not in TS_PROVIDER.play_info:
-            not_found_plays.append(play_id)
+            not_eligible_plays.append(play_id)
             continue
 
         for set_id in plays[play_id]:
-            play = None
-            for play_with_set_info in TS_PROVIDER.play_info[play_id]:
-                if play_with_set_info['setFlowId'] == set_id:
-                    play = play_with_set_info
-                    break
+            play = TS_PROVIDER.play_info[play_id].get(set_id)
             if play is None:
-                not_found_plays.append(play_id * 10000 + set_id)
+                not_eligible_plays.append(play_id * 10000 + set_id)
                 continue
 
             count = plays[play_id][set_id]
             player_id = play['playerId']
 
             if player_id is not None and player_id != 0:
-                if player_id not in TS_PROVIDER.player_moments \
-                        or 'isNBA' not in TS_PROVIDER.player_moments[player_id] \
-                        or not TS_PROVIDER.player_moments[player_id]['isNBA']:
-                    continue
-
                 if player_id not in player_collections:
                     player_collections[player_id] = {
                         'dunk': 0,
@@ -165,7 +152,7 @@ def build_vgn_collection(plays):
             # TODO build team collection
             pass
 
-    return player_collections, not_found_plays
+    return player_collections, not_eligible_plays
 
 
 def get_collections(user_ids, player_ids):
@@ -204,5 +191,5 @@ def get_collections(user_ids, player_ids):
 
 if __name__ == '__main__':
     plays = asyncio.run(get_account_plays('0xad955e5d8047ef82'))
-    vgn_collection, not_found_plays = build_vgn_collection(plays)
+    vgn_collection, not_eligible_plays = build_vgn_collection(plays)
     print(upsert_collection(723723650909601833, plays))

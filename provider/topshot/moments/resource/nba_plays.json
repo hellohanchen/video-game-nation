@@ -548,10 +548,30 @@
         "CR"
       ],
       "teamId": 1610612749
+    },
+    "152": {
+      "playerId": 203507,
+      "playType": "Dunk",
+      "tier": "Rare",
+      "badges": [
+        "CR"
+      ],
+      "teamId": 1610612749
     }
   },
   "5389": {
     "149": {
+      "playerId": 1641717,
+      "playType": "Handles",
+      "tier": "Rare",
+      "badges": [
+        "RY",
+        "RM",
+        "CR"
+      ],
+      "teamId": 1610612760
+    },
+    "152": {
       "playerId": 1641717,
       "playType": "Handles",
       "tier": "Rare",
@@ -574,10 +594,32 @@
         "CR"
       ],
       "teamId": 1610612760
+    },
+    "152": {
+      "playerId": 1631096,
+      "playType": "Block",
+      "tier": "Rare",
+      "badges": [
+        "RY",
+        "RM",
+        "CR"
+      ],
+      "teamId": 1610612760
     }
   },
   "5387": {
     "149": {
+      "playerId": 1641726,
+      "playType": "Block",
+      "tier": "Rare",
+      "badges": [
+        "RY",
+        "RM",
+        "CR"
+      ],
+      "teamId": 1610612742
+    },
+    "152": {
       "playerId": 1641726,
       "playType": "Block",
       "tier": "Rare",
@@ -598,10 +640,28 @@
         "CR"
       ],
       "teamId": 1610612742
+    },
+    "152": {
+      "playerId": 1629029,
+      "playType": "Jump Shot",
+      "tier": "Rare",
+      "badges": [
+        "CR"
+      ],
+      "teamId": 1610612742
     }
   },
   "5385": {
     "149": {
+      "playerId": 203076,
+      "playType": "Block",
+      "tier": "Rare",
+      "badges": [
+        "CR"
+      ],
+      "teamId": 1610612747
+    },
+    "152": {
       "playerId": 203076,
       "playType": "Block",
       "tier": "Rare",
@@ -620,10 +680,28 @@
         "CR"
       ],
       "teamId": 1610612746
+    },
+    "152": {
+      "playerId": 202695,
+      "playType": "Dunk",
+      "tier": "Rare",
+      "badges": [
+        "CR"
+      ],
+      "teamId": 1610612746
     }
   },
   "5383": {
     "149": {
+      "playerId": 1630169,
+      "playType": "Assist",
+      "tier": "Rare",
+      "badges": [
+        "CR"
+      ],
+      "teamId": 1610612754
+    },
+    "152": {
       "playerId": 1630169,
       "playType": "Assist",
       "tier": "Rare",
@@ -642,10 +720,28 @@
         "CR"
       ],
       "teamId": 1610612750
+    },
+    "152": {
+      "playerId": 1630162,
+      "playType": "Reel",
+      "tier": "Rare",
+      "badges": [
+        "CR"
+      ],
+      "teamId": 1610612750
     }
   },
   "5381": {
     "149": {
+      "playerId": 2544,
+      "playType": "3 Pointer",
+      "tier": "Rare",
+      "badges": [
+        "CR"
+      ],
+      "teamId": 1610612747
+    },
+    "152": {
       "playerId": 2544,
       "playType": "3 Pointer",
       "tier": "Rare",
@@ -664,6 +760,15 @@
         "CR"
       ],
       "teamId": 1610612744
+    },
+    "152": {
+      "playerId": 201939,
+      "playType": "Assist",
+      "tier": "Rare",
+      "badges": [
+        "CR"
+      ],
+      "teamId": 1610612744
     }
   },
   "5379": {
@@ -675,10 +780,29 @@
         "CR"
       ],
       "teamId": 1610612752
+    },
+    "152": {
+      "playerId": 1628973,
+      "playType": "Reel",
+      "tier": "Rare",
+      "badges": [
+        "CR"
+      ],
+      "teamId": 1610612752
     }
   },
   "5378": {
     "149": {
+      "playerId": 1628369,
+      "playType": "Dunk",
+      "tier": "Rare",
+      "badges": [
+        "CY",
+        "CR"
+      ],
+      "teamId": 1610612738
+    },
+    "152": {
       "playerId": 1628369,
       "playType": "Dunk",
       "tier": "Rare",
@@ -700,10 +824,30 @@
         "CR"
       ],
       "teamId": 1610612766
+    },
+    "152": {
+      "playerId": 1641706,
+      "playType": "Steal",
+      "tier": "Rare",
+      "badges": [
+        "RY",
+        "RM",
+        "CR"
+      ],
+      "teamId": 1610612766
     }
   },
   "5376": {
     "149": {
+      "playerId": 201142,
+      "playType": "Jump Shot",
+      "tier": "Rare",
+      "badges": [
+        "CR"
+      ],
+      "teamId": 1610612756
+    },
+    "152": {
       "playerId": 201142,
       "playType": "Jump Shot",
       "tier": "Rare",
@@ -722,10 +866,30 @@
         "CR"
       ],
       "teamId": 1610612756
+    },
+    "152": {
+      "playerId": 1626164,
+      "playType": "3 Pointer",
+      "tier": "Rare",
+      "badges": [
+        "CR"
+      ],
+      "teamId": 1610612756
     }
   },
   "5374": {
     "149": {
+      "playerId": 1641713,
+      "playType": "Dunk",
+      "tier": "Rare",
+      "badges": [
+        "RY",
+        "RM",
+        "CR"
+      ],
+      "teamId": 1610612763
+    },
+    "152": {
       "playerId": 1641713,
       "playType": "Dunk",
       "tier": "Rare",
@@ -748,10 +912,32 @@
         "CR"
       ],
       "teamId": 1610612762
+    },
+    "152": {
+      "playerId": 1641718,
+      "playType": "Assist",
+      "tier": "Rare",
+      "badges": [
+        "RY",
+        "RM",
+        "CR"
+      ],
+      "teamId": 1610612762
     }
   },
   "5372": {
     "149": {
+      "playerId": 1631170,
+      "playType": "Dunk",
+      "tier": "Rare",
+      "badges": [
+        "RY",
+        "RM",
+        "CR"
+      ],
+      "teamId": 1610612748
+    },
+    "152": {
       "playerId": 1631170,
       "playType": "Dunk",
       "tier": "Rare",
@@ -772,10 +958,31 @@
         "CR"
       ],
       "teamId": 1610612758
+    },
+    "152": {
+      "playerId": 1627734,
+      "playType": "Layup",
+      "tier": "Rare",
+      "badges": [
+        "CR"
+      ],
+      "teamId": 1610612758
     }
   },
   "5370": {
     "149": {
+      "playerId": 1641705,
+      "playType": "Reel",
+      "tier": "Rare",
+      "badges": [
+        "RY",
+        "RM",
+        "ROY",
+        "CR"
+      ],
+      "teamId": 1610612759
+    },
+    "152": {
       "playerId": 1641705,
       "playType": "Reel",
       "tier": "Rare",
@@ -799,10 +1006,31 @@
         "CR"
       ],
       "teamId": 1610612744
+    },
+    "152": {
+      "playerId": 1641764,
+      "playType": "Steal",
+      "tier": "Rare",
+      "badges": [
+        "RY",
+        "RM",
+        "CR"
+      ],
+      "teamId": 1610612744
     }
   },
   "5368": {
     "149": {
+      "playerId": 203999,
+      "playType": "Assist",
+      "tier": "Rare",
+      "badges": [
+        "MVP",
+        "CR"
+      ],
+      "teamId": 1610612743
+    },
+    "152": {
       "playerId": 203999,
       "playType": "Assist",
       "tier": "Rare",
@@ -822,10 +1050,30 @@
         "CR"
       ],
       "teamId": 1610612760
+    },
+    "152": {
+      "playerId": 1628983,
+      "playType": "Handles",
+      "tier": "Rare",
+      "badges": [
+        "CR"
+      ],
+      "teamId": 1610612760
     }
   },
   "5366": {
     "149": {
+      "playerId": 1641708,
+      "playType": "Dunk",
+      "tier": "Rare",
+      "badges": [
+        "RY",
+        "RM",
+        "CR"
+      ],
+      "teamId": 1610612745
+    },
+    "152": {
       "playerId": 1641708,
       "playType": "Dunk",
       "tier": "Rare",

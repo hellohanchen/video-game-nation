@@ -73,17 +73,16 @@ def load_player_moment_info():
 
 
 def load_enriched_plays():
-    with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "moments/resource/enriched_plays.json"), 'r') as plays_file:
+    with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "moments/resource/nba_plays.json"), 'r') as plays_file:
         loaded = json.load(plays_file)
 
         result = {}
 
-        for play_id in loaded['plays']:
-            play = loaded['plays'][play_id][0]
-            if play['flowId'] in result:
-                continue
-
-            result[play['flowId']] = loaded['plays'][play_id]
+        for play_id in loaded:
+            int_play_id = int(play_id)
+            result[int_play_id] = {}
+            for set_id in loaded[play_id]:
+                result[int_play_id][int(set_id)] = loaded[play_id][set_id]
 
         return result
 

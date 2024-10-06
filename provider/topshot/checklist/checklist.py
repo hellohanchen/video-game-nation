@@ -77,8 +77,17 @@ def check_for_set(set_id, plays):
     missed = []
     for pid in moments:
         play_id = int(pid)
-        if play_id not in plays or set_id not in plays[play_id]:
+        if play_id not in plays:
             missed.append(f"{moments[pid]['player']} {moments[pid]['date']}")
+            continue
+
+        if set_id not in [149, 152]:
+            if set_id not in plays[play_id]:
+                missed.append(f"{moments[pid]['player']} {moments[pid]['date']}")
+                continue
+        else:
+            if 149 not in plays[play_id] and 152 not in plays[play_id]:
+                missed.append(f"{moments[pid]['player']} {moments[pid]['date']}")
 
     if len(missed) == 0:
         return True, []

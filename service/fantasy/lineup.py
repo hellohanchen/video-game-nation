@@ -7,7 +7,7 @@ from repository.vgn_lineups import get_lineups, upsert_lineup, submit_lineup
 from repository.vgn_players import get_players
 from utils import compute_vgn_score, compute_vgn_scores
 
-SALARY_CAP = 165.00
+SALARY_CAP = 170.81
 SALARY_GROUPS = [2, 5, 10, 20, 35]
 PAGE_SIZE = 10
 LINEUP_SIZE = 9
@@ -304,7 +304,7 @@ class Lineup:
         message += "🚩 {}\n".format(self.__format_player(8))
 
         total_salary = self.__get_total_salary()
-        message += "\nTotal salary ${:.2f}m, cap $165.00m, space ${:.2f}m".format(total_salary,
+        message += "\nTotal salary ${:.2f}m, cap ${:.2f}m, space ${:.2f}m".format(total_salary, SALARY_CAP,
                                                                                   SALARY_CAP - total_salary)
         return message
 

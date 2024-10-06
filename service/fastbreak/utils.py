@@ -37,11 +37,7 @@ def build_fb_collections(ts_provider, plays, player_ids):
             continue
 
         for set_id in plays[play_id]:
-            play = None
-            for play_with_set_info in ts_provider.play_info[play_id]:
-                if play_with_set_info['setFlowId'] == set_id:
-                    play = play_with_set_info
-                    break
+            play = ts_provider.play_info[play_id].get(set_id)
             if play is None:
                 not_found_plays.append(play_id * 10000 + set_id)
                 continue

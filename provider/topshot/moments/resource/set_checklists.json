@@ -943,6 +943,163 @@
     },
     "count": 6
   },
+  "152": {
+    "name": "2023-24 Honors (Diced) 5",
+    "series": 5,
+    "moments": {
+      "5390": {
+        "player": "Giannis Antetokounmpo",
+        "team": "Milwaukee Bucks",
+        "playerId": 203507,
+        "date": "2023-11-26"
+      },
+      "5389": {
+        "player": "Cason Wallace",
+        "team": "Oklahoma City Thunder",
+        "playerId": 1641717,
+        "date": "2024-03-30"
+      },
+      "5388": {
+        "player": "Chet Holmgren",
+        "team": "Oklahoma City Thunder",
+        "playerId": 1631096,
+        "date": "2023-12-17"
+      },
+      "5387": {
+        "player": "Dereck Lively II",
+        "team": "Dallas Mavericks",
+        "playerId": 1641726,
+        "date": "2024-03-02"
+      },
+      "5386": {
+        "player": "Luka Don\u010di\u0107",
+        "team": "Dallas Mavericks",
+        "playerId": 1629029,
+        "date": "2024-03-31"
+      },
+      "5385": {
+        "player": "Anthony Davis",
+        "team": "Los Angeles Lakers",
+        "playerId": 203076,
+        "date": "2024-03-26"
+      },
+      "5384": {
+        "player": "Kawhi Leonard",
+        "team": "LA Clippers",
+        "playerId": 202695,
+        "date": "2024-01-28"
+      },
+      "5383": {
+        "player": "Tyrese Haliburton",
+        "team": "Indiana Pacers",
+        "playerId": 1630169,
+        "date": "2024-02-11"
+      },
+      "5382": {
+        "player": "Anthony Edwards",
+        "team": "Minnesota Timberwolves",
+        "playerId": 1630162,
+        "date": "2024-04-10"
+      },
+      "5381": {
+        "player": "LeBron James",
+        "team": "Los Angeles Lakers",
+        "playerId": 2544,
+        "date": "2024-03-31"
+      },
+      "5380": {
+        "player": "Steph Curry",
+        "team": "Golden State Warriors",
+        "playerId": 201939,
+        "date": "2024-04-10"
+      },
+      "5379": {
+        "player": "Jalen Brunson",
+        "team": "New York Knicks",
+        "playerId": 1628973,
+        "date": "2024-03-30"
+      },
+      "5378": {
+        "player": "Jayson Tatum",
+        "team": "Boston Celtics",
+        "playerId": 1628369,
+        "date": "2023-12-23"
+      },
+      "5377": {
+        "player": "Brandon Miller",
+        "team": "Charlotte Hornets",
+        "playerId": 1641706,
+        "date": "2024-02-06"
+      },
+      "5376": {
+        "player": "Kevin Durant",
+        "team": "Phoenix Suns",
+        "playerId": 201142,
+        "date": "2024-03-21"
+      },
+      "5375": {
+        "player": "Devin Booker",
+        "team": "Phoenix Suns",
+        "playerId": 1626164,
+        "date": "2024-04-02"
+      },
+      "5374": {
+        "player": "GG Jackson",
+        "team": "Memphis Grizzlies",
+        "playerId": 1641713,
+        "date": "2024-04-14"
+      },
+      "5373": {
+        "player": "Keyonte George",
+        "team": "Utah Jazz",
+        "playerId": 1641718,
+        "date": "2023-11-18"
+      },
+      "5372": {
+        "player": "Jaime Jaquez Jr.",
+        "team": "Miami Heat",
+        "playerId": 1631170,
+        "date": "2023-12-07"
+      },
+      "5371": {
+        "player": "Domantas Sabonis",
+        "team": "Sacramento Kings",
+        "playerId": 1627734,
+        "date": "2024-03-26"
+      },
+      "5370": {
+        "player": "Victor Wembanyama",
+        "team": "San Antonio Spurs",
+        "playerId": 1641705,
+        "date": "2024-01-05"
+      },
+      "5369": {
+        "player": "Brandin Podziemski",
+        "team": "Golden State Warriors",
+        "playerId": 1641764,
+        "date": "2023-12-25"
+      },
+      "5368": {
+        "player": "Nikola Joki\u0107",
+        "team": "Denver Nuggets",
+        "playerId": 203999,
+        "date": "2024-02-23"
+      },
+      "5367": {
+        "player": "Shai Gilgeous-Alexander",
+        "team": "Oklahoma City Thunder",
+        "playerId": 1628983,
+        "date": "2024-01-03"
+      },
+      "5366": {
+        "player": "Amen Thompson",
+        "team": "Houston Rockets",
+        "playerId": 1641708,
+        "date": "2024-03-19"
+      }
+    },
+    "count": 25
+  },
   "151": {
     "name": "2024 WNBA Rookie Ultimates 5",
     "series": 5,
