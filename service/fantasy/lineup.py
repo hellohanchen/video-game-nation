@@ -213,12 +213,9 @@ class LineupProvider(AbstractProvider):
             "**{:.2f}** missed fts **{:.2f}v** (+{:.2f})\n" \
             "**{:.2f}** turnovers **{:.2f}v** (+{:.2f})\n" \
             "**{:.2f}** fouls **{:.2f}v** (+{:.2f}) " \
-            "foul-out **{:.2f}v**\n" \
             "**{:.2f}** win **{:.2f}v** (+{:.2f})\n" \
             "**{:.2f}** double-double **{:.2f}v**\n" \
             "**{:.2f}** triple-double **{:.2f}v**\n" \
-            "**{:.2f}** quadruple-double **{:.2f}v**\n" \
-            "**{:.2f}** five-double **{:.2f}v**\n" \
             "***Total: {:.2f}v (+{:.2f})***\n\n" \
             "".format(
                 player['index'], player['full_name'], self.player_to_team[player['id']], player['jersey_number'],
@@ -238,12 +235,9 @@ class LineupProvider(AbstractProvider):
                 player['freeThrowsMissed'], scores['freeThrowsMissed']['score'], scores['freeThrowsMissed']['bonus'],
                 player['turnovers'], scores['turnovers']['score'], scores['turnovers']['bonus'],
                 player['foulsPersonal'], scores['foulsPersonal']['score'], scores['foulsPersonal']['bonus'],
-                scores['foulOut']['score'],
                 player['win'], scores['win']['score'], scores['win']['bonus'],
                 player['doubleDouble'], scores['doubleDouble']['score'],
                 player['tripleDouble'], scores['tripleDouble']['score'],
-                player['quadrupleDouble'], scores['quadrupleDouble']['score'],
-                player['fiveDouble'], scores['fiveDouble']['score'],
                 total, bonus
             )
 
