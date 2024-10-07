@@ -95,7 +95,7 @@ def compute_vgn_score(player: Dict[str, any], collection: Optional[Dict[str, int
         total_score += player[stats] * STATS_SCORE[stats]
 
     if player['foulsPersonal'] >= 6:
-        total_score -= 5.0
+        total_score += STATS_SCORE['foulOut']
 
     return total_score
 

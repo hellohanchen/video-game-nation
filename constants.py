@@ -127,17 +127,18 @@ STATS_SCORE = {
     'reboundsDefensive': 1.0,
     'reboundsOffensive': 2.0,
     'assists': 2.0,
-    'steals': 2.5,
-    'blocks': 2.5,
+    'steals': 3.0,
+    'blocks': 3.0,
     'fieldGoalsMissed': -0.5,
     'freeThrowsMissed': -0.5,
     'turnovers': -2.0,
-    'foulsPersonal': -1.5,
+    'foulsPersonal': -1.0,
+    'foulOut': -4.0,
     'win': 3.0,
     'doubleDouble': 3.0,
-    'tripleDouble': 6.0,
-    'quadrupleDouble': 12.0,
-    'fiveDouble': 24.0
+    'tripleDouble': 3.0,
+    'quadrupleDouble': 6.0,
+    'fiveDouble': 12.0
 }
 STATS_PLAY_TYPE = {
     'points': 'dunk',
