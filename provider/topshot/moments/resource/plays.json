@@ -1,4 +1,364 @@
 {
+  "5738": [
+    {
+      "id": "9cbd37f8-cc91-4134-86ec-1201bec87917",
+      "flowId": 5738,
+      "set": "Metallic Gold LE",
+      "setId": "d2d782e7-9e59-4f86-9d53-bcf6e18ca225",
+      "setFlowId": 166,
+      "playerId": 2544,
+      "playerName": "LeBron James",
+      "team": "Los Angeles Lakers",
+      "teamAtMoment": "Los Angeles Lakers",
+      "playType": "Dunk",
+      "date": "2024-10-23",
+      "series": 6,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "5737": [
+    {
+      "id": "07cda102-5a6e-4052-b288-591cecdb9a66",
+      "flowId": 5737,
+      "set": "Supernova",
+      "setId": "267ff652-8c27-4ca0-91ea-e65243bd8a39",
+      "setFlowId": 165,
+      "playerId": 2544,
+      "playerName": "LeBron James",
+      "team": "Cleveland Cavaliers",
+      "teamAtMoment": "Cleveland Cavaliers",
+      "playType": "Reel",
+      "date": "2003-10-30",
+      "series": 6,
+      "tier": "U",
+      "badges": []
+    }
+  ],
+  "5736": [
+    {
+      "id": "70bad2a0-24b1-4a2b-84d2-ab339c89d92d",
+      "flowId": 5736,
+      "set": "Rookie Debut",
+      "setId": "22a4cd21-ea46-4861-8139-848a17c21047",
+      "setFlowId": 164,
+      "playerId": 1642263,
+      "playerName": "Reed Sheppard",
+      "team": "Houston Rockets",
+      "teamAtMoment": "Houston Rockets",
+      "playType": "Play Coming Soon",
+      "date": "",
+      "series": 6,
+      "tier": "C",
+      "badges": []
+    }
+  ],
+  "5735": [
+    {
+      "id": "473d22a3-c8b0-4f4c-93a6-bdbeabbfd18c",
+      "flowId": 5735,
+      "set": "Rookie Debut",
+      "setId": "22a4cd21-ea46-4861-8139-848a17c21047",
+      "setFlowId": 164,
+      "playerId": 1642276,
+      "playerName": "Kel'el Ware",
+      "team": "Miami Heat",
+      "teamAtMoment": "Miami Heat",
+      "playType": "Play Coming Soon",
+      "date": "",
+      "series": 6,
+      "tier": "C",
+      "badges": []
+    }
+  ],
+  "5734": [
+    {
+      "id": "5f634dae-8f22-41f1-a82d-793610942790",
+      "flowId": 5734,
+      "set": "Rookie Debut",
+      "setId": "22a4cd21-ea46-4861-8139-848a17c21047",
+      "setFlowId": 164,
+      "playerId": 1642355,
+      "playerName": "Bronny James",
+      "team": "Los Angeles Lakers",
+      "teamAtMoment": "Los Angeles Lakers",
+      "playType": "Play Coming Soon",
+      "date": "",
+      "series": 6,
+      "tier": "C",
+      "badges": []
+    }
+  ],
+  "5733": [
+    {
+      "id": "d5dbf68a-62ee-424b-83ee-6cdfb1c0de15",
+      "flowId": 5733,
+      "set": "Rookie Debut",
+      "setId": "22a4cd21-ea46-4861-8139-848a17c21047",
+      "setFlowId": 164,
+      "playerId": 1642272,
+      "playerName": "Jared McCain",
+      "team": "Philadelphia 76ers",
+      "teamAtMoment": "Philadelphia 76ers",
+      "playType": "Jump Shot",
+      "date": "2024-10-23",
+      "series": 6,
+      "tier": "C",
+      "badges": []
+    }
+  ],
+  "5732": [
+    {
+      "id": "30215ea7-c3a2-43cb-996f-14e5d52394cc",
+      "flowId": 5732,
+      "set": "Rookie Debut",
+      "setId": "22a4cd21-ea46-4861-8139-848a17c21047",
+      "setFlowId": 164,
+      "playerId": 1642265,
+      "playerName": "Robert Dillingham",
+      "team": "Minnesota Timberwolves",
+      "teamAtMoment": "Minnesota Timberwolves",
+      "playType": "Play Coming Soon",
+      "date": "",
+      "series": 6,
+      "tier": "C",
+      "badges": []
+    }
+  ],
+  "5731": [
+    {
+      "id": "57975d8f-44e5-483a-897b-ebb2b55e6d8c",
+      "flowId": 5731,
+      "set": "Rookie Debut",
+      "setId": "22a4cd21-ea46-4861-8139-848a17c21047",
+      "setFlowId": 164,
+      "playerId": 1641824,
+      "playerName": "Matas Buzelis",
+      "team": "Chicago Bulls",
+      "teamAtMoment": "Chicago Bulls",
+      "playType": "Play Coming Soon",
+      "date": "",
+      "series": 6,
+      "tier": "C",
+      "badges": []
+    }
+  ],
+  "5730": [
+    {
+      "id": "b905629d-1714-46bf-992b-3823ec1715f3",
+      "flowId": 5730,
+      "set": "Rookie Debut",
+      "setId": "22a4cd21-ea46-4861-8139-848a17c21047",
+      "setFlowId": 164,
+      "playerId": 1641744,
+      "playerName": "Zach Edey",
+      "team": "Memphis Grizzlies",
+      "teamAtMoment": "Memphis Grizzlies",
+      "playType": "Play Coming Soon",
+      "date": "",
+      "series": 6,
+      "tier": "C",
+      "badges": []
+    }
+  ],
+  "5729": [
+    {
+      "id": "cff518fb-4ab5-4044-bfe1-7e4e35af3fb7",
+      "flowId": 5729,
+      "set": "Rookie Debut",
+      "setId": "22a4cd21-ea46-4861-8139-848a17c21047",
+      "setFlowId": 164,
+      "playerId": 1642264,
+      "playerName": "Stephon Castle",
+      "team": "San Antonio Spurs",
+      "teamAtMoment": "San Antonio Spurs",
+      "playType": "Play Coming Soon",
+      "date": "",
+      "series": 6,
+      "tier": "C",
+      "badges": []
+    }
+  ],
+  "5728": [
+    {
+      "id": "9980b9d4-5713-427b-961e-bd6775b679ec",
+      "flowId": 5728,
+      "set": "Rookie Debut",
+      "setId": "22a4cd21-ea46-4861-8139-848a17c21047",
+      "setFlowId": 164,
+      "playerId": 1642268,
+      "playerName": "Isaiah Collier",
+      "team": "Utah Jazz",
+      "teamAtMoment": "Utah Jazz",
+      "playType": "Play Coming Soon",
+      "date": "",
+      "series": 6,
+      "tier": "C",
+      "badges": []
+    }
+  ],
+  "5727": [
+    {
+      "id": "340edabf-18b4-4243-956e-5df7cf64607c",
+      "flowId": 5727,
+      "set": "Rookie Debut",
+      "setId": "22a4cd21-ea46-4861-8139-848a17c21047",
+      "setFlowId": 164,
+      "playerId": 1641842,
+      "playerName": "Ronald Holland II",
+      "team": "Detroit Pistons",
+      "teamAtMoment": "Detroit Pistons",
+      "playType": "Play Coming Soon",
+      "date": "",
+      "series": 6,
+      "tier": "C",
+      "badges": []
+    }
+  ],
+  "5726": [
+    {
+      "id": "7e19a164-8e3d-499f-a83a-8118cede1aa9",
+      "flowId": 5726,
+      "set": "Rookie Debut",
+      "setId": "22a4cd21-ea46-4861-8139-848a17c21047",
+      "setFlowId": 164,
+      "playerId": 1642275,
+      "playerName": "Tidjane Sala\u00fcn",
+      "team": "Charlotte Hornets",
+      "teamAtMoment": "Charlotte Hornets",
+      "playType": "Play Coming Soon",
+      "date": "",
+      "series": 6,
+      "tier": "C",
+      "badges": []
+    }
+  ],
+  "5725": [
+    {
+      "id": "d9103fe9-d854-4f7a-a788-b4943f51aa0e",
+      "flowId": 5725,
+      "set": "Rookie Debut",
+      "setId": "22a4cd21-ea46-4861-8139-848a17c21047",
+      "setFlowId": 164,
+      "playerId": 1641783,
+      "playerName": "Tristan da Silva",
+      "team": "Orlando Magic",
+      "teamAtMoment": "Orlando Magic",
+      "playType": "Play Coming Soon",
+      "date": "",
+      "series": 6,
+      "tier": "C",
+      "badges": []
+    }
+  ],
+  "5724": [
+    {
+      "id": "062f1f21-74f6-49fb-ae6c-f48634092a74",
+      "flowId": 5724,
+      "set": "Rookie Debut",
+      "setId": "22a4cd21-ea46-4861-8139-848a17c21047",
+      "setFlowId": 164,
+      "playerId": 1642262,
+      "playerName": "Cody Williams",
+      "team": "Utah Jazz",
+      "teamAtMoment": "Utah Jazz",
+      "playType": "Play Coming Soon",
+      "date": "",
+      "series": 6,
+      "tier": "C",
+      "badges": []
+    }
+  ],
+  "5723": [
+    {
+      "id": "7876a637-cadb-4f8f-a79a-cf145541f39e",
+      "flowId": 5723,
+      "set": "Rookie Debut",
+      "setId": "22a4cd21-ea46-4861-8139-848a17c21047",
+      "setFlowId": 164,
+      "playerId": 1642270,
+      "playerName": "Donovan Clingan",
+      "team": "Portland Trail Blazers",
+      "teamAtMoment": "Portland Trail Blazers",
+      "playType": "Play Coming Soon",
+      "date": "",
+      "series": 6,
+      "tier": "C",
+      "badges": []
+    }
+  ],
+  "5722": [
+    {
+      "id": "e0b60a50-347b-4360-9753-b613b4a64959",
+      "flowId": 5722,
+      "set": "Rookie Debut",
+      "setId": "22a4cd21-ea46-4861-8139-848a17c21047",
+      "setFlowId": 164,
+      "playerId": 1642261,
+      "playerName": "Dalton Knecht",
+      "team": "Los Angeles Lakers",
+      "teamAtMoment": "Los Angeles Lakers",
+      "playType": "3 Pointer",
+      "date": "2024-10-23",
+      "series": 6,
+      "tier": "C",
+      "badges": []
+    }
+  ],
+  "5721": [
+    {
+      "id": "8f034585-9fb9-4251-b9e1-60c0c27dd167",
+      "flowId": 5721,
+      "set": "Rookie Debut",
+      "setId": "22a4cd21-ea46-4861-8139-848a17c21047",
+      "setFlowId": 164,
+      "playerId": 1642267,
+      "playerName": "Carlton Carrington",
+      "team": "Washington Wizards",
+      "teamAtMoment": "Washington Wizards",
+      "playType": "Play Coming Soon",
+      "date": "",
+      "series": 6,
+      "tier": "C",
+      "badges": []
+    }
+  ],
+  "5720": [
+    {
+      "id": "22079b36-048f-45ae-83d0-b33c94bcace9",
+      "flowId": 5720,
+      "set": "Rookie Debut",
+      "setId": "22a4cd21-ea46-4861-8139-848a17c21047",
+      "setFlowId": 164,
+      "playerId": 1642259,
+      "playerName": "Alexandre Sarr",
+      "team": "Washington Wizards",
+      "teamAtMoment": "Washington Wizards",
+      "playType": "Play Coming Soon",
+      "date": "",
+      "series": 6,
+      "tier": "C",
+      "badges": []
+    }
+  ],
+  "5719": [
+    {
+      "id": "5a677589-2ef9-4aca-9cba-bf6fd24cb3af",
+      "flowId": 5719,
+      "set": "Rookie Debut",
+      "setId": "22a4cd21-ea46-4861-8139-848a17c21047",
+      "setFlowId": 164,
+      "playerId": 1642258,
+      "playerName": "Zaccharie Risacher",
+      "team": "Atlanta Hawks",
+      "teamAtMoment": "Atlanta Hawks",
+      "playType": "3 Pointer",
+      "date": "2024-10-23",
+      "series": 6,
+      "tier": "C",
+      "badges": []
+    }
+  ],
   "5718": [
     {
       "id": "8840f6a0-4c6a-4942-aa62-180fd0f2f3f0",

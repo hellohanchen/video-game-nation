@@ -1,4 +1,256 @@
 {
+  "5738": {
+    "166": {
+      "playerId": 2544,
+      "playType": "Dunk",
+      "tier": "Rare",
+      "badges": [],
+      "teamId": 1610612747
+    }
+  },
+  "5737": {
+    "165": {
+      "playerId": 2544,
+      "playType": "Reel",
+      "tier": "Ultimate",
+      "badges": [],
+      "teamId": 1610612739
+    }
+  },
+  "5736": {
+    "164": {
+      "playerId": 1642263,
+      "playType": "Play Coming Soon",
+      "tier": "Common",
+      "badges": [
+        "RY",
+        "RM",
+        "TSD"
+      ],
+      "teamId": 1610612745
+    }
+  },
+  "5735": {
+    "164": {
+      "playerId": 1642276,
+      "playType": "Play Coming Soon",
+      "tier": "Common",
+      "badges": [
+        "RY",
+        "RM",
+        "TSD"
+      ],
+      "teamId": 1610612748
+    }
+  },
+  "5734": {
+    "164": {
+      "playerId": 1642355,
+      "playType": "Play Coming Soon",
+      "tier": "Common",
+      "badges": [
+        "RY",
+        "RM",
+        "TSD"
+      ],
+      "teamId": 1610612747
+    }
+  },
+  "5733": {
+    "164": {
+      "playerId": 1642272,
+      "playType": "Jump Shot",
+      "tier": "Common",
+      "badges": [
+        "RY",
+        "RM",
+        "TSD"
+      ],
+      "teamId": 1610612755
+    }
+  },
+  "5732": {
+    "164": {
+      "playerId": 1642265,
+      "playType": "Play Coming Soon",
+      "tier": "Common",
+      "badges": [
+        "RY",
+        "RM",
+        "TSD"
+      ],
+      "teamId": 1610612750
+    }
+  },
+  "5731": {
+    "164": {
+      "playerId": 1641824,
+      "playType": "Play Coming Soon",
+      "tier": "Common",
+      "badges": [
+        "RY",
+        "RM",
+        "TSD"
+      ],
+      "teamId": 1610612741
+    }
+  },
+  "5730": {
+    "164": {
+      "playerId": 1641744,
+      "playType": "Play Coming Soon",
+      "tier": "Common",
+      "badges": [
+        "RY",
+        "RM",
+        "TSD"
+      ],
+      "teamId": 1610612763
+    }
+  },
+  "5729": {
+    "164": {
+      "playerId": 1642264,
+      "playType": "Play Coming Soon",
+      "tier": "Common",
+      "badges": [
+        "RY",
+        "RM",
+        "TSD"
+      ],
+      "teamId": 1610612759
+    }
+  },
+  "5728": {
+    "164": {
+      "playerId": 1642268,
+      "playType": "Play Coming Soon",
+      "tier": "Common",
+      "badges": [
+        "RY",
+        "RM",
+        "TSD"
+      ],
+      "teamId": 1610612762
+    }
+  },
+  "5727": {
+    "164": {
+      "playerId": 1641842,
+      "playType": "Play Coming Soon",
+      "tier": "Common",
+      "badges": [
+        "RY",
+        "RM",
+        "TSD"
+      ],
+      "teamId": 1610612765
+    }
+  },
+  "5726": {
+    "164": {
+      "playerId": 1642275,
+      "playType": "Play Coming Soon",
+      "tier": "Common",
+      "badges": [
+        "RY",
+        "RM",
+        "TSD"
+      ],
+      "teamId": 1610612766
+    }
+  },
+  "5725": {
+    "164": {
+      "playerId": 1641783,
+      "playType": "Play Coming Soon",
+      "tier": "Common",
+      "badges": [
+        "RY",
+        "RM",
+        "TSD"
+      ],
+      "teamId": 1610612753
+    }
+  },
+  "5724": {
+    "164": {
+      "playerId": 1642262,
+      "playType": "Play Coming Soon",
+      "tier": "Common",
+      "badges": [
+        "RY",
+        "RM",
+        "TSD"
+      ],
+      "teamId": 1610612762
+    }
+  },
+  "5723": {
+    "164": {
+      "playerId": 1642270,
+      "playType": "Play Coming Soon",
+      "tier": "Common",
+      "badges": [
+        "RY",
+        "RM",
+        "TSD"
+      ],
+      "teamId": 1610612757
+    }
+  },
+  "5722": {
+    "164": {
+      "playerId": 1642261,
+      "playType": "3 Pointer",
+      "tier": "Common",
+      "badges": [
+        "RY",
+        "RM",
+        "TSD"
+      ],
+      "teamId": 1610612747
+    }
+  },
+  "5721": {
+    "164": {
+      "playerId": 1642267,
+      "playType": "Play Coming Soon",
+      "tier": "Common",
+      "badges": [
+        "RY",
+        "RM",
+        "TSD"
+      ],
+      "teamId": 1610612764
+    }
+  },
+  "5720": {
+    "164": {
+      "playerId": 1642259,
+      "playType": "Play Coming Soon",
+      "tier": "Common",
+      "badges": [
+        "RY",
+        "RM",
+        "TSD"
+      ],
+      "teamId": 1610612764
+    }
+  },
+  "5719": {
+    "164": {
+      "playerId": 1642258,
+      "playType": "3 Pointer",
+      "tier": "Common",
+      "badges": [
+        "RY",
+        "RM",
+        "TSD"
+      ],
+      "teamId": 1610612737
+    }
+  },
   "5709": {
     "157": {
       "playerId": 201567,

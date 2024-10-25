@@ -1,4 +1,145 @@
 {
+  "166": {
+    "name": "Metallic Gold LE 6",
+    "series": 6,
+    "moments": {
+      "5738": {
+        "player": "LeBron James",
+        "team": "Los Angeles Lakers",
+        "playerId": 2544,
+        "date": "2024-10-23"
+      }
+    },
+    "count": 1
+  },
+  "165": {
+    "name": "Supernova 6",
+    "series": 6,
+    "moments": {
+      "5737": {
+        "player": "LeBron James",
+        "team": "Cleveland Cavaliers",
+        "playerId": 2544,
+        "date": "2003-10-30"
+      }
+    },
+    "count": 1
+  },
+  "164": {
+    "name": "Rookie Debut 6",
+    "series": 6,
+    "moments": {
+      "5736": {
+        "player": "Reed Sheppard",
+        "team": "Houston Rockets",
+        "playerId": 1642263,
+        "date": ""
+      },
+      "5735": {
+        "player": "Kel'el Ware",
+        "team": "Miami Heat",
+        "playerId": 1642276,
+        "date": ""
+      },
+      "5734": {
+        "player": "Bronny James",
+        "team": "Los Angeles Lakers",
+        "playerId": 1642355,
+        "date": ""
+      },
+      "5733": {
+        "player": "Jared McCain",
+        "team": "Philadelphia 76ers",
+        "playerId": 1642272,
+        "date": "2024-10-23"
+      },
+      "5732": {
+        "player": "Robert Dillingham",
+        "team": "Minnesota Timberwolves",
+        "playerId": 1642265,
+        "date": ""
+      },
+      "5731": {
+        "player": "Matas Buzelis",
+        "team": "Chicago Bulls",
+        "playerId": 1641824,
+        "date": ""
+      },
+      "5730": {
+        "player": "Zach Edey",
+        "team": "Memphis Grizzlies",
+        "playerId": 1641744,
+        "date": ""
+      },
+      "5729": {
+        "player": "Stephon Castle",
+        "team": "San Antonio Spurs",
+        "playerId": 1642264,
+        "date": ""
+      },
+      "5728": {
+        "player": "Isaiah Collier",
+        "team": "Utah Jazz",
+        "playerId": 1642268,
+        "date": ""
+      },
+      "5727": {
+        "player": "Ronald Holland II",
+        "team": "Detroit Pistons",
+        "playerId": 1641842,
+        "date": ""
+      },
+      "5726": {
+        "player": "Tidjane Sala\u00fcn",
+        "team": "Charlotte Hornets",
+        "playerId": 1642275,
+        "date": ""
+      },
+      "5725": {
+        "player": "Tristan da Silva",
+        "team": "Orlando Magic",
+        "playerId": 1641783,
+        "date": ""
+      },
+      "5724": {
+        "player": "Cody Williams",
+        "team": "Utah Jazz",
+        "playerId": 1642262,
+        "date": ""
+      },
+      "5723": {
+        "player": "Donovan Clingan",
+        "team": "Portland Trail Blazers",
+        "playerId": 1642270,
+        "date": ""
+      },
+      "5722": {
+        "player": "Dalton Knecht",
+        "team": "Los Angeles Lakers",
+        "playerId": 1642261,
+        "date": "2024-10-23"
+      },
+      "5721": {
+        "player": "Carlton Carrington",
+        "team": "Washington Wizards",
+        "playerId": 1642267,
+        "date": ""
+      },
+      "5720": {
+        "player": "Alexandre Sarr",
+        "team": "Washington Wizards",
+        "playerId": 1642259,
+        "date": ""
+      },
+      "5719": {
+        "player": "Zaccharie Risacher",
+        "team": "Atlanta Hawks",
+        "playerId": 1642258,
+        "date": "2024-10-23"
+      }
+    },
+    "count": 18
+  },
   "163": {
     "name": "2024 WNBA Playoffs 5",
     "series": 5,
