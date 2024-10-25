@@ -180,6 +180,21 @@
         }
       }
     },
+    "Series 24-25": {
+      "count": 3,
+      "tiers": {
+        "Common": {
+          "164": "Rookie Debut"
+        },
+        "Fandom": {},
+        "Rare": {
+          "166": "Metallic Gold LE"
+        },
+        "Legendary": {
+          "165": "Supernova"
+        }
+      }
+    },
     "Anthology": {
       "count": 5,
       "tiers": {
