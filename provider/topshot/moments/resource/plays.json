@@ -1,4 +1,832 @@
 {
+  "5718": [
+    {
+      "id": "8840f6a0-4c6a-4942-aa62-180fd0f2f3f0",
+      "flowId": 5718,
+      "set": "Run It Back: Origins",
+      "setId": "344513e4-c88d-4203-871c-48b92eef3578",
+      "setFlowId": 157,
+      "playerId": 244,
+      "playerName": "Dee Brown",
+      "team": "Boston Celtics",
+      "teamAtMoment": "Boston Celtics",
+      "playType": "Dunk",
+      "date": "1991-02-09",
+      "series": 5,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "5717": [
+    {
+      "id": "96064bd8-0d63-4d78-9292-e4fd6a26f43b",
+      "flowId": 5717,
+      "set": "Run It Back: Legacies",
+      "setId": "cd14cc9f-1bef-49c6-8aed-ae479646c0fa",
+      "setFlowId": 160,
+      "playerId": 17,
+      "playerName": "Clyde Drexler",
+      "team": "Houston Rockets",
+      "teamAtMoment": "Houston Rockets",
+      "playType": "Dunk",
+      "date": "1995-05-22",
+      "series": 5,
+      "tier": "L",
+      "badges": []
+    }
+  ],
+  "5716": [
+    {
+      "id": "06dc502a-9f01-4875-ab1c-d8e85b529b38",
+      "flowId": 5716,
+      "set": "Run It Back: Origins",
+      "setId": "344513e4-c88d-4203-871c-48b92eef3578",
+      "setFlowId": 157,
+      "playerId": 980,
+      "playerName": "Zydrunas Ilgauskas",
+      "team": "Cleveland Cavaliers",
+      "teamAtMoment": "Cleveland Cavaliers",
+      "playType": "Handles",
+      "date": "1997-11-23",
+      "series": 5,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "5715": [
+    {
+      "id": "fb28a350-01c7-41ed-a4fb-16d158e25123",
+      "flowId": 5715,
+      "set": "Run It Back: Origins",
+      "setId": "344513e4-c88d-4203-871c-48b92eef3578",
+      "setFlowId": 157,
+      "playerId": 1938,
+      "playerName": "Manu Gin\u00f3bili",
+      "team": "San Antonio Spurs",
+      "teamAtMoment": "San Antonio Spurs",
+      "playType": "Dunk",
+      "date": "2003-05-05",
+      "series": 5,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "5714": [
+    {
+      "id": "8ef5ea5d-66b3-4b96-90cd-f80b0e3c22a2",
+      "flowId": 5714,
+      "set": "Run It Back",
+      "setId": "bbc3ca0e-e7b1-4c92-bf0d-7f4bf9b562be",
+      "setFlowId": 159,
+      "playerId": 76,
+      "playerName": "Cedric Ceballos",
+      "team": "Los Angeles Lakers",
+      "teamAtMoment": "Los Angeles Lakers",
+      "playType": "Dunk",
+      "date": "1996-01-31",
+      "series": 5,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "5713": [
+    {
+      "id": "d7fac6f2-2629-4959-9eef-5a1f6ed26398",
+      "flowId": 5713,
+      "set": "Run It Back",
+      "setId": "bbc3ca0e-e7b1-4c92-bf0d-7f4bf9b562be",
+      "setFlowId": 159,
+      "playerId": 123,
+      "playerName": "Robert Pack",
+      "team": "Denver Nuggets",
+      "teamAtMoment": "Denver Nuggets",
+      "playType": "Dunk",
+      "date": "1993-01-26",
+      "series": 5,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "5712": [
+    {
+      "id": "c4933c07-9412-4c46-b76f-1f1261380561",
+      "flowId": 5712,
+      "set": "Run It Back",
+      "setId": "bbc3ca0e-e7b1-4c92-bf0d-7f4bf9b562be",
+      "setFlowId": 159,
+      "playerId": 84,
+      "playerName": "Latrell Sprewell",
+      "team": "New York Knicks",
+      "teamAtMoment": "New York Knicks",
+      "playType": "Dunk",
+      "date": "1999-06-25",
+      "series": 5,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "5711": [
+    {
+      "id": "1ec41376-746c-4927-afb8-d620f3e23d17",
+      "flowId": 5711,
+      "set": "Run It Back",
+      "setId": "bbc3ca0e-e7b1-4c92-bf0d-7f4bf9b562be",
+      "setFlowId": 159,
+      "playerId": 2430,
+      "playerName": "Carlos Boozer",
+      "team": "Utah Jazz",
+      "teamAtMoment": "Utah Jazz",
+      "playType": "Dunk",
+      "date": "2007-03-26",
+      "series": 5,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "5710": [
+    {
+      "id": "f8333c78-b859-4bfc-8527-3ab5eb3c81d7",
+      "flowId": 5710,
+      "set": "Run It Back: Legacies",
+      "setId": "cd14cc9f-1bef-49c6-8aed-ae479646c0fa",
+      "setFlowId": 160,
+      "playerId": 87,
+      "playerName": "Dikembe Mutombo",
+      "team": "Denver Nuggets",
+      "teamAtMoment": "Denver Nuggets",
+      "playType": "Reel",
+      "date": "1994-05-07",
+      "series": 5,
+      "tier": "L",
+      "badges": []
+    }
+  ],
+  "5709": [
+    {
+      "id": "a0650e25-29ea-45bf-8981-94e8c58bc39b",
+      "flowId": 5709,
+      "set": "Run It Back: Origins",
+      "setId": "344513e4-c88d-4203-871c-48b92eef3578",
+      "setFlowId": 157,
+      "playerId": 201567,
+      "playerName": "Kevin Love",
+      "team": "Minnesota Timberwolves",
+      "teamAtMoment": "Minnesota Timberwolves",
+      "playType": "Assist",
+      "date": "2009-01-26",
+      "series": 5,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "5708": [
+    {
+      "id": "b03028b8-c378-46b0-885c-0f81955b7735",
+      "flowId": 5708,
+      "set": "Run It Back: Legacies",
+      "setId": "cd14cc9f-1bef-49c6-8aed-ae479646c0fa",
+      "setFlowId": 160,
+      "playerId": 77845,
+      "playerName": "Dra\u017een Petrovi\u0107",
+      "team": "Brooklyn Nets",
+      "teamAtMoment": "New Jersey Nets",
+      "playType": "Handles",
+      "date": "1993-01-25",
+      "series": 5,
+      "tier": "L",
+      "badges": []
+    }
+  ],
+  "5707": [
+    {
+      "id": "d1928a93-583a-4dc1-97ca-2fb0bbc15b61",
+      "flowId": 5707,
+      "set": "Run It Back: Legacies",
+      "setId": "cd14cc9f-1bef-49c6-8aed-ae479646c0fa",
+      "setFlowId": 160,
+      "playerId": 134,
+      "playerName": "Kevin Johnson",
+      "team": "Phoenix Suns",
+      "teamAtMoment": "Phoenix Suns",
+      "playType": "Dunk",
+      "date": "1994-05-15",
+      "series": 5,
+      "tier": "L",
+      "badges": []
+    }
+  ],
+  "5706": [
+    {
+      "id": "723a1afe-88b2-4339-9753-e5d78bc6122f",
+      "flowId": 5706,
+      "set": "Run It Back: Legacies",
+      "setId": "cd14cc9f-1bef-49c6-8aed-ae479646c0fa",
+      "setFlowId": 160,
+      "playerId": 431,
+      "playerName": "Shawn Kemp",
+      "team": "Oklahoma City Thunder",
+      "teamAtMoment": "Seattle SuperSonics",
+      "playType": "Dunk",
+      "date": "1992-04-30",
+      "series": 5,
+      "tier": "L",
+      "badges": []
+    }
+  ],
+  "5705": [
+    {
+      "id": "3b7f7f4a-a3eb-4ea6-9337-94dcbd8afa30",
+      "flowId": 5705,
+      "set": "Run It Back",
+      "setId": "bbc3ca0e-e7b1-4c92-bf0d-7f4bf9b562be",
+      "setFlowId": 159,
+      "playerId": 913,
+      "playerName": "Larry Johnson",
+      "team": "Charlotte Hornets",
+      "teamAtMoment": "Charlotte Hornets",
+      "playType": "Dunk",
+      "date": "1995-11-30",
+      "series": 5,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "5704": [
+    {
+      "id": "1e453ed8-af0f-4006-879f-fae8d69e0b9d",
+      "flowId": 5704,
+      "set": "Run It Back",
+      "setId": "bbc3ca0e-e7b1-4c92-bf0d-7f4bf9b562be",
+      "setFlowId": 159,
+      "playerId": 2199,
+      "playerName": "Tyson Chandler",
+      "team": "New Orleans Hornets",
+      "teamAtMoment": "New Orleans Hornets",
+      "playType": "Dunk",
+      "date": "2008-05-05",
+      "series": 5,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "5703": [
+    {
+      "id": "baa117ea-e1df-452c-9db2-d0e40995a13a",
+      "flowId": 5703,
+      "set": "Run It Back: Origins",
+      "setId": "344513e4-c88d-4203-871c-48b92eef3578",
+      "setFlowId": 157,
+      "playerId": 124,
+      "playerName": "Vlade Divac",
+      "team": "Los Angeles Lakers",
+      "teamAtMoment": "Los Angeles Lakers",
+      "playType": "Block",
+      "date": "1990-02-03",
+      "series": 5,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "5702": [
+    {
+      "id": "c9d71ede-6d1b-45e0-b2b3-6afc9101d085",
+      "flowId": 5702,
+      "set": "Run It Back",
+      "setId": "bbc3ca0e-e7b1-4c92-bf0d-7f4bf9b562be",
+      "setFlowId": 159,
+      "playerId": 78549,
+      "playerName": "Gus Williams",
+      "team": "Oklahoma City Thunder",
+      "teamAtMoment": "Seattle SuperSonics",
+      "playType": "Dunk",
+      "date": "1979-05-20",
+      "series": 5,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "5701": [
+    {
+      "id": "e7597cfa-666e-4619-a033-4e5f5e686100",
+      "flowId": 5701,
+      "set": "Run It Back: Origins",
+      "setId": "344513e4-c88d-4203-871c-48b92eef3578",
+      "setFlowId": 157,
+      "playerId": 782,
+      "playerName": "Mitch Richmond",
+      "team": "Golden State Warriors",
+      "teamAtMoment": "Golden State Warriors",
+      "playType": "Dunk",
+      "date": "1989-05-02",
+      "series": 5,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "5700": [
+    {
+      "id": "951561b3-ac90-4d10-9610-65b536834293",
+      "flowId": 5700,
+      "set": "Run It Back: Origins",
+      "setId": "344513e4-c88d-4203-871c-48b92eef3578",
+      "setFlowId": 157,
+      "playerId": 64,
+      "playerName": "Sam Perkins",
+      "team": "Dallas Mavericks",
+      "teamAtMoment": "Dallas Mavericks",
+      "playType": "Dunk",
+      "date": "1985-04-19",
+      "series": 5,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "5699": [
+    {
+      "id": "8327c671-2487-4218-9df1-f0a19ef8e5c6",
+      "flowId": 5699,
+      "set": "Run It Back",
+      "setId": "bbc3ca0e-e7b1-4c92-bf0d-7f4bf9b562be",
+      "setFlowId": 159,
+      "playerId": 375,
+      "playerName": "Isaiah Rider",
+      "team": "Minnesota Timberwolves",
+      "teamAtMoment": "Minnesota Timberwolves",
+      "playType": "Dunk",
+      "date": "1995-03-23",
+      "series": 5,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "5698": [
+    {
+      "id": "edf86ad9-ba1b-459d-96ea-0863ebfd2f7a",
+      "flowId": 5698,
+      "set": "Run It Back",
+      "setId": "bbc3ca0e-e7b1-4c92-bf0d-7f4bf9b562be",
+      "setFlowId": 159,
+      "playerId": 361,
+      "playerName": "Clifford Robinson",
+      "team": "Portland Trail Blazers",
+      "teamAtMoment": "Portland Trail Blazers",
+      "playType": "Dunk",
+      "date": "1991-12-07",
+      "series": 5,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "5697": [
+    {
+      "id": "4f1b04f8-d317-4fd3-940f-312f02fb0372",
+      "flowId": 5697,
+      "set": "Run It Back: Origins",
+      "setId": "344513e4-c88d-4203-871c-48b92eef3578",
+      "setFlowId": 157,
+      "playerId": 200768,
+      "playerName": "Kyle Lowry",
+      "team": "Memphis Grizzlies",
+      "teamAtMoment": "Memphis Grizzlies",
+      "playType": "Layup",
+      "date": "2006-11-21",
+      "series": 5,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "5696": [
+    {
+      "id": "573c48de-d541-4dfa-8b1d-af2737855d77",
+      "flowId": 5696,
+      "set": "Run It Back: Legacies",
+      "setId": "cd14cc9f-1bef-49c6-8aed-ae479646c0fa",
+      "setFlowId": 160,
+      "playerId": 121,
+      "playerName": "Patrick Ewing",
+      "team": "New York Knicks",
+      "teamAtMoment": "New York Knicks",
+      "playType": "Dunk",
+      "date": "1994-06-05",
+      "series": 5,
+      "tier": "L",
+      "badges": []
+    }
+  ],
+  "5695": [
+    {
+      "id": "8d8c27fc-cda6-4e08-931f-3a2be5aace02",
+      "flowId": 5695,
+      "set": "Run It Back",
+      "setId": "bbc3ca0e-e7b1-4c92-bf0d-7f4bf9b562be",
+      "setFlowId": 159,
+      "playerId": 1897,
+      "playerName": "Metta World Peace",
+      "team": "Sacramento Kings",
+      "teamAtMoment": "Sacramento Kings",
+      "playType": "Dunk",
+      "date": "2008-02-03",
+      "series": 5,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "5694": [
+    {
+      "id": "d128d75d-2078-4b80-9d7d-265f22d6803f",
+      "flowId": 5694,
+      "set": "Run It Back: Origins",
+      "setId": "344513e4-c88d-4203-871c-48b92eef3578",
+      "setFlowId": 157,
+      "playerId": 717,
+      "playerName": "Arvydas Sabonis",
+      "team": "Portland Trail Blazers",
+      "teamAtMoment": "Portland Trail Blazers",
+      "playType": "Assist",
+      "date": "1995-11-04",
+      "series": 5,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "5693": [
+    {
+      "id": "28aec597-a925-4514-bb1e-2e6095b8bf7c",
+      "flowId": 5693,
+      "set": "Run It Back: Origins",
+      "setId": "344513e4-c88d-4203-871c-48b92eef3578",
+      "setFlowId": 157,
+      "playerId": 2030,
+      "playerName": "Kenyon Martin",
+      "team": "Brooklyn Nets",
+      "teamAtMoment": "New Jersey Nets",
+      "playType": "Dunk",
+      "date": "2001-03-05",
+      "series": 5,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "5692": [
+    {
+      "id": "c79a7a24-ebef-46af-ad3e-57b1b9d9a766",
+      "flowId": 5692,
+      "set": "Run It Back: Legacies",
+      "setId": "cd14cc9f-1bef-49c6-8aed-ae479646c0fa",
+      "setFlowId": 160,
+      "playerId": 1472,
+      "playerName": "Tom Chambers",
+      "team": "Phoenix Suns",
+      "teamAtMoment": "Phoenix Suns",
+      "playType": "Dunk",
+      "date": "1989-01-28",
+      "series": 5,
+      "tier": "L",
+      "badges": []
+    }
+  ],
+  "5691": [
+    {
+      "id": "b7258591-c733-4ed2-a344-0f87668fafaf",
+      "flowId": 5691,
+      "set": "Run It Back",
+      "setId": "bbc3ca0e-e7b1-4c92-bf0d-7f4bf9b562be",
+      "setFlowId": 159,
+      "playerId": 2405,
+      "playerName": "Amar'e Stoudemire",
+      "team": "Phoenix Suns",
+      "teamAtMoment": "Phoenix Suns",
+      "playType": "Dunk",
+      "date": "2010-03-28",
+      "series": 5,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "5690": [
+    {
+      "id": "7329b564-b6e4-4cfd-a0e7-3e78eef26d4f",
+      "flowId": 5690,
+      "set": "Run It Back: Origins",
+      "setId": "344513e4-c88d-4203-871c-48b92eef3578",
+      "setFlowId": 157,
+      "playerId": 2406,
+      "playerName": "Caron Butler",
+      "team": "Miami Heat",
+      "teamAtMoment": "Miami Heat",
+      "playType": "Dunk",
+      "date": "2002-10-31",
+      "series": 5,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "5689": [
+    {
+      "id": "0c2fbf4a-f7d2-4572-8fa3-0efdfdbc9a75",
+      "flowId": 5689,
+      "set": "Run It Back: Origins",
+      "setId": "344513e4-c88d-4203-871c-48b92eef3578",
+      "setFlowId": 157,
+      "playerId": 208,
+      "playerName": "Sam Cassell",
+      "team": "Houston Rockets",
+      "teamAtMoment": "Houston Rockets",
+      "playType": "3 Pointer",
+      "date": "1994-06-12",
+      "series": 5,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "5688": [
+    {
+      "id": "ad7ead22-d03f-408d-bca6-26acc1360786",
+      "flowId": 5688,
+      "set": "Run It Back",
+      "setId": "bbc3ca0e-e7b1-4c92-bf0d-7f4bf9b562be",
+      "setFlowId": 159,
+      "playerId": 714,
+      "playerName": "Michael Finley",
+      "team": "Dallas Mavericks",
+      "teamAtMoment": "Dallas Mavericks",
+      "playType": "Dunk",
+      "date": "2001-02-21",
+      "series": 5,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "5687": [
+    {
+      "id": "8903f9cb-eba5-45f7-8887-a003d3754f18",
+      "flowId": 5687,
+      "set": "2024 WNBA Playoffs",
+      "setId": "9fcfa9e1-14b8-4a22-98b8-6fe7edbc36e1",
+      "setFlowId": 163,
+      "playerId": 1627675,
+      "playerName": "Courtney Williams",
+      "team": "Minnesota Lynx",
+      "teamAtMoment": "Minnesota Lynx",
+      "playType": "3 Pointer",
+      "date": "2024-10-09",
+      "series": 5,
+      "tier": "A",
+      "badges": []
+    }
+  ],
+  "5686": [
+    {
+      "id": "cff99355-8aee-44c6-af2c-d04914cfe9b9",
+      "flowId": 5686,
+      "set": "2024 WNBA Playoffs",
+      "setId": "9fcfa9e1-14b8-4a22-98b8-6fe7edbc36e1",
+      "setFlowId": 163,
+      "playerId": 1629567,
+      "playerName": "Natisha Hiedeman",
+      "team": "Minnesota Lynx",
+      "teamAtMoment": "Minnesota Lynx",
+      "playType": "3 Pointer",
+      "date": "2024-10-06",
+      "series": 5,
+      "tier": "A",
+      "badges": []
+    }
+  ],
+  "5685": [
+    {
+      "id": "dfeaac94-8f82-4daa-8001-56f63e806257",
+      "flowId": 5685,
+      "set": "2024 WNBA Playoffs",
+      "setId": "9fcfa9e1-14b8-4a22-98b8-6fe7edbc36e1",
+      "setFlowId": 163,
+      "playerId": 1627673,
+      "playerName": "Jonquel Jones",
+      "team": "New York Liberty",
+      "teamAtMoment": "New York Liberty",
+      "playType": "3 Pointer",
+      "date": "2024-10-01",
+      "series": 5,
+      "tier": "A",
+      "badges": []
+    }
+  ],
+  "5684": [
+    {
+      "id": "d90860c7-7669-430f-abd3-016ddf9e9f29",
+      "flowId": 5684,
+      "set": "2024 WNBA Playoffs",
+      "setId": "9fcfa9e1-14b8-4a22-98b8-6fe7edbc36e1",
+      "setFlowId": 163,
+      "playerId": 1629498,
+      "playerName": "Jackie Young",
+      "team": "Las Vegas Aces",
+      "teamAtMoment": "Las Vegas Aces",
+      "playType": "3 Pointer",
+      "date": "2024-10-05",
+      "series": 5,
+      "tier": "A",
+      "badges": []
+    }
+  ],
+  "5683": [
+    {
+      "id": "d92a4633-d9b0-4847-9ab5-e85cf91d2c99",
+      "flowId": 5683,
+      "set": "2024 WNBA Playoffs",
+      "setId": "9fcfa9e1-14b8-4a22-98b8-6fe7edbc36e1",
+      "setFlowId": 163,
+      "playerId": 203833,
+      "playerName": "Chelsea Gray",
+      "team": "Las Vegas Aces",
+      "teamAtMoment": "Las Vegas Aces",
+      "playType": "Assist",
+      "date": "2024-10-05",
+      "series": 5,
+      "tier": "A",
+      "badges": []
+    }
+  ],
+  "5682": [
+    {
+      "id": "42f2c846-a91b-4e60-a211-a1ef67b3add7",
+      "flowId": 5682,
+      "set": "2024 WNBA Playoffs",
+      "setId": "9fcfa9e1-14b8-4a22-98b8-6fe7edbc36e1",
+      "setFlowId": 163,
+      "playerId": 201886,
+      "playerName": "DeWanna Bonner",
+      "team": "Connecticut Sun",
+      "teamAtMoment": "Connecticut Sun",
+      "playType": "Layup",
+      "date": "2024-09-30",
+      "series": 5,
+      "tier": "A",
+      "badges": []
+    }
+  ],
+  "5681": [
+    {
+      "id": "f2425e7f-d4dc-4d9a-a8b6-1bf161572d88",
+      "flowId": 5681,
+      "set": "2024 WNBA Playoffs",
+      "setId": "9fcfa9e1-14b8-4a22-98b8-6fe7edbc36e1",
+      "setFlowId": 163,
+      "playerId": 1630112,
+      "playerName": "Tyasha Harris",
+      "team": "Connecticut Sun",
+      "teamAtMoment": "Connecticut Sun",
+      "playType": "3 Pointer",
+      "date": "2024-10-06",
+      "series": 5,
+      "tier": "A",
+      "badges": []
+    }
+  ],
+  "5680": [
+    {
+      "id": "d5453ab6-c640-459a-9aa6-f257b5347e01",
+      "flowId": 5680,
+      "set": "2024 WNBA Playoffs",
+      "setId": "9fcfa9e1-14b8-4a22-98b8-6fe7edbc36e1",
+      "setFlowId": 163,
+      "playerId": 203826,
+      "playerName": "Alyssa Thomas",
+      "team": "Connecticut Sun",
+      "teamAtMoment": "Connecticut Sun",
+      "playType": "Jump Shot",
+      "date": "2024-09-29",
+      "series": 5,
+      "tier": "A",
+      "badges": []
+    }
+  ],
+  "5679": [
+    {
+      "id": "a344b53e-2710-4075-bd40-f1c5a91595c9",
+      "flowId": 5679,
+      "set": "2024 WNBA Playoffs",
+      "setId": "9fcfa9e1-14b8-4a22-98b8-6fe7edbc36e1",
+      "setFlowId": 163,
+      "playerId": 203026,
+      "playerName": "Tiffany Hayes",
+      "team": "Las Vegas Aces",
+      "teamAtMoment": "Las Vegas Aces",
+      "playType": "Handles",
+      "date": "2024-10-04",
+      "series": 5,
+      "tier": "A",
+      "badges": []
+    }
+  ],
+  "5678": [
+    {
+      "id": "330addde-39d8-449b-b152-d952bca7179f",
+      "flowId": 5678,
+      "set": "2024 WNBA Playoffs",
+      "setId": "9fcfa9e1-14b8-4a22-98b8-6fe7edbc36e1",
+      "setFlowId": 163,
+      "playerId": 1628899,
+      "playerName": "Myisha Hines-Allen",
+      "team": "Minnesota Lynx",
+      "teamAtMoment": "Minnesota Lynx",
+      "playType": "Jump Shot",
+      "date": "2024-10-02",
+      "series": 5,
+      "tier": "A",
+      "badges": []
+    }
+  ],
+  "5677": [
+    {
+      "id": "e7dc6101-ed5c-422a-81b1-4764f6ebf316",
+      "flowId": 5677,
+      "set": "2024 WNBA Playoffs",
+      "setId": "9fcfa9e1-14b8-4a22-98b8-6fe7edbc36e1",
+      "setFlowId": 163,
+      "playerId": 1628932,
+      "playerName": "A'ja Wilson",
+      "team": "Las Vegas Aces",
+      "teamAtMoment": "Las Vegas Aces",
+      "playType": "Block",
+      "date": "2024-10-06",
+      "series": 5,
+      "tier": "A",
+      "badges": []
+    }
+  ],
+  "5676": [
+    {
+      "id": "11889fb1-8997-4693-8c0a-86c29c8f12e8",
+      "flowId": 5676,
+      "set": "2024 WNBA Playoffs",
+      "setId": "9fcfa9e1-14b8-4a22-98b8-6fe7edbc36e1",
+      "setFlowId": 163,
+      "playerId": 1629483,
+      "playerName": "Napheesa Collier",
+      "team": "Minnesota Lynx",
+      "teamAtMoment": "Minnesota Lynx",
+      "playType": "Layup",
+      "date": "2024-10-04",
+      "series": 5,
+      "tier": "A",
+      "badges": []
+    }
+  ],
+  "5675": [
+    {
+      "id": "04cf8220-cf1c-4e06-a651-6e399c870a85",
+      "flowId": 5675,
+      "set": "2024 WNBA Playoffs",
+      "setId": "9fcfa9e1-14b8-4a22-98b8-6fe7edbc36e1",
+      "setFlowId": 163,
+      "playerId": 1627668,
+      "playerName": "Breanna Stewart",
+      "team": "New York Liberty",
+      "teamAtMoment": "New York Liberty",
+      "playType": "3 Pointer",
+      "date": "2024-09-29",
+      "series": 5,
+      "tier": "A",
+      "badges": []
+    }
+  ],
+  "5674": [
+    {
+      "id": "c1b89097-d151-4a12-935f-154eada11ccc",
+      "flowId": 5674,
+      "set": "2024 WNBA Playoffs",
+      "setId": "9fcfa9e1-14b8-4a22-98b8-6fe7edbc36e1",
+      "setFlowId": 163,
+      "playerId": 1629497,
+      "playerName": "Marina Mabrey",
+      "team": "Connecticut Sun",
+      "teamAtMoment": "Connecticut Sun",
+      "playType": "3 Pointer",
+      "date": "2024-09-30",
+      "series": 5,
+      "tier": "A",
+      "badges": []
+    }
+  ],
+  "5673": [
+    {
+      "id": "790ab404-001a-4909-a49c-5b160ce6247f",
+      "flowId": 5673,
+      "set": "2024 WNBA Playoffs",
+      "setId": "9fcfa9e1-14b8-4a22-98b8-6fe7edbc36e1",
+      "setFlowId": 163,
+      "playerId": 1629477,
+      "playerName": "Sabrina Ionescu",
+      "team": "New York Liberty",
+      "teamAtMoment": "New York Liberty",
+      "playType": "3 Pointer",
+      "date": "2024-09-29",
+      "series": 5,
+      "tier": "A",
+      "badges": []
+    }
+  ],
   "5672": [
     {
       "id": "d158aab4-c057-47e8-9195-d7fce828b50d",

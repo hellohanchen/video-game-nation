@@ -3,6 +3,96 @@
     "name": "2024 WNBA Playoffs 5",
     "series": 5,
     "moments": {
+      "5687": {
+        "player": "Courtney Williams",
+        "team": "Minnesota Lynx",
+        "playerId": 1627675,
+        "date": "2024-10-09"
+      },
+      "5686": {
+        "player": "Natisha Hiedeman",
+        "team": "Minnesota Lynx",
+        "playerId": 1629567,
+        "date": "2024-10-06"
+      },
+      "5685": {
+        "player": "Jonquel Jones",
+        "team": "New York Liberty",
+        "playerId": 1627673,
+        "date": "2024-10-01"
+      },
+      "5684": {
+        "player": "Jackie Young",
+        "team": "Las Vegas Aces",
+        "playerId": 1629498,
+        "date": "2024-10-05"
+      },
+      "5683": {
+        "player": "Chelsea Gray",
+        "team": "Las Vegas Aces",
+        "playerId": 203833,
+        "date": "2024-10-05"
+      },
+      "5682": {
+        "player": "DeWanna Bonner",
+        "team": "Connecticut Sun",
+        "playerId": 201886,
+        "date": "2024-09-30"
+      },
+      "5681": {
+        "player": "Tyasha Harris",
+        "team": "Connecticut Sun",
+        "playerId": 1630112,
+        "date": "2024-10-06"
+      },
+      "5680": {
+        "player": "Alyssa Thomas",
+        "team": "Connecticut Sun",
+        "playerId": 203826,
+        "date": "2024-09-29"
+      },
+      "5679": {
+        "player": "Tiffany Hayes",
+        "team": "Las Vegas Aces",
+        "playerId": 203026,
+        "date": "2024-10-04"
+      },
+      "5678": {
+        "player": "Myisha Hines-Allen",
+        "team": "Minnesota Lynx",
+        "playerId": 1628899,
+        "date": "2024-10-02"
+      },
+      "5677": {
+        "player": "A'ja Wilson",
+        "team": "Las Vegas Aces",
+        "playerId": 1628932,
+        "date": "2024-10-06"
+      },
+      "5676": {
+        "player": "Napheesa Collier",
+        "team": "Minnesota Lynx",
+        "playerId": 1629483,
+        "date": "2024-10-04"
+      },
+      "5675": {
+        "player": "Breanna Stewart",
+        "team": "New York Liberty",
+        "playerId": 1627668,
+        "date": "2024-09-29"
+      },
+      "5674": {
+        "player": "Marina Mabrey",
+        "team": "Connecticut Sun",
+        "playerId": 1629497,
+        "date": "2024-09-30"
+      },
+      "5673": {
+        "player": "Sabrina Ionescu",
+        "team": "New York Liberty",
+        "playerId": 1629477,
+        "date": "2024-09-29"
+      },
       "5672": {
         "player": "Rhyne Howard",
         "team": "Atlanta Dream",
@@ -112,7 +202,7 @@
         "date": "2024-09-22"
       }
     },
-    "count": 18
+    "count": 33
   },
   "162": {
     "name": "WNBA Rookie Revelation 5",
@@ -306,6 +396,48 @@
     "name": "Run It Back: Legacies 5",
     "series": 5,
     "moments": {
+      "5717": {
+        "player": "Clyde Drexler",
+        "team": "Houston Rockets",
+        "playerId": 17,
+        "date": "1995-05-22"
+      },
+      "5710": {
+        "player": "Dikembe Mutombo",
+        "team": "Denver Nuggets",
+        "playerId": 87,
+        "date": "1994-05-07"
+      },
+      "5708": {
+        "player": "Dra\u017een Petrovi\u0107",
+        "team": "Brooklyn Nets",
+        "playerId": 77845,
+        "date": "1993-01-25"
+      },
+      "5707": {
+        "player": "Kevin Johnson",
+        "team": "Phoenix Suns",
+        "playerId": 134,
+        "date": "1994-05-15"
+      },
+      "5706": {
+        "player": "Shawn Kemp",
+        "team": "Oklahoma City Thunder",
+        "playerId": 431,
+        "date": "1992-04-30"
+      },
+      "5696": {
+        "player": "Patrick Ewing",
+        "team": "New York Knicks",
+        "playerId": 121,
+        "date": "1994-06-05"
+      },
+      "5692": {
+        "player": "Tom Chambers",
+        "team": "Phoenix Suns",
+        "playerId": 1472,
+        "date": "1989-01-28"
+      },
       "5586": {
         "player": "Brandon Roy",
         "team": "Portland Trail Blazers",
@@ -397,12 +529,84 @@
         "date": "2003-06-15"
       }
     },
-    "count": 15
+    "count": 22
   },
   "159": {
     "name": "Run It Back 5",
     "series": 5,
     "moments": {
+      "5714": {
+        "player": "Cedric Ceballos",
+        "team": "Los Angeles Lakers",
+        "playerId": 76,
+        "date": "1996-01-31"
+      },
+      "5713": {
+        "player": "Robert Pack",
+        "team": "Denver Nuggets",
+        "playerId": 123,
+        "date": "1993-01-26"
+      },
+      "5712": {
+        "player": "Latrell Sprewell",
+        "team": "New York Knicks",
+        "playerId": 84,
+        "date": "1999-06-25"
+      },
+      "5711": {
+        "player": "Carlos Boozer",
+        "team": "Utah Jazz",
+        "playerId": 2430,
+        "date": "2007-03-26"
+      },
+      "5705": {
+        "player": "Larry Johnson",
+        "team": "Charlotte Hornets",
+        "playerId": 913,
+        "date": "1995-11-30"
+      },
+      "5704": {
+        "player": "Tyson Chandler",
+        "team": "New Orleans Pelicans",
+        "playerId": 2199,
+        "date": "2008-05-05"
+      },
+      "5702": {
+        "player": "Gus Williams",
+        "team": "Oklahoma City Thunder",
+        "playerId": 78549,
+        "date": "1979-05-20"
+      },
+      "5699": {
+        "player": "Isaiah Rider",
+        "team": "Minnesota Timberwolves",
+        "playerId": 375,
+        "date": "1995-03-23"
+      },
+      "5698": {
+        "player": "Clifford Robinson",
+        "team": "Portland Trail Blazers",
+        "playerId": 361,
+        "date": "1991-12-07"
+      },
+      "5695": {
+        "player": "Metta World Peace",
+        "team": "Sacramento Kings",
+        "playerId": 1897,
+        "date": "2008-02-03"
+      },
+      "5691": {
+        "player": "Amar'e Stoudemire",
+        "team": "Phoenix Suns",
+        "playerId": 2405,
+        "date": "2010-03-28"
+      },
+      "5688": {
+        "player": "Michael Finley",
+        "team": "Dallas Mavericks",
+        "playerId": 714,
+        "date": "2001-02-21"
+      },
       "5593": {
         "player": "Isaiah Thomas",
         "team": "Boston Celtics",
@@ -554,12 +758,84 @@
         "date": "2009-04-30"
       }
     },
-    "count": 25
+    "count": 37
   },
   "157": {
     "name": "Run It Back: Origins 5",
     "series": 5,
     "moments": {
+      "5718": {
+        "player": "Dee Brown",
+        "team": "Boston Celtics",
+        "playerId": 244,
+        "date": "1991-02-09"
+      },
+      "5716": {
+        "player": "Zydrunas Ilgauskas",
+        "team": "Cleveland Cavaliers",
+        "playerId": 980,
+        "date": "1997-11-23"
+      },
+      "5715": {
+        "player": "Manu Gin\u00f3bili",
+        "team": "San Antonio Spurs",
+        "playerId": 1938,
+        "date": "2003-05-05"
+      },
+      "5709": {
+        "player": "Kevin Love",
+        "team": "Minnesota Timberwolves",
+        "playerId": 201567,
+        "date": "2009-01-26"
+      },
+      "5703": {
+        "player": "Vlade Divac",
+        "team": "Los Angeles Lakers",
+        "playerId": 124,
+        "date": "1990-02-03"
+      },
+      "5701": {
+        "player": "Mitch Richmond",
+        "team": "Golden State Warriors",
+        "playerId": 782,
+        "date": "1989-05-02"
+      },
+      "5700": {
+        "player": "Sam Perkins",
+        "team": "Dallas Mavericks",
+        "playerId": 64,
+        "date": "1985-04-19"
+      },
+      "5697": {
+        "player": "Kyle Lowry",
+        "team": "Memphis Grizzlies",
+        "playerId": 200768,
+        "date": "2006-11-21"
+      },
+      "5694": {
+        "player": "Arvydas Sabonis",
+        "team": "Portland Trail Blazers",
+        "playerId": 717,
+        "date": "1995-11-04"
+      },
+      "5693": {
+        "player": "Kenyon Martin",
+        "team": "Brooklyn Nets",
+        "playerId": 2030,
+        "date": "2001-03-05"
+      },
+      "5690": {
+        "player": "Caron Butler",
+        "team": "Miami Heat",
+        "playerId": 2406,
+        "date": "2002-10-31"
+      },
+      "5689": {
+        "player": "Sam Cassell",
+        "team": "Houston Rockets",
+        "playerId": 208,
+        "date": "1994-06-12"
+      },
       "5594": {
         "player": "Mark Jackson",
         "team": "New York Knicks",
@@ -711,7 +987,7 @@
         "date": "2001-12-07"
       }
     },
-    "count": 25
+    "count": 37
   },
   "154": {
     "name": "Season Rewind: Signature Victory 5",

@@ -19,6 +19,7 @@ historical_teams = {
     "New Jersey Nets": "Brooklyn Nets",
     "Los Angeles Clippers": "LA Clippers",
     "New Orleans/Oklahoma City Hornets": "New Orleans Pelicans",
+    "New Orleans Hornets": "New Orleans Pelicans",
     "Washington Bullets": "Washington Wizards"
 }
 
