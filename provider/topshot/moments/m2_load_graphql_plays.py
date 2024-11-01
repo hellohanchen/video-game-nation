@@ -3,7 +3,6 @@ import json
 import os
 import pathlib
 
-from constants import NBA_TEAM_NAME_IDS
 from provider.topshot.graphql.get_set_plays import get_set_plays
 
 TIER_MAP = {
@@ -21,9 +20,9 @@ historical_teams = {
     "New Jersey Nets": "Brooklyn Nets",
     "Los Angeles Clippers": "LA Clippers",
     "New Orleans/Oklahoma City Hornets": "New Orleans Pelicans",
-    "Washington Bullets": "Washington Wizards"
+    "Washington Bullets": "Washington Wizards",
+    "Vancouver Grizzlies": "Memphis Grizzlies"
 }
-
 
 def load_set_plays():
     with open(os.path.join(pathlib.Path(__file__).parent.resolve(), "resource/s5_sets.json"), 'r') as set_file:

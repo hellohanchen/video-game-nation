@@ -1,4 +1,197 @@
 {
+  "5770": {
+    "168": {
+      "playerId": 1626145,
+      "playType": "Steal",
+      "tier": "Rare",
+      "badges": [],
+      "teamId": 1610612756
+    }
+  },
+  "5769": {
+    "168": {
+      "playerId": 202691,
+      "playType": "3 Pointer",
+      "tier": "Rare",
+      "badges": [],
+      "teamId": 1610612742
+    }
+  },
+  "5768": {
+    "168": {
+      "playerId": 201942,
+      "playType": "Layup",
+      "tier": "Rare",
+      "badges": [],
+      "teamId": 1610612758
+    }
+  },
+  "5767": {
+    "168": {
+      "playerId": 1627884,
+      "playType": "Dunk",
+      "tier": "Rare",
+      "badges": [],
+      "teamId": 1610612746
+    }
+  },
+  "5766": {
+    "168": {
+      "playerId": 1630166,
+      "playType": "Layup",
+      "tier": "Unknown",
+      "badges": [],
+      "teamId": 1610612757
+    }
+  },
+  "5765": {
+    "168": {
+      "playerId": 1627936,
+      "playType": "Hustle",
+      "tier": "Rare",
+      "badges": [],
+      "teamId": 1610612760
+    }
+  },
+  "5764": {
+    "168": {
+      "playerId": 1627741,
+      "playType": "3 Pointer",
+      "tier": "Rare",
+      "badges": [],
+      "teamId": 1610612744
+    }
+  },
+  "5763": {
+    "168": {
+      "playerId": 101108,
+      "playType": "Assist",
+      "tier": "Rare",
+      "badges": [],
+      "teamId": 1610612759
+    }
+  },
+  "5762": {
+    "168": {
+      "playerId": 1626157,
+      "playType": "Hook Shot",
+      "tier": "Rare",
+      "badges": [],
+      "teamId": 1610612752
+    }
+  },
+  "5761": {
+    "168": {
+      "playerId": 1627749,
+      "playType": "Assist",
+      "tier": "Rare",
+      "badges": [],
+      "teamId": 1610612740
+    }
+  },
+  "5760": {
+    "168": {
+      "playerId": 1628969,
+      "playType": "3 Pointer",
+      "tier": "Rare",
+      "badges": [],
+      "teamId": 1610612752
+    }
+  },
+  "5759": {
+    "164": {
+      "playerId": 1641737,
+      "playType": "Layup",
+      "tier": "Common",
+      "badges": [
+        "RP",
+        "RY",
+        "RM",
+        "TSD"
+      ],
+      "teamId": 1610612755
+    }
+  },
+  "5758": {
+    "164": {
+      "playerId": 1641796,
+      "playType": "Layup",
+      "tier": "Common",
+      "badges": [
+        "RP",
+        "RY",
+        "RM",
+        "TSD"
+      ],
+      "teamId": 1610612748
+    }
+  },
+  "5757": {
+    "168": {
+      "playerId": 203944,
+      "playType": "3 Pointer",
+      "tier": "Unknown",
+      "badges": [],
+      "teamId": 1610612750
+    }
+  },
+  "5756": {
+    "168": {
+      "playerId": 1628978,
+      "playType": "Steal",
+      "tier": "Unknown",
+      "badges": [],
+      "teamId": 1610612750
+    }
+  },
+  "5755": {
+    "164": {
+      "playerId": 1642359,
+      "playType": "3 Pointer",
+      "tier": "Common",
+      "badges": [
+        "RP",
+        "RY",
+        "RM",
+        "TSD"
+      ],
+      "teamId": 1610612752
+    }
+  },
+  "5754": {
+    "164": {
+      "playerId": 1642278,
+      "playType": "3 Pointer",
+      "tier": "Common",
+      "badges": [
+        "RP",
+        "RY",
+        "RM",
+        "TSD"
+      ],
+      "teamId": 1610612752
+    }
+  },
+  "5753": {
+    "168": {
+      "playerId": 1630700,
+      "playType": "Layup",
+      "tier": "Unknown",
+      "badges": [],
+      "teamId": 1610612737
+    }
+  },
+  "5751": {
+    "167": {
+      "playerId": 1628369,
+      "playType": "3 Pointer",
+      "tier": "Fandom",
+      "badges": [
+        "CR"
+      ],
+      "teamId": 1610612738
+    }
+  },
   "5738": {
     "166": {
       "playerId": 2544,
@@ -13,7 +206,11 @@
       "playerId": 2544,
       "playType": "Reel",
       "tier": "Ultimate",
-      "badges": [],
+      "badges": [
+        "ROY",
+        "RY",
+        "RP"
+      ],
       "teamId": 1610612739
     }
   },
@@ -23,6 +220,7 @@
       "playType": "Play Coming Soon",
       "tier": "Common",
       "badges": [
+        "RP",
         "RY",
         "RM",
         "TSD"
@@ -62,6 +260,7 @@
       "playType": "Jump Shot",
       "tier": "Common",
       "badges": [
+        "RP",
         "RY",
         "RM",
         "TSD"
@@ -88,6 +287,7 @@
       "playType": "Play Coming Soon",
       "tier": "Common",
       "badges": [
+        "RP",
         "RY",
         "RM",
         "TSD"
@@ -101,6 +301,7 @@
       "playType": "Play Coming Soon",
       "tier": "Common",
       "badges": [
+        "RP",
         "RY",
         "RM",
         "TSD"
@@ -114,6 +315,7 @@
       "playType": "Play Coming Soon",
       "tier": "Common",
       "badges": [
+        "RP",
         "RY",
         "RM",
         "TSD"
@@ -140,6 +342,7 @@
       "playType": "Play Coming Soon",
       "tier": "Common",
       "badges": [
+        "RP",
         "RY",
         "RM",
         "TSD"
@@ -192,6 +395,7 @@
       "playType": "Play Coming Soon",
       "tier": "Common",
       "badges": [
+        "RP",
         "RY",
         "RM",
         "TSD"
@@ -205,6 +409,7 @@
       "playType": "3 Pointer",
       "tier": "Common",
       "badges": [
+        "RP",
         "RY",
         "RM",
         "TSD"
@@ -218,6 +423,7 @@
       "playType": "Play Coming Soon",
       "tier": "Common",
       "badges": [
+        "RP",
         "RY",
         "RM",
         "TSD"
@@ -231,6 +437,7 @@
       "playType": "Play Coming Soon",
       "tier": "Common",
       "badges": [
+        "RP",
         "RY",
         "RM",
         "TSD"
@@ -244,6 +451,7 @@
       "playType": "3 Pointer",
       "tier": "Common",
       "badges": [
+        "RP",
         "RY",
         "RM",
         "TSD"

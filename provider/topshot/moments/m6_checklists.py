@@ -2,7 +2,7 @@ import json
 import os
 import pathlib
 
-historic_sets = [129, 123, 121, 120, 119, 117, 114, 109, 100, 89, 84, 83, 82,
+historic_sets = [165, 160, 159, 157, 129, 123, 121, 120, 119, 117, 114, 109, 100, 89, 84, 83, 82,
                  76, 75, 74, 72, 71, 61, 57, 49, 48, 47, 46, 25]
 
 excluded_teams = [
@@ -49,7 +49,7 @@ def group_play_to_checklists():
                 }
                 set_checklists[set_id]['count'] = len(set_checklists[set_id]['moments'])
 
-                if series > 4:
+                if series > 5:
                     continue
 
                 if player_name == team or team in excluded_teams:
@@ -108,7 +108,7 @@ def group_play_to_checklists():
                 team = moment['team']
                 player_name = moment['playerName']
 
-                if series > 4:
+                if series > 5:
                     continue
 
                 if player_name == team or team in excluded_teams:

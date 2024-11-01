@@ -87,10 +87,6 @@
     "homeTeam": "CLE",
     "awayTeam": "IND"
   },
-  "0012400025": {
-    "homeTeam": "MIA",
-    "awayTeam": "ATL"
-  },
   "0012400026": {
     "homeTeam": "DAL",
     "awayTeam": "UTA"
@@ -102,10 +98,6 @@
   "0012400028": {
     "homeTeam": "MIL",
     "awayTeam": "LAL"
-  },
-  "0012400030": {
-    "homeTeam": "ORL",
-    "awayTeam": "NOP"
   },
   "0012400031": {
     "homeTeam": "WAS",
@@ -211,6 +203,10 @@
     "homeTeam": "LAL",
     "awayTeam": "GSW"
   },
+  "0012400025": {
+    "homeTeam": "MIA",
+    "awayTeam": "ATL"
+  },
   "0012400057": {
     "homeTeam": "DET",
     "awayTeam": "CLE"
@@ -247,6 +243,10 @@
     "homeTeam": "LAC",
     "awayTeam": "SAC"
   },
+  "0012400072": {
+    "homeTeam": "MIN",
+    "awayTeam": "DEN"
+  },
   "0012400067": {
     "homeTeam": "ORL",
     "awayTeam": "PHI"
@@ -266,10 +266,6 @@
   "0012400071": {
     "homeTeam": "MEM",
     "awayTeam": "MIA"
-  },
-  "0012400072": {
-    "homeTeam": "MIN",
-    "awayTeam": "DEN"
   },
   "0012400073": {
     "homeTeam": "POR",

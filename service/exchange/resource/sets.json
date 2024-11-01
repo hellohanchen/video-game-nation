@@ -181,14 +181,17 @@
       }
     },
     "Series 24-25": {
-      "count": 3,
+      "count": 5,
       "tiers": {
         "Common": {
           "164": "Rookie Debut"
         },
-        "Fandom": {},
+        "Fandom": {
+          "167": "Metallic Silver"
+        },
         "Rare": {
-          "166": "Metallic Gold LE"
+          "166": "Metallic Gold LE",
+          "168": "Fresh Threads"
         },
         "Legendary": {
           "165": "Supernova"
