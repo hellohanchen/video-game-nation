@@ -98,7 +98,7 @@
           "isCombine": true,
           "buckets": [
             {
-              "stats": "OREB",
+              "stats": "ORB",
               "target": 10,
               "order": "DESC"
             },
