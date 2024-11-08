@@ -51,7 +51,7 @@ def load_challenges():
 
 
 CHALLENGE_PROVIDER = ChallengeProvider()
-CHANNEL_NAMEs = ["⚡-fc-tracker"]
+CHANNEL_NAMEs = []  # ["⚡-fc-tracker"]
 TS_CHANNEL_ID = 924447554480013343
 ADMIN_CHANNEL_ID = 1097055938441130004
 
