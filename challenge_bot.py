@@ -75,10 +75,6 @@ async def on_ready():
 
             if channel.id == TS_CHANNEL_ID:
                 CHALLENGE_CHANNELS.append(channel)
-
-                view = MainPage(DYNAMIC_LINEUP_SERVICE)
-                message = await channel.send(f"Track your fastbreak here!", view=view)
-                FB_CHANNEL_MESSAGES.append(message)
                 continue
 
             if channel.id == ADMIN_CHANNEL_ID:
@@ -89,11 +85,6 @@ async def on_ready():
                 await purge_channel(channel)
                 CHALLENGE_CHANNELS.append(channel)
 
-                view = MainPage(DYNAMIC_LINEUP_SERVICE)
-                message = await channel.send(f"Track your fastbreak here!", view=view)
-                FB_CHANNEL_MESSAGES.append(message)
-
-    update_fastbreak.start()
     update_challenges.start()
     STARTED = False
 

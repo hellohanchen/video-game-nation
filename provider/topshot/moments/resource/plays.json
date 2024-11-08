@@ -1,4 +1,742 @@
 {
+  "5811": [
+    {
+      "id": "b726cba9-e172-4f77-9976-0e36df07399a",
+      "flowId": 5811,
+      "set": "Fresh Threads",
+      "setId": "3b742784-7a8d-4b43-9dc8-b33c1be841b3",
+      "setFlowId": 168,
+      "playerId": 1630230,
+      "playerName": "Naji Marshall",
+      "team": "Dallas Mavericks",
+      "teamAtMoment": "Dallas Mavericks",
+      "playType": "Assist",
+      "date": "2024-10-24",
+      "series": 6,
+      "tier": "A",
+      "badges": []
+    }
+  ],
+  "5810": [
+    {
+      "id": "52d49412-d9c8-474e-8677-0c52f3adbaba",
+      "flowId": 5810,
+      "set": "Denied!",
+      "setId": "a59e2336-b33a-4eef-84fd-745d7a915a9b",
+      "setFlowId": 173,
+      "playerId": 1628401,
+      "playerName": "Derrick White",
+      "team": "Boston Celtics",
+      "teamAtMoment": "Boston Celtics",
+      "playType": "Block",
+      "date": "2024-10-26",
+      "series": 6,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "5809": [
+    {
+      "id": "e62fc1d4-a6ee-4f78-929e-9d8cb1e76075",
+      "flowId": 5809,
+      "set": "Base Set",
+      "setId": "b03de2ea-716d-42a9-8eb4-369a9b15a416",
+      "setFlowId": 171,
+      "playerId": 1630224,
+      "playerName": "Jalen Green",
+      "team": "Houston Rockets",
+      "teamAtMoment": "Houston Rockets",
+      "playType": "Dunk",
+      "date": "2024-10-29",
+      "series": 6,
+      "tier": "C",
+      "badges": []
+    }
+  ],
+  "5808": [
+    {
+      "id": "97f448b0-6d29-4380-abc6-1920d7841150",
+      "flowId": 5808,
+      "set": "Fresh Threads",
+      "setId": "3b742784-7a8d-4b43-9dc8-b33c1be841b3",
+      "setFlowId": 168,
+      "playerId": 203937,
+      "playerName": "Kyle Anderson",
+      "team": "Golden State Warriors",
+      "teamAtMoment": "Golden State Warriors",
+      "playType": "Layup",
+      "date": "2024-10-24",
+      "series": 6,
+      "tier": "A",
+      "badges": []
+    }
+  ],
+  "5807": [
+    {
+      "id": "83ce1e01-6193-4517-8685-639998fa78d1",
+      "flowId": 5807,
+      "set": "Base Set",
+      "setId": "b03de2ea-716d-42a9-8eb4-369a9b15a416",
+      "setFlowId": 171,
+      "playerId": 1626172,
+      "playerName": "Kevon Looney",
+      "team": "Golden State Warriors",
+      "teamAtMoment": "Golden State Warriors",
+      "playType": "Steal",
+      "date": "2024-10-28",
+      "series": 6,
+      "tier": "C",
+      "badges": []
+    }
+  ],
+  "5806": [
+    {
+      "id": "3eb4d960-1199-4ffa-83a0-23c59b6240a2",
+      "flowId": 5806,
+      "set": "Fresh Threads",
+      "setId": "3b742784-7a8d-4b43-9dc8-b33c1be841b3",
+      "setFlowId": 168,
+      "playerId": 202699,
+      "playerName": "Tobias Harris",
+      "team": "Detroit Pistons",
+      "teamAtMoment": "Detroit Pistons",
+      "playType": "Dunk",
+      "date": "2024-10-23",
+      "series": 6,
+      "tier": "A",
+      "badges": []
+    }
+  ],
+  "5805": [
+    {
+      "id": "dd436058-1cee-43f0-8013-1e0ef4e1301c",
+      "flowId": 5805,
+      "set": "Metallic Gold LE",
+      "setId": "d2d782e7-9e59-4f86-9d53-bcf6e18ca225",
+      "setFlowId": 166,
+      "playerId": 1630560,
+      "playerName": "Cam Thomas",
+      "team": "Brooklyn Nets",
+      "teamAtMoment": "Brooklyn Nets",
+      "playType": "3 Pointer",
+      "date": "2024-11-01",
+      "series": 6,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "5804": [
+    {
+      "id": "b7d4bbf9-ff27-4a1c-9613-f966f98f099c",
+      "flowId": 5804,
+      "set": "Metallic Gold LE",
+      "setId": "d2d782e7-9e59-4f86-9d53-bcf6e18ca225",
+      "setFlowId": 166,
+      "playerId": 1629630,
+      "playerName": "Ja Morant",
+      "team": "Memphis Grizzlies",
+      "teamAtMoment": "Memphis Grizzlies",
+      "playType": "Reel",
+      "date": "2024-11-01",
+      "series": 6,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "5803": [
+    {
+      "id": "cf9336b5-3767-4adf-8061-ba1305ab8163",
+      "flowId": 5803,
+      "set": "Holo Icon",
+      "setId": "4be7cade-75ed-4562-bd8f-a7c0e9997b66",
+      "setFlowId": 169,
+      "playerId": 1627783,
+      "playerName": "Pascal Siakam",
+      "team": "Indiana Pacers",
+      "teamAtMoment": "Indiana Pacers",
+      "playType": "3 Pointer",
+      "date": "2024-10-30",
+      "series": 6,
+      "tier": "L",
+      "badges": []
+    }
+  ],
+  "5802": [
+    {
+      "id": "25670ae9-cd4d-4824-a5da-f690c5ea5a32",
+      "flowId": 5802,
+      "set": "Fresh Threads",
+      "setId": "3b742784-7a8d-4b43-9dc8-b33c1be841b3",
+      "setFlowId": 168,
+      "playerId": 1627824,
+      "playerName": "Guerschon Yabusele",
+      "team": "Philadelphia 76ers",
+      "teamAtMoment": "Philadelphia 76ers",
+      "playType": "3 Pointer",
+      "date": "2024-10-23",
+      "series": 6,
+      "tier": "A",
+      "badges": []
+    }
+  ],
+  "5801": [
+    {
+      "id": "cc971b46-093c-498f-8c28-477e353f4f49",
+      "flowId": 5801,
+      "set": "Fresh Threads",
+      "setId": "3b742784-7a8d-4b43-9dc8-b33c1be841b3",
+      "setFlowId": 168,
+      "playerId": 1629001,
+      "playerName": "De'Anthony Melton",
+      "team": "Golden State Warriors",
+      "teamAtMoment": "Golden State Warriors",
+      "playType": "Assist",
+      "date": "2024-10-23",
+      "series": 6,
+      "tier": "A",
+      "badges": []
+    }
+  ],
+  "5800": [
+    {
+      "id": "8ae0b822-15dc-4fcd-8b31-c913b7e7b7c9",
+      "flowId": 5800,
+      "set": "Fresh Threads",
+      "setId": "3b742784-7a8d-4b43-9dc8-b33c1be841b3",
+      "setFlowId": 168,
+      "playerId": 202685,
+      "playerName": "Jonas Valan\u010di\u016bnas",
+      "team": "Washington Wizards",
+      "teamAtMoment": "Washington Wizards",
+      "playType": "Dunk",
+      "date": "2024-10-24",
+      "series": 6,
+      "tier": "A",
+      "badges": []
+    }
+  ],
+  "5799": [
+    {
+      "id": "9fedcaaf-6fa9-4311-9f01-06aa95de9fe9",
+      "flowId": 5799,
+      "set": "Fresh Threads",
+      "setId": "3b742784-7a8d-4b43-9dc8-b33c1be841b3",
+      "setFlowId": 168,
+      "playerId": 1628464,
+      "playerName": "Daniel Theis",
+      "team": "New Orleans Pelicans",
+      "teamAtMoment": "New Orleans Pelicans",
+      "playType": "Block",
+      "date": "2024-10-24",
+      "series": 6,
+      "tier": "A",
+      "badges": []
+    }
+  ],
+  "5798": [
+    {
+      "id": "4cd5db69-193d-4f23-8214-4e00691f9d7f",
+      "flowId": 5798,
+      "set": "Fresh Threads",
+      "setId": "3b742784-7a8d-4b43-9dc8-b33c1be841b3",
+      "setFlowId": 168,
+      "playerId": 1628997,
+      "playerName": "Caleb Martin",
+      "team": "Philadelphia 76ers",
+      "teamAtMoment": "Philadelphia 76ers",
+      "playType": "Assist",
+      "date": "2024-10-23",
+      "series": 6,
+      "tier": "A",
+      "badges": []
+    }
+  ],
+  "5797": [
+    {
+      "id": "3e61dc94-ea9a-4037-b8c6-7ba598d979a7",
+      "flowId": 5797,
+      "set": "Fresh Threads",
+      "setId": "3b742784-7a8d-4b43-9dc8-b33c1be841b3",
+      "setFlowId": 168,
+      "playerId": 1629750,
+      "playerName": "Javonte Green",
+      "team": "New Orleans Pelicans",
+      "teamAtMoment": "New Orleans Pelicans",
+      "playType": "Steal",
+      "date": "2024-10-24",
+      "series": 6,
+      "tier": "A",
+      "badges": []
+    }
+  ],
+  "5796": [
+    {
+      "id": "8f6b0114-0c2b-4b98-83a9-5daddc9d54ef",
+      "flowId": 5796,
+      "set": "Base Set",
+      "setId": "b03de2ea-716d-42a9-8eb4-369a9b15a416",
+      "setFlowId": 171,
+      "playerId": 1629632,
+      "playerName": "Coby White",
+      "team": "Chicago Bulls",
+      "teamAtMoment": "Chicago Bulls",
+      "playType": "3 Pointer",
+      "date": "2024-10-26",
+      "series": 6,
+      "tier": "C",
+      "badges": []
+    }
+  ],
+  "5795": [
+    {
+      "id": "45e70a93-0492-49b2-a06b-866f39cb054d",
+      "flowId": 5795,
+      "set": "For The Win",
+      "setId": "50ee90b1-a36c-4f35-b23e-247a8225d895",
+      "setFlowId": 170,
+      "playerId": 1627742,
+      "playerName": "Brandon Ingram",
+      "team": "New Orleans Pelicans",
+      "teamAtMoment": "New Orleans Pelicans",
+      "playType": "Jump Shot",
+      "date": "2024-10-25",
+      "series": 6,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "5794": [
+    {
+      "id": "c425f97d-fb41-4b42-86f6-bb388cd5a0a2",
+      "flowId": 5794,
+      "set": "Fresh Threads",
+      "setId": "3b742784-7a8d-4b43-9dc8-b33c1be841b3",
+      "setFlowId": 168,
+      "playerId": 1630581,
+      "playerName": "Josh Giddey",
+      "team": "Chicago Bulls",
+      "teamAtMoment": "Chicago Bulls",
+      "playType": "Assist",
+      "date": "2024-10-24",
+      "series": 6,
+      "tier": "A",
+      "badges": []
+    }
+  ],
+  "5793": [
+    {
+      "id": "e149f600-09af-45a9-96e0-40c57980d865",
+      "flowId": 5793,
+      "set": "Fresh Threads",
+      "setId": "3b742784-7a8d-4b43-9dc8-b33c1be841b3",
+      "setFlowId": 168,
+      "playerId": 203500,
+      "playerName": "Steven Adams",
+      "team": "Houston Rockets",
+      "teamAtMoment": "Houston Rockets",
+      "playType": "Layup",
+      "date": "2024-10-29",
+      "series": 6,
+      "tier": "A",
+      "badges": []
+    }
+  ],
+  "5792": [
+    {
+      "id": "7af4c2bd-9c7d-4e94-9e88-b0cf74ebf629",
+      "flowId": 5792,
+      "set": "Metallic Gold LE",
+      "setId": "d2d782e7-9e59-4f86-9d53-bcf6e18ca225",
+      "setFlowId": 166,
+      "playerId": 1627750,
+      "playerName": "Jamal Murray",
+      "team": "Denver Nuggets",
+      "teamAtMoment": "Denver Nuggets",
+      "playType": "Layup",
+      "date": "2024-10-28",
+      "series": 6,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "5791": [
+    {
+      "id": "da3fa761-5b98-460c-95ba-0c6dc2601ea5",
+      "flowId": 5791,
+      "set": "Base Set",
+      "setId": "b03de2ea-716d-42a9-8eb4-369a9b15a416",
+      "setFlowId": 171,
+      "playerId": 1630590,
+      "playerName": "Scotty Pippen Jr.",
+      "team": "Memphis Grizzlies",
+      "teamAtMoment": "Memphis Grizzlies",
+      "playType": "3 Pointer",
+      "date": "2024-10-27",
+      "series": 6,
+      "tier": "C",
+      "badges": []
+    }
+  ],
+  "5790": [
+    {
+      "id": "9eb265c3-c618-4c21-90fa-a355a8fd2e41",
+      "flowId": 5790,
+      "set": "Fresh Threads",
+      "setId": "3b742784-7a8d-4b43-9dc8-b33c1be841b3",
+      "setFlowId": 168,
+      "playerId": 1627739,
+      "playerName": "Kris Dunn",
+      "team": "LA Clippers",
+      "teamAtMoment": "LA Clippers",
+      "playType": "Steal",
+      "date": "2024-10-24",
+      "series": 6,
+      "tier": "A",
+      "badges": []
+    }
+  ],
+  "5789": [
+    {
+      "id": "a43c68ce-1d8b-415d-91de-1ceac6f1ae8a",
+      "flowId": 5789,
+      "set": "Holo Icon",
+      "setId": "4be7cade-75ed-4562-bd8f-a7c0e9997b66",
+      "setFlowId": 169,
+      "playerId": 1631094,
+      "playerName": "Paolo Banchero",
+      "team": "Orlando Magic",
+      "teamAtMoment": "Orlando Magic",
+      "playType": "Reel",
+      "date": "2024-10-28",
+      "series": 6,
+      "tier": "L",
+      "badges": []
+    }
+  ],
+  "5788": [
+    {
+      "id": "dd11ce68-300a-43ae-b035-456bb6315f5e",
+      "flowId": 5788,
+      "set": "Throwdowns",
+      "setId": "320dc787-059d-4173-9d16-57cd9b8ad765",
+      "setFlowId": 172,
+      "playerId": 1630643,
+      "playerName": "Jay Huff",
+      "team": "Memphis Grizzlies",
+      "teamAtMoment": "Memphis Grizzlies",
+      "playType": "Dunk",
+      "date": "2024-10-27",
+      "series": 6,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "5787": [
+    {
+      "id": "dac04bf7-71c2-4a8e-bdea-9ef1ed4e655a",
+      "flowId": 5787,
+      "set": "Denied!",
+      "setId": "a59e2336-b33a-4eef-84fd-745d7a915a9b",
+      "setFlowId": 173,
+      "playerId": 203076,
+      "playerName": "Anthony Davis",
+      "team": "Los Angeles Lakers",
+      "teamAtMoment": "Los Angeles Lakers",
+      "playType": "Block",
+      "date": "2024-10-23",
+      "series": 6,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "5786": [
+    {
+      "id": "63707147-da42-470a-b53c-f972f1d18aeb",
+      "flowId": 5786,
+      "set": "Throwdowns",
+      "setId": "320dc787-059d-4173-9d16-57cd9b8ad765",
+      "setFlowId": 172,
+      "playerId": 1641717,
+      "playerName": "Cason Wallace",
+      "team": "Oklahoma City Thunder",
+      "teamAtMoment": "Oklahoma City Thunder",
+      "playType": "Dunk",
+      "date": "2024-10-27",
+      "series": 6,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "5785": [
+    {
+      "id": "c11718d3-c242-4684-bade-f2c4716c99c5",
+      "flowId": 5785,
+      "set": "Fresh Threads",
+      "setId": "3b742784-7a8d-4b43-9dc8-b33c1be841b3",
+      "setFlowId": 168,
+      "playerId": 1630533,
+      "playerName": "Ziaire Williams",
+      "team": "Brooklyn Nets",
+      "teamAtMoment": "Brooklyn Nets",
+      "playType": "3 Pointer",
+      "date": "2024-10-23",
+      "series": 6,
+      "tier": "A",
+      "badges": []
+    }
+  ],
+  "5784": [
+    {
+      "id": "7071c90a-4197-4fe4-9bf3-6df75ec9689e",
+      "flowId": 5784,
+      "set": "Fresh Threads",
+      "setId": "3b742784-7a8d-4b43-9dc8-b33c1be841b3",
+      "setFlowId": 168,
+      "playerId": 1626204,
+      "playerName": "Larry Nance Jr.",
+      "team": "Atlanta Hawks",
+      "teamAtMoment": "Atlanta Hawks",
+      "playType": "Assist",
+      "date": "2024-10-28",
+      "series": 6,
+      "tier": "A",
+      "badges": []
+    }
+  ],
+  "5783": [
+    {
+      "id": "8033701e-293d-4b9e-a46d-ac57c6440645",
+      "flowId": 5783,
+      "set": "Fresh Threads",
+      "setId": "3b742784-7a8d-4b43-9dc8-b33c1be841b3",
+      "setFlowId": 168,
+      "playerId": 1630182,
+      "playerName": "Josh Green",
+      "team": "Charlotte Hornets",
+      "teamAtMoment": "Charlotte Hornets",
+      "playType": "Layup",
+      "date": "2024-10-25",
+      "series": 6,
+      "tier": "A",
+      "badges": []
+    }
+  ],
+  "5782": [
+    {
+      "id": "fdf7c1b5-8964-4bc5-9bda-b7fd3dec28a9",
+      "flowId": 5782,
+      "set": "Fresh Threads",
+      "setId": "3b742784-7a8d-4b43-9dc8-b33c1be841b3",
+      "setFlowId": 168,
+      "playerId": 203084,
+      "playerName": "Harrison Barnes",
+      "team": "San Antonio Spurs",
+      "teamAtMoment": "San Antonio Spurs",
+      "playType": "Floater",
+      "date": "2024-10-24",
+      "series": 6,
+      "tier": "A",
+      "badges": []
+    }
+  ],
+  "5781": [
+    {
+      "id": "5782cc57-1b89-4064-8cb6-4b81e2731010",
+      "flowId": 5781,
+      "set": "Fresh Threads",
+      "setId": "3b742784-7a8d-4b43-9dc8-b33c1be841b3",
+      "setFlowId": 168,
+      "playerId": 1629018,
+      "playerName": "Gary Trent Jr.",
+      "team": "Milwaukee Bucks",
+      "teamAtMoment": "Milwaukee Bucks",
+      "playType": "Layup",
+      "date": "2024-10-23",
+      "series": 6,
+      "tier": "A",
+      "badges": []
+    }
+  ],
+  "5780": [
+    {
+      "id": "ebeb550c-92fd-42ad-be15-c624b86fd711",
+      "flowId": 5780,
+      "set": "Fresh Threads",
+      "setId": "3b742784-7a8d-4b43-9dc8-b33c1be841b3",
+      "setFlowId": 168,
+      "playerId": 1626166,
+      "playerName": "Cameron Payne",
+      "team": "New York Knicks",
+      "teamAtMoment": "New York Knicks",
+      "playType": "3 Pointer",
+      "date": "2024-10-22",
+      "series": 6,
+      "tier": "A",
+      "badges": []
+    }
+  ],
+  "5779": [
+    {
+      "id": "82a7c6d9-9182-4554-8f38-8820802e8162",
+      "flowId": 5779,
+      "set": "Fresh Threads",
+      "setId": "3b742784-7a8d-4b43-9dc8-b33c1be841b3",
+      "setFlowId": 168,
+      "playerId": 203486,
+      "playerName": "Mason Plumlee",
+      "team": "Phoenix Suns",
+      "teamAtMoment": "Phoenix Suns",
+      "playType": "Block",
+      "date": "2024-10-24",
+      "series": 6,
+      "tier": "A",
+      "badges": []
+    }
+  ],
+  "5778": [
+    {
+      "id": "0820c230-6da7-493b-a15c-6e2b8d45c0cd",
+      "flowId": 5778,
+      "set": "Fresh Threads",
+      "setId": "3b742784-7a8d-4b43-9dc8-b33c1be841b3",
+      "setFlowId": 168,
+      "playerId": 1630558,
+      "playerName": "Davion Mitchell",
+      "team": "Toronto Raptors",
+      "teamAtMoment": "Toronto Raptors",
+      "playType": "Jump Shot",
+      "date": "2024-10-23",
+      "series": 6,
+      "tier": "A",
+      "badges": []
+    }
+  ],
+  "5777": [
+    {
+      "id": "b20ede80-395a-455a-ba55-3f53ec7b81c2",
+      "flowId": 5777,
+      "set": "Fresh Threads",
+      "setId": "3b742784-7a8d-4b43-9dc8-b33c1be841b3",
+      "setFlowId": 168,
+      "playerId": 201566,
+      "playerName": "Russell Westbrook",
+      "team": "Denver Nuggets",
+      "teamAtMoment": "Denver Nuggets",
+      "playType": "Block",
+      "date": "2024-10-25",
+      "series": 6,
+      "tier": "A",
+      "badges": []
+    }
+  ],
+  "5776": [
+    {
+      "id": "41940449-27e6-4e58-96e6-3584300a08fd",
+      "flowId": 5776,
+      "set": "Fresh Threads",
+      "setId": "3b742784-7a8d-4b43-9dc8-b33c1be841b3",
+      "setFlowId": 168,
+      "playerId": 203484,
+      "playerName": "Kentavious Caldwell-Pope",
+      "team": "Orlando Magic",
+      "teamAtMoment": "Orlando Magic",
+      "playType": "Block",
+      "date": "2024-10-23",
+      "series": 6,
+      "tier": "A",
+      "badges": []
+    }
+  ],
+  "5775": [
+    {
+      "id": "5a65b14f-1360-4f7b-9c34-b3738f467b9a",
+      "flowId": 5775,
+      "set": "Rookie Debut",
+      "setId": "22a4cd21-ea46-4861-8139-848a17c21047",
+      "setFlowId": 164,
+      "playerId": 1641890,
+      "playerName": "Tyler Smith",
+      "team": "Milwaukee Bucks",
+      "teamAtMoment": "Milwaukee Bucks",
+      "playType": "3 Pointer",
+      "date": "2024-10-23",
+      "series": 6,
+      "tier": "C",
+      "badges": []
+    }
+  ],
+  "5774": [
+    {
+      "id": "3a87b255-785a-47e9-955a-7a8f502406fc",
+      "flowId": 5774,
+      "set": "Throwdowns",
+      "setId": "320dc787-059d-4173-9d16-57cd9b8ad765",
+      "setFlowId": 172,
+      "playerId": 1641706,
+      "playerName": "Brandon Miller",
+      "team": "Charlotte Hornets",
+      "teamAtMoment": "Charlotte Hornets",
+      "playType": "Dunk",
+      "date": "2024-10-23",
+      "series": 6,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "5773": [
+    {
+      "id": "3a87a528-6b53-40e9-8c67-b9d640d3533b",
+      "flowId": 5773,
+      "set": "Metallic Gold LE",
+      "setId": "d2d782e7-9e59-4f86-9d53-bcf6e18ca225",
+      "setFlowId": 166,
+      "playerId": 1627734,
+      "playerName": "Domantas Sabonis",
+      "team": "Sacramento Kings",
+      "teamAtMoment": "Sacramento Kings",
+      "playType": "Dunk",
+      "date": "2024-10-27",
+      "series": 6,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "5772": [
+    {
+      "id": "8bb2f453-d263-4d1a-8279-2b4734da3027",
+      "flowId": 5772,
+      "set": "Metallic Gold LE",
+      "setId": "d2d782e7-9e59-4f86-9d53-bcf6e18ca225",
+      "setFlowId": 166,
+      "playerId": 1631096,
+      "playerName": "Chet Holmgren",
+      "team": "Oklahoma City Thunder",
+      "teamAtMoment": "Oklahoma City Thunder",
+      "playType": "Dunk",
+      "date": "2024-10-25",
+      "series": 6,
+      "tier": "R",
+      "badges": []
+    }
+  ],
+  "5771": [
+    {
+      "id": "9cdeb149-6f9c-4b00-8544-bc308a5bfde6",
+      "flowId": 5771,
+      "set": "Metallic Silver",
+      "setId": "09a26cff-7b66-4bbb-b85e-da8a77c338fe",
+      "setFlowId": 167,
+      "playerId": 201939,
+      "playerName": "Steph Curry",
+      "team": "Golden State Warriors",
+      "teamAtMoment": "Golden State Warriors",
+      "playType": "Handles",
+      "date": "2024-10-28",
+      "series": 6,
+      "tier": "F",
+      "badges": []
+    }
+  ],
   "5770": [
     {
       "id": "5911f5a5-317a-4c93-b146-04a5770a7bed",
@@ -640,8 +1378,8 @@
       "playerName": "Kel'el Ware",
       "team": "Miami Heat",
       "teamAtMoment": "Miami Heat",
-      "playType": "Play Coming Soon",
-      "date": "",
+      "playType": "Jump Shot",
+      "date": "2024-11-03",
       "series": 6,
       "tier": "C",
       "badges": []
@@ -691,11 +1429,11 @@
       "setId": "22a4cd21-ea46-4861-8139-848a17c21047",
       "setFlowId": 164,
       "playerId": 1642265,
-      "playerName": "Robert Dillingham",
+      "playerName": "Rob Dillingham",
       "team": "Minnesota Timberwolves",
       "teamAtMoment": "Minnesota Timberwolves",
-      "playType": "Play Coming Soon",
-      "date": "",
+      "playType": "Assist",
+      "date": "2024-11-03",
       "series": 6,
       "tier": "C",
       "badges": []
@@ -802,8 +1540,8 @@
       "playerName": "Tidjane Sala\u00fcn",
       "team": "Charlotte Hornets",
       "teamAtMoment": "Charlotte Hornets",
-      "playType": "Play Coming Soon",
-      "date": "",
+      "playType": "Steal",
+      "date": "2024-10-26",
       "series": 6,
       "tier": "C",
       "badges": []
@@ -820,8 +1558,8 @@
       "playerName": "Tristan da Silva",
       "team": "Orlando Magic",
       "teamAtMoment": "Orlando Magic",
-      "playType": "Play Coming Soon",
-      "date": "",
+      "playType": "Layup",
+      "date": "2024-11-01",
       "series": 6,
       "tier": "C",
       "badges": []
@@ -838,8 +1576,8 @@
       "playerName": "Cody Williams",
       "team": "Utah Jazz",
       "teamAtMoment": "Utah Jazz",
-      "playType": "Play Coming Soon",
-      "date": "",
+      "playType": "Layup",
+      "date": "2024-10-26",
       "series": 6,
       "tier": "C",
       "badges": []

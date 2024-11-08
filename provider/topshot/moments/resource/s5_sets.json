@@ -1,6 +1,41 @@
 {
   "sets": [
     {
+      "id": "a59e2336-b33a-4eef-84fd-745d7a915a9b",
+      "flowId": 173,
+      "flowName": "Denied!",
+      "flowSeriesNumber": 6,
+      "sortID": null
+    },
+    {
+      "id": "320dc787-059d-4173-9d16-57cd9b8ad765",
+      "flowId": 172,
+      "flowName": "Throwdowns",
+      "flowSeriesNumber": 6,
+      "sortID": null
+    },
+    {
+      "id": "b03de2ea-716d-42a9-8eb4-369a9b15a416",
+      "flowId": 171,
+      "flowName": "Base Set",
+      "flowSeriesNumber": 6,
+      "sortID": null
+    },
+    {
+      "id": "50ee90b1-a36c-4f35-b23e-247a8225d895",
+      "flowId": 170,
+      "flowName": "For The Win",
+      "flowSeriesNumber": 6,
+      "sortID": null
+    },
+    {
+      "id": "4be7cade-75ed-4562-bd8f-a7c0e9997b66",
+      "flowId": 169,
+      "flowName": "Holo Icon",
+      "flowSeriesNumber": 6,
+      "sortID": null
+    },
+    {
       "id": "3b742784-7a8d-4b43-9dc8-b33c1be841b3",
       "flowId": 168,
       "flowName": "Fresh Threads",

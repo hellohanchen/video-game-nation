@@ -1,8 +1,247 @@
 {
+  "173": {
+    "name": "Denied! 6",
+    "series": 6,
+    "moments": {
+      "5810": {
+        "player": "Derrick White",
+        "team": "Boston Celtics",
+        "playerId": 1628401,
+        "date": "2024-10-26"
+      },
+      "5787": {
+        "player": "Anthony Davis",
+        "team": "Los Angeles Lakers",
+        "playerId": 203076,
+        "date": "2024-10-23"
+      }
+    },
+    "count": 2
+  },
+  "172": {
+    "name": "Throwdowns 6",
+    "series": 6,
+    "moments": {
+      "5788": {
+        "player": "Jay Huff",
+        "team": "Memphis Grizzlies",
+        "playerId": 1630643,
+        "date": "2024-10-27"
+      },
+      "5786": {
+        "player": "Cason Wallace",
+        "team": "Oklahoma City Thunder",
+        "playerId": 1641717,
+        "date": "2024-10-27"
+      },
+      "5774": {
+        "player": "Brandon Miller",
+        "team": "Charlotte Hornets",
+        "playerId": 1641706,
+        "date": "2024-10-23"
+      }
+    },
+    "count": 3
+  },
+  "171": {
+    "name": "Base Set 6",
+    "series": 6,
+    "moments": {
+      "5809": {
+        "player": "Jalen Green",
+        "team": "Houston Rockets",
+        "playerId": 1630224,
+        "date": "2024-10-29"
+      },
+      "5807": {
+        "player": "Kevon Looney",
+        "team": "Golden State Warriors",
+        "playerId": 1626172,
+        "date": "2024-10-28"
+      },
+      "5796": {
+        "player": "Coby White",
+        "team": "Chicago Bulls",
+        "playerId": 1629632,
+        "date": "2024-10-26"
+      },
+      "5791": {
+        "player": "Scotty Pippen Jr.",
+        "team": "Memphis Grizzlies",
+        "playerId": 1630590,
+        "date": "2024-10-27"
+      }
+    },
+    "count": 4
+  },
+  "170": {
+    "name": "For The Win 6",
+    "series": 6,
+    "moments": {
+      "5795": {
+        "player": "Brandon Ingram",
+        "team": "New Orleans Pelicans",
+        "playerId": 1627742,
+        "date": "2024-10-25"
+      }
+    },
+    "count": 1
+  },
+  "169": {
+    "name": "Holo Icon 6",
+    "series": 6,
+    "moments": {
+      "5803": {
+        "player": "Pascal Siakam",
+        "team": "Indiana Pacers",
+        "playerId": 1627783,
+        "date": "2024-10-30"
+      },
+      "5789": {
+        "player": "Paolo Banchero",
+        "team": "Orlando Magic",
+        "playerId": 1631094,
+        "date": "2024-10-28"
+      }
+    },
+    "count": 2
+  },
   "168": {
     "name": "Fresh Threads 6",
     "series": 6,
     "moments": {
+      "5811": {
+        "player": "Naji Marshall",
+        "team": "Dallas Mavericks",
+        "playerId": 1630230,
+        "date": "2024-10-24"
+      },
+      "5808": {
+        "player": "Kyle Anderson",
+        "team": "Golden State Warriors",
+        "playerId": 203937,
+        "date": "2024-10-24"
+      },
+      "5806": {
+        "player": "Tobias Harris",
+        "team": "Detroit Pistons",
+        "playerId": 202699,
+        "date": "2024-10-23"
+      },
+      "5802": {
+        "player": "Guerschon Yabusele",
+        "team": "Philadelphia 76ers",
+        "playerId": 1627824,
+        "date": "2024-10-23"
+      },
+      "5801": {
+        "player": "De'Anthony Melton",
+        "team": "Golden State Warriors",
+        "playerId": 1629001,
+        "date": "2024-10-23"
+      },
+      "5800": {
+        "player": "Jonas Valan\u010di\u016bnas",
+        "team": "Washington Wizards",
+        "playerId": 202685,
+        "date": "2024-10-24"
+      },
+      "5799": {
+        "player": "Daniel Theis",
+        "team": "New Orleans Pelicans",
+        "playerId": 1628464,
+        "date": "2024-10-24"
+      },
+      "5798": {
+        "player": "Caleb Martin",
+        "team": "Philadelphia 76ers",
+        "playerId": 1628997,
+        "date": "2024-10-23"
+      },
+      "5797": {
+        "player": "Javonte Green",
+        "team": "New Orleans Pelicans",
+        "playerId": 1629750,
+        "date": "2024-10-24"
+      },
+      "5794": {
+        "player": "Josh Giddey",
+        "team": "Chicago Bulls",
+        "playerId": 1630581,
+        "date": "2024-10-24"
+      },
+      "5793": {
+        "player": "Steven Adams",
+        "team": "Houston Rockets",
+        "playerId": 203500,
+        "date": "2024-10-29"
+      },
+      "5790": {
+        "player": "Kris Dunn",
+        "team": "LA Clippers",
+        "playerId": 1627739,
+        "date": "2024-10-24"
+      },
+      "5785": {
+        "player": "Ziaire Williams",
+        "team": "Brooklyn Nets",
+        "playerId": 1630533,
+        "date": "2024-10-23"
+      },
+      "5784": {
+        "player": "Larry Nance Jr.",
+        "team": "Atlanta Hawks",
+        "playerId": 1626204,
+        "date": "2024-10-28"
+      },
+      "5783": {
+        "player": "Josh Green",
+        "team": "Charlotte Hornets",
+        "playerId": 1630182,
+        "date": "2024-10-25"
+      },
+      "5782": {
+        "player": "Harrison Barnes",
+        "team": "San Antonio Spurs",
+        "playerId": 203084,
+        "date": "2024-10-24"
+      },
+      "5781": {
+        "player": "Gary Trent Jr.",
+        "team": "Milwaukee Bucks",
+        "playerId": 1629018,
+        "date": "2024-10-23"
+      },
+      "5780": {
+        "player": "Cameron Payne",
+        "team": "New York Knicks",
+        "playerId": 1626166,
+        "date": "2024-10-22"
+      },
+      "5779": {
+        "player": "Mason Plumlee",
+        "team": "Phoenix Suns",
+        "playerId": 203486,
+        "date": "2024-10-24"
+      },
+      "5778": {
+        "player": "Davion Mitchell",
+        "team": "Toronto Raptors",
+        "playerId": 1630558,
+        "date": "2024-10-23"
+      },
+      "5777": {
+        "player": "Russell Westbrook",
+        "team": "Denver Nuggets",
+        "playerId": 201566,
+        "date": "2024-10-25"
+      },
+      "5776": {
+        "player": "Kentavious Caldwell-Pope",
+        "team": "Orlando Magic",
+        "playerId": 203484,
+        "date": "2024-10-23"
+      },
       "5770": {
         "player": "Tyus Jones",
         "team": "Phoenix Suns",
@@ -88,12 +327,18 @@
         "date": "2024-10-23"
       }
     },
-    "count": 14
+    "count": 36
   },
   "167": {
     "name": "Metallic Silver 6",
     "series": 6,
     "moments": {
+      "5771": {
+        "player": "Steph Curry",
+        "team": "Golden State Warriors",
+        "playerId": 201939,
+        "date": "2024-10-28"
+      },
       "5751": {
         "player": "Jayson Tatum",
         "team": "Boston Celtics",
@@ -101,12 +346,42 @@
         "date": "2024-10-22"
       }
     },
-    "count": 1
+    "count": 2
   },
   "166": {
     "name": "Metallic Gold LE 6",
     "series": 6,
     "moments": {
+      "5805": {
+        "player": "Cam Thomas",
+        "team": "Brooklyn Nets",
+        "playerId": 1630560,
+        "date": "2024-11-01"
+      },
+      "5804": {
+        "player": "Ja Morant",
+        "team": "Memphis Grizzlies",
+        "playerId": 1629630,
+        "date": "2024-11-01"
+      },
+      "5792": {
+        "player": "Jamal Murray",
+        "team": "Denver Nuggets",
+        "playerId": 1627750,
+        "date": "2024-10-28"
+      },
+      "5773": {
+        "player": "Domantas Sabonis",
+        "team": "Sacramento Kings",
+        "playerId": 1627734,
+        "date": "2024-10-27"
+      },
+      "5772": {
+        "player": "Chet Holmgren",
+        "team": "Oklahoma City Thunder",
+        "playerId": 1631096,
+        "date": "2024-10-25"
+      },
       "5738": {
         "player": "LeBron James",
         "team": "Los Angeles Lakers",
@@ -114,7 +389,7 @@
         "date": "2024-10-23"
       }
     },
-    "count": 1
+    "count": 6
   },
   "165": {
     "name": "Supernova 6",
@@ -139,6 +414,12 @@
     "name": "Rookie Debut 6",
     "series": 6,
     "moments": {
+      "5775": {
+        "player": "Tyler Smith",
+        "team": "Milwaukee Bucks",
+        "playerId": 1641890,
+        "date": "2024-10-23"
+      },
       "5759": {
         "player": "Adem Bona",
         "team": "Philadelphia 76ers",
@@ -272,7 +553,7 @@
         "date": "2024-10-23"
       }
     },
-    "count": 22
+    "count": 23
   },
   "163": {
     "name": "2024 WNBA Playoffs 5",

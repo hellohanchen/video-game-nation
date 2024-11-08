@@ -181,20 +181,26 @@
       }
     },
     "Series 24-25": {
-      "count": 5,
+      "count": 11,
       "tiers": {
         "Common": {
-          "164": "Rookie Debut"
+          "164": "Rookie Debut",
+          "168": "Fresh Threads",
+          "171": "Base Set"
         },
         "Fandom": {
           "167": "Metallic Silver"
         },
         "Rare": {
           "166": "Metallic Gold LE",
-          "168": "Fresh Threads"
+          "168": "Fresh Threads",
+          "170": "For The Win",
+          "172": "Throwdowns",
+          "173": "Denied!"
         },
         "Legendary": {
-          "165": "Supernova"
+          "165": "Supernova",
+          "169": "Holo Icon"
         }
       }
     },
