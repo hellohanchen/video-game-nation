@@ -3,6 +3,12 @@
     "name": "Denied! 6",
     "series": 6,
     "moments": {
+      "5855": {
+        "player": "Jarrett Allen",
+        "team": "Cleveland Cavaliers",
+        "playerId": 1628386,
+        "date": "2024-10-30"
+      },
       "5810": {
         "player": "Derrick White",
         "team": "Boston Celtics",
@@ -16,12 +22,30 @@
         "date": "2024-10-23"
       }
     },
-    "count": 2
+    "count": 3
   },
   "172": {
     "name": "Throwdowns 6",
     "series": 6,
     "moments": {
+      "5862": {
+        "player": "Christian Braun",
+        "team": "Denver Nuggets",
+        "playerId": 1631128,
+        "date": "2024-11-02"
+      },
+      "5859": {
+        "player": "Yves Missi",
+        "team": "New Orleans Pelicans",
+        "playerId": 1642274,
+        "date": "2024-11-01"
+      },
+      "5854": {
+        "player": "Aaron Nesmith",
+        "team": "Indiana Pacers",
+        "playerId": 1630174,
+        "date": "2024-10-27"
+      },
       "5788": {
         "player": "Jay Huff",
         "team": "Memphis Grizzlies",
@@ -41,12 +65,132 @@
         "date": "2024-10-23"
       }
     },
-    "count": 3
+    "count": 6
   },
   "171": {
     "name": "Base Set 6",
     "series": 6,
     "moments": {
+      "5850": {
+        "player": "Luke Kornet",
+        "team": "Boston Celtics",
+        "playerId": 1628436,
+        "date": "2024-11-02"
+      },
+      "5849": {
+        "player": "Terry Rozier",
+        "team": "Miami Heat",
+        "playerId": 1626179,
+        "date": "2024-10-26"
+      },
+      "5848": {
+        "player": "Gary Harris",
+        "team": "Orlando Magic",
+        "playerId": 203914,
+        "date": "2024-10-23"
+      },
+      "5847": {
+        "player": "Miles McBride",
+        "team": "New York Knicks",
+        "playerId": 1630540,
+        "date": "2024-10-30"
+      },
+      "5846": {
+        "player": "Anthony Edwards",
+        "team": "Minnesota Timberwolves",
+        "playerId": 1630162,
+        "date": "2024-10-29"
+      },
+      "5845": {
+        "player": "Jordan Hawkins",
+        "team": "New Orleans Pelicans",
+        "playerId": 1641722,
+        "date": "2024-10-26"
+      },
+      "5843": {
+        "player": "Tre Mann",
+        "team": "Charlotte Hornets",
+        "playerId": 1630544,
+        "date": "2024-10-24"
+      },
+      "5842": {
+        "player": "Rui Hachimura",
+        "team": "Los Angeles Lakers",
+        "playerId": 1629060,
+        "date": "2024-10-23"
+      },
+      "5838": {
+        "player": "Trae Young",
+        "team": "Atlanta Hawks",
+        "playerId": 1629027,
+        "date": "2024-10-23"
+      },
+      "5837": {
+        "player": "Walker Kessler",
+        "team": "Utah Jazz",
+        "playerId": 1631117,
+        "date": "2024-10-24"
+      },
+      "5836": {
+        "player": "Aaron Gordon",
+        "team": "Denver Nuggets",
+        "playerId": 203932,
+        "date": "2024-10-29"
+      },
+      "5835": {
+        "player": "Ben Simmons",
+        "team": "Brooklyn Nets",
+        "playerId": 1627732,
+        "date": "2024-11-01"
+      },
+      "5833": {
+        "player": "Ty Jerome",
+        "team": "Cleveland Cavaliers",
+        "playerId": 1629660,
+        "date": "2024-10-25"
+      },
+      "5831": {
+        "player": "Jaden Ivey",
+        "team": "Detroit Pistons",
+        "playerId": 1631093,
+        "date": "2024-11-03"
+      },
+      "5830": {
+        "player": "T.J. McConnell",
+        "team": "Indiana Pacers",
+        "playerId": 204456,
+        "date": "2024-10-23"
+      },
+      "5828": {
+        "player": "Ivica Zubac",
+        "team": "LA Clippers",
+        "playerId": 1627826,
+        "date": "2024-10-28"
+      },
+      "5826": {
+        "player": "Bradley Beal",
+        "team": "Phoenix Suns",
+        "playerId": 203078,
+        "date": "2024-10-24"
+      },
+      "5822": {
+        "player": "Brook Lopez",
+        "team": "Milwaukee Bucks",
+        "playerId": 201572,
+        "date": "2024-10-23"
+      },
+      "5821": {
+        "player": "Ochai Agbaji",
+        "team": "Toronto Raptors",
+        "playerId": 1630534,
+        "date": "2024-10-28"
+      },
+      "5816": {
+        "player": "Aaron Wiggins",
+        "team": "Oklahoma City Thunder",
+        "playerId": 1630598,
+        "date": "2024-10-25"
+      },
       "5809": {
         "player": "Jalen Green",
         "team": "Houston Rockets",
@@ -72,12 +216,42 @@
         "date": "2024-10-27"
       }
     },
-    "count": 4
+    "count": 24
   },
   "170": {
     "name": "For The Win 6",
     "series": 6,
     "moments": {
+      "5869": {
+        "player": "Domantas Sabonis",
+        "team": "Sacramento Kings",
+        "playerId": 1627734,
+        "date": "2024-11-05"
+      },
+      "5861": {
+        "player": "Donovan Mitchell",
+        "team": "Cleveland Cavaliers",
+        "playerId": 1628378,
+        "date": "2024-11-03"
+      },
+      "5858": {
+        "player": "Michael Porter Jr.",
+        "team": "Denver Nuggets",
+        "playerId": 1629008,
+        "date": "2024-11-11"
+      },
+      "5853": {
+        "player": "Brandon Miller",
+        "team": "Charlotte Hornets",
+        "playerId": 1641706,
+        "date": "2024-11-07"
+      },
+      "5852": {
+        "player": "Peyton Watson",
+        "team": "Denver Nuggets",
+        "playerId": 1631212,
+        "date": "2024-11-07"
+      },
       "5795": {
         "player": "Brandon Ingram",
         "team": "New Orleans Pelicans",
@@ -85,12 +259,30 @@
         "date": "2024-10-25"
       }
     },
-    "count": 1
+    "count": 6
   },
   "169": {
     "name": "Holo Icon 6",
     "series": 6,
     "moments": {
+      "5867": {
+        "player": "Evan Mobley",
+        "team": "Cleveland Cavaliers",
+        "playerId": 1630596,
+        "date": "2024-11-05"
+      },
+      "5864": {
+        "player": "Ja Morant",
+        "team": "Memphis Grizzlies",
+        "playerId": 1629630,
+        "date": "2024-11-05"
+      },
+      "5857": {
+        "player": "Cade Cunningham",
+        "team": "Detroit Pistons",
+        "playerId": 1630595,
+        "date": "2024-11-09"
+      },
       "5803": {
         "player": "Pascal Siakam",
         "team": "Indiana Pacers",
@@ -104,12 +296,42 @@
         "date": "2024-10-28"
       }
     },
-    "count": 2
+    "count": 5
   },
   "168": {
     "name": "Fresh Threads 6",
     "series": 6,
     "moments": {
+      "5865": {
+        "player": "Paul George",
+        "team": "Philadelphia 76ers",
+        "playerId": 202331,
+        "date": "2024-11-05"
+      },
+      "5824": {
+        "player": "Jalen Smith",
+        "team": "Chicago Bulls",
+        "playerId": 1630188,
+        "date": "2024-10-24"
+      },
+      "5819": {
+        "player": "Taurean Prince",
+        "team": "Milwaukee Bucks",
+        "playerId": 1627752,
+        "date": "2024-10-23"
+      },
+      "5818": {
+        "player": "Malik Beasley",
+        "team": "Detroit Pistons",
+        "playerId": 1627736,
+        "date": "2024-10-23"
+      },
+      "5817": {
+        "player": "Tim Hardaway Jr.",
+        "team": "Detroit Pistons",
+        "playerId": 203501,
+        "date": "2024-10-23"
+      },
       "5811": {
         "player": "Naji Marshall",
         "team": "Dallas Mavericks",
@@ -327,12 +549,18 @@
         "date": "2024-10-23"
       }
     },
-    "count": 36
+    "count": 41
   },
   "167": {
     "name": "Metallic Silver 6",
     "series": 6,
     "moments": {
+      "5812": {
+        "player": "Victor Wembanyama",
+        "team": "San Antonio Spurs",
+        "playerId": 1641705,
+        "date": "2024-11-01"
+      },
       "5771": {
         "player": "Steph Curry",
         "team": "Golden State Warriors",
@@ -346,12 +574,48 @@
         "date": "2024-10-22"
       }
     },
-    "count": 2
+    "count": 3
   },
   "166": {
     "name": "Metallic Gold LE 6",
     "series": 6,
     "moments": {
+      "5870": {
+        "player": "Jayson Tatum",
+        "team": "Boston Celtics",
+        "playerId": 1628369,
+        "date": "2024-10-24"
+      },
+      "5868": {
+        "player": "Kevin Durant",
+        "team": "Phoenix Suns",
+        "playerId": 201142,
+        "date": "2024-11-05"
+      },
+      "5866": {
+        "player": "Darius Garland",
+        "team": "Cleveland Cavaliers",
+        "playerId": 1629636,
+        "date": "2024-11-05"
+      },
+      "5863": {
+        "player": "Bilal Coulibaly",
+        "team": "Washington Wizards",
+        "playerId": 1641731,
+        "date": "2024-10-30"
+      },
+      "5856": {
+        "player": "Norman Powell",
+        "team": "LA Clippers",
+        "playerId": 1626181,
+        "date": "2024-11-07"
+      },
+      "5851": {
+        "player": "Gradey Dick",
+        "team": "Toronto Raptors",
+        "playerId": 1641711,
+        "date": "2024-11-02"
+      },
       "5805": {
         "player": "Cam Thomas",
         "team": "Brooklyn Nets",
@@ -389,12 +653,18 @@
         "date": "2024-10-23"
       }
     },
-    "count": 6
+    "count": 12
   },
   "165": {
     "name": "Supernova 6",
     "series": 6,
     "moments": {
+      "5860": {
+        "player": "Joel Embiid",
+        "team": "Philadelphia 76ers",
+        "playerId": 203954,
+        "date": "2016-10-27"
+      },
       "5752": {
         "player": "Kevin Garnett",
         "team": "Minnesota Timberwolves",
@@ -408,12 +678,96 @@
         "date": "2003-10-30"
       }
     },
-    "count": 2
+    "count": 3
   },
   "164": {
     "name": "Rookie Debut 6",
     "series": 6,
     "moments": {
+      "5844": {
+        "player": "Dillon Jones",
+        "team": "Oklahoma City Thunder",
+        "playerId": 1641794,
+        "date": "2024-11-02"
+      },
+      "5841": {
+        "player": "Kyle Filipowski",
+        "team": "Utah Jazz",
+        "playerId": 1642271,
+        "date": "2024-10-30"
+      },
+      "5840": {
+        "player": "Ariel Hukporti",
+        "team": "New York Knicks",
+        "playerId": 1630574,
+        "date": "2024-10-22"
+      },
+      "5839": {
+        "player": "Antonio Reeves",
+        "team": "New Orleans Pelicans",
+        "playerId": 1641810,
+        "date": "2024-11-04"
+      },
+      "5834": {
+        "player": "Baylor Scheierman",
+        "team": "Boston Celtics",
+        "playerId": 1631248,
+        "date": "2024-10-24"
+      },
+      "5832": {
+        "player": "Ja'Kobe Walter",
+        "team": "Toronto Raptors",
+        "playerId": 1642266,
+        "date": "2024-11-01"
+      },
+      "5829": {
+        "player": "Oso Ighodaro",
+        "team": "Phoenix Suns",
+        "playerId": 1642345,
+        "date": "2024-10-24"
+      },
+      "5827": {
+        "player": "Jaylen Wells",
+        "team": "Memphis Grizzlies",
+        "playerId": 1642377,
+        "date": "2024-10-24"
+      },
+      "5825": {
+        "player": "Jonathan Mogbo",
+        "team": "Toronto Raptors",
+        "playerId": 1642367,
+        "date": "2024-10-23"
+      },
+      "5823": {
+        "player": "Jaylon Tyson",
+        "team": "Cleveland Cavaliers",
+        "playerId": 1642281,
+        "date": "2024-10-23"
+      },
+      "5820": {
+        "player": "Jamal Shead",
+        "team": "Toronto Raptors",
+        "playerId": 1642347,
+        "date": "2024-10-23"
+      },
+      "5815": {
+        "player": "Kyshawn George",
+        "team": "Washington Wizards",
+        "playerId": 1642273,
+        "date": "2024-10-24"
+      },
+      "5814": {
+        "player": "Ryan Dunn",
+        "team": "Phoenix Suns",
+        "playerId": 1642346,
+        "date": "2024-10-24"
+      },
+      "5813": {
+        "player": "Yves Missi",
+        "team": "New Orleans Pelicans",
+        "playerId": 1642274,
+        "date": "2024-10-24"
+      },
       "5775": {
         "player": "Tyler Smith",
         "team": "Milwaukee Bucks",
@@ -553,7 +907,7 @@
         "date": "2024-10-23"
       }
     },
-    "count": 23
+    "count": 37
   },
   "163": {
     "name": "2024 WNBA Playoffs 5",

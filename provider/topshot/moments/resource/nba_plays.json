@@ -1,4 +1,608 @@
 {
+  "5870": {
+    "166": {
+      "playerId": 1628369,
+      "playType": "Handles",
+      "tier": "Rare",
+      "badges": [],
+      "teamId": 1610612738
+    }
+  },
+  "5869": {
+    "170": {
+      "playerId": 1627734,
+      "playType": "Floater",
+      "tier": "Rare",
+      "badges": [],
+      "teamId": 1610612758
+    }
+  },
+  "5868": {
+    "166": {
+      "playerId": 201142,
+      "playType": "Layup",
+      "tier": "Rare",
+      "badges": [],
+      "teamId": 1610612756
+    }
+  },
+  "5867": {
+    "169": {
+      "playerId": 1630596,
+      "playType": "Dunk",
+      "tier": "Legendary",
+      "badges": [],
+      "teamId": 1610612739
+    }
+  },
+  "5866": {
+    "166": {
+      "playerId": 1629636,
+      "playType": "3 Pointer",
+      "tier": "Rare",
+      "badges": [],
+      "teamId": 1610612739
+    }
+  },
+  "5865": {
+    "168": {
+      "playerId": 202331,
+      "playType": "Layup",
+      "tier": "Rare",
+      "badges": [],
+      "teamId": 1610612755
+    }
+  },
+  "5864": {
+    "169": {
+      "playerId": 1629630,
+      "playType": "Reel",
+      "tier": "Legendary",
+      "badges": [],
+      "teamId": 1610612763
+    }
+  },
+  "5863": {
+    "166": {
+      "playerId": 1641731,
+      "playType": "Dunk",
+      "tier": "Rare",
+      "badges": [],
+      "teamId": 1610612764
+    }
+  },
+  "5862": {
+    "172": {
+      "playerId": 1631128,
+      "playType": "Dunk",
+      "tier": "Rare",
+      "badges": [],
+      "teamId": 1610612743
+    }
+  },
+  "5861": {
+    "170": {
+      "playerId": 1628378,
+      "playType": "Jump Shot",
+      "tier": "Rare",
+      "badges": [],
+      "teamId": 1610612739
+    }
+  },
+  "5860": {
+    "165": {
+      "playerId": 203954,
+      "playType": "Reel",
+      "tier": "Ultimate",
+      "badges": [],
+      "teamId": 1610612755
+    }
+  },
+  "5859": {
+    "172": {
+      "playerId": 1642274,
+      "playType": "Dunk",
+      "tier": "Rare",
+      "badges": [
+        "CR",
+        "RY",
+        "RM"
+      ],
+      "teamId": 1610612740
+    }
+  },
+  "5858": {
+    "170": {
+      "playerId": 1629008,
+      "playType": "Floater",
+      "tier": "Rare",
+      "badges": [],
+      "teamId": 1610612743
+    }
+  },
+  "5857": {
+    "169": {
+      "playerId": 1630595,
+      "playType": "Reel",
+      "tier": "Legendary",
+      "badges": [],
+      "teamId": 1610612765
+    }
+  },
+  "5856": {
+    "166": {
+      "playerId": 1626181,
+      "playType": "Handles",
+      "tier": "Rare",
+      "badges": [],
+      "teamId": 1610612746
+    }
+  },
+  "5855": {
+    "173": {
+      "playerId": 1628386,
+      "playType": "Block",
+      "tier": "Rare",
+      "badges": [],
+      "teamId": 1610612739
+    }
+  },
+  "5854": {
+    "172": {
+      "playerId": 1630174,
+      "playType": "Dunk",
+      "tier": "Rare",
+      "badges": [],
+      "teamId": 1610612754
+    }
+  },
+  "5853": {
+    "170": {
+      "playerId": 1641706,
+      "playType": "Layup",
+      "tier": "Rare",
+      "badges": [],
+      "teamId": 1610612766
+    }
+  },
+  "5852": {
+    "170": {
+      "playerId": 1631212,
+      "playType": "Block",
+      "tier": "Rare",
+      "badges": [],
+      "teamId": 1610612743
+    }
+  },
+  "5851": {
+    "166": {
+      "playerId": 1641711,
+      "playType": "Floater",
+      "tier": "Rare",
+      "badges": [],
+      "teamId": 1610612761
+    }
+  },
+  "5850": {
+    "171": {
+      "playerId": 1628436,
+      "playType": "Block",
+      "tier": "Common",
+      "badges": [],
+      "teamId": 1610612738
+    }
+  },
+  "5849": {
+    "171": {
+      "playerId": 1626179,
+      "playType": "3 Pointer",
+      "tier": "Common",
+      "badges": [],
+      "teamId": 1610612748
+    }
+  },
+  "5848": {
+    "171": {
+      "playerId": 203914,
+      "playType": "3 Pointer",
+      "tier": "Common",
+      "badges": [],
+      "teamId": 1610612753
+    }
+  },
+  "5847": {
+    "171": {
+      "playerId": 1630540,
+      "playType": "Dunk",
+      "tier": "Common",
+      "badges": [],
+      "teamId": 1610612752
+    }
+  },
+  "5846": {
+    "171": {
+      "playerId": 1630162,
+      "playType": "Layup",
+      "tier": "Common",
+      "badges": [],
+      "teamId": 1610612750
+    }
+  },
+  "5845": {
+    "171": {
+      "playerId": 1641722,
+      "playType": "3 Pointer",
+      "tier": "Common",
+      "badges": [],
+      "teamId": 1610612740
+    }
+  },
+  "5844": {
+    "164": {
+      "playerId": 1641794,
+      "playType": "3 Pointer",
+      "tier": "Common",
+      "badges": [
+        "RY",
+        "RM",
+        "TSD"
+      ],
+      "teamId": 1610612760
+    }
+  },
+  "5843": {
+    "171": {
+      "playerId": 1630544,
+      "playType": "Handles",
+      "tier": "Common",
+      "badges": [],
+      "teamId": 1610612766
+    }
+  },
+  "5842": {
+    "171": {
+      "playerId": 1629060,
+      "playType": "Dunk",
+      "tier": "Common",
+      "badges": [],
+      "teamId": 1610612747
+    }
+  },
+  "5841": {
+    "164": {
+      "playerId": 1642271,
+      "playType": "Layup",
+      "tier": "Common",
+      "badges": [
+        "RY",
+        "RM",
+        "TSD"
+      ],
+      "teamId": 1610612762
+    }
+  },
+  "5840": {
+    "164": {
+      "playerId": 1630574,
+      "playType": "Block",
+      "tier": "Common",
+      "badges": [
+        "RP",
+        "RY",
+        "RM",
+        "TSD"
+      ],
+      "teamId": 1610612752
+    }
+  },
+  "5839": {
+    "164": {
+      "playerId": 1641810,
+      "playType": "3 Pointer",
+      "tier": "Common",
+      "badges": [
+        "RY",
+        "RM",
+        "TSD"
+      ],
+      "teamId": 1610612740
+    }
+  },
+  "5838": {
+    "171": {
+      "playerId": 1629027,
+      "playType": "Handles",
+      "tier": "Common",
+      "badges": [],
+      "teamId": 1610612737
+    }
+  },
+  "5837": {
+    "171": {
+      "playerId": 1631117,
+      "playType": "Block",
+      "tier": "Common",
+      "badges": [],
+      "teamId": 1610612762
+    }
+  },
+  "5836": {
+    "171": {
+      "playerId": 203932,
+      "playType": "Dunk",
+      "tier": "Common",
+      "badges": [],
+      "teamId": 1610612743
+    }
+  },
+  "5835": {
+    "171": {
+      "playerId": 1627732,
+      "playType": "Assist",
+      "tier": "Common",
+      "badges": [],
+      "teamId": 1610612751
+    }
+  },
+  "5834": {
+    "164": {
+      "playerId": 1631248,
+      "playType": "Layup",
+      "tier": "Common",
+      "badges": [
+        "RP",
+        "RY",
+        "RM",
+        "TSD"
+      ],
+      "teamId": 1610612738
+    }
+  },
+  "5833": {
+    "171": {
+      "playerId": 1629660,
+      "playType": "Assist",
+      "tier": "Common",
+      "badges": [],
+      "teamId": 1610612739
+    }
+  },
+  "5832": {
+    "164": {
+      "playerId": 1642266,
+      "playType": "Layup",
+      "tier": "Common",
+      "badges": [
+        "RP",
+        "RY",
+        "RM",
+        "TSD"
+      ],
+      "teamId": 1610612761
+    }
+  },
+  "5831": {
+    "171": {
+      "playerId": 1631093,
+      "playType": "Layup",
+      "tier": "Common",
+      "badges": [],
+      "teamId": 1610612765
+    }
+  },
+  "5830": {
+    "171": {
+      "playerId": 204456,
+      "playType": "Assist",
+      "tier": "Common",
+      "badges": [],
+      "teamId": 1610612754
+    }
+  },
+  "5829": {
+    "164": {
+      "playerId": 1642345,
+      "playType": "Floater",
+      "tier": "Common",
+      "badges": [
+        "RP",
+        "RY",
+        "RM",
+        "TSD"
+      ],
+      "teamId": 1610612756
+    }
+  },
+  "5828": {
+    "171": {
+      "playerId": 1627826,
+      "playType": "Dunk",
+      "tier": "Common",
+      "badges": [],
+      "teamId": 1610612746
+    }
+  },
+  "5827": {
+    "164": {
+      "playerId": 1642377,
+      "playType": "3 Pointer",
+      "tier": "Common",
+      "badges": [
+        "RP",
+        "RY",
+        "RM",
+        "TSD"
+      ],
+      "teamId": 1610612763
+    }
+  },
+  "5826": {
+    "171": {
+      "playerId": 203078,
+      "playType": "3 Pointer",
+      "tier": "Common",
+      "badges": [],
+      "teamId": 1610612756
+    }
+  },
+  "5825": {
+    "164": {
+      "playerId": 1642367,
+      "playType": "3 Pointer",
+      "tier": "Common",
+      "badges": [
+        "RP",
+        "RY",
+        "RM",
+        "TSD"
+      ],
+      "teamId": 1610612761
+    }
+  },
+  "5824": {
+    "168": {
+      "playerId": 1630188,
+      "playType": "Dunk",
+      "tier": "Common",
+      "badges": [],
+      "teamId": 1610612741
+    }
+  },
+  "5823": {
+    "164": {
+      "playerId": 1642281,
+      "playType": "3 Pointer",
+      "tier": "Common",
+      "badges": [
+        "RP",
+        "RY",
+        "RM",
+        "TSD"
+      ],
+      "teamId": 1610612739
+    }
+  },
+  "5822": {
+    "171": {
+      "playerId": 201572,
+      "playType": "Block",
+      "tier": "Common",
+      "badges": [],
+      "teamId": 1610612749
+    }
+  },
+  "5821": {
+    "171": {
+      "playerId": 1630534,
+      "playType": "Dunk",
+      "tier": "Common",
+      "badges": [],
+      "teamId": 1610612761
+    }
+  },
+  "5820": {
+    "164": {
+      "playerId": 1642347,
+      "playType": "Floater",
+      "tier": "Common",
+      "badges": [
+        "RP",
+        "RY",
+        "RM",
+        "TSD"
+      ],
+      "teamId": 1610612761
+    }
+  },
+  "5819": {
+    "168": {
+      "playerId": 1627752,
+      "playType": "3 Pointer",
+      "tier": "Common",
+      "badges": [],
+      "teamId": 1610612749
+    }
+  },
+  "5818": {
+    "168": {
+      "playerId": 1627736,
+      "playType": "Layup",
+      "tier": "Common",
+      "badges": [],
+      "teamId": 1610612765
+    }
+  },
+  "5817": {
+    "168": {
+      "playerId": 203501,
+      "playType": "3 Pointer",
+      "tier": "Common",
+      "badges": [],
+      "teamId": 1610612765
+    }
+  },
+  "5816": {
+    "171": {
+      "playerId": 1630598,
+      "playType": "Layup",
+      "tier": "Common",
+      "badges": [],
+      "teamId": 1610612760
+    }
+  },
+  "5815": {
+    "164": {
+      "playerId": 1642273,
+      "playType": "Dunk",
+      "tier": "Common",
+      "badges": [
+        "RP",
+        "RY",
+        "RM",
+        "TSD"
+      ],
+      "teamId": 1610612764
+    }
+  },
+  "5814": {
+    "164": {
+      "playerId": 1642346,
+      "playType": "Block",
+      "tier": "Common",
+      "badges": [
+        "RP",
+        "RY",
+        "RM",
+        "TSD"
+      ],
+      "teamId": 1610612756
+    }
+  },
+  "5813": {
+    "164": {
+      "playerId": 1642274,
+      "playType": "Block",
+      "tier": "Common",
+      "badges": [
+        "RP",
+        "RY",
+        "RM",
+        "TSD"
+      ],
+      "teamId": 1610612740
+    }
+  },
+  "5812": {
+    "167": {
+      "playerId": 1641705,
+      "playType": "Reel",
+      "tier": "Fandom",
+      "badges": [
+        "CR"
+      ],
+      "teamId": 1610612759
+    }
+  },
   "5811": {
     "168": {
       "playerId": 1630230,
@@ -186,7 +790,9 @@
       "playerId": 1630590,
       "playType": "3 Pointer",
       "tier": "Common",
-      "badges": [],
+      "badges": [
+        "TSD"
+      ],
       "teamId": 1610612763
     }
   },
@@ -362,7 +968,9 @@
       "playerId": 1631096,
       "playType": "Dunk",
       "tier": "Rare",
-      "badges": [],
+      "badges": [
+        "CR"
+      ],
       "teamId": 1610612760
     }
   },
@@ -371,7 +979,9 @@
       "playerId": 201939,
       "playType": "Handles",
       "tier": "Fandom",
-      "badges": [],
+      "badges": [
+        "CR"
+      ],
       "teamId": 1610612744
     }
   },
