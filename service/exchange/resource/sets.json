@@ -181,12 +181,13 @@
       }
     },
     "Series 24-25": {
-      "count": 11,
+      "count": 14,
       "tiers": {
         "Common": {
           "164": "Rookie Debut",
           "168": "Fresh Threads",
-          "171": "Base Set"
+          "171": "Base Set",
+          "174": "NBA Cup"
         },
         "Fandom": {
           "167": "Metallic Silver"
@@ -196,11 +197,13 @@
           "168": "Fresh Threads",
           "170": "For The Win",
           "172": "Throwdowns",
-          "173": "Denied!"
+          "173": "Denied!",
+          "174": "NBA Cup"
         },
         "Legendary": {
           "165": "Supernova",
-          "169": "Holo Icon"
+          "169": "Holo Icon",
+          "174": "NBA Cup"
         }
       }
     },
